@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /ugyfelportal/
+Disallow: /ajanlatkosar/
+Disallow: /bma-download/
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: /wp-sitemap.xml

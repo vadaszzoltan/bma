@@ -1,0 +1,80 @@
+/* BMA Engineering Child Theme Layout */
+
+.bma-site-header {
+	background: #fff;
+	border-bottom: 1px solid #dfe6e9;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+.bma-header-inner {
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: .75rem 1.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+.bma-logo-placeholder {
+	font-weight: 700;
+	color: #1a5276;
+	text-decoration: none;
+	padding: .5rem 1rem;
+	border: 2px dashed #bdc3c7;
+	border-radius: 8px;
+}
+.bma-main-nav .bma-menu,
+.bma-main-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 1.25rem;
+	flex-wrap: wrap;
+}
+.bma-main-nav a {
+	color: #2c3e50;
+	text-decoration: none;
+	font-weight: 600;
+}
+.bma-main-nav a:hover,
+.bma-main-nav a:focus { color: #2980b9; }
+.bma-header-actions { display: flex; gap: 1rem; align-items: center; }
+.bma-header-actions a { font-weight: 600; color: #1a5276; text-decoration: none; }
+.bma-cart-count { font-size: .875rem; }
+
+.bma-site-main { min-height: 60vh; }
+
+.bma-site-footer {
+	background: #2c3e50;
+	color: #ecf0f1;
+	margin-top: 3rem;
+	padding: 2.5rem 0 1rem;
+}
+.bma-footer-inner {
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 0 1.25rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 2rem;
+}
+.bma-footer-col a { color: #ecf0f1; }
+.bma-footer-bottom {
+	max-width: 1140px;
+	margin: 2rem auto 0;
+	padding: 1rem 1.25rem 0;
+	border-top: 1px solid rgba(255,255,255,.15);
+	font-size: .875rem;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: .5rem;
+}
+.bma-footer-bottom a { color: #bdc3c7; }
+
+@media (max-width: 768px) {
+	.bma-header-inner { flex-direction: column; align-items: flex-start; }
+}
