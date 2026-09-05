@@ -231,3 +231,21 @@ html.bma-js [data-bma-nojs-cta] { display: none !important; }
   flex: none;
 }
 
+/* Portal: filter tiles/tabs as links */
+a.stat {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  border: 1px solid var(--bma-border);
+  background: #fff;
+  cursor: pointer;
+}
+a.stat:hover { border-color: #b9c6de; }
+a.stat.is-on { border-color: var(--bma-accent); box-shadow: inset 0 -3px 0 var(--bma-accent); }
+a.tab {
+  text-decoration: none;
+  display: inline-block;
+  width: auto;
+}
+.tl { padding-left: 22px; }
+

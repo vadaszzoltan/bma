@@ -527,7 +527,7 @@ final class BMA_AJ_Quote_Requests {
 	}
 
 	/**
-	 * Portal dashboard counters for a user.
+	 * Portal dashboard counters for a user (filter tiles).
 	 *
 	 * @param int $user_id User ID.
 	 * @return array<string, int>
@@ -535,31 +535,112 @@ final class BMA_AJ_Quote_Requests {
 	public static function get_portal_stats( int $user_id ): array {
 		$requests = self::get_for_user( $user_id );
 		$stats    = array(
+			'total'       => count( $requests ),
+			'ajanlat'     => 0,
+			'folyamatban' => 0,
+			'fizetes'     => 0,
+			// Legacy keys (kept for any older callers).
 			'active'      => 0,
 			'new_quotes'  => 0,
 			'documents'   => 0,
 			'payment_due' => 0,
-			'total'       => count( $requests ),
 		);
 
 		foreach ( $requests as $req ) {
+			$bucket = self::portal_bucket( $req );
+			if ( 'ajanlat' === $bucket ) {
+				++$stats['ajanlat'];
+				++$stats['new_quotes'];
+			} elseif ( 'fizetes' === $bucket ) {
+				++$stats['fizetes'];
+				++$stats['payment_due'];
+			} elseif ( 'folyamatban' === $bucket ) {
+				++$stats['folyamatban'];
+			}
 			if ( 'lezarva' !== (string) ( $req->status_slug ?? '' ) ) {
 				++$stats['active'];
-			}
-			$qstatus = (string) ( $req->quote_status ?? '' );
-			$pstatus = (string) ( $req->payment_status ?? '' );
-			if ( in_array( $qstatus, array( 'sent', 'viewed' ), true ) && 'paid' !== $pstatus ) {
-				++$stats['new_quotes'];
-			}
-			if ( 'paid' !== $pstatus && in_array( $pstatus, array( 'bank_pending' ), true ) ) {
-				++$stats['payment_due'];
-			} elseif ( 'paid' !== $pstatus && 'accepted' === $qstatus ) {
-				++$stats['payment_due'];
 			}
 			$stats['documents'] += (int) ( $req->client_doc_count ?? 0 );
 		}
 
 		return $stats;
+	}
+
+	/**
+	 * Primary portal filter bucket for a request row.
+	 *
+	 * Priority: fizetes → ajanlat → folyamatban → egyeb.
+	 *
+	 * @param object $req Enriched request row.
+	 */
+	public static function portal_bucket( object $req ): string {
+		$qstatus = (string) ( $req->quote_status ?? '' );
+		$pstatus = (string) ( $req->payment_status ?? '' );
+
+		if ( 'paid' !== $pstatus && ( 'bank_pending' === $pstatus || 'accepted' === $qstatus ) ) {
+			return 'fizetes';
+		}
+		if ( in_array( $qstatus, array( 'sent', 'viewed' ), true ) && 'paid' !== $pstatus ) {
+			return 'ajanlat';
+		}
+		if ( 'lezarva' !== (string) ( $req->status_slug ?? '' ) ) {
+			return 'folyamatban';
+		}
+		return 'egyeb';
+	}
+
+	/**
+	 * Next-step hint under a portal list row.
+	 *
+	 * @param object $req Enriched request row.
+	 */
+	public static function portal_next_step( object $req ): string {
+		switch ( self::portal_bucket( $req ) ) {
+			case 'ajanlat':
+				return __( 'Teendő: ajánlat elfogadása', 'bma-ajanlatkeres' );
+			case 'fizetes':
+				return __( 'Teendő: díjbekérő rendezése', 'bma-ajanlatkeres' );
+			case 'folyamatban':
+				return __( 'Tervek készítése folyamatban', 'bma-ajanlatkeres' );
+			default:
+				return '';
+		}
+	}
+
+	/**
+	 * Badge CSS class for portal status chip.
+	 *
+	 * @param object $req Enriched request row.
+	 */
+	public static function portal_badge_class( object $req ): string {
+		switch ( self::portal_bucket( $req ) ) {
+			case 'ajanlat':
+				return 'badge--tint';
+			case 'fizetes':
+				return 'badge--green';
+			default:
+				return 'badge--soft';
+		}
+	}
+
+	/**
+	 * Most urgent actionable request for the todo strip (payment first, then quote).
+	 *
+	 * @param array<int, object> $requests Enriched rows (newest first).
+	 * @return object|null
+	 */
+	public static function portal_urgent_request( array $requests ): ?object {
+		foreach ( $requests as $req ) {
+			if ( 'fizetes' === self::portal_bucket( $req ) ) {
+				return $req;
+			}
+		}
+		foreach ( $requests as $req ) {
+			if ( 'ajanlat' === self::portal_bucket( $req ) ) {
+				return $req;
+			}
+		}
+		return null;
 	}
 
 	/**
@@ -663,12 +744,23 @@ final class BMA_AJ_Quote_Requests {
 		$id_list = implode( ',', array_map( 'absint', $ids ) );
 
 		$svc_rows = $wpdb->get_results(
-			"SELECT request_id, service_name FROM {$wpdb->prefix}bma_quote_request_services
+			"SELECT request_id, service_name, selected_items FROM {$wpdb->prefix}bma_quote_request_services
 			WHERE request_id IN ({$id_list}) ORDER BY sort_order ASC"
 		);
 		$services_map = array();
+		$items_map    = array();
 		foreach ( $svc_rows as $svc ) {
-			$services_map[ (int) $svc->request_id ][] = $svc->service_name;
+			$rid = (int) $svc->request_id;
+			$services_map[ $rid ][] = $svc->service_name;
+			$decoded = json_decode( $svc->selected_items ?? '[]', true );
+			if ( is_array( $decoded ) ) {
+				foreach ( $decoded as $iid ) {
+					$iid = (int) $iid;
+					if ( $iid ) {
+						$items_map[ $rid ][ $iid ] = true;
+					}
+				}
+			}
 		}
 
 		$quote_rows = $wpdb->get_results(
@@ -698,10 +790,13 @@ final class BMA_AJ_Quote_Requests {
 			$rid = (int) $row->id;
 			$row->service_names     = $services_map[ $rid ] ?? array();
 			$row->services_label    = $row->service_names ? implode( ', ', $row->service_names ) : '—';
+			$row->item_count        = isset( $items_map[ $rid ] ) ? count( $items_map[ $rid ] ) : 0;
 			$row->client_doc_count  = $docs_map[ $rid ] ?? 0;
 			$quote                  = $quotes_map[ $rid ] ?? null;
 			$row->quote_status      = $quote->status ?? '';
 			$row->payment_status    = $quote->payment_status ?? '';
+			$row->quote_id          = $quote ? (int) $quote->id : 0;
+			$row->quote_valid_until = $quote->valid_until ?? '';
 			$row->quote_label       = BMA_AJ_Quotes::display_label( $quote );
 			if ( empty( $row->status_slug ) && ! empty( $row->status_id ) ) {
 				$st = BMA_AJ_Statuses::get( (int) $row->status_id );
