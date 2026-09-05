@@ -274,6 +274,42 @@ function bma_render_mobilebar(): void {
 		return;
 	}
 
+	if ( is_singular( 'bma_reference' ) ) {
+		$ref_id  = (int) get_queried_object_id();
+		$title   = get_the_title( $ref_id );
+		$related = class_exists( 'BMA_AJ_Reference_CPT' )
+			? BMA_AJ_Reference_CPT::get_related_services( $ref_id )
+			: array();
+		$sub = $related ? implode( ' · ', wp_list_pluck( $related, 'post_title' ) ) : __( 'Referencia projekt', 'bma-engineering' );
+		?>
+		<div class="mobilebar" data-bma-mobilebar="reference">
+			<span class="mobilebar-info">
+				<strong><?php echo esc_html( $title ); ?></strong>
+				<span><?php echo esc_html( $sub ); ?></span>
+			</span>
+			<a href="<?php echo esc_url( bma_page_url( 'szolgaltatasok' ) ); ?>" class="btn btn--primary btn--sm"><?php esc_html_e( 'Ajánlat', 'bma-engineering' ); ?></a>
+		</div>
+		<?php
+		return;
+	}
+
+	$is_refs = class_exists( 'BMA_AJ_I18n' )
+		? BMA_AJ_I18n::is_page( 'referenciak' )
+		: is_page( array( 'referenciak', 'referinte', 'references' ) );
+
+	if ( $is_refs ) {
+		?>
+		<div class="mobilebar" data-bma-mobilebar="references">
+			<span class="mobilebar-info">
+				<strong><?php esc_html_e( 'Referenciák', 'bma-engineering' ); ?></strong>
+				<span><?php esc_html_e( 'Szűrés típus és szolgáltatás szerint', 'bma-engineering' ); ?></span>
+			</span>
+			<a href="<?php echo esc_url( bma_page_url( 'szolgaltatasok' ) ); ?>" class="btn btn--primary btn--sm"><?php esc_html_e( 'Ajánlat', 'bma-engineering' ); ?></a>
+		</div>
+		<?php
+		return;
+	}
+
 	$count = class_exists( 'BMA_AJ_Cart' ) ? (int) BMA_AJ_Cart::item_count() : 0;
 	$count_label = ( 1 === $count )
 		? __( '1 tétel kiválasztva', 'bma-engineering' )
@@ -364,8 +400,19 @@ function bma_mobilebar_body_class( array $classes ): array {
 	$is_form = class_exists( 'BMA_AJ_I18n' )
 		? BMA_AJ_I18n::is_page( 'ajanlatkeres' )
 		: is_page( array( 'ajanlatkeres', 'cerere-oferta', 'quote-request' ) );
+	$is_refs = class_exists( 'BMA_AJ_I18n' )
+		? BMA_AJ_I18n::is_page( 'referenciak' )
+		: is_page( array( 'referenciak', 'referinte', 'references' ) );
 
-	if ( is_front_page() || $is_services || is_singular( 'bma_service' ) || $is_cart || ( $is_form && empty( $_GET['submitted'] ) ) ) {
+	if (
+		is_front_page()
+		|| $is_services
+		|| $is_refs
+		|| is_singular( 'bma_service' )
+		|| is_singular( 'bma_reference' )
+		|| $is_cart
+		|| ( $is_form && empty( $_GET['submitted'] ) )
+	) {
 		$classes[] = 'has-mobilebar';
 	}
 	return $classes;

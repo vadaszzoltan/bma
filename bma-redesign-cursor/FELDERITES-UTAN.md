@@ -238,6 +238,31 @@ el az egész szekció.) A GYIK csak érvényes K/V párokkal jelenjen meg.
 A GYIK `<details>` elemekkel készült – ez jobb, mint a tervben lévő statikus lista
 (billentyűzettel kezelhető, JS nélkül működik). Marad így.
 
+## 14. A referencia CPT új mezői (2026-09-05, 9. lépés)
+
+A projekt oldal szöveges szekcióinak nem volt adatforrása, ezért a `bma_reference` CPT
+új metákat kapott. Szekció csak kitöltött mezőnél renderelődik.
+
+| Meta | Hol jelenik meg | Formátum |
+|---|---|---|
+| `_bma_task` | „A feladat" | szabad szöveg |
+| `_bma_work` | „Amit csináltunk" | soronként `Címke: szöveg` |
+| `_bma_result` | „Eredmény" | szabad szöveg |
+| `_bma_duration` | „Átfutás" sor | pl. `4 hónap` |
+
+Meglévő, változatlan mezők: `_bma_location`, `_bma_year`, `_bma_related_services`,
+`bma_reference_category`.
+
+## 15. A kosár csak TÉTELEKET fogad – nem szolgáltatásokat
+
+A `BMA_AJ_Cart` a `selected_items` tömbben tétel-ID-kat tárol; üres tétellistával a
+szolgáltatás kikerül a kosárból. **Szolgáltatás önmagában nem tehető kosárba.**
+
+Következmény a referencia projekt oldalon: a „Ehhez kapcsolódó szolgáltatások" panel
+gombja **nem** „Hozzáadás", hanem **„Részletek"** link a szolgáltatás oldalára, ahol a
+látogató a konkrét tételeket kiválasztja. A panel alján az „Ajánlatkérés indítása" a
+szolgáltatások listára visz.
+
 ## 12. Amit még tisztázni kell (kérdezz, ne találgass)
 
 1. Melyik `home-*.php` van már teljesen átvezetve, és melyik csak részben? (fájlonként

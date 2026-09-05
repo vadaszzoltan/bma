@@ -15,10 +15,11 @@ $gallery_ids   = isset( $gallery ) && is_array( $gallery ) ? $gallery : array();
 $gallery_csv   = implode( ',', array_map( 'absint', $gallery_ids ) );
 $project_types = array( 'Ipari beruházás', 'Új építés', 'Felújítás', 'Bővítés', 'Egyéb' );
 $categories    = array( 'Lakossági', 'Üzleti' );
+$work_value    = (string) ( $work ?? $work_done ?? '' );
 ?>
 <table class="form-table">
 	<tr>
-		<th><label for="bma_category"><?php esc_html_e( 'Kategória', 'bma-ajanlatkeres' ); ?></label></th>
+		<th><label for="bma_category"><?php esc_html_e( 'Kategória (típus)', 'bma-ajanlatkeres' ); ?></label></th>
 		<td>
 			<select id="bma_category" name="bma_category">
 				<option value=""><?php esc_html_e( '— Válasszon —', 'bma-ajanlatkeres' ); ?></option>
@@ -26,10 +27,11 @@ $categories    = array( 'Lakossági', 'Üzleti' );
 					<option value="<?php echo esc_attr( $cat ); ?>" <?php selected( ( $category ?? '' ), $cat ); ?>><?php echo esc_html( $cat ); ?></option>
 				<?php endforeach; ?>
 			</select>
+			<p class="description"><?php esc_html_e( 'Ez a bma_reference_category taxonómia (lista szűrő: ?tipus=…).', 'bma-ajanlatkeres' ); ?></p>
 		</td>
 	</tr>
 	<tr>
-		<th><label for="bma_project_type"><?php esc_html_e( 'Projekt típusa', 'bma-ajanlatkeres' ); ?></label></th>
+		<th><label for="bma_project_type"><?php esc_html_e( 'Projekt típusa (kicker)', 'bma-ajanlatkeres' ); ?></label></th>
 		<td>
 			<input type="text" id="bma_project_type" name="bma_project_type" list="bma_project_type_list" value="<?php echo esc_attr( $project_type ?? '' ); ?>" class="regular-text">
 			<datalist id="bma_project_type_list">
@@ -48,26 +50,40 @@ $categories    = array( 'Lakossági', 'Üzleti' );
 		<td><input type="text" id="bma_year" name="bma_year" value="<?php echo esc_attr( $year ?? '' ); ?>" class="small-text" placeholder="2024"></td>
 	</tr>
 	<tr>
-		<th><label for="bma_project_description"><?php esc_html_e( 'A projekt', 'bma-ajanlatkeres' ); ?></label></th>
-		<td><textarea id="bma_project_description" name="bma_project_description" rows="5" class="large-text"><?php echo esc_textarea( $project_description ?? '' ); ?></textarea></td>
-	</tr>
-	<tr>
-		<th><label for="bma_task"><?php esc_html_e( 'Mi volt a feladat?', 'bma-ajanlatkeres' ); ?></label></th>
-		<td><textarea id="bma_task" name="bma_task" rows="4" class="large-text"><?php echo esc_textarea( $task ?? '' ); ?></textarea></td>
-	</tr>
-	<tr>
-		<th><label for="bma_work_done"><?php esc_html_e( 'Mit végeztünk el?', 'bma-ajanlatkeres' ); ?></label></th>
+		<th><label for="bma_duration"><?php esc_html_e( 'Átfutás', 'bma-ajanlatkeres' ); ?></label></th>
 		<td>
-			<textarea id="bma_work_done" name="bma_work_done" rows="6" class="large-text" placeholder="<?php esc_attr_e( 'Egy sor = egy pont', 'bma-ajanlatkeres' ); ?>"><?php echo esc_textarea( $work_done ?? '' ); ?></textarea>
+			<input type="text" id="bma_duration" name="bma_duration" value="<?php echo esc_attr( $duration ?? '' ); ?>" class="regular-text" placeholder="<?php esc_attr_e( 'pl. 3 hónap', 'bma-ajanlatkeres' ); ?>">
+			<p class="description"><?php esc_html_e( 'Meta: _bma_duration – az „Amit csináltunk” blokk utolsó sora.', 'bma-ajanlatkeres' ); ?></p>
 		</td>
 	</tr>
 	<tr>
-		<th><label for="bma_solution"><?php esc_html_e( 'A megoldás', 'bma-ajanlatkeres' ); ?></label></th>
-		<td><textarea id="bma_solution" name="bma_solution" rows="4" class="large-text"><?php echo esc_textarea( $solution ?? '' ); ?></textarea></td>
+		<th><label for="bma_project_description"><?php esc_html_e( 'A projekt (rövid lead)', 'bma-ajanlatkeres' ); ?></label></th>
+		<td><textarea id="bma_project_description" name="bma_project_description" rows="3" class="large-text"><?php echo esc_textarea( $project_description ?? '' ); ?></textarea></td>
+	</tr>
+	<tr>
+		<th><label for="bma_task"><?php esc_html_e( 'A feladat', 'bma-ajanlatkeres' ); ?></label></th>
+		<td>
+			<textarea id="bma_task" name="bma_task" rows="4" class="large-text"><?php echo esc_textarea( $task ?? '' ); ?></textarea>
+			<p class="description"><?php esc_html_e( 'Meta: _bma_task – üresen a szekció nem jelenik meg.', 'bma-ajanlatkeres' ); ?></p>
+		</td>
+	</tr>
+	<tr>
+		<th><label for="bma_work"><?php esc_html_e( 'Amit csináltunk', 'bma-ajanlatkeres' ); ?></label></th>
+		<td>
+			<textarea id="bma_work" name="bma_work" rows="6" class="large-text" placeholder="<?php esc_attr_e( "Közmű-koordináció: Áram-, gáz- és vízszolgáltatói egyeztetések\nTervezés: Csatlakozási tervek készítése", 'bma-ajanlatkeres' ); ?>"><?php echo esc_textarea( $work_value ); ?></textarea>
+			<p class="description"><?php esc_html_e( 'Meta: _bma_work – soronként „Címke: szöveg”. Üresen a szekció kimarad.', 'bma-ajanlatkeres' ); ?></p>
+		</td>
+	</tr>
+	<tr>
+		<th><label for="bma_solution"><?php esc_html_e( 'A megoldás (opcionális)', 'bma-ajanlatkeres' ); ?></label></th>
+		<td><textarea id="bma_solution" name="bma_solution" rows="3" class="large-text"><?php echo esc_textarea( $solution ?? '' ); ?></textarea></td>
 	</tr>
 	<tr>
 		<th><label for="bma_result"><?php esc_html_e( 'Eredmény', 'bma-ajanlatkeres' ); ?></label></th>
-		<td><textarea id="bma_result" name="bma_result" rows="3" class="large-text"><?php echo esc_textarea( $result ?? '' ); ?></textarea></td>
+		<td>
+			<textarea id="bma_result" name="bma_result" rows="3" class="large-text"><?php echo esc_textarea( $result ?? '' ); ?></textarea>
+			<p class="description"><?php esc_html_e( 'Meta: _bma_result – üresen a szekció nem jelenik meg.', 'bma-ajanlatkeres' ); ?></p>
+		</td>
 	</tr>
 	<tr>
 		<th><?php esc_html_e( 'Projektgaléria', 'bma-ajanlatkeres' ); ?></th>

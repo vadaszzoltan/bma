@@ -179,7 +179,7 @@ szövegek túlnyomó része ÚJ.** A mezőcímkék viszont a portál részletes 
 | Elem | Állapot | Megjegyzés |
 |---|---|---|
 | Lépéscímek (Válassza ki a szolgáltatásokat / Adja meg a projekt adatait / Ellenőrizze és küldje be / Ajánlatkérés elküldve) | ÚJ | |
-| Lépéssáv feliratai (Szolgáltatások / Projekt adatai / Ellenőrzés és beküldés / Visszaigazolás) | ÚJ | |
+| Lépéssáv feliratai | ÚJ, **a tervhez képest módosítva** | A három meglévő oldalhoz igazítva: **01 Szolgáltatások · 02 Kosár · 03 Adatok és beküldés · 04 Visszaigazolás** (a tervben „Projekt adatai" / „Ellenőrzés és beküldés" szerepelt) |
 | Mezőcímkék: Projekt helyszíne, Helyrajzi szám, Épület funkciója, Építési fázis, Alapterület (m²), Szintek száma, Kívánt határidő, További megjegyzés, Becsült vízigény (m³/nap) stb. | VÁLTOZATLAN | A portálon látott valós mezőnevek. |
 | „Kapcsolódó korábbi ügy" mező | ÚJ | Új mező javaslata – ha nem kell, hagyd ki. |
 | Feltöltő doboz szövege | ÚJ + HELYŐRZŐ | „Húzza ide a fájlokat, vagy tallózzon" / „PDF, DWG, JPG, DOCX · legfeljebb **[X] MB** / fájl" |
@@ -248,7 +248,8 @@ szándékosan nem írtam bele kitalált projektleírást.
 | „A feladat", „Amit csináltunk", „Eredmény", „Képek" címek | ÚJ | |
 | A három szövegtörzs | HELYŐRZŐ | `[A projekt kiindulási helyzete…]` stb. – **az ügyfél tölti ki**, ne generáljatok bele szöveget |
 | „Amit csináltunk" sorai | ÚJ | Közmű-koordináció / Tervezés / Dokumentáció / Átfutás **[X] hónap** |
-| „Ehhez kapcsolódó szolgáltatások" panel + „Hozzáadás" gombok | ÚJ | Ez köti össze a referenciát az ajánlatkéréssel. |
+| „Ehhez kapcsolódó szolgáltatások" panel | ÚJ | Ez köti össze a referenciát az ajánlatkéréssel. |
+| A panel gombjának felirata | **MÓDOSÍTOTT a tervhez képest** | A tervben „Hozzáadás" szerepel, de a kosár csak tételeket fogad, szolgáltatást nem. Élesben **„Részletek"**, link a szolgáltatás oldalára. |
 | „További projektek" panel | ÚJ | |
 | Záró sáv „Hasonló projektet tervez?" | ÚJ | |
 | Doboz alatti megjegyzés | ÚJ | „A projekt részletei az ügyféllel egyeztetett mértékben nyilvánosak." – jogi óvatosság, törölhető |
@@ -290,6 +291,7 @@ A `/szolgaltatas/tervezes/` oldal létezik; az alábbiak ahhoz képest értendő
 | ~~`[TELEPÜLÉS]`, `[ÉVSZÁM]`~~ | referencia projekt | **már nem helyőrző** – `_bma_location` és `_bma_year` metából jön |
 | `[A projekt kiindulási helyzete…]` és a többi zárójeles bekezdés | referencia projekt | projektleírások |
 | GYIK válaszok | szolgáltatás aloldal | ügyfél írja – `_bma_faq` meta, `K: …` / `V: …` formátum |
+| „A feladat" / „Amit csináltunk" / „Eredmény" / „Átfutás" | referencia projekt oldal | ügyfél írja – `_bma_task`, `_bma_work`, `_bma_result`, `_bma_duration` meták |
 | „Mire lesz szükség?" három oszlopa | szolgáltatás aloldal | ügyfél írja – `_bma_needs_required`, `_bma_needs_optional`, `_bma_needs_later` meták, soronként egy tétel |
 
 ---
