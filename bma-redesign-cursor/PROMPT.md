@@ -1,54 +1,85 @@
-# Bemásolható prompt Cursorhoz
+# Bemásolható Cursor-prompt
 
-> Az alábbi szöveget másold be a Cursor chatbe, miután a `bma-redesign-cursor` mappát
-> bemásoltad a projekt gyökerébe.
+> A csomag a Letöltések mappában van: `bma-redesign-cursor.zip`.
+> Cursor: **Agent mód**, ne Ask.
 
 ---
 
-A projekt egy WordPress oldal: `bma-engineering-child` gyerektéma (szülő: `ollie`) és
-egy saját `bma-ajanlatkeres` plugin.
+## Első üzenet (kicsomagolás + ellenőrzés + feltérképezés)
 
-A repo gyökerében van egy `bma-redesign-cursor/` mappa: ez egy jóváhagyott UI-terv
-implementációs csomagja. Olvasd el elsőként a `bma-redesign-cursor/README.md`-t, majd
-a `VALTOZASOK.md`-t.
+```
+A terv-csomag a Letöltések mappámban van: bma-redesign-cursor.zip
+(macOS/Linux: ~/Downloads/bma-redesign-cursor.zip,
+Windows: %USERPROFILE%\Downloads\bma-redesign-cursor.zip)
 
-Feladat, ebben a sorrendben, külön commitokban:
+1) CSOMAG
+   Csomagold ki a projekt gyökerébe úgy, hogy a meglévő bma-redesign-cursor/ mappát
+   TELJESEN felülírja. Ellenőrizd, hogy megvan:
+     FELDERITES-UTAN.md, README.md, SZOVEGVALTOZASOK.md, VALTOZASOK.md, PROMPT.md,
+     css/bma-v2.css,
+     markup/01-fooldal.html, 02-szolgaltatasok.html, 03-ajanlatkeres.html,
+     04-ugyfelportal.html, 05-referenciak.html, 06-referencia-projekt.html,
+     07-szolgaltatas-aloldal.html
+   Ha BÁRMELYIK hiányzik: állj meg, írd ki mi hiányzik, és ne csinálj tovább semmit.
 
-1. **Feltérképezés.** Keresd meg és sorold fel: hol renderelődik a főoldal minden szekciója
-   (`.bma-hero`, `.bma-home-services`, `.bma-home-multi`, `.bma-home-benefits`,
-   `.bma-home-process`, `.bma-home-references`, `.bma-home-about`, `.bma-home-closing`),
-   hol a `/szolgaltatasok/`, `/ajanlatkeres/` és `/ugyfelportal/` template-je, és hol van
-   a kosár (ajánlat) állapotkezelése. Írd ki, mit találtál, és **még ne módosíts semmit**.
+2) OLVASÁS – ebben a sorrendben
+   FELDERITES-UTAN.md   (ez felülírja a README feltételezéseit – ütközésnél EZ a mérvadó)
+   README.md
+   SZOVEGVALTOZASOK.md
+   VALTOZASOK.md
+   PROMPT.md
 
-2. **CSS bekötés.** Másold be a `css/bma-v2.css`-t a gyerektéma `assets/css/` mappájába,
-   és kösd be a meglévő `theme.css` enqueue után, függőségként megadva annak a handle-jét.
+3) 1. LÉPÉS – CSAK FELTÉRKÉPEZÉS
+   NE módosíts egyetlen fájlt sem. NE futtass adatbázis-parancsot.
+   Írd ki:
+   - létezik-e wp-content/themes/bma-engineering-child/assets/css/bma-v2.css,
+     és miben tér el a csomagbeli css/bma-v2.css-től (a különbség lényege, nem teljes diff)
+   - a home-*.php fájlok jelenlegi markupja mennyire egyezik a markup/01-fooldal.html
+     megfelelő blokkjaival – fájlonként: MEGEGYEZIK / RÉSZBEN / NINCS ÁTVEZETVE
+   - a services-list.php, quote-cart.php, quote-form.php, client-portal.php,
+     references-list.php, single-bma_reference.php, single-bma_service.php
+     jelenlegi állapota ugyanígy
+   - van-e _bma_location meta a bma_reference CPT-n, és mik a bma_reference_category
+     taxonómia jelenlegi értékei
+   - a header.php-ban a Polylang nyelvváltó jelenlegi kimenete (melyik függvény, milyen markup)
+   - mit NEM találtál meg
 
-3. **Főoldal.** Cseréld le a szekciók belső markupját a `markup/01-fooldal.html` szerint.
-   A dinamikus tartalom (szolgáltatások, referenciák) maradjon adatvezérelt – a fájlban
-   lévő szöveg csak minta. A külső `.bma-section` / `.bma-container` burkolókat tartsd meg.
+   Ha valamiben bizonytalan vagy: kérdezz, NE találgass.
+```
 
-4. **Szolgáltatás lista.** A `/szolgaltatasok/` oldal a `markup/02-szolgaltatasok.html` szerint:
-   területenként panel, ugróhivatkozások, ragadós kosár-összegző. A tételválasztót **külön
-   sablonrészletként** (template part) csináld meg, mert az ajánlatkérő 1. lépése ugyanaz.
+## Következő üzenetek (egyesével, külön committal)
 
-5. **Szolgáltatás aloldal.** A meglévő `/szolgaltatas/{slug}/` sablon átdolgozása a
-   `markup/05-szolgaltatas-aloldal.html` alapján, mind a négy területre. Javítsd a fejléc fölött
-   formázatlanul megjelenő hu/ro/en nyelvváltót is.
+Minden lépés után: `git diff` → átnézed → commit. Csak akkor engedd a következőt.
 
-6. **Ajánlatkérő folyamat.** Alakítsd 4 lépéses folyamattá a `markup/03-ajanlatkeres.html`
-   szerint, a 4. pontban készített tételválasztó sablonrészletet újrahasználva. A kiválasztás
-   azonnal frissítse a kosarat és a fejléc számlálóját (AJAX + nonce), ne külön „hozzáadás"
-   gombbal. A meglévő kosár- és mentési logikát tartsd meg.
+```
+Rendben. Most CSAK a 2. lépést csináld meg, és állj meg.
+```
 
-7. **Ügyfélportál.** A `markup/04-ugyfelportal.html` szerint: teendő-sáv, szűrő csempék és fülek,
-   bővebb táblázatsorok, dokumentum-panel, és a részletes nézet átrendezése.
+| Lépés | Mit csinál | Fájlok |
+|---|---|---|
+| **2** | CSS: a meglévő `bma-v2.css` felülírása a csomagbelivel (ha eltér); enqueue ellenőrzése (`bma-v2`, függőség `bma-theme-layout`) | gyerektéma |
+| **3** | Nyelvválasztó: a meglévő Polylang-kimenet lecserélése a `.langswitch` markupra a fejlécben és a láblécben | `header.php`, `footer.php` / `class-i18n.php` |
+| **4** | Főoldal szekciónként – **előbb eltérés-lista, csak utána írás** | `home-*.php` |
+| **5** | Szolgáltatás lista + a tételválasztó **közös partialba** emelése | `services-list.php`, `partials/*` |
+| **6** | Szolgáltatás aloldal (mind a 4 területre) | `single-bma_service.php` |
+| **7** | Kosár + ajánlatkérő űrlap + visszaigazolás, lépéssávval | `quote-cart.php`, `quote-form.php` |
+| **8** | Ügyfélportál (lista + részletes nézet) | `client-portal.php` |
+| **9** | Referenciák lista (meta-alapú szűrő) + projekt oldal | `references-list.php`, `single-bma_reference.php` |
+| **10** | Mobil menü JS (`.burger`): nyitás/zárás, `aria-expanded`, Esc, fókuszcsapda, benne a nyelvválasztó | téma JS |
 
-Szabályok:
-- Ne írd át a `:root` design tokeneket, és ne nyúlj a szülő témához.
-- Minden felhasználói szöveg `__()` / `esc_html()` / `esc_attr()`.
-- A markupban `{{...}}` dinamikus érték, `[SZÖGLETES ZÁRÓJEL]` pedig hiányzó valós adat –
-  utóbbit hagyd benne helyőrzőként, és a végén listázd, mit kell kitölteni.
-- A közös komponenseket (`.pagehead`, `.panel`, `.task`, `.summary`, `.btn`, `.process`) egyszer
-  valósítsd meg sablonrészletként, és mindenhol azt használd – ne szülessen két változat
-  ugyanarra.
-- Minden lépés után írd le egy mondatban, mit változtattál és melyik fájlban.
+## Szabályok – minden lépésre érvényes
+
+- **Ne találgass.** Ha egy adat nem derül ki a kódból, kérdezz. A `[SZÖGLETES ZÁRÓJELES]`
+  helyőrzőket hagyd benne, és a végén listázd, mit kell kitölteni.
+- **Ne írd át azt a szöveget**, ami nincs a `SZOVEGVALTOZASOK.md`-ben felsorolva. Az a
+  meglévő stringből vagy adatbázis-mezőből jöjjön.
+- **Ne írj felül vakon.** Ahol a meglévő PHP már megegyezik a tervvel, ne nyúlj hozzá.
+- **Ne nyúlj a szülő témához** (`ollie`), és **ne írd felül a `:root` tokeneket** a plugin
+  `public.css`-ében.
+- **Tartsd meg a kosár logikát**: `BMA_AJ_Cart`, `bma_add_to_cart`, `bma_remove_from_cart`,
+  `bma_submit_quote_request`, nonce `bma_aj_public`. A terv csak a megjelenítést változtatja.
+- **Ne hozz létre új taxonómiát.** A referencia-szűrő meglévő metákra épül.
+- **Text domain**: plugin → `bma-ajanlatkeres`, téma → `bma-engineering`. Ne vezess be újat.
+- **Escape**: `esc_html()`, `esc_attr()`, `esc_url()`, `wp_kses_post()` ahol HTML kell.
+- **Ne futtass adatbázis-parancsot** (`wp db`, `DROP`, `TRUNCATE`, migráció) engedély nélkül.
+- Minden lépés végén írd le egy-két mondatban, mit változtattál és melyik fájlban.

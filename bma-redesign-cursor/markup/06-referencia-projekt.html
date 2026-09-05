@@ -1,0 +1,177 @@
+<!--
+  Oldal:    /referencia/{slug}/  (CPT: bma_reference)
+  Cel PHP:  plugins/bma-ajanlatkeres/templates/single-bma_reference.php
+  Komponensek: .pagehead .sidecard .rd-hero .rd-block .rd-facts .gallery .svclink .closing .mobilebar
+  Jelolesek:   {{...}} = dinamikus ertek (lasd README 'Token-szotar')
+               [SZOGLETES ZAROJEL] = kitoltendo valos adat
+               <sc-if> / <sc-for> = felteteles blokk / ismetles (PHP if / foreach)
+  FIGYELEM: mielott barmely szoveget lecserelnel, olvasd el a SZOVEGVALTOZASOK.md-t.
+            Ugyanez a markup szolgal ki desktopot, tabletet es mobilt.
+-->
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>+40 728 205 982</span>
+    <span>office@bmaeng.ro</span>
+    <span>Hétfő–Péntek, 08:00–17:00</span>
+    <div class="langswitch" role="group" aria-label="Nyelv választása">
+      <a href="#" class="lang is-on" lang="hu" hreflang="hu" aria-current="true">HU</a>
+      <a href="#" class="lang" lang="ro" hreflang="ro">RO</a>
+      <a href="#" class="lang" lang="en" hreflang="en">EN</a>
+    </div>
+  </div>
+</div>
+<header class="siteheader">
+  <div class="header-inner">
+    <button type="button" class="burger" aria-label="Menü megnyitása">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#0e2356" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+    </button>
+    <div class="logo">[LOGÓ]</div>
+    <nav class="nav">
+      <a href="#">Főoldal</a>
+      <a href="#">Szolgáltatások</a>
+      <a href="#">Referenciák</a>
+      <a href="#">Kapcsolat</a>
+    </nav>
+    <div class="header-actions">
+      <span class="cart-btn">Ajánlat <span class="cart-count">0</span></span>
+      <a href="#" style="font-size:14px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#0e2356">Ügyfélportál</a>
+      <a href="#" class="btn btn--outline btn--sm" style="letter-spacing:.6px;text-transform:uppercase;font-size:13px;font-weight:700">Belépés</a>
+    </div>
+  </div>
+</header>
+
+<section class="pagehead">
+  <div class="pagehead-inner pagehead-inner--split">
+    <div>
+      <p class="crumb"><a href="#">Főoldal</a> / <a href="#">Referenciák</a> / Ipari csarnok</p>
+      <p class="eyebrow eyebrow--light">Ipari beruházás · Üzleti</p>
+      <h1>Ipari csarnok – közmű koordináció</h1>
+      <p class="pagehead-lead">Ipari beruházás közműcsatlakozásainak egyeztetése és dokumentálása, a szükséges műszaki és szolgáltatói folyamatok összehangolásával.</p>
+    </div>
+    <div class="sidecard">
+      <h3>Projekt adatai</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"></path></svg><span>Helyszín: [TELEPÜLÉS]</span></li>
+        <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V7l8-4 8 4v13z"></path></svg><span>Típus: ipari csarnok</span></li>
+        <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7v5l3 2"></path></svg><span>Év: [ÉVSZÁM]</span></li>
+        <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"></path></svg><span>Szolgáltatások: közmű-koordináció, tervezés</span></li>
+      </ul>
+      <span class="tiny" style="color:#8fa2c4;display:block">A projekt részletei az ügyféllel egyeztetett mértékben nyilvánosak.</span>
+    </div>
+  </div>
+</section>
+
+<div class="rd-hero"><span>[Fő projektfotó – 1440 × 420]</span></div>
+
+<div class="appbody">
+  <div class="bma-container">
+    <div class="rd-grid">
+      <div>
+        <div class="rd-block">
+          <h2>A feladat</h2>
+          <p>[A projekt kiindulási helyzete: milyen beruházás készült, milyen közműcsatlakozásokra volt szükség, és milyen határidőhöz kellett igazodni.]</p>
+          <p>[Mi volt a nehézség – például több szolgáltató párhuzamos egyeztetése, meglévő hálózat átalakítása, vagy hiányos kiindulási dokumentáció.]</p>
+        </div>
+
+        <div class="rd-block">
+          <h2>Amit csináltunk</h2>
+          <div class="rd-facts">
+            <div class="datarow"><span>Közmű-koordináció</span><strong style="font-weight:600">Áram-, gáz- és vízszolgáltatói egyeztetések, csatlakozási igények benyújtása</strong></div>
+            <div class="datarow"><span>Tervezés</span><strong style="font-weight:600">Csatlakozási tervek készítése a szolgáltatói előírások szerint</strong></div>
+            <div class="datarow"><span>Dokumentáció</span><strong style="font-weight:600">Az egyeztetések és határidők nyomon követhető dokumentálása</strong></div>
+            <div class="datarow"><span>Átfutás</span><strong style="font-weight:600">[X] hónap</strong></div>
+          </div>
+        </div>
+
+        <div class="rd-block">
+          <h2>Eredmény</h2>
+          <p>[Mi lett a kimenet: milyen csatlakozások valósultak meg, milyen dokumentáció készült, és mi volt ebből az ügyfél haszna – például kiszámítható határidők vagy egy kapcsolattartó több helyett.]</p>
+        </div>
+
+        <div class="rd-block">
+          <h2>Képek</h2>
+          <div class="gallery">
+            <div>[Fotó 1]</div>
+            <div>[Fotó 2]</div>
+            <div>[Fotó 3]</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel" style="margin-bottom:24px">
+          <div class="panel-head"><h2>Ehhez kapcsolódó szolgáltatások</h2></div>
+          <div class="svclink"><span><strong>Közmű-koordináció</strong><span>Szolgáltatói egyeztetések</span></span><a href="#" class="btn btn--outline btn--sm">Hozzáadás</a></div>
+          <div class="svclink"><span><strong>Tervezés</strong><span>Csatlakozási tervek</span></span><a href="#" class="btn btn--outline btn--sm">Hozzáadás</a></div>
+          <div class="sum-foot"><a href="#" class="btn btn--primary btn--sm" style="width:100%;justify-content:center">Ajánlatkérés indítása</a><p class="sum-note">Az ajánlatkérés díjmentes és nem jár kötelezettséggel.</p></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h2>További projektek</h2></div>
+          <div class="svclink"><span><strong>Új építés – engedélyeztetés</strong><span>Lakossági</span></span></div>
+          <div class="svclink"><span><strong>Lakóingatlan-bővítés</strong><span>Lakossági</span></span></div>
+          <div class="svclink"><span><strong>Üzleti felújítás</strong><span>Üzleti</span></span></div>
+          <div class="sum-foot"><a href="#" class="btn btn--outline btn--sm" style="width:100%;justify-content:center">Összes referencia</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="closing">
+  <div class="closing-inner">
+    <div>
+      <p class="eyebrow eyebrow--light">Következő lépés</p>
+      <h2 class="h2">Hasonló projektet tervez?</h2>
+      <p>Állítsa össze, mire van szüksége, és néhány adat megadásával kérjen személyre szabott ajánlatot.</p>
+    </div>
+    <div class="closing-actions">
+      <a href="#" class="btn btn--primary">Ajánlatkérés indítása</a>
+      <a href="#" class="btn btn--ghost-light">Kapcsolat</a>
+    </div>
+  </div>
+</section>
+
+<div class="mobilebar">
+  <span class="mobilebar-info"><strong>Ipari csarnok</strong><span>Közmű-koordináció · Tervezés</span></span>
+  <a href="#" class="btn btn--primary btn--sm">Ajánlat</a>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="logo" style="background:transparent;border:1px dashed rgba(255,255,255,.45);color:#fff;width:112px;height:44px;margin-bottom:18px">[LOGÓ]</div>
+      <div style="font-weight:700;color:#fff;margin-bottom:10px">BMA ENGINEERING S.R.L.</div>
+      <div class="small" style="line-height:1.6">Str. Raza Soarelui 11<br>535600 Odorheiu Secuiesc<br>Harghita, Romania</div>
+      <div class="small" style="margin-top:12px">+40 728 205 982 · office@bmaeng.ro</div>
+      <div class="small" style="margin-top:6px">CUI: 40593519</div>
+      <div style="margin-top:18px">
+        <div class="langswitch langswitch--light" role="group" aria-label="Nyelv választása">
+          <a href="#" class="lang is-on" lang="hu" hreflang="hu" aria-current="true">HU</a>
+          <a href="#" class="lang" lang="ro" hreflang="ro">RO</a>
+          <a href="#" class="lang" lang="en" hreflang="en">EN</a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h4>Navigáció</h4>
+      <div class="footer-links">
+        <a href="#">Főoldal</a>
+        <a href="#">Szolgáltatások</a>
+        <a href="#">Referenciák</a>
+        <a href="#">Kapcsolat</a>
+        <a href="#">Ügyfélportál</a>
+      </div>
+    </div>
+    <div>
+      <h4>Ajánlatkérés</h4>
+      <p class="small" style="margin:0 0 16px;line-height:1.6">Válassza ki a szükséges szolgáltatásokat, és néhány adat megadásával kérjen személyre szabott ajánlatot.</p>
+      <a href="#" class="btn btn--primary btn--sm">Ajánlatkérés indítása</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 BMA ENGINEERING S.R.L.</span>
+    <span>Adatvédelem · Cookie tájékoztató · ÁSZF</span>
+  </div>
+</footer>

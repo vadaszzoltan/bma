@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 $company = BMA_AJ_Company::get( 'company_name' );
 $cui     = BMA_AJ_Company::get( 'cui' );
 $hours   = BMA_AJ_Company::get( 'opening_hours' );
-$con_url = ( class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'kapcsolat' ) : home_url( '/kapcsolat/' ) );
+$con_url = function_exists( 'bma_page_url' ) ? bma_page_url( 'kapcsolat' ) : home_url( '/' );
 ?>
 <section class="bma-section bma-section--bg bma-home-about" aria-labelledby="bma-about-title">
 	<div class="bma-container">

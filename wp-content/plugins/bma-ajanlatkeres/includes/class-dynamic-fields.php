@@ -61,6 +61,108 @@ final class BMA_AJ_Dynamic_Fields {
 	}
 
 	/**
+	 * Fields assigned only to a service item (entity_type = service_item).
+	 *
+	 * @param int $item_id Service item ID.
+	 * @return array<int, object>
+	 */
+	public static function get_fields_for_item( int $item_id ): array {
+		global $wpdb;
+		$item_id = absint( $item_id );
+		if ( ! $item_id ) {
+			return array();
+		}
+
+		$table  = $wpdb->prefix . 'bma_dynamic_fields';
+		$assign = $wpdb->prefix . 'bma_field_assignments';
+
+		$rows = $wpdb->get_results(
+			$wpdb->prepare(
+				"SELECT f.*, a.entity_type, a.entity_id, a.sort_order AS assign_order
+				FROM {$table} f
+				INNER JOIN {$assign} a ON a.field_id = f.id
+				WHERE f.is_active = 1
+				AND a.entity_type = 'service_item'
+				AND a.entity_id = %d
+				ORDER BY a.sort_order ASC, f.sort_order ASC",
+				$item_id
+			)
+		);
+
+		return is_array( $rows ) ? self::dedupe_fields( $rows ) : array();
+	}
+
+	/**
+	 * Fields assigned only at service level (entity_type = service).
+	 *
+	 * @param int $service_id Service post ID.
+	 * @return array<int, object>
+	 */
+	public static function get_fields_for_service( int $service_id ): array {
+		global $wpdb;
+		$service_id = absint( $service_id );
+		if ( ! $service_id ) {
+			return array();
+		}
+
+		$table  = $wpdb->prefix . 'bma_dynamic_fields';
+		$assign = $wpdb->prefix . 'bma_field_assignments';
+
+		$rows = $wpdb->get_results(
+			$wpdb->prepare(
+				"SELECT f.*, a.entity_type, a.entity_id, a.sort_order AS assign_order
+				FROM {$table} f
+				INNER JOIN {$assign} a ON a.field_id = f.id
+				WHERE f.is_active = 1
+				AND a.entity_type = 'service'
+				AND a.entity_id = %d
+				ORDER BY a.sort_order ASC, f.sort_order ASC",
+				$service_id
+			)
+		);
+
+		return is_array( $rows ) ? self::dedupe_fields( $rows ) : array();
+	}
+
+	/**
+	 * Exclude field types from a list.
+	 *
+	 * @param array<int, object> $fields Field rows.
+	 * @param string[]           $types  Field types to drop.
+	 * @return array<int, object>
+	 */
+	public static function exclude_field_types( array $fields, array $types ): array {
+		$types = array_map( 'strval', $types );
+		return array_values(
+			array_filter(
+				$fields,
+				static function ( $field ) use ( $types ) {
+					return ! in_array( (string) ( $field->field_type ?? '' ), $types, true );
+				}
+			)
+		);
+	}
+
+	/**
+	 * Keep only matching field types.
+	 *
+	 * @param array<int, object> $fields Field rows.
+	 * @param string[]           $types  Field types to keep.
+	 * @return array<int, object>
+	 */
+	public static function only_field_types( array $fields, array $types ): array {
+		$types = array_map( 'strval', $types );
+		return array_values(
+			array_filter(
+				$fields,
+				static function ( $field ) use ( $types ) {
+					return in_array( (string) ( $field->field_type ?? '' ), $types, true );
+				}
+			)
+		);
+	}
+
+	/**
 	 * Deduplicate fields by field_key; merge required flag.
 	 *
 	 * @param array<int, object> $fields Field rows.
@@ -208,13 +310,18 @@ final class BMA_AJ_Dynamic_Fields {
 	/**
 	 * Render field HTML.
 	 *
-	 * @param object $field Field object.
-	 * @param mixed  $value Current value.
+	 * @param object              $field Field object.
+	 * @param mixed               $value Current value.
+	 * @param array<string,mixed> $args  Optional: skin=v2|legacy, id_suffix, wrap_class, full_width.
 	 */
-	public static function render_field( object $field, $value = '' ): string {
-		$id    = esc_attr( 'bma_field_' . $field->field_key );
-		$name  = esc_attr( 'field_values[' . $field->field_key . ']' );
-		$label = esc_html( $field->client_label );
+	public static function render_field( object $field, $value = '', array $args = array() ): string {
+		$skin      = ( $args['skin'] ?? 'legacy' ) === 'v2' ? 'v2' : 'legacy';
+		$id_suffix = isset( $args['id_suffix'] ) ? (string) $args['id_suffix'] : '';
+		$id        = esc_attr( 'bma_field_' . $field->field_key . $id_suffix );
+		$name      = esc_attr( 'field_values[' . $field->field_key . ']' );
+		$label     = esc_html( $field->client_label );
+		$input_cls = ( 'v2' === $skin ) ? ' class="input"' : '';
+		$label_cls = ( 'v2' === $skin ) ? ' class="field-label"' : '';
 		if ( class_exists( 'BMA_AJ_I18n' ) ) {
 			$tr = BMA_AJ_I18n::overlay( 'dynamic_fields', (string) (int) $field->id, 'client_label' );
 			if ( '' !== $tr ) {
@@ -229,9 +336,9 @@ final class BMA_AJ_Dynamic_Fields {
 				$field->placeholder = $ph;
 			}
 		}
-		$req   = $field->is_required ? ' required' : '';
-		$desc  = $field->description ? '<p class="bma-field-desc">' . esc_html( $field->description ) . '</p>' : '';
-		$ph    = esc_attr( $field->placeholder );
+		$req  = $field->is_required ? ' required' : '';
+		$desc = $field->description ? '<p class="bma-field-desc small muted">' . esc_html( $field->description ) . '</p>' : '';
+		$ph   = esc_attr( $field->placeholder );
 
 		$options = json_decode( $field->options ?? '[]', true ) ?: array();
 		if ( class_exists( 'BMA_AJ_I18n' ) ) {
@@ -243,10 +350,24 @@ final class BMA_AJ_Dynamic_Fields {
 			}
 		}
 
+		$wrap = 'bma-form-field bma-field-type-' . esc_attr( $field->field_type );
+		if ( ! empty( $args['full_width'] ) || 'textarea' === $field->field_type || 'file' === $field->field_type || 'address' === $field->field_type ) {
+			$wrap .= ' full';
+		}
+		if ( ! empty( $args['wrap_class'] ) ) {
+			$wrap .= ' ' . sanitize_html_class( (string) $args['wrap_class'] );
+		}
+
 		ob_start();
-		echo '<div class="bma-form-field bma-field-type-' . esc_attr( $field->field_type ) . '">';
-		if ( 'hidden' !== $field->field_type ) {
-			echo '<label for="' . $id . '">' . $label;
+		echo '<div class="' . esc_attr( $wrap ) . '">';
+		if ( 'hidden' !== $field->field_type && 'file' !== $field->field_type ) {
+			echo '<label for="' . $id . '"' . $label_cls . '>' . $label;
+			if ( $field->is_required ) {
+				echo ' <span class="required">*</span>';
+			}
+			echo '</label>';
+		} elseif ( 'file' === $field->field_type ) {
+			echo '<label for="' . $id . '"' . $label_cls . '>' . $label;
 			if ( $field->is_required ) {
 				echo ' <span class="required">*</span>';
 			}
@@ -255,22 +376,22 @@ final class BMA_AJ_Dynamic_Fields {
 
 		switch ( $field->field_type ) {
 			case 'textarea':
-				echo '<textarea id="' . $id . '" name="' . $name . '" placeholder="' . $ph . '"' . $req . '>' . esc_textarea( $value ) . '</textarea>';
+				echo '<textarea id="' . $id . '" name="' . $name . '" class="input" rows="3" placeholder="' . $ph . '"' . $req . '>' . esc_textarea( (string) $value ) . '</textarea>';
 				break;
 			case 'number':
-				echo '<input type="number" id="' . $id . '" name="' . $name . '" value="' . esc_attr( $value ) . '" placeholder="' . $ph . '"' . $req . '>';
+				echo '<input type="number" id="' . $id . '" name="' . $name . '"' . $input_cls . ' value="' . esc_attr( (string) $value ) . '" placeholder="' . $ph . '"' . $req . '>';
 				break;
 			case 'email':
-				echo '<input type="email" id="' . $id . '" name="' . $name . '" value="' . esc_attr( $value ) . '" placeholder="' . $ph . '"' . $req . '>';
+				echo '<input type="email" id="' . $id . '" name="' . $name . '"' . $input_cls . ' value="' . esc_attr( (string) $value ) . '" placeholder="' . $ph . '"' . $req . '>';
 				break;
 			case 'tel':
-				echo '<input type="tel" id="' . $id . '" name="' . $name . '" value="' . esc_attr( $value ) . '" placeholder="' . $ph . '"' . $req . '>';
+				echo '<input type="tel" id="' . $id . '" name="' . $name . '"' . $input_cls . ' value="' . esc_attr( (string) $value ) . '" placeholder="' . $ph . '"' . $req . '>';
 				break;
 			case 'date':
-				echo '<input type="date" id="' . $id . '" name="' . $name . '" value="' . esc_attr( $value ) . '"' . $req . '>';
+				echo '<input type="date" id="' . $id . '" name="' . $name . '"' . $input_cls . ' value="' . esc_attr( (string) $value ) . '"' . $req . '>';
 				break;
 			case 'select':
-				echo '<select id="' . $id . '" name="' . $name . '"' . $req . '>';
+				echo '<select id="' . $id . '" name="' . $name . '"' . $input_cls . $req . '>';
 				echo '<option value="">' . esc_html__( 'Válasszon…', 'bma-ajanlatkeres' ) . '</option>';
 				foreach ( $options as $opt ) {
 					echo '<option value="' . esc_attr( $opt ) . '" ' . selected( $value, $opt, false ) . '>' . esc_html( $opt ) . '</option>';
@@ -294,16 +415,28 @@ final class BMA_AJ_Dynamic_Fields {
 				}
 				break;
 			case 'file':
+				$max_mb = max( 1, (int) floor( wp_max_upload_size() / MB_IN_BYTES ) );
+				echo '<div class="drop" data-bma-drop>';
+				echo '<svg class="icon" viewBox="0 0 24 24" style="margin:0 auto 10px;display:block" aria-hidden="true"><path d="M12 16V4M8 8l4-4 4 4"></path><path d="M4 16v3h16v-3"></path></svg>';
+				echo '<strong>' . esc_html__( 'Húzza ide a fájlokat, vagy tallózzon', 'bma-ajanlatkeres' ) . '</strong>';
+				echo '<span class="small muted">' . esc_html(
+					sprintf(
+						/* translators: %d: max upload size in MB */
+						__( 'PDF, DWG, JPG, DOCX · legfeljebb %d MB / fájl', 'bma-ajanlatkeres' ),
+						$max_mb
+					)
+				) . '</span>';
 				echo '<input type="file" id="' . $id . '" name="' . $name . '" class="bma-file-input" data-field-key="' . esc_attr( $field->field_key ) . '"' . $req . '>';
+				echo '</div>';
 				break;
 			case 'address':
-				echo '<textarea id="' . $id . '" name="' . $name . '" placeholder="' . esc_attr__( 'Irányítószám, város, utca, házszám', 'bma-ajanlatkeres' ) . '"' . $req . '>' . esc_textarea( $value ) . '</textarea>';
+				echo '<textarea id="' . $id . '" name="' . $name . '" class="input" rows="3" placeholder="' . esc_attr__( 'Irányítószám, város, utca, házszám', 'bma-ajanlatkeres' ) . '"' . $req . '>' . esc_textarea( (string) $value ) . '</textarea>';
 				break;
 			case 'hidden':
-				echo '<input type="hidden" id="' . $id . '" name="' . $name . '" value="' . esc_attr( $value ) . '">';
+				echo '<input type="hidden" id="' . $id . '" name="' . $name . '" value="' . esc_attr( (string) $value ) . '">';
 				break;
 			default:
-				echo '<input type="text" id="' . $id . '" name="' . $name . '" value="' . esc_attr( $value ) . '" placeholder="' . $ph . '"' . $req . '>';
+				echo '<input type="text" id="' . $id . '" name="' . $name . '"' . $input_cls . ' value="' . esc_attr( (string) $value ) . '" placeholder="' . $ph . '"' . $req . '>';
 		}
 
 		echo $desc;

@@ -1,0 +1,233 @@
+/* =====================================================================
+   Téma-specifikus illesztések a WP markuphoz.
+   Ideiglenes elemek jelölve: ezek a megfelelő lépés után törlendők.
+
+   Betöltés: bma-v2.css UTÁN (függőség: bma-v2).
+   A design CSS (bma-v2.css) csomagból jön – ide NE kerüljön design szabály.
+   ===================================================================== */
+
+/* ---- WP menü (wp_nav_menu → .bma-menu) ---- */
+.nav .bma-menu,
+.nav ul {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav .bma-menu a,
+.nav a {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--bma-primary);
+}
+.nav .bma-menu a:hover,
+.nav a:hover { color: var(--bma-accent); }
+
+/* ---- Logo (custom-logo / placeholder) ---- */
+.logo .bma-logo-block,
+.logo .bma-logo-placeholder-box {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--bma-font-heading);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  background: var(--bma-accent);
+  text-decoration: none;
+}
+.logo a:hover { color: #fff; }
+
+/* ---- Header actions / kosár CTA ---- */
+.header-actions .bma-header-login:not(.btn) {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  color: var(--bma-primary);
+}
+.cart-btn { color: #fff; }
+.cart-btn:hover { color: #fff; background: var(--bma-accent-dark); }
+.bma-site-header .bma-header-cta { background: var(--bma-accent); border: 0; }
+
+/* ---- Footer WP menü ---- */
+.footer .footer-links .bma-menu,
+.footer .bma-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer .bma-menu a { color: #d7deea; }
+.footer .bma-menu a:hover { color: #fff; }
+
+/* ---- Topbar contacts ---- */
+.bma-topbar-contacts { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+.bma-topbar-item { color: var(--bma-muted); text-decoration: none; }
+.bma-topbar-item:hover { color: var(--bma-primary); }
+
+/* ---- Hero fotóréteg + referencia thumbnail (adatvezérelt img) ---- */
+.hero-media { position: absolute; inset: 0; opacity: .18; pointer-events: none; overflow: hidden; }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; }
+.ref-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ---- A11y: clip-based visually-hidden (not display:none) ---- */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Label-based task cards (checkbox pattern) */
+label.task {
+  position: relative;
+  margin: 0;
+  font-weight: inherit;
+}
+label.task .visually-hidden:focus + .box {
+  outline: 2px solid var(--bma-accent);
+  outline-offset: 2px;
+}
+
+/* Step strip links */
+a.stepchip {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: none;
+  border: 0;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+}
+a.stepchip:hover { color: #fff; }
+
+/* Disabled CTA links */
+a.btn.is-disabled,
+a.btn.is-disabled:hover {
+  background: #cfd6e4;
+  border-color: #cfd6e4;
+  color: #fff;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Hide no-JS submit when selection JS is active */
+html.bma-js [data-bma-nojs-cta] { display: none !important; }
+
+/* Service detail: selected task card */
+.taskcard.is-sel {
+  border-color: var(--bma-accent);
+  background: var(--bma-tint);
+}
+.taskcard .bma-item-checkbox { position: absolute; }
+
+/* FAQ details/summary */
+.faq-item > summary.faq-q {
+  list-style: none;
+  cursor: pointer;
+}
+.faq-item > summary.faq-q::-webkit-details-marker { display: none; }
+.faq-item > summary.faq-q::after {
+  content: "+";
+  flex: none;
+  color: var(--bma-muted);
+  font-weight: 700;
+}
+.faq-item[open] > summary.faq-q::after {
+  content: "–";
+  color: var(--bma-accent);
+}
+
+.bma-site-main { padding: 0; }
+
+/*
+ * TODO(after-templates): törlendő az utolsó template átvezetése után.
+ * Ütközik a design bma-v2.css 1100/900/640 töréspontjaival; addig tartja a
+ * jelenlegi header/nav wrap + 1 oszlopos rácsokat.
+ */
+@media (max-width: 960px) {
+  .header-inner {
+    height: auto;
+    min-height: 72px;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .siteheader {
+    background: #fff;
+  }
+  .header-actions {
+    margin-left: 0;
+    width: 100%;
+    order: 3;
+    padding: 10px 0 4px;
+    border-top: 1px solid var(--bma-border);
+    flex-wrap: wrap;
+  }
+  .nav {
+    order: 4;
+    width: 100%;
+  }
+  .cart-btn { padding: 9px 12px; font-size: 12px; }
+  /* WP topbar: design expects phone + lang only on small screens */
+  .bma-topbar-contacts .bma-topbar-item:not(:first-child),
+  .bma-topbar-social { display: none; }
+  .process,
+  .refs,
+  .svc-grid,
+  .benefits,
+  .about,
+  .multi,
+  .closing-inner,
+  .footer-inner,
+  .pagehead-inner--split {
+    grid-template-columns: 1fr;
+  }
+  .h2 { font-size: 28px; }
+  .hero h1 { font-size: 34px; }
+}
+
+/* Quote flow – dropzone file input + form errors */
+.drop { position: relative; cursor: pointer; }
+.drop.is-dragover { border-color: var(--bma-accent, #ee7643); background: #fff7f3; }
+.drop .bma-file-input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+.bma-form-errors {
+  background: #fdecea;
+  color: #8a1f11;
+  border: 1px solid #f5c6cb;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.bma-quote-cart .bma-form-field,
+.bma-quote-submit .bma-form-field { margin: 0; }
+.bma-quote-submit .bma-checkrow input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex: none;
+}
+

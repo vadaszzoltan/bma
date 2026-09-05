@@ -1,15 +1,31 @@
-<!-- Ugyfelportal - lista es reszletes nezet -->
-<!-- Forras: Claude Design vaszon, BMA Engineering - oldalfejlesztes -->
+<!--
+  Oldal:    /ugyfelportal/  (+ ?request=... reszletes nezet)
+  Cel PHP:  plugins/bma-ajanlatkeres/templates/frontend/client-portal.php  (shortcode: [bma_client_portal])
+  Komponensek: .pagehead .todo .stat .tabs .reqrow .panel .offer .tl .docrow .datarow
+  Jelolesek:   {{...}} = dinamikus ertek (lasd README 'Token-szotar')
+               [SZOGLETES ZAROJEL] = kitoltendo valos adat
+               <sc-if> / <sc-for> = felteteles blokk / ismetles (PHP if / foreach)
+  FIGYELEM: mielott barmely szoveget lecserelnel, olvasd el a SZOVEGVALTOZASOK.md-t.
+            Ugyanez a markup szolgal ki desktopot, tabletet es mobilt.
+-->
 
 <div class="topbar">
   <div class="topbar-inner">
     <span>+40 728 205 982</span>
     <span>office@bmaeng.ro</span>
     <span>Hétfő–Péntek, 08:00–17:00</span>
+    <div class="langswitch" role="group" aria-label="Nyelv választása">
+      <a href="#" class="lang is-on" lang="hu" hreflang="hu" aria-current="true">HU</a>
+      <a href="#" class="lang" lang="ro" hreflang="ro">RO</a>
+      <a href="#" class="lang" lang="en" hreflang="en">EN</a>
+    </div>
   </div>
 </div>
 <header class="siteheader">
   <div class="header-inner">
+    <button type="button" class="burger" aria-label="Menü megnyitása">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#0e2356" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+    </button>
     <div class="logo">[LOGÓ]</div>
     <nav class="nav">
       <a href="#">Főoldal</a>
@@ -82,7 +98,7 @@
         </sc-if>
       </div>
 
-      <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:26px">
+      <div class="grid portal-cols" style="margin-top:26px">
         <div class="panel">
           <div class="panel-head"><h2>Dokumentumaim</h2><a href="#" class="small">Összes</a></div>
           <div class="panel-body" style="padding-top:6px">
@@ -95,7 +111,7 @@
           <div class="panel-head"><h2>Segítségre van szüksége?</h2></div>
           <div class="panel-body">
             <p style="margin:0 0 18px;font-size:16px;line-height:1.55;color:#4a5a7d">Ha egy kéréssel kapcsolatban kérdése van, vagy módosítaná a kiválasztott tételeket, keressen minket.</p>
-            <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <div class="btnrow" style="display:flex;gap:12px;flex-wrap:wrap">
               <a href="#" class="btn btn--outline btn--sm">+40 728 205 982</a>
               <a href="#" class="btn btn--outline btn--sm">office@bmaeng.ro</a>
             </div>
@@ -192,6 +208,13 @@
       <div class="small" style="line-height:1.6">Str. Raza Soarelui 11<br>535600 Odorheiu Secuiesc<br>Harghita, Romania</div>
       <div class="small" style="margin-top:12px">+40 728 205 982 · office@bmaeng.ro</div>
       <div class="small" style="margin-top:6px">CUI: 40593519</div>
+      <div style="margin-top:18px">
+        <div class="langswitch langswitch--light" role="group" aria-label="Nyelv választása">
+          <a href="#" class="lang is-on" lang="hu" hreflang="hu" aria-current="true">HU</a>
+          <a href="#" class="lang" lang="ro" hreflang="ro">RO</a>
+          <a href="#" class="lang" lang="en" hreflang="en">EN</a>
+        </div>
+      </div>
     </div>
     <div>
       <h4>Navigáció</h4>

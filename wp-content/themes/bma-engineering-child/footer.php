@@ -1,5 +1,7 @@
 </main>
 
+<?php bma_render_mobilebar(); ?>
+
 <footer class="footer bma-site-footer" role="contentinfo">
 	<?php
 	$company = class_exists( 'BMA_AJ_Company' ) ? BMA_AJ_Company::get( 'company_name' ) : 'BMA Engineering';
@@ -58,6 +60,7 @@
 	</div>
 	<div class="footer-bottom bma-footer-bottom">
 		<span>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( $company ?: 'BMA Engineering' ); ?></span>
+		<?php bma_render_langswitch( 'langswitch--light' ); ?>
 		<span>
 			<a href="<?php echo esc_url( ( class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'adatvedelem' ) : home_url( '/adatvedelem/' ) ) ); ?>"><?php esc_html_e( 'Adatvédelem', 'bma-engineering' ); ?></a>
 			·

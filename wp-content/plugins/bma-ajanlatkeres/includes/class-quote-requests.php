@@ -15,6 +15,8 @@ final class BMA_AJ_Quote_Requests {
 	public static function init(): void {
 		add_action( 'wp_ajax_bma_submit_quote_request', array( self::class, 'ajax_submit' ) );
 		add_action( 'wp_ajax_nopriv_bma_submit_quote_request', array( self::class, 'ajax_submit' ) );
+		add_action( 'admin_post_bma_submit_quote_request', array( self::class, 'handle_form_submit' ) );
+		add_action( 'admin_post_nopriv_bma_submit_quote_request', array( self::class, 'handle_form_submit' ) );
 	}
 
 	/**
@@ -184,14 +186,73 @@ final class BMA_AJ_Quote_Requests {
 	public static function ajax_submit(): void {
 		check_ajax_referer( 'bma_aj_public', 'nonce' );
 
+		$result = self::process_submission_from_request();
+		if ( is_wp_error( $result ) ) {
+			wp_send_json_error( array( 'message' => $result->get_error_message() ) );
+		}
+
+		wp_send_json_success(
+			array(
+				'request_id'     => $result['request_id'],
+				'request_number' => $result['request_number'],
+				'redirect'       => $result['redirect'],
+			)
+		);
+	}
+
+	/**
+	 * No-JS multipart form submit (PRG redirect).
+	 */
+	public static function handle_form_submit(): void {
+		check_admin_referer( 'bma_aj_public', 'nonce' );
+
+		$result = self::process_submission_from_request();
+		$form_url = class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'ajanlatkeres' ) : home_url( '/ajanlatkeres/' );
+		if ( function_exists( 'bma_page_url' ) ) {
+			$form_url = bma_page_url( 'ajanlatkeres' );
+		}
+
+		if ( is_wp_error( $result ) ) {
+			$redirect = add_query_arg(
+				array(
+					'bma_error' => rawurlencode( $result->get_error_message() ),
+				),
+				$form_url
+			);
+			wp_safe_redirect( $redirect );
+			exit;
+		}
+
+		wp_safe_redirect( $result['redirect'] );
+		exit;
+	}
+
+	/**
+	 * Shared submit pipeline for AJAX and classic POST.
+	 *
+	 * @return array{request_id:int,request_number:string,redirect:string}|WP_Error
+	 */
+	private static function process_submission_from_request() {
 		if ( empty( $_POST['privacy'] ) ) {
-			wp_send_json_error( array( 'message' => __( 'Az adatvédelmi hozzájárulás kötelező.', 'bma-ajanlatkeres' ) ) );
+			return new WP_Error( 'privacy', __( 'Az adatvédelmi hozzájárulás kötelező.', 'bma-ajanlatkeres' ) );
+		}
+
+		// One-time token: reject replayed POSTs after success.
+		$submit_token = sanitize_text_field( wp_unslash( $_POST['bma_submit_token'] ?? '' ) );
+		if ( '' === $submit_token ) {
+			return new WP_Error( 'token', __( 'Érvénytelen beküldés. Frissítse az oldalt, és próbálja újra.', 'bma-ajanlatkeres' ) );
+		}
+		$token_key = 'bma_submit_tok_' . $submit_token;
+		if ( ! get_transient( $token_key ) ) {
+			return new WP_Error( 'token_used', __( 'Ez az ajánlatkérés már be lett küldve. Frissítse az oldalt.', 'bma-ajanlatkeres' ) );
 		}
 
 		$field_values_raw = isset( $_POST['field_values'] ) ? wp_unslash( $_POST['field_values'] ) : array();
 		if ( ! is_array( $field_values_raw ) ) {
 			$field_values_raw = array();
 		}
+		// Cart step drafts (item fields) merge under POST values.
+		$field_values_raw = array_merge( BMA_AJ_Cart::get_field_values(), $field_values_raw );
 
 		$merged_fields = BMA_AJ_Cart::get_merged_fields();
 		$documents     = array();
@@ -203,12 +264,12 @@ final class BMA_AJ_Quote_Requests {
 			$file = BMA_AJ_Documents::extract_uploaded_file( 'field_values', $field->field_key );
 			if ( ! $file ) {
 				if ( $field->is_required ) {
-					wp_send_json_error(
-						array(
-							'message' => sprintf(
-								__( 'Kötelező fájl hiányzik: %s', 'bma-ajanlatkeres' ),
-								$field->client_label
-							),
+					return new WP_Error(
+						'file_required',
+						sprintf(
+							/* translators: %s: field label */
+							__( 'Kötelező fájl hiányzik: %s', 'bma-ajanlatkeres' ),
+							$field->client_label
 						)
 					);
 				}
@@ -216,7 +277,7 @@ final class BMA_AJ_Quote_Requests {
 			}
 			$result = BMA_AJ_Documents::handle_temp_upload( $file, $field->field_key );
 			if ( is_wp_error( $result ) ) {
-				wp_send_json_error( array( 'message' => $result->get_error_message() ) );
+				return $result;
 			}
 			$documents[] = $result;
 			$field_values_raw[ $field->field_key ] = $result['original_name'];
@@ -225,44 +286,81 @@ final class BMA_AJ_Quote_Requests {
 		$shared_fields = BMA_AJ_Dynamic_Fields::sanitize_cart_submission( $field_values_raw, $merged_fields );
 
 		$contact = array(
-			'name'                 => sanitize_text_field( wp_unslash( $_POST['name'] ?? '' ) ),
-			'email'                => sanitize_email( wp_unslash( $_POST['email'] ?? '' ) ),
-			'phone'                => sanitize_text_field( wp_unslash( $_POST['phone'] ?? '' ) ),
-			'company'              => sanitize_text_field( wp_unslash( $_POST['company'] ?? '' ) ),
-			'tax_number'           => sanitize_text_field( wp_unslash( $_POST['tax_number'] ?? '' ) ),
-			'billing_address'      => sanitize_textarea_field( wp_unslash( $_POST['billing_address'] ?? '' ) ),
-			'note'                 => sanitize_textarea_field( wp_unslash( $_POST['note'] ?? '' ) ),
-			'privacy'              => true,
-			'shared_field_values'  => $shared_fields,
-			'shared_documents'     => $documents,
+			'name'                => sanitize_text_field( wp_unslash( $_POST['name'] ?? '' ) ),
+			'email'               => sanitize_email( wp_unslash( $_POST['email'] ?? '' ) ),
+			'phone'               => sanitize_text_field( wp_unslash( $_POST['phone'] ?? '' ) ),
+			'company'             => sanitize_text_field( wp_unslash( $_POST['company'] ?? '' ) ),
+			'tax_number'          => sanitize_text_field( wp_unslash( $_POST['tax_number'] ?? '' ) ),
+			'billing_address'     => sanitize_textarea_field( wp_unslash( $_POST['billing_address'] ?? '' ) ),
+			'note'                => sanitize_textarea_field( wp_unslash( $_POST['note'] ?? '' ) ),
+			'privacy'             => true,
+			'shared_field_values' => $shared_fields,
+			'shared_documents'    => $documents,
 		);
 
 		if ( empty( $contact['name'] ) || empty( $contact['email'] ) || empty( $contact['phone'] ) ) {
-			wp_send_json_error( array( 'message' => __( 'Kérjük, töltse ki a kötelező mezőket.', 'bma-ajanlatkeres' ) ) );
+			return new WP_Error( 'required', __( 'Kérjük, töltse ki a kötelező mezőket.', 'bma-ajanlatkeres' ) );
 		}
 
 		$create_account = ! empty( $_POST['create_account'] );
-		$result         = self::submit( $contact, $create_account );
+		$request_id     = self::submit( $contact, $create_account );
 
-		if ( is_wp_error( $result ) ) {
-			wp_send_json_error( array( 'message' => $result->get_error_message() ) );
+		if ( is_wp_error( $request_id ) ) {
+			return $request_id;
 		}
 
-		$request = self::get( $result );
+		delete_transient( $token_key );
 
-		wp_send_json_success(
-			array(
-				'request_id'     => $result,
-				'request_number' => $request->request_number,
-				'redirect'       => add_query_arg(
-					array(
-						'submitted' => '1',
-						'number'    => $request->request_number,
-					),
-					class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'ajanlatkeres' ) : home_url( '/ajanlatkeres/' )
+		$request = self::get( (int) $request_id );
+		$number  = $request ? (string) $request->request_number : '';
+
+		$confirm_token = wp_generate_password( 20, false );
+		set_transient( 'bma_quote_done_' . $confirm_token, $number, DAY_IN_SECONDS );
+
+		$form_url = class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'ajanlatkeres' ) : home_url( '/ajanlatkeres/' );
+		if ( function_exists( 'bma_page_url' ) ) {
+			$form_url = bma_page_url( 'ajanlatkeres' );
+		}
+
+		return array(
+			'request_id'     => (int) $request_id,
+			'request_number' => $number,
+			'redirect'       => add_query_arg(
+				array(
+					'submitted' => '1',
+					'number'    => $number,
+					't'         => $confirm_token,
 				),
-			)
+				$form_url
+			),
 		);
+	}
+
+	/**
+	 * Create a one-time submit token for the quote form.
+	 */
+	public static function create_submit_token(): string {
+		$token = wp_generate_password( 24, false );
+		set_transient( 'bma_submit_tok_' . $token, 1, HOUR_IN_SECONDS );
+		return $token;
+	}
+
+	/**
+	 * Resolve confirmation number from PRG query args (avoids trusting raw number alone).
+	 *
+	 * @return string
+	 */
+	public static function confirmation_number_from_request(): string {
+		$token  = isset( $_GET['t'] ) ? sanitize_text_field( wp_unslash( $_GET['t'] ) ) : '';
+		$number = isset( $_GET['number'] ) ? sanitize_text_field( wp_unslash( $_GET['number'] ) ) : '';
+		if ( '' === $token || '' === $number ) {
+			return '';
+		}
+		$stored = get_transient( 'bma_quote_done_' . $token );
+		if ( ! is_string( $stored ) || $stored !== $number ) {
+			return '';
+		}
+		return $number;
 	}
 
 	/**

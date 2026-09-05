@@ -7,31 +7,31 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$svc_url = ( class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'szolgaltatasok' ) : home_url( '/szolgaltatasok/' ) );
+$svc_url = function_exists( 'bma_page_url' ) ? bma_page_url( 'szolgaltatasok' ) : home_url( '/' );
 $steps   = array(
 	array(
-		'num'   => '01',
-		'title' => __( 'Szolgáltatások kiválasztása', 'bma-ajanlatkeres' ),
-		'text'  => __( 'Válassza ki a projektjéhez szükséges szolgáltatásokat és azokon belül a konkrét részfeladatokat.', 'bma-ajanlatkeres' ),
-		'active'=> true,
+		'num'    => '01',
+		'title'  => __( 'Szolgáltatások kiválasztása', 'bma-ajanlatkeres' ),
+		'text'   => __( 'Válassza ki a projektjéhez szükséges szolgáltatásokat és azokon belül a konkrét részfeladatokat.', 'bma-ajanlatkeres' ),
+		'active' => true,
 	),
 	array(
-		'num'   => '02',
-		'title' => __( 'Projekt adatai', 'bma-ajanlatkeres' ),
-		'text'  => __( 'Töltse ki a kiválasztott tételekhez tartozó adatokat, és töltse fel a meglévő tervrajzokat.', 'bma-ajanlatkeres' ),
-		'active'=> true,
+		'num'    => '02',
+		'title'  => __( 'Projekt adatai', 'bma-ajanlatkeres' ),
+		'text'   => __( 'Töltse ki a kiválasztott tételekhez tartozó adatokat, és töltse fel a meglévő tervrajzokat.', 'bma-ajanlatkeres' ),
+		'active' => true,
 	),
 	array(
-		'num'   => '03',
-		'title' => __( 'Beküldés', 'bma-ajanlatkeres' ),
-		'text'  => __( 'Ellenőrizze az összeállítást, adja meg a kapcsolattartási adatait, és küldje el a kérést.', 'bma-ajanlatkeres' ),
-		'active'=> true,
+		'num'    => '03',
+		'title'  => __( 'Beküldés', 'bma-ajanlatkeres' ),
+		'text'   => __( 'Ellenőrizze az összeállítást, adja meg a kapcsolattartási adatait, és küldje el a kérést.', 'bma-ajanlatkeres' ),
+		'active' => true,
 	),
 	array(
-		'num'   => '04',
-		'title' => __( 'Nyomon követés', 'bma-ajanlatkeres' ),
-		'text'  => __( 'Az ügyfélportálon látja a státuszt, az elkészült ajánlatot és a feltöltött dokumentumokat.', 'bma-ajanlatkeres' ),
-		'active'=> false,
+		'num'    => '04',
+		'title'  => __( 'Nyomon követés', 'bma-ajanlatkeres' ),
+		'text'   => __( 'Az ügyfélportálon látja a státuszt, az elkészült ajánlatot és a feltöltött dokumentumokat.', 'bma-ajanlatkeres' ),
+		'active' => false,
 	),
 );
 ?>
