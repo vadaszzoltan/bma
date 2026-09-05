@@ -48,6 +48,7 @@ if ( class_exists( 'BMA_AJ_I18n' ) ) {
 		<button
 			type="button"
 			class="burger"
+			id="bma-burger"
 			aria-label="<?php esc_attr_e( 'Menü megnyitása', 'bma-engineering' ); ?>"
 			aria-expanded="false"
 			aria-controls="bma-mobile-nav"
@@ -107,17 +108,39 @@ if ( class_exists( 'BMA_AJ_I18n' ) ) {
 				<a href="<?php echo esc_url( $login_url ?: wp_login_url( $portal_url ) ); ?>" class="btn btn--outline btn--sm bma-header-login"><?php esc_html_e( 'Belépés', 'bma-engineering' ); ?></a>
 			<?php endif; ?>
 		</div>
+	</div>
 
-		<button
-			type="button"
-			class="bma-nav-toggle"
-			id="bma-nav-toggle"
-			aria-controls="bma-primary-nav"
-			aria-expanded="false"
-			aria-label="<?php esc_attr_e( 'Menü megnyitása', 'bma-engineering' ); ?>"
-		>
-			<span class="bma-nav-toggle-bars" aria-hidden="true"></span>
-		</button>
+	<div
+		id="bma-mobile-nav"
+		class="bma-mobile-nav"
+		hidden
+		aria-hidden="true"
+	>
+		<div class="bma-mobile-nav-panel" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e( 'Mobil menü', 'bma-engineering' ); ?>">
+			<nav class="bma-mobile-nav-menu" aria-label="<?php esc_attr_e( 'Fő navigáció', 'bma-engineering' ); ?>">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'primary',
+						'container'      => false,
+						'menu_class'     => 'bma-menu bma-mobile-menu',
+						'fallback_cb'    => 'bma_fallback_menu',
+					)
+				);
+				?>
+			</nav>
+			<div class="bma-mobile-nav-actions">
+				<?php if ( is_user_logged_in() ) : ?>
+					<a href="<?php echo esc_url( $portal_url ); ?>" class="bma-mobile-nav-link"><?php esc_html_e( 'Ügyfélportál', 'bma-engineering' ); ?></a>
+					<a href="<?php echo esc_url( wp_logout_url( home_url( '/' ) ) ); ?>" class="bma-mobile-nav-link"><?php esc_html_e( 'Kijelentkezés', 'bma-engineering' ); ?></a>
+				<?php else : ?>
+					<a href="<?php echo esc_url( $login_url ?: wp_login_url( $portal_url ) ); ?>" class="btn btn--outline btn--sm"><?php esc_html_e( 'Belépés', 'bma-engineering' ); ?></a>
+				<?php endif; ?>
+			</div>
+			<div class="bma-mobile-nav-lang">
+				<?php bma_render_langswitch(); ?>
+			</div>
+		</div>
 	</div>
 </header>
 

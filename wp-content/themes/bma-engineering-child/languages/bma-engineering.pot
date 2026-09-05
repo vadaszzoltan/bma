@@ -1,0 +1,156 @@
+# Copyright (C) BMA Engineering
+# This file is distributed under the same license as the package.
+msgid ""
+msgstr ""
+"Project-Id-Version: bma-engineering\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-05 21:23+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: bma-engineering\n"
+
+msgid "%d tétel kiválasztva"
+msgstr ""
+
+msgid "%d választható részfeladat"
+msgstr ""
+
+msgid "02 · Kosár"
+msgstr ""
+
+msgid "03 · Adatok és beküldés"
+msgstr ""
+
+msgid "1 tétel kiválasztva"
+msgstr ""
+
+msgid "A keresett oldal nem létezik, áthelyezték, vagy elírta a címet. Válasszon az alábbi lehetőségek közül."
+msgstr ""
+
+msgid "Adatvédelem"
+msgstr ""
+
+msgid "Ajánlat"
+msgstr ""
+
+msgid "Ajánlat, %d tétel"
+msgstr ""
+
+msgid "Ajánlatkérés"
+msgstr ""
+
+msgid "Ajánlatkérés indítása"
+msgstr ""
+
+msgid "Az ajánlatkérés díjmentes"
+msgstr ""
+
+msgid "Az oldal nem található"
+msgstr ""
+
+msgid "BMA Engineering főoldal"
+msgstr ""
+
+msgid "Beküldés"
+msgstr ""
+
+msgid "Belépés"
+msgstr ""
+
+msgid "CUI: %s"
+msgstr ""
+
+msgid "Cookie tájékoztató"
+msgstr ""
+
+msgid "Díjmentes, kötelezettség nélkül"
+msgstr ""
+
+msgid "Fő navigáció"
+msgstr ""
+
+msgid "Főmenü"
+msgstr ""
+
+msgid "Főoldal"
+msgstr ""
+
+msgid "Hiba 404"
+msgstr ""
+
+msgid "Hozzáadás"
+msgstr ""
+
+msgid "Kapcsolat"
+msgstr ""
+
+msgid "Keresés"
+msgstr ""
+
+msgid "Keresés: %s"
+msgstr ""
+
+msgid "Kijelentkezés"
+msgstr ""
+
+msgid "Kérjen ajánlatot"
+msgstr ""
+
+msgid "Lábléc"
+msgstr ""
+
+msgid "Lábléc menü"
+msgstr ""
+
+msgid "Lábléc navigáció"
+msgstr ""
+
+msgid "Menü bezárása"
+msgstr ""
+
+msgid "Menü megnyitása"
+msgstr ""
+
+msgid "Mobil menü"
+msgstr ""
+
+msgid "Navigáció"
+msgstr ""
+
+msgid "Nincs találat a keresésre. Próbáljon másik kifejezést, vagy böngésszen a szolgáltatások között."
+msgstr ""
+
+msgid "Nyelv választása"
+msgstr ""
+
+msgid "Referencia projekt"
+msgstr ""
+
+msgid "Referenciák"
+msgstr ""
+
+msgid "Szolgáltatások"
+msgstr ""
+
+msgid "Szűrés típus és szolgáltatás szerint"
+msgstr ""
+
+msgid "Tovább"
+msgstr ""
+
+msgid "Tovább az adatokhoz"
+msgstr ""
+
+msgid "Ugrás a tartalomhoz"
+msgstr ""
+
+msgid "Válassza ki a szükséges szolgáltatásokat, és néhány adat megadásával kérjen személyre szabott ajánlatot."
+msgstr ""
+
+msgid "ÁSZF"
+msgstr ""
+
+msgid "Ügyfélportál"
+msgstr ""
+

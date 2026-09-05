@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'BMA_THEME_VERSION', '1.13.0-redesign-exp' );
+define( 'BMA_THEME_VERSION', '1.14.0-redesign-exp' );
 define( 'BMA_THEME_DIR', get_stylesheet_directory() );
 define( 'BMA_THEME_URI', get_stylesheet_directory_uri() );
 
@@ -57,8 +57,77 @@ function bma_enqueue_styles(): void {
 		array(),
 		null
 	);
+
+	$mobile_nav = BMA_THEME_DIR . '/assets/js/mobile-nav.js';
+	if ( file_exists( $mobile_nav ) ) {
+		wp_enqueue_script(
+			'bma-mobile-nav',
+			BMA_THEME_URI . '/assets/js/mobile-nav.js',
+			array(),
+			(string) filemtime( $mobile_nav ),
+			true
+		);
+		wp_localize_script(
+			'bma-mobile-nav',
+			'bmaMobileNav',
+			array(
+				'openLabel'  => __( 'Menü megnyitása', 'bma-engineering' ),
+				'closeLabel' => __( 'Menü bezárása', 'bma-engineering' ),
+			)
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'bma_enqueue_styles', 20 );
+
+/**
+ * Add hreflang x-default pointing at the default-language translation of the current URL.
+ */
+function bma_output_hreflang_x_default(): void {
+	if ( is_admin() || ! function_exists( 'pll_default_language' ) || ! function_exists( 'pll_get_post' ) ) {
+		return;
+	}
+
+	$default = pll_default_language( 'slug' );
+	if ( ! $default ) {
+		return;
+	}
+
+	$url = '';
+
+	if ( is_singular() ) {
+		$post_id = get_queried_object_id();
+		if ( ! $post_id ) {
+			return;
+		}
+		$tr_id = pll_get_post( $post_id, $default );
+		if ( ! $tr_id ) {
+			return;
+		}
+		$url = get_permalink( $tr_id );
+	} elseif ( is_home() || is_front_page() ) {
+		if ( function_exists( 'pll_home_url' ) ) {
+			$url = pll_home_url( $default );
+		}
+	} elseif ( is_category() || is_tag() || is_tax() ) {
+		$term = get_queried_object();
+		if ( $term && ! empty( $term->term_id ) && function_exists( 'pll_get_term' ) ) {
+			$tr = pll_get_term( (int) $term->term_id, $default );
+			if ( $tr ) {
+				$url = get_term_link( (int) $tr );
+			}
+		}
+	}
+
+	if ( ! $url || is_wp_error( $url ) ) {
+		return;
+	}
+
+	printf(
+		'<link rel="alternate" href="%s" hreflang="x-default" />' . "\n",
+		esc_url( $url )
+	);
+}
+add_action( 'wp_head', 'bma_output_hreflang_x_default', 2 );
 
 /**
  * Register navigation menus (used by BMA PHP header/footer).
