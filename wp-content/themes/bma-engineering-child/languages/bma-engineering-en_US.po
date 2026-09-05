@@ -1,0 +1,158 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: bma-engineering\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-05 21:23+0000\n"
+"PO-Revision-Date: 2026-09-05 21:49+0000\n"
+"Last-Translator: BMA redesign i18n\n"
+"Language-Team: en_US\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: bma-engineering\n"
+
+msgid "%d tétel kiválasztva"
+msgstr "%d items selected"
+
+msgid "%d választható részfeladat"
+msgstr "%d selectable sub-tasks"
+
+msgid "02 · Kosár"
+msgstr "02 · Cart"
+
+msgid "03 · Adatok és beküldés"
+msgstr "03 · Details and submission"
+
+msgid "1 tétel kiválasztva"
+msgstr "1 item selected"
+
+msgid "A keresett oldal nem létezik, áthelyezték, vagy elírta a címet. Válasszon az alábbi lehetőségek közül."
+msgstr ""
+
+msgid "Adatvédelem"
+msgstr ""
+
+msgid "Ajánlat"
+msgstr ""
+
+msgid "Ajánlat, %d tétel"
+msgstr ""
+
+msgid "Ajánlatkérés"
+msgstr ""
+
+msgid "Ajánlatkérés indítása"
+msgstr ""
+
+msgid "Az ajánlatkérés díjmentes"
+msgstr "Requesting a quote is free"
+
+msgid "Az oldal nem található"
+msgstr ""
+
+msgid "BMA Engineering főoldal"
+msgstr ""
+
+msgid "Beküldés"
+msgstr ""
+
+msgid "Belépés"
+msgstr ""
+
+msgid "CUI: %s"
+msgstr ""
+
+msgid "Cookie tájékoztató"
+msgstr ""
+
+msgid "Díjmentes, kötelezettség nélkül"
+msgstr "Free, no obligation"
+
+msgid "Fő navigáció"
+msgstr ""
+
+msgid "Főmenü"
+msgstr ""
+
+msgid "Főoldal"
+msgstr ""
+
+msgid "Hiba 404"
+msgstr ""
+
+msgid "Hozzáadás"
+msgstr "Add"
+
+msgid "Kapcsolat"
+msgstr ""
+
+msgid "Keresés"
+msgstr ""
+
+msgid "Keresés: %s"
+msgstr ""
+
+msgid "Kijelentkezés"
+msgstr ""
+
+msgid "Kérjen ajánlatot"
+msgstr "Request a quote"
+
+msgid "Lábléc"
+msgstr ""
+
+msgid "Lábléc menü"
+msgstr ""
+
+msgid "Lábléc navigáció"
+msgstr ""
+
+msgid "Menü bezárása"
+msgstr "Close menu"
+
+msgid "Menü megnyitása"
+msgstr ""
+
+msgid "Mobil menü"
+msgstr "Mobile menu"
+
+msgid "Navigáció"
+msgstr ""
+
+msgid "Nincs találat a keresésre. Próbáljon másik kifejezést, vagy böngésszen a szolgáltatások között."
+msgstr ""
+
+msgid "Nyelv választása"
+msgstr "Choose language"
+
+msgid "Referencia projekt"
+msgstr "Reference project"
+
+msgid "Referenciák"
+msgstr ""
+
+msgid "Szolgáltatások"
+msgstr ""
+
+msgid "Szűrés típus és szolgáltatás szerint"
+msgstr "Filter by type and service"
+
+msgid "Tovább"
+msgstr "Continue"
+
+msgid "Tovább az adatokhoz"
+msgstr "Continue to details"
+
+msgid "Ugrás a tartalomhoz"
+msgstr ""
+
+msgid "Válassza ki a szükséges szolgáltatásokat, és néhány adat megadásával kérjen személyre szabott ajánlatot."
+msgstr ""
+
+msgid "ÁSZF"
+msgstr ""
+
+msgid "Ügyfélportál"
+msgstr ""

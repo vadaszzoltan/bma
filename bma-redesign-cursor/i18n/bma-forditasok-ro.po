@@ -1,0 +1,534 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BMA Engineering redesign\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ro_RO\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);\n"
+"X-Generator: Claude Design handoff\n"
+
+msgid "%d ajánlat vár elfogadásra"
+msgstr "%d oferte așteaptă acceptarea"
+
+msgid "%d díjbekérő vár rendezésre"
+msgstr "%d proforme așteaptă plata"
+
+msgid "%d projekt"
+msgstr "%d proiecte"
+
+msgid "%d tétel"
+msgstr "%d poziții"
+
+msgid "%d tétel kiválasztva"
+msgstr "%d poziții selectate"
+
+msgid "%d választható részfeladat"
+msgstr "%d subactivități disponibile"
+
+msgid "%s hozzáadása az ajánlathoz"
+msgstr "Adăugați %s la cererea de ofertă"
+
+msgid "+40 …"
+msgstr "+40 …"
+
+msgid "02 · Kosár"
+msgstr "02 · Coș"
+
+msgid "03 · Adatok és beküldés"
+msgstr "03 · Date și trimitere"
+
+msgid "1 ajánlat vár elfogadásra"
+msgstr "O ofertă așteaptă acceptarea"
+
+msgid "1 díjbekérő vár rendezésre"
+msgstr "O proformă așteaptă plata"
+
+msgid "1 projekt"
+msgstr "1 proiect"
+
+msgid "1 tétel"
+msgstr "1 poziție"
+
+msgid "1 tétel kiválasztva"
+msgstr "1 poziție selectată"
+
+msgid "A feladat"
+msgstr "Sarcina"
+
+msgid "A kiválasztás bármikor módosítható a beküldésig. Az ajánlatkérés nem jár kötelezettséggel."
+msgstr "Selecția poate fi modificată oricând până la trimitere. Cererea de ofertă nu implică nicio obligație."
+
+msgid "A kosár üres. Az ajánlatkéréshez először válasszon szolgáltatást."
+msgstr "Coșul este gol. Pentru a cere o ofertă, alegeți mai întâi un serviciu."
+
+msgid "A kész terveket az ügyfélportálon adjuk át, a kapcsolódó dokumentumokkal együtt."
+msgstr "Predăm proiectele finalizate în portalul client, împreună cu documentele aferente."
+
+msgid "A lista a referencia-adatbázisból töltődik; itt a jelenlegi oldalon szereplő projektek láthatók. Új projekt felvételekor automatikusan megjelenik a szűrőkben is."
+msgstr "Lista se încarcă din baza de date a referințelor; aici apar proiectele de pe site-ul actual. Un proiect nou apare automat și în filtre."
+
+msgid "A megoldás (opcionális)"
+msgstr "Soluția (opțional)"
+
+msgid "A pontos határidő a projekt méretétől és a szolgáltatói egyeztetésektől függ."
+msgstr "Termenul exact depinde de dimensiunea proiectului și de discuțiile cu furnizorii de utilități."
+
+msgid "A projekt (rövid lead)"
+msgstr "Proiectul (scurtă descriere)"
+
+msgid "A projekt részletei az ügyféllel egyeztetett mértékben nyilvánosak."
+msgstr "Detaliile proiectului sunt publice în măsura convenită cu clientul."
+
+msgid "A szekció akkor jelenik meg, ha legalább egy oszlop ki van töltve – csak a kitöltött oszlopok renderelődnek."
+msgstr "Secțiunea apare dacă cel puțin o coloană este completată – se afișează doar coloanele completate."
+
+msgid "Adatok és beküldés"
+msgstr "Date și trimitere"
+
+msgid "Adja hozzá a(z) %s az ajánlatkéréséhez"
+msgstr "Adăugați %s la cererea dumneavoastră de ofertă"
+
+msgid "Adja meg a projekt adatait és a meglévő dokumentumokat."
+msgstr "Completați datele proiectului și încărcați documentele existente."
+
+msgid "Adja meg a projekt közös adatait és a kapcsolattartási információkat, majd ellenőrizze a kiválasztást a beküldés előtt."
+msgstr "Completați datele generale ale proiectului și informațiile de contact, apoi verificați selecția înainte de trimitere."
+
+msgid "Ajánlat [X] munkanapon belül"
+msgstr "Ofertă în [X] zile lucrătoare"
+
+msgid "Ajánlat elérhető"
+msgstr "Ofertă disponibilă"
+
+msgid "Ajánlat megtekintése"
+msgstr "Vezi oferta"
+
+msgid "Amit csináltunk"
+msgstr "Ce am făcut"
+
+msgid "Amit sokan kérdeznek"
+msgstr "Întrebări frecvente"
+
+msgid "Az ajánlatkérés beküldése után e-mailben visszaigazolást küldünk, és [X] munkanapon belül visszajelzünk."
+msgstr "După trimiterea cererii vă transmitem o confirmare pe e-mail și revenim cu un răspuns în [X] zile lucrătoare."
+
+msgid "Az ajánlatkérés díjmentes"
+msgstr "Cererea de ofertă este gratuită"
+
+msgid "Az ajánlatkérés díjmentes és nem jár kötelezettséggel."
+msgstr "Cererea de ofertă este gratuită și nu implică nicio obligație."
+
+msgid "Az azonosítót e-mailben is elküldtük. Erre hivatkozva bármikor tud érdeklődni."
+msgstr "Am trimis identificatorul și pe e-mail. Îl puteți folosi oricând când ne contactați."
+
+msgid "Az elfogadott ajánlat után elkészülnek a tervek, a szükséges szolgáltatói egyeztetésekkel."
+msgstr "După acceptarea ofertei se întocmesc proiectele, împreună cu discuțiile necesare cu furnizorii."
+
+msgid "Az elkészült ajánlat az ügyfélportálon és e-mailben is elérhető lesz."
+msgstr "Oferta finalizată va fi disponibilă în portalul client și pe e-mail."
+
+msgid "Az elkészült tervek itt jelennek meg, tételenként. Jelenleg még nincs feltöltött terv."
+msgstr "Proiectele finalizate apar aici, pe poziții. Momentan nu există niciun proiect încărcat."
+
+msgid "Az Ön ajánlatkérése"
+msgstr "Cererea dumneavoastră de ofertă"
+
+msgid "Beküldve"
+msgstr "Trimis"
+
+msgid "Beküldve: %s · Kérés részletei, státusz, dokumentumok és ajánlat."
+msgstr "Trimis: %s · Detaliile cererii, status, documente și ofertă."
+
+msgid "Blokkok üres sorral elválasztva. Üres mezőnél a GYIK szekció nem jelenik meg."
+msgstr "Blocuri separate prin rând gol. Dacă acest câmp este gol, secțiunea de întrebări frecvente nu apare."
+
+msgid "Bármi, ami segít pontosabb ajánlatot adni"
+msgstr "Orice ne ajută să întocmim o ofertă mai exactă"
+
+msgid "Cég (opcionális)"
+msgstr "Firmă (opțional)"
+
+msgid "Cégnév"
+msgstr "Numele firmei"
+
+msgid "Dokumentumaim"
+msgstr "Documentele mele"
+
+msgid "Dokumentumok"
+msgstr "Documente"
+
+msgid "Díjmentes, kötelezettség nélkül"
+msgstr "Gratuit, fără obligații"
+
+msgid "E-mailben elküldtük a kérés összefoglalóját és a feltöltött dokumentumok listáját."
+msgstr "V-am trimis pe e-mail rezumatul cererii și lista documentelor încărcate."
+
+msgid "Ebben a nézetben most nincs ajánlatkérés."
+msgstr "În această vizualizare nu există cereri de ofertă."
+
+msgid "Egy sor = egy tétel"
+msgstr "Un rând = o poziție"
+
+msgid "Ehhez a kéréshez nincs hozzáférése."
+msgstr "Nu aveți acces la această cerere."
+
+msgid "Ehhez kapcsolódó szolgáltatások"
+msgstr "Servicii asociate"
+
+msgid "Ellenőrizze a kiválasztott tételeket, és adja meg a tételenkénti adatokat. A projekt közös adatait a következő lépésben kérjük."
+msgstr "Verificați pozițiile selectate și completați datele aferente fiecărei poziții. Datele generale ale proiectului le solicităm la pasul următor."
+
+msgid "Ellenőrzés"
+msgstr "Verificare"
+
+msgid "Elolvastam és elfogadom az <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">adatkezelési tájékoztatót</a>."
+msgstr "Am citit și accept <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">politica de confidențialitate</a>."
+
+msgid "Előkészítés"
+msgstr "Pregătire"
+
+msgid "Ez a bma_reference_category taxonómia (lista szűrő: ?tipus=…)."
+msgstr "Aceasta este taxonomia bma_reference_category (filtru listă: ?tipus=…)."
+
+msgid "Ez az ajánlatkérés már be lett küldve. Frissítse az oldalt."
+msgstr "Această cerere a fost deja trimisă. Reîmprospătați pagina."
+
+msgid "Ezután"
+msgstr "În continuare"
+
+msgid "Ezzel a szűréssel nincs találat. Próbáljon másik típust vagy szolgáltatást, vagy állítsa vissza a szűrőt „Összes”-re."
+msgstr "Niciun rezultat pentru acest filtru. Încercați alt tip sau alt serviciu ori reveniți la „Toate”."
+
+msgid "Felmérés"
+msgstr "Evaluare"
+
+msgid "Felmérés és ajánlat"
+msgstr "Evaluare și ofertă"
+
+msgid "Fizetés indítása"
+msgstr "Inițiază plata"
+
+msgid "Fizetés megtekintése"
+msgstr "Vezi plata"
+
+msgid "Folyamatban"
+msgstr "În curs"
+
+msgid "GYIK"
+msgstr "Întrebări frecvente"
+
+msgid "Gyakori kérdések"
+msgstr "Întrebări frecvente"
+
+msgid "Ha egy kéréssel kapcsolatban kérdése van, vagy módosítaná a kiválasztott tételeket, keressen minket."
+msgstr "Dacă aveți întrebări despre o cerere sau doriți să modificați pozițiile selectate, contactați-ne."
+
+msgid "Ha nem tudja pontosan, mire van szüksége, elég a projektet leírnia – segítünk összeállítani."
+msgstr "Dacă nu știți exact de ce aveți nevoie, descrieți proiectul – vă ajutăm să îl compuneți."
+
+msgid "Ha rendelkezésre áll"
+msgstr "Dacă este disponibil"
+
+msgid "Hasonló projektje van?"
+msgstr "Aveți un proiect similar?"
+
+msgid "Helyszín: %s"
+msgstr "Locație: %s"
+
+msgid "Hogyan zajlik?"
+msgstr "Cum decurge?"
+
+msgid "Hozzon létre ügyfélfiókot, hogy egy helyen kövesse a kérés státuszát, az ajánlatot és a dokumentumokat."
+msgstr "Creați un cont de client pentru a urmări într-un singur loc statusul cererii, oferta și documentele."
+
+msgid "Hozzáadva"
+msgstr "Adăugat"
+
+msgid "Hozzáadás"
+msgstr "Adaugă"
+
+msgid "Húzza ide a fájlokat, vagy tallózzon"
+msgstr "Trageți fișierele aici sau răsfoiți"
+
+msgid "Jelenleg nincs fájlmező hozzárendelve a kiválasztott tételekhez."
+msgstr "Momentan nu există câmp de fișier atribuit pozițiilor selectate."
+
+msgid "Jelölje be a szükséges tételeket – bármennyit."
+msgstr "Bifați pozițiile de care aveți nevoie – oricâte."
+
+msgid "K: Kérdés?\nV: Válasz.\n\nK: Másik kérdés?\nV: Másik válasz."
+msgstr "K: Întrebare?\nV: Răspuns.\n\nK: Altă întrebare?\nV: Alt răspuns."
+
+msgid "Kapcsolattartás"
+msgstr "Date de contact"
+
+msgid "Kategória (típus)"
+msgstr "Categorie (tip)"
+
+msgid "Kiválasztja a részfeladatokat, megadja a projekt adatait, és feltölti a meglévő dokumentumokat."
+msgstr "Alegeți subactivitățile, completați datele proiectului și încărcați documentele existente."
+
+msgid "Kiválasztott tételek"
+msgstr "Poziții selectate"
+
+msgid "Kiválasztás módosítása"
+msgstr "Modifică selecția"
+
+msgid "Kosár"
+msgstr "Coș"
+
+msgid "Kártyás fizetés (Stripe)"
+msgstr "Plată cu cardul (Stripe)"
+
+msgid "Képek"
+msgstr "Imagini"
+
+msgid "Kérjen ajánlatot"
+msgstr "Cereți o ofertă"
+
+msgid "Később is pótolható"
+msgstr "Poate fi completat ulterior"
+
+msgid "Köszönjük, megkaptuk az ajánlatkérését"
+msgstr "Vă mulțumim, am primit cererea dumneavoastră de ofertă"
+
+msgid "Közmű-koordináció: Áram-, gáz- és vízszolgáltatói egyeztetések\nTervezés: Csatlakozási tervek készítése"
+msgstr "Coordonare utilități: Discuții cu furnizorii de energie, gaz și apă\nProiectare: Întocmirea proiectelor de branșament"
+
+msgid "Lakossági és üzleti projektekhez"
+msgstr "Pentru proiecte rezidențiale și comerciale"
+
+msgid "Legalább egy tételt válasszon ki a továbblépéshez."
+msgstr "Selectați cel puțin o poziție pentru a continua."
+
+msgid "Letöltés"
+msgstr "Descarcă"
+
+msgid "Menü bezárása"
+msgstr "Închide meniul"
+
+msgid "Meta: _bma_duration – az „Amit csináltunk” blokk utolsó sora."
+msgstr "Meta: _bma_duration – ultimul rând din blocul „Ce am făcut”."
+
+msgid "Meta: _bma_result – üresen a szekció nem jelenik meg."
+msgstr "Meta: _bma_result – dacă este gol, secțiunea nu apare."
+
+msgid "Meta: _bma_task – üresen a szekció nem jelenik meg."
+msgstr "Meta: _bma_task – dacă este gol, secțiunea nu apare."
+
+msgid "Meta: _bma_work – soronként „Címke: szöveg”. Üresen a szekció kimarad."
+msgstr "Meta: _bma_work – pe fiecare rând „Etichetă: text”. Dacă este gol, secțiunea lipsește."
+
+msgid "Minden kiválasztott tételre vonatkozik"
+msgstr "Se aplică tuturor pozițiilor selectate"
+
+msgid "Mire lesz szükség?"
+msgstr "De ce veți avea nevoie?"
+
+msgid "Mire lesz szükség? – Ha rendelkezésre áll"
+msgstr "De ce veți avea nevoie? – Dacă este disponibil"
+
+msgid "Mire lesz szükség? – Később is pótolható"
+msgstr "De ce veți avea nevoie? – Poate fi completat ulterior"
+
+msgid "Mire lesz szükség? – Kötelező"
+msgstr "De ce veți avea nevoie? – Obligatoriu"
+
+msgid "Mit tartalmaz a(z) %s?"
+msgstr "Ce include %s?"
+
+msgid "Mobil menü"
+msgstr "Meniu mobil"
+
+msgid "Most"
+msgstr "Acum"
+
+msgid "Még nem választott tételt. Jelölje be bal oldalon, mire van szüksége – bármennyi tétel egy ajánlatkérésbe kerülhet."
+msgstr "Nu ați selectat încă nicio poziție. Bifați în stânga de ce aveți nevoie – oricâte poziții pot intra într-o singură cerere."
+
+msgid "Még nincs dokumentum ehhez a kéréshez."
+msgstr "Nu există încă documente pentru această cerere."
+
+msgid "Még nincs feltöltött vagy kapott dokumentum."
+msgstr "Nu există încă documente încărcate sau primite."
+
+msgid "Még nincs státuszváltozás."
+msgstr "Nu există încă modificări de status."
+
+msgid "Nem baj, ha nincs meg minden. Az ajánlatkéréshez elég annyi, amennyi rendelkezésére áll – a többit menet közben pótoljuk."
+msgstr "Nu e nicio problemă dacă nu aveți totul. Pentru cerere este suficient ce aveți la dispoziție – restul completăm pe parcurs."
+
+msgid "Nem találja, amire szüksége van?"
+msgstr "Nu găsiți ce vă trebuie?"
+
+msgid "Nincs kiválasztott tétel."
+msgstr "Nicio poziție selectată."
+
+msgid "Nincs megadott projektadat."
+msgstr "Nu au fost completate date despre proiect."
+
+msgid "Nyelv választása"
+msgstr "Alegerea limbii"
+
+msgid "PDF, DWG, JPG, DOCX · legfeljebb %d MB"
+msgstr "PDF, DWG, JPG, DOCX · maximum %d MB"
+
+msgid "PDF, DWG, JPG, DOCX · legfeljebb %d MB / fájl"
+msgstr "PDF, DWG, JPG, DOCX · maximum %d MB / fișier"
+
+msgid "Projekt alapadatai"
+msgstr "Datele generale ale proiectului"
+
+msgid "Projekt fotó"
+msgstr "Fotografie proiect"
+
+msgid "Projekt típusa (kicker)"
+msgstr "Tipul proiectului (kicker)"
+
+msgid "Referencia projekt"
+msgstr "Proiect de referință"
+
+msgid "Részfeladatok"
+msgstr "Subactivități"
+
+msgid "Röviden"
+msgstr "Pe scurt"
+
+msgid "Segítségre van szüksége?"
+msgstr "Aveți nevoie de ajutor?"
+
+msgid "Státusz: %s"
+msgstr "Status: %s"
+
+msgid "Szolgáltatási területek"
+msgstr "Domenii de servicii"
+
+msgid "Szolgáltatások: %s"
+msgstr "Servicii: %s"
+
+msgid "Szűrés típus és szolgáltatás szerint"
+msgstr "Filtrare după tip și serviciu"
+
+msgid "Teendő: ajánlat elfogadása"
+msgstr "De făcut: acceptarea ofertei"
+
+msgid "Teendő: díjbekérő rendezése"
+msgstr "De făcut: plata proformei"
+
+msgid "Terv elérhető"
+msgstr "Proiect disponibil"
+
+msgid "Tervek készítése folyamatban"
+msgstr "Întocmirea proiectelor în curs"
+
+msgid "Tervrajzok, dokumentumok"
+msgstr "Planuri, documente"
+
+msgid "Tipikus átfutás: [X–Y] hét"
+msgstr "Durată tipică: [X–Y] săptămâni"
+
+msgid "Tovább"
+msgstr "Continuă"
+
+msgid "Tovább az adatokhoz"
+msgstr "Continuă spre date"
+
+msgid "További megjegyzés"
+msgstr "Observații suplimentare"
+
+msgid "További projektek"
+msgstr "Alte proiecte"
+
+msgid "Tétel"
+msgstr "Poziție"
+
+msgid "Tétel eltávolítása"
+msgstr "Elimină poziția"
+
+msgid "Tételenkénti adatok"
+msgstr "Date pe poziții"
+
+msgid "Típus"
+msgstr "Tip"
+
+msgid "Típus: %s"
+msgstr "Tip: %s"
+
+msgid "Vissza"
+msgstr "Înapoi"
+
+msgid "Vissza a szolgáltatásokhoz"
+msgstr "Înapoi la servicii"
+
+msgid "Visszaigazolás"
+msgstr "Confirmare"
+
+msgid "Visszajelzés [X] munkanapon belül, kötelezettség nélkül."
+msgstr "Răspuns în [X] zile lucrătoare, fără obligații."
+
+msgid "Válassza ki a szükséges részfeladatokat, és néhány adat megadásával kérjen ajánlatot. Az ajánlatkérés díjmentes és nem jár kötelezettséggel."
+msgstr "Alegeți subactivitățile necesare și cereți o ofertă completând câteva date. Cererea este gratuită și fără obligații."
+
+msgid "Válassza ki a szükséges szolgáltatásokat, adja meg a projekt alapadatait, és néhány napon belül személyre szabott ajánlatot küldünk."
+msgstr "Alegeți serviciile necesare, completați datele generale ale proiectului, iar în câteva zile vă trimitem o ofertă personalizată."
+
+msgid "Válassza ki azokat a tételeket, amelyekre a projektjéhez szüksége van. Bármelyik kombinálható a többi szolgáltatási területtel."
+msgstr "Alegeți pozițiile de care aveți nevoie pentru proiect. Oricare poate fi combinată cu celelalte domenii de servicii."
+
+msgid "Válogatás megvalósult tervezési, engedélyeztetési, közmű-koordinációs és dokumentációs munkáinkból. Szűrjön projekttípus vagy szolgáltatás szerint."
+msgstr "O selecție din lucrările noastre de proiectare, autorizare, coordonare utilități și documentație. Filtrați după tipul proiectului sau după serviciu."
+
+msgid "[X] munkanapon belül"
+msgstr "În [X] zile lucrătoare"
+
+msgid "az ajánlat %d napig érvényes"
+msgstr "oferta este valabilă %d zile"
+
+msgid "nev@example.com"
+msgstr "nume@example.com"
+
+msgid "pl. 3 hónap"
+msgstr "de ex. 3 luni"
+
+msgid "Állítsa össze, mire van szüksége, és néhány adat megadásával kérjen személyre szabott ajánlatot."
+msgstr "Compuneți de ce aveți nevoie și cereți o ofertă personalizată completând câteva date."
+
+msgid "Átadás"
+msgstr "Predare"
+
+msgid "Átfutás"
+msgstr "Durată"
+
+msgid "Átnézzük a megadott adatokat, és ha szükséges, egyeztetünk a hiányzó részletekről."
+msgstr "Analizăm datele transmise și, dacă este necesar, discutăm detaliile lipsă."
+
+msgid "Átnézzük az adatokat, szükség esetén egyeztetünk, majd elkészítjük az ajánlatot."
+msgstr "Analizăm datele, discutăm dacă este nevoie, apoi întocmim oferta."
+
+msgid "Érvénytelen beküldés. Frissítse az oldalt, és próbálja újra."
+msgstr "Trimitere invalidă. Reîmprospătați pagina și încercați din nou."
+
+msgid "Év: %s"
+msgstr "An: %s"
+
+msgid "Írja le röviden a projektet, és segítünk összeállítani a szükséges tételeket."
+msgstr "Descrieți pe scurt proiectul și vă ajutăm să compuneți pozițiile necesare."
+
+msgid "Összes"
+msgstr "Toate"
+
+msgid "Összes kérés"
+msgstr "Toate cererile"
+
+msgid "Üdvözöljük, %1$s · %2$s"
+msgstr "Bine ați venit, %1$s · %2$s"
+
+msgid "Ügyfél feltöltés"
+msgstr "Încărcat de client"
+
+msgid "Ügyfélportál megnyitása"
+msgstr "Deschide portalul client"
+
+msgid "← Vissza a portálra"
+msgstr "← Înapoi la portal"

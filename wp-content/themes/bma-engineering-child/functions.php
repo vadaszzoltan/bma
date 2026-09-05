@@ -166,6 +166,25 @@ function bma_theme_setup(): void {
 add_action( 'after_setup_theme', 'bma_theme_setup' );
 
 /**
+ * Load theme textdomain for the current Polylang locale.
+ * after_setup_theme is too early (locale still default); unload+JIT can miss the .mo.
+ */
+function bma_load_textdomain_for_locale(): void {
+	$locale = determine_locale();
+	$mofile = BMA_THEME_DIR . '/languages/bma-engineering-' . $locale . '.mo';
+	if ( ! is_readable( $mofile ) ) {
+		$mofile = WP_LANG_DIR . '/themes/bma-engineering-' . $locale . '.mo';
+	}
+	if ( ! is_readable( $mofile ) ) {
+		return;
+	}
+	unload_textdomain( 'bma-engineering' );
+	load_textdomain( 'bma-engineering', $mofile );
+}
+add_action( 'init', 'bma_load_textdomain_for_locale', 20 );
+add_action( 'change_locale', 'bma_load_textdomain_for_locale' );
+
+/**
  * Classic editor for post content – keep Site Editor / patterns available for Ollie.
  * Block widgets stay off to avoid admin confusion.
  */

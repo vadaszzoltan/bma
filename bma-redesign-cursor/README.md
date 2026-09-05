@@ -25,6 +25,9 @@ README.md                             ez a fájl
 SZOVEGVALTOZASOK.md                   MINDEN szövegeltérés az eredetihez képest
 VALTOZASOK.md                         Mi változott és miért – oldalanként
 PROMPT.md                             Bemásolható Cursor-prompt, lépésenként
+i18n/bma-forditasok-ro.po             Román fordítások (175 string)
+i18n/bma-forditasok-en.po             Angol fordítások (175 string)
+i18n/OLVASSEL.md                      Hogyan kerüljenek a két text domain .po-jába
 css/bma-v2.css                        Teljes, reszponzív CSS minden oldalhoz
 markup/01-fooldal.html                Főoldal
 markup/02-szolgaltatasok.html         Szolgáltatás lista (/szolgaltatasok/)
@@ -35,7 +38,7 @@ markup/06-referencia-projekt.html     Referencia projekt oldal
 markup/07-szolgaltatas-aloldal.html   Szolgáltatás aloldal (minta: Tervezés)
 ```
 
-Összesen **11 fájl**: 5 dokumentum, 1 CSS, 7 markup (a `markup/` mappában). Ha kevesebb
+Összesen **14 fájl**: 5 dokumentum, 1 CSS, 7 markup (a `markup/` mappában). Ha kevesebb
 van a kicsomagolás után, a csomag hiányos – állj meg.
 
 **Egy markup, három nézet.** Nincs külön mobil oldal és nincs eszközfelismerés:
