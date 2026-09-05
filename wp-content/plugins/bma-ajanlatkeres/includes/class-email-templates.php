@@ -33,13 +33,13 @@ final class BMA_AJ_Email_Templates {
 				'slug'    => 'request_confirmation',
 				'name'    => 'Ajánlatkérés visszaigazolás (ügyfél)',
 				'subject' => 'Ajánlatkérés visszaigazolás – {request_number}',
-				'body'    => "Kedves {client_name}!\n\nKöszönjük ajánlatkérését. Azonosító: {request_number}\n\nSzolgáltatások: {services}\n\nAjánlatkérését feldolgozzuk. Az aktuális állapotot az ügyfélportálon követheti:\n{portal_link}\n\nÜdvözlettel,\nBMA Engineering\n[KAPCSOLATI ADAT]",
+				'body'    => "Kedves {client_name}!\n\nKöszönjük ajánlatkérését. Azonosító: {request_number}\n\nSzolgáltatások: {services}\n\nAjánlatkérését feldolgozzuk. Az aktuális állapotot az ügyfélportálon követheti:\n{portal_link}\n\nÜdvözlettel,\nBMA Engineering\n{company_phone}\n{company_email}",
 			),
 			array(
 				'slug'    => 'request_admin_notify',
 				'name'    => 'Új ajánlatkérés (admin)',
 				'subject' => 'Új ajánlatkérés – {request_number}',
-				'body'    => "Új ajánlatkérés érkezett.\n\nAzonosító: {request_number}\nÜgyfél: {client_name}\nE-mail: {client_email}\nTelefon: {client_phone}\n\nSzolgáltatások: {services}\n\nAdmin felület: {admin_link}",
+				'body'    => "Új ajánlatkérés érkezett.\n\nAzonosító: {request_number}\n\nÜgyféladatok:\n{client_data}\n\nSzolgáltatások: {services}\n\nAdmin felület: {admin_link}",
 			),
 			array(
 				'slug'    => 'status_change',
@@ -141,17 +141,29 @@ final class BMA_AJ_Email_Templates {
 			$services
 		);
 
+		$field_lines = array();
+		if ( $request ) {
+			foreach ( BMA_AJ_Quote_Requests::get_client_data_rows( $request ) as $row ) {
+				$field_lines[] = $row['label'] . ': ' . $row['value'];
+			}
+		}
+
 		$data = array(
-			'{request_number}'   => $request->request_number ?? '',
-			'{client_name}'      => $request->client_name ?? '',
-			'{client_email}'     => $request->client_email ?? '',
-			'{client_phone}'     => $request->client_phone ?? '',
-			'{services}'         => implode( ', ', $service_names ),
-			'{status}'           => $status->name ?? '',
-			'{portal_link}'      => home_url( '/ugyfelportal/?request=' . $request_id ),
-			'{admin_link}'       => admin_url( 'admin.php?page=bma-requests&action=view&id=' . $request_id ),
-			'{quote_amount}'     => $quote ? number_format( (float) $quote->gross_amount, 0, ',', ' ' ) . ' ' . $quote->currency : '',
-			'{quote_valid_until}'=> $quote && $quote->valid_until ? $quote->valid_until : '',
+			'{request_number}'    => $request->request_number ?? '',
+			'{client_name}'       => $request->client_name ?? '',
+			'{client_email}'      => $request->client_email ?? '',
+			'{client_phone}'      => $request->client_phone ?? '',
+			'{client_data}'       => implode( "\n", $field_lines ),
+			'{services}'          => implode( ', ', $service_names ),
+			'{status}'            => $status->name ?? '',
+			'{portal_link}'       => home_url( '/ugyfelportal/?request=' . $request_id ),
+			'{admin_link}'        => admin_url( 'admin.php?page=bma-requests&action=view&id=' . $request_id ),
+			'{quote_amount}'      => $quote ? number_format( (float) $quote->gross_amount, 0, ',', ' ' ) . ' ' . $quote->currency : '',
+			'{quote_valid_until}' => $quote && $quote->valid_until ? $quote->valid_until : '',
+			'{company_name}'      => BMA_AJ_Company::get( 'company_name' ),
+			'{company_phone}'     => BMA_AJ_Company::get( 'contact_phone' ),
+			'{company_email}'     => BMA_AJ_Company::get( 'contact_email' ),
+			'{company_address}'   => BMA_AJ_Company::get( 'contact_address' ),
 		);
 
 		return array_merge( $data, $extra );

@@ -6,6 +6,8 @@ $client_info     = $client_info ?? get_post_meta( $post->ID, '_bma_client_info',
 $admin_note      = $admin_note ?? get_post_meta( $post->ID, '_bma_admin_note', true );
 $short_desc      = $short_desc ?? get_post_meta( $post->ID, '_bma_short_description', true );
 $use_placeholder = $use_placeholder ?? get_post_meta( $post->ID, '_bma_use_placeholder', true );
+$choose_summary  = $choose_summary ?? get_post_meta( $post->ID, '_bma_choose_summary', true );
+$when_needed     = $when_needed ?? get_post_meta( $post->ID, '_bma_when_needed', true );
 ?>
 <table class="form-table">
 	<tr>
@@ -21,6 +23,14 @@ $use_placeholder = $use_placeholder ?? get_post_meta( $post->ID, '_bma_use_place
 		<td><textarea id="bma_short_description" name="bma_short_description" rows="3" class="large-text"><?php echo esc_textarea( $short_desc ); ?></textarea></td>
 	</tr>
 	<tr>
+		<th><label for="bma_choose_summary"><?php esc_html_e( 'Ezt válassza, ha… (összefoglaló)', 'bma-ajanlatkeres' ); ?></label></th>
+		<td><textarea id="bma_choose_summary" name="bma_choose_summary" rows="3" class="large-text"><?php echo esc_textarea( $choose_summary ); ?></textarea></td>
+	</tr>
+	<tr>
+		<th><label for="bma_when_needed"><?php esc_html_e( 'Mikor lehet erre szüksége?', 'bma-ajanlatkeres' ); ?></label></th>
+		<td><textarea id="bma_when_needed" name="bma_when_needed" rows="5" class="large-text" placeholder="<?php esc_attr_e( 'Egy sor = egy pont', 'bma-ajanlatkeres' ); ?>"><?php echo esc_textarea( $when_needed ); ?></textarea></td>
+	</tr>
+	<tr>
 		<th><label for="bma_use_placeholder"><?php esc_html_e( 'Placeholder kép', 'bma-ajanlatkeres' ); ?></label></th>
 		<td><input type="checkbox" id="bma_use_placeholder" name="bma_use_placeholder" value="1" <?php checked( $use_placeholder, '1' ); ?>> <?php esc_html_e( '[SZOLGÁLTATÁS KÉP PLACEHOLDER] megjelenítése', 'bma-ajanlatkeres' ); ?></td>
 	</tr>
@@ -31,5 +41,31 @@ $use_placeholder = $use_placeholder ?? get_post_meta( $post->ID, '_bma_use_place
 	<tr>
 		<th><label for="bma_admin_note"><?php esc_html_e( 'Adminisztrátori megjegyzés', 'bma-ajanlatkeres' ); ?></label></th>
 		<td><textarea id="bma_admin_note" name="bma_admin_note" rows="3" class="large-text"><?php echo esc_textarea( $admin_note ); ?></textarea></td>
+	</tr>
+	<tr>
+		<th><?php esc_html_e( 'Szolgáltatáselemek', 'bma-ajanlatkeres' ); ?></th>
+		<td>
+			<?php
+			$linked_items = BMA_AJ_Service_Items::get_for_service( (int) $post->ID );
+			if ( empty( $linked_items ) ) :
+				?>
+				<p><?php esc_html_e( 'Még nincs elem ehhez a szolgáltatáshoz.', 'bma-ajanlatkeres' ); ?></p>
+			<?php else : ?>
+				<ul style="margin:0;">
+					<?php foreach ( $linked_items as $linked ) : ?>
+						<li>
+							<a href="<?php echo esc_url( admin_url( 'admin.php?page=bma-service-items&edit=' . (int) $linked->id ) ); ?>">
+								<?php echo esc_html( $linked->name ); ?>
+							</a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			<?php endif; ?>
+			<p>
+				<a class="button" href="<?php echo esc_url( admin_url( 'admin.php?page=bma-service-items' ) ); ?>">
+					<?php esc_html_e( 'Szolgáltatáselemek kezelése', 'bma-ajanlatkeres' ); ?>
+				</a>
+			</p>
+		</td>
 	</tr>
 </table>

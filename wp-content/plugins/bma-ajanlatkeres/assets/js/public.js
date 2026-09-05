@@ -5,51 +5,38 @@
 		data = data || {};
 		data.action = action;
 		data.nonce = bmaAj.nonce;
-		return $.post(bmaAj.ajaxUrl, data);
+		return $.ajax({
+			url: bmaAj.ajaxUrl,
+			type: 'POST',
+			data: data,
+			xhrFields: { withCredentials: true }
+		});
 	}
 
-	// Add service to cart from single service page
-	$('#bma-service-quote-form').on('submit', function (e) {
-		e.preventDefault();
-		var $form = $(this);
-		var serviceId = $form.data('service-id');
-		var selectedItems = [];
-		$form.find('.bma-item-checkbox:checked').each(function () {
-			selectedItems.push($(this).val());
+	function postFormData(action, formData) {
+		formData.append('action', action);
+		formData.append('nonce', bmaAj.nonce);
+		return $.ajax({
+			url: bmaAj.ajaxUrl,
+			type: 'POST',
+			data: formData,
+			processData: false,
+			contentType: false,
+			xhrFields: { withCredentials: true }
 		});
+	}
 
-		var fieldValues = {};
-		$form.find('[name^="field_values"]').each(function () {
-			var $el = $(this);
-			var name = $el.attr('name').replace('field_values[', '').replace(']', '');
-			if ($el.attr('type') === 'checkbox' && !$el.is(':checked')) return;
-			if ($el.attr('type') === 'checkbox') {
-				fieldValues[name] = $el.val();
-			} else {
-				fieldValues[name] = $el.val();
-			}
-		});
-
-		postAjax('bma_add_to_cart', {
-			service_id: serviceId,
-			selected_items: selectedItems,
-			field_values: fieldValues
-		}).done(function (res) {
-			if (res.success && res.data.redirect) {
-				if (window.bmaTrackEvent) bmaTrackEvent('service_added_to_cart', { service_id: serviceId });
-				window.location.href = res.data.redirect;
-			}
-		});
+	// Mobile nav
+	$('#bma-nav-toggle').on('click', function () {
+		var $btn = $(this);
+		var $inner = $('#bma-header-inner');
+		var open = !$inner.hasClass('is-nav-open');
+		$inner.toggleClass('is-nav-open', open);
+		$btn.attr('aria-expanded', open ? 'true' : 'false');
+		$btn.attr('aria-label', open ? 'Menü bezárása' : 'Menü megnyitása');
 	});
 
-	// Quick start from services list
-	$('.bma-start-quote').on('click', function () {
-		var serviceId = $(this).data('service-id');
-		postAjax('bma_add_to_cart', { service_id: serviceId, selected_items: [], field_values: {} })
-			.done(function (res) {
-				if (res.success && res.data.redirect) window.location.href = res.data.redirect;
-			});
-	});
+	// Add service(s) to cart handled by selection.js on service pages.
 
 	// Remove from cart
 	$('.bma-remove-cart').on('click', function () {
@@ -60,26 +47,18 @@
 		});
 	});
 
-	// Submit quote request
+	// Submit quote request with unified fields (multipart)
 	$('#bma-quote-submit-form').on('submit', function (e) {
 		e.preventDefault();
 		var $form = $(this);
 		var $errors = $('#bma-form-errors');
 		$errors.prop('hidden', true).empty();
 
-		var data = {
-			name: $form.find('[name="name"]').val(),
-			email: $form.find('[name="email"]').val(),
-			phone: $form.find('[name="phone"]').val(),
-			company: $form.find('[name="company"]').val(),
-			tax_number: $form.find('[name="tax_number"]').val(),
-			billing_address: $form.find('[name="billing_address"]').val(),
-			note: $form.find('[name="note"]').val(),
-			privacy: $form.find('[name="privacy"]').is(':checked') ? 1 : 0,
-			create_account: $form.find('[name="create_account"]').is(':checked') ? 1 : 0
-		};
+		var formData = new FormData(this);
+		formData.set('privacy', $form.find('[name="privacy"]').is(':checked') ? 1 : 0);
+		formData.set('create_account', $form.find('[name="create_account"]').is(':checked') ? 1 : 0);
 
-		postAjax('bma_submit_quote_request', data).done(function (res) {
+		postFormData('bma_submit_quote_request', formData).done(function (res) {
 			if (res.success && res.data.redirect) {
 				if (window.bmaTrackEvent) bmaTrackEvent('quote_request_submitted');
 				window.location.href = res.data.redirect;
@@ -91,14 +70,178 @@
 		});
 	});
 
-	// Dynamic fields reload on item selection
-	$('.bma-item-checkbox').on('change', function () {
-		var serviceId = $('#bma-service-quote-form').data('service-id');
-		var selected = [];
-		$('.bma-item-checkbox:checked').each(function () { selected.push($(this).val()); });
-		$.get(bmaAj.restUrl + 'services/' + serviceId + '/config').done(function (data) {
-			// Fields already rendered server-side; future: partial reload via REST
+	// Accept quote → payment page
+	$('.bma-accept-quote').on('click', function () {
+		var $btn = $(this);
+		postAjax('bma_accept_quote', {
+			request_id: $btn.data('request'),
+			quote_id: $btn.data('quote')
+		}).done(function (res) {
+			if (res.success && res.data.redirect) {
+				window.location.href = res.data.redirect;
+			}
 		});
 	});
+
+	// Stripe checkout
+	$('.bma-stripe-pay').on('click', function () {
+		var $btn = $(this);
+		$btn.prop('disabled', true).text(bmaAj.strings.processing || 'Átirányítás…');
+		postAjax('bma_create_stripe_session', {
+			request_id: $btn.data('request'),
+			quote_id: $btn.data('quote')
+		}).done(function (res) {
+			if (res.success && res.data.redirect) {
+				window.location.href = res.data.redirect;
+			} else {
+				alert(res.data && res.data.message ? res.data.message : bmaAj.strings.uploadError);
+				$btn.prop('disabled', false).text('Kártyás fizetés (Stripe)');
+			}
+		}).fail(function () {
+			$btn.prop('disabled', false);
+			alert(bmaAj.strings.uploadError);
+		});
+	});
+
+	// Client portal document upload
+	$('#bma-client-upload-form').on('submit', function (e) {
+		e.preventDefault();
+		var $form = $(this);
+		var $status = $('#bma-upload-status');
+		var formData = new FormData(this);
+		formData.append('action', 'bma_upload_document');
+		formData.append('nonce', bmaAj.nonce);
+
+		$status.text(bmaAj.strings.uploading || 'Feltöltés…');
+
+		$.ajax({
+			url: bmaAj.ajaxUrl,
+			type: 'POST',
+			data: formData,
+			processData: false,
+			contentType: false
+		}).done(function (res) {
+			if (res.success) {
+				$status.text(bmaAj.strings.uploadSuccess || 'Feltöltés sikeres.');
+				setTimeout(function () { location.reload(); }, 800);
+			} else {
+				$status.text(res.data && res.data.message ? res.data.message : bmaAj.strings.uploadError);
+			}
+		}).fail(function () {
+			$status.text(bmaAj.strings.uploadError);
+		});
+	});
+
+	// Contact form: quote hint for service topics
+	$(document).on('change', '[data-bma-topic]', function () {
+		var $sel = $(this);
+		var topics = ($sel.attr('data-quote-topics') || '').split(',');
+		var val = $sel.val();
+		var show = topics.indexOf(val) !== -1;
+		$('[data-bma-quote-hint]').prop('hidden', !show);
+	});
+
+	// Contact map (OpenStreetMap + Leaflet), gated by consent / explicit load
+	function initContactMap() {
+		var root = document.querySelector('[data-bma-map]');
+		if (!root || typeof L === 'undefined' || root.getAttribute('data-map-ready') === '1') {
+			return;
+		}
+
+		var canvas = root.querySelector('[data-bma-map-canvas]');
+		var note = root.querySelector('[data-bma-map-note]');
+		var loadBtn = root.querySelector('[data-bma-map-load]');
+		if (!canvas) {
+			return;
+		}
+
+		var lat = parseFloat(root.getAttribute('data-lat'));
+		var lng = parseFloat(root.getAttribute('data-lng'));
+		var zoom = parseInt(root.getAttribute('data-zoom'), 10) || 15;
+		var label = root.getAttribute('data-label') || '';
+		var address = root.getAttribute('data-address') || '';
+
+		canvas.hidden = false;
+		if (note) {
+			note.hidden = true;
+		}
+		if (loadBtn) {
+			loadBtn.hidden = true;
+		}
+
+		var map = L.map(canvas, {
+			scrollWheelZoom: false,
+			attributionControl: true
+		}).setView([lat, lng], zoom);
+
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			maxZoom: 19,
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+		}).addTo(map);
+
+		var icon = L.divIcon({
+			className: 'bma-map-marker',
+			html: '<span class="bma-map-marker-pin"></span>',
+			iconSize: [28, 36],
+			iconAnchor: [14, 34],
+			popupAnchor: [0, -28]
+		});
+
+		var popup = label + (address ? '<br>' + address : '');
+		L.marker([lat, lng], { icon: icon }).addTo(map).bindPopup(popup);
+
+		root.setAttribute('data-map-ready', '1');
+		setTimeout(function () {
+			map.invalidateSize();
+		}, 100);
+	}
+
+	window.bmaLoadContactMap = function () {
+		try {
+			var raw = localStorage.getItem('bma_cookie_consent');
+			var c = raw ? JSON.parse(raw) : {};
+			c.map = 1;
+			if (!c.necessary) {
+				c.necessary = 1;
+			}
+			localStorage.setItem('bma_cookie_consent', JSON.stringify(c));
+		} catch (e) { /* ignore */ }
+		initContactMap();
+	};
+
+	$(document).on('click', '[data-bma-map-load]', function (e) {
+		e.preventDefault();
+		window.bmaLoadContactMap();
+	});
+
+	try {
+		var stored = localStorage.getItem('bma_cookie_consent');
+		if (stored) {
+			var consent = JSON.parse(stored);
+			if (consent.map) {
+				initContactMap();
+			}
+		}
+	} catch (e) { /* ignore */ }
+
+	// Reference gallery lightbox
+	var $lb = $('[data-bma-lightbox-dialog]');
+	if ($lb.length) {
+		var dialog = $lb.get(0);
+		var $img = $lb.find('[data-bma-lightbox-img]');
+		$(document).on('click', '[data-bma-lightbox]', function (e) {
+			e.preventDefault();
+			var src = $(this).attr('data-bma-lightbox');
+			if (!src || !dialog || typeof dialog.showModal !== 'function') return;
+			$img.attr('src', src);
+			dialog.showModal();
+		});
+		$lb.on('click', '[data-bma-lightbox-close]', function () {
+			if (dialog.open) dialog.close();
+		});
+		$lb.on('click', function (e) {
+			if (e.target === dialog && dialog.open) dialog.close();
+		});
+	}
 
 })(jQuery);

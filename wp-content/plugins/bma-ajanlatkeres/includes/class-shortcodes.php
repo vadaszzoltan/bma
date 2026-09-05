@@ -21,10 +21,19 @@ final class BMA_AJ_Shortcodes {
 		add_shortcode( 'bma_contact_form', array( self::class, 'contact_form' ) );
 		add_shortcode( 'bma_home_hero', array( self::class, 'home_hero' ) );
 		add_shortcode( 'bma_home_services', array( self::class, 'home_services' ) );
+		add_shortcode( 'bma_home_multi', array( self::class, 'home_multi' ) );
+		add_shortcode( 'bma_home_benefits', array( self::class, 'home_benefits' ) );
 		add_shortcode( 'bma_home_process', array( self::class, 'home_process' ) );
 		add_shortcode( 'bma_home_references', array( self::class, 'home_references' ) );
+		add_shortcode( 'bma_home_about', array( self::class, 'home_about' ) );
+		add_shortcode( 'bma_home_closing', array( self::class, 'home_closing' ) );
 		add_shortcode( 'bma_social_links', array( self::class, 'social_links' ) );
 		add_shortcode( 'bma_contact_info', array( self::class, 'contact_info' ) );
+		add_shortcode( 'bma_payment', array( self::class, 'payment_page' ) );
+		add_shortcode( 'bma_privacy_policy', array( self::class, 'privacy_policy' ) );
+		add_shortcode( 'bma_cookie_policy', array( self::class, 'cookie_policy' ) );
+		add_shortcode( 'bma_terms', array( self::class, 'terms' ) );
+		add_shortcode( 'bma_login', array( self::class, 'login_form' ) );
 	}
 
 	/**
@@ -106,6 +115,24 @@ final class BMA_AJ_Shortcodes {
 	}
 
 	/**
+	 * Home multi-service callout.
+	 */
+	public static function home_multi(): string {
+		ob_start();
+		include BMA_AJ_PLUGIN_DIR . 'templates/frontend/home-multi.php';
+		return ob_get_clean();
+	}
+
+	/**
+	 * Home benefits section.
+	 */
+	public static function home_benefits(): string {
+		ob_start();
+		include BMA_AJ_PLUGIN_DIR . 'templates/frontend/home-benefits.php';
+		return ob_get_clean();
+	}
+
+	/**
 	 * Home process section.
 	 */
 	public static function home_process(): string {
@@ -124,6 +151,24 @@ final class BMA_AJ_Shortcodes {
 	}
 
 	/**
+	 * Home about section.
+	 */
+	public static function home_about(): string {
+		ob_start();
+		include BMA_AJ_PLUGIN_DIR . 'templates/frontend/home-about.php';
+		return ob_get_clean();
+	}
+
+	/**
+	 * Home closing CTA.
+	 */
+	public static function home_closing(): string {
+		ob_start();
+		include BMA_AJ_PLUGIN_DIR . 'templates/frontend/home-closing.php';
+		return ob_get_clean();
+	}
+
+	/**
 	 * Social links shortcode.
 	 */
 	public static function social_links(): string {
@@ -135,12 +180,14 @@ final class BMA_AJ_Shortcodes {
 			'youtube'   => get_option( 'bma_social_youtube', '' ),
 		);
 
+		$links = array_filter( $links );
+		if ( empty( $links ) ) {
+			return '';
+		}
+
 		ob_start();
 		echo '<ul class="bma-social-links" role="list">';
 		foreach ( $links as $platform => $url ) {
-			if ( ! $url ) {
-				continue;
-			}
 			printf(
 				'<li><a href="%s" target="_blank" rel="noopener noreferrer" aria-label="%s">%s</a></li>',
 				esc_url( $url ),
@@ -158,6 +205,45 @@ final class BMA_AJ_Shortcodes {
 	public static function contact_info(): string {
 		ob_start();
 		include BMA_AJ_PLUGIN_DIR . 'templates/frontend/contact-info.php';
+		return ob_get_clean();
+	}
+
+	/**
+	 * Payment page shortcode.
+	 */
+	public static function payment_page(): string {
+		ob_start();
+		include BMA_AJ_PLUGIN_DIR . 'templates/frontend/payment-page.php';
+		return ob_get_clean();
+	}
+
+	/**
+	 * Privacy policy shortcode.
+	 */
+	public static function privacy_policy(): string {
+		return BMA_AJ_Legal_Content::privacy_html();
+	}
+
+	/**
+	 * Cookie policy shortcode.
+	 */
+	public static function cookie_policy(): string {
+		return BMA_AJ_Legal_Content::cookie_html();
+	}
+
+	/**
+	 * Terms of use shortcode.
+	 */
+	public static function terms(): string {
+		return BMA_AJ_Legal_Content::terms_html();
+	}
+
+	/**
+	 * Frontend login form shortcode.
+	 */
+	public static function login_form(): string {
+		ob_start();
+		include BMA_AJ_PLUGIN_DIR . 'templates/frontend/login-form.php';
 		return ob_get_clean();
 	}
 }

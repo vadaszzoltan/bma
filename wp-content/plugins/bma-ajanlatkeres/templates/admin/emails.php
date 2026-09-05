@@ -21,7 +21,7 @@ $templates = $wpdb->get_results( "SELECT * FROM {$table} ORDER BY id ASC" );
 ?>
 <div class="wrap">
 	<h1><?php esc_html_e( 'E-mail sablonok', 'bma-ajanlatkeres' ); ?></h1>
-	<p><?php esc_html_e( 'Elérhető változók: {request_number}, {client_name}, {client_email}, {services}, {status}, {portal_link}, {quote_amount}, {quote_valid_until}', 'bma-ajanlatkeres' ); ?></p>
+	<p><?php esc_html_e( 'Elérhető változók: {request_number}, {client_name}, {client_email}, {client_phone}, {client_data}, {services}, {status}, {portal_link}, {quote_amount}, {quote_valid_until}', 'bma-ajanlatkeres' ); ?></p>
 	<form method="post">
 		<?php wp_nonce_field( 'bma_email_save', 'bma_email_nonce' ); ?>
 		<?php foreach ( $templates as $tpl ) : ?>

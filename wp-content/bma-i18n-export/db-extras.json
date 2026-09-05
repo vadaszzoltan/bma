@@ -1,0 +1,250 @@
+{
+    "service_items": [
+        {
+            "id": "33",
+            "name": "Vízbekötési terv",
+            "slug": "vizbekotesi-terv",
+            "short_description": "Ivóvíz hálózatra csatlakozás és belső vízhálózat tervezése.",
+            "choose_if": "új vízcsatlakozásra van szüksége, vagy a meglévő vízhálózatot érintő változtatást tervez."
+        },
+        {
+            "id": "34",
+            "name": "Gázbekötési terv",
+            "slug": "gazbekotesi-terv",
+            "short_description": "Gázellátás biztonságos csatlakoztatása és belső gázhálózat.",
+            "choose_if": "új gázcsatlakozást szeretne, vagy a meglévő rendszer módosítása miatt új tervre van szükség."
+        },
+        {
+            "id": "35",
+            "name": "Szennyvízbekötési terv",
+            "slug": "szennyvizbekotesi-terv",
+            "short_description": "Szennyvíz és csapadékvíz elvezetés tervezése.",
+            "choose_if": "új szennyvízcsatlakozást alakít ki, vagy a meglévő rendszer módosítását tervezi."
+        },
+        {
+            "id": "36",
+            "name": "Elektromos hálózat tervezése",
+            "slug": "elektromos-halozat-tervezese",
+            "short_description": "Erősáramú hálózattervezés, fogyasztási igények felmérése.",
+            "choose_if": "új elektromos rendszer készül, meglévő rendszert alakít át, vagy a projekt miatt a villamos hálózat tervezésére van szükség."
+        },
+        {
+            "id": "37",
+            "name": "Építési engedély előkészítés",
+            "slug": "epitesi-engedely",
+            "short_description": "Építési engedélyhez szükséges dokumentáció összeállítása.",
+            "choose_if": "új építéshez, bővítéshez vagy más engedélyköteles munkához építési engedélyezési dokumentációra van szüksége."
+        },
+        {
+            "id": "38",
+            "name": "Használatbavételi eljárás",
+            "slug": "hasznalatbavetel",
+            "short_description": "Használatbavételi engedély és kapcsolódó jegyzőkönyvek.",
+            "choose_if": "az építési munkák elkészültek, és az ingatlan használatbavételéhez szükséges folyamatot szeretné elindítani vagy lezárni."
+        },
+        {
+            "id": "39",
+            "name": "Önkormányzati egyeztetés",
+            "slug": "onkormanyzati-egyeztetes",
+            "short_description": "Településképi és önkormányzati előírások egyeztetése.",
+            "choose_if": "a projekt megvalósításához önkormányzati dokumentációra, egyeztetésre vagy jóváhagyásra van szükség."
+        },
+        {
+            "id": "40",
+            "name": "Műszaki leírás",
+            "slug": "muszaki-leiras",
+            "short_description": "Építési műszaki leírás és specifikációk.",
+            "choose_if": "a projekthez hivatalos vagy részletes műszaki leírásra van szüksége."
+        },
+        {
+            "id": "41",
+            "name": "Építési napló",
+            "slug": "epitesi-naplo",
+            "short_description": "Építési napló vezetése és zárása.",
+            "choose_if": "a kivitelezés dokumentációjának részeként építési napló kezelésére van szüksége."
+        },
+        {
+            "id": "42",
+            "name": "Átadási jegyzőkönyv",
+            "slug": "atadasi-jegyzokonyv",
+            "short_description": "Átadás-átvételi dokumentáció összeállítása.",
+            "choose_if": "elkészült munkát, rendszert vagy projektet kell dokumentált formában átadni."
+        },
+        {
+            "id": "43",
+            "name": "Vízmű egyeztetés",
+            "slug": "vizmu-csatlakozas",
+            "short_description": "Ivóvíz és szennyvíz csatlakozási igény benyújtása.",
+            "choose_if": "új víz- vagy szennyvízcsatlakozásra van szüksége, vagy a meglévő csatlakozást módosítaná."
+        },
+        {
+            "id": "44",
+            "name": "Gázmű egyeztetés",
+            "slug": "gazmu-csatlakozas",
+            "short_description": "Gázszolgáltatói csatlakozási folyamat indítása.",
+            "choose_if": "új gázcsatlakozást szeretne kialakítani vagy meglévő csatlakozással kapcsolatban szolgáltatói ügyintézés szükséges."
+        },
+        {
+            "id": "45",
+            "name": "Áramszolgáltató egyeztetés",
+            "slug": "aramszolgaltato",
+            "short_description": "Teljesítményigény-bejelentés és csatlakozás koordinálása.",
+            "choose_if": "új elektromos csatlakozásra, teljesítménybővítésre vagy más hálózati változtatásra van szüksége."
+        }
+    ],
+    "dynamic_fields": [
+        {
+            "id": "38",
+            "field_key": "projekt_helyszin",
+            "admin_label": "Projekt helyszíne",
+            "client_label": "Projekt helyszíne",
+            "description": "Irányítószám, település, utca, házszám",
+            "placeholder": "",
+            "options": "[]"
+        },
+        {
+            "id": "39",
+            "field_key": "helyrajzi_szam",
+            "admin_label": "Helyrajzi szám",
+            "client_label": "Helyrajzi szám",
+            "description": "Ha rendelkezésre áll",
+            "placeholder": "pl. 12345\/6",
+            "options": "[]"
+        },
+        {
+            "id": "40",
+            "field_key": "alapterulet",
+            "admin_label": "Alapterület (m²)",
+            "client_label": "Alapterület (m²)",
+            "description": "Az épület nettó alapterülete",
+            "placeholder": "pl. 120",
+            "options": "[]"
+        },
+        {
+            "id": "41",
+            "field_key": "szintek_szama",
+            "admin_label": "Szintek száma",
+            "client_label": "Szintek száma",
+            "description": "Pince, földszint, emelet együtt",
+            "placeholder": "pl. 2",
+            "options": "[]"
+        },
+        {
+            "id": "42",
+            "field_key": "epitesi_fazis",
+            "admin_label": "Építési fázis",
+            "client_label": "Építési fázis",
+            "description": "",
+            "placeholder": "",
+            "options": "[\"\\u00daj \\u00e9p\\u00edt\\u00e9s\",\"Fel\\u00faj\\u00edt\\u00e1s\",\"B\\u0151v\\u00edt\\u00e9s\",\"\\u00c1talak\\u00edt\\u00e1s\"]"
+        },
+        {
+            "id": "43",
+            "field_key": "projekt_megjegyzes",
+            "admin_label": "Megjegyzés",
+            "client_label": "További megjegyzés",
+            "description": "Egyéb fontos információ a projektről",
+            "placeholder": "",
+            "options": "[]"
+        },
+        {
+            "id": "44",
+            "field_key": "tervrajz_feltoltes",
+            "admin_label": "Tervrajz \/ alaprajz",
+            "client_label": "Tervrajz vagy alaprajz feltöltése",
+            "description": "PDF, DWG, JPG – max. 20 MB",
+            "placeholder": "",
+            "options": "[]"
+        },
+        {
+            "id": "45",
+            "field_key": "vizigeny",
+            "admin_label": "Vízigény (m³\/nap)",
+            "client_label": "Becsült vízigény (m³\/nap)",
+            "description": "Vízbekötési terv esetén",
+            "placeholder": "pl. 0.5",
+            "options": "[]"
+        },
+        {
+            "id": "46",
+            "field_key": "gaz_tipusa",
+            "admin_label": "Gáz típusa",
+            "client_label": "Gázellátás típusa",
+            "description": "Gázbekötési terv esetén",
+            "placeholder": "",
+            "options": "[\"F\\u00f6ldg\\u00e1z (k\\u00f6zponti)\",\"PB-g\\u00e1z\",\"Tervez\\u00e9s alatt\"]"
+        },
+        {
+            "id": "47",
+            "field_key": "teljesitmenyigeny",
+            "admin_label": "Teljesítményigény (kW)",
+            "client_label": "Teljesítményigény (kW)",
+            "description": "Elektromos hálózattervezés esetén",
+            "placeholder": "pl. 14",
+            "options": "[]"
+        },
+        {
+            "id": "48",
+            "field_key": "epulet_funkcio",
+            "admin_label": "Épület funkciója",
+            "client_label": "Épület funkciója",
+            "description": "",
+            "placeholder": "",
+            "options": "[\"Lak\\u00f3\\u00e9p\\u00fclet\",\"Iroda\",\"Kereskedelmi\",\"Ipari\",\"Egy\\u00e9b\"]"
+        },
+        {
+            "id": "49",
+            "field_key": "hatarido",
+            "admin_label": "Kívánt határidő",
+            "client_label": "Kívánt határidő",
+            "description": "Ha van preferált átadási dátum",
+            "placeholder": "",
+            "options": "[]"
+        },
+        {
+            "id": "50",
+            "field_key": "dokumentum_celja",
+            "admin_label": "Dokumentáció célja",
+            "client_label": "Dokumentáció célja",
+            "description": "",
+            "placeholder": "",
+            "options": "[\"Hat\\u00f3s\\u00e1gi beny\\u00fajt\\u00e1s\",\"Beruh\\u00e1z\\u00f3i \\u00e1tad\\u00e1s\",\"Bels\\u0151 haszn\\u00e1lat\"]"
+        },
+        {
+            "id": "51",
+            "field_key": "forras_dokumentum",
+            "admin_label": "Forrásdokumentum",
+            "client_label": "Meglévő dokumentum feltöltése",
+            "description": "PDF, DOC, ZIP – max. 20 MB",
+            "placeholder": "",
+            "options": "[]"
+        },
+        {
+            "id": "52",
+            "field_key": "prioritas",
+            "admin_label": "Prioritás",
+            "client_label": "Projekt prioritása",
+            "description": "",
+            "placeholder": "",
+            "options": "[\"Norm\\u00e1l\",\"S\\u00fcrg\\u0151s\",\"Rugalmas hat\\u00e1rid\\u0151\"]"
+        },
+        {
+            "id": "53",
+            "field_key": "kapcsolattarto_email",
+            "admin_label": "Helyszíni kapcsolattartó e-mail",
+            "client_label": "Helyszíni kapcsolattartó e-mail",
+            "description": "Ha eltér a beküldő adataitól",
+            "placeholder": "pelda@email.hu",
+            "options": "[]"
+        },
+        {
+            "id": "54",
+            "field_key": "napemel",
+            "admin_label": "Napelem",
+            "client_label": "Napelem",
+            "description": "",
+            "placeholder": "",
+            "options": "[\"Igen\",\"Nem\"]"
+        }
+    ]
+}

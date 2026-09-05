@@ -1,0 +1,191 @@
+<!-- Szolgaltatas lista oldal ({{...}} = dinamikus ertek) -->
+<!-- Forras: Claude Design vaszon, BMA Engineering - oldalfejlesztes -->
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>+40 728 205 982</span>
+    <span>office@bmaeng.ro</span>
+    <span>Hétfő–Péntek, 08:00–17:00</span>
+  </div>
+</div>
+<header class="siteheader">
+  <div class="header-inner">
+    <div class="logo">[LOGÓ]</div>
+    <nav class="nav">
+      <a href="#">Főoldal</a>
+      <a href="#">Szolgáltatások</a>
+      <a href="#">Referenciák</a>
+      <a href="#">Kapcsolat</a>
+    </nav>
+    <div class="header-actions">
+      <span class="cart-btn">Ajánlat <span class="cart-count">{{count}}</span></span>
+      <a href="#" style="font-size:14px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#0e2356">Ügyfélportál</a>
+      <a href="#" class="btn btn--outline btn--sm" style="letter-spacing:.6px;text-transform:uppercase;font-size:13px;font-weight:700">Belépés</a>
+    </div>
+  </div>
+</header>
+
+<section class="pagehead">
+  <div class="pagehead-inner pagehead-inner--split">
+    <div>
+      <p class="crumb"><a href="#">Főoldal</a> / Szolgáltatások</p>
+      <p class="eyebrow eyebrow--light">Ajánlatkérés</p>
+      <h1>Szolgáltatások</h1>
+      <p class="pagehead-lead">Válassza ki az Ön projektjéhez kapcsolódó szolgáltatási területet. Egy ajánlatkérésben több szolgáltatás és azokon belül több részfeladat is megjelölhető.</p>
+    </div>
+    <div class="sidecard">
+      <h3>Hogyan működik?</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>Jelölje be a szükséges tételeket – bármennyit.</span></li>
+        <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>Adja meg a projekt adatait és a meglévő dokumentumokat.</span></li>
+        <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>Visszajelzés [X] munkanapon belül, kötelezettség nélkül.</span></li>
+      </ul>
+      <span class="tiny" style="color:#8fa2c4;display:block">Ha nem tudja pontosan, mire van szüksége, elég a projektet leírnia – segítünk összeállítani.</span>
+    </div>
+  </div>
+</section>
+
+<div class="appbody">
+  <div class="wiz-grid">
+    <div>
+      <div class="jump">
+        <a href="#"><span class="jump-n">01</span> Tervezés</a>
+        <a href="#"><span class="jump-n">02</span> Engedélyeztetés</a>
+        <a href="#"><span class="jump-n">03</span> Műszaki dokumentáció</a>
+        <a href="#"><span class="jump-n">04</span> Közmű-koordináció</a>
+      </div>
+
+      <div class="panel sv-panel">
+        <div class="sv-head">
+          <span class="sv-head-ic"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"></path><path d="M4 10h16M10 4v16"></path><circle cx="15" cy="15" r="1.6"></circle></svg></span>
+          <div>
+            <h2>Tervezés</h2>
+            <p>Közmű- és épületgépészeti tervek lakossági és üzleti projektekhez, a helyszíni adottságok figyelembevételével.</p>
+          </div>
+          <a href="#" class="btn btn--outline btn--sm">Részletek</a>
+        </div>
+        <div class="sv-tasks">
+          <sc-for list="{{g1}}" as="t" hint-placeholder-count="4">
+            <button type="button" class="task {{t.cls}}" onClick="{{t.toggle}}">
+              <span class="box"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"></path></svg></span>
+              <span><strong>{{t.name}}</strong><span class="hint">{{t.hint}}</span><span class="task-when"><b>Ezt válassza, ha:</b><span>{{t.when}}</span></span></span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+
+      <div class="panel sv-panel">
+        <div class="sv-head">
+          <span class="sv-head-ic"><svg class="icon" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"></path><path d="M15 3v4h4"></path><path d="M9.5 14l2 2 3.5-4"></path></svg></span>
+          <div>
+            <h2>Engedélyeztetés</h2>
+            <p>Építési és használatbavételi engedélyek előkészítése, hatósági egyeztetések támogatása.</p>
+          </div>
+          <a href="#" class="btn btn--outline btn--sm">Részletek</a>
+        </div>
+        <div class="sv-tasks">
+          <sc-for list="{{g2}}" as="t" hint-placeholder-count="3">
+            <button type="button" class="task {{t.cls}}" onClick="{{t.toggle}}">
+              <span class="box"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"></path></svg></span>
+              <span><strong>{{t.name}}</strong><span class="hint">{{t.hint}}</span><span class="task-when"><b>Ezt válassza, ha:</b><span>{{t.when}}</span></span></span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+
+      <div class="panel sv-panel">
+        <div class="sv-head">
+          <span class="sv-head-ic"><svg class="icon" viewBox="0 0 24 24"><path d="M5 4h14v16H5z"></path><path d="M8 9h8M8 13h8M8 17h5"></path></svg></span>
+          <div>
+            <h2>Műszaki dokumentáció</h2>
+            <p>Műszaki leírások, jegyzőkönyvek, átadási dokumentáció és projektzáró anyagok készítése.</p>
+          </div>
+          <a href="#" class="btn btn--outline btn--sm">Részletek</a>
+        </div>
+        <div class="sv-tasks">
+          <sc-for list="{{g3}}" as="t" hint-placeholder-count="3">
+            <button type="button" class="task {{t.cls}}" onClick="{{t.toggle}}">
+              <span class="box"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"></path></svg></span>
+              <span><strong>{{t.name}}</strong><span class="hint">{{t.hint}}</span><span class="task-when"><b>Ezt válassza, ha:</b><span>{{t.when}}</span></span></span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+
+      <div class="panel sv-panel">
+        <div class="sv-head">
+          <span class="sv-head-ic"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v6M12 16v6M4.5 7l3.2 2M19.5 7l-3.2 2M4.5 17l3.2-2M19.5 17l-3.2-2"></path></svg></span>
+          <div>
+            <h2>Közmű-koordináció</h2>
+            <p>Szolgáltatói egyeztetések, csatlakozási igények és határidők koordinálása egy helyen.</p>
+          </div>
+          <a href="#" class="btn btn--outline btn--sm">Részletek</a>
+        </div>
+        <div class="sv-tasks">
+          <sc-for list="{{g4}}" as="t" hint-placeholder-count="3">
+            <button type="button" class="task {{t.cls}}" onClick="{{t.toggle}}">
+              <span class="box"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"></path></svg></span>
+              <span><strong>{{t.name}}</strong><span class="hint">{{t.hint}}</span><span class="task-when"><b>Ezt válassza, ha:</b><span>{{t.when}}</span></span></span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+
+      <div class="helpcard">
+        <div>
+          <h3>Nem találja, amire szüksége van?</h3>
+          <p>Írja le röviden a projektet, és segítünk összeállítani a szükséges tételeket.</p>
+        </div>
+        <a href="#" class="btn btn--outline">Kapcsolat</a>
+      </div>
+    </div>
+
+    <div class="panel summary">
+      <div class="summary-head"><h3>Az Ön ajánlatkérése</h3><span class="summary-count">{{count}}</span></div>
+      <sc-if value="{{isEmpty}}" hint-placeholder-val="{{false}}">
+        <div class="sum-empty">Még nem választott tételt. Jelölje be bal oldalon, mire van szüksége – bármennyi tétel egy ajánlatkérésbe kerülhet.</div>
+      </sc-if>
+      <sc-for list="{{chosen}}" as="c" hint-placeholder-count="2">
+        <div class="sum-item">
+          <span><strong>{{c.name}}</strong><span class="hint">{{c.area}}</span></span>
+          <button type="button" class="sum-del" onClick="{{c.remove}}" aria-label="Tétel eltávolítása">×</button>
+        </div>
+      </sc-for>
+      <div class="sum-foot">
+        <button type="button" class="btn btn--primary {{ctaCls}}" style="width:100%;justify-content:center">Tovább az ajánlatkéréshez</button>
+        <p class="sum-note">{{ctaNote}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="logo" style="background:transparent;border:1px dashed rgba(255,255,255,.45);color:#fff;width:112px;height:44px;margin-bottom:18px">[LOGÓ]</div>
+      <div style="font-weight:700;color:#fff;margin-bottom:10px">BMA ENGINEERING S.R.L.</div>
+      <div class="small" style="line-height:1.6">Str. Raza Soarelui 11<br>535600 Odorheiu Secuiesc<br>Harghita, Romania</div>
+      <div class="small" style="margin-top:12px">+40 728 205 982 · office@bmaeng.ro</div>
+      <div class="small" style="margin-top:6px">CUI: 40593519</div>
+    </div>
+    <div>
+      <h4>Navigáció</h4>
+      <div class="footer-links">
+        <a href="#">Főoldal</a>
+        <a href="#">Szolgáltatások</a>
+        <a href="#">Referenciák</a>
+        <a href="#">Kapcsolat</a>
+        <a href="#">Ügyfélportál</a>
+      </div>
+    </div>
+    <div>
+      <h4>Ajánlatkérés</h4>
+      <p class="small" style="margin:0 0 16px;line-height:1.6">Válassza ki a szükséges szolgáltatásokat, és néhány adat megadásával kérjen személyre szabott ajánlatot.</p>
+      <a href="#" class="btn btn--primary btn--sm">Ajánlatkérés indítása</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 BMA ENGINEERING S.R.L.</span>
+    <span>Adatvédelem · Cookie tájékoztató · ÁSZF</span>
+  </div>
+</footer>

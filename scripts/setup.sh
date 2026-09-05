@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="$(cd "$(dirname "$0")" && pwd)"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
 if [ ! -f .env ]; then
@@ -12,9 +12,14 @@ fi
 echo "Starting Docker containers..."
 docker compose up -d
 
+echo "Fixing uploads directory permissions..."
+docker compose exec -T -u root wordpress chown -R www-data:www-data /var/www/html/wp-content/uploads 2>/dev/null || true
+docker compose exec -T -u root wordpress mkdir -p /var/www/html/wp-content/uploads/bma-documents/temp 2>/dev/null || true
+docker compose exec -T -u root wordpress chown -R www-data:www-data /var/www/html/wp-content/uploads/bma-documents 2>/dev/null || true
+
 echo ""
-echo "WordPress: http://localhost:8080"
-echo "MailHog:   http://localhost:8025"
+echo "WordPress: http://localhost:8081"
+echo "MailHog:   http://localhost:8026"
 echo ""
 echo "Next steps:"
 echo "  1. Complete WordPress installation in the browser"

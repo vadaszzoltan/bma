@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1680" viewBox="0 0 1440 1680" fill="none">
+  <!--
+    BMA Engineering  Aj�nlatk�r�s r�szletes n�zet (admin)
+    Figma import: File � Place image& / h�zd a canvasre
+    R�tegek: Ctrl/Cmd+Shift+G = ungroup
+  -->
+
+  <!-- Frame: Desktop -->
+  <g id="Frame / Desktop 1440">
+    <rect id="Background" width="1440" height="1680" fill="#F0F0F1"/>
+
+    <!-- WP Admin sidebar -->
+    <g id="WP Admin Sidebar">
+      <rect x="0" y="0" width="160" height="1680" fill="#1D2327"/>
+      <text x="20" y="40" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700">BMA</text>
+      <text x="20" y="72" fill="#A7AAAD" font-family="Inter, Arial, sans-serif" font-size="12">Aj�nlatk�r�sek</text>
+      <rect x="0" y="84" width="160" height="32" fill="#2271B1"/>
+      <text x="20" y="105" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="12">R�szletes n�zet</text>
+      <text x="20" y="140" fill="#A7AAAD" font-family="Inter, Arial, sans-serif" font-size="12">Szolg�ltat�sok</text>
+      <text x="20" y="168" fill="#A7AAAD" font-family="Inter, Arial, sans-serif" font-size="12">St�tuszok</text>
+      <text x="20" y="196" fill="#A7AAAD" font-family="Inter, Arial, sans-serif" font-size="12">Be�ll�t�sok</text>
+    </g>
+
+    <!-- Top bar -->
+    <g id="WP Admin Topbar">
+      <rect x="160" y="0" width="1280" height="48" fill="#1D2327"/>
+      <text x="180" y="30" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="13">BMA Engineering</text>
+      <text x="1280" y="30" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="13">Admin</text>
+    </g>
+
+    <!-- Page content -->
+    <g id="Page Content">
+      <!-- Title -->
+      <g id="Page Title">
+        <text x="192" y="100" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600">BMA-20260715-K4QUZ9  Vadasz Zoltan</text>
+        <text x="192" y="128" fill="#646970" font-family="Inter, Arial, sans-serif" font-size="13">Aj�nlatk�r�s r�szletes n�zet</text>
+      </g>
+
+      <!-- Row 1: �gyf�ladatok + St�tusz -->
+      <g id="Row / �gyf�l + St�tusz">
+        <!-- Panel: �gyf�ladatok -->
+        <g id="Panel / �gyf�ladatok">
+          <rect x="192" y="152" width="500" height="280" rx="4" fill="#FFFFFF" stroke="#C3C4C7"/>
+          <rect x="192" y="152" width="500" height="48" rx="4" fill="#FFFFFF"/>
+          <line x1="192" y1="200" x2="692" y2="200" stroke="#E0E0E0"/>
+          <text x="212" y="182" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600">�gyf�ladatok</text>
+
+          <text x="212" y="232" fill="#646970" font-family="Inter, Arial, sans-serif" font-size="12">N�v</text>
+          <text x="360" y="232" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="13">Vadasz Zoltan</text>
+
+          <text x="212" y="264" fill="#646970" font-family="Inter, Arial, sans-serif" font-size="12">E-mail</text>
+          <text x="360" y="264" fill="#2271B1" font-family="Inter, Arial, sans-serif" font-size="13">vadaszzoltan@minic.hu</text>
+
+          <text x="212" y="296" fill="#646970" font-family="Inter, Arial, sans-serif" font-size="12">Telefon</text>
+          <text x="360" y="296" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="13">+36 30 000 0000</text>
+
+          <text x="212" y="328" fill="#646970" font-family="Inter, Arial, sans-serif" font-size="12">C�g</text>
+          <text x="360" y="328" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="13">minic studio</text>
+
+          <text x="212" y="360" fill="#646970" font-family="Inter, Arial, sans-serif" font-size="12">Megjegyz�s</text>
+          <text x="360" y="360" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="13">Projekt megjegyz�s sz�vege&</text>
+        </g>
+
+        <!-- Panel: St�tusz -->
+        <g id="Panel / St�tusz">
+          <rect x="716" y="152" width="500" height="280" rx="4" fill="#FFFFFF" stroke="#C3C4C7"/>
+          <text x="736" y="182" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600">St�tusz</text>
+          <line x1="716" y1="200" x2="1216" y2="200" stroke="#E0E0E0"/>
+
+          <!-- Status badge -->
+          <g id="Status Badge">
+            <rect x="736" y="216" width="120" height="28" rx="14" fill="#2271B1"/>
+            <text x="756" y="235" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600">Be�rkezett</text>
+          </g>
+
+          <!-- Select -->
+          <g id="Form / St�tusz select">
+            <rect x="736" y="260" width="220" height="36" rx="2" fill="#FFFFFF" stroke="#8C8F94"/>
+            <text x="748" y="283" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="13">Feldolgoz�s alatt</text>
+          </g>
+
+          <g id="Form / St�tusz megjegyz�s">
+            <rect x="736" y="308" width="460" height="48" rx="2" fill="#FFFFFF" stroke="#8C8F94"/>
+            <text x="748" y="330" fill="#A7AAAD" font-family="Inter, Arial, sans-serif" font-size="13">Megjegyz�s&</text>
+          </g>
+
+          <g id="Button / St�tusz m�dos�t�sa">
+            <rect x="736" y="372" width="160" height="36" rx="2" fill="#2271B1"/>
+            <text x="752" y="395" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">St�tusz m�dos�t�sa</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- Panel: St�tuszelQzm�nyek (under status conceptually shown in page flow) -->
+      <g id="Panel / St�tuszelQzm�nyek">
+        <rect x="192" y="456" width="1024" height="140" rx="4" fill="#FFFFFF" stroke="#C3C4C7"/>
+        <text x="212" y="486" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600">St�tuszelQzm�nyek</text>
+        <line x1="192" y1="504" x2="1216" y2="504" stroke="#E0E0E0"/>
+        <text x="212" y="536" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="13">2026.07.15 14:32  Be�rkezett: Aj�nlatk�r�s bek�ldve.</text>
+        <text x="212" y="564" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="13">2026.07.15 15:10  Feldolgoz�s alatt: Dokumentumok ellenQrz�se.</text>
+      </g>
+
+      <!-- Panel: Kiv�lasztott szolg�ltat�sok -->
+      <g id="Panel / Kiv�lasztott szolg�ltat�sok">
+        <rect x="192" y="620" width="1024" height="220" rx="4" fill="#FFFFFF" stroke="#C3C4C7"/>
+        <text x="212" y="650" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600">Kiv�lasztott szolg�ltat�sok</text>
+        <line x1="192" y1="668" x2="1216" y2="668" stroke="#E0E0E0"/>
+
+        <g id="Service Block / Tervez�s">
+          <text x="212" y="700" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600">Tervez�s</text>
+          <text x="212" y="724" fill="#646970" font-family="Inter, Arial, sans-serif" font-size="13">Elemek: V�zbek�t�si terv, G�zbek�t�si terv</text>
+        </g>
+
+        <g id="Service Block / Enged�lyeztet�s">
+          <text x="212" y="764" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600">Enged�lyeztet�s</text>
+          <text x="212" y="788" fill="#646970" font-family="Inter, Arial, sans-serif" font-size="13">Elemek: �p�t�si enged�ly elQk�sz�t�s</text>
+        </g>
+      </g>
+
+      <!-- Row: Aj�nlat + Dokumentumok -->
+      <g id="Row / Aj�nlat + Dokumentumok">
+        <g id="Panel / Aj�nlat">
+          <rect x="192" y="864" width="500" height="420" rx="4" fill="#FFFFFF" stroke="#C3C4C7"/>
+          <text x="212" y="894" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600">Aj�nlat</text>
+          <line x1="192" y1="912" x2="692" y2="912" stroke="#E0E0E0"/>
+
+          <text x="212" y="944" fill="#646970" font-family="Inter, Arial, sans-serif" font-size="12">Aj�nlat sz�ma</text>
+          <rect x="360" y="924" width="280" height="32" rx="2" fill="#FFFFFF" stroke="#8C8F94"/>
+          <text x="372" y="945" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="13">BMA-Q-2026-001</text>
+
+          <text x="212" y="992" fill="#646970" font-family="Inter, Arial, sans-serif" font-size="12">Nett�</text>
+          <rect x="360" y="972" width="140" height="32" rx="2" fill="#FFFFFF" stroke="#8C8F94"/>
+          <text x="372" y="993" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="13">1200.00</text>
+
+          <text x="212" y="1040" fill="#646970" font-family="Inter, Arial, sans-serif" font-size="12">Ad�</text>
+          <rect x="360" y="1020" width="140" height="32" rx="2" fill="#FFFFFF" stroke="#8C8F94"/>
+          <text x="372" y="1041" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="13">228.00</text>
+
+          <text x="212" y="1088" fill="#646970" font-family="Inter, Arial, sans-serif" font-size="12">Brutt�</text>
+          <rect x="360" y="1068" width="140" height="32" rx="2" fill="#FFFFFF" stroke="#8C8F94"/>
+          <text x="372" y="1089" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="13">1428.00</text>
+
+          <text x="212" y="1136" fill="#646970" font-family="Inter, Arial, sans-serif" font-size="12">P�nznem</text>
+          <rect x="360" y="1116" width="100" height="32" rx="2" fill="#FFFFFF" stroke="#8C8F94"/>
+          <text x="372" y="1137" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="13">EUR</text>
+
+          <text x="212" y="1184" fill="#646970" font-family="Inter, Arial, sans-serif" font-size="12">�rv�nyess�g</text>
+          <rect x="360" y="1164" width="160" height="32" rx="2" fill="#FFFFFF" stroke="#8C8F94"/>
+          <text x="372" y="1185" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="13">2026-08-31</text>
+
+          <text x="212" y="1232" fill="#646970" font-family="Inter, Arial, sans-serif" font-size="12">Aj�nlati PDF</text>
+          <rect x="360" y="1212" width="280" height="32" rx="2" fill="#F6F7F7" stroke="#8C8F94"/>
+          <text x="372" y="1233" fill="#646970" font-family="Inter, Arial, sans-serif" font-size="12">F�jl kiv�laszt�sa&</text>
+
+          <g id="Button / Aj�nlat ment�se">
+            <rect x="212" y="1268" width="220" height="36" rx="2" fill="#2271B1"/>
+            <text x="228" y="1291" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">Aj�nlat ment�se �s k�ld�se</text>
+          </g>
+        </g>
+
+        <g id="Panel / Dokumentumok">
+          <rect x="716" y="864" width="500" height="420" rx="4" fill="#FFFFFF" stroke="#C3C4C7"/>
+          <text x="736" y="894" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600">Dokumentumok</text>
+          <line x1="716" y1="912" x2="1216" y2="912" stroke="#E0E0E0"/>
+
+          <g id="Document List">
+            <text x="736" y="948" fill="#2271B1" font-family="Inter, Arial, sans-serif" font-size="13">helyszinrajz.pdf (client_upload)</text>
+            <text x="736" y="976" fill="#2271B1" font-family="Inter, Arial, sans-serif" font-size="13">muszaki_leiras.docx (client_upload)</text>
+            <text x="736" y="1004" fill="#2271B1" font-family="Inter, Arial, sans-serif" font-size="13">ajanlat_BMA-Q-2026-001.pdf (quote)</text>
+          </g>
+
+          <text x="736" y="1056" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">�j dokumentum felt�lt�se</text>
+
+          <rect x="736" y="1076" width="220" height="32" rx="2" fill="#FFFFFF" stroke="#8C8F94"/>
+          <text x="748" y="1097" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="12">Mqszaki dokumentum</text>
+
+          <rect x="736" y="1124" width="280" height="32" rx="2" fill="#F6F7F7" stroke="#8C8F94"/>
+          <text x="748" y="1145" fill="#646970" font-family="Inter, Arial, sans-serif" font-size="12">F�jl kiv�laszt�sa&</text>
+
+          <g id="Button / Dokumentum felt�lt�se">
+            <rect x="736" y="1176" width="180" height="36" rx="2" fill="#FFFFFF" stroke="#2271B1"/>
+            <text x="752" y="1199" fill="#2271B1" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">Dokumentum felt�lt�se</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- Panel: Admin megjegyz�s -->
+      <g id="Panel / Adminisztr�tori megjegyz�s">
+        <rect x="192" y="1308" width="1024" height="200" rx="4" fill="#FFFFFF" stroke="#C3C4C7"/>
+        <text x="212" y="1338" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600">Adminisztr�tori megjegyz�s</text>
+        <line x1="192" y1="1356" x2="1216" y2="1356" stroke="#E0E0E0"/>
+        <rect x="212" y="1376" width="984" height="72" rx="2" fill="#FFFFFF" stroke="#8C8F94"/>
+        <text x="224" y="1404" fill="#A7AAAD" font-family="Inter, Arial, sans-serif" font-size="13">BelsQ megjegyz�s az aj�nlatk�r�shez&</text>
+        <g id="Button / Ment�s">
+          <rect x="212" y="1468" width="80" height="32" rx="2" fill="#FFFFFF" stroke="#8C8F94"/>
+          <text x="236" y="1489" fill="#1D2327" font-family="Inter, Arial, sans-serif" font-size="13">Ment�s</text>
+        </g>
+      </g>
+
+      <!-- Annotations for design review -->
+      <g id="Annotations" opacity="0.9">
+        <rect x="1240" y="152" width="180" height="80" rx="4" fill="#FFF8E5" stroke="#DBA617"/>
+        <text x="1252" y="176" fill="#996800" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="600">Annot�ci�</text>
+        <text x="1252" y="196" fill="#996800" font-family="Inter, Arial, sans-serif" font-size="10">2 oszlopos grid</text>
+        <text x="1252" y="212" fill="#996800" font-family="Inter, Arial, sans-serif" font-size="10">WP admin mint�zat</text>
+      </g>
+    </g>
+  </g>
+</svg>

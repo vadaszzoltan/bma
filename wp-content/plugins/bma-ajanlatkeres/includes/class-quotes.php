@@ -19,6 +19,96 @@ final class BMA_AJ_Quotes {
 	}
 
 	/**
+	 * Update quote status.
+	 *
+	 * @param int    $quote_id Quote ID.
+	 * @param string $status   Status slug.
+	 */
+	public static function update_status( int $quote_id, string $status ): void {
+		global $wpdb;
+		$wpdb->update(
+			$wpdb->prefix . 'bma_quotes',
+			array( 'status' => sanitize_text_field( $status ) ),
+			array( 'id' => $quote_id )
+		);
+	}
+
+	/**
+	 * Mark quote as paid.
+	 *
+	 * @param int    $quote_id   Quote ID.
+	 * @param string $method     Payment method.
+	 * @param string $session_id Stripe session ID.
+	 */
+	public static function mark_paid( int $quote_id, string $method, string $session_id = '' ): void {
+		global $wpdb;
+		$wpdb->update(
+			$wpdb->prefix . 'bma_quotes',
+			array(
+				'status'            => 'accepted',
+				'payment_status'    => 'paid',
+				'payment_method'    => sanitize_text_field( $method ),
+				'stripe_session_id' => sanitize_text_field( $session_id ),
+				'paid_at'           => current_time( 'mysql' ),
+			),
+			array( 'id' => $quote_id )
+		);
+	}
+
+	/**
+	 * Human-readable quote / payment label for lists.
+	 *
+	 * @param object|null $quote Quote row.
+	 */
+	public static function display_label( ?object $quote ): string {
+		if ( ! $quote ) {
+			return __( 'Nincs ajánlat', 'bma-ajanlatkeres' );
+		}
+
+		$payment = (string) ( $quote->payment_status ?? '' );
+		if ( 'paid' === $payment ) {
+			return __( 'Fizetve', 'bma-ajanlatkeres' );
+		}
+		if ( 'bank_pending' === $payment ) {
+			return __( 'Banki utalás folyamatban', 'bma-ajanlatkeres' );
+		}
+
+		switch ( (string) $quote->status ) {
+			case 'draft':
+				return __( 'Piszkozat', 'bma-ajanlatkeres' );
+			case 'sent':
+			case 'viewed':
+				return __( 'Ajánlat elérhető', 'bma-ajanlatkeres' );
+			case 'accepted':
+				return __( 'Elfogadva', 'bma-ajanlatkeres' );
+			case 'expired':
+				return __( 'Lejárt', 'bma-ajanlatkeres' );
+			case 'revoked':
+				return __( 'Visszavonva', 'bma-ajanlatkeres' );
+			default:
+				return (string) $quote->status;
+		}
+	}
+
+	/**
+	 * Mark bank transfer selected.
+	 *
+	 * @param int $quote_id Quote ID.
+	 */
+	public static function mark_bank_pending( int $quote_id ): void {
+		global $wpdb;
+		$wpdb->update(
+			$wpdb->prefix . 'bma_quotes',
+			array(
+				'status'         => 'accepted',
+				'payment_status' => 'bank_pending',
+				'payment_method' => 'bank_transfer',
+			),
+			array( 'id' => $quote_id )
+		);
+	}
+
+	/**
 	 * Get latest quote for request.
 	 *
 	 * @param int $request_id Request ID.
@@ -55,6 +145,39 @@ final class BMA_AJ_Quotes {
 	}
 
 	/**
+	 * Generate unique quote number: Oferta-BMA-{NR}-{YYYY-MM-DD}.
+	 */
+	public static function generate_number(): string {
+		global $wpdb;
+		$table = $wpdb->prefix . 'bma_quotes';
+		$date  = wp_date( 'Y-m-d' );
+
+		$max = (int) $wpdb->get_var(
+			$wpdb->prepare(
+				"SELECT MAX(CAST(SUBSTRING_INDEX(SUBSTRING_INDEX(quote_number, '-', 3), '-', -1) AS UNSIGNED))
+				FROM {$table}
+				WHERE quote_number LIKE %s",
+				$wpdb->esc_like( 'Oferta-BMA-' ) . '%'
+			)
+		);
+
+		$nr = max( 1, $max + 1 );
+
+		do {
+			$candidate = sprintf( 'Oferta-BMA-%d-%s', $nr, $date );
+			$exists    = (int) $wpdb->get_var(
+				$wpdb->prepare(
+					"SELECT COUNT(*) FROM {$table} WHERE quote_number = %s",
+					$candidate
+				)
+			);
+			++$nr;
+		} while ( $exists > 0 );
+
+		return $candidate;
+	}
+
+	/**
 	 * Create or update quote.
 	 *
 	 * @param int                  $request_id Request ID.
@@ -64,33 +187,72 @@ final class BMA_AJ_Quotes {
 		global $wpdb;
 		$table = $wpdb->prefix . 'bma_quotes';
 
-		if ( ! current_user_can( 'bma_manage_quotes' ) ) {
+		if ( ! current_user_can( 'bma_manage_quotes' ) && ! current_user_can( 'bma_manage_requests' ) ) {
 			return new WP_Error( 'forbidden', __( 'Nincs jogosultsága.', 'bma-ajanlatkeres' ) );
 		}
 
-		$net   = floatval( $data['net_amount'] ?? 0 );
-		$tax   = floatval( $data['tax_amount'] ?? 0 );
-		$gross = floatval( $data['gross_amount'] ?? ( $net + $tax ) );
+		$net   = self::parse_amount( $data['net_amount'] ?? 0 );
+		$tax   = self::parse_amount( $data['tax_amount'] ?? 0 );
+		$gross = self::parse_amount( $data['gross_amount'] ?? 0 );
+		if ( $gross <= 0 && ( $net > 0 || $tax > 0 ) ) {
+			$gross = round( $net + $tax, 2 );
+		}
+
+		$quote_id = absint( $data['id'] ?? 0 );
+		if ( ! $quote_id ) {
+			$existing = self::get_latest_for_request( $request_id );
+			if ( $existing ) {
+				$quote_id = (int) $existing->id;
+			}
+		}
+
+		if ( $quote_id ) {
+			$current = $wpdb->get_row(
+				$wpdb->prepare( "SELECT quote_number FROM {$table} WHERE id = %d", $quote_id )
+			);
+			$quote_number = ( $current && ! empty( $current->quote_number ) )
+				? (string) $current->quote_number
+				: self::generate_number();
+		} else {
+			$quote_number = self::generate_number();
+		}
 
 		$quote_data = array(
 			'request_id'   => $request_id,
-			'quote_number' => sanitize_text_field( $data['quote_number'] ?? 'AJ-' . wp_generate_password( 8, false ) ),
-			'net_amount'   => $net,
-			'tax_amount'   => $tax,
-			'gross_amount' => $gross,
-			'currency'     => sanitize_text_field( $data['currency'] ?? 'HUF' ),
+			'quote_number' => $quote_number,
+			'net_amount'   => number_format( $net, 2, '.', '' ),
+			'tax_amount'   => number_format( $tax, 2, '.', '' ),
+			'gross_amount' => number_format( $gross, 2, '.', '' ),
+			'currency'     => sanitize_text_field( $data['currency'] ?? get_option( 'bma_default_currency', 'EUR' ) ),
 			'valid_until'  => sanitize_text_field( $data['valid_until'] ?? '' ) ?: null,
 			'note'         => sanitize_textarea_field( $data['note'] ?? '' ),
 			'status'       => sanitize_text_field( $data['status'] ?? 'sent' ),
 			'created_by'   => get_current_user_id(),
 		);
 
-		if ( ! empty( $data['id'] ) ) {
-			$wpdb->update( $table, $quote_data, array( 'id' => absint( $data['id'] ) ) );
-			$quote_id = absint( $data['id'] );
+		if ( $quote_id ) {
+			// Do not overwrite creator on update.
+			unset( $quote_data['created_by'] );
+			$updated = $wpdb->update( $table, $quote_data, array( 'id' => $quote_id ) );
+			if ( false === $updated ) {
+				return new WP_Error(
+					'db_error',
+					__( 'Az ajánlat mentése sikertelen.', 'bma-ajanlatkeres' ) . ( $wpdb->last_error ? ' ' . $wpdb->last_error : '' )
+				);
+			}
 		} else {
-			$wpdb->insert( $table, $quote_data );
+			$inserted = $wpdb->insert( $table, $quote_data );
+			if ( ! $inserted ) {
+				return new WP_Error(
+					'db_error',
+					__( 'Az ajánlat mentése sikertelen.', 'bma-ajanlatkeres' ) . ( $wpdb->last_error ? ' ' . $wpdb->last_error : '' )
+				);
+			}
 			$quote_id = (int) $wpdb->insert_id;
+		}
+
+		if ( ! $quote_id ) {
+			return new WP_Error( 'db_error', __( 'Az ajánlat mentése sikertelen.', 'bma-ajanlatkeres' ) );
 		}
 
 		if ( ! empty( $_FILES['quote_pdf']['name'] ) ) {
@@ -114,6 +276,34 @@ final class BMA_AJ_Quotes {
 		}
 
 		return $quote_id;
+	}
+
+	/**
+	 * Parse money input (accepts "1234,56" and "1.234,56").
+	 *
+	 * @param mixed $value Raw amount.
+	 */
+	public static function parse_amount( $value ): float {
+		if ( is_numeric( $value ) ) {
+			return round( (float) $value, 2 );
+		}
+
+		$raw = trim( (string) $value );
+		if ( '' === $raw ) {
+			return 0.0;
+		}
+
+		$raw = str_replace( array( ' ', "\xc2\xa0" ), '', $raw );
+		if ( preg_match( '/^\d{1,3}(\.\d{3})+(,\d+)?$/', $raw ) ) {
+			$raw = str_replace( '.', '', $raw );
+			$raw = str_replace( ',', '.', $raw );
+		} elseif ( str_contains( $raw, ',' ) && ! str_contains( $raw, '.' ) ) {
+			$raw = str_replace( ',', '.', $raw );
+		} else {
+			$raw = str_replace( ',', '', $raw );
+		}
+
+		return round( (float) $raw, 2 );
 	}
 
 	/**

@@ -6,25 +6,30 @@ if ( ! $request ) {
 	echo '<div class="wrap"><p>' . esc_html__( 'Ajánlatkérés nem található.', 'bma-ajanlatkeres' ) . '</p></div>';
 	return;
 }
-$services  = BMA_AJ_Quote_Requests::get_services( $id );
-$statuses  = BMA_AJ_Statuses::get_all();
-$history   = BMA_AJ_Statuses::get_history( $id );
-$documents = BMA_AJ_Documents::get_for_request( $id );
-$quote     = BMA_AJ_Quotes::get_latest_for_request( $id );
-$current   = BMA_AJ_Statuses::get( (int) $request->status_id );
+$services      = BMA_AJ_Quote_Requests::get_services( $id );
+$statuses      = BMA_AJ_Statuses::get_all();
+$history       = BMA_AJ_Statuses::get_history( $id );
+$client_docs   = BMA_AJ_Documents::get_for_request( $id, false, 'client' );
+$deliverables  = BMA_AJ_Documents::get_for_request( $id, false, 'deliverable' );
+$ordered_items = BMA_AJ_Quote_Requests::get_ordered_items( $id );
+$plan_groups   = BMA_AJ_Documents::group_by_ordered_item( $ordered_items, $deliverables );
+$quote         = BMA_AJ_Quotes::get_latest_for_request( $id );
+$current       = BMA_AJ_Statuses::get( (int) $request->status_id );
 ?>
 <div class="wrap bma-admin-detail">
 	<h1><?php echo esc_html( $request->request_number ); ?> – <?php echo esc_html( $request->client_name ); ?></h1>
+	<?php settings_errors( 'bma_quote' ); ?>
 
 	<div class="bma-admin-grid">
 		<div class="bma-admin-panel">
 			<h2><?php esc_html_e( 'Ügyféladatok', 'bma-ajanlatkeres' ); ?></h2>
 			<table class="form-table">
-				<tr><th><?php esc_html_e( 'Név', 'bma-ajanlatkeres' ); ?></th><td><?php echo esc_html( $request->client_name ); ?></td></tr>
-				<tr><th><?php esc_html_e( 'E-mail', 'bma-ajanlatkeres' ); ?></th><td><?php echo esc_html( $request->client_email ); ?></td></tr>
-				<tr><th><?php esc_html_e( 'Telefon', 'bma-ajanlatkeres' ); ?></th><td><?php echo esc_html( $request->client_phone ); ?></td></tr>
-				<?php if ( $request->company_name ) : ?><tr><th><?php esc_html_e( 'Cég', 'bma-ajanlatkeres' ); ?></th><td><?php echo esc_html( $request->company_name ); ?></td></tr><?php endif; ?>
-				<?php if ( $request->client_note ) : ?><tr><th><?php esc_html_e( 'Megjegyzés', 'bma-ajanlatkeres' ); ?></th><td><?php echo esc_html( $request->client_note ); ?></td></tr><?php endif; ?>
+				<?php foreach ( BMA_AJ_Quote_Requests::get_client_data_rows( $request ) as $row ) : ?>
+					<tr>
+						<th><?php echo esc_html( $row['label'] ); ?></th>
+						<td><?php echo esc_html( $row['value'] ); ?></td>
+					</tr>
+				<?php endforeach; ?>
 			</table>
 		</div>
 
@@ -60,19 +65,16 @@ $current   = BMA_AJ_Statuses::get( (int) $request->status_id );
 					<p><strong><?php esc_html_e( 'Elemek:', 'bma-ajanlatkeres' ); ?></strong>
 					<?php
 					global $wpdb;
+					$names = array();
 					foreach ( $svc->selected_items as $item_id ) {
 						$name = $wpdb->get_var( $wpdb->prepare( "SELECT name FROM {$wpdb->prefix}bma_service_items WHERE id = %d", $item_id ) );
-						echo esc_html( $name ) . ', ';
+						if ( $name ) {
+							$names[] = $name;
+						}
 					}
+					echo esc_html( implode( ', ', $names ) );
 					?>
 					</p>
-				<?php endif; ?>
-				<?php if ( ! empty( $svc->field_values ) ) : ?>
-					<table class="widefat">
-						<?php foreach ( $svc->field_values as $key => $val ) : ?>
-							<tr><th><?php echo esc_html( $key ); ?></th><td><?php echo esc_html( is_array( $val ) ? implode( ', ', $val ) : $val ); ?></td></tr>
-						<?php endforeach; ?>
-					</table>
 				<?php endif; ?>
 			</div>
 		<?php endforeach; ?>
@@ -83,38 +85,161 @@ $current   = BMA_AJ_Statuses::get( (int) $request->status_id );
 			<h2><?php esc_html_e( 'Ajánlat', 'bma-ajanlatkeres' ); ?></h2>
 			<form method="post" enctype="multipart/form-data">
 				<?php wp_nonce_field( 'bma_admin_request', 'bma_admin_nonce' ); ?>
+				<?php if ( $quote ) : ?>
+					<input type="hidden" name="quote_id" value="<?php echo esc_attr( (string) $quote->id ); ?>">
+				<?php endif; ?>
 				<table class="form-table">
-					<tr><th><?php esc_html_e( 'Ajánlat száma', 'bma-ajanlatkeres' ); ?></th><td><input type="text" name="quote_number" value="<?php echo esc_attr( $quote->quote_number ?? '' ); ?>" class="regular-text"></td></tr>
-					<tr><th><?php esc_html_e( 'Nettó', 'bma-ajanlatkeres' ); ?></th><td><input type="number" step="0.01" name="net_amount" value="<?php echo esc_attr( $quote->net_amount ?? '' ); ?>"></td></tr>
-					<tr><th><?php esc_html_e( 'Adó', 'bma-ajanlatkeres' ); ?></th><td><input type="number" step="0.01" name="tax_amount" value="<?php echo esc_attr( $quote->tax_amount ?? '' ); ?>"></td></tr>
-					<tr><th><?php esc_html_e( 'Bruttó', 'bma-ajanlatkeres' ); ?></th><td><input type="number" step="0.01" name="gross_amount" value="<?php echo esc_attr( $quote->gross_amount ?? '' ); ?>"></td></tr>
-					<tr><th><?php esc_html_e( 'Pénznem', 'bma-ajanlatkeres' ); ?></th><td><input type="text" name="currency" value="<?php echo esc_attr( $quote->currency ?? 'HUF' ); ?>"></td></tr>
+					<tr>
+						<th><?php esc_html_e( 'Ajánlat száma', 'bma-ajanlatkeres' ); ?></th>
+						<td>
+							<?php if ( $quote && ! empty( $quote->quote_number ) ) : ?>
+								<code><?php echo esc_html( $quote->quote_number ); ?></code>
+							<?php else : ?>
+								<span class="description"><?php esc_html_e( 'Mentéskor automatikusan generálódik (Oferta-BMA-NR-YYYY-MM-DD).', 'bma-ajanlatkeres' ); ?></span>
+							<?php endif; ?>
+						</td>
+					</tr>
+					<tr><th><?php esc_html_e( 'Nettó', 'bma-ajanlatkeres' ); ?></th><td><input type="text" inputmode="decimal" name="net_amount" value="<?php echo esc_attr( isset( $quote->net_amount ) ? (string) $quote->net_amount : '' ); ?>" placeholder="0.00"></td></tr>
+					<tr><th><?php esc_html_e( 'Adó', 'bma-ajanlatkeres' ); ?></th><td><input type="text" inputmode="decimal" name="tax_amount" value="<?php echo esc_attr( isset( $quote->tax_amount ) ? (string) $quote->tax_amount : '' ); ?>" placeholder="0.00"></td></tr>
+					<tr><th><?php esc_html_e( 'Bruttó', 'bma-ajanlatkeres' ); ?></th><td><input type="text" inputmode="decimal" name="gross_amount" value="<?php echo esc_attr( isset( $quote->gross_amount ) ? (string) $quote->gross_amount : '' ); ?>" placeholder="0.00"><p class="description"><?php esc_html_e( 'Ha üresen hagyja, a nettó + adó összegéből számolódik.', 'bma-ajanlatkeres' ); ?></p></td></tr>
+					<tr><th><?php esc_html_e( 'Pénznem', 'bma-ajanlatkeres' ); ?></th><td>
+						<select name="currency">
+							<option value="EUR" <?php selected( $quote->currency ?? 'EUR', 'EUR' ); ?>>EUR</option>
+							<option value="RON" <?php selected( $quote->currency ?? '', 'RON' ); ?>>RON</option>
+						</select>
+					</td></tr>
 					<tr><th><?php esc_html_e( 'Érvényesség', 'bma-ajanlatkeres' ); ?></th><td><input type="date" name="valid_until" value="<?php echo esc_attr( $quote->valid_until ?? '' ); ?>"></td></tr>
 					<tr><th><?php esc_html_e( 'Ajánlati PDF', 'bma-ajanlatkeres' ); ?></th><td><input type="file" name="quote_pdf" accept=".pdf"></td></tr>
 					<tr><th><?php esc_html_e( 'Megjegyzés', 'bma-ajanlatkeres' ); ?></th><td><textarea name="quote_note" rows="3" class="large-text"><?php echo esc_textarea( $quote->note ?? '' ); ?></textarea></td></tr>
+					<?php if ( $quote ) : ?>
+						<tr>
+							<th><?php esc_html_e( 'Fizetési állapot', 'bma-ajanlatkeres' ); ?></th>
+							<td>
+								<strong><?php echo esc_html( BMA_AJ_Quotes::display_label( $quote ) ); ?></strong>
+								<?php if ( ! empty( $quote->payment_method ) ) : ?>
+									<br><span class="description"><?php echo esc_html( sprintf( /* translators: %s method */ __( 'Módszer: %s', 'bma-ajanlatkeres' ), $quote->payment_method ) ); ?></span>
+								<?php endif; ?>
+								<?php if ( ! empty( $quote->paid_at ) ) : ?>
+									<br><span class="description"><?php echo esc_html( sprintf( /* translators: %s date */ __( 'Fizetve: %s', 'bma-ajanlatkeres' ), mysql2date( 'Y.m.d H:i', $quote->paid_at ) ) ); ?></span>
+								<?php endif; ?>
+							</td>
+						</tr>
+					<?php endif; ?>
 				</table>
 				<p><button type="submit" name="save_quote" class="button button-primary"><?php esc_html_e( 'Ajánlat mentése és küldése', 'bma-ajanlatkeres' ); ?></button></p>
+				<?php if ( $quote && 'bank_pending' === ( $quote->payment_status ?? '' ) ) : ?>
+					<p>
+						<button type="submit" name="mark_bank_paid" class="button button-secondary" onclick="return confirm('<?php echo esc_js( __( 'Rögzíti a banki befizetést?', 'bma-ajanlatkeres' ) ); ?>');">
+							<?php esc_html_e( 'Banki befizetés rögzítése', 'bma-ajanlatkeres' ); ?>
+						</button>
+					</p>
+				<?php endif; ?>
 			</form>
 		</div>
 
 		<div class="bma-admin-panel">
-			<h2><?php esc_html_e( 'Dokumentumok', 'bma-ajanlatkeres' ); ?></h2>
-			<ul>
-				<?php foreach ( $documents as $doc ) : ?>
-					<li><a href="<?php echo esc_url( BMA_AJ_Documents::get_download_url( (int) $doc->id ) ); ?>"><?php echo esc_html( $doc->title ); ?></a> (<?php echo esc_html( $doc->doc_type ); ?>)</li>
+			<h2><?php esc_html_e( 'Ügyfél dokumentumai', 'bma-ajanlatkeres' ); ?></h2>
+			<p class="description"><?php esc_html_e( 'Az ajánlatkéréshez és az ügyfélportálon feltöltött fájlok.', 'bma-ajanlatkeres' ); ?></p>
+			<?php if ( empty( $client_docs ) ) : ?>
+				<p><?php esc_html_e( 'Még nincs ügyfél által feltöltött dokumentum.', 'bma-ajanlatkeres' ); ?></p>
+			<?php else : ?>
+				<ul>
+					<?php foreach ( $client_docs as $doc ) : ?>
+						<li>
+							<a href="<?php echo esc_url( BMA_AJ_Documents::get_download_url( (int) $doc->id ) ); ?>"><?php echo esc_html( $doc->title ); ?></a>
+							(<?php echo esc_html( BMA_AJ_Documents::type_label( (string) $doc->doc_type ) ); ?>)
+							<form method="post" style="display:inline;margin-left:0.5rem;" onsubmit="return confirm('<?php echo esc_js( __( 'Biztosan törli ezt a dokumentumot?', 'bma-ajanlatkeres' ) ); ?>');">
+								<?php wp_nonce_field( 'bma_admin_request', 'bma_admin_nonce' ); ?>
+								<input type="hidden" name="document_id" value="<?php echo esc_attr( (string) $doc->id ); ?>">
+								<button type="submit" name="delete_document" class="button-link-delete"><?php esc_html_e( 'Törlés', 'bma-ajanlatkeres' ); ?></button>
+							</form>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			<?php endif; ?>
+		</div>
+
+		<div class="bma-admin-panel">
+			<h2><?php esc_html_e( 'Elkészült tervek és dokumentumok', 'bma-ajanlatkeres' ); ?></h2>
+			<p class="description"><?php esc_html_e( 'A kész terveket a megrendelt szolgáltatáselemekhez külön töltse fel. Az ügyfélportálon is elemenként jelennek meg.', 'bma-ajanlatkeres' ); ?></p>
+
+			<?php if ( empty( $ordered_items ) ) : ?>
+				<p><?php esc_html_e( 'Ehhez a kéréshez nincs kiválasztott szolgáltatáselem.', 'bma-ajanlatkeres' ); ?></p>
+			<?php else : ?>
+				<?php foreach ( $plan_groups as $group ) : ?>
+					<?php
+					$item = $group['item'];
+					$docs = $group['docs'];
+					if ( empty( $item->id ) ) {
+						continue;
+					}
+					?>
+					<div class="bma-admin-deliverable-block" style="margin:1.25rem 0;padding:1rem;border:1px solid #c3c4c7;background:#fff;">
+						<h3 style="margin-top:0;">
+							<?php echo esc_html( $item->name ); ?>
+							<?php if ( ! empty( $item->service_name ) ) : ?>
+								<span class="description"> — <?php echo esc_html( $item->service_name ); ?></span>
+							<?php endif; ?>
+						</h3>
+						<?php if ( empty( $docs ) ) : ?>
+							<p class="description"><?php esc_html_e( 'Még nincs feltöltött fájl ehhez a tételhez.', 'bma-ajanlatkeres' ); ?></p>
+						<?php else : ?>
+							<ul>
+								<?php foreach ( $docs as $doc ) : ?>
+									<li>
+										<a href="<?php echo esc_url( BMA_AJ_Documents::get_download_url( (int) $doc->id ) ); ?>"><?php echo esc_html( $doc->title ); ?></a>
+										(<?php echo esc_html( BMA_AJ_Documents::type_label( (string) $doc->doc_type ) ); ?>)
+										<form method="post" style="display:inline;margin-left:0.5rem;" onsubmit="return confirm('<?php echo esc_js( __( 'Biztosan törli ezt a dokumentumot?', 'bma-ajanlatkeres' ) ); ?>');">
+											<?php wp_nonce_field( 'bma_admin_request', 'bma_admin_nonce' ); ?>
+											<input type="hidden" name="document_id" value="<?php echo esc_attr( (string) $doc->id ); ?>">
+											<button type="submit" name="delete_document" class="button-link-delete"><?php esc_html_e( 'Törlés', 'bma-ajanlatkeres' ); ?></button>
+										</form>
+									</li>
+								<?php endforeach; ?>
+							</ul>
+						<?php endif; ?>
+						<form method="post" enctype="multipart/form-data" style="margin-top:0.75rem;">
+							<?php wp_nonce_field( 'bma_admin_request', 'bma_admin_nonce' ); ?>
+							<input type="hidden" name="deliverable_item_id" value="<?php echo esc_attr( (string) $item->id ); ?>">
+							<select name="deliverable_type">
+								<option value="plan"><?php esc_html_e( 'Terv', 'bma-ajanlatkeres' ); ?></option>
+								<option value="technical"><?php esc_html_e( 'Műszaki dokumentum', 'bma-ajanlatkeres' ); ?></option>
+								<option value="handover"><?php esc_html_e( 'Átadási dokumentum', 'bma-ajanlatkeres' ); ?></option>
+								<option value="other"><?php esc_html_e( 'Egyéb', 'bma-ajanlatkeres' ); ?></option>
+							</select>
+							<input type="file" name="admin_deliverable" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.dwg,.zip" required>
+							<button type="submit" class="button button-primary"><?php esc_html_e( 'Feltöltés ehhez a tételhez', 'bma-ajanlatkeres' ); ?></button>
+						</form>
+					</div>
 				<?php endforeach; ?>
-			</ul>
-			<form method="post" enctype="multipart/form-data">
-				<?php wp_nonce_field( 'bma_admin_request', 'bma_admin_nonce' ); ?>
-				<select name="doc_type">
-					<option value="technical"><?php esc_html_e( 'Műszaki dokumentum', 'bma-ajanlatkeres' ); ?></option>
-					<option value="plan"><?php esc_html_e( 'Terv', 'bma-ajanlatkeres' ); ?></option>
-					<option value="handover"><?php esc_html_e( 'Átadási dokumentum', 'bma-ajanlatkeres' ); ?></option>
-					<option value="other"><?php esc_html_e( 'Egyéb', 'bma-ajanlatkeres' ); ?></option>
-				</select>
-				<input type="file" name="admin_document">
-				<button type="submit" class="button"><?php esc_html_e( 'Dokumentum feltöltése', 'bma-ajanlatkeres' ); ?></button>
-			</form>
+			<?php endif; ?>
+
+			<?php
+			// Legacy / unassigned deliverables.
+			foreach ( $plan_groups as $group ) {
+				if ( ! empty( $group['item']->id ) || empty( $group['docs'] ) ) {
+					continue;
+				}
+				?>
+				<div class="bma-admin-deliverable-block" style="margin:1.25rem 0;padding:1rem;border:1px solid #c3c4c7;">
+					<h3 style="margin-top:0;"><?php echo esc_html( $group['item']->name ); ?></h3>
+					<ul>
+						<?php foreach ( $group['docs'] as $doc ) : ?>
+							<li>
+								<a href="<?php echo esc_url( BMA_AJ_Documents::get_download_url( (int) $doc->id ) ); ?>"><?php echo esc_html( $doc->title ); ?></a>
+								(<?php echo esc_html( BMA_AJ_Documents::type_label( (string) $doc->doc_type ) ); ?>)
+								<form method="post" style="display:inline;margin-left:0.5rem;" onsubmit="return confirm('<?php echo esc_js( __( 'Biztosan törli ezt a dokumentumot?', 'bma-ajanlatkeres' ) ); ?>');">
+									<?php wp_nonce_field( 'bma_admin_request', 'bma_admin_nonce' ); ?>
+									<input type="hidden" name="document_id" value="<?php echo esc_attr( (string) $doc->id ); ?>">
+									<button type="submit" name="delete_document" class="button-link-delete"><?php esc_html_e( 'Törlés', 'bma-ajanlatkeres' ); ?></button>
+								</form>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
+				<?php
+			}
+			?>
 		</div>
 	</div>
 

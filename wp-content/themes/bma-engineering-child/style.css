@@ -1,13 +1,11 @@
 /*
 Theme Name: BMA Engineering Child
 Theme URI: https://bma-engineering.hu
-Description: Child theme a BMA Engineering weboldalhoz. A megvásárolt WordPress template vizuális alapjaira épül.
+Description: BMA Engineering child theme – parent: Ollie (modern block theme).
 Author: BMA Engineering
-Template: twentytwentyfour
-Version: 1.0.0
+Template: ollie
+Version: 1.13.0
 Text Domain: bma-engineering
 Requires at least: 6.4
 Requires PHP: 8.1
 */
-
-/* Parent theme styles are enqueued via functions.php */

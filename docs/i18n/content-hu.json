@@ -1,0 +1,410 @@
+{
+    "meta": {
+        "site": "BMA ENGINEERING",
+        "tagline": "Mérnöki tervezés, engedélyeztetés és műszaki dokumentáció",
+        "exported_at": "2026-09-05T11:03:19+00:00",
+        "source_locale": "hu",
+        "target_locales": [
+            "ro",
+            "en"
+        ]
+    },
+    "pages": [
+        {
+            "id": 71,
+            "slug": "aszf",
+            "status": "publish",
+            "title": "Általános felhasználási feltételek",
+            "excerpt": "Általános felhasználási feltételek a BMA Engineering szolgáltatásaihoz.",
+            "content": "[bma_terms]",
+            "seo_title": "Általános felhasználási feltételek | BMA Engineering",
+            "seo_description": "A BMA Engineering weboldalának és szolgáltatásainak általános felhasználási feltételei.",
+            "focus_keyword": "általános feltételek"
+        },
+        {
+            "id": 47,
+            "slug": "fizetes",
+            "status": "publish",
+            "title": "Fizetés",
+            "excerpt": "",
+            "content": "[bma_payment]",
+            "seo_title": "Fizetés",
+            "seo_description": "Ajánlat fizetési oldal.",
+            "focus_keyword": ""
+        },
+        {
+            "id": 10,
+            "slug": "fooldal",
+            "status": "publish",
+            "title": "Főoldal",
+            "excerpt": "A BMA Engineering mérnöki tervezést, engedélyeztetést és műszaki dokumentációt nyújt lakossági és üzleti projektekhez.",
+            "content": "[bma_home_hero]\n[bma_home_services]\n[bma_home_multi]\n[bma_home_benefits]\n[bma_home_process]\n[bma_home_references]\n[bma_home_about]\n[bma_home_closing]\n[bma_contact_info]",
+            "seo_title": "BMA Engineering | Mérnöki tervezés és engedélyeztetés",
+            "seo_description": "Mérnöki tervezés, engedélyeztetés, műszaki dokumentáció és közmű koordináció. Kérjen ajánlatot online – BMA Engineering, Odorheiu Secuiesc.",
+            "focus_keyword": "mérnöki tervezés, engedélyeztetés"
+        },
+        {
+            "id": 11,
+            "slug": "szolgaltatasok",
+            "status": "publish",
+            "title": "Szolgáltatások",
+            "excerpt": "Tervezés, engedélyeztetés, műszaki dokumentáció és közmű koordináció egy mérnöki csapattal.",
+            "content": "[bma_services_list]",
+            "seo_title": "Szolgáltatások | Tervezés, engedélyeztetés, dokumentáció",
+            "seo_description": "Ismerje meg a BMA Engineering szolgáltatásait: tervezés, engedélyeztetés, műszaki dokumentáció és közmű csatlakozás koordináció.",
+            "focus_keyword": "mérnöki szolgáltatások"
+        },
+        {
+            "id": 12,
+            "slug": "referenciak",
+            "status": "publish",
+            "title": "Referenciák",
+            "excerpt": "Referencia projektek lakóingatlanoktól az ipari beruházásokig.",
+            "content": "[bma_references_list]",
+            "seo_title": "Referenciák | Elkészült mérnöki projektek",
+            "seo_description": "Válogatás a BMA Engineering referencia projektjeiből: lakó-, irodai és ipari megbízások tervezése és engedélyeztetése.",
+            "focus_keyword": "mérnöki referenciák"
+        },
+        {
+            "id": 13,
+            "slug": "kapcsolat",
+            "status": "publish",
+            "title": "Kapcsolat",
+            "excerpt": "Kapcsolatfelvétel: Odorheiu Secuiesc, Str. Raza Soarelui 11 – office@bmaeng.ro",
+            "content": "[bma_contact_form]",
+            "seo_title": "Kapcsolat | BMA Engineering Odorheiu Secuiesc",
+            "seo_description": "Lépjen kapcsolatba a BMA Engineering csapatával. Cím: Str. Raza Soarelui 11, Odorheiu Secuiesc. Tel: +40 728 205 982.",
+            "focus_keyword": "BMA Engineering kapcsolat"
+        },
+        {
+            "id": 14,
+            "slug": "ajanlatkeres",
+            "status": "publish",
+            "title": "Ajánlatkérés",
+            "excerpt": "Online ajánlatkérés mérnöki tervezéshez, engedélyeztetéshez és dokumentációhoz.",
+            "content": "[bma_quote_form]",
+            "seo_title": "Ajánlatkérés | Online mérnöki ajánlat",
+            "seo_description": "Kérjen személyre szabott mérnöki ajánlatot tervezésre, engedélyeztetésre vagy műszaki dokumentációra. Gyors, átlátható folyamat.",
+            "focus_keyword": "mérnöki ajánlatkérés"
+        },
+        {
+            "id": 15,
+            "slug": "ajanlatkosar",
+            "status": "publish",
+            "title": "Ajánlatkérési kosár",
+            "excerpt": "",
+            "content": "[bma_quote_cart]",
+            "seo_title": "Ajánlatkérési kosár",
+            "seo_description": "Az Ön kiválasztott szolgáltatásai az ajánlatkéréshez.",
+            "focus_keyword": ""
+        },
+        {
+            "id": 16,
+            "slug": "ugyfelportal",
+            "status": "publish",
+            "title": "Ügyfélportál",
+            "excerpt": "",
+            "content": "[bma_client_portal]",
+            "seo_title": "Ügyfélportál",
+            "seo_description": "Bejelentkezett ügyfelek számára elérhető portál.",
+            "focus_keyword": ""
+        },
+        {
+            "id": 17,
+            "slug": "adatvedelem",
+            "status": "publish",
+            "title": "Adatvédelmi tájékoztató",
+            "excerpt": "Adatvédelmi tájékoztató a BMA Engineering ügyfelei és weboldal-látogatói számára.",
+            "content": "[bma_privacy_policy]",
+            "seo_title": "Adatvédelmi tájékoztató | BMA Engineering",
+            "seo_description": "A BMA Engineering adatkezelési és adatvédelmi tájékoztatója az ügyfelek és weboldal-látogatók számára.",
+            "focus_keyword": "adatvédelem"
+        },
+        {
+            "id": 18,
+            "slug": "cookie-tajekoztato",
+            "status": "publish",
+            "title": "Cookie tájékoztató",
+            "excerpt": "Cookie (süti) tájékoztató a BMA Engineering weboldalához.",
+            "content": "[bma_cookie_policy]",
+            "seo_title": "Cookie tájékoztató | BMA Engineering",
+            "seo_description": "Tájékoztató a BMA Engineering weboldalán használt sütikről (cookie-król) és a beállítási lehetőségekről.",
+            "focus_keyword": "cookie tájékoztató"
+        },
+        {
+            "id": 19,
+            "slug": "belepes",
+            "status": "publish",
+            "title": "Bejelentkezés",
+            "excerpt": "",
+            "content": "[bma_login]",
+            "seo_title": "Bejelentkezés",
+            "seo_description": "Ügyfélportál bejelentkezés.",
+            "focus_keyword": ""
+        },
+        {
+            "id": 2,
+            "slug": "ez-egy-minta-oldal",
+            "status": "draft",
+            "title": "Ez egy minta oldal",
+            "excerpt": "",
+            "content": "<!-- wp:paragraph -->\n<p>Ez egy mintaoldal. Az oldal különbözik a bejegyzéstől annyiban, hogy az oldal egy állandó tartalmú bejegyzés, ami - a legtöbb sablonnál - a weboldal navigációs részében állandó helyen van.\nA legtöbb ember olyan Bemutatkozó oldallal kezd, amelyik bemutatja őt, vagy a tevékenységét a weboldal látogatóinak. A Bemutatkozás oldal valami ilyesmi lehet:<\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><p>Üdvözlet az Olvasóknak! Nappal biciklis pizzafutár vagyok, éjszaka pedig egy törekvő színész-tanonc, ez pedig az én weboldalam.<br>Budapesten élek és van egy csodálatos német juhász kutyám, aki Velorex névre hallgat. Kedvenc koktélom a Piña Colada, de a Mojitot is nagyon kedvelem. (De, azért az igazi nedű: egy bársonyos vörösbor.)<\/p><\/blockquote>\n<!-- \/wp:quote -->\n\n<!-- wp:paragraph -->\n<p>…vagy valami egészen más:<\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><p>Az XYZ Bigyó Vállalatot 1971-ben alapították, azóta gyártja a legjobb minőségű bigyókat. A cég központja Budapesten található, ahol több mint 2000 embert foglalkoztatnak, valamint számos közösségi és jótékonysági programban is aktívan résztvesznek.<\/p><\/blockquote>\n<!-- \/wp:quote -->\n\n<!-- wp:paragraph -->\n<p>Új WordPress felhasználóként a <a href=\"http:\/\/localhost:8080\/wp-admin\/\">Vezérlőpult<\/a> részre ugorva lehet törölni ezt az oldalt, és létrehozni egy úja oldalt a saját tartalmunk részére. Jó szórakozást!<\/p>\n<!-- \/wp:paragraph -->",
+            "seo_title": "Minta oldal",
+            "seo_description": "",
+            "focus_keyword": ""
+        },
+        {
+            "id": 3,
+            "slug": "adatkezelesi-tajekoztato",
+            "status": "draft",
+            "title": "Adatkezelési tájékoztató",
+            "excerpt": "",
+            "content": "<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Kik vagyunk<\/h2>\n<!-- \/wp:heading -->\n<!-- wp:paragraph -->\n<p><strong class=\"privacy-policy-tutorial\">Javasolt szöveg: <\/strong>A weboldalunk címe: http:\/\/localhost:8080.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Hozzászólások<\/h2>\n<!-- \/wp:heading -->\n<!-- wp:paragraph -->\n<p><strong class=\"privacy-policy-tutorial\">Javasolt szöveg: <\/strong>Hozzászólás beküldésekor a hozzászólási űrlapban megadottakon kívül begyűjtésre kerül a hozzászóló IP címe és a böngészőazonosító karakterlánc a kéretlen tartalmak kiszűrése céljából.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:paragraph -->\n<p>Egy személytelenített, az e-mail címből előállított karakterlánc (hashnek szokás nevezni) kerül továbbításra a Gravatar szolgáltatás felé, ha ez az oldalon használatban van. A Gravatar szolgáltatás feltételei az alábbi címen tekinthetőek meg: https:\/\/automattic.com\/privacy\/. A hozzászólás elfogadása után, a hozzászólásunk tartalma és a profil képünk is megjelenik nyilvánosan.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Média<\/h2>\n<!-- \/wp:heading -->\n<!-- wp:paragraph -->\n<p><strong class=\"privacy-policy-tutorial\">Javasolt szöveg: <\/strong>Amennyiben regisztrált felhasználó által kerül kép feltöltésre a honlapra, kerülni kell az az olyan EXIF-eket, amelyekben GPS pozíció adatok is szerepelnek. A honlap látogatói ezeket letölthetik és kinyerhetik a helyadatokat a honlapon található képekből.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Sütik<\/h2>\n<!-- \/wp:heading -->\n<!-- wp:paragraph -->\n<p><strong class=\"privacy-policy-tutorial\">Javasolt szöveg: <\/strong>Ha hozzászólást írunk a honlapon, a megadott nevet, e-mail és honlap címet sütikben eltároljuk. A tárolás a kényelmi célokat szolgál azért, így a következő hozzászóláskor ezeket a mező adatokat nem kell kitölteni. A sütik lejárati ideje egy év.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:paragraph -->\n<p>Ha ellátogatunk a bejelentkezési oldalra, akkor átmeneti sütiket állítunk be annak érdekében, hogy megállapítsuk, hogy a böngésző elfogadja-e a sütiket. Ezek a sütik nem tartalmaznak személyes információt, és törlődnek, ahogy bezárjuk a böngészőt.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:paragraph -->\n<p>A honlapra történő bejelentkezéskor több sütit hozunk létre, amely elmenti a bejelentkezési információt és a szerkesztőfelület megjelenítési opcióit. A bejelentkezési sütik két napig érvényesek, a szerkesztőfelület képernyő opcióit tároló süti egy évig. Amennyiben az &quot;Emlékezz rám&quot; opciót bejelöljük, a bejelentkezés két hétig folytatódik. Kijelentkezéskor a bejelentkezési sütik eltávolításra kerülnek.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:paragraph -->\n<p>Amennyiben bejegyzést vagy oldalt szerkesztünk, egy újabb sütit tárol el a böngészőnk. Ez a süti nem tartalmaz személyes adatot, egyszerűen csak a bejegyzés azonosító számát tárolja, amelyet szerkesztettünk. Egy nap múlva jár le az érvényessége.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Más honlapokról származó beágyazott tartalmak<\/h2>\n<!-- \/wp:heading -->\n<!-- wp:paragraph -->\n<p><strong class=\"privacy-policy-tutorial\">Javasolt szöveg: <\/strong>A honlapon elérhető bejegyzések külső forrásból származó beágyazott tartalmakat (pl. videók, képek, cikkek stb.) használhatnak. A külső forrásból származó beágyazott tartalmak pontosan úgy viselkednek, mintha meglátogattunk volna egy másik honlapot.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:paragraph -->\n<p>Ezek a webhelyek lehetséges, hogy adatot gyűjtenek a látogatókról, sütiket vagy harmadik féltől származó követőkódot használnak, figyelik a beágyazott tartalommal kapcsolatos felhasználói viselkedést, ha rendelkezünk felhasználói fiókkal és be vagyunk jelentkezve az oldalra.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Kivel osztjuk meg a felhasználói adatokat<\/h2>\n<!-- \/wp:heading -->\n<!-- wp:paragraph -->\n<p><strong class=\"privacy-policy-tutorial\">Javasolt szöveg: <\/strong>Ha jelszó visszaállítást kér, akkor az IP-címet a visszaállító e-mail tartalmazni fogja.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Mennyi ideig őrizzük a személyes adatot<\/h2>\n<!-- \/wp:heading -->\n<!-- wp:paragraph -->\n<p><strong class=\"privacy-policy-tutorial\">Javasolt szöveg: <\/strong>Ha hozzászólunk, a hozzászólás és annak metaadatai nem meghatározható ideig a rendszerben maradnak. Ennek célja, hogy az összes ezt követő bármely hozzászólás általunk megismertté és jóváhagyottá váljon, azaz ne kerüljön fel a moderálandó hozzászólások listájára.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:paragraph -->\n<p>A honlapon regisztrált felhasználók (ha vannak ilyenek) személyes adatai a saját felhasználói profiljukban is tárolásra kerülnek. Minden felhasználó megtekintheti, szerkesztheti vagy törölheti a személyes adatait bármikor (kivéve, hogy nem változtathatja meg a saját felhasználónevét). A honlap rendszergazdái ezen információkat szintén megtekinthetik és szerkeszthetik.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Milyen jogokkal rendelkezik a felhasználó a saját adatai kapcsán<\/h2>\n<!-- \/wp:heading -->\n<!-- wp:paragraph -->\n<p><strong class=\"privacy-policy-tutorial\">Javasolt szöveg: <\/strong>A weboldalon regisztrált fiók vagy hozzászólás írása esetén kérhető a személyes adatok export fájlban történő megküldése, amely bármilyen adatot tartalmaz, amit korábban a felhasználó rendelkezésünkre bocsátott. Kérhető továbbá, hogy bármilyen korábban megadott személyes adatot töröljük. Ez nem vonatkozik azokra az adatokra, amelyeket adminisztrációs, jogi vagy biztonsági okokból kötelező megőriznünk.<\/p>\n<!-- \/wp:paragraph -->\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Hová kerülnek továbbküldésre az adatok<\/h2>\n<!-- \/wp:heading -->\n<!-- wp:paragraph -->\n<p><strong class=\"privacy-policy-tutorial\">Javasolt szöveg: <\/strong>A látogatók által beküldött hozzászólásokat automatikus spamszűrő szolgáltatás ellenőrizheti.<\/p>\n<!-- \/wp:paragraph -->\n",
+            "seo_title": "",
+            "seo_description": "",
+            "focus_keyword": ""
+        }
+    ],
+    "services": [
+        {
+            "id": 51,
+            "slug": "kozmu-koordinacio",
+            "title": "Közmű csatlakozás koordináció",
+            "excerpt": "Szolgáltatói egyeztetések, csatlakozási igények és határidők koordinálása egy helyen.",
+            "content": "<p>A közmű csatlakozás koordinációs szolgáltatás összefogja a víz-, gáz- és áramszolgáltatói folyamatokat. Összeállítjuk a szükséges beadványokat, nyomon követjük a szolgáltatói válaszokat, és tájékoztatjuk Önt a következő teendőkről.<\/p>",
+            "terms": [],
+            "seo_title": "Közmű csatlakozás koordináció | Víz, gáz, áram",
+            "seo_description": "Szolgáltatói egyeztetések, csatlakozási igények és határidők koordinálása – víz, gáz és elektromos hálózat.",
+            "focus_keyword": "közmű csatlakozás koordináció"
+        },
+        {
+            "id": 50,
+            "slug": "muszaki-dokumentacio",
+            "title": "Műszaki dokumentáció",
+            "excerpt": "Műszaki leírások, jegyzőkönyvek, átadási dokumentáció és projekt záró anyagok készítése.",
+            "content": "<p>Elkészítjük a projekt teljes műszaki dokumentációját, amely megfelel a hatósági és szerződéses követelményeknek. A dokumentumok egységes struktúrában, könnyen azonosítható formában készülnek.<\/p><p>Igény esetén a meglévő anyagokat is rendszerezzük és kiegészítjük a hiányzó részekkel.<\/p>",
+            "terms": [],
+            "seo_title": "Műszaki dokumentáció | Leírások és átadási anyagok",
+            "seo_description": "Műszaki leírások, jegyzőkönyvek és átadási dokumentáció készítése hatósági és szerződéses követelmények szerint.",
+            "focus_keyword": "műszaki dokumentáció"
+        },
+        {
+            "id": 49,
+            "slug": "engedelyeztetes",
+            "title": "Engedélyeztetés",
+            "excerpt": "Építési és használatbavételi engedélyek előkészítése, hatósági egyeztetések támogatása.",
+            "content": "<p>Az engedélyeztetési szolgáltatásunk célja, hogy a projekt dokumentációja megfeleljen a hatósági elvárásoknak. Segítünk az engedélyezési dosszié összeállításában, a benyújtás előkészítésében és a hiánypótlások kezelésében.<\/p><p>A folyamat átlátható: minden lépésről értesítjük, és az ügyfélportálon követhető a státusz.<\/p>",
+            "terms": [],
+            "seo_title": "Engedélyeztetés | Építési és használatbavételi engedély",
+            "seo_description": "Építési és használatbavételi engedélyek előkészítése, hatósági egyeztetések és hiánypótlások támogatása.",
+            "focus_keyword": "építési engedélyeztetés"
+        },
+        {
+            "id": 48,
+            "slug": "tervezes",
+            "title": "Tervezés",
+            "excerpt": "Közmű- és épületgépészeti tervek lakossági és üzleti projektekhez, a helyszíni adottságok figyelembevételével.",
+            "content": "<p>A tervezési szolgáltatásunk a projekt teljes műszaki előkészítését támogatja: a közműcsatlakozásoktól az elektromos hálózattervezésig. Minden esetben a hatályos jogszabályi előírásokat és az ügyfél igényeit vesszük alapul.<\/p><p>A folyamat során egyeztetünk a rendelkezésre álló dokumentumokról, és jelezzük, ha további műszaki adatra van szükség. Az ajánlatkérésben megadott adatok alapján előzetesen felmérjük a projekt összetettségét.<\/p>",
+            "terms": [],
+            "seo_title": "Tervezés | Közmű- és épületgépészeti tervek",
+            "seo_description": "Közmű- és épületgépészeti tervezés lakossági és üzleti projektekhez. Elektromos, gáz- és vízvezeték tervezés a BMA Engineeringtől.",
+            "focus_keyword": "közműtervezés, épületgépészeti tervezés"
+        }
+    ],
+    "references": [
+        {
+            "id": 55,
+            "slug": "ipari-csarnok-kozmu-koordinacio",
+            "title": "Ipari csarnok – közmű koordináció",
+            "excerpt": "Ipari beruházás közműcsatlakozásainak egyeztetése és dokumentálása, a szükséges műszaki és szolgáltatói folyamatok összehangolásával.",
+            "content": "",
+            "terms": [
+                {
+                    "id": 4,
+                    "slug": "uzleti",
+                    "name": "Üzleti"
+                }
+            ],
+            "seo_title": "Ipari csarnok – közmű koordináció | Referencia",
+            "seo_description": "Ipari beruházás közműcsatlakozásainak egyeztetése és dokumentálása – BMA Engineering referencia.",
+            "focus_keyword": "ipari közmű koordináció"
+        },
+        {
+            "id": 54,
+            "slug": "uj-epites-teljes-engedelyeztetesi-csomag",
+            "title": "Új építés – teljes engedélyeztetési csomag",
+            "excerpt": "Új lakóépület építési engedélyének előkészítése és a kapcsolódó hatósági folyamat támogatása.",
+            "content": "",
+            "terms": [
+                {
+                    "id": 5,
+                    "slug": "lakossagi",
+                    "name": "Lakossági"
+                }
+            ],
+            "seo_title": "Új építés – engedélyeztetési csomag | Referencia",
+            "seo_description": "Új lakóépület építési engedélyének előkészítése és hatósági folyamat támogatása – BMA Engineering referencia.",
+            "focus_keyword": "építési engedélyeztetési csomag"
+        },
+        {
+            "id": 53,
+            "slug": "irodahaz-felujitas-muszaki-dokumentacio",
+            "title": "Irodaház felújítás – műszaki dokumentáció",
+            "excerpt": "Üzleti ingatlan felújításához kapcsolódó műszaki leírások és átadási dokumentáció összeállítása.",
+            "content": "",
+            "terms": [
+                {
+                    "id": 4,
+                    "slug": "uzleti",
+                    "name": "Üzleti"
+                }
+            ],
+            "seo_title": "Irodaház felújítás – műszaki dokumentáció | Referencia",
+            "seo_description": "Üzleti ingatlan felújításához kapcsolódó műszaki leírások és átadási dokumentáció – BMA Engineering referencia.",
+            "focus_keyword": "irodaház műszaki dokumentáció"
+        },
+        {
+            "id": 52,
+            "slug": "csaladi-haz-bovites-kozmutervek",
+            "title": "Családi ház bővítés – közműtervek",
+            "excerpt": "Lakóingatlan bővítéséhez kapcsolódó víz-, gáz- és szennyvíztervezés, engedélyeztetési támogatással.",
+            "content": "",
+            "terms": [
+                {
+                    "id": 5,
+                    "slug": "lakossagi",
+                    "name": "Lakossági"
+                }
+            ],
+            "seo_title": "Családi ház bővítés – közműtervek | Referencia",
+            "seo_description": "Lakóingatlan bővítéséhez készített víz-, gáz- és szennyvíztervek engedélyeztetési támogatással – BMA Engineering referencia.",
+            "focus_keyword": "családi ház közműtervek"
+        }
+    ],
+    "taxonomies": [
+        {
+            "taxonomy": "bma_reference_category",
+            "id": 5,
+            "slug": "lakossagi",
+            "name": "Lakossági",
+            "description": ""
+        },
+        {
+            "taxonomy": "bma_reference_category",
+            "id": 4,
+            "slug": "uzleti",
+            "name": "Üzleti",
+            "description": ""
+        }
+    ],
+    "options": {
+        "blogname": "BMA ENGINEERING",
+        "blogdescription": "Mérnöki tervezés, engedélyeztetés és műszaki dokumentáció",
+        "bma_company_name": "BMA ENGINEERING S.R.L.",
+        "bma_contact_address": "Str. Raza Soarelui 11\n535600 Odorheiu Secuiesc\nHarghita, Romania",
+        "bma_contact_phone": "+40 728 205 982",
+        "bma_contact_email": "office@bmaeng.ro",
+        "bma_opening_hours": "Hétfő–Péntek, 08:00–17:00",
+        "bma_smtp_from_name": "BMA Engineering",
+        "bma_bank_beneficiary": "BMA ENGINEERING S.R.L."
+    },
+    "menus": [],
+    "service_items": [],
+    "statuses": [
+        {
+            "id": "1",
+            "name": "Beérkezett",
+            "slug": "beerkezett"
+        },
+        {
+            "id": "2",
+            "name": "Feldolgozás alatt",
+            "slug": "feldolgozas_alatt"
+        },
+        {
+            "id": "3",
+            "name": "További információ szükséges",
+            "slug": "tovabbi_info"
+        },
+        {
+            "id": "4",
+            "name": "Ajánlat készül",
+            "slug": "ajanlat_keszul"
+        },
+        {
+            "id": "5",
+            "name": "Ajánlat elkészült",
+            "slug": "ajanlat_elkeszult"
+        },
+        {
+            "id": "6",
+            "name": "Teljesítés alatt",
+            "slug": "teljesites_alatt"
+        },
+        {
+            "id": "7",
+            "name": "Dokumentumok feltöltve",
+            "slug": "dokumentumok_feltoltve"
+        },
+        {
+            "id": "8",
+            "name": "Lezárva",
+            "slug": "lezarva"
+        }
+    ],
+    "email_templates": [
+        {
+            "id": "1",
+            "slug": "request_confirmation",
+            "subject": "Ajánlatkérés visszaigazolás – {request_number}",
+            "body": "Kedves {client_name}!\n\nKöszönjük ajánlatkérését. Azonosító: {request_number}\n\nSzolgáltatások: {services}\n\nAjánlatkérését feldolgozzuk. Az aktuális állapotot az ügyfélportálon követheti:\n{portal_link}\n\nÜdvözlettel,\nBMA Engineering\n[KAPCSOLATI ADAT]"
+        },
+        {
+            "id": "2",
+            "slug": "request_admin_notify",
+            "subject": "Új ajánlatkérés – {request_number}",
+            "body": "Új ajánlatkérés érkezett.\n\nAzonosító: {request_number}\n\nÜgyféladatok:\n{client_data}\n\nSzolgáltatások: {services}\n\nAdmin felület: {admin_link}"
+        },
+        {
+            "id": "3",
+            "slug": "status_change",
+            "subject": "Ajánlatkérés státusz frissítés – {request_number}",
+            "body": "Kedves {client_name}!\n\nAjánlatkérése ({request_number}) státusza megváltozott: {status}\n\nRészletek: {portal_link}\n\nÜdvözlettel,\nBMA Engineering"
+        },
+        {
+            "id": "4",
+            "slug": "info_request",
+            "subject": "További információ szükséges – {request_number}",
+            "body": "Kedves {client_name}!\n\nAjánlatkéréséhez ({request_number}) további információra van szükségünk.\n\nKérjük, lépjen kapcsolatba velünk, vagy töltse fel a hiányzó dokumentumokat az ügyfélportálon:\n{portal_link}\n\nÜdvözlettel,\nBMA Engineering"
+        },
+        {
+            "id": "5",
+            "slug": "quote_uploaded",
+            "subject": "Ajánlat elérhető – {request_number}",
+            "body": "Kedves {client_name}!\n\nAjánlatkéréséhez ({request_number}) elkészült az ajánlat.\n\nBruttó összeg: {quote_amount}\nÉrvényesség: {quote_valid_until}\n\nAjánlat megtekintése: {portal_link}\n\nÜdvözlettel,\nBMA Engineering"
+        },
+        {
+            "id": "6",
+            "slug": "document_uploaded",
+            "subject": "Új dokumentum – {request_number}",
+            "body": "Kedves {client_name}!\n\nÚj dokumentum került feltöltésre az ajánlatkéréséhez ({request_number}).\n\nMegtekintés: {portal_link}\n\nÜdvözlettel,\nBMA Engineering"
+        },
+        {
+            "id": "7",
+            "slug": "documents_ready",
+            "subject": "Elkészült dokumentumok – {request_number}",
+            "body": "Kedves {client_name}!\n\nAz ajánlatkéréshez ({request_number}) tartozó elkészült tervek és dokumentumok elérhetők az ügyfélportálon:\n{portal_link}\n\nÜdvözlettel,\nBMA Engineering"
+        }
+    ],
+    "dynamic_fields": [],
+    "seo": {
+        "homepage_title": "BMA Engineering | Mérnöki tervezés és engedélyeztetés",
+        "homepage_description": "Mérnöki tervezés, engedélyeztetés, műszaki dokumentáció és közmű koordináció. Kérjen ajánlatot online – BMA Engineering, Odorheiu Secuiesc.",
+        "organization_description": "A BMA Engineering mérnöki tervezést, engedélyeztetést, műszaki dokumentációt és közműcsatlakozás-koordinációt nyújt lakossági és üzleti projektekhez Odorheiu Secuiesc \/ Székelyudvarhely térségében és Romániában.",
+        "knowledgegraph_name": "BMA ENGINEERING S.R.L.",
+        "website_name": "BMA ENGINEERING",
+        "website_alternate_name": "BMA Engineering",
+        "breadcrumbs_home_label": "Főoldal"
+    },
+    "ui_strings_note": "Plugin UI strings (__ \/ esc_html__) are translated via .po\/.mo in languages\/; Polylang handles posts\/taxonomies\/menus."
+}

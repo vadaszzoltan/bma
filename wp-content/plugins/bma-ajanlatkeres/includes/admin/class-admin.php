@@ -15,6 +15,28 @@ final class BMA_AJ_Admin {
 	public static function init(): void {
 		add_action( 'admin_menu', array( self::class, 'register_menus' ) );
 		add_action( 'admin_init', array( self::class, 'register_settings' ) );
+		add_action( 'admin_init', array( self::class, 'handle_demo_reseed' ) );
+	}
+
+	/**
+	 * Reload demo content from settings page.
+	 */
+	public static function handle_demo_reseed(): void {
+		if ( ! isset( $_POST['bma_reseed_demo'] ) || ! current_user_can( 'bma_manage_settings' ) ) {
+			return;
+		}
+
+		check_admin_referer( 'bma_reseed_demo', 'bma_reseed_nonce' );
+
+		require_once BMA_AJ_PLUGIN_DIR . 'includes/class-seeder.php';
+		BMA_AJ_Seeder::reseed();
+
+		add_settings_error(
+			'bma_settings',
+			'bma_reseeded',
+			__( 'A demo tartalom sikeresen betöltve. Frissítse a főoldalt a böngészőben.', 'bma-ajanlatkeres' ),
+			'success'
+		);
 	}
 
 	/**
@@ -44,9 +66,12 @@ final class BMA_AJ_Admin {
 	 */
 	public static function register_settings(): void {
 		register_setting( 'bma_settings', 'bma_admin_email' );
+		register_setting( 'bma_settings', 'bma_company_name' );
+		register_setting( 'bma_settings', 'bma_company_cui' );
 		register_setting( 'bma_settings', 'bma_contact_phone' );
 		register_setting( 'bma_settings', 'bma_contact_email' );
 		register_setting( 'bma_settings', 'bma_contact_address' );
+		register_setting( 'bma_settings', 'bma_opening_hours' );
 		register_setting( 'bma_settings', 'bma_social_facebook' );
 		register_setting( 'bma_settings', 'bma_social_linkedin' );
 		register_setting( 'bma_settings', 'bma_social_instagram' );
@@ -58,6 +83,45 @@ final class BMA_AJ_Admin {
 		register_setting( 'bma_settings', 'bma_smtp_port' );
 		register_setting( 'bma_settings', 'bma_smtp_from' );
 		register_setting( 'bma_settings', 'bma_smtp_from_name' );
+		register_setting( 'bma_settings', 'bma_stripe_publishable_key' );
+		register_setting( 'bma_settings', 'bma_stripe_secret_key' );
+		register_setting( 'bma_settings', 'bma_stripe_webhook_secret' );
+		register_setting( 'bma_settings', 'bma_stripe_invoice_creation' );
+		register_setting( 'bma_settings', 'bma_stripe_automatic_tax' );
+		register_setting( 'bma_settings', 'bma_bank_beneficiary' );
+		register_setting( 'bma_settings', 'bma_bank_iban' );
+		register_setting( 'bma_settings', 'bma_bank_bic' );
+		register_setting( 'bma_settings', 'bma_bank_name' );
+		register_setting( 'bma_settings', 'bma_default_currency' );
+		register_setting(
+			'bma_settings',
+			BMA_AJ_Appearance::OPTION_COLORS,
+			array(
+				'type'              => 'array',
+				'sanitize_callback' => array( 'BMA_AJ_Appearance', 'sanitize_colors' ),
+				'default'           => BMA_AJ_Appearance::default_colors(),
+			)
+		);
+		register_setting(
+			'bma_settings',
+			BMA_AJ_Appearance::OPTION_FONTS,
+			array(
+				'type'              => 'array',
+				'sanitize_callback' => array( 'BMA_AJ_Appearance', 'sanitize_fonts' ),
+				'default'           => BMA_AJ_Appearance::default_fonts(),
+			)
+		);
+		register_setting(
+			'bma_settings',
+			BMA_AJ_Appearance::OPTION_RADIUS,
+			array(
+				'type'              => 'integer',
+				'sanitize_callback' => static function ( $v ) {
+					return max( 0, min( 24, absint( $v ) ) );
+				},
+				'default'           => 10,
+			)
+		);
 	}
 
 	/**
@@ -106,21 +170,61 @@ final class BMA_AJ_Admin {
 		}
 
 		if ( isset( $_POST['save_quote'] ) ) {
-			BMA_AJ_Quotes::save(
+			$result = BMA_AJ_Quotes::save(
 				$id,
 				array(
-					'quote_number' => sanitize_text_field( wp_unslash( $_POST['quote_number'] ?? '' ) ),
-					'net_amount'   => floatval( $_POST['net_amount'] ?? 0 ),
-					'tax_amount'   => floatval( $_POST['tax_amount'] ?? 0 ),
-					'gross_amount' => floatval( $_POST['gross_amount'] ?? 0 ),
-					'currency'     => sanitize_text_field( wp_unslash( $_POST['currency'] ?? 'HUF' ) ),
+					'id'           => absint( $_POST['quote_id'] ?? 0 ),
+					'net_amount'   => wp_unslash( $_POST['net_amount'] ?? 0 ),
+					'tax_amount'   => wp_unslash( $_POST['tax_amount'] ?? 0 ),
+					'gross_amount' => wp_unslash( $_POST['gross_amount'] ?? 0 ),
+					'currency'     => sanitize_text_field( wp_unslash( $_POST['currency'] ?? 'EUR' ) ),
 					'valid_until'  => sanitize_text_field( wp_unslash( $_POST['valid_until'] ?? '' ) ),
 					'note'         => sanitize_textarea_field( wp_unslash( $_POST['quote_note'] ?? '' ) ),
 					'status'       => 'sent',
 				)
 			);
+
+			if ( is_wp_error( $result ) ) {
+				add_settings_error( 'bma_quote', 'bma_quote_error', $result->get_error_message(), 'error' );
+			} else {
+				add_settings_error( 'bma_quote', 'bma_quote_saved', __( 'Ajánlat elmentve és elküldve az ügyfélnek.', 'bma-ajanlatkeres' ), 'success' );
+			}
 		}
 
+		if ( isset( $_POST['mark_bank_paid'] ) ) {
+			$quote = BMA_AJ_Quotes::get_latest_for_request( $id );
+			if ( $quote && 'bank_pending' === ( $quote->payment_status ?? '' ) ) {
+				BMA_AJ_Quotes::mark_paid( (int) $quote->id, 'bank_transfer' );
+			}
+		}
+
+		if ( isset( $_POST['delete_document'] ) ) {
+			$doc_id = absint( $_POST['document_id'] ?? 0 );
+			$result = BMA_AJ_Documents::delete( $doc_id, $id );
+			if ( is_wp_error( $result ) ) {
+				add_settings_error( 'bma_quote', 'bma_doc_delete_error', $result->get_error_message(), 'error' );
+			} else {
+				add_settings_error( 'bma_quote', 'bma_doc_deleted', __( 'Dokumentum törölve.', 'bma-ajanlatkeres' ), 'success' );
+			}
+		}
+
+		if ( ! empty( $_FILES['admin_deliverable']['name'] ) ) {
+			$item_id = absint( $_POST['deliverable_item_id'] ?? 0 );
+			$result  = BMA_AJ_Documents::handle_upload(
+				$_FILES['admin_deliverable'],
+				$id,
+				sanitize_text_field( wp_unslash( $_POST['deliverable_type'] ?? 'plan' ) ),
+				'admin',
+				$item_id
+			);
+			if ( is_wp_error( $result ) ) {
+				add_settings_error( 'bma_quote', 'bma_doc_error', $result->get_error_message(), 'error' );
+			} else {
+				add_settings_error( 'bma_quote', 'bma_doc_saved', __( 'Elkészült terv / dokumentum feltöltve.', 'bma-ajanlatkeres' ), 'success' );
+			}
+		}
+
+		// Legacy field name support.
 		if ( ! empty( $_FILES['admin_document']['name'] ) ) {
 			BMA_AJ_Documents::handle_upload(
 				$_FILES['admin_document'],

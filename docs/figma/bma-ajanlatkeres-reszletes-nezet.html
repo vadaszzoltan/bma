@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BMA – Ajánlatkérés részletes nézet (Figma)</title>
+  <style>
+    :root {
+      --bg: #f0f0f1;
+      --panel: #fff;
+      --border: #c3c4c7;
+      --text: #1d2327;
+      --muted: #646970;
+      --primary: #2271b1;
+      --sidebar: #1d2327;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 13px;
+    }
+    .layout { display: flex; min-height: 100vh; }
+    .sidebar {
+      width: 160px;
+      background: var(--sidebar);
+      color: #a7aaad;
+      padding: 16px 0;
+      flex-shrink: 0;
+    }
+    .sidebar .brand { color: #fff; font-weight: 700; padding: 0 16px 16px; }
+    .sidebar a {
+      display: block;
+      padding: 8px 16px;
+      color: inherit;
+      text-decoration: none;
+    }
+    .sidebar a.active { background: var(--primary); color: #fff; }
+    .main { flex: 1; padding: 24px 32px 48px; }
+    h1 { font-size: 28px; margin: 0 0 4px; font-weight: 600; }
+    .subtitle { color: var(--muted); margin-bottom: 24px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0 0 16px;
+    }
+    .panel.full { grid-column: 1 / -1; }
+    .panel h2 {
+      font-size: 15px;
+      margin: 0;
+      padding: 14px 20px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .panel-body { padding: 16px 20px; }
+    table.meta { width: 100%; border-collapse: collapse; }
+    table.meta th {
+      text-align: left;
+      width: 120px;
+      color: var(--muted);
+      font-weight: 400;
+      padding: 8px 0;
+      vertical-align: top;
+    }
+    table.meta td { padding: 8px 0; }
+    .badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 12px;
+    }
+    label { display: block; color: var(--muted); margin: 12px 0 4px; }
+    input, select, textarea {
+      width: 100%;
+      max-width: 320px;
+      border: 1px solid #8c8f94;
+      border-radius: 2px;
+      padding: 8px 10px;
+      font: inherit;
+    }
+    textarea { max-width: 100%; min-height: 64px; }
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 8px 14px;
+      border-radius: 2px;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn.secondary {
+      background: #fff;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+    .btn.ghost {
+      background: #fff;
+      color: var(--text);
+      border: 1px solid #8c8f94;
+    }
+    .history li { margin-bottom: 8px; }
+    .service-block { margin-bottom: 16px; }
+    .service-block h3 { margin: 0 0 4px; font-size: 14px; }
+    .service-block p { margin: 0; color: var(--muted); }
+    .doc-list a { color: var(--primary); display: block; margin-bottom: 8px; }
+    .note { font-size: 11px; color: #996800; background: #fff8e5; border: 1px solid #dba617; padding: 8px 12px; border-radius: 4px; margin-bottom: 16px; max-width: 480px; }
+  </style>
+</head>
+<body>
+  <div class="layout" data-figma-frame="Desktop 1440 – Ajánlatkérés részletes nézet">
+    <aside class="sidebar">
+      <div class="brand">BMA</div>
+      <a href="#">Ajánlatkérések</a>
+      <a class="active" href="#">Részletes nézet</a>
+      <a href="#">Szolgáltatások</a>
+      <a href="#">Státuszok</a>
+      <a href="#">Beállítások</a>
+    </aside>
+    <main class="main">
+      <p class="note">Figma: nyisd meg ezt a fájlt böngészőben → html.to.design plugin, vagy használd az SVG-t (Place image).</p>
+      <h1>BMA-20260715-K4QUZ9 – Vadasz Zoltan</h1>
+      <p class="subtitle">Ajánlatkérés részletes nézet</p>
+
+      <div class="grid">
+        <section class="panel">
+          <h2>Ügyféladatok</h2>
+          <div class="panel-body">
+            <table class="meta">
+              <tr><th>Név</th><td>Vadasz Zoltan</td></tr>
+              <tr><th>E-mail</th><td>vadaszzoltan@minic.hu</td></tr>
+              <tr><th>Telefon</th><td>+36 30 000 0000</td></tr>
+              <tr><th>Cég</th><td>minic studio</td></tr>
+              <tr><th>Megjegyzés</th><td>Projekt megjegyzés szövege…</td></tr>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Státusz</h2>
+          <div class="panel-body">
+            <p><span class="badge">Beérkezett</span></p>
+            <label>Új státusz</label>
+            <select><option>Feldolgozás alatt</option></select>
+            <label>Megjegyzés</label>
+            <textarea placeholder="Megjegyzés…"></textarea>
+            <button class="btn" type="button">Státusz módosítása</button>
+          </div>
+        </section>
+      </div>
+
+      <section class="panel full" style="margin-bottom:24px">
+        <h2>Státuszelőzmények</h2>
+        <div class="panel-body">
+          <ul class="history">
+            <li>2026.07.15 14:32 – Beérkezett: Ajánlatkérés beküldve.</li>
+            <li>2026.07.15 15:10 – Feldolgozás alatt: Dokumentumok ellenőrzése.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel full" style="margin-bottom:24px">
+        <h2>Kiválasztott szolgáltatások</h2>
+        <div class="panel-body">
+          <div class="service-block">
+            <h3>Tervezés</h3>
+            <p>Elemek: Vízbekötési terv, Gázbekötési terv</p>
+          </div>
+          <div class="service-block">
+            <h3>Engedélyeztetés</h3>
+            <p>Elemek: Építési engedély előkészítés</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid">
+        <section class="panel">
+          <h2>Ajánlat</h2>
+          <div class="panel-body">
+            <label>Ajánlat száma</label>
+            <input value="BMA-Q-2026-001" />
+            <label>Nettó</label>
+            <input value="1200.00" />
+            <label>Adó</label>
+            <input value="228.00" />
+            <label>Bruttó</label>
+            <input value="1428.00" />
+            <label>Pénznem</label>
+            <select><option>EUR</option><option>RON</option></select>
+            <label>Érvényesség</label>
+            <input type="date" value="2026-08-31" />
+            <label>Ajánlati PDF</label>
+            <input type="file" />
+            <button class="btn" type="button">Ajánlat mentése és küldése</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Dokumentumok</h2>
+          <div class="panel-body">
+            <div class="doc-list">
+              <a href="#">helyszinrajz.pdf (client_upload)</a>
+              <a href="#">muszaki_leiras.docx (client_upload)</a>
+              <a href="#">ajanlat_BMA-Q-2026-001.pdf (quote)</a>
+            </div>
+            <label>Típus</label>
+            <select>
+              <option>Műszaki dokumentum</option>
+              <option>Terv</option>
+              <option>Átadási dokumentum</option>
+              <option>Egyéb</option>
+            </select>
+            <label>Fájl</label>
+            <input type="file" />
+            <button class="btn secondary" type="button">Dokumentum feltöltése</button>
+          </div>
+        </section>
+      </div>
+
+      <section class="panel full">
+        <h2>Adminisztrátori megjegyzés</h2>
+        <div class="panel-body">
+          <textarea placeholder="Belső megjegyzés az ajánlatkéréshez…"></textarea>
+          <button class="btn ghost" type="button">Mentés</button>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

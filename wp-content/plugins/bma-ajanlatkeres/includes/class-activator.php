@@ -17,6 +17,9 @@ final class BMA_AJ_Activator {
 		BMA_AJ_Autoloader::register();
 
 		require_once BMA_AJ_PLUGIN_DIR . 'includes/database/class-schema.php';
+		require_once BMA_AJ_PLUGIN_DIR . 'includes/database/class-schema.php';
+		BMA_AJ_Schema::maybe_upgrade();
+
 		require_once BMA_AJ_PLUGIN_DIR . 'includes/class-roles.php';
 		require_once BMA_AJ_PLUGIN_DIR . 'includes/class-statuses.php';
 		require_once BMA_AJ_PLUGIN_DIR . 'includes/class-email-templates.php';
@@ -28,9 +31,9 @@ final class BMA_AJ_Activator {
 		BMA_AJ_Roles::setup();
 		BMA_AJ_Statuses::seed_defaults();
 		BMA_AJ_Email_Templates::seed_defaults();
-		BMA_AJ_Seeder::run();
 
 		self::create_pages();
+		BMA_AJ_Seeder::run();
 		self::flush_rewrites();
 
 		update_option( 'bma_aj_version', BMA_AJ_VERSION );
@@ -50,7 +53,9 @@ final class BMA_AJ_Activator {
 			'ugyfelportal'      => array( 'title' => 'Ügyfélportál', 'template' => 'page-ugyfelportal.php' ),
 			'adatvedelem'       => array( 'title' => 'Adatvédelmi tájékoztató', 'template' => 'page-adatvedelem.php' ),
 			'cookie-tajekoztato'=> array( 'title' => 'Cookie tájékoztató', 'template' => 'page-cookie.php' ),
+			'aszf'              => array( 'title' => 'Általános felhasználási feltételek', 'template' => 'page-aszf.php' ),
 			'belepes'           => array( 'title' => 'Bejelentkezés', 'template' => 'page-belepes.php' ),
+			'fizetes'           => array( 'title' => 'Fizetés', 'template' => 'page-fizetes.php' ),
 		);
 
 		$page_ids = array();

@@ -1,0 +1,1830 @@
+{
+  "%d szolgáltatás kiválasztva": {
+    "ro": "%d servicii selectate",
+    "en": "%d services selected"
+  },
+  "%s részfeladatai": {
+    "ro": "Subactivitățile serviciului %s",
+    "en": "Sub-tasks for %s"
+  },
+  "+40 7XX XXX XXX": {
+    "ro": "+40 7XX XXX XXX",
+    "en": "+40 7XX XXX XXX"
+  },
+  "+40 …": {
+    "ro": "+40 …",
+    "en": "+40 …"
+  },
+  "1. Az adatkezelő": {
+    "ro": "1. Operatorul de date",
+    "en": "1. The data controller"
+  },
+  "1. Mi az a cookie?": {
+    "ro": "1. Ce este un cookie?",
+    "en": "1. What is a cookie?"
+  },
+  "1. Szolgáltatások": {
+    "ro": "1. Servicii",
+    "en": "1. Services"
+  },
+  "1. Szolgáltató": {
+    "ro": "1. Furnizor",
+    "en": "1. Service provider"
+  },
+  "10. Adatbiztonság": {
+    "ro": "10. Securitatea datelor",
+    "en": "10. Data security"
+  },
+  "10–12. Külső linkek, elérhetőség, felelősség": {
+    "ro": "10–12. Linkuri externe, contact, responsabilitate",
+    "en": "10–12. External links, availability, responsibility"
+  },
+  "11. Cookie-k": {
+    "ro": "11. Cookie-uri",
+    "en": "11. Cookies"
+  },
+  "12. Módosítás": {
+    "ro": "12. Modificare",
+    "en": "12. Modification"
+  },
+  "13. Adatvédelem": {
+    "ro": "13. Protecția datelor",
+    "en": "13. Privacy"
+  },
+  "14. Feltételek módosítása": {
+    "ro": "14. Modificarea termenilor",
+    "en": "14. Modification of terms"
+  },
+  "15. Kapcsolat": {
+    "ro": "15. Contact",
+    "en": "15. Contact"
+  },
+  "2. A weboldal célja": {
+    "ro": "2. Scopul site-ului web",
+    "en": "2. Purpose of the website"
+  },
+  "2. Cookie kategóriák ezen az oldalon": {
+    "ro": "2. Categorii de cookie-uri de pe acest site",
+    "en": "2. Cookie categories on this site"
+  },
+  "2. Kosár": {
+    "ro": "2. Coș",
+    "en": "2. Cart"
+  },
+  "2. Milyen adatokat kezelünk?": {
+    "ro": "2. Ce date procesăm?",
+    "en": "2. What data do we process?"
+  },
+  "3. Adatkezelés célja és jogalapja": {
+    "ro": "3. Scopul și temeiul legal al prelucrării datelor",
+    "en": "3. Purpose and legal basis of data processing"
+  },
+  "3. Adatok": {
+    "ro": "3. Date",
+    "en": "3. Data"
+  },
+  "3. Ajánlatkérés": {
+    "ro": "3. Cerere de ofertă",
+    "en": "3. Quote request"
+  },
+  "3. Térkép": {
+    "ro": "3. Hartă",
+    "en": "3. Map"
+  },
+  "4 tétel · 1 ajánlatkérés": {
+    "ro": "4 elemente · 1 cerere de ofertă",
+    "en": "4 items · 1 quote request"
+  },
+  "4. Ajánlat": {
+    "ro": "4. Ofertă",
+    "en": "4. Quote"
+  },
+  "4. Feltöltött dokumentumok": {
+    "ro": "4. Documente încărcate",
+    "en": "4. Uploaded documents"
+  },
+  "4. Hozzájárulás kezelése": {
+    "ro": "4. Gestionarea consimțământului",
+    "en": "4. Handling of consent"
+  },
+  "5. Adattovábbítás": {
+    "ro": "5. Transferul datelor",
+    "en": "5. Data transfer"
+  },
+  "5. Kapcsolódó dokumentumok": {
+    "ro": "5. Documente conexe",
+    "en": "5. Related documents"
+  },
+  "5. Árak": {
+    "ro": "5. Prețuri",
+    "en": "5. Prices"
+  },
+  "6. EGT-n kívüli adattovábbítás": {
+    "ro": "6. Transferul datelor în afara SEE",
+    "en": "6. Data transfer outside the EEA"
+  },
+  "6. Felhasználó által megadott információk": {
+    "ro": "6. Informații furnizate de utilizator",
+    "en": "6. Information provided by the user"
+  },
+  "7. Dokumentumfeltöltés": {
+    "ro": "7. Încărcare document",
+    "en": "7. Document upload"
+  },
+  "7. Megőrzési idő": {
+    "ro": "7. Perioada de păstrare",
+    "en": "7. Retention period"
+  },
+  "8. Érintetti jogok": {
+    "ro": "8. Drepturile persoanelor vizate",
+    "en": "8. Data subject rights"
+  },
+  "8. Ügyfélfiók": {
+    "ro": "8. Contul clientului",
+    "en": "8. Client account"
+  },
+  "9. Panasz": {
+    "ro": "9. Plângere",
+    "en": "9. Complaint"
+  },
+  "9. Szellemi tulajdon": {
+    "ro": "9. Proprietate intelectuală",
+    "en": "9. Intellectual property"
+  },
+  "A %s fontosnak tartja a személyes adatok védelmét és az adatok átlátható kezelését.": {
+    "ro": "%s consideră protecția datelor personale și gestionarea transparentă a acestora importante.",
+    "en": "%s considers the protection of personal data and the transparent management of data important."
+  },
+  "A BMA Engineering mérnöki tervezési, engedélyeztetési, közmű-koordinációs és műszaki dokumentációs feladatokban támogatja ügyfeleit.": {
+    "ro": "BMA Engineering sprijină clienții în sarcini de proiectare inginerească, autorizare, coordonare a utilităților și documentație tehnică.",
+    "en": "BMA Engineering supports its clients in engineering design, permitting, utility coordination, and technical documentation tasks."
+  },
+  "A cookie kis adatfájl, amelyet a böngésző tárol. Segíti a weboldal működését, a beállítások megjegyzését és – hozzájárulás esetén – a látogatottsági statisztikát.": {
+    "ro": "Un cookie este un fișier mic de date stocat de browser. Ajută la funcționarea site-ului web, la reținerea setărilor și – cu consimțământul utilizatorului – la statistici de trafic.",
+    "en": "A cookie is a small data file stored by the browser. It helps the website function, remembers settings, and – with consent – tracks visitor statistics."
+  },
+  "A felhasználó felelős a hozzáférési adatok biztonságáért, és csak a saját adataihoz férhet hozzá.": {
+    "ro": "Utilizatorul este responsabil pentru securitatea datelor de acces și poate accesa doar propriile sale date.",
+    "en": "The user is responsible for the security of their access data and may only access their own data."
+  },
+  "A felhasználó felelőssége, hogy a megadott adatok tudomása szerint pontosak és teljesek legyenek.": {
+    "ro": "Este responsabilitatea utilizatorului ca datele furnizate să fie, după cunoștința sa, corecte și complete.",
+    "en": "It is the user's responsibility to ensure that the data provided is accurate and complete to the best of their knowledge."
+  },
+  "A feltöltött dokumentumokat kizárólag az adott ajánlatkérés vagy szolgáltatás kezelése céljából használjuk. Kérjük, csak a projekthez szükséges adatokat töltse fel.": {
+    "ro": "Documentele încărcate vor fi utilizate exclusiv în scopul gestionării cererii de ofertă sau al serviciului solicitat. Vă rugăm să încărcați doar datele necesare pentru proiect.",
+    "en": "Uploaded documents are used solely for the purpose of managing the specific quote request or service. Please upload only the data necessary for the project."
+  },
+  "A fizetéshez be kell jelentkeznie, és érvényes ajánlathoz kell rendelkeznie.": {
+    "ro": "Pentru a efectua plata, trebuie să vă autentificați și să aveți o ofertă valabilă.",
+    "en": "To make a payment, you must log in and have a valid quote."
+  },
+  "A jelen feltételek a weboldal használatára, a kapcsolatfelvételre és az ajánlatkérésre vonatkoznak.": {
+    "ro": "Prezentele condiții se aplică utilizării site-ului web, stabilirii contactului și solicitării de oferte.",
+    "en": "These terms apply to the use of the website, making contact, and requesting quotes."
+  },
+  "A kapcsolat oldalon OpenStreetMap csempéket jelenítünk meg (Leaflet). A térkép csak hozzájárulás után vagy a „Térkép betöltése” gombra kattintva töltődik be. Az „Útvonaltervezés” az OpenStreetMap irányító oldalára vezet (külső oldal).": {
+    "ro": "Pe pagina de contact afișăm plăci OpenStreetMap (Leaflet). Harta se încarcă doar după consimțământ sau făcând clic pe butonul „Încarcă harta”. „Planificare traseu” conduce la pagina de direcționare OpenStreetMap (pagină externă).",
+    "en": "On the contact page, we display OpenStreetMap tiles (Leaflet). The map only loads after consent or by clicking the „Load Map” button. The „Route Planning” leads to the OpenStreetMap direction page (external site)."
+  },
+  "A keresett oldal nem létezik, áthelyezték, vagy elírta a címet. Válasszon az alábbi lehetőségek közül.": {
+    "ro": "Pagina căutată nu există, a fost mutată sau ați tastat greșit adresa. Vă rugăm să alegeți dintre următoarele opțiuni.",
+    "en": "The requested page does not exist, has been moved, or you have mistyped the address. Please choose from the options below."
+  },
+  "A kiválasztott elemeket még nem adta hozzá az ajánlatkéréshez": {
+    "ro": "Elementele selectate nu au fost adăugate încă la cererea de ofertă.",
+    "en": "You have not yet added the selected items to the quote request."
+  },
+  "A kiválasztott elemeket még nem adta hozzá az ajánlatkéréshez. A folytatás előtt kattintson a gombra.": {
+    "ro": "Elementele selectate nu au fost adăugate încă la cererea de ofertă. Înainte de a continua, faceți clic pe buton.",
+    "en": "You have not yet added the selected items to the quote request. Click the button before continuing."
+  },
+  "A kiválasztott szolgáltatásokhoz szükséges adatokat egyszer, itt adhatja meg. Ismételt kitöltés nem szükséges.": {
+    "ro": "Datele necesare pentru serviciile selectate pot fi introduse o singură dată aici. Nu este necesar să le completați din nou.",
+    "en": "You can provide the data required for the selected services once, here. Repeated completion is not necessary."
+  },
+  "A kosár üres": {
+    "ro": "Coșul este gol",
+    "en": "The cart is empty"
+  },
+  "A kosár üres. Válasszon szolgáltatást a folytatáshoz.": {
+    "ro": "Coșul este gol. Vă rugăm să alegeți un serviciu pentru a continua.",
+    "en": "The cart is empty. Please select a service to continue."
+  },
+  "A kártyás fizetés jelenleg nem elérhető. Kérjük, válassza a banki utalást.": {
+    "ro": "Plata cu cardul nu este disponibilă momentan. Vă rugăm să alegeți transferul bancar.",
+    "en": "Card payment is currently unavailable. Please choose bank transfer."
+  },
+  "A lábléc feletti cookie sávon választhat: „Csak szükséges” vagy „Összes elfogadása”. A beállítás a böngészőben marad; törléséhez törölje az oldal adatait / localStorage-t, majd töltse újra az oldalt.": {
+    "ro": "Pe bara de cookie-uri de deasupra subsolului, puteți alege: „Doar necesare” sau „Acceptă toate”. Setarea rămâne în browser; pentru a o șterge, ștergeți datele site-ului / localStorage și reîncărcați pagina.",
+    "en": "In the cookie bar above the footer, you can choose: „Necessary only” or „Accept all”. The setting remains in the browser; to delete it, clear the page data / localStorage and then reload the page."
+  },
+  "A megoldás": {
+    "ro": "Soluția",
+    "en": "The solution"
+  },
+  "A projekt": {
+    "ro": "Proiectul",
+    "en": "The project"
+  },
+  "A szolgáltató a szolgáltatások, a weboldal vagy a jogszabályok változása esetén módosíthatja a feltételeket.": {
+    "ro": "Furnizorul poate modifica termenii în cazul schimbării serviciilor, a site-ului web sau a legislației.",
+    "en": "The service provider may modify the terms in the event of changes to the services, the website, or the legislation."
+  },
+  "A szükséges tervrajzok és műszaki dokumentumok az adott ajánlatkéréshez kapcsolódva tölthetők fel és kezelhetők.": {
+    "ro": "Desenele și documentele tehnice necesare pot fi încărcate și gestionate în legătură cu cererea de ofertă respectivă.",
+    "en": "The necessary plans and technical documents can be uploaded and managed in connection with the given quote request."
+  },
+  "A tervrajzok és dokumentumok az ajánlatkéréshez rendelve tölthetők fel.": {
+    "ro": "Desenele și documentele pot fi încărcate asociate cererii de ofertă.",
+    "en": "Plans and documents can be uploaded assigned to the quote request."
+  },
+  "A térkép OpenStreetMap csempéket tölt be. A megjelenítéshez kattintson a „Térkép betöltése” gombra, vagy fogadja el a cookie beállításokban a funkcionális térképet.": {
+    "ro": "Harta încarcă plăci OpenStreetMap. Pentru a o afișa, faceți clic pe butonul „Încarcă harta” sau acceptați harta funcțională în setările cookie-urilor.",
+    "en": "The map loads OpenStreetMap tiles. To display it, click the „Load Map” button or accept the functional map in the cookie settings."
+  },
+  "A weboldali információk általános tájékoztatásnak minősülnek.": {
+    "ro": "Informațiile de pe site sunt considerate informații generale.",
+    "en": "The information on the website is considered general information."
+  },
+  "A weboldali tartalom védelem alatt állhat. A projektben készült dokumentumokra az egyedi szerződés/ajánlat vonatkozik.": {
+    "ro": "Conținutul site-ului web poate fi protejat. Documentelor realizate în cadrul proiectului li se aplică contractul/oferta individuală.",
+    "en": "Website content may be protected. Documents prepared in the project are subject to the individual contract/quote."
+  },
+  "Adatkezelési tájékoztató": {
+    "ro": "Informații privind prelucrarea datelor",
+    "en": "Data management information"
+  },
+  "Adatok megadása": {
+    "ro": "Furnizarea datelor",
+    "en": "Providing data"
+  },
+  "Adatvédelem": {
+    "ro": "Protecția datelor",
+    "en": "Data protection"
+  },
+  "Adatvédelmi tájékoztató": {
+    "ro": "Declarație de confidențialitate",
+    "en": "Privacy notice"
+  },
+  "Adja meg a felhasználónevet és a jelszót.": {
+    "ro": "Vă rugăm să introduceți numele de utilizator și parola.",
+    "en": "Enter the username and password."
+  },
+  "Adószám": {
+    "ro": "Cod de identificare fiscală",
+    "en": "Tax number"
+  },
+  "Ajánlat": {
+    "ro": "Ofertă",
+    "en": "Quote"
+  },
+  "Ajánlat elfogadása": {
+    "ro": "Acceptarea ofertei",
+    "en": "Acceptance of quote"
+  },
+  "Ajánlat elérhető": {
+    "ro": "Ofertă disponibilă",
+    "en": "Quote available"
+  },
+  "Ajánlat fizetése": {
+    "ro": "Plata ofertei",
+    "en": "Payment of quote"
+  },
+  "Ajánlat nem található.": {
+    "ro": "Oferta nu a fost găsită.",
+    "en": "Quote not found."
+  },
+  "Ajánlat részletei": {
+    "ro": "Detalii ale ofertei",
+    "en": "Quote details"
+  },
+  "Ajánlat száma": {
+    "ro": "Numărul ofertei",
+    "en": "Quote number"
+  },
+  "Ajánlat száma: %s": {
+    "ro": "Numărul ofertei: %s",
+    "en": "Quote number: %s"
+  },
+  "Ajánlat, %d tétel": {
+    "ro": "Ofertă, %d poziții",
+    "en": "Quote, %d items"
+  },
+  "Ajánlati PDF letöltése": {
+    "ro": "Descărcați PDF-ul ofertei",
+    "en": "Download quote PDF"
+  },
+  "Ajánlatkérés": {
+    "ro": "Cerere de ofertă",
+    "en": "Request a quote"
+  },
+  "Ajánlatkérés beküldve.": {
+    "ro": "Cerere de ofertă trimisă.",
+    "en": "Quote request submitted."
+  },
+  "Ajánlatkérés beküldése": {
+    "ro": "Trimitere cerere de ofertă",
+    "en": "Submit quote request"
+  },
+  "Ajánlatkérés esetén": {
+    "ro": "În cazul unei cereri de ofertă",
+    "en": "In case of quote request"
+  },
+  "Ajánlatkérés indítása": {
+    "ro": "Începeți cererea de ofertă",
+    "en": "Start quote request"
+  },
+  "Ajánlatkérés:": {
+    "ro": "Cerere de ofertă:",
+    "en": "Quote request:"
+  },
+  "Ajánlatkéréseim": {
+    "ro": "Cererile mele de ofertă",
+    "en": "My quote requests"
+  },
+  "Ajánlatkérési kosár": {
+    "ro": "Coș de cereri de ofertă",
+    "en": "Quote request cart"
+  },
+  "Ajánlatkérési kosár azonosító (bma_cart_id) – a kiválasztott szolgáltatások megőrzéséhez": {
+    "ro": "Identificator coș de cereri de ofertă (bma_cart_id) – pentru păstrarea serviciilor selectate",
+    "en": "Quote request cart identifier (bma_cart_id) – to save selected services"
+  },
+  "Ajánlatkérési lépések": {
+    "ro": "Etape cerere de ofertă",
+    "en": "Quote request steps"
+  },
+  "Ajánlatot szeretne kérni?": {
+    "ro": "Doriți să solicitați o ofertă?",
+    "en": "Do you want to request a quote?"
+  },
+  "Aktív kérések": {
+    "ro": "Cererile active",
+    "en": "Active requests"
+  },
+  "Analitika": {
+    "ro": "Analitică",
+    "en": "Analytics"
+  },
+  "Analitika:": {
+    "ro": "Analitică:",
+    "en": "Analytics:"
+  },
+  "Analitikai cookie-k csak hozzájárulás után. Részletek:": {
+    "ro": "Cookie-urile analitice doar după consimțământ. Detalii:",
+    "en": "Analytical cookies only after consent. Details:"
+  },
+  "Az IBAN az admin beállításokban adható meg.": {
+    "ro": "IBAN-ul poate fi introdus în setările de administrare.",
+    "en": "The IBAN can be provided in the admin settings."
+  },
+  "Az adatokat csak az adatkezelési célhoz szükséges ideig őrizzük meg.": {
+    "ro": "Datele sunt păstrate doar atât timp cât este necesar pentru scopul prelucrării datelor.",
+    "en": "The data is only retained for as long as necessary for the purpose of data processing."
+  },
+  "Az adatvédelmi hozzájárulás kötelező.": {
+    "ro": "Consimțământul pentru protecția datelor este obligatoriu.",
+    "en": "Consent for data protection is mandatory."
+  },
+  "Az ajánlat mentése sikertelen.": {
+    "ro": "Salvarea ofertei a eșuat.",
+    "en": "Saving the quote was unsuccessful."
+  },
+  "Az ajánlatkérés beküldése nem jelent automatikus szerződéskötést vagy megrendelést. A BMA Engineering további információkat kérhet.": {
+    "ro": "Trimiterea cererii de ofertă nu înseamnă automat încheierea unui contract sau plasarea unei comenzi. BMA Engineering poate solicita informații suplimentare.",
+    "en": "Submitting a quote request does not constitute an automatic contract or order. BMA Engineering may request further information."
+  },
+  "Az ajánlatkérés menete": {
+    "ro": "Cum funcționează cererea de ofertă",
+    "en": "How the quote request works"
+  },
+  "Az ajánlatkérés véglegesítése nem jár fizetési kötelezettséggel. Az árat az adminisztrátor készíti el később.": {
+    "ro": "Finalizarea cererii de ofertă nu implică obligații de plată. Prețul va fi stabilit ulterior de administrator.",
+    "en": "Finalizing the quote request does not create a payment obligation. The price will be prepared later by the administrator."
+  },
+  "Az ajánlatkéréshez először válasszon szolgáltatást.": {
+    "ro": "Pentru cererea de ofertă, alegeți mai întâi un serviciu.",
+    "en": "First, select a service for the quote request."
+  },
+  "Az ajánlatkérési folyamatban több szolgáltatást is kiválaszthat. A projekt alapadatait és dokumentumait egyszer kell megadnia, a rendszer pedig az összes kiválasztott szolgáltatáshoz kapcsolódó információkat egy ajánlatkérésben kezeli.": {
+    "ro": "În procesul de solicitare a ofertelor, puteți selecta mai multe servicii. Trebuie să introduceți o singură dată datele de bază și documentele proiectului, iar sistemul gestionează toate informațiile legate de serviciile selectate într-o singură solicitare de ofertă.",
+    "en": "In the quote request process, you can select multiple services. You only need to provide the basic project data and documents once, and the system manages the information related to all selected services in a single quote request."
+  },
+  "Az ajánlatkérési kosár üres.": {
+    "ro": "Coșul de solicitare a ofertelor este gol.",
+    "en": "The quote request cart is empty."
+  },
+  "Az ajánlatkéréstől a dokumentumok átadásáig követhető, hol tart a folyamat, és milyen következő lépésekre van szükség.": {
+    "ro": "De la solicitarea ofertei până la predarea documentelor, procesul poate fi urmărit pentru a vedea în ce stadiu se află și ce pași următori sunt necesari.",
+    "en": "From the quote request to the transfer of documents, it can be tracked where the process is and what next steps are needed."
+  },
+  "Az ajánlatkérőben kiválaszthatja a szükséges részfeladatokat és dokumentumokat is feltölthet.": {
+    "ro": "În solicitarea de ofertă puteți selecta și sub-sarcinile necesare și puteți încărca documente.",
+    "en": "In the quote request, you can select the necessary sub-tasks and also upload documents."
+  },
+  "Az aktuális változat mindig ezen az oldalon érhető el. A szöveget publikálás előtt célszerű jogi/adatvédelmi szakértővel ellenőriztetni.": {
+    "ro": "Versiunea actuală este întotdeauna disponibilă pe această pagină. Este recomandat ca textul să fie verificat de un expert juridic/protector de date înainte de publicare.",
+    "en": "The current version is always available on this page. It is advisable to have the text reviewed by a legal/data protection expert before publication."
+  },
+  "Az egyedi ajánlat vagy szerződés elsőbbséget élvez az általános weboldali feltételekkel szemben.": {
+    "ro": "Ofertele sau contractele individuale au prioritate față de termenii generali de pe site.",
+    "en": "The individual quote or contract takes precedence over the general website terms."
+  },
+  "Az oldal nem található": {
+    "ro": "Pagina nu a fost găsită",
+    "en": "Page not found"
+  },
+  "Az érintett jogosult panaszt benyújtani az illetékes adatvédelmi felügyeleti hatósághoz.": {
+    "ro": "Persoana vizată are dreptul să depună o plângere la autoritatea de supraveghere a protecției datelor competente.",
+    "en": "The data subject is entitled to lodge a complaint with the competent data protection supervisory authority."
+  },
+  "Az ügyfélportál eléréséhez bejelentkezés szükséges.": {
+    "ro": "Pentru a accesa portalul clienților, este necesară autentificarea.",
+    "en": "Login is required to access the client portal."
+  },
+  "Az ügyfélportálon látja a státuszt, az elkészült ajánlatot és a feltöltött dokumentumokat.": {
+    "ro": "Pe portalul clienților vedeți statutul, oferta pregătită și documentele încărcate.",
+    "en": "On the client portal, you can see the status, the completed quote, and the uploaded documents."
+  },
+  "Az ügyfélportálon végigkövethető a kérés státusza és a dokumentumok.": {
+    "ro": "Pe portalul clienților se poate urmări statusul cererii și al documentelor.",
+    "en": "The status of the request and the documents can be tracked throughout on the client portal."
+  },
+  "Az üzenet küldése nem sikerült. Ellenőrizze a kötelező mezőket, és próbálja újra.": {
+    "ro": "Trimiterea mesajului a eșuat. Vă rugăm să verificați câmpurile obligatorii și să încercați din nou.",
+    "en": "Message sending failed. Please check the required fields and try again."
+  },
+  "Azonosító": {
+    "ro": "Identificator",
+    "en": "Identifier"
+  },
+  "Azonosító: %s": {
+    "ro": "Identificator: %s",
+    "en": "Reference: %s"
+  },
+  "BIC / SWIFT": {
+    "ro": "BIC / SWIFT",
+    "en": "BIC / SWIFT"
+  },
+  "BMA Engineering főoldal": {
+    "ro": "Pagina principală BMA Engineering",
+    "en": "BMA Engineering homepage"
+  },
+  "BMA Engineering – műszaki tervezés, engedélyeztetés és dokumentáció lakossági és üzleti projektekhez.": {
+    "ro": "BMA Engineering – proiectare tehnică, autorizare și documentație pentru proiecte rezidențiale și de afaceri.",
+    "en": "BMA Engineering – technical design, authorization, and documentation for residential and business projects."
+  },
+  "Bank neve": {
+    "ro": "Numele băncii",
+    "en": "Bank name"
+  },
+  "Banki utalás": {
+    "ro": "Transfer bancar",
+    "en": "Bank transfer"
+  },
+  "Banki utalás adatai": {
+    "ro": "Date transfer bancar",
+    "en": "Bank transfer details"
+  },
+  "Banki utalás folyamatban": {
+    "ro": "Transfer bancar în desfășurare",
+    "en": "Bank transfer in progress"
+  },
+  "Bejelentkezés": {
+    "ro": "Autentificare",
+    "en": "Log in"
+  },
+  "Bejelentkezés az ügyfélportálra": {
+    "ro": "Autentificare pe portalul clientului",
+    "en": "Login to the client portal"
+  },
+  "Bejelentkezés szükséges": {
+    "ro": "Autentificare necesară",
+    "en": "Login required"
+  },
+  "Beküldés": {
+    "ro": "Trimitere",
+    "en": "Submit"
+  },
+  "Beküldött dokumentumaim": {
+    "ro": "Documentele mele trimise",
+    "en": "My submitted documents"
+  },
+  "Belépés": {
+    "ro": "Autentificare",
+    "en": "Log in"
+  },
+  "Bezárás": {
+    "ro": "Închidere",
+    "en": "Close"
+  },
+  "Biztonságos dokumentumkezelés": {
+    "ro": "Gestionare sigură a documentelor",
+    "en": "Secure document management"
+  },
+  "Bruttó összeg": {
+    "ro": "Sumă brută",
+    "en": "Gross amount"
+  },
+  "CUI": {
+    "ro": "CUI",
+    "en": "CUI"
+  },
+  "CUI / adószám": {
+    "ro": "CUI / cod fiscal",
+    "en": "CUI / tax number"
+  },
+  "CUI: %s": {
+    "ro": "CUI: %s",
+    "en": "CUI: %s"
+  },
+  "Cookie hozzájárulás": {
+    "ro": "Consimțământ cookie",
+    "en": "Cookie consent"
+  },
+  "Cookie tájékoztató": {
+    "ro": "Informații cookie",
+    "en": "Cookie information"
+  },
+  "Cookie-hozzájárulás tárolása (böngésző localStorage: bma_cookie_consent)": {
+    "ro": "Stocarea consimțământului pentru cookie-uri (localStorage browser: bma_cookie_consent)",
+    "en": "Store cookie consent (browser localStorage: bma_cookie_consent)"
+  },
+  "Csak olyan dokumentum tölthető fel, amelynek továbbítására a felhasználó jogosult. Nem tölthető fel jogellenes, rosszindulatú, harmadik fél jogait sértő vagy indokolatlanul érzékeny tartalom.": {
+    "ro": "Se pot încărca doar documente pentru care utilizatorul are dreptul de a le transmite. Nu se pot încărca conținuturi ilegale, malițioase, care încalcă drepturile terților sau conținuturi excesiv de sensibile.",
+    "en": "Only documents that the user is authorized to submit can be uploaded. Illegal, malicious, content infringing third-party rights, or unnecessarily sensitive content cannot be uploaded."
+  },
+  "Csak szükséges": {
+    "ro": "Doar necesar",
+    "en": "Only necessary"
+  },
+  "Cég": {
+    "ro": "Companie",
+    "en": "Company"
+  },
+  "Cég neve": {
+    "ro": "Numele companiei",
+    "en": "Company name"
+  },
+  "Cégnév, ha cégként kér ajánlatot": {
+    "ro": "Numele companiei, dacă se solicită o ofertă ca și companie",
+    "en": "Company name if requesting a quote as a company"
+  },
+  "Cím": {
+    "ro": "Adresă",
+    "en": "Address"
+  },
+  "Dokumentumok rendezett kezelése": {
+    "ro": "Gestionarea documentelor într-un mod ordonat",
+    "en": "Organized management of documents"
+  },
+  "Dokumentumtípus": {
+    "ro": "Tip document",
+    "en": "Document type"
+  },
+  "Dátum": {
+    "ro": "Dată",
+    "en": "Date"
+  },
+  "E-mail": {
+    "ro": "E-mail",
+    "en": "E-mail"
+  },
+  "E-mail vagy felhasználónév": {
+    "ro": "E-mail sau nume de utilizator",
+    "en": "Email or username"
+  },
+  "Egy ajánlatban": {
+    "ro": "Într-o singură ofertă",
+    "en": "In a single quote"
+  },
+  "Egy ajánlatkérésben több szolgáltatás és részfeladat is összeállítható.": {
+    "ro": "Într-o cerere de ofertă se pot combina mai multe servicii și sub-sarcini.",
+    "en": "In a quote request, multiple services and subtasks can also be assembled."
+  },
+  "Egy ajánlatkérésben több tervezési, engedélyeztetési, közmű-koordinációs és dokumentációs feladat is összeállítható.": {
+    "ro": "Într-o cerere de ofertă se pot combina mai multe sarcini de proiectare, autorizare, coordonare a utilităților și documentare.",
+    "en": "In a quote request, multiple design, approval, utility coordination, and documentation tasks can also be assembled."
+  },
+  "Egy projekt ritkán csak egyetlen feladatból áll": {
+    "ro": "Un proiect rar constă doar dintr-o singură sarcină.",
+    "en": "A project rarely consists of a single task"
+  },
+  "Egy projekt során gyakran több tervezési, engedélyeztetési vagy dokumentációs feladat kapcsolódik egymáshoz.": {
+    "ro": "În cadrul unui proiect, adesea mai multe sarcini de proiectare, autorizare sau documentare sunt interconectate.",
+    "en": "During a project, multiple design, approval, or documentation tasks are often related to each other."
+  },
+  "Egy építési vagy fejlesztési projekt során a tervezés, az engedélyeztetés, a közműcsatlakozások és a műszaki dokumentáció gyakran egymásra épül.": {
+    "ro": "Într-un proiect de construcție sau dezvoltare, planificarea, obținerea autorizațiilor, racordurile la utilități și documentația tehnică se bazează adesea unul pe altul.",
+    "en": "During a construction or development project, planning, permitting, utility connections, and technical documentation often build on each other."
+  },
+  "Egyéb": {
+    "ro": "Altele",
+    "en": "Other"
+  },
+  "Egyéb fontos információ a projektről…": {
+    "ro": "Alte informații importante despre proiect…",
+    "en": "Other important information about the project…"
+  },
+  "Egyéb szolgáltatások": {
+    "ro": "Alte servicii",
+    "en": "Other services"
+  },
+  "Ehhez az e-mail címhez már tartozik fiók. Kérjük, jelentkezzen be.": {
+    "ro": "Există deja un cont asociat acestei adrese de e-mail. Vă rugăm să vă autentificați.",
+    "en": "An account already exists for this email address. Please log in."
+  },
+  "Elemek szerkesztése": {
+    "ro": "Editarea elementelor",
+    "en": "Edit items"
+  },
+  "Elfelejtett jelszó": {
+    "ro": "Parolă uitată",
+    "en": "Forgotten password"
+  },
+  "Elfogadva": {
+    "ro": "Acceptat",
+    "en": "Accepted"
+  },
+  "Elkészült tervek": {
+    "ro": "Planuri finalizate",
+    "en": "Completed plans"
+  },
+  "Ellenőrizze a kiválasztott szolgáltatásokat. A projekt adatait a következő lépésben, egyszer kell megadnia.": {
+    "ro": "Verificați serviciile selectate. Datele proiectului trebuie completate o singură dată în următorul pas.",
+    "en": "Check the selected services. Project information must be provided in the next step, only once."
+  },
+  "Ellenőrizze az összeállítást, adja meg a kapcsolattartási adatait, és küldje el a kérést.": {
+    "ro": "Verificați compilația, introduceți datele de contact și trimiteți cererea.",
+    "en": "Check the compilation, provide your contact details, and submit the request."
+  },
+  "Elolvastam és elfogadom az <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">adatvédelmi tájékoztatóban</a> foglaltakat.": {
+    "ro": "Am citit și accept <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">informațiile privind protecția datelor</a>.",
+    "en": "I have read and accept the terms outlined in the <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">privacy policy</a>."
+  },
+  "Elolvastam és elfogadom az <a href=\"%s\">adatvédelmi tájékoztatóban</a> foglaltakat.": {
+    "ro": "Am citit și accept <a href=\"%s\">informațiile privind protecția datelor</a>.",
+    "en": "I have read and accept the terms outlined in the <a href=\"%s\">privacy policy</a>."
+  },
+  "Eltávolítás": {
+    "ro": "Eliminare",
+    "en": "Remove"
+  },
+  "Elérhetőségeink": {
+    "ro": "Datele noastre de contact",
+    "en": "Our contact information"
+  },
+  "Előnyök": {
+    "ro": "Beneficii",
+    "en": "Advantages"
+  },
+  "Emlékezzen rám": {
+    "ro": "Ține-mă minte",
+    "en": "Remember me"
+  },
+  "Engedélyeztetés": {
+    "ro": "Autorizare",
+    "en": "Permitting"
+  },
+  "Eredmény": {
+    "ro": "Rezultat",
+    "en": "Result"
+  },
+  "Ez a tájékoztató bemutatja, hogy milyen személyes adatokat kezelünk a weboldal használata, kapcsolatfelvétel, ajánlatkérés és ügyfélfiók használata során, milyen célból kezeljük ezeket az adatokat, valamint milyen jogok illetik meg az érintetteket.": {
+    "ro": "Această informare prezintă ce date personale colectăm atunci când utilizați site-ul web, luați legătura cu noi, solicitați o ofertă și utilizați contul de client, în ce scop prelucrăm aceste date și care sunt drepturile persoanelor vizate.",
+    "en": "This information notice shows what personal data we process when using the website, contacting us, requesting a quote, and using a client account, for what purpose we process this data, and what rights the data subjects have."
+  },
+  "Ez a tájékoztató bemutatja, milyen sütiket (cookie-kat) és hasonló technológiákat használ a BMA Engineering weboldala.": {
+    "ro": "Această informare prezintă ce cookie-uri și tehnologii similare utilizează site-ul web BMA Engineering.",
+    "en": "This information notice shows what cookies and similar technologies the BMA Engineering website uses."
+  },
+  "Ezek a működéshez szükségesek, és a „Csak szükséges” választással is aktívak maradnak.": {
+    "ro": "Acestea sunt necesare pentru funcționare și rămân active chiar și cu alegerea „Doar necesare”.",
+    "en": "These are necessary for operation, and they remain active even with the „Necessary only” selection."
+  },
+  "Ezt válassza, ha:": {
+    "ro": "Alegeți aceasta dacă:",
+    "en": "Choose this if:"
+  },
+  "Feltöltés": {
+    "ro": "Încărcare",
+    "en": "Upload"
+  },
+  "Fizetve": {
+    "ro": "Plătit",
+    "en": "Paid"
+  },
+  "Fizetés": {
+    "ro": "Plată",
+    "en": "Payment"
+  },
+  "Fizetésre vár": {
+    "ro": "În așteptarea plății",
+    "en": "Pending payment"
+  },
+  "Folyamat": {
+    "ro": "Proces",
+    "en": "Process"
+  },
+  "Folytathatja az ügyfélportálon.": {
+    "ro": "Puteți continua pe portalul clienților.",
+    "en": "You can continue on the client portal."
+  },
+  "Fájl": {
+    "ro": "Fișier",
+    "en": "File"
+  },
+  "Fő navigáció": {
+    "ro": "Navigare principală",
+    "en": "Main navigation"
+  },
+  "Főmenü": {
+    "ro": "Meniu principal",
+    "en": "Main menu"
+  },
+  "Főoldal": {
+    "ro": "Acasă",
+    "en": "Home"
+  },
+  "Google Analytics 4 és/vagy Google Tag Manager – csak ha az admin beállította, és Ön elfogadja az analitikai cookie-kat": {
+    "ro": "Google Analytics 4 și/sau Google Tag Manager – doar dacă administratorul le-a configurat și dumneavoastră acceptați cookie-urile analitice",
+    "en": "Google Analytics 4 and/or Google Tag Manager – only if the admin has set it up and you accept the analytics cookies"
+  },
+  "Gyors indítás – mire van szüksége?": {
+    "ro": "Pornire rapidă – de ce aveți nevoie?",
+    "en": "Quick start – what do you need?"
+  },
+  "Ha a banki utalást választja, a kártyás fizetés a továbbiakban nem lesz elérhető ennél az ajánlatnál. Folytatja?": {
+    "ro": "Dacă alegeți transferul bancar, plata cu cardul nu va mai fi disponibilă pentru această ofertă. Continuați?",
+    "en": "If you choose bank transfer, card payment will no longer be available for this quote. Do you want to continue?"
+  },
+  "Ha korábban ügyfélfiókot hozott létre, bejelentkezés után megtekintheti saját ajánlatkéréseit, azok aktuális státuszát, valamint az Ön számára feltöltött ajánlatokat és dokumentumokat.": {
+    "ro": "Dacă ați creat anterior un cont de client, după autentificare puteți vizualiza cererile dumneavoastră de ofertă, starea lor actuală, precum și ofertele și documentele încărcate pentru dumneavoastră.",
+    "en": "If you have previously created a client account, after logging in you can view your own inquiries, their current status, as well as the quotes and documents uploaded for you."
+  },
+  "Ha külső szolgáltató miatt ilyen történik, csak az alkalmazandó adatvédelmi szabályoknak megfelelő módon.": {
+    "ro": "Dacă se întâmplă așa din cauza unui furnizor extern, doar în conformitate cu regulile de protecție a datelor aplicabile.",
+    "en": "If this happens due to an external service provider, only in accordance with the applicable data protection regulations."
+  },
+  "Ha most továbblép, a jelenlegi kiválasztásai elveszhetnek.": {
+    "ro": "Dacă trece mai departe acum, selecțiile dvs. actuale se pot pierde.",
+    "en": "If you proceed now, your current selections may be lost."
+  },
+  "Ha már van konkrét projektje, a kapcsolatfelvételi űrlap helyett érdemes az ajánlatkérési folyamatot használni.": {
+    "ro": "Dacă aveți deja un proiect concret, în locul formularului de contact merită să folosiți procesul de solicitare a ofertei.",
+    "en": "If you already have a specific project, it is advisable to use the quote request process instead of the contact form."
+  },
+  "Ha még nem tudja pontosan, mire van szüksége, hívjon minket.": {
+    "ro": "Dacă nu știți încă exact de ce aveți nevoie, sunați-ne.",
+    "en": "If you do not yet know exactly what you need, call us."
+  },
+  "Ha tájékoztató ár jelenik meg, az nem feltétlenül végleges ajánlat.": {
+    "ro": "Dacă apare un preț orientativ, nu este neapărat o ofertă finală.",
+    "en": "If an indicative price appears, it is not necessarily a final quote."
+  },
+  "Ha általános kérdése van, vagy még nem tudja pontosan, melyik szolgáltatásra van szüksége, küldjön üzenetet. Konkrét projektre az ajánlatkérést javasoljuk.": {
+    "ro": "Dacă aveți o întrebare generală sau nu știți încă exact ce serviciu aveți nevoie, trimiteți un mesaj. Pentru un proiect concret, recomandăm solicitarea de ofertă.",
+    "en": "If you have a general question or do not yet know exactly which service you need, send a message. For a specific project, we recommend the quote request."
+  },
+  "Hasonló projektet tervez?": {
+    "ro": "Plănuiți un proiect similar?",
+    "en": "Are you planning a similar project?"
+  },
+  "Helyszín": {
+    "ro": "Locație",
+    "en": "Location"
+  },
+  "Hiba 404": {
+    "ro": "Eroare 404",
+    "en": "Error 404"
+  },
+  "Hiba történt a mentés során.": {
+    "ro": "A apărut o eroare la salvare.",
+    "en": "An error occurred during saving."
+  },
+  "Hibás felhasználónév vagy jelszó. Kérjük, próbálja újra.": {
+    "ro": "Nume de utilizator sau parolă incorecte. Vă rugăm să încercați din nou.",
+    "en": "Incorrect username or password. Please try again."
+  },
+  "Hogyan működik?": {
+    "ro": "Cum funcționează?",
+    "en": "How does it work?"
+  },
+  "Hol talál minket?": {
+    "ro": "Unde ne găsiți?",
+    "en": "Where to find us?"
+  },
+  "Hozzáadva az ajánlatkéréshez": {
+    "ro": "Adăugat la cererea de ofertă",
+    "en": "Added to the quote request"
+  },
+  "Hozzáadás és továbblépés": {
+    "ro": "Adăugare și continuare",
+    "en": "Add and proceed"
+  },
+  "Hozzáférés-védelem és mentések": {
+    "ro": "Protecție acces și salvări",
+    "en": "Access protection and backups"
+  },
+  "Hozzájárulás nélkül ezek a scriptek nem indulnak el.": {
+    "ro": "Fără consimțământ, aceste scripturi nu pornesc.",
+    "en": "These scripts will not run without consent."
+  },
+  "IBAN": {
+    "ro": "IBAN",
+    "en": "IBAN"
+  },
+  "IP-cím, böngésző és eszköz típusa, meglátogatott oldalak, technikai naplóadatok, cookie-hozzájárulási beállítások": {
+    "ro": "Adresă IP, tip browser și dispozitiv, pagini vizitate, date tehnice din jurnal, setările de consimțământ pentru cookie-uri",
+    "en": "IP address, browser and device type, visited pages, technical log data, cookie consent settings"
+  },
+  "Ilyen projektet csináltunk – ilyen szolgáltatással, ilyen környezetben.": {
+    "ro": "Am făcut un astfel de proiect – cu un astfel de serviciu, într-un astfel de mediu.",
+    "en": "We did a project like this – with this kind of service, in this kind of environment."
+  },
+  "Irányítószám, város, utca, házszám": {
+    "ro": "Cod poștal, oraș, stradă, număr",
+    "en": "Postal code, city, street, house number"
+  },
+  "Jelenleg nincs külön marketing cookie integráció. Az „Összes elfogadása” a jövőbeli marketing kategóriát is engedélyezi, ha később bekapcsolásra kerül.": {
+    "ro": "În prezent nu există o integrare separată a cookie-urilor de marketing. „Acceptă tot” permite și categoria viitoare de marketing, dacă va fi activată ulterior.",
+    "en": "Currently, there is no separate marketing cookie integration. Accepting „All” also enables the future marketing category if it is activated later."
+  },
+  "Jelentkezzen be ügyfélfiókjával az ajánlatkérések és dokumentumok megtekintéséhez.": {
+    "ro": "Autentificați-vă în contul dvs. de client pentru a vizualiza cererile de ofertă și documentele.",
+    "en": "Log in with your client account to view quote requests and documents."
+  },
+  "Jelszó": {
+    "ro": "Parolă",
+    "en": "Password"
+  },
+  "Jelölje ki a szükséges részfeladatokat, majd adja hozzá őket az ajánlatkéréshez. A projekt részletes adatait egyszer, a következő lépésben kérjük be.": {
+    "ro": "Selectați sub-sarcinile necesare, apoi adăugați-le la cererea de ofertă. Datele detaliate ale proiectului le vom solicita o singură dată, în pasul următor.",
+    "en": "Select the necessary subtasks, then add them to the quote request. The detailed project data will be requested once, in the next step."
+  },
+  "Jogi információ": {
+    "ro": "Informații juridice",
+    "en": "Legal information"
+  },
+  "Jogi kötelezettségek:": {
+    "ro": "Obligații legale:",
+    "en": "Legal obligations:"
+  },
+  "Jogosult lehet: tájékoztatás, hozzáférés, helyesbítés, törlés, korlátozás, tiltakozás, adathordozhatóság, hozzájárulás visszavonása.": {
+    "ro": "Poate fi îndreptățit: informare, acces, rectificare, ștergere, restricție, opoziție, portabilitatea datelor, retragerea consimțământului.",
+    "en": "May be entitled to: information, access, correction, deletion, restriction, objection, data portability, withdrawal of consent."
+  },
+  "Jogosultság alapú hozzáférés": {
+    "ro": "Acces bazat pe drepturi",
+    "en": "Access based on entitlement"
+  },
+  "Kapcsolat": {
+    "ro": "Contact",
+    "en": "Contact"
+  },
+  "Kapcsolat:": {
+    "ro": "Contact:",
+    "en": "Contact:"
+  },
+  "Kapcsolatfelvétel": {
+    "ro": "Luare legătura",
+    "en": "Getting in touch"
+  },
+  "Kapcsolatfelvétel esetén": {
+    "ro": "În cazul luării legăturii",
+    "en": "In case of contact"
+  },
+  "Kapcsolatfelvétel:": {
+    "ro": "Luare legătură:",
+    "en": "Contact:"
+  },
+  "Kapcsolatfelvételi űrlap": {
+    "ro": "Formular de contact",
+    "en": "Contact form"
+  },
+  "Kapcsolattartói adatok": {
+    "ro": "Date de contact",
+    "en": "Contact details"
+  },
+  "Kapcsolódó szolgáltatások": {
+    "ro": "Servicii conexe",
+    "en": "Related services"
+  },
+  "Kapcsolódó szolgáltatások egy helyen": {
+    "ro": "Servicii conexe într-un singur loc",
+    "en": "Related services in one place"
+  },
+  "Kategória": {
+    "ro": "Categorie",
+    "en": "Category"
+  },
+  "Kedvezményezett": {
+    "ro": "Beneficiar",
+    "en": "Beneficiary"
+  },
+  "Keresés": {
+    "ro": "Căutare",
+    "en": "Search"
+  },
+  "Keresés: %s": {
+    "ro": "Căutare: %s",
+    "en": "Search: %s"
+  },
+  "Kevesebb felesleges egyeztetés": {
+    "ro": "Mai puține coordonări inutile",
+    "en": "Less unnecessary coordination"
+  },
+  "Kiemelt referenciák": {
+    "ro": "Referințe importante",
+    "en": "Featured references"
+  },
+  "Kijelentkezés": {
+    "ro": "Deconectare",
+    "en": "Log out"
+  },
+  "Kiválasztott szolgáltatások": {
+    "ro": "Servicii selectate",
+    "en": "Selected services"
+  },
+  "Kiválasztott szolgáltatások hozzáadása az ajánlatkéréshez": {
+    "ro": "Adăugați serviciile selectate cererii de ofertă",
+    "en": "Add selected services to the quote request"
+  },
+  "Kiválasztva": {
+    "ro": "Selectat",
+    "en": "Selected"
+  },
+  "Konkrét projektre kérne ajánlatot?": {
+    "ro": "Doriți să solicitați o ofertă pentru un proiect specific?",
+    "en": "Would you like a quote for a specific project?"
+  },
+  "Kosár módosítása": {
+    "ro": "Modificați coșul",
+    "en": "Edit cart"
+  },
+  "Kártyás fizetés (Stripe)": {
+    "ro": "Plată cu cardul (Stripe)",
+    "en": "Card payment (Stripe)"
+  },
+  "Kép nagyítása": {
+    "ro": "Mărire imagine",
+    "en": "Enlarge image"
+  },
+  "Kérjen ajánlatot a projektjéhez": {
+    "ro": "Solicitați o ofertă pentru proiectul dumneavoastră",
+    "en": "Request a quote for your project"
+  },
+  "Kérjük, töltse ki a kötelező mezőket.": {
+    "ro": "Vă rugăm să completați câmpurile obligatorii.",
+    "en": "Please fill in the required fields."
+  },
+  "Kérjük, utalja az alábbi összeget a megadott bankszámlára. Az utalás közleményében tüntesse fel az ajánlat számát.": {
+    "ro": "Vă rugăm să transferați suma de mai sus în contul bancar indicat. În referința plății, vă rugăm să menționați numărul ofertei.",
+    "en": "Please transfer the following amount to the specified bank account. Indicate the quote number in the transfer reference."
+  },
+  "Kérés részletei, státusz, dokumentumok és ajánlat.": {
+    "ro": "Detalii cerere, statut, documente și ofertă.",
+    "en": "Request details, status, documents and quote."
+  },
+  "Köszönjük ajánlatkérését!": {
+    "ro": "Vă mulțumim pentru cererea dvs. de ofertă!",
+    "en": "Thank you for your quote request!"
+  },
+  "Köszönjük az üzenetét.": {
+    "ro": "Vă mulțumim pentru mesajul dvs.",
+    "en": "Thank you for your message."
+  },
+  "Köszönjük! A fizetés feldolgozása megtörtént.": {
+    "ro": "Vă mulțumim! Plata a fost procesată.",
+    "en": "Thank you! The payment has been processed."
+  },
+  "Kötelező": {
+    "ro": "Obligatoriu",
+    "en": "Mandatory"
+  },
+  "Kötelező fájl hiányzik: %s": {
+    "ro": "Lipsește fișierul obligatoriu: %s",
+    "en": "Required file missing: %s"
+  },
+  "Következő lépés": {
+    "ro": "Pasul următor",
+    "en": "Next step"
+  },
+  "Közlemény": {
+    "ro": "Referință",
+    "en": "Notification"
+  },
+  "Közmű csatlakozás koordináció": {
+    "ro": "Coordonarea conectării utilităților",
+    "en": "Utility connection coordination"
+  },
+  "Közmű-koordináció": {
+    "ro": "Coordonare utilități",
+    "en": "Utility coordination"
+  },
+  "Lakossági és üzleti projektek": {
+    "ro": "Proiecte rezidențiale și de business",
+    "en": "Residential and business projects"
+  },
+  "Lakossági és üzleti<br>projektek": {
+    "ro": "Proiecte rezidențiale<br>și de business",
+    "en": "Residential and<br>business projects"
+  },
+  "Lejárt": {
+    "ro": "Expirat",
+    "en": "Expired"
+  },
+  "Lábléc": {
+    "ro": "Subsol",
+    "en": "Footer"
+  },
+  "Lábléc menü": {
+    "ro": "Meniu subsol",
+    "en": "Footer menu"
+  },
+  "Lábléc navigáció": {
+    "ro": "Navigație subsol",
+    "en": "Footer navigation"
+  },
+  "Maradok ezen az oldalon": {
+    "ro": "Rămân pe această pagină",
+    "en": "I will stay on this page"
+  },
+  "Marketing": {
+    "ro": "Marketing",
+    "en": "Marketing"
+  },
+  "Megjegyzés": {
+    "ro": "Comentariu",
+    "en": "Note"
+  },
+  "Megjegyzés: a jogi szöveget publikálás előtt célszerű jogi szakértővel ellenőriztetni.": {
+    "ro": "Notă: este recomandat ca textul juridic să fie verificat de un expert juridic înainte de publicare.",
+    "en": "Note: it is advisable to have the legal text checked by a legal expert before publication."
+  },
+  "Megkaptuk a megkeresését. A megadott elérhetőségek egyikén felvesszük Önnel a kapcsolatot.": {
+    "ro": "Am primit solicitarea dvs. Vom lua legătura cu dumneavoastră prin una dintre informațiile de contact furnizate.",
+    "en": "We have received your inquiry. We will contact you through one of the provided contact details."
+  },
+  "Meglévő ajánlatkérés vagy projekt": {
+    "ro": "Cerere de ofertă sau proiect existent",
+    "en": "Existing quote request or project"
+  },
+  "Meglévő ajánlatkérése van?": {
+    "ro": "Aveți o cerere de ofertă existentă?",
+    "en": "Do you have an existing quote request?"
+  },
+  "Menü megnyitása": {
+    "ro": "Deschide meniul",
+    "en": "Open menu"
+  },
+  "Mi volt a feladat?": {
+    "ro": "Care a fost sarcina?",
+    "en": "What was the task?"
+  },
+  "Miben tudunk segíteni?": {
+    "ro": "Cu ce vă putem ajuta?",
+    "en": "How can we help you?"
+  },
+  "Mikor lehet erre szüksége?": {
+    "ro": "Când ar putea avea nevoie de acest lucru?",
+    "en": "When might you need this?"
+  },
+  "Mind": {
+    "ro": "Toate",
+    "en": "All"
+  },
+  "Mit szeretne kérni?": {
+    "ro": "Ce doriți să cereți?",
+    "en": "What would you like to request?"
+  },
+  "Mit végeztünk el?": {
+    "ro": "Ce am realizat?",
+    "en": "What have we completed?"
+  },
+  "Munkamenet és biztonság (WordPress, bejelentkezés)": {
+    "ro": "Sesiune și securitate (WordPress, autentificare)",
+    "en": "Session and security (WordPress, login)"
+  },
+  "Munkaterületek": {
+    "ro": "Spații de lucru",
+    "en": "Workspaces"
+  },
+  "Munkánk során arra törekszünk, hogy a projekt műszaki követelményei, a szükséges dokumentációk és a kapcsolódó egyeztetések egy átlátható és követhető folyamat részeként legyenek kezelhetők.": {
+    "ro": "În munca noastră ne străduim să gestionăm cerințele tehnice ale proiectului, documentația necesară și consultările aferente ca parte a unui proces transparent și urmărit.",
+    "en": "In our work, we strive to ensure that the project's technical requirements, the necessary documentation, and related consultations can be managed as part of a transparent and traceable process."
+  },
+  "Már az ajánlatkérés során megadhatók a projekt legfontosabb adatai, így az ajánlatkészítés célzottabban indulhat el.": {
+    "ro": "Chiar de la cererea de ofertă pot fi furnizate cele mai importante date ale proiectului, astfel încât pregătirea ofertei să poată începe într-un mod mai direcționat.",
+    "en": "The most important project data can already be provided during the quote request, allowing the preparation of the quote to start in a more targeted manner."
+  },
+  "Már be van jelentkezve": {
+    "ro": "Sunteți deja autentificat",
+    "en": "Already logged in"
+  },
+  "Más szolgáltatásra is szüksége lehet? Tekintse meg a kapcsolódó területeket – a kiválasztás az adott szolgáltatás oldalán történik.": {
+    "ro": "Aveți nevoie și de alte servicii? Consultați domeniile conexe – selecția se face pe pagina serviciului respectiv.",
+    "en": "Do you need another service as well? Check out the related areas – selection is done on the page of the specific service."
+  },
+  "Még nem töltött fel dokumentumot.": {
+    "ro": "Nu ați încărcat niciun document.",
+    "en": "You have not uploaded any document yet."
+  },
+  "Még nincs ajánlatkérése.": {
+    "ro": "Nu ați făcut nicio cerere de ofertă.",
+    "en": "You do not have any requests for quotation yet."
+  },
+  "Még nincs feltöltött terv ehhez a tételhez.": {
+    "ro": "Nu există niciun plan încărcat pentru acest articol.",
+    "en": "No plan has been uploaded for this item yet."
+  },
+  "Mérnöki tervezés <em>átlátható</em> folyamattal": {
+    "ro": "Proiectare inginerească cu un proces <em>transparent</em>",
+    "en": "Engineering design with a <em>transparent</em> process"
+  },
+  "Műszaki dokumentum": {
+    "ro": "Document tehnic",
+    "en": "Technical document"
+  },
+  "Műszaki dokumentáció": {
+    "ro": "Documentație tehnică",
+    "en": "Technical documentation"
+  },
+  "Művelet": {
+    "ro": "Operațiune",
+    "en": "Operation"
+  },
+  "Navigáció": {
+    "ro": "Navigare",
+    "en": "Navigation"
+  },
+  "Nem biztos benne, melyik szolgáltatásra van szüksége?": {
+    "ro": "Nu sunteți sigur de ce serviciu aveți nevoie?",
+    "en": "Not sure which service you need?"
+  },
+  "Nem felelünk külső oldalak tartalmáért. A folyamatos működés nem garantálható. A weboldali általános információ nem helyettesíti az egyedi műszaki felmérést.": {
+    "ro": "Nu răspundem pentru conținutul site-urilor externe. Nu se poate garanta funcționarea continuă. Informațiile generale de pe site nu înlocuiesc evaluarea tehnică individuală.",
+    "en": "We are not responsible for the content of external sites. Continuous operation cannot be guaranteed. The general information on the website does not replace an individual technical survey."
+  },
+  "Nem szükséges minden műszaki részletet előre ismernie. Adja meg a rendelkezésére álló információkat és dokumentumokat, mi pedig ezek alapján felmérjük a projektet és elkészítjük az ajánlatot.": {
+    "ro": "Nu este necesar să cunoască toate detaliile tehnice dinainte. Vă rugăm să furnizați informațiile și documentele de care dispuneți și, pe baza acestora, vom evalua proiectul și vom întocmi oferta.",
+    "en": "It is not necessary to know every technical detail in advance. Provide the information and documents available to you, and based on these, we will assess the project and prepare the quote."
+  },
+  "Nettó összeg": {
+    "ro": "Sumă netă",
+    "en": "Net amount"
+  },
+  "Nincs a szűrésnek megfelelő referencia.": {
+    "ro": "Nu există referințe corespunzătoare filtrului.",
+    "en": "No reference matches the filter."
+  },
+  "Nincs ajánlat": {
+    "ro": "Nu există ofertă",
+    "en": "No quote"
+  },
+  "Nincs jogosultsága.": {
+    "ro": "Nu aveți drepturi.",
+    "en": "You do not have permission."
+  },
+  "Nincs kiválasztott szolgáltatáselem.": {
+    "ro": "Nu este selectat niciun element de serviciu.",
+    "en": "No service item selected."
+  },
+  "Nincs részletes elem kiválasztva – a szolgáltatás oldalán szerkesztheti.": {
+    "ro": "Nu este selectat un element detaliat – îl puteți edita pe pagina serviciului.",
+    "en": "No detailed item selected – you can edit it on the service page."
+  },
+  "Nincs találat a keresésre. Próbáljon másik kifejezést, vagy böngésszen a szolgáltatások között.": {
+    "ro": "Nu există rezultate pentru căutare. Încercați un alt termen sau navigați printre servicii.",
+    "en": "No results for the search. Try another term, or browse through the services."
+  },
+  "Nyelvek": {
+    "ro": "Limbi",
+    "en": "Languages"
+  },
+  "Nyelvválasztó": {
+    "ro": "Selector de limbă",
+    "en": "Language selector"
+  },
+  "Nyitvatartás": {
+    "ro": "Program",
+    "en": "Opening hours"
+  },
+  "Nyitvatartás: %s": {
+    "ro": "Program: %s",
+    "en": "Opening hours: %s"
+  },
+  "Nyomon követés": {
+    "ro": "Urmărire",
+    "en": "Tracking"
+  },
+  "Négy szolgáltatási terület, azon belül konkrét részfeladatokkal. Az ajánlatkérésbe bármennyi tétel bekerülhet.": {
+    "ro": "Patru domenii de servicii, fiecare cu sarcini specifice. Oricâte elemente pot fi incluse în cererea de ofertă.",
+    "en": "Four service areas, within which there are specific tasks. Any number of items can be included in the quote request."
+  },
+  "Név": {
+    "ro": "Nume",
+    "en": "Name"
+  },
+  "Odorheiu Secuiesc · Harghita": {
+    "ro": "Odorheiu Secuiesc · Harghita",
+    "en": "Odorheiu Secuiesc · Harghita"
+  },
+  "Piszkozat": {
+    "ro": "Schimbare",
+    "en": "Draft"
+  },
+  "Projekt adatai": {
+    "ro": "Informații despre proiect",
+    "en": "Project details"
+  },
+  "Projekt adatok": {
+    "ro": "Date despre proiect",
+    "en": "Project data"
+  },
+  "Projekt megtekintése": {
+    "ro": "Vizualizare proiect",
+    "en": "View project"
+  },
+  "Projekt megtekintése →": {
+    "ro": "Vezi proiectul →",
+    "en": "View project →"
+  },
+  "Projekt típusa": {
+    "ro": "Tipul proiectului",
+    "en": "Project type"
+  },
+  "Projektadatok": {
+    "ro": "Date despre proiect",
+    "en": "Project data"
+  },
+  "Projektek": {
+    "ro": "Proiecte",
+    "en": "Projects"
+  },
+  "Projektgaléria": {
+    "ro": "Galerie de proiecte",
+    "en": "Project gallery"
+  },
+  "Példa: új lakóépület – összeállított ajánlatkérés": {
+    "ro": "Exemplu: clădire rezidențială nouă – cerere de ofertă compilată",
+    "en": "Example: new residential building – compiled quote request"
+  },
+  "Referencia": {
+    "ro": "Referință",
+    "en": "Reference"
+  },
+  "Referenciák": {
+    "ro": "Referințe",
+    "en": "References"
+  },
+  "Részletek": {
+    "ro": "Detalii",
+    "en": "Details"
+  },
+  "Részletek és kiválasztás →": {
+    "ro": "Detalii și selectare →",
+    "en": "Details and selection →"
+  },
+  "Rólunk": {
+    "ro": "Despre noi",
+    "en": "About us"
+  },
+  "Röviden írja le a kérdését vagy a projektjét…": {
+    "ro": "Descrieți pe scurt întrebarea sau proiectul dvs...",
+    "en": "Briefly describe your question or project…"
+  },
+  "Sikeres": {
+    "ro": "Succes",
+    "en": "Successful"
+  },
+  "Sikeres beküldés": {
+    "ro": "Trimitere reușită",
+    "en": "Successful submission"
+  },
+  "Sikeres fizetés": {
+    "ro": "Plată reușită",
+    "en": "Successful payment"
+  },
+  "Sikeresen kijelentkezett.": {
+    "ro": "Deconectare reușită.",
+    "en": "Successfully logged out."
+  },
+  "Státusz": {
+    "ro": "Stare",
+    "en": "Status"
+  },
+  "Státuszelőzmények": {
+    "ro": "Istoricul stărilor",
+    "en": "Status history"
+  },
+  "Szennyvízbekötési terv": {
+    "ro": "Plan de racordare a apei uzate",
+    "en": "Sewage connection plan"
+  },
+  "Szeretnék ügyfélfiókot létrehozni az ajánlatkérések követéséhez.": {
+    "ro": "Aș dori să creez un cont de client pentru a urmări cererile de ofertă.",
+    "en": "I would like to create a client account to track quote requests."
+  },
+  "Szerződés teljesítése:": {
+    "ro": "Executarea contractului:",
+    "en": "Contract fulfillment:"
+  },
+  "Szolgáltatás": {
+    "ro": "Serviciu",
+    "en": "Service"
+  },
+  "Szolgáltatás megtekintése": {
+    "ro": "Vizualizare serviciu",
+    "en": "View service"
+  },
+  "Szolgáltatások": {
+    "ro": "Servicii",
+    "en": "Services"
+  },
+  "Szolgáltatások kiválasztása": {
+    "ro": "Selectarea serviciilor",
+    "en": "Select services"
+  },
+  "Számlázási cím": {
+    "ro": "Adresă de facturare",
+    "en": "Billing address"
+  },
+  "Székhely": {
+    "ro": "Sediu",
+    "en": "Headquarters"
+  },
+  "Szükség esetén hozzáférhetnek: tárhelyszolgáltató, e-mail-szolgáltató, weboldal-karbantartó, analitikai szolgáltatók (hozzájárulás esetén), könyvelési vagy jogi szolgáltatók, valamint a választott fizetési szolgáltató (pl. Stripe), ha online fizetést használ.": {
+    "ro": "Dacă este necesar, accesul poate fi acordat: furnizorului de găzduire, furnizorului de e-mail, întreținătorului de site web, furnizorilor de analiză (cu acordul dvs.), contabililor sau furnizorilor de servicii juridice, precum și furnizorului de plăți ales (de ex. Stripe), dacă se utilizează plata online.",
+    "en": "If necessary, they may be accessed by: hosting provider, email provider, website maintenance, analytics providers (with consent), accounting or legal service providers, as well as the chosen payment service provider (e.g., Stripe) if online payment is used."
+  },
+  "Szükséges": {
+    "ro": "Necesitar",
+    "en": "Required"
+  },
+  "Szűrés": {
+    "ro": "Filtrare",
+    "en": "Filtering"
+  },
+  "Technikai használat során": {
+    "ro": "În timpul utilizării tehnice",
+    "en": "During technical use"
+  },
+  "Telefon": {
+    "ro": "Telefon",
+    "en": "Phone"
+  },
+  "Teljes név": {
+    "ro": "Nume complet",
+    "en": "Full name"
+  },
+  "Terv": {
+    "ro": "Plan",
+    "en": "Plan"
+  },
+  "Tervek": {
+    "ro": "Planuri",
+    "en": "Plans"
+  },
+  "Tervezés": {
+    "ro": "Proiectare",
+    "en": "Design"
+  },
+  "Tervezés · Engedélyeztetés · Közmű-koordináció": {
+    "ro": "Proiectare · Autorizare · Coordonare utilități",
+    "en": "Design · Permitting · Utility coordination"
+  },
+  "Tovább": {
+    "ro": "Următor",
+    "en": "Next"
+  },
+  "Tovább az ajánlatkéréshez": {
+    "ro": "Continuați la cererea de ofertă",
+    "en": "Proceed to quote request"
+  },
+  "Tovább – adatok megadása": {
+    "ro": "Următor – introducerea datelor",
+    "en": "Next – enter data"
+  },
+  "További dokumentum feltöltése": {
+    "ro": "Încărcare document suplimentar",
+    "en": "Upload additional document"
+  },
+  "További szolgáltatás": {
+    "ro": "Serviciu suplimentar",
+    "en": "Additional service"
+  },
+  "Továbblépés hozzáadás nélkül": {
+    "ro": "Continuare fără a adăuga",
+    "en": "Proceed without adding"
+  },
+  "Téma": {
+    "ro": "Subiect",
+    "en": "Subject"
+  },
+  "Térkép betöltése": {
+    "ro": "Încărcare hartă",
+    "en": "Load map"
+  },
+  "Tétel #%d": {
+    "ro": "Poziția nr. %d",
+    "en": "Item #%d"
+  },
+  "Több elemet is kiválaszthat. Csak azokat jelölje be, amelyekre a projektjéhez szüksége van.": {
+    "ro": "Puteți selecta mai multe elemente. Bifați doar pe cele de care aveți nevoie pentru proiectul dumneavoastră.",
+    "en": "You can select multiple items. Only check those that you need for your project."
+  },
+  "Több szolgáltatásra van szüksége?": {
+    "ro": "Aveți nevoie de mai multe servicii?",
+    "en": "Do you need multiple services?"
+  },
+  "Töltse ki a kiválasztott tételekhez tartozó adatokat, és töltse fel a meglévő tervrajzokat.": {
+    "ro": "Completați datele pentru elementele selectate și încărcați planurile existente.",
+    "en": "Fill in the data for the selected items and upload the existing plans."
+  },
+  "Törlés": {
+    "ro": "Ștergere",
+    "en": "Delete"
+  },
+  "Ugrás a tartalomhoz": {
+    "ro": "Salt la conținut",
+    "en": "Skip to content"
+  },
+  "Utalási adatok": {
+    "ro": "Detalii transfer bancar",
+    "en": "Bank transfer details"
+  },
+  "Utolsó frissítés: 2026. augusztus": {
+    "ro": "Ultima actualizare: august 2026",
+    "en": "Last updated: August 2026"
+  },
+  "Van egy projektje, amelyhez tervezésre, engedélyeztetésre, műszaki dokumentációra vagy közmű-koordinációra van szüksége?": {
+    "ro": "Aveți un proiect pentru care aveți nevoie de proiectare, autorizare, documentație tehnică sau coordonare a utilităților?",
+    "en": "Do you have a project that requires design, permitting, technical documentation, or utility coordination?"
+  },
+  "Vegye fel velünk a kapcsolatot, vagy ha már tudja, milyen szolgáltatást keres, indítsa el az online ajánlatkérést.": {
+    "ro": "Contactați-ne sau, dacă știți deja ce serviciu căutați, începeți cererea de ofertă online.",
+    "en": "Contact us, or if you already know what service you are looking for, start the online quote request."
+  },
+  "Vissza a főoldalra": {
+    "ro": "Înapoi la pagina principală",
+    "en": "Back to homepage"
+  },
+  "Vissza a portálra": {
+    "ro": "Înapoi la portal",
+    "en": "Back to portal"
+  },
+  "Vissza az ajánlatkéréshez": {
+    "ro": "Înapoi la cererea de ofertă",
+    "en": "Back to quote request"
+  },
+  "Vissza az ügyfélportálra": {
+    "ro": "Înapoi la portalul clientului",
+    "en": "Back to the client portal"
+  },
+  "Visszaigazoló e-mailt küldtünk a megadott címre. Munkatársunk hamarosan feldolgozza kérését.": {
+    "ro": "Am trimis un e-mail de confirmare la adresa furnizată. Colaboratorul nostru va procesa cererea dumneavoastră în curând.",
+    "en": "We have sent a confirmation email to the provided address. Our colleague will process your request shortly."
+  },
+  "Visszavonva": {
+    "ro": "Anulat",
+    "en": "Withdrawn"
+  },
+  "Válassza ki a projektjéhez szükséges szolgáltatásokat és azokon belül a konkrét részfeladatokat.": {
+    "ro": "Selectați serviciile necesare pentru proiectul dumneavoastră și, în cadrul acestora, sarcinile specifice.",
+    "en": "Select the services required for your project and the specific sub-tasks within them."
+  },
+  "Válassza ki a szükséges szolgáltatásokat, adja meg a projekt alapadatait, és töltse fel a rendelkezésére álló dokumentumokat. Ezek alapján pontosabb ajánlatot tudunk készíteni.": {
+    "ro": "Selectați serviciile necesare, introduceți datele de bază ale proiectului și încărcați documentele disponibile. Pe baza acestora, putem pregăti o ofertă mai precisă.",
+    "en": "Select the necessary services, provide the basic data of the project, and upload the available documents. Based on this, we can prepare a more accurate quote."
+  },
+  "Válassza ki a szükséges szolgáltatásokat, és küldje el a projekt alapadatait.": {
+    "ro": "Selectați serviciile necesare și trimiteți datele de bază ale proiectului.",
+    "en": "Select the necessary services and submit the project's basic data."
+  },
+  "Válassza ki a szükséges szolgáltatásokat, és néhány adat megadásával kérjen személyre szabott ajánlatot.": {
+    "ro": "Selectați serviciile necesare și, oferind câteva date, solicitați o ofertă personalizată.",
+    "en": "Select the necessary services and request a tailored quote by providing some information."
+  },
+  "Válassza ki az Ön projektjéhez kapcsolódó szolgáltatási területet. Egy ajánlatkérésben több szolgáltatást és azokon belül több részfeladatot is megjelölhet.": {
+    "ro": "Selectați domeniul de servicii legat de proiectul dvs. Într-o cerere de ofertă puteți indica mai multe servicii și, în cadrul acestora, mai multe sub-sarcini.",
+    "en": "Select the service area related to your project. In one quote request, you can indicate multiple services and several sub-tasks within them."
+  },
+  "Válassza ki, mire van szüksége a projektjéhez, adja meg a rendelkezésére álló adatokat, és kérjen személyre szabott ajánlatot. A folyamat minden lépését egy helyen követheti.": {
+    "ro": "Selectați de ce aveți nevoie pentru proiectul dvs., introduceți datele disponibile și solicitați o ofertă personalizată. Puteți urmări fiecare pas al procesului într-un singur loc.",
+    "en": "Select what you need for your project, provide the available information, and request a tailored quote. You can follow every step of the process in one place."
+  },
+  "Válasszon fizetési módot": {
+    "ro": "Alegeți metoda de plată",
+    "en": "Choose a payment method"
+  },
+  "Válasszon témát…": {
+    "ro": "Alegeți un subiect…",
+    "en": "Select a topic…"
+  },
+  "Válasz [X] munkanapon belül": {
+    "ro": "Răspuns în [X] zile lucrătoare",
+    "en": "Reply within [X] business days"
+  },
+  "Válogatás megvalósult tervezési, engedélyeztetési és közmű-koordinációs munkáinkból.": {
+    "ro": "Selecție din lucrările noastre realizate de proiectare, autorizare și coordonare a utilităților.",
+    "en": "Selection of our completed design, permitting, and utility coordination works."
+  },
+  "Vízbekötési terv": {
+    "ro": "Plan de branșament apă",
+    "en": "Water connection plan"
+  },
+  "Vízmű egyeztetés": {
+    "ro": "Consultare cu operatorul de apă",
+    "en": "Water utility consultation"
+  },
+  "Weboldal": {
+    "ro": "Site web",
+    "en": "Website"
+  },
+  "Weboldal biztonsága:": {
+    "ro": "Securitatea site-ului web:",
+    "en": "Website security:"
+  },
+  "Weboldalunk sütiket használ a működéshez, statisztikához és marketing célokra. Részletek: Cookie tájékoztató.": {
+    "ro": "Website-ul nostru folosește cookie-uri pentru funcționare, statistici și scopuri de marketing. Detalii: Informații despre cookie-uri.",
+    "en": "Our website uses cookies for operation, statistics, and marketing purposes. Details: Cookie information."
+  },
+  "[MAGYAR / ROMÁN]": {
+    "ro": "[MAGHIARĂ / ROMÂNĂ]",
+    "en": "[HUNGARIAN / ROMANIAN]"
+  },
+  "[Projekt fotó]": {
+    "ro": "[Fotografie de proiect]",
+    "en": "[Project photo]"
+  },
+  "ajánlatok és projektinformációk elérése ügyfélfiókon keresztül": {
+    "ro": "acces la oferte și informații despre proiect prin contul de client",
+    "en": "Access to quotes and project information through a client account"
+  },
+  "csak megfelelő hozzájárulás esetén (GA4 / GTM).": {
+    "ro": "doar cu consimțământ adecvat (GA4 / GTM).",
+    "en": "Only with proper consent (GA4 / GTM)."
+  },
+  "cég és szolgáltatások bemutatása": {
+    "ro": "prezentarea companiei și a serviciilor",
+    "en": "Introduction of company and services"
+  },
+  "egy ajánlatkérésben több szolgáltatást is összeállíthat.": {
+    "ro": "într-o solicitare de ofertă se pot combina mai multe servicii",
+    "en": "In a single quote request, multiple services can also be compiled."
+  },
+  "feltöltheti a rendelkezésre álló terveket és dokumentumokat;": {
+    "ro": "pot încărca planurile și documentele disponibile;",
+    "en": "You can upload the available plans and documents;"
+  },
+  "fiókazonosító adatok, e-mail, ajánlatkérések, ajánlatok, státuszok, feltöltött és letöltött dokumentumok, technikai használati adatok": {
+    "ro": "date de identificare cont, e-mail, solicitări de oferte, oferte, stări, documente încărcate și descărcate, date tehnice de utilizare",
+    "en": "account identification data, e-mail, quote requests, quotes, statuses, uploaded and downloaded documents, technical usage data"
+  },
+  "igényfelmérés, ajánlatkészítés, szerződés előkészítése.": {
+    "ro": "evaluarea cerințelor, pregătirea ofertei, pregătirea contractului.",
+    "en": "needs assessment, preparation of quotes, preparation of contracts."
+  },
+  "kapcsolatfelvétel és ajánlatkérés": {
+    "ro": "contact și solicitare de ofertă",
+    "en": "contact and quote request"
+  },
+  "kiválaszthatja a szükséges szolgáltatásokat;": {
+    "ro": "poate selecta serviciile necesare;",
+    "en": "you can select the required services;"
+  },
+  "megadhatja a projekt alapadatait;": {
+    "ro": "poate introduce datele de bază ale proiectului;",
+    "en": "you can provide the basic project data;"
+  },
+  "megjelölheti a konkrét részfeladatokat;": {
+    "ro": "poate specifica sarcinile concrete;",
+    "en": "you can mark specific sub-tasks;"
+  },
+  "megkeresések megválaszolása.": {
+    "ro": "răspuns la solicitări.",
+    "en": "responding to inquiries."
+  },
+  "nev@ceg.ro": {
+    "ro": "nev@ceg.ro",
+    "en": "name@company.ro"
+  },
+  "név, e-mail, telefon, cégnév és adószám (ha megadja), számlázási/projektadatok, kiválasztott szolgáltatások, feltöltött dokumentumok, kapcsolódó kommunikáció": {
+    "ro": "nume, e-mail, telefon, denumire companie și cod fiscal (dacă îl furnizează), date de facturare/proiect, servicii selectate, documente încărcate, comunicare aferentă",
+    "en": "name, e-mail, phone, company name and tax number (if provided), billing/project data, selected services, uploaded documents, related communication"
+  },
+  "név, e-mail, telefonszám (ha megadja), téma, üzenet, beküldés időpontja": {
+    "ro": "nume, e-mail, număr de telefon (dacă este furnizat), subiect, mesaj, data trimiterii",
+    "en": "name, e-mail, phone number (if provided), subject, message, submission time"
+  },
+  "referenciák megjelenítése": {
+    "ro": "afișarea referințelor",
+    "en": "display references"
+  },
+  "szolgáltatás, dokumentumkezelés, kapcsolattartás.": {
+    "ro": "serviciu, gestionarea documentelor, contact",
+    "en": "service, document management, contact"
+  },
+  "számviteli és jogszabályi kötelezettségek.": {
+    "ro": "obligații contabile și legale",
+    "en": "accounting and legal obligations"
+  },
+  "visszaélések megelőzése.": {
+    "ro": "prevenirea abuzurilor",
+    "en": "prevention of abuses"
+  },
+  "ÁFA": {
+    "ro": "TVA",
+    "en": "VAT"
+  },
+  "ÁSZF": {
+    "ro": "CGU",
+    "en": "Terms and Conditions"
+  },
+  "Általános felhasználási feltételek": {
+    "ro": "Condiții generale de utilizare",
+    "en": "General terms of use"
+  },
+  "Általános érdeklődés": {
+    "ro": "Interes general",
+    "en": "General inquiry"
+  },
+  "Átlátható folyamat": {
+    "ro": "Proces transparent",
+    "en": "Transparent process"
+  },
+  "Átláthatóbb műszaki ügyintézés": {
+    "ro": "Gestionare tehnică mai transparentă",
+    "en": "More transparent technical administration"
+  },
+  "Építési engedély előkészítés": {
+    "ro": "Pregătire autorizație de construcție",
+    "en": "Preparation of building permit"
+  },
+  "Érvényes": {
+    "ro": "Valid",
+    "en": "Valid"
+  },
+  "Érvényes: %s": {
+    "ro": "Valabilă până la: %s",
+    "en": "Valid until: %s"
+  },
+  "Érvénytelen e-mail cím.": {
+    "ro": "Adresă de e-mail invalidă.",
+    "en": "Invalid email address."
+  },
+  "Év": {
+    "ro": "An",
+    "en": "Year"
+  },
+  "Írja le röviden a projektet és a jelenlegi helyzetet. Segítünk meghatározni, milyen tervezési, engedélyeztetési vagy dokumentációs feladatokra lehet szükség.": {
+    "ro": "Descrieți pe scurt proiectul și situația actuală. Vă vom ajuta să determinați ce sarcini de proiectare, autorizare sau documentare sunt necesare.",
+    "en": "Briefly describe the project and the current situation. We will help determine what design, permitting, or documentation tasks may be needed."
+  },
+  "Írjon nekünk": {
+    "ro": "Scrieți-ne",
+    "en": "Write to us"
+  },
+  "Összeg": {
+    "ro": "Sumă",
+    "en": "Amount"
+  },
+  "Összegzés": {
+    "ro": "Rezumat",
+    "en": "Summary"
+  },
+  "Összes elfogadása": {
+    "ro": "Acceptă tot",
+    "en": "Accept all"
+  },
+  "Összes referencia": {
+    "ro": "Toate referințele",
+    "en": "All references"
+  },
+  "Összes szolgáltatás": {
+    "ro": "Toate serviciile",
+    "en": "All services"
+  },
+  "Összesítés": {
+    "ro": "Totalizare",
+    "en": "Summation"
+  },
+  "Új ajánlat": {
+    "ro": "Ofertă nouă",
+    "en": "New quote"
+  },
+  "Új ajánlatkérés": {
+    "ro": "Cerere de ofertă nouă",
+    "en": "New quote request"
+  },
+  "Útvonaltervezés": {
+    "ro": "Planificare traseu",
+    "en": "Route planning"
+  },
+  "Üdvözöljük, %s!": {
+    "ro": "Bun venit, %s!",
+    "en": "Welcome, %s!"
+  },
+  "Ügyfélfiók használata esetén": {
+    "ro": "În cazul utilizării contului de client",
+    "en": "When using a client account"
+  },
+  "Ügyfélportál": {
+    "ro": "Portal clienți",
+    "en": "Client portal"
+  },
+  "Ügyfélterület": {
+    "ro": "Zonă clienți",
+    "en": "Client area"
+  },
+  "Üzenet": {
+    "ro": "Mesaj",
+    "en": "Message"
+  },
+  "Üzenet küldése": {
+    "ro": "Trimitere mesaj",
+    "en": "Send Message"
+  },
+  "Mérnöki tervezés átlátható folyamattal": {
+    "ro": "Proiectare tehnică cu un proces transparent",
+    "en": "Engineering design with a transparent process"
+  },
+  "A BMA Engineering műszaki tervezési, engedélyeztetési, dokumentációs és közmű-koordinációs szolgáltatásokat biztosít lakossági és üzleti projektekhez. Válassza ki a projektjéhez szükséges szolgáltatásokat, adja meg a rendelkezésre álló adatokat, és kérjen személyre szabott ajánlatot.": {
+    "ro": "BMA Engineering oferă proiectare tehnică, autorizare, documentație și coordonare utilități pentru proiecte rezidențiale și de business. Selectați serviciile necesare, completați datele disponibile și solicitați o ofertă personalizată.",
+    "en": "BMA Engineering provides engineering design, permitting, documentation and utility coordination for residential and business projects. Select the services you need, provide available details and request a tailored quote."
+  },
+  "Fájl kiválasztása": {
+    "ro": "Alegeți fișierul",
+    "en": "Choose file"
+  },
+  "FIZETVE": {
+    "ro": "PLĂTIT",
+    "en": "PAID"
+  },
+  "ELKÉSZÜLT TERVEK": {
+    "ro": "PLANURI FINALIZATE",
+    "en": "FINISHED PLANS"
+  },
+  "TERVEK": {
+    "ro": "PLANURI",
+    "en": "PLANS"
+  },
+  "BEKÜLDÖTT DOKUMENTUMAIM": {
+    "ro": "DOCUMENTELE MELE TRIMISE",
+    "en": "MY SUBMITTED DOCUMENTS"
+  },
+  "Átadási dokumentum": {
+    "ro": "Document de predare",
+    "en": "Handover document"
+  },
+  "Ügyfél feltöltés": {
+    "ro": "Încărcare client",
+    "en": "Client upload"
+  },
+  "Hétfő–Péntek, 08:00–17:00": {
+    "ro": "Luni–Vineri, 08:00–17:00",
+    "en": "Monday–Friday, 08:00–17:00"
+  },
+  "Hargita, Románia": {
+    "ro": "Harghita, România",
+    "en": "Harghita, Romania"
+  },
+  "H–P, 08:00–17:00": {
+    "ro": "L–V, 08:00–17:00",
+    "en": "Mon–Fri, 08:00–17:00"
+  },
+  "Odorheiu Secuiesc,<br>Hargita, Románia": {
+    "ro": "Odorheiu Secuiesc,<br>Harghita, România",
+    "en": "Odorheiu Secuiesc,<br>Harghita, Romania"
+  },
+  "Bővítés": {
+    "ro": "Extindere",
+    "en": "Extension"
+  },
+  "Felújítás": {
+    "ro": "Renovare",
+    "en": "Renovation"
+  },
+  "Új építés": {
+    "ro": "Construcție nouă",
+    "en": "New build"
+  },
+  "Átalakítás": {
+    "ro": "Transformare",
+    "en": "Conversion"
+  },
+  "Lakossági": {
+    "ro": "Rezidențial",
+    "en": "Residential"
+  },
+  "Üzleti": {
+    "ro": "Business",
+    "en": "Business"
+  },
+  "Ipari beruházás": {
+    "ro": "Investiție industrială",
+    "en": "Industrial project"
+  }
+}

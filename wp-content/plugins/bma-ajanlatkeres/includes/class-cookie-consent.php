@@ -23,11 +23,11 @@ final class BMA_AJ_Cookie_Consent {
 	public static function enqueue(): void {
 		wp_add_inline_script(
 			'bma-aj-public',
-			"(function(){var k='bma_cookie_consent';function apply(c){document.querySelectorAll('[data-cookie-category]').forEach(function(el){var cat=el.getAttribute('data-cookie-category');if(c[cat]){el.type=el.id.indexOf('gtm')>-1||el.src?'text/javascript':el.type.replace('text/plain','text/javascript');if(el.src&&!el._loaded){var s=document.createElement('script');s.src=el.src;s.async=true;document.head.appendChild(s);el._loaded=1;}}});}
-var s=localStorage.getItem(k);if(s){try{apply(JSON.parse(s));return;}catch(e){}}
-var b=document.getElementById('bma-cookie-banner');if(!b)return;b.hidden=false;
-b.querySelector('.bma-cookie-accept-all').addEventListener('click',function(){var c={necessary:1,analytics:1,marketing:1};localStorage.setItem(k,JSON.stringify(c));apply(c);b.hidden=true;});
-b.querySelector('.bma-cookie-necessary').addEventListener('click',function(){var c={necessary:1,analytics:0,marketing:0};localStorage.setItem(k,JSON.stringify(c));apply(c);b.hidden=true;});
+			"(function(){var k='bma_cookie_consent';function apply(c){document.querySelectorAll('[data-cookie-category]').forEach(function(el){var cat=el.getAttribute('data-cookie-category');if(c[cat]){el.type=el.id.indexOf('gtm')>-1||el.src?'text/javascript':el.type.replace('text/plain','text/javascript');if(el.src&&!el._loaded){var s=document.createElement('script');s.src=el.src;s.async=true;document.head.appendChild(s);el._loaded=1;}}});if(c.map&&window.bmaLoadContactMap){window.bmaLoadContactMap();}}
+var s=localStorage.getItem(k);if(s){try{apply(JSON.parse(s));}catch(e){}}
+var b=document.getElementById('bma-cookie-banner');if(!b)return;if(s){b.hidden=true;return;}b.hidden=false;
+b.querySelector('.bma-cookie-accept-all').addEventListener('click',function(){var c={necessary:1,analytics:1,marketing:1,map:1};localStorage.setItem(k,JSON.stringify(c));apply(c);b.hidden=true;});
+b.querySelector('.bma-cookie-necessary').addEventListener('click',function(){var c={necessary:1,analytics:0,marketing:0,map:0};localStorage.setItem(k,JSON.stringify(c));apply(c);b.hidden=true;});
 })();"
 		);
 	}

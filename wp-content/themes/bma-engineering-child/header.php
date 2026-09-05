@@ -9,39 +9,117 @@
 <?php wp_body_open(); ?>
 <a class="bma-skip-link" href="#main-content"><?php esc_html_e( 'Ugrás a tartalomhoz', 'bma-engineering' ); ?></a>
 
-<header class="bma-site-header" role="banner">
-	<div class="bma-header-inner">
-		<div class="bma-logo">
-			<?php if ( has_custom_logo() ) : ?>
-				<?php the_custom_logo(); ?>
-			<?php else : ?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="bma-logo-placeholder" aria-label="<?php esc_attr_e( 'BMA Engineering főoldal', 'bma-engineering' ); ?>">[LOGÓ PLACEHOLDER]</a>
+<?php
+$phone = class_exists( 'BMA_AJ_Company' ) ? BMA_AJ_Company::get( 'contact_phone' ) : (string) get_option( 'bma_contact_phone', '' );
+$email = class_exists( 'BMA_AJ_Company' ) ? BMA_AJ_Company::get( 'contact_email' ) : (string) get_option( 'bma_contact_email', '' );
+$hours = class_exists( 'BMA_AJ_Company' ) ? BMA_AJ_Company::get( 'opening_hours' ) : (string) get_option( 'bma_opening_hours', '' );
+if ( class_exists( 'BMA_AJ_I18n' ) ) {
+	$hours_tr = BMA_AJ_I18n::overlay( 'options', 'bma_opening_hours' );
+	if ( '' !== $hours_tr ) {
+		$hours = $hours_tr;
+	}
+}
+?>
+
+<div class="topbar bma-topbar">
+	<div class="topbar-inner bma-topbar-inner">
+		<div class="bma-topbar-contacts">
+			<?php if ( $phone ) : ?>
+				<a class="bma-topbar-item" href="<?php echo esc_url( class_exists( 'BMA_AJ_Company' ) ? BMA_AJ_Company::phone_href( $phone ) : 'tel:' . preg_replace( '/\s+/', '', $phone ) ); ?>"><?php echo esc_html( $phone ); ?></a>
+			<?php endif; ?>
+			<?php if ( $email ) : ?>
+				<a class="bma-topbar-item" href="<?php echo esc_url( 'mailto:' . $email ); ?>"><?php echo esc_html( $email ); ?></a>
+			<?php endif; ?>
+			<?php if ( $hours ) : ?>
+				<span class="bma-topbar-item"><?php echo esc_html( $hours ); ?></span>
 			<?php endif; ?>
 		</div>
-		<nav class="bma-main-nav" role="navigation" aria-label="<?php esc_attr_e( 'Fő navigáció', 'bma-engineering' ); ?>">
+		<div class="bma-topbar-social">
+			<?php if ( shortcode_exists( 'bma_social_links' ) ) : ?>
+				<?php echo do_shortcode( '[bma_social_links]' ); ?>
+			<?php endif; ?>
+		</div>
+	</div>
+</div>
+
+<header class="siteheader bma-site-header" role="banner">
+	<div class="header-inner bma-header-inner" id="bma-header-inner">
+		<div class="logo bma-logo">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="bma-logo-block" aria-label="<?php esc_attr_e( 'BMA Engineering főoldal', 'bma-engineering' ); ?>">
+				<span class="bma-logo-placeholder-box" aria-hidden="true">[LOGÓ]</span>
+			</a>
+		</div>
+
+		<nav id="bma-primary-nav" class="nav bma-main-nav" role="navigation" aria-label="<?php esc_attr_e( 'Fő navigáció', 'bma-engineering' ); ?>">
 			<?php
 			wp_nav_menu(
 				array(
 					'theme_location' => 'primary',
 					'container'      => false,
+					'menu_class'     => 'bma-menu',
 					'fallback_cb'    => 'bma_fallback_menu',
 				)
 			);
 			?>
 		</nav>
-		<div class="bma-header-actions">
-			<a href="<?php echo esc_url( home_url( '/ajanlatkosar/' ) ); ?>" class="bma-cart-link" aria-label="<?php esc_attr_e( 'Ajánlatkérési kosár', 'bma-engineering' ); ?>">
-				<?php esc_html_e( 'Kosár', 'bma-engineering' ); ?>
-				<?php if ( class_exists( 'BMA_AJ_Cart' ) ) : ?>
-					<span class="bma-cart-count">(<?php echo esc_html( (string) BMA_AJ_Cart::count() ); ?>)</span>
-				<?php endif; ?>
+
+		<div class="header-actions bma-header-actions">
+			<?php
+			$cart_count = class_exists( 'BMA_AJ_Cart' ) ? (int) BMA_AJ_Cart::count() : 0;
+			if ( class_exists( 'BMA_AJ_I18n' ) ) {
+				$quote_url  = $cart_count > 0 ? BMA_AJ_I18n::page_url( 'ajanlatkosar' ) : BMA_AJ_I18n::page_url( 'szolgaltatasok' );
+				$portal_url = BMA_AJ_I18n::page_url( 'ugyfelportal' );
+				$login_url  = BMA_AJ_I18n::page_url( 'belepes' );
+			} else {
+				$quote_url  = $cart_count > 0 ? home_url( '/ajanlatkosar/' ) : home_url( '/szolgaltatasok/' );
+				$portal_url = home_url( '/ugyfelportal/' );
+				$login_url  = home_url( '/belepes/' );
+			}
+			?>
+			<?php if ( function_exists( 'pll_the_languages' ) ) : ?>
+				<div class="bma-lang-switcher" aria-label="<?php esc_attr_e( 'Nyelvválasztó', 'bma-engineering' ); ?>">
+					<?php
+					pll_the_languages(
+						array(
+							'dropdown'               => 0,
+							'show_flags'             => 0,
+							'show_names'             => 1,
+							'display_names_as'       => 'slug',
+							'hide_if_empty'          => 0,
+							'force_home'             => 0,
+							'hide_if_no_translation' => 0,
+							'hide_current'           => 0,
+						)
+					);
+					?>
+				</div>
+			<?php endif; ?>
+			<a
+				href="<?php echo esc_url( $quote_url ); ?>"
+				class="cart-btn bma-header-cta"
+				aria-label="<?php echo esc_attr( sprintf( /* translators: %d: cart item count */ __( 'Ajánlat, %d tétel', 'bma-engineering' ), $cart_count ) ); ?>"
+			>
+				<span class="bma-header-cta-label"><?php esc_html_e( 'Ajánlat', 'bma-engineering' ); ?></span>
+				<span class="cart-count bma-header-cart-count" id="bma-header-cart-count" data-count="<?php echo esc_attr( (string) $cart_count ); ?>"><?php echo esc_html( (string) $cart_count ); ?></span>
 			</a>
 			<?php if ( is_user_logged_in() ) : ?>
-				<a href="<?php echo esc_url( home_url( '/ugyfelportal/' ) ); ?>"><?php esc_html_e( 'Ügyfélportál', 'bma-engineering' ); ?></a>
+				<a href="<?php echo esc_url( $portal_url ); ?>" class="bma-header-login"><?php esc_html_e( 'Ügyfélportál', 'bma-engineering' ); ?></a>
+				<a href="<?php echo esc_url( wp_logout_url( home_url( '/' ) ) ); ?>" class="bma-header-logout"><?php esc_html_e( 'Kijelentkezés', 'bma-engineering' ); ?></a>
 			<?php else : ?>
-				<a href="<?php echo esc_url( wp_login_url() ); ?>"><?php esc_html_e( 'Bejelentkezés', 'bma-engineering' ); ?></a>
+				<a href="<?php echo esc_url( $login_url ?: wp_login_url( $portal_url ) ); ?>" class="btn btn--outline btn--sm bma-header-login"><?php esc_html_e( 'Belépés', 'bma-engineering' ); ?></a>
 			<?php endif; ?>
 		</div>
+
+		<button
+			type="button"
+			class="bma-nav-toggle"
+			id="bma-nav-toggle"
+			aria-controls="bma-primary-nav"
+			aria-expanded="false"
+			aria-label="<?php esc_attr_e( 'Menü megnyitása', 'bma-engineering' ); ?>"
+		>
+			<span class="bma-nav-toggle-bars" aria-hidden="true"></span>
+		</button>
 	</div>
 </header>
 

@@ -26,11 +26,22 @@ final class BMA_AJ_Schema {
 				name varchar(255) NOT NULL,
 				slug varchar(255) NOT NULL,
 				short_description text,
+				choose_if text,
 				is_active tinyint(1) NOT NULL DEFAULT 1,
 				is_required tinyint(1) NOT NULL DEFAULT 0,
 				sort_order int NOT NULL DEFAULT 0,
 				created_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
 				PRIMARY KEY (id),
+				KEY service_id (service_id)
+			) $charset;",
+
+			"CREATE TABLE {$wpdb->prefix}bma_service_item_services (
+				id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+				item_id bigint(20) unsigned NOT NULL,
+				service_id bigint(20) unsigned NOT NULL,
+				sort_order int NOT NULL DEFAULT 0,
+				PRIMARY KEY (id),
+				UNIQUE KEY item_service (item_id, service_id),
 				KEY service_id (service_id)
 			) $charset;",
 
@@ -146,6 +157,7 @@ final class BMA_AJ_Schema {
 			"CREATE TABLE {$wpdb->prefix}bma_documents (
 				id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
 				request_id bigint(20) unsigned NOT NULL,
+				service_item_id bigint(20) unsigned NOT NULL DEFAULT 0,
 				title varchar(255) NOT NULL,
 				doc_type varchar(50) NOT NULL DEFAULT 'other',
 				file_path varchar(500) NOT NULL,
@@ -157,7 +169,8 @@ final class BMA_AJ_Schema {
 				client_visible tinyint(1) NOT NULL DEFAULT 1,
 				uploaded_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
 				PRIMARY KEY (id),
-				KEY request_id (request_id)
+				KEY request_id (request_id),
+				KEY service_item_id (service_item_id)
 			) $charset;",
 
 			"CREATE TABLE {$wpdb->prefix}bma_email_templates (
@@ -186,5 +199,158 @@ final class BMA_AJ_Schema {
 		foreach ( $tables as $sql ) {
 			dbDelta( $sql );
 		}
+
+		self::maybe_upgrade();
+	}
+
+	/**
+	 * Add columns introduced after initial release.
+	 */
+	public static function maybe_upgrade(): void {
+		global $wpdb;
+
+		$requests = $wpdb->prefix . 'bma_quote_requests';
+		$quotes   = $wpdb->prefix . 'bma_quotes';
+		$items    = $wpdb->prefix . 'bma_service_items';
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+		$req_cols = wp_list_pluck( $wpdb->get_results( "SHOW COLUMNS FROM {$requests}" ), 'Field' );
+		if ( ! in_array( 'shared_field_values', $req_cols, true ) ) {
+			$wpdb->query( "ALTER TABLE {$requests} ADD COLUMN shared_field_values longtext NULL AFTER client_note" );
+		}
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+		$quote_cols = wp_list_pluck( $wpdb->get_results( "SHOW COLUMNS FROM {$quotes}" ), 'Field' );
+		$additions  = array(
+			'payment_status'    => "varchar(50) NOT NULL DEFAULT 'unpaid'",
+			'payment_method'    => "varchar(50) NOT NULL DEFAULT ''",
+			'stripe_session_id' => "varchar(255) NOT NULL DEFAULT ''",
+			'paid_at'           => 'datetime DEFAULT NULL',
+		);
+		foreach ( $additions as $col => $def ) {
+			if ( ! in_array( $col, $quote_cols, true ) ) {
+				$wpdb->query( "ALTER TABLE {$quotes} ADD COLUMN {$col} {$def}" );
+			}
+		}
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+		$item_cols = wp_list_pluck( $wpdb->get_results( "SHOW COLUMNS FROM {$items}" ), 'Field' );
+		if ( ! in_array( 'choose_if', $item_cols, true ) ) {
+			$wpdb->query( "ALTER TABLE {$items} ADD COLUMN choose_if text NULL AFTER short_description" );
+		}
+
+		self::ensure_item_service_links();
+		self::ensure_document_item_column();
+	}
+
+	/**
+	 * Add service_item_id to documents for per-item deliverables.
+	 */
+	private static function ensure_document_item_column(): void {
+		global $wpdb;
+		$docs = $wpdb->prefix . 'bma_documents';
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+		$cols = wp_list_pluck( $wpdb->get_results( "SHOW COLUMNS FROM {$docs}" ), 'Field' );
+		if ( ! in_array( 'service_item_id', $cols, true ) ) {
+			$wpdb->query( "ALTER TABLE {$docs} ADD COLUMN service_item_id bigint(20) unsigned NOT NULL DEFAULT 0 AFTER request_id" );
+			$wpdb->query( "ALTER TABLE {$docs} ADD KEY service_item_id (service_item_id)" );
+		}
+	}
+
+	/**
+	 * Ensure many-to-many service↔item links exist and migrate legacy service_id rows.
+	 */
+	private static function ensure_item_service_links(): void {
+		global $wpdb;
+
+		$links = $wpdb->prefix . 'bma_service_item_services';
+		$items = $wpdb->prefix . 'bma_service_items';
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+		$exists = $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $links ) );
+		if ( $exists !== $links ) {
+			$charset = $wpdb->get_charset_collate();
+			require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+			dbDelta(
+				"CREATE TABLE {$links} (
+					id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+					item_id bigint(20) unsigned NOT NULL,
+					service_id bigint(20) unsigned NOT NULL,
+					sort_order int NOT NULL DEFAULT 0,
+					PRIMARY KEY (id),
+					UNIQUE KEY item_service (item_id, service_id),
+					KEY service_id (service_id)
+				) {$charset};"
+			);
+		}
+
+		// Migrate legacy single service_id into junction where missing.
+		$wpdb->query(
+			"INSERT IGNORE INTO {$links} (item_id, service_id, sort_order)
+			SELECT i.id, i.service_id, 0
+			FROM {$items} i
+			WHERE i.service_id > 0
+			AND NOT EXISTS (
+				SELECT 1 FROM {$links} l WHERE l.item_id = i.id AND l.service_id = i.service_id
+			)"
+		);
+
+		self::maybe_copy_service_fields_to_items();
+	}
+
+	/**
+	 * One-time: copy legacy service-level field assignments onto that service's items.
+	 */
+	private static function maybe_copy_service_fields_to_items(): void {
+		if ( get_option( 'bma_aj_fields_migrated_to_items' ) ) {
+			return;
+		}
+
+		global $wpdb;
+		$assign = $wpdb->prefix . 'bma_field_assignments';
+		$links  = $wpdb->prefix . 'bma_service_item_services';
+
+		$service_assigns = $wpdb->get_results(
+			"SELECT field_id, entity_id AS service_id, sort_order
+			FROM {$assign}
+			WHERE entity_type = 'service'"
+		);
+
+		if ( is_array( $service_assigns ) ) {
+			foreach ( $service_assigns as $row ) {
+				$item_ids = $wpdb->get_col(
+					$wpdb->prepare(
+						"SELECT item_id FROM {$links} WHERE service_id = %d",
+						(int) $row->service_id
+					)
+				);
+				foreach ( $item_ids as $item_id ) {
+					$exists = (int) $wpdb->get_var(
+						$wpdb->prepare(
+							"SELECT id FROM {$assign}
+							WHERE field_id = %d AND entity_type = 'service_item' AND entity_id = %d
+							LIMIT 1",
+							(int) $row->field_id,
+							(int) $item_id
+						)
+					);
+					if ( $exists ) {
+						continue;
+					}
+					$wpdb->insert(
+						$assign,
+						array(
+							'field_id'    => (int) $row->field_id,
+							'entity_type' => 'service_item',
+							'entity_id'   => (int) $item_id,
+							'sort_order'  => (int) $row->sort_order,
+						)
+					);
+				}
+			}
+		}
+
+		update_option( 'bma_aj_fields_migrated_to_items', '1', false );
 	}
 }

@@ -110,12 +110,14 @@ final class BMA_AJ_Service_CPT {
 		}
 
 		$fields = array(
-			'_bma_is_active'          => isset( $_POST['bma_is_active'] ) ? '1' : '0',
-			'_bma_sort_order'         => absint( $_POST['bma_sort_order'] ?? 0 ),
-			'_bma_client_info'          => sanitize_textarea_field( wp_unslash( $_POST['bma_client_info'] ?? '' ) ),
-			'_bma_admin_note'           => sanitize_textarea_field( wp_unslash( $_POST['bma_admin_note'] ?? '' ) ),
-			'_bma_short_description'    => sanitize_textarea_field( wp_unslash( $_POST['bma_short_description'] ?? '' ) ),
-			'_bma_use_placeholder'      => isset( $_POST['bma_use_placeholder'] ) ? '1' : '0',
+			'_bma_is_active'           => isset( $_POST['bma_is_active'] ) ? '1' : '0',
+			'_bma_sort_order'          => absint( $_POST['bma_sort_order'] ?? 0 ),
+			'_bma_client_info'         => sanitize_textarea_field( wp_unslash( $_POST['bma_client_info'] ?? '' ) ),
+			'_bma_admin_note'          => sanitize_textarea_field( wp_unslash( $_POST['bma_admin_note'] ?? '' ) ),
+			'_bma_short_description'   => sanitize_textarea_field( wp_unslash( $_POST['bma_short_description'] ?? '' ) ),
+			'_bma_choose_summary'      => sanitize_textarea_field( wp_unslash( $_POST['bma_choose_summary'] ?? '' ) ),
+			'_bma_when_needed'         => sanitize_textarea_field( wp_unslash( $_POST['bma_when_needed'] ?? '' ) ),
+			'_bma_use_placeholder'     => isset( $_POST['bma_use_placeholder'] ) ? '1' : '0',
 		);
 
 		foreach ( $fields as $key => $value ) {
@@ -134,6 +136,48 @@ final class BMA_AJ_Service_CPT {
 				'post_type'      => self::POST_TYPE,
 				'posts_per_page' => -1,
 				'post_status'    => 'publish',
+				'meta_query'     => array(
+					array(
+						'key'   => '_bma_is_active',
+						'value' => '1',
+					),
+				),
+				'orderby'        => 'meta_value_num',
+				'meta_key'       => '_bma_sort_order',
+				'order'          => 'ASC',
+			)
+		);
+	}
+
+	/**
+	 * Get related services for detail page.
+	 *
+	 * @param int $post_id Current service ID.
+	 * @return WP_Post[]
+	 */
+	public static function get_related_services( int $post_id ): array {
+		$related = get_post_meta( $post_id, '_bma_related_services', true );
+		if ( is_array( $related ) && ! empty( $related ) ) {
+			$posts = get_posts(
+				array(
+					'post_type'      => self::POST_TYPE,
+					'post__in'       => array_map( 'absint', $related ),
+					'posts_per_page' => 6,
+					'post_status'    => 'publish',
+					'orderby'        => 'post__in',
+				)
+			);
+			if ( $posts ) {
+				return $posts;
+			}
+		}
+
+		return get_posts(
+			array(
+				'post_type'      => self::POST_TYPE,
+				'posts_per_page' => 4,
+				'post_status'    => 'publish',
+				'post__not_in'   => array( $post_id ),
 				'meta_query'     => array(
 					array(
 						'key'   => '_bma_is_active',

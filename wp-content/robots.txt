@@ -6,4 +6,4 @@ Disallow: /ajanlatkosar/
 Disallow: /bma-download/
 Allow: /wp-admin/admin-ajax.php
 
-Sitemap: /wp-sitemap.xml
+Sitemap: /sitemap_index.xml

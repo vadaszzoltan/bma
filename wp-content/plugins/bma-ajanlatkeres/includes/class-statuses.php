@@ -80,7 +80,16 @@ final class BMA_AJ_Statuses {
 		$table = $wpdb->prefix . 'bma_statuses';
 
 		$row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$table} WHERE id = %d", $id ) );
-		return $row ?: null;
+		if ( ! $row ) {
+			return null;
+		}
+		if ( class_exists( 'BMA_AJ_I18n' ) ) {
+			$tr = BMA_AJ_I18n::overlay( 'statuses', (string) $id );
+			if ( '' !== $tr ) {
+				$row->name = $tr;
+			}
+		}
+		return $row;
 	}
 
 	/**
@@ -150,5 +159,81 @@ final class BMA_AJ_Statuses {
 				$request_id
 			)
 		);
+	}
+
+	/**
+	 * Create a status.
+	 *
+	 * @param array<string, mixed> $data Status data.
+	 */
+	public static function create( array $data ): int|WP_Error {
+		global $wpdb;
+		$table = $wpdb->prefix . 'bma_statuses';
+
+		$name = sanitize_text_field( $data['name'] ?? '' );
+		if ( '' === $name ) {
+			return new WP_Error( 'bma_status_name', __( 'A státusz neve kötelező.', 'bma-ajanlatkeres' ) );
+		}
+
+		$slug = sanitize_title( $data['slug'] ?? $name );
+		if ( '' === $slug ) {
+			$slug = 'status-' . time();
+		}
+
+		$existing = (int) $wpdb->get_var( $wpdb->prepare( "SELECT id FROM {$table} WHERE slug = %s", $slug ) );
+		if ( $existing ) {
+			$slug .= '-' . wp_generate_password( 4, false );
+		}
+
+		$inserted = $wpdb->insert(
+			$table,
+			array(
+				'name'                => $name,
+				'slug'                => $slug,
+				'color'               => sanitize_hex_color( $data['color'] ?? '#2271b1' ) ?: '#2271b1',
+				'sort_order'          => absint( $data['sort_order'] ?? 99 ),
+				'client_visible'      => ! empty( $data['client_visible'] ) ? 1 : 0,
+				'send_email'          => ! empty( $data['send_email'] ) ? 1 : 0,
+				'email_template_slug' => sanitize_text_field( $data['email_template_slug'] ?? '' ),
+				'is_default'          => 0,
+			)
+		);
+
+		if ( ! $inserted ) {
+			return new WP_Error( 'bma_status_insert', __( 'A státusz mentése sikertelen.', 'bma-ajanlatkeres' ) );
+		}
+
+		return (int) $wpdb->insert_id;
+	}
+
+	/**
+	 * Delete status if unused (and not default).
+	 *
+	 * @param int $id Status ID.
+	 */
+	public static function delete( int $id ): true|WP_Error {
+		global $wpdb;
+		$table = $wpdb->prefix . 'bma_statuses';
+		$row   = self::get( $id );
+
+		if ( ! $row ) {
+			return new WP_Error( 'bma_status_missing', __( 'A státusz nem található.', 'bma-ajanlatkeres' ) );
+		}
+		if ( ! empty( $row->is_default ) ) {
+			return new WP_Error( 'bma_status_default', __( 'Az alapértelmezett státusz nem törölhető.', 'bma-ajanlatkeres' ) );
+		}
+
+		$in_use = (int) $wpdb->get_var(
+			$wpdb->prepare(
+				"SELECT COUNT(*) FROM {$wpdb->prefix}bma_quote_requests WHERE status_id = %d",
+				$id
+			)
+		);
+		if ( $in_use > 0 ) {
+			return new WP_Error( 'bma_status_in_use', __( 'A státusz használatban van, ezért nem törölhető.', 'bma-ajanlatkeres' ) );
+		}
+
+		$wpdb->delete( $table, array( 'id' => $id ) );
+		return true;
 	}
 }
