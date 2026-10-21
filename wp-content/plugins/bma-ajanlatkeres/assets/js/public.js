@@ -77,6 +77,7 @@
 			var input = $(this).find('input[type="file"]').get(0);
 			if (input) {
 				input.files = e.originalEvent.dataTransfer.files;
+				$(input).trigger('change');
 			}
 		}
 	});

@@ -308,6 +308,109 @@ final class BMA_AJ_Dynamic_Fields {
 	}
 
 	/**
+	 * Field options as value => label, with the current language overlay.
+	 *
+	 * Stored options are either "value|Label" or a plain label (value = label).
+	 * Overlay entries follow the same format or are index-aligned plain labels.
+	 *
+	 * @param object $field Field row.
+	 * @return array<string, string>
+	 */
+	public static function options( object $field ): array {
+		$raw  = json_decode( $field->options ?? '[]', true ) ?: array();
+		$opts = array();
+		foreach ( $raw as $opt ) {
+			$parts                     = explode( '|', (string) $opt, 2 );
+			$opts[ trim( $parts[0] ) ] = trim( $parts[1] ?? $parts[0] );
+		}
+
+		if ( class_exists( 'BMA_AJ_I18n' ) && ! empty( $field->id ) ) {
+			$lang    = BMA_AJ_I18n::current_lang();
+			$overlay = get_option( 'bma_i18n_overlay', array() );
+			$opts_tr = $overlay['dynamic_fields'][ (string) (int) $field->id ][ $lang ]['options'] ?? null;
+			if ( is_array( $opts_tr ) && ! empty( $opts_tr ) ) {
+				$keys = array_keys( $opts );
+				foreach ( array_values( $opts_tr ) as $i => $tr ) {
+					$parts = explode( '|', (string) $tr, 2 );
+					if ( isset( $parts[1] ) ) {
+						$opts[ trim( $parts[0] ) ] = trim( $parts[1] );
+					} elseif ( isset( $keys[ $i ] ) ) {
+						$opts[ $keys[ $i ] ] = trim( $parts[0] );
+					}
+				}
+			}
+		}
+
+		return $opts;
+	}
+
+	/**
+	 * Display label of a stored option value.
+	 *
+	 * @param object $field Field row.
+	 * @param mixed  $value Stored value.
+	 */
+	public static function option_label( object $field, $value ): string {
+		$opts = self::options( $field );
+		if ( is_array( $value ) ) {
+			return implode( ', ', array_map( static fn( $v ) => $opts[ (string) $v ] ?? (string) $v, $value ) );
+		}
+		return $opts[ (string) $value ] ?? (string) $value;
+	}
+
+	/**
+	 * Client label with the current language overlay.
+	 *
+	 * @param object $field Field row.
+	 */
+	public static function client_label( object $field ): string {
+		if ( class_exists( 'BMA_AJ_I18n' ) ) {
+			$tr = BMA_AJ_I18n::overlay( 'dynamic_fields', (string) (int) $field->id, 'client_label' );
+			if ( '' !== $tr ) {
+				return $tr;
+			}
+		}
+		return (string) $field->client_label;
+	}
+
+	/**
+	 * Active fields of one placement (v2 flow), with their item assignments.
+	 *
+	 * @param string $placement project | documents | item | addons.
+	 * @return array<int, object> Each row gets ->item_ids (int[]) and ->cond (array).
+	 */
+	public static function get_by_placement( string $placement ): array {
+		global $wpdb;
+		$rows = $wpdb->get_results(
+			$wpdb->prepare(
+				"SELECT * FROM {$wpdb->prefix}bma_dynamic_fields WHERE is_active = 1 AND placement = %s ORDER BY sort_order ASC, id ASC",
+				$placement
+			)
+		);
+		if ( ! is_array( $rows ) || ! $rows ) {
+			return array();
+		}
+
+		$ids    = implode( ',', array_map( static fn( $r ) => (int) $r->id, $rows ) );
+		$assign = $wpdb->get_results(
+			"SELECT field_id, entity_id FROM {$wpdb->prefix}bma_field_assignments
+			WHERE entity_type = 'service_item' AND field_id IN ({$ids})"
+		);
+		$map = array();
+		foreach ( (array) $assign as $a ) {
+			$map[ (int) $a->field_id ][] = (int) $a->entity_id;
+		}
+
+		foreach ( $rows as $row ) {
+			$row->item_ids = $map[ (int) $row->id ] ?? array();
+			$cond          = json_decode( (string) ( $row->conditions ?? '' ), true );
+			$row->cond     = is_array( $cond ) ? $cond : array();
+		}
+
+		return $rows;
+	}
+
+	/**
 	 * Render field HTML.
 	 *
 	 * @param object              $field Field object.
@@ -340,17 +443,13 @@ final class BMA_AJ_Dynamic_Fields {
 		$desc = $field->description ? '<p class="bma-field-desc small muted">' . esc_html( $field->description ) . '</p>' : '';
 		$ph   = esc_attr( $field->placeholder );
 
-		$options = json_decode( $field->options ?? '[]', true ) ?: array();
-		if ( class_exists( 'BMA_AJ_I18n' ) ) {
-			$lang    = BMA_AJ_I18n::current_lang();
-			$overlay = get_option( 'bma_i18n_overlay', array() );
-			$opts_tr = $overlay['dynamic_fields'][ (string) (int) $field->id ][ $lang ]['options'] ?? null;
-			if ( is_array( $opts_tr ) && ! empty( $opts_tr ) ) {
-				$options = $opts_tr;
-			}
-		}
+		$options = self::options( $field );
 
-		$wrap = 'bma-form-field bma-field-type-' . esc_attr( $field->field_type );
+		$wrap  = 'bma-form-field bma-field-type-' . esc_attr( $field->field_type );
+		$attrs = ' data-bma-field="' . esc_attr( $field->field_key ) . '"';
+		foreach ( (array) ( $args['data'] ?? array() ) as $data_key => $data_val ) {
+			$attrs .= ' data-' . esc_attr( $data_key ) . '="' . esc_attr( is_array( $data_val ) ? (string) wp_json_encode( $data_val ) : (string) $data_val ) . '"';
+		}
 		if ( ! empty( $args['full_width'] ) || 'textarea' === $field->field_type || 'file' === $field->field_type || 'address' === $field->field_type ) {
 			$wrap .= ' full';
 		}
@@ -359,7 +458,7 @@ final class BMA_AJ_Dynamic_Fields {
 		}
 
 		ob_start();
-		echo '<div class="' . esc_attr( $wrap ) . '">';
+		echo '<div class="' . esc_attr( $wrap ) . '"' . $attrs . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		if ( 'hidden' !== $field->field_type && 'file' !== $field->field_type ) {
 			echo '<label for="' . $id . '"' . $label_cls . '>' . $label;
 			if ( $field->is_required ) {
@@ -393,25 +492,29 @@ final class BMA_AJ_Dynamic_Fields {
 			case 'select':
 				echo '<select id="' . $id . '" name="' . $name . '"' . $input_cls . $req . '>';
 				echo '<option value="">' . esc_html__( 'Válasszon…', 'bma-ajanlatkeres' ) . '</option>';
-				foreach ( $options as $opt ) {
-					echo '<option value="' . esc_attr( $opt ) . '" ' . selected( $value, $opt, false ) . '>' . esc_html( $opt ) . '</option>';
+				foreach ( $options as $opt => $opt_label ) {
+					echo '<option value="' . esc_attr( $opt ) . '" ' . selected( (string) $value, (string) $opt, false ) . '>' . esc_html( $opt_label ) . '</option>';
 				}
 				echo '</select>';
 				break;
 			case 'radio':
-				foreach ( $options as $i => $opt ) {
-					$rid = $id . '_' . $i;
-					echo '<label class="bma-radio-label"><input type="radio" id="' . esc_attr( $rid ) . '" name="' . $name . '" value="' . esc_attr( $opt ) . '" ' . checked( $value, $opt, false ) . $req . '> ' . esc_html( $opt ) . '</label>';
+				$i = 0;
+				echo '<div class="bma-radio-group" role="radiogroup">';
+				foreach ( $options as $opt => $opt_label ) {
+					$rid = $id . '_' . $i++;
+					echo '<label class="bma-radio-label"><input type="radio" id="' . esc_attr( $rid ) . '" name="' . $name . '" value="' . esc_attr( $opt ) . '" ' . checked( (string) $value, (string) $opt, false ) . $req . '> ' . esc_html( $opt_label ) . '</label>';
 				}
+				echo '</div>';
 				break;
 			case 'checkbox':
 				echo '<label class="bma-checkbox-label"><input type="checkbox" id="' . $id . '" name="' . $name . '" value="1" ' . checked( $value, '1', false ) . '> ' . esc_html( $field->placeholder ?: $label ) . '</label>';
 				break;
 			case 'multiselect':
 				$values = is_array( $value ) ? $value : array();
-				foreach ( $options as $i => $opt ) {
-					$cid = $id . '_' . $i;
-					echo '<label class="bma-checkbox-label"><input type="checkbox" id="' . esc_attr( $cid ) . '" name="' . $name . '[]" value="' . esc_attr( $opt ) . '" ' . checked( in_array( $opt, $values, true ), true, false ) . '> ' . esc_html( $opt ) . '</label>';
+				$i      = 0;
+				foreach ( $options as $opt => $opt_label ) {
+					$cid = $id . '_' . $i++;
+					echo '<label class="bma-checkbox-label"><input type="checkbox" id="' . esc_attr( $cid ) . '" name="' . $name . '[]" value="' . esc_attr( $opt ) . '" ' . checked( in_array( (string) $opt, array_map( 'strval', $values ), true ), true, false ) . '> ' . esc_html( $opt_label ) . '</label>';
 				}
 				break;
 			case 'file':
@@ -426,7 +529,11 @@ final class BMA_AJ_Dynamic_Fields {
 						$max_mb
 					)
 				) . '</span>';
-				echo '<input type="file" id="' . $id . '" name="' . $name . '" class="bma-file-input" data-field-key="' . esc_attr( $field->field_key ) . '"' . $req . '>';
+				if ( ! empty( $args['multiple'] ) ) {
+					echo '<input type="file" id="' . $id . '" name="' . $name . '[]" multiple class="bma-file-input" data-field-key="' . esc_attr( $field->field_key ) . '"' . $req . '>';
+				} else {
+					echo '<input type="file" id="' . $id . '" name="' . $name . '" class="bma-file-input" data-field-key="' . esc_attr( $field->field_key ) . '"' . $req . '>';
+				}
 				echo '</div>';
 				break;
 			case 'address':
@@ -440,6 +547,9 @@ final class BMA_AJ_Dynamic_Fields {
 		}
 
 		echo $desc;
+		if ( ! empty( $args['error_slot'] ) ) {
+			echo '<p class="bma-field-error" hidden></p>';
+		}
 		echo '</div>';
 
 		return ob_get_clean();

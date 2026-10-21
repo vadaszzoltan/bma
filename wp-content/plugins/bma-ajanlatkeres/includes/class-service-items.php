@@ -12,10 +12,11 @@ final class BMA_AJ_Service_Items {
 	/**
 	 * Get active items for a service (many-to-many links + legacy service_id).
 	 *
-	 * @param int $service_id Service post ID.
+	 * @param int    $service_id Service post ID.
+	 * @param string $type       item | addon.
 	 * @return array<int, object>
 	 */
-	public static function get_for_service( int $service_id ): array {
+	public static function get_for_service( int $service_id, string $type = 'item' ): array {
 		global $wpdb;
 		$items = $wpdb->prefix . 'bma_service_items';
 		$links = $wpdb->prefix . 'bma_service_item_services';
@@ -31,8 +32,9 @@ final class BMA_AJ_Service_Items {
 				"SELECT i.*, l.sort_order AS link_sort
 				FROM {$items} i
 				INNER JOIN {$links} l ON l.item_id = i.id
-				WHERE i.is_active = 1 AND l.service_id = %d
+				WHERE i.is_active = 1 AND i.item_type = %s AND l.service_id = %d
 				ORDER BY l.sort_order ASC, i.name ASC",
+				$type,
 				$lookup_id
 			)
 		);
@@ -45,13 +47,40 @@ final class BMA_AJ_Service_Items {
 		$legacy = $wpdb->get_results(
 			$wpdb->prepare(
 				"SELECT *, sort_order AS link_sort FROM {$items}
-				WHERE service_id = %d AND is_active = 1
+				WHERE service_id = %d AND is_active = 1 AND item_type = %s
 				ORDER BY sort_order ASC, name ASC",
-				$lookup_id
+				$lookup_id,
+				$type
 			)
 		);
 
 		return is_array( $legacy ) ? array_map( array( self::class, 'localize_item' ), $legacy ) : array();
+	}
+
+	/**
+	 * Active general add-ons (not tied to a service).
+	 *
+	 * @return array<int, object>
+	 */
+	public static function get_general_addons(): array {
+		global $wpdb;
+		$rows = $wpdb->get_results(
+			"SELECT * FROM {$wpdb->prefix}bma_service_items
+			WHERE is_active = 1 AND item_type = 'addon' AND service_id = 0
+			ORDER BY sort_order ASC, name ASC"
+		);
+		return is_array( $rows ) ? array_map( array( self::class, 'localize_item' ), $rows ) : array();
+	}
+
+	/**
+	 * Decoded auto rule of an add-on (see BMA_AJ_Quote_Flow::rule_matches()).
+	 *
+	 * @param object $row Item row.
+	 * @return array<string, mixed>
+	 */
+	public static function auto_rule( object $row ): array {
+		$rule = json_decode( (string) ( $row->auto_rule ?? '' ), true );
+		return is_array( $rule ) ? $rule : array();
 	}
 
 	/**
@@ -221,16 +250,24 @@ final class BMA_AJ_Service_Items {
 			return new WP_Error( 'name_required', __( 'A név kötelező.', 'bma-ajanlatkeres' ) );
 		}
 
+		$item_type   = 'addon' === ( $data['item_type'] ?? '' ) ? 'addon' : 'item';
 		$service_ids = array_map( 'absint', (array) ( $data['service_ids'] ?? array() ) );
 		$service_ids = array_values( array_unique( array_filter( $service_ids ) ) );
-		if ( empty( $service_ids ) ) {
+		// Add-ons without a service are general add-ons (offered for any project).
+		if ( empty( $service_ids ) && 'addon' !== $item_type ) {
 			return new WP_Error( 'service_required', __( 'Legalább egy szolgáltatást ki kell választani.', 'bma-ajanlatkeres' ) );
 		}
 
+		$auto_rule = trim( (string) ( $data['auto_rule'] ?? '' ) );
+		if ( '' !== $auto_rule && ! is_array( json_decode( $auto_rule, true ) ) ) {
+			return new WP_Error( 'auto_rule', __( 'Az automatikus szabály nem érvényes JSON.', 'bma-ajanlatkeres' ) );
+		}
+
 		$row = array(
-			'service_id'        => $service_ids[0],
+			'service_id'        => $service_ids[0] ?? 0,
 			'name'              => $name,
-			'slug'              => sanitize_title( $name ),
+			'item_type'         => $item_type,
+			'auto_rule'         => '' !== $auto_rule ? $auto_rule : null,
 			'short_description' => sanitize_textarea_field( (string) ( $data['short_description'] ?? '' ) ),
 			'choose_if'         => sanitize_textarea_field( (string) ( $data['choose_if'] ?? '' ) ),
 			'is_active'         => ! empty( $data['is_active'] ) ? 1 : 0,
@@ -242,6 +279,8 @@ final class BMA_AJ_Service_Items {
 		if ( $item_id ) {
 			$wpdb->update( $table, $row, array( 'id' => $item_id ) );
 		} else {
+			// Slug is the stable key used by BMA_AJ_Catalog, so it is set only once.
+			$row['slug']      = sanitize_title( $name );
 			$row['is_active'] = 1;
 			$wpdb->insert( $table, $row );
 			$item_id = (int) $wpdb->insert_id;

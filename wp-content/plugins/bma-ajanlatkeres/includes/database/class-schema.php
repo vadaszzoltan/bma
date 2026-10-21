@@ -10,6 +10,11 @@ defined( 'ABSPATH' ) || exit;
 final class BMA_AJ_Schema {
 
 	/**
+	 * Bump when maybe_upgrade() gains a step; skips the column checks on every other request.
+	 */
+	public const DB_VERSION = '2';
+
+	/**
 	 * Create custom database tables.
 	 */
 	public static function create_tables(): void {
@@ -27,6 +32,8 @@ final class BMA_AJ_Schema {
 				slug varchar(255) NOT NULL,
 				short_description text,
 				choose_if text,
+				item_type varchar(20) NOT NULL DEFAULT 'item',
+				auto_rule text,
 				is_active tinyint(1) NOT NULL DEFAULT 1,
 				is_required tinyint(1) NOT NULL DEFAULT 0,
 				sort_order int NOT NULL DEFAULT 0,
@@ -56,6 +63,8 @@ final class BMA_AJ_Schema {
 				is_required tinyint(1) NOT NULL DEFAULT 0,
 				validation_rules longtext,
 				options longtext,
+				placement varchar(20) NOT NULL DEFAULT 'item',
+				conditions text,
 				sort_order int NOT NULL DEFAULT 0,
 				is_active tinyint(1) NOT NULL DEFAULT 1,
 				created_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -99,6 +108,11 @@ final class BMA_AJ_Schema {
 				tax_number varchar(50) DEFAULT '',
 				billing_address text,
 				client_note text,
+				shared_field_values longtext,
+				flow_version tinyint unsigned NOT NULL DEFAULT 1,
+				client_type varchar(30) NOT NULL DEFAULT '',
+				design_phase varchar(30) NOT NULL DEFAULT '',
+				addons longtext,
 				status_id bigint(20) unsigned NOT NULL,
 				admin_note text,
 				privacy_accepted tinyint(1) NOT NULL DEFAULT 0,
@@ -116,6 +130,7 @@ final class BMA_AJ_Schema {
 				service_id bigint(20) unsigned NOT NULL,
 				service_name varchar(255) NOT NULL,
 				selected_items longtext,
+				item_phases longtext,
 				field_values longtext,
 				sort_order int NOT NULL DEFAULT 0,
 				PRIMARY KEY (id),
@@ -200,6 +215,7 @@ final class BMA_AJ_Schema {
 			dbDelta( $sql );
 		}
 
+		delete_option( 'bma_aj_db_version' );
 		self::maybe_upgrade();
 	}
 
@@ -207,6 +223,10 @@ final class BMA_AJ_Schema {
 	 * Add columns introduced after initial release.
 	 */
 	public static function maybe_upgrade(): void {
+		if ( get_option( 'bma_aj_db_version' ) === self::DB_VERSION ) {
+			return;
+		}
+
 		global $wpdb;
 
 		$requests = $wpdb->prefix . 'bma_quote_requests';
@@ -217,6 +237,25 @@ final class BMA_AJ_Schema {
 		$req_cols = wp_list_pluck( $wpdb->get_results( "SHOW COLUMNS FROM {$requests}" ), 'Field' );
 		if ( ! in_array( 'shared_field_values', $req_cols, true ) ) {
 			$wpdb->query( "ALTER TABLE {$requests} ADD COLUMN shared_field_values longtext NULL AFTER client_note" );
+		}
+
+		$req_additions = array(
+			'flow_version' => 'tinyint unsigned NOT NULL DEFAULT 1',
+			'client_type'  => "varchar(30) NOT NULL DEFAULT ''",
+			'design_phase' => "varchar(30) NOT NULL DEFAULT ''",
+			'addons'       => 'longtext NULL',
+		);
+		foreach ( $req_additions as $col => $def ) {
+			if ( ! in_array( $col, $req_cols, true ) ) {
+				$wpdb->query( "ALTER TABLE {$requests} ADD COLUMN {$col} {$def}" );
+			}
+		}
+
+		$req_services = $wpdb->prefix . 'bma_quote_request_services';
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+		$rs_cols = wp_list_pluck( $wpdb->get_results( "SHOW COLUMNS FROM {$req_services}" ), 'Field' );
+		if ( $rs_cols && ! in_array( 'item_phases', $rs_cols, true ) ) {
+			$wpdb->query( "ALTER TABLE {$req_services} ADD COLUMN item_phases longtext NULL AFTER selected_items" );
 		}
 
 		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
@@ -238,9 +277,27 @@ final class BMA_AJ_Schema {
 		if ( ! in_array( 'choose_if', $item_cols, true ) ) {
 			$wpdb->query( "ALTER TABLE {$items} ADD COLUMN choose_if text NULL AFTER short_description" );
 		}
+		if ( $item_cols && ! in_array( 'item_type', $item_cols, true ) ) {
+			$wpdb->query( "ALTER TABLE {$items} ADD COLUMN item_type varchar(20) NOT NULL DEFAULT 'item' AFTER choose_if" );
+		}
+		if ( $item_cols && ! in_array( 'auto_rule', $item_cols, true ) ) {
+			$wpdb->query( "ALTER TABLE {$items} ADD COLUMN auto_rule text NULL AFTER item_type" );
+		}
+
+		$fields = $wpdb->prefix . 'bma_dynamic_fields';
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+		$field_cols = wp_list_pluck( $wpdb->get_results( "SHOW COLUMNS FROM {$fields}" ), 'Field' );
+		if ( $field_cols && ! in_array( 'placement', $field_cols, true ) ) {
+			$wpdb->query( "ALTER TABLE {$fields} ADD COLUMN placement varchar(20) NOT NULL DEFAULT 'item' AFTER options" );
+		}
+		if ( $field_cols && ! in_array( 'conditions', $field_cols, true ) ) {
+			$wpdb->query( "ALTER TABLE {$fields} ADD COLUMN conditions text NULL AFTER placement" );
+		}
 
 		self::ensure_item_service_links();
 		self::ensure_document_item_column();
+
+		update_option( 'bma_aj_db_version', self::DB_VERSION, true );
 	}
 
 	/**

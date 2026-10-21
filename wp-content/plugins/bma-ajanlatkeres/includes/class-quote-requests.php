@@ -83,31 +83,9 @@ final class BMA_AJ_Quote_Requests {
 			return new WP_Error( 'invalid_email', __( 'Érvénytelen e-mail cím.', 'bma-ajanlatkeres' ) );
 		}
 
-		$user_id = get_current_user_id();
-
-		if ( $create_account && ! $user_id ) {
-			$existing = get_user_by( 'email', $email );
-			if ( $existing ) {
-				return new WP_Error( 'email_exists', __( 'Ehhez az e-mail címhez már tartozik fiók. Kérjük, jelentkezzen be.', 'bma-ajanlatkeres' ) );
-			}
-
-			$password = wp_generate_password( 12, true );
-			$user_id  = wp_create_user( $email, $password, $email );
-
-			if ( is_wp_error( $user_id ) ) {
-				return $user_id;
-			}
-
-			wp_update_user(
-				array(
-					'ID'           => $user_id,
-					'display_name' => sanitize_text_field( $contact['name'] ?? '' ),
-					'role'         => BMA_AJ_Roles::ROLE_CLIENT,
-				)
-			);
-
-			wp_new_user_notification( $user_id, null, 'both' );
-			BMA_AJ_Analytics::track_event( 'account_created' );
+		$user_id = self::ensure_account( $contact, $create_account );
+		if ( is_wp_error( $user_id ) ) {
+			return $user_id;
 		}
 
 		$requests_table = $wpdb->prefix . 'bma_quote_requests';
@@ -337,6 +315,100 @@ final class BMA_AJ_Quote_Requests {
 	}
 
 	/**
+	 * Current user, or a new client account when requested.
+	 *
+	 * @param array<string, mixed> $contact        Contact data (email, name).
+	 * @param bool                 $create_account Create account for guests.
+	 * @return int|WP_Error User ID (0 = guest).
+	 */
+	public static function ensure_account( array $contact, bool $create_account ) {
+		$user_id = get_current_user_id();
+		if ( ! $create_account || $user_id ) {
+			return $user_id;
+		}
+
+		$email = sanitize_email( $contact['email'] ?? '' );
+		if ( get_user_by( 'email', $email ) ) {
+			return new WP_Error( 'email_exists', __( 'Ehhez az e-mail címhez már tartozik fiók. Kérjük, jelentkezzen be.', 'bma-ajanlatkeres' ) );
+		}
+
+		$user_id = wp_create_user( $email, wp_generate_password( 12, true ), $email );
+		if ( is_wp_error( $user_id ) ) {
+			return $user_id;
+		}
+
+		wp_update_user(
+			array(
+				'ID'           => $user_id,
+				'display_name' => sanitize_text_field( $contact['name'] ?? '' ),
+				'role'         => BMA_AJ_Roles::ROLE_CLIENT,
+			)
+		);
+
+		wp_new_user_notification( $user_id, null, 'both' );
+		BMA_AJ_Analytics::track_event( 'account_created' );
+
+		return (int) $user_id;
+	}
+
+	/**
+	 * Status history, emails, analytics after a request was stored.
+	 *
+	 * @param int    $request_id Request ID.
+	 * @param int    $user_id    User ID.
+	 * @param string $number     Request number.
+	 */
+	public static function after_submit( int $request_id, int $user_id, string $number ): void {
+		$request = self::get( $request_id );
+		BMA_AJ_Statuses::change_status( $request_id, (int) $request->status_id, __( 'Ajánlatkérés beküldve.', 'bma-ajanlatkeres' ) );
+
+		BMA_AJ_Email_Templates::send( 'request_confirmation', $request_id );
+		BMA_AJ_Email_Templates::send( 'request_admin_notify', $request_id );
+
+		BMA_AJ_Analytics::track_event( 'quote_request_submitted', array( 'request_id' => $request_id ) );
+		BMA_AJ_Security::log( 'quote_submitted', $user_id, 'Request: ' . $number );
+	}
+
+	/**
+	 * Check the one-time submit token.
+	 *
+	 * @param string $token Posted token.
+	 * @return string|WP_Error Transient key to delete after success.
+	 */
+	public static function check_submit_token( string $token ) {
+		$token = sanitize_text_field( $token );
+		if ( '' === $token ) {
+			return new WP_Error( 'token', __( 'Érvénytelen beküldés. Frissítse az oldalt, és próbálja újra.', 'bma-ajanlatkeres' ) );
+		}
+		$key = 'bma_submit_tok_' . $token;
+		if ( ! get_transient( $key ) ) {
+			return new WP_Error( 'token_used', __( 'Ez az ajánlatkérés már be lett küldve. Frissítse az oldalt.', 'bma-ajanlatkeres' ) );
+		}
+		return $key;
+	}
+
+	/**
+	 * Confirmation page URL (PRG target) for a request number.
+	 *
+	 * @param string $number Request number.
+	 */
+	public static function confirmation_url( string $number ): string {
+		$confirm_token = wp_generate_password( 20, false );
+		set_transient( 'bma_quote_done_' . $confirm_token, $number, DAY_IN_SECONDS );
+
+		$form_url = function_exists( 'bma_page_url' ) ? bma_page_url( 'ajanlatkeres' ) : BMA_AJ_I18n::page_url( 'ajanlatkeres' );
+
+		return add_query_arg(
+			array(
+				'submitted' => '1',
+				'number'    => $number,
+				't'         => $confirm_token,
+			),
+			$form_url
+		);
+	}
+
+	/**
 	 * Create a one-time submit token for the quote form.
 	 */
 	public static function create_submit_token(): string {
@@ -393,10 +465,11 @@ final class BMA_AJ_Quote_Requests {
 	/**
 	 * Labeled rows for client contact + shared dynamic fields (admin / emails).
 	 *
-	 * @param object $request Request row.
+	 * @param object $request     Request row.
+	 * @param bool   $with_fields Append shared dynamic fields (v2 shows them in the summary).
 	 * @return array<int, array{label:string,value:string}>
 	 */
-	public static function get_client_data_rows( object $request ): array {
+	public static function get_client_data_rows( object $request, bool $with_fields = true ): array {
 		$rows = array(
 			array(
 				'label' => __( 'Név', 'bma-ajanlatkeres' ),
@@ -428,7 +501,7 @@ final class BMA_AJ_Quote_Requests {
 			),
 		);
 
-		foreach ( self::get_shared_fields( $request ) as $key => $val ) {
+		foreach ( $with_fields ? self::get_shared_fields( $request ) : array() as $key => $val ) {
 			$formatted = self::format_field_value( $val );
 			if ( '' === trim( $formatted ) ) {
 				continue;

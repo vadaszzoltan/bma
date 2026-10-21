@@ -32,6 +32,9 @@ final class BMA_AJ_Seeder {
 		self::seed_settings();
 		self::seed_page_content();
 		BMA_AJ_Media_Seeder::run();
+		BMA_AJ_Catalog::sync();
+		update_option( BMA_AJ_Catalog::OPTION, BMA_AJ_Catalog::VERSION );
+		self::sync_references_content();
 
 		update_option( 'bma_aj_seeded', 1 );
 	}
@@ -444,7 +447,7 @@ final class BMA_AJ_Seeder {
 				'project_type'        => 'Ipari beruházás',
 				'location'            => 'Románia',
 				'year'                => '2024',
-				'services'            => array( 'kozmu-koordinacio', 'tervezes' ),
+				'services'            => array( 'bekotesek', 'kozmuhalozatok' ),
 				'project_description' => "Egy ipari csarnok kialakításához több közműcsatlakozással kapcsolatos feladatot kellett párhuzamosan kezelni. A projekt során össze kellett hangolni a beruházás műszaki igényeit, a rendelkezésre álló dokumentációt és az egyes közműszolgáltatók által kért információkat.\n\nA feladat egyik fontos része az volt, hogy a különálló víz-, gáz- és villamosenergia-csatlakozási folyamatok ne egymástól függetlenül haladjanak, hanem a teljes beruházás igényeihez igazodjanak.",
 				'task'                => "A közműcsatlakozások előkészítése során meg kellett határozni a szükséges igényeket, össze kellett gyűjteni a rendelkezésre álló műszaki információkat, és elő kellett készíteni a szolgáltatói egyeztetésekhez szükséges dokumentációkat.\n\nA különböző közművek eltérő műszaki és adminisztratív követelményei miatt fontos volt a folyamatok összehangolása és a nyitott kérdések folyamatos követése.",
 				'work_done'           => "a közműigények és rendelkezésre álló műszaki adatok áttekintése\na szükséges csatlakozások meghatározása\na szolgáltatói egyeztetések előkészítése\nvíz- és szennyvízcsatlakozással kapcsolatos egyeztetések\nvillamosenergia-ellátással kapcsolatos egyeztetések\nkapcsolódó műszaki dokumentációk kezelése\na folyamat során felmerülő további adatigények koordinációja",
@@ -461,7 +464,7 @@ final class BMA_AJ_Seeder {
 				'project_type'        => 'Új építés',
 				'location'            => 'Románia',
 				'year'                => '2023',
-				'services'            => array( 'engedelyeztetes', 'tervezes', 'muszaki-dokumentacio' ),
+				'services'            => array( 'epuletgepeszet', 'bekotesek' ),
 				'project_description' => "Egy új lakóépület megvalósításához az építési munkák megkezdése előtt össze kellett állítani az engedélyezési folyamathoz szükséges dokumentációt.\n\nA projekt több egymásra épülő tervezési és adminisztratív feladatot tartalmazott, ezért fontos volt, hogy a szükséges dokumentumok, műszaki tervek és egyeztetések megfelelő sorrendben készüljenek el.",
 				'task'                => "A rendelkezésre álló projektadatok és dokumentumok alapján meg kellett határozni az engedélyezési folyamathoz szükséges további anyagokat, majd össze kellett állítani a benyújtáshoz szükséges dokumentációt.\n\nA folyamat során kezelni kellett a kapcsolódó egyeztetéseket és az esetlegesen felmerülő további dokumentációs igényeket is.",
 				'work_done'           => "a rendelkezésre álló projektanyagok áttekintése\naz engedélyezéshez szükséges dokumentumok meghatározása\nkapcsolódó műszaki dokumentációk előkészítése\naz engedélyezési dokumentáció összeállítása\na benyújtás előkészítése\nkapcsolódó egyeztetések támogatása\naz eljárás során felmerülő további dokumentációs igények kezelése",
@@ -478,7 +481,7 @@ final class BMA_AJ_Seeder {
 				'project_type'        => 'Felújítás',
 				'location'            => 'Románia',
 				'year'                => '2024',
-				'services'            => array( 'muszaki-dokumentacio' ),
+				'services'            => array( 'epuletgepeszet', 'tuzvedelem' ),
 				'project_description' => "Egy meglévő irodaház felújításához a kivitelezési munkákhoz és a projekt lezárásához kapcsolódó műszaki dokumentációkat kellett egységes rendszerbe szervezni.\n\nA felújítás több különböző munkaterületet érintett, ezért fontos volt, hogy az elkészült műszaki anyagok követhető és egyértelmű formában dokumentálják az elvégzett munkákat.",
 				'task'                => "A rendelkezésre álló műszaki információkat és dokumentumokat át kellett tekinteni, azonosítani kellett a hiányzó vagy kiegészítendő részeket, majd össze kellett állítani a szükséges műszaki és átadási dokumentációt.\n\nA cél egy olyan rendezett dokumentációs csomag kialakítása volt, amely a projekt lezárásakor is egyértelműen használható.",
 				'work_done'           => "a rendelkezésre álló dokumentáció áttekintése\na szükséges műszaki anyagok meghatározása\nműszaki leírások összeállítása\na projekt során keletkezett dokumentumok rendszerezése\nátadási dokumentáció előkészítése\nátadás-átvételhez kapcsolódó dokumentumok összeállítása",
@@ -495,7 +498,7 @@ final class BMA_AJ_Seeder {
 				'project_type'        => 'Bővítés',
 				'location'            => 'Románia',
 				'year'                => '2023',
-				'services'            => array( 'tervezes', 'engedelyeztetes' ),
+				'services'            => array( 'epuletgepeszet', 'bekotesek' ),
 				'project_description' => "Egy meglévő családi ház bővítése miatt a korábbi közműrendszereket és az ingatlan megváltozott igényeit is figyelembe kellett venni.\n\nA bővítés érintette a víz-, gáz- és szennyvízhálózat kialakítását, ezért a kapcsolódó terveket egymással és az épület módosított műszaki kialakításával összhangban kellett elkészíteni.",
 				'task'                => "Fel kellett mérni, hogyan változnak az ingatlan közműigényei a bővítés következtében, és ezek alapján el kellett készíteni a szükséges közműterveket.\n\nA tervezési feladat mellett figyelembe kellett venni a kapcsolódó engedélyezési követelményeket és a rendelkezésre álló meglévő dokumentációt is.",
 				'work_done'           => "a meglévő műszaki dokumentáció áttekintése\na bővítéshez kapcsolódó közműigények meghatározása\nvízbekötési és vízhálózati tervezés\ngázellátáshoz kapcsolódó tervezés\nszennyvízelvezetés tervezése\nkapcsolódó dokumentációk összeállítása\nengedélyezési folyamat támogatása",

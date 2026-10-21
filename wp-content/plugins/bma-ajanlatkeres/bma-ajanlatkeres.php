@@ -3,7 +3,7 @@
  * Plugin Name:       BMA Ajánlatkérés
  * Plugin URI:        https://bma-engineering.hu
  * Description:       Ajánlatkérési rendszer, ügyfélportál, dokumentum- és státuszkezelés a BMA Engineering weboldalhoz.
- * Version:           1.13.0
+ * Version:           2.0.0
  * Requires at least: 6.4
  * Requires PHP:      8.1
  * Author:            BMA Engineering
@@ -15,7 +15,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'BMA_AJ_VERSION', '1.13.1' );
+define( 'BMA_AJ_VERSION', '2.0.0' );
 define( 'BMA_AJ_PLUGIN_FILE', __FILE__ );
 define( 'BMA_AJ_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BMA_AJ_PLUGIN_URL', plugin_dir_url( __FILE__ ) );

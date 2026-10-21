@@ -43,6 +43,7 @@ final class BMA_AJ_Plugin {
 		BMA_AJ_Documents::init();
 		BMA_AJ_Cart::init();
 		BMA_AJ_Quote_Requests::init();
+		BMA_AJ_Quote_Flow::init();
 		BMA_AJ_Quotes::init();
 		BMA_AJ_Payments::init();
 		BMA_AJ_Security::init();
@@ -76,6 +77,7 @@ final class BMA_AJ_Plugin {
 		}
 		BMA_AJ_Seeder::sync_legal_page_content();
 		BMA_AJ_Seeder::sync_service_selection_content();
+		BMA_AJ_Catalog::maybe_sync();
 		BMA_AJ_Seeder::sync_references_content();
 		update_option( 'bma_aj_content_version', BMA_AJ_VERSION );
 	}
@@ -129,6 +131,12 @@ final class BMA_AJ_Plugin {
 				BMA_AJ_VERSION,
 				true
 			);
+		}
+
+		// Quote request v2 wizard: only on the quote page.
+		if ( class_exists( 'BMA_AJ_I18n' ) && BMA_AJ_I18n::is_page( 'ajanlatkeres' ) ) {
+			wp_enqueue_style( 'bma-aj-wizard', BMA_AJ_PLUGIN_URL . 'assets/css/quote-wizard.css', array( 'bma-aj-public' ), BMA_AJ_VERSION );
+			wp_enqueue_script( 'bma-aj-wizard', BMA_AJ_PLUGIN_URL . 'assets/js/quote-wizard.js', array( 'bma-aj-public' ), BMA_AJ_VERSION, true );
 		}
 
 		$cart_url     = class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'ajanlatkosar' ) : home_url( '/ajanlatkosar/' );

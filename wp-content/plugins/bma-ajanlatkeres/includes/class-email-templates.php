@@ -104,7 +104,7 @@ final class BMA_AJ_Email_Templates {
 			return false;
 		}
 
-		$data = self::build_replacements( $request_id, $extra );
+		$data = self::build_replacements( $request_id, $extra, $slug );
 
 		$subject = self::replace( $template->subject, $data );
 		$body    = self::replace( $template->body, $data );
@@ -128,9 +128,10 @@ final class BMA_AJ_Email_Templates {
 	 *
 	 * @param int      $request_id Request ID.
 	 * @param string[] $extra      Extra tokens.
+	 * @param string   $slug       Template slug.
 	 * @return array<string, string>
 	 */
-	private static function build_replacements( int $request_id, array $extra = array() ): array {
+	private static function build_replacements( int $request_id, array $extra = array(), string $slug = '' ): array {
 		$request  = BMA_AJ_Quote_Requests::get( $request_id );
 		$services = BMA_AJ_Quote_Requests::get_services( $request_id );
 		$status   = $request ? BMA_AJ_Statuses::get( (int) $request->status_id ) : null;
@@ -148,13 +149,26 @@ final class BMA_AJ_Email_Templates {
 			}
 		}
 
+		// v2 requests: {services} expands to the full summary (phase, items, add-ons, project data).
+		$services_text = implode( ', ', $service_names );
+		$summary_text  = '';
+		if ( $request && (int) ( $request->flow_version ?? 1 ) >= BMA_AJ_Quote_Flow::FLOW_VERSION ) {
+			$summary_text  = BMA_AJ_Quote_Flow::summary_text( $request, 'request_admin_notify' === $slug );
+			$services_text = "\n" . $summary_text;
+			$field_lines   = array();
+			foreach ( BMA_AJ_Quote_Requests::get_client_data_rows( $request, false ) as $row ) {
+				$field_lines[] = $row['label'] . ': ' . $row['value'];
+			}
+		}
+
 		$data = array(
 			'{request_number}'    => $request->request_number ?? '',
 			'{client_name}'       => $request->client_name ?? '',
 			'{client_email}'      => $request->client_email ?? '',
 			'{client_phone}'      => $request->client_phone ?? '',
 			'{client_data}'       => implode( "\n", $field_lines ),
-			'{services}'          => implode( ', ', $service_names ),
+			'{services}'          => $services_text,
+			'{summary}'           => $summary_text,
 			'{status}'            => $status->name ?? '',
 			'{portal_link}'       => home_url( '/ugyfelportal/?request=' . $request_id ),
 			'{admin_link}'        => admin_url( 'admin.php?page=bma-requests&action=view&id=' . $request_id ),
