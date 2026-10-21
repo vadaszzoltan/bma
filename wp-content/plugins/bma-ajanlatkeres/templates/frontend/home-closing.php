@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$svc_url = function_exists( 'bma_page_url' ) ? bma_page_url( 'szolgaltatasok' ) : home_url( '/' );
+$quote_url = BMA_AJ_I18n::page_url( 'ajanlatkeres' );
 $con_url = function_exists( 'bma_page_url' ) ? bma_page_url( 'kapcsolat' ) : home_url( '/' );
 ?>
 <section class="closing" aria-labelledby="bma-closing-title">
@@ -20,7 +20,7 @@ $con_url = function_exists( 'bma_page_url' ) ? bma_page_url( 'kapcsolat' ) : hom
 			</p>
 		</div>
 		<div class="closing-actions">
-			<a href="<?php echo esc_url( $svc_url ); ?>" class="btn btn--primary"><?php BMA_AJ_Content::e( 'home.closing.cta_primary' ); ?></a>
+			<a href="<?php echo esc_url( $quote_url ); ?>" class="btn btn--primary"><?php BMA_AJ_Content::e( 'home.closing.cta_primary' ); ?></a>
 			<a href="<?php echo esc_url( $con_url ); ?>" class="btn btn--ghost-light"><?php BMA_AJ_Content::e( 'home.closing.cta_secondary' ); ?></a>
 			<span class="tiny" style="color:#8fa2c4;text-align:center">
 				<?php BMA_AJ_Content::e( 'home.closing.tip' ); ?>

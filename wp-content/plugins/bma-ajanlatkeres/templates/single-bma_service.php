@@ -17,15 +17,11 @@ while ( have_posts() ) :
 	$items        = BMA_AJ_Dynamic_Fields::get_service_items( $service_id );
 	$item_count   = count( $items );
 	$short_desc   = get_post_meta( $service_id, '_bma_short_description', true ) ?: get_the_excerpt();
-	$cart_sel     = BMA_AJ_Cart::get_selection_map();
-	$sel          = $cart_sel[ (string) $service_id ] ?? array();
-	// Also resolve via source ID aliases.
-	if ( empty( $sel ) && class_exists( 'BMA_AJ_I18n' ) ) {
-		$src = BMA_AJ_I18n::source_post_id( $service_id );
-		if ( $src && isset( $cart_sel[ (string) $src ] ) ) {
-			$sel = $cart_sel[ (string) $src ];
-		}
-	}
+	$source_id    = BMA_AJ_I18n::source_post_id( $service_id );
+	$has_phase    = '1' !== get_post_meta( $source_id, '_bma_no_design_phase', true );
+	$quote_url    = BMA_AJ_I18n::page_url( 'ajanlatkeres' );
+	$addons       = BMA_AJ_Quote_Flow::topical_addons( $service_id );
+	$related      = BMA_AJ_Service_CPT::get_related_services( $service_id );
 
 	$home_url     = function_exists( 'bma_page_url' ) ? bma_page_url( 'fooldal' ) : home_url( '/' );
 	$services_url = function_exists( 'bma_page_url' ) ? bma_page_url( 'szolgaltatasok' ) : home_url( '/' );
@@ -45,12 +41,7 @@ while ( have_posts() ) :
 
 	$check_svg = '<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"></path></svg>';
 	?>
-	<article
-		<?php post_class( 'bma-single-service bma-selection-page' ); ?>
-		data-bma-selection-root
-		data-selection-mode="detail"
-		data-service-id="<?php echo esc_attr( (string) $service_id ); ?>"
-	>
+	<article <?php post_class( 'bma-single-service' ); ?>>
 		<section class="pagehead">
 			<div class="pagehead-inner pagehead-inner--split">
 				<div>
@@ -66,16 +57,8 @@ while ( have_posts() ) :
 						<p class="pagehead-lead"><?php echo esc_html( $short_desc ); ?></p>
 					<?php endif; ?>
 					<div class="btnrow" style="display:flex;gap:14px;margin-top:30px;flex-wrap:wrap">
-						<a href="#bma-service-items" class="btn btn--primary">
-							<?php
-							echo esc_html(
-								sprintf(
-									/* translators: %s: service title */
-									__( '%s hozzáadása az ajánlathoz', 'bma-ajanlatkeres' ),
-									$service_name
-								)
-							);
-							?>
+						<a href="<?php echo esc_url( add_query_arg( 'service', $service_id, $quote_url ) ); ?>" class="btn btn--primary">
+							<?php esc_html_e( 'Ajánlatkérés indítása ezzel a szolgáltatással', 'bma-ajanlatkeres' ); ?>
 						</a>
 						<a href="<?php echo esc_url( $contact_url ); ?>" class="btn btn--ghost-light"><?php esc_html_e( 'Kapcsolat', 'bma-ajanlatkeres' ); ?></a>
 					</div>
@@ -113,27 +96,13 @@ while ( have_posts() ) :
 					<p class="lead" style="margin-bottom:32px">
 						<?php esc_html_e( 'Válassza ki azokat a tételeket, amelyekre a projektjéhez szüksége van. Bármelyik kombinálható a többi szolgáltatási területtel.', 'bma-ajanlatkeres' ); ?>
 					</p>
+					<form method="get" action="<?php echo esc_url( $quote_url ); ?>" class="bma-detail-select">
+					<input type="hidden" name="service" value="<?php echo esc_attr( (string) $service_id ); ?>">
 					<div class="tasklist">
 						<?php foreach ( $items as $item ) : ?>
-							<?php
-							$checked = in_array( (int) $item->id, array_map( 'intval', $sel ), true );
-							$choose  = isset( $item->choose_if ) ? (string) $item->choose_if : '';
-							?>
-							<div
-								class="taskcard<?php echo $checked ? ' is-sel' : ''; ?>"
-								data-item-id="<?php echo esc_attr( (string) $item->id ); ?>"
-								data-item-name="<?php echo esc_attr( $item->name ); ?>"
-								data-service-id="<?php echo esc_attr( (string) $service_id ); ?>"
-								data-service-name="<?php echo esc_attr( $service_name ); ?>"
-							>
-								<input
-									type="checkbox"
-									class="visually-hidden bma-item-checkbox"
-									name="selections[<?php echo esc_attr( (string) $service_id ); ?>][]"
-									value="<?php echo esc_attr( (string) $item->id ); ?>"
-									<?php checked( $checked ); ?>
-									data-service-id="<?php echo esc_attr( (string) $service_id ); ?>"
-								>
+							<?php $choose = isset( $item->choose_if ) ? (string) $item->choose_if : ''; ?>
+							<label class="taskcard">
+								<input type="checkbox" class="visually-hidden" name="items[]" value="<?php echo esc_attr( (string) $item->id ); ?>">
 								<h3><?php echo esc_html( $item->name ); ?></h3>
 								<?php if ( ! empty( $item->short_description ) ) : ?>
 									<p><?php echo esc_html( $item->short_description ); ?></p>
@@ -145,15 +114,28 @@ while ( have_posts() ) :
 									</div>
 								<?php endif; ?>
 								<div class="taskcard-foot">
-									<span class="small muted"></span>
-									<a
-										href="<?php echo esc_url( $services_url ); ?>"
-										class="btn btn--outline btn--sm"
-										data-bma-item-toggle
-									><?php echo esc_html( $checked ? __( 'Hozzáadva', 'bma-ajanlatkeres' ) : __( 'Hozzáadás', 'bma-ajanlatkeres' ) ); ?></a>
+									<span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"></path></svg></span>
+									<span class="small muted"><?php esc_html_e( 'Kijelölés', 'bma-ajanlatkeres' ); ?></span>
 								</div>
-							</div>
+							</label>
 						<?php endforeach; ?>
+					</div>
+					<p class="small muted" style="margin:18px 0">
+						<?php
+						echo esc_html(
+							$has_phase
+								? __( 'Minden elem kérhető engedélyes és kivitelezési tervként is.', 'bma-ajanlatkeres' )
+								: __( 'A bekötési tervek egyetlen fázisban készülnek.', 'bma-ajanlatkeres' )
+						);
+						?>
+					</p>
+					<button type="submit" class="btn btn--primary"><?php esc_html_e( 'Ajánlatkérés indítása ezzel a szolgáltatással', 'bma-ajanlatkeres' ); ?></button>
+					</form>
+					<script>
+					document.querySelectorAll('.bma-detail-select .taskcard input').forEach(function (i) {
+						i.addEventListener('change', function () { i.closest('.taskcard').classList.toggle('is-sel', i.checked); });
+					});
+					</script>
 					</div>
 				</div>
 			</section>
@@ -203,6 +185,24 @@ while ( have_posts() ) :
 			</section>
 		<?php endif; ?>
 
+		<?php if ( $addons ) : ?>
+			<section class="bma-section" aria-labelledby="bma-addons-title">
+				<div class="bma-container">
+					<p class="eyebrow"><?php esc_html_e( 'Kiegészítők', 'bma-ajanlatkeres' ); ?></p>
+					<h2 class="h2" id="bma-addons-title" style="margin-bottom:14px"><?php esc_html_e( 'Ezeket is intézzük', 'bma-ajanlatkeres' ); ?></h2>
+					<p class="lead" style="margin-bottom:28px"><?php esc_html_e( 'Amit nem tud csatolni, azt beszerezzük. A beszerzés költsége és ideje az ajánlatban külön tételként szerepel.', 'bma-ajanlatkeres' ); ?></p>
+					<div class="need">
+						<?php foreach ( $addons as $addon ) : ?>
+							<div class="need-card">
+								<h3><?php echo esc_html( $addon->name ); ?></h3>
+								<p class="small muted" style="margin:0"><?php echo esc_html( $addon->short_description ); ?></p>
+							</div>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			</section>
+		<?php endif; ?>
+
 		<section class="bma-section" aria-labelledby="bma-how-title">
 			<div class="bma-container">
 				<p class="eyebrow"><?php esc_html_e( 'Folyamat', 'bma-ajanlatkeres' ); ?></p>
@@ -232,6 +232,24 @@ while ( have_posts() ) :
 			</div>
 		</section>
 
+		<?php if ( $related ) : ?>
+			<section class="bma-section bma-section--bg" aria-labelledby="bma-related-title">
+				<div class="bma-container">
+					<p class="eyebrow"><?php esc_html_e( 'Kapcsolódó', 'bma-ajanlatkeres' ); ?></p>
+					<h2 class="h2" id="bma-related-title" style="margin-bottom:26px"><?php esc_html_e( 'Egyéb szolgáltatások', 'bma-ajanlatkeres' ); ?></h2>
+					<div class="svc-grid">
+						<?php foreach ( $related as $rel ) : ?>
+							<a class="svc-card" href="<?php echo esc_url( function_exists( 'bma_post_url' ) ? bma_post_url( (int) $rel->ID ) : get_permalink( $rel ) ); ?>">
+								<h3><?php echo esc_html( get_the_title( $rel ) ); ?></h3>
+								<p><?php echo esc_html( get_post_meta( $rel->ID, '_bma_short_description', true ) ?: $rel->post_excerpt ); ?></p>
+								<span class="svc-foot"><?php esc_html_e( 'Részletek →', 'bma-ajanlatkeres' ); ?></span>
+							</a>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			</section>
+		<?php endif; ?>
+
 		<?php if ( $faq_pairs ) : ?>
 			<section class="bma-section bma-section--bg" aria-labelledby="bma-faq-title">
 				<div class="bma-container" style="max-width:900px">
@@ -258,16 +276,16 @@ while ( have_posts() ) :
 						echo esc_html(
 							sprintf(
 								/* translators: %s: service title */
-								__( 'Adja hozzá a(z) %s az ajánlatkéréséhez', 'bma-ajanlatkeres' ),
+								__( 'Kérjen ajánlatot: %s', 'bma-ajanlatkeres' ),
 								$service_name
 							)
 						);
 						?>
 					</h2>
-					<p><?php esc_html_e( 'Válassza ki a szükséges részfeladatokat, és néhány adat megadásával kérjen ajánlatot. Az ajánlatkérés díjmentes és nem jár kötelezettséggel.', 'bma-ajanlatkeres' ); ?></p>
+					<p><?php esc_html_e( 'Adja meg a projekt alapadatait, válassza ki a szükséges terveket, és töltse fel, ami megvan. Az ajánlatkérés díjmentes és nem jár kötelezettséggel.', 'bma-ajanlatkeres' ); ?></p>
 				</div>
 				<div class="closing-actions">
-					<a href="#bma-service-items" class="btn btn--primary"><?php esc_html_e( 'Ajánlatkérés indítása', 'bma-ajanlatkeres' ); ?></a>
+					<a href="<?php echo esc_url( add_query_arg( 'service', $service_id, $quote_url ) ); ?>" class="btn btn--primary"><?php esc_html_e( 'Ajánlatkérés indítása', 'bma-ajanlatkeres' ); ?></a>
 					<a href="<?php echo esc_url( $services_url ); ?>" class="btn btn--ghost-light"><?php esc_html_e( 'Összes szolgáltatás', 'bma-ajanlatkeres' ); ?></a>
 				</div>
 			</div>

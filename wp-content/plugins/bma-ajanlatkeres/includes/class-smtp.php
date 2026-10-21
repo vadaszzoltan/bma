@@ -14,6 +14,14 @@ final class BMA_AJ_SMTP {
 	 */
 	public static function init(): void {
 		add_action( 'phpmailer_init', array( self::class, 'configure' ) );
+		// wp_mail() validates the sender before phpmailer_init, and its default
+		// (wordpress@<host>) is invalid on hosts without a dot, such as localhost.
+		add_filter(
+			'wp_mail_from',
+			static function ( string $from ): string {
+				return is_email( $from ) ? $from : (string) get_option( 'bma_smtp_from', 'noreply@bma-engineering.hu' );
+			}
+		);
 	}
 
 	/**
@@ -33,7 +41,10 @@ final class BMA_AJ_SMTP {
 		$phpmailer->SMTPAuth   = (bool) get_option( 'bma_smtp_auth', false );
 		$phpmailer->Username   = get_option( 'bma_smtp_user', defined( 'BMA_SMTP_USER' ) ? BMA_SMTP_USER : '' );
 		$phpmailer->Password   = get_option( 'bma_smtp_password', defined( 'BMA_SMTP_PASSWORD' ) ? BMA_SMTP_PASSWORD : '' );
-		$phpmailer->SMTPSecure = $phpmailer->Port === 465 ? 'ssl' : 'tls';
+		// Plain SMTP on other ports (e.g. a local MailHog on 1025).
+		$secure                = array( 465 => 'ssl', 587 => 'tls' );
+		$phpmailer->SMTPSecure = $secure[ $phpmailer->Port ] ?? '';
+		$phpmailer->SMTPAutoTLS = '' !== $phpmailer->SMTPSecure;
 
 		$from     = get_option( 'bma_smtp_from', 'noreply@bma-engineering.hu' );
 		$from_name = get_option( 'bma_smtp_from_name', 'BMA Engineering' );

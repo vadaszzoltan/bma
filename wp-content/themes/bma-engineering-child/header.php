@@ -78,28 +78,22 @@ if ( class_exists( 'BMA_AJ_I18n' ) ) {
 
 		<div class="header-actions bma-header-actions">
 			<?php
-			$cart_count = class_exists( 'BMA_AJ_Cart' ) ? (int) BMA_AJ_Cart::item_count() : 0;
 			if ( function_exists( 'bma_page_url' ) ) {
-				$quote_url  = $cart_count > 0 ? bma_page_url( 'ajanlatkosar' ) : bma_page_url( 'szolgaltatasok' );
+				$quote_url  = bma_page_url( 'ajanlatkeres' );
 				$portal_url = bma_page_url( 'ugyfelportal' );
 				$login_url  = bma_page_url( 'belepes' );
 			} elseif ( class_exists( 'BMA_AJ_I18n' ) ) {
-				$quote_url  = $cart_count > 0 ? BMA_AJ_I18n::page_url( 'ajanlatkosar' ) : BMA_AJ_I18n::page_url( 'szolgaltatasok' );
+				$quote_url  = BMA_AJ_I18n::page_url( 'ajanlatkeres' );
 				$portal_url = BMA_AJ_I18n::page_url( 'ugyfelportal' );
 				$login_url  = BMA_AJ_I18n::page_url( 'belepes' );
 			} else {
-				$quote_url  = $cart_count > 0 ? home_url( '/ajanlatkosar/' ) : home_url( '/szolgaltatasok/' );
+				$quote_url  = home_url( '/ajanlatkeres/' );
 				$portal_url = home_url( '/ugyfelportal/' );
 				$login_url  = home_url( '/belepes/' );
 			}
 			?>
-			<a
-				href="<?php echo esc_url( $quote_url ); ?>"
-				class="cart-btn bma-header-cta"
-				aria-label="<?php echo esc_attr( sprintf( /* translators: %d: cart item count */ __( 'Ajánlat, %d tétel', 'bma-engineering' ), $cart_count ) ); ?>"
-			>
-				<span class="bma-header-cta-label"><?php esc_html_e( 'Ajánlat', 'bma-engineering' ); ?></span>
-				<span class="cart-count bma-header-cart-count" id="bma-header-cart-count" data-count="<?php echo esc_attr( (string) $cart_count ); ?>"><?php echo esc_html( (string) $cart_count ); ?></span>
+			<a href="<?php echo esc_url( $quote_url ); ?>" class="cart-btn bma-header-cta">
+				<span class="bma-header-cta-label"><?php esc_html_e( 'Ajánlatkérés', 'bma-engineering' ); ?></span>
 			</a>
 			<?php if ( is_user_logged_in() ) : ?>
 				<a href="<?php echo esc_url( $portal_url ); ?>" class="bma-header-login"><?php esc_html_e( 'Ügyfélportál', 'bma-engineering' ); ?></a>

@@ -183,6 +183,47 @@ final class BMA_AJ_Quote_Flow {
 		return $out;
 	}
 
+	/**
+	 * Add-ons worth showing on a service page: its permit, then the general
+	 * add-ons whose auto rule depends on a field this service asks for.
+	 *
+	 * @param int $service_id Service post ID (any language).
+	 * @return array<int, object>
+	 */
+	public static function topical_addons( int $service_id ): array {
+		$cat = self::catalog();
+		$sid = BMA_AJ_I18n::source_post_id( $service_id );
+		if ( ! isset( $cat['services'][ $sid ] ) ) {
+			return array();
+		}
+		$svc      = $cat['services'][ $sid ];
+		$item_ids = array_map( static fn( $i ) => (int) $i->id, $svc['items'] );
+
+		$keys = array();
+		foreach ( self::fields() as $placement => $fields ) {
+			foreach ( $fields as $field ) {
+				if ( 'item' !== $placement || array_intersect( $item_ids, array_map( 'intval', (array) $field->item_ids ) ) ) {
+					$keys[] = $field->field_key;
+				}
+			}
+		}
+		if ( $svc['has_phase'] ) {
+			$keys[] = '_phase';
+		}
+
+		$out = $svc['permit'] ? array( $svc['permit'] ) : array();
+		foreach ( $cat['general'] as $id ) {
+			$addon = $cat['addons'][ $id ];
+			foreach ( (array) ( BMA_AJ_Service_Items::auto_rule( $addon )['any'] ?? array() ) as $cond ) {
+				if ( in_array( $cond['field'] ?? '', $keys, true ) ) {
+					$out[] = $addon;
+					break;
+				}
+			}
+		}
+		return $out;
+	}
+
 	/* ------------------------------------------------------------------
 	 * State and rules
 	 * ---------------------------------------------------------------- */

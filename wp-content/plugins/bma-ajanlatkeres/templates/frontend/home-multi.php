@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$svc_url = function_exists( 'bma_page_url' ) ? bma_page_url( 'szolgaltatasok' ) : home_url( '/' );
+$quote_url = BMA_AJ_I18n::page_url( 'ajanlatkeres' );
 $con_url = function_exists( 'bma_page_url' ) ? bma_page_url( 'kapcsolat' ) : home_url( '/' );
 ?>
 <section class="bma-section bma-section--bg bma-home-multi" aria-labelledby="bma-multi-title">
@@ -23,7 +23,7 @@ $con_url = function_exists( 'bma_page_url' ) ? bma_page_url( 'kapcsolat' ) : hom
 					<?php BMA_AJ_Content::e( 'home.multi.body_2' ); ?>
 				</p>
 				<div class="btnrow" style="display:flex;gap:14px;margin-top:28px;flex-wrap:wrap">
-					<a href="<?php echo esc_url( $svc_url ); ?>" class="btn btn--primary"><?php BMA_AJ_Content::e( 'home.multi.cta_primary' ); ?></a>
+					<a href="<?php echo esc_url( $quote_url ); ?>" class="btn btn--primary"><?php BMA_AJ_Content::e( 'home.multi.cta_primary' ); ?></a>
 					<a href="<?php echo esc_url( $con_url ); ?>" class="btn btn--outline"><?php BMA_AJ_Content::e( 'home.multi.cta_secondary' ); ?></a>
 				</div>
 			</div>

@@ -59,6 +59,8 @@ if ( isset( $_POST['bma_item_nonce'] ) && wp_verify_nonce( sanitize_text_field( 
 			'is_active'         => ! empty( $_POST['is_active'] ),
 			'service_ids'       => array_map( 'absint', (array) ( $_POST['service_ids'] ?? array() ) ),
 			'field_ids'         => $field_ids,
+			'item_type'         => sanitize_key( wp_unslash( $_POST['item_type'] ?? 'item' ) ),
+			'auto_rule'         => wp_unslash( $_POST['auto_rule'] ?? '' ), // Validated as JSON in save().
 		)
 	);
 
@@ -110,6 +112,23 @@ $items = BMA_AJ_Service_Items::get_all_admin();
 							<?php endforeach; ?>
 						</fieldset>
 					<?php endif; ?>
+				</td>
+			</tr>
+			<tr>
+				<th><?php esc_html_e( 'Típus', 'bma-ajanlatkeres' ); ?></th>
+				<td>
+					<select name="item_type">
+						<option value="item" <?php selected( $edit_item->item_type ?? 'item', 'item' ); ?>><?php esc_html_e( 'Tervezési elem', 'bma-ajanlatkeres' ); ?></option>
+						<option value="addon" <?php selected( $edit_item->item_type ?? 'item', 'addon' ); ?>><?php esc_html_e( 'Kiegészítő', 'bma-ajanlatkeres' ); ?></option>
+					</select>
+					<p class="description"><?php esc_html_e( 'Kiegészítő szolgáltatás nélkül: általános kiegészítő (minden ajánlatkérésben). Szolgáltatáshoz rendelve: annak engedélyeztetése.', 'bma-ajanlatkeres' ); ?></p>
+				</td>
+			</tr>
+			<tr>
+				<th><?php esc_html_e( 'Automatikus kijelölés (kiegészítő)', 'bma-ajanlatkeres' ); ?></th>
+				<td>
+					<textarea name="auto_rule" rows="3" class="large-text code" placeholder='{"any":[{"field":"urbanisztikai_bizonylat","values":["nem"]}]}'><?php echo esc_textarea( (string) ( $edit_item->auto_rule ?? '' ) ); ?></textarea>
+					<p class="description"><?php esc_html_e( 'JSON. Bármelyik feltétel teljesül, a kiegészítő bekerül. Mező: egy mező kulcsa, vagy _phase (tervfázis), _addon (kiválasztott kiegészítő). "locked": true esetén nem vehető ki. Üres: csak kézzel választható.', 'bma-ajanlatkeres' ); ?></p>
 				</td>
 			</tr>
 			<tr>
@@ -201,6 +220,7 @@ $items = BMA_AJ_Service_Items::get_all_admin();
 			<tr>
 				<th><?php esc_html_e( 'Elem', 'bma-ajanlatkeres' ); ?></th>
 				<th><?php esc_html_e( 'Szolgáltatások', 'bma-ajanlatkeres' ); ?></th>
+				<th><?php esc_html_e( 'Típus', 'bma-ajanlatkeres' ); ?></th>
 				<th><?php esc_html_e( 'Mezők', 'bma-ajanlatkeres' ); ?></th>
 				<th><?php esc_html_e( 'Aktív', 'bma-ajanlatkeres' ); ?></th>
 				<th></th>
@@ -214,6 +234,7 @@ $items = BMA_AJ_Service_Items::get_all_admin();
 				<tr>
 					<td><strong><?php echo esc_html( $item->name ); ?></strong></td>
 					<td><?php echo esc_html( $item->service_names ?: '—' ); ?></td>
+					<td><?php echo 'addon' === ( $item->item_type ?? 'item' ) ? esc_html__( 'Kiegészítő', 'bma-ajanlatkeres' ) : esc_html__( 'Elem', 'bma-ajanlatkeres' ); ?></td>
 					<td><?php echo esc_html( (string) $field_count ); ?></td>
 					<td><?php echo ! empty( $item->is_active ) ? '✓' : '–'; ?></td>
 					<td>

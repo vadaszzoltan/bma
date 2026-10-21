@@ -54,7 +54,7 @@ $card_icons = array(
 					<?php endif; ?>
 					<div class="svc-foot">
 						<a href="<?php echo esc_url( $link ); ?>">
-							<?php esc_html_e( 'Részletek és kiválasztás →', 'bma-ajanlatkeres' ); ?>
+							<?php esc_html_e( 'Részletek →', 'bma-ajanlatkeres' ); ?>
 						</a>
 					</div>
 				</article>

@@ -43,7 +43,7 @@ final class BMA_AJ_Content {
 				'type'    => 'text',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Tervezés · Engedélyeztetés · Közmű-koordináció',
+				'default' => 'Épületgépészet · Tűzvédelem · Közműhálózatok · Bekötések',
 			),
 			'home.hero.title' => array(
 				'section' => 'home_hero',
@@ -59,7 +59,7 @@ final class BMA_AJ_Content {
 				'type'    => 'textarea',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Válassza ki, mire van szüksége a projektjéhez, adja meg a rendelkezésére álló adatokat, és kérjen személyre szabott ajánlatot. A folyamat minden lépését egy helyen követheti.',
+				'default' => 'Adja meg a projekt adatait, válassza ki, milyen tervekre van szüksége, és kérjen személyre szabott ajánlatot. Amit nem tud csatolni, azt mi beszerezzük.',
 			),
 			'home.hero.cta_primary' => array(
 				'section' => 'home_hero',
@@ -155,7 +155,7 @@ final class BMA_AJ_Content {
 				'type'    => 'textarea',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Négy szolgáltatási terület, azon belül konkrét részfeladatokkal. Az ajánlatkérésbe bármennyi tétel bekerülhet.',
+				'default' => 'Négy tervezési terület, 20 konkrét elemmel. Egy ajánlatkérésben bármennyi kombinálható, engedélyes és kivitelezési tervként is.',
 			),
 			'home.services.cta' => array(
 				'section' => 'home_services',
@@ -187,7 +187,7 @@ final class BMA_AJ_Content {
 				'type'    => 'textarea',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Egy építési vagy fejlesztési projekt során a tervezés, az engedélyeztetés, a közműcsatlakozások és a műszaki dokumentáció gyakran egymásra épül.',
+				'default' => 'Egy építési projektben az épület gépészete, a bekötések és a szükséges engedélyek egymásra épülnek. Egy ajánlatkérésben mindet kérheti, és amit még nem tud csatolni, azt mi beszerezzük.',
 			),
 			'home.multi.body_2' => array(
 				'section' => 'home_multi',
@@ -203,7 +203,7 @@ final class BMA_AJ_Content {
 				'type'    => 'text',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Szolgáltatások kiválasztása',
+				'default' => 'Ajánlatkérés indítása',
 			),
 			'home.multi.cta_secondary' => array(
 				'section' => 'home_multi',
@@ -227,7 +227,7 @@ final class BMA_AJ_Content {
 				'type'    => 'text',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Vízbekötési terv',
+				'default' => 'Víz-csatorna',
 			),
 			'home.multi.stack_1_sub' => array(
 				'section' => 'home_multi',
@@ -235,7 +235,7 @@ final class BMA_AJ_Content {
 				'type'    => 'text',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Tervezés',
+				'default' => 'Épületgépészet',
 			),
 			'home.multi.stack_2_title' => array(
 				'section' => 'home_multi',
@@ -243,7 +243,7 @@ final class BMA_AJ_Content {
 				'type'    => 'text',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Szennyvízbekötési terv',
+				'default' => 'Fűtés',
 			),
 			'home.multi.stack_2_sub' => array(
 				'section' => 'home_multi',
@@ -251,7 +251,7 @@ final class BMA_AJ_Content {
 				'type'    => 'text',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Tervezés',
+				'default' => 'Épületgépészet',
 			),
 			'home.multi.stack_3_title' => array(
 				'section' => 'home_multi',
@@ -259,7 +259,7 @@ final class BMA_AJ_Content {
 				'type'    => 'text',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Építési engedély előkészítés',
+				'default' => 'Vízbekötés',
 			),
 			'home.multi.stack_3_sub' => array(
 				'section' => 'home_multi',
@@ -267,7 +267,7 @@ final class BMA_AJ_Content {
 				'type'    => 'text',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Engedélyeztetés',
+				'default' => 'Bekötések',
 			),
 			'home.multi.stack_4_title' => array(
 				'section' => 'home_multi',
@@ -275,7 +275,7 @@ final class BMA_AJ_Content {
 				'type'    => 'text',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Vízmű egyeztetés',
+				'default' => 'Urbanisztikai bizonylat beszerzése',
 			),
 			'home.multi.stack_4_sub' => array(
 				'section' => 'home_multi',
@@ -283,7 +283,7 @@ final class BMA_AJ_Content {
 				'type'    => 'text',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Közmű-koordináció',
+				'default' => 'Kiegészítő',
 			),
 			'home.multi.stack_foot' => array(
 				'section' => 'home_multi',
@@ -291,7 +291,7 @@ final class BMA_AJ_Content {
 				'type'    => 'text',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => '4 tétel · 1 ajánlatkérés',
+				'default' => 'Engedélyes + kivitelezési terv · 4 tétel · 1 ajánlatkérés',
 			),
 			'home.multi.stack_badge' => array(
 				'section' => 'home_multi',
@@ -347,7 +347,7 @@ final class BMA_AJ_Content {
 				'type'    => 'textarea',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Egy ajánlatkérésben több tervezési, engedélyeztetési, közmű-koordinációs és dokumentációs feladat is összeállítható.',
+				'default' => 'Egy ajánlatkérésben kérhet épületgépészeti, tűzvédelmi, közműhálózati és bekötési terveket, engedélyeztetéssel együtt.',
 			),
 			'home.benefits.3_title' => array(
 				'section' => 'home_benefits',
@@ -371,7 +371,7 @@ final class BMA_AJ_Content {
 				'type'    => 'text',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Kevesebb felesleges egyeztetés',
+				'default' => 'Nem kell mindent előre beszereznie',
 			),
 			'home.benefits.4_text' => array(
 				'section' => 'home_benefits',
@@ -379,7 +379,7 @@ final class BMA_AJ_Content {
 				'type'    => 'textarea',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Már az ajánlatkérés során megadhatók a projekt legfontosabb adatai, így az ajánlatkészítés célzottabban indulhat el.',
+				'default' => 'Amit nem tud csatolni, például az urbanisztikai bizonylatot vagy a topográfiai felmérést, azt mi beszerezzük.',
 			),
 			'home.process.eyebrow' => array(
 				'section' => 'home_process',
@@ -411,7 +411,7 @@ final class BMA_AJ_Content {
 				'type'    => 'text',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Szolgáltatások kiválasztása',
+				'default' => 'Projekt és tervfázis',
 			),
 			'home.process.1_text' => array(
 				'section' => 'home_process',
@@ -419,7 +419,7 @@ final class BMA_AJ_Content {
 				'type'    => 'textarea',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Válassza ki a projektjéhez szükséges szolgáltatásokat és azokon belül a konkrét részfeladatokat.',
+				'default' => 'Megadja a projekt alapadatait, és hogy engedélyes vagy kivitelezési tervre van szüksége.',
 			),
 			'home.process.2_title' => array(
 				'section' => 'home_process',
@@ -427,7 +427,7 @@ final class BMA_AJ_Content {
 				'type'    => 'text',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Projekt adatai',
+				'default' => 'Szolgáltatások',
 			),
 			'home.process.2_text' => array(
 				'section' => 'home_process',
@@ -435,7 +435,7 @@ final class BMA_AJ_Content {
 				'type'    => 'textarea',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Töltse ki a kiválasztott tételekhez tartozó adatokat, és töltse fel a meglévő tervrajzokat.',
+				'default' => 'Kiválasztja a szükséges rendszereket és a kiegészítőket.',
 			),
 			'home.process.3_title' => array(
 				'section' => 'home_process',
@@ -443,7 +443,7 @@ final class BMA_AJ_Content {
 				'type'    => 'text',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Beküldés',
+				'default' => 'Dokumentumok és beküldés',
 			),
 			'home.process.3_text' => array(
 				'section' => 'home_process',
@@ -451,7 +451,7 @@ final class BMA_AJ_Content {
 				'type'    => 'textarea',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Ellenőrizze az összeállítást, adja meg a kapcsolattartási adatait, és küldje el a kérést.',
+				'default' => 'Feltölti, ami megvan. Ami hiányzik, azt jelzi, mi beszerezzük.',
 			),
 			'home.process.4_title' => array(
 				'section' => 'home_process',
@@ -491,7 +491,7 @@ final class BMA_AJ_Content {
 				'type'    => 'textarea',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Válogatás megvalósult tervezési, engedélyeztetési és közmű-koordinációs munkáinkból.',
+				'default' => 'Válogatás megvalósult épületgépészeti, tűzvédelmi és közműtervezési munkáinkból.',
 			),
 			'home.refs.cta' => array(
 				'section' => 'home_refs',
@@ -515,7 +515,7 @@ final class BMA_AJ_Content {
 				'type'    => 'textarea',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'A BMA Engineering mérnöki tervezési, engedélyeztetési, közmű-koordinációs és műszaki dokumentációs feladatokban támogatja ügyfeleit.',
+				'default' => 'A BMA Engineering épületgépészeti, tűzvédelmi, közműhálózati és bekötési tervezésben, valamint a kapcsolódó engedélyeztetésben támogatja ügyfeleit.',
 			),
 			'home.about.body_2' => array(
 				'section' => 'home_about',
@@ -579,7 +579,7 @@ final class BMA_AJ_Content {
 				'type'    => 'textarea',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Válassza ki a szükséges szolgáltatásokat, adja meg a projekt alapadatait, és töltse fel a rendelkezésére álló dokumentumokat. Ezek alapján pontosabb ajánlatot tudunk készíteni.',
+				'default' => 'Adja meg a projekt alapadatait, válassza ki a szükséges terveket, és töltse fel, ami megvan. Ezek alapján pontos ajánlatot készítünk.',
 			),
 			'home.closing.cta_primary' => array(
 				'section' => 'home_closing',
@@ -683,7 +683,7 @@ final class BMA_AJ_Content {
 				'type'    => 'textarea',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Válassza ki az Ön projektjéhez kapcsolódó szolgáltatási területet. Egy ajánlatkérésben több szolgáltatást és azokon belül több részfeladatot is megjelölhet.',
+				'default' => 'Négy tervezési terület, egy ajánlatkérésben kombinálhatók. Nézze meg, mit tartalmaznak, vagy indítsa el az ajánlatkérést, és ott válassza ki, mire van szüksége.',
 			),
 			'services.side_title' => array(
 				'section' => 'services_list',
@@ -699,7 +699,7 @@ final class BMA_AJ_Content {
 				'type'    => 'text',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Jelölje be a szükséges tételeket – bármennyit.',
+				'default' => 'Indítsa el az ajánlatkérést, és ott válassza ki, mire van szüksége.',
 			),
 			'services.side_2' => array(
 				'section' => 'services_list',
@@ -707,7 +707,7 @@ final class BMA_AJ_Content {
 				'type'    => 'text',
 				'domain'  => 'bma-ajanlatkeres',
 				'html'    => false,
-				'default' => 'Adja meg a projekt adatait és a meglévő dokumentumokat.',
+				'default' => 'Feltölti, ami megvan. Ami hiányzik, azt jelzi, mi beszerezzük.',
 			),
 			'services.side_3' => array(
 				'section' => 'services_list',

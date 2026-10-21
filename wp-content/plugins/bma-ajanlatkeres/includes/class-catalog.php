@@ -342,6 +342,102 @@ final class BMA_AJ_Catalog {
 
 		self::sync_fields( $item_ids );
 		self::retire_legacy_services( $service_ids );
+		self::migrate_page_content();
+	}
+
+	/**
+	 * v1 defaults of site texts that changed with v2 (BMA_AJ_Content keys).
+	 *
+	 * @return array<string, string>
+	 */
+	private static function legacy_content_defaults(): array {
+		return array(
+			'home.hero.eyebrow' => 'Tervezés · Engedélyeztetés · Közmű-koordináció',
+			'home.hero.lead' => 'Válassza ki, mire van szüksége a projektjéhez, adja meg a rendelkezésére álló adatokat, és kérjen személyre szabott ajánlatot. A folyamat minden lépését egy helyen követheti.',
+			'home.services.lead' => 'Négy szolgáltatási terület, azon belül konkrét részfeladatokkal. Az ajánlatkérésbe bármennyi tétel bekerülhet.',
+			'home.multi.body_1' => 'Egy építési vagy fejlesztési projekt során a tervezés, az engedélyeztetés, a közműcsatlakozások és a műszaki dokumentáció gyakran egymásra épül.',
+			'home.multi.cta_primary' => 'Szolgáltatások kiválasztása',
+			'home.multi.stack_1_title' => 'Vízbekötési terv',
+			'home.multi.stack_1_sub' => 'Tervezés',
+			'home.multi.stack_2_title' => 'Szennyvízbekötési terv',
+			'home.multi.stack_2_sub' => 'Tervezés',
+			'home.multi.stack_3_title' => 'Építési engedély előkészítés',
+			'home.multi.stack_3_sub' => 'Engedélyeztetés',
+			'home.multi.stack_4_title' => 'Vízmű egyeztetés',
+			'home.multi.stack_4_sub' => 'Közmű-koordináció',
+			'home.multi.stack_foot' => '4 tétel · 1 ajánlatkérés',
+			'home.benefits.2_text' => 'Egy ajánlatkérésben több tervezési, engedélyeztetési, közmű-koordinációs és dokumentációs feladat is összeállítható.',
+			'home.benefits.4_title' => 'Kevesebb felesleges egyeztetés',
+			'home.benefits.4_text' => 'Már az ajánlatkérés során megadhatók a projekt legfontosabb adatai, így az ajánlatkészítés célzottabban indulhat el.',
+			'home.process.1_title' => 'Szolgáltatások kiválasztása',
+			'home.process.1_text' => 'Válassza ki a projektjéhez szükséges szolgáltatásokat és azokon belül a konkrét részfeladatokat.',
+			'home.process.2_title' => 'Projekt adatai',
+			'home.process.2_text' => 'Töltse ki a kiválasztott tételekhez tartozó adatokat, és töltse fel a meglévő tervrajzokat.',
+			'home.process.3_title' => 'Beküldés',
+			'home.process.3_text' => 'Ellenőrizze az összeállítást, adja meg a kapcsolattartási adatait, és küldje el a kérést.',
+			'home.refs.lead' => 'Válogatás megvalósult tervezési, engedélyeztetési és közmű-koordinációs munkáinkból.',
+			'home.about.body_1' => 'A BMA Engineering mérnöki tervezési, engedélyeztetési, közmű-koordinációs és műszaki dokumentációs feladatokban támogatja ügyfeleit.',
+			'home.closing.body' => 'Válassza ki a szükséges szolgáltatásokat, adja meg a projekt alapadatait, és töltse fel a rendelkezésére álló dokumentumokat. Ezek alapján pontosabb ajánlatot tudunk készíteni.',
+			'services.lead' => 'Válassza ki az Ön projektjéhez kapcsolódó szolgáltatási területet. Egy ajánlatkérésben több szolgáltatást és azokon belül több részfeladatot is megjelölhet.',
+			'services.side_1' => 'Jelölje be a szükséges tételeket – bármennyit.',
+			'services.side_2' => 'Adja meg a projekt adatait és a meglévő dokumentumokat.',
+		);
+	}
+
+	/**
+	 * Drop stored site texts that still hold the v1 default (or its RO/EN
+	 * translation), so the new default shows. Texts edited in wp-admin stay.
+	 */
+	private static function migrate_page_content(): void {
+		$old = self::legacy_content_defaults();
+
+		$translations = array( 'hu' => array() );
+		foreach ( array( 'ro' => 'ro_RO', 'en' => 'en_US' ) as $lang => $locale ) {
+			$file = BMA_AJ_PLUGIN_DIR . 'languages/bma-ajanlatkeres-' . $locale . '.json';
+			$map  = file_exists( $file ) ? json_decode( (string) file_get_contents( $file ), true ) : array(); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+			$translations[ $lang ] = is_array( $map ) ? $map : array();
+		}
+		$is_old = static function ( string $key, $value, string $lang ) use ( $old, $translations ): bool {
+			if ( ! isset( $old[ $key ] ) || ! is_string( $value ) ) {
+				return false;
+			}
+			return $value === $old[ $key ] || $value === (string) ( $translations[ $lang ][ $old[ $key ] ][0] ?? "\0" );
+		};
+
+		$posts = get_posts(
+			array(
+				'post_type'      => 'page',
+				'post_status'    => 'any',
+				'posts_per_page' => -1,
+				'meta_key'       => BMA_AJ_Content::META_KEY, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+				'fields'         => 'ids',
+				'lang'           => '',
+			)
+		);
+		foreach ( $posts as $post_id ) {
+			$stored  = BMA_AJ_Content::stored_for_post( (int) $post_id );
+			$lang    = BMA_AJ_Content::lang_for_post( (int) $post_id );
+			$changed = false;
+			foreach ( $stored as $key => $value ) {
+				if ( $is_old( (string) $key, $value, $lang ) ) {
+					unset( $stored[ $key ] );
+					$changed = true;
+				}
+			}
+			if ( $changed ) {
+				update_post_meta( (int) $post_id, BMA_AJ_Content::META_KEY, $stored );
+			}
+		}
+
+		$legacy = BMA_AJ_Content::legacy_stored();
+		foreach ( $legacy as $lang => $values ) {
+			foreach ( (array) $values as $key => $value ) {
+				if ( $is_old( (string) $key, $value, (string) $lang ) ) {
+					unset( $legacy[ $lang ][ $key ] );
+				}
+			}
+		}
+		update_option( BMA_AJ_Content::OPTION, $legacy );
 	}
 
 	/**

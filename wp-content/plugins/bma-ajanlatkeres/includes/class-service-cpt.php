@@ -128,6 +128,8 @@ final class BMA_AJ_Service_CPT {
 			'_bma_needs_later'         => sanitize_textarea_field( wp_unslash( $_POST['bma_needs_later'] ?? '' ) ),
 			'_bma_faq'                 => sanitize_textarea_field( wp_unslash( $_POST['bma_faq'] ?? '' ) ),
 			'_bma_use_placeholder'     => isset( $_POST['bma_use_placeholder'] ) ? '1' : '0',
+			'_bma_short_title'         => sanitize_text_field( wp_unslash( $_POST['bma_short_title'] ?? '' ) ),
+			'_bma_no_design_phase'     => isset( $_POST['bma_no_design_phase'] ) ? '1' : '0',
 		);
 
 		foreach ( $fields as $key => $value ) {

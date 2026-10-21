@@ -313,163 +313,60 @@ function bma_footer_fallback_menu(): void {
  * Sticky mobile CTA bar (homepage + services list + service detail + quote flow).
  */
 function bma_render_mobilebar(): void {
-	$is_services = class_exists( 'BMA_AJ_I18n' )
-		? BMA_AJ_I18n::is_page( 'szolgaltatasok' )
-		: is_page( array( 'szolgaltatasok', 'servicii', 'services' ) );
-	$is_cart = class_exists( 'BMA_AJ_I18n' )
-		? BMA_AJ_I18n::is_page( 'ajanlatkosar' )
-		: is_page( array( 'ajanlatkosar', 'cos-oferta', 'quote-cart' ) );
-	$is_form = class_exists( 'BMA_AJ_I18n' )
-		? BMA_AJ_I18n::is_page( 'ajanlatkeres' )
-		: is_page( array( 'ajanlatkeres', 'cerere-oferta', 'quote-request' ) );
+	$quote_url = bma_page_url( 'ajanlatkeres' );
+	$label     = __( 'Ajánlatkérés', 'bma-engineering' );
+	$title     = __( 'Kérjen ajánlatot', 'bma-engineering' );
+	$sub       = __( 'Díjmentes, kötelezettség nélkül', 'bma-engineering' );
+	$context   = bma_mobilebar_context();
 
-	if ( is_front_page() ) {
-		$svc_url = bma_page_url( 'szolgaltatasok' );
-		?>
-		<div class="mobilebar" data-bma-mobilebar="home">
-			<span class="mobilebar-info">
-				<strong><?php esc_html_e( 'Kérjen ajánlatot', 'bma-engineering' ); ?></strong>
-				<span><?php esc_html_e( 'Díjmentes, kötelezettség nélkül', 'bma-engineering' ); ?></span>
-			</span>
-			<a href="<?php echo esc_url( $svc_url ); ?>" class="btn btn--primary btn--sm"><?php esc_html_e( 'Ajánlatkérés', 'bma-engineering' ); ?></a>
-		</div>
-		<?php
+	if ( '' === $context ) {
 		return;
 	}
-
-	if ( is_singular( 'bma_service' ) ) {
+	if ( 'service' === $context ) {
 		$service_id = (int) get_queried_object_id();
 		$title      = get_the_title( $service_id );
-		$items      = class_exists( 'BMA_AJ_Dynamic_Fields' )
-			? BMA_AJ_Dynamic_Fields::get_service_items( $service_id )
-			: array();
-		$count_label = sprintf(
-			/* translators: %d: number of selectable items */
-			__( '%d választható részfeladat', 'bma-engineering' ),
-			count( $items )
-		);
-		$list_url = bma_page_url( 'szolgaltatasok' );
-		?>
-		<div class="mobilebar" data-bma-mobilebar="service">
-			<span class="mobilebar-info">
-				<strong><?php echo esc_html( $title ); ?></strong>
-				<span data-bma-mobilebar-sub><?php echo esc_html( $count_label ); ?></span>
-			</span>
-			<a href="#bma-service-items" class="btn btn--primary btn--sm" data-bma-mobilebar-cta><?php esc_html_e( 'Hozzáadás', 'bma-engineering' ); ?></a>
-			<a href="<?php echo esc_url( $list_url ); ?>" class="visually-hidden" data-bma-nojs-service-list><?php esc_html_e( 'Szolgáltatások', 'bma-engineering' ); ?></a>
-		</div>
-		<?php
-		return;
-	}
-
-	if ( is_singular( 'bma_reference' ) ) {
+		$quote_url  = add_query_arg( 'service', $service_id, $quote_url );
+	} elseif ( 'reference' === $context ) {
 		$ref_id  = (int) get_queried_object_id();
+		$related = class_exists( 'BMA_AJ_Reference_CPT' ) ? BMA_AJ_Reference_CPT::get_related_services( $ref_id ) : array();
 		$title   = get_the_title( $ref_id );
-		$related = class_exists( 'BMA_AJ_Reference_CPT' )
-			? BMA_AJ_Reference_CPT::get_related_services( $ref_id )
-			: array();
-		$sub = $related ? implode( ' · ', wp_list_pluck( $related, 'post_title' ) ) : __( 'Referencia projekt', 'bma-engineering' );
-		?>
-		<div class="mobilebar" data-bma-mobilebar="reference">
-			<span class="mobilebar-info">
-				<strong><?php echo esc_html( $title ); ?></strong>
-				<span><?php echo esc_html( $sub ); ?></span>
-			</span>
-			<a href="<?php echo esc_url( bma_page_url( 'szolgaltatasok' ) ); ?>" class="btn btn--primary btn--sm"><?php esc_html_e( 'Ajánlat', 'bma-engineering' ); ?></a>
-		</div>
-		<?php
-		return;
+		$sub     = $related ? implode( ' · ', wp_list_pluck( $related, 'post_title' ) ) : __( 'Referencia projekt', 'bma-engineering' );
 	}
-
-	$is_refs = class_exists( 'BMA_AJ_I18n' )
-		? BMA_AJ_I18n::is_page( 'referenciak' )
-		: is_page( array( 'referenciak', 'referinte', 'references' ) );
-
-	if ( $is_refs ) {
-		?>
-		<div class="mobilebar" data-bma-mobilebar="references">
-			<span class="mobilebar-info">
-				<strong><?php esc_html_e( 'Referenciák', 'bma-engineering' ); ?></strong>
-				<span><?php esc_html_e( 'Szűrés típus és szolgáltatás szerint', 'bma-engineering' ); ?></span>
-			</span>
-			<a href="<?php echo esc_url( bma_page_url( 'szolgaltatasok' ) ); ?>" class="btn btn--primary btn--sm"><?php esc_html_e( 'Ajánlat', 'bma-engineering' ); ?></a>
-		</div>
-		<?php
-		return;
-	}
-
-	$count = class_exists( 'BMA_AJ_Cart' ) ? (int) BMA_AJ_Cart::item_count() : 0;
-	$count_label = ( 1 === $count )
-		? __( '1 tétel kiválasztva', 'bma-engineering' )
-		: sprintf(
-			/* translators: %d: selected item count */
-			__( '%d tétel kiválasztva', 'bma-engineering' ),
-			$count
-		);
-
-	if ( $is_cart ) {
-		$form_url = bma_page_url( 'ajanlatkeres' );
-		$svc_url  = bma_page_url( 'szolgaltatasok' );
-		$cta_url  = $count ? $form_url : $svc_url;
-		$cta_label = $count
-			? __( 'Tovább az adatokhoz', 'bma-engineering' )
-			: __( 'Szolgáltatások', 'bma-engineering' );
-		?>
-		<div class="mobilebar" data-bma-mobilebar="cart">
-			<span class="mobilebar-info">
-				<strong><?php echo esc_html( $count_label ); ?></strong>
-				<span><?php esc_html_e( '02 · Kosár', 'bma-engineering' ); ?></span>
-			</span>
-			<?php if ( $count ) : ?>
-				<button type="submit" form="bma-quote-cart-form" class="btn btn--primary btn--sm"><?php echo esc_html( $cta_label ); ?></button>
-			<?php else : ?>
-				<a href="<?php echo esc_url( $cta_url ); ?>" class="btn btn--primary btn--sm"><?php echo esc_html( $cta_label ); ?></a>
-			<?php endif; ?>
-		</div>
-		<?php
-		return;
-	}
-
-	if ( $is_form ) {
-		$submitted = isset( $_GET['submitted'] );
-		if ( $submitted ) {
-			return;
-		}
-		?>
-		<div class="mobilebar" data-bma-mobilebar="form">
-			<span class="mobilebar-info">
-				<strong><?php echo esc_html( $count_label ); ?></strong>
-				<span><?php esc_html_e( '03 · Adatok és beküldés', 'bma-engineering' ); ?></span>
-			</span>
-			<?php if ( $count ) : ?>
-				<button type="submit" form="bma-quote-submit-form" class="btn btn--primary btn--sm"><?php esc_html_e( 'Beküldés', 'bma-engineering' ); ?></button>
-			<?php else : ?>
-				<a href="<?php echo esc_url( bma_page_url( 'szolgaltatasok' ) ); ?>" class="btn btn--primary btn--sm"><?php esc_html_e( 'Szolgáltatások', 'bma-engineering' ); ?></a>
-			<?php endif; ?>
-		</div>
-		<?php
-		return;
-	}
-
-	if ( ! $is_services ) {
-		return;
-	}
-
-	$cart_url = bma_page_url( 'ajanlatkosar' );
 	?>
-	<div class="mobilebar" data-bma-mobilebar="services">
+	<div class="mobilebar" data-bma-mobilebar="<?php echo esc_attr( $context ); ?>">
 		<span class="mobilebar-info">
-			<strong data-bma-mobilebar-count><?php echo esc_html( $count_label ); ?></strong>
-			<span><?php esc_html_e( 'Az ajánlatkérés díjmentes', 'bma-engineering' ); ?></span>
+			<strong><?php echo esc_html( $title ); ?></strong>
+			<span><?php echo esc_html( $sub ); ?></span>
 		</span>
-		<a
-			href="<?php echo esc_url( $cart_url ); ?>"
-			class="btn btn--primary btn--sm<?php echo $count ? '' : ' is-disabled'; ?>"
-			data-bma-mobilebar-cta
-			<?php echo $count ? '' : ' aria-disabled="true" tabindex="-1"'; ?>
-		><?php esc_html_e( 'Tovább', 'bma-engineering' ); ?></a>
+		<a href="<?php echo esc_url( $quote_url ); ?>" class="btn btn--primary btn--sm"><?php echo esc_html( $label ); ?></a>
 	</div>
 	<?php
+}
+
+/**
+ * Which sticky mobile CTA bar the current page gets ('' = none).
+ * The quote page has its own step navigation, so it gets none.
+ */
+function bma_mobilebar_context(): string {
+	$is_page = static function ( string $key, array $slugs ): bool {
+		return class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::is_page( $key ) : is_page( $slugs );
+	};
+	if ( is_front_page() ) {
+		return 'home';
+	}
+	if ( is_singular( 'bma_service' ) ) {
+		return 'service';
+	}
+	if ( is_singular( 'bma_reference' ) ) {
+		return 'reference';
+	}
+	if ( $is_page( 'referenciak', array( 'referenciak', 'referinte', 'references' ) ) ) {
+		return 'references';
+	}
+	if ( $is_page( 'szolgaltatasok', array( 'szolgaltatasok', 'servicii', 'services' ) ) ) {
+		return 'services';
+	}
+	return '';
 }
 
 /**
@@ -479,28 +376,7 @@ function bma_render_mobilebar(): void {
  * @return string[]
  */
 function bma_mobilebar_body_class( array $classes ): array {
-	$is_services = class_exists( 'BMA_AJ_I18n' )
-		? BMA_AJ_I18n::is_page( 'szolgaltatasok' )
-		: is_page( array( 'szolgaltatasok', 'servicii', 'services' ) );
-	$is_cart = class_exists( 'BMA_AJ_I18n' )
-		? BMA_AJ_I18n::is_page( 'ajanlatkosar' )
-		: is_page( array( 'ajanlatkosar', 'cos-oferta', 'quote-cart' ) );
-	$is_form = class_exists( 'BMA_AJ_I18n' )
-		? BMA_AJ_I18n::is_page( 'ajanlatkeres' )
-		: is_page( array( 'ajanlatkeres', 'cerere-oferta', 'quote-request' ) );
-	$is_refs = class_exists( 'BMA_AJ_I18n' )
-		? BMA_AJ_I18n::is_page( 'referenciak' )
-		: is_page( array( 'referenciak', 'referinte', 'references' ) );
-
-	if (
-		is_front_page()
-		|| $is_services
-		|| $is_refs
-		|| is_singular( 'bma_service' )
-		|| is_singular( 'bma_reference' )
-		|| $is_cart
-		|| ( $is_form && empty( $_GET['submitted'] ) )
-	) {
+	if ( '' !== bma_mobilebar_context() ) {
 		$classes[] = 'has-mobilebar';
 	}
 	return $classes;

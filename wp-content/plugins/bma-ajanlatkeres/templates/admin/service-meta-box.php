@@ -19,6 +19,17 @@ $when_needed     = $when_needed ?? get_post_meta( $post->ID, '_bma_when_needed',
 		<td><input type="number" id="bma_sort_order" name="bma_sort_order" value="<?php echo esc_attr( $sort_order ?: 0 ); ?>" min="0"></td>
 	</tr>
 	<tr>
+		<th><label for="bma_short_title"><?php esc_html_e( 'Rövid név (ajánlatkérésben)', 'bma-ajanlatkeres' ); ?></label></th>
+		<td>
+			<input type="text" id="bma_short_title" name="bma_short_title" class="regular-text" value="<?php echo esc_attr( (string) get_post_meta( $post->ID, '_bma_short_title', true ) ); ?>">
+			<p class="description"><?php esc_html_e( 'Csoportnév az ajánlatkérés lépéseiben és az összefoglalóban, pl. „Épületgépészet”.', 'bma-ajanlatkeres' ); ?></p>
+		</td>
+	</tr>
+	<tr>
+		<th><label for="bma_no_design_phase"><?php esc_html_e( 'Tervfázis nélkül', 'bma-ajanlatkeres' ); ?></label></th>
+		<td><label><input type="checkbox" id="bma_no_design_phase" name="bma_no_design_phase" value="1" <?php checked( get_post_meta( $post->ID, '_bma_no_design_phase', true ), '1' ); ?>> <?php esc_html_e( 'Az elemei egyetlen fázisban készülnek (pl. bekötések), az ajánlatkérésben nincs fázisválasztás.', 'bma-ajanlatkeres' ); ?></label></td>
+	</tr>
+	<tr>
 		<th><label for="bma_short_description"><?php esc_html_e( 'Rövid leírás', 'bma-ajanlatkeres' ); ?></label></th>
 		<td><textarea id="bma_short_description" name="bma_short_description" rows="3" class="large-text"><?php echo esc_textarea( $short_desc ); ?></textarea></td>
 	</tr>

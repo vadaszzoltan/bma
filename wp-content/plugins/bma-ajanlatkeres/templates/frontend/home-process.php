@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$svc_url = function_exists( 'bma_page_url' ) ? bma_page_url( 'szolgaltatasok' ) : home_url( '/' );
+$quote_url = BMA_AJ_I18n::page_url( 'ajanlatkeres' );
 $steps   = array(
 	array(
 		'num'    => '01',
@@ -49,7 +49,7 @@ $steps   = array(
 			<?php endforeach; ?>
 		</div>
 		<div style="margin-top:34px">
-			<a href="<?php echo esc_url( $svc_url ); ?>" class="btn btn--primary"><?php BMA_AJ_Content::e( 'home.process.cta' ); ?></a>
+			<a href="<?php echo esc_url( $quote_url ); ?>" class="btn btn--primary"><?php BMA_AJ_Content::e( 'home.process.cta' ); ?></a>
 		</div>
 	</div>
 </section>

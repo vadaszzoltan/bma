@@ -8,6 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $svc_url  = function_exists( 'bma_page_url' ) ? bma_page_url( 'szolgaltatasok' ) : home_url( '/' );
+$quote_url = BMA_AJ_I18n::page_url( 'ajanlatkeres' );
 $ref_url  = function_exists( 'bma_page_url' ) ? bma_page_url( 'referenciak' ) : home_url( '/' );
 $services = BMA_AJ_Service_CPT::get_active_services();
 
@@ -55,7 +56,7 @@ $chip_icons = array(
 			<?php BMA_AJ_Content::e( 'home.hero.lead' ); ?>
 		</p>
 		<div class="hero-cta">
-			<a href="<?php echo esc_url( $svc_url ); ?>" class="btn btn--primary"><?php BMA_AJ_Content::e( 'home.hero.cta_primary' ); ?></a>
+			<a href="<?php echo esc_url( $quote_url ); ?>" class="btn btn--primary"><?php BMA_AJ_Content::e( 'home.hero.cta_primary' ); ?></a>
 			<a href="<?php echo esc_url( $ref_url ); ?>" class="btn btn--ghost-light"><?php BMA_AJ_Content::e( 'home.hero.cta_secondary' ); ?></a>
 		</div>
 		<?php if ( $services ) : ?>
@@ -63,7 +64,7 @@ $chip_icons = array(
 				<p class="hero-quick-label"><?php BMA_AJ_Content::e( 'home.hero.quick_label' ); ?></p>
 				<div class="quick-chips">
 					<?php foreach ( array_slice( $services, 0, 4 ) as $i => $service ) : ?>
-						<a class="quick-chip" href="<?php echo esc_url( function_exists( 'bma_post_url' ) ? bma_post_url( (int) $service->ID ) : get_permalink( $service ) ); ?>">
+						<a class="quick-chip" href="<?php echo esc_url( add_query_arg( 'service', (int) $service->ID, $quote_url ) ); ?>">
 							<?php
 							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- fixed inline SVG markup.
 							echo $chip_icons[ $i ] ?? $chip_icons[0];

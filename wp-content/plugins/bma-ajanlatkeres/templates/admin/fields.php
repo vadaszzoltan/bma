@@ -24,11 +24,22 @@ if ( isset( $_POST['bma_field_nonce'] ) && wp_verify_nonce( sanitize_text_field(
 		'client_label' => sanitize_text_field( wp_unslash( $_POST['client_label'] ?? '' ) ),
 		'is_required'  => ! empty( $_POST['is_required'] ) ? 1 : 0,
 		'is_active'    => ! empty( $_POST['is_active'] ) ? 1 : 0,
-		'options'      => wp_json_encode( array_filter( array_map( 'trim', explode( "\n", $options_raw ) ) ) ),
+		'options'      => wp_json_encode( array_values( array_filter( array_map( 'trim', explode( "\n", $options_raw ) ) ) ) ),
+		'description'  => sanitize_textarea_field( wp_unslash( $_POST['description'] ?? '' ) ),
+		'placeholder'  => sanitize_text_field( wp_unslash( $_POST['placeholder'] ?? '' ) ),
+		'placement'    => in_array( $_POST['placement'] ?? '', array( 'project', 'documents', 'item', 'addons' ), true ) ? sanitize_key( $_POST['placement'] ) : 'item',
+		'conditions'   => trim( (string) wp_unslash( $_POST['conditions'] ?? '' ) ),
+		'sort_order'   => absint( $_POST['sort_order'] ?? 0 ),
 	);
+	$conditions_ok = '' === $data['conditions'] || is_array( json_decode( $data['conditions'], true ) );
+	if ( '' === $data['conditions'] ) {
+		$data['conditions'] = null;
+	}
 
 	$update_id = absint( $_POST['field_id'] ?? 0 );
-	if ( $update_id ) {
+	if ( ! $conditions_ok ) {
+		echo '<div class="notice notice-error"><p>' . esc_html__( 'A feltételek mező nem érvényes JSON.', 'bma-ajanlatkeres' ) . '</p></div>';
+	} elseif ( $update_id ) {
 		unset( $data['field_key'] );
 		$wpdb->update( $fields_table, $data, array( 'id' => $update_id ) );
 		echo '<div class="notice notice-success"><p>' . esc_html__( 'Mező frissítve.', 'bma-ajanlatkeres' ) . '</p></div>';
@@ -41,11 +52,14 @@ if ( isset( $_POST['bma_field_nonce'] ) && wp_verify_nonce( sanitize_text_field(
 				'client_label' => $data['client_label'],
 				'is_required'  => $data['is_required'],
 				'options'      => array_filter( array_map( 'trim', explode( "\n", $options_raw ) ) ),
+				'description'  => $data['description'],
+				'placeholder'  => $data['placeholder'],
 			)
 		);
 		if ( is_wp_error( $result ) ) {
 			echo '<div class="notice notice-error"><p>' . esc_html( $result->get_error_message() ) . '</p></div>';
 		} else {
+			$wpdb->update( $fields_table, array_intersect_key( $data, array_flip( array( 'placement', 'conditions', 'sort_order' ) ) ), array( 'id' => $result ) );
 			echo '<div class="notice notice-success"><p>' . esc_html__( 'Mező létrehozva. Rendelje hozzá egy szolgáltatáselemhez a Szolgáltatáselemek menüben.', 'bma-ajanlatkeres' ) . '</p></div>';
 		}
 	}
@@ -94,7 +108,47 @@ $edit_options = $edit_field ? implode( "\n", json_decode( $edit_field->options ?
 			</tr>
 			<tr>
 				<th><?php esc_html_e( 'Opciók (soronként)', 'bma-ajanlatkeres' ); ?></th>
-				<td><textarea name="options" rows="4" class="large-text"><?php echo esc_textarea( $edit_options ); ?></textarea></td>
+				<td>
+					<textarea name="options" rows="4" class="large-text"><?php echo esc_textarea( $edit_options ); ?></textarea>
+					<p class="description"><?php esc_html_e( 'Soronként egy. Formátum: ertek|Felirat (pl. igen|Igen). Az érték maradjon változatlan, a felirat szabadon írható.', 'bma-ajanlatkeres' ); ?></p>
+				</td>
+			</tr>
+			<tr>
+				<th><?php esc_html_e( 'Segédszöveg', 'bma-ajanlatkeres' ); ?></th>
+				<td><input type="text" name="description" class="large-text" value="<?php echo esc_attr( $edit_field->description ?? '' ); ?>"></td>
+			</tr>
+			<tr>
+				<th><?php esc_html_e( 'Minta (placeholder)', 'bma-ajanlatkeres' ); ?></th>
+				<td><input type="text" name="placeholder" class="regular-text" value="<?php echo esc_attr( $edit_field->placeholder ?? '' ); ?>"></td>
+			</tr>
+			<tr>
+				<th><?php esc_html_e( 'Hol jelenik meg', 'bma-ajanlatkeres' ); ?></th>
+				<td>
+					<select name="placement">
+						<?php
+						$placements = array(
+							'project'   => __( '1. lépés: projekt adatai', 'bma-ajanlatkeres' ),
+							'addons'    => __( '4. lépés: kiegészítők', 'bma-ajanlatkeres' ),
+							'documents' => __( '5. lépés: dokumentumok (mindig)', 'bma-ajanlatkeres' ),
+							'item'      => __( '5. lépés: a hozzárendelt elemeknél', 'bma-ajanlatkeres' ),
+						);
+						foreach ( $placements as $value => $label ) :
+							?>
+							<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $edit_field->placement ?? 'item', $value ); ?>><?php echo esc_html( $label ); ?></option>
+						<?php endforeach; ?>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th><?php esc_html_e( 'Feltételek', 'bma-ajanlatkeres' ); ?></th>
+				<td>
+					<textarea name="conditions" rows="2" class="large-text code" placeholder='{"field":"urbanisztikai_bizonylat","values":["igen"]}'><?php echo esc_textarea( (string) ( $edit_field->conditions ?? '' ) ); ?></textarea>
+					<p class="description"><?php esc_html_e( 'JSON, nem kötelező. field + values: csak akkor látszik, ha a másik mező értéke ezek egyike. required_services: ezeknél a szolgáltatásoknál kötelező. one_of: elég, ha a felsorolt mezők egyike ki van töltve. soft_required: hiányánál csak figyelmeztet.', 'bma-ajanlatkeres' ); ?></p>
+				</td>
+			</tr>
+			<tr>
+				<th><?php esc_html_e( 'Sorrend', 'bma-ajanlatkeres' ); ?></th>
+				<td><input type="number" name="sort_order" min="0" value="<?php echo esc_attr( (string) ( $edit_field->sort_order ?? 0 ) ); ?>"></td>
 			</tr>
 			<tr>
 				<th><?php esc_html_e( 'Kötelező', 'bma-ajanlatkeres' ); ?></th>

@@ -27,15 +27,7 @@ $directions_url = sprintf(
 	rawurlencode( $lng )
 );
 
-$topics = array(
-	'general'     => __( 'Általános érdeklődés', 'bma-ajanlatkeres' ),
-	'design'      => __( 'Tervezés', 'bma-ajanlatkeres' ),
-	'permit'      => __( 'Engedélyeztetés', 'bma-ajanlatkeres' ),
-	'docs'        => __( 'Műszaki dokumentáció', 'bma-ajanlatkeres' ),
-	'utility'     => __( 'Közmű csatlakozás koordináció', 'bma-ajanlatkeres' ),
-	'existing'    => __( 'Meglévő ajánlatkérés vagy projekt', 'bma-ajanlatkeres' ),
-	'other'       => __( 'Egyéb', 'bma-ajanlatkeres' ),
-);
+$topics = BMA_AJ_Plugin::contact_topics();
 
 $status      = isset( $_GET['contact'] ) ? sanitize_key( wp_unslash( $_GET['contact'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 $privacy_url = ( class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'adatvedelem' ) : home_url( '/adatvedelem/' ) );

@@ -120,19 +120,6 @@ final class BMA_AJ_Plugin {
 			true
 		);
 
-		$needs_selection = is_singular( BMA_AJ_Service_CPT::POST_TYPE )
-			|| ( class_exists( 'BMA_AJ_I18n' ) && BMA_AJ_I18n::is_page( 'szolgaltatasok' ) )
-			|| is_page( array( 'szolgaltatasok', 'servicii', 'services' ) );
-		if ( $needs_selection ) {
-			wp_enqueue_script(
-				'bma-aj-selection',
-				BMA_AJ_PLUGIN_URL . 'assets/js/selection.js',
-				array( 'jquery', 'bma-aj-public' ),
-				BMA_AJ_VERSION,
-				true
-			);
-		}
-
 		// Quote request v2 wizard: only on the quote page.
 		if ( class_exists( 'BMA_AJ_I18n' ) && BMA_AJ_I18n::is_page( 'ajanlatkeres' ) ) {
 			wp_enqueue_style( 'bma-aj-wizard', BMA_AJ_PLUGIN_URL . 'assets/css/quote-wizard.css', array( 'bma-aj-public' ), BMA_AJ_VERSION );
@@ -228,6 +215,23 @@ final class BMA_AJ_Plugin {
 	}
 
 	/**
+	 * Contact form topics (key => label).
+	 *
+	 * @return array<string, string>
+	 */
+	public static function contact_topics(): array {
+		return array(
+			'general'        => __( 'Általános érdeklődés', 'bma-ajanlatkeres' ),
+			'epuletgepeszet' => __( 'Épületgépészeti tervezés', 'bma-ajanlatkeres' ),
+			'tuzvedelem'     => __( 'Tűzvédelmi rendszerek tervezése', 'bma-ajanlatkeres' ),
+			'kozmuhalozatok' => __( 'Közműhálózatok tervezése', 'bma-ajanlatkeres' ),
+			'bekotesek'      => __( 'Bekötések', 'bma-ajanlatkeres' ),
+			'existing'       => __( 'Meglévő ajánlatkérés vagy projekt', 'bma-ajanlatkeres' ),
+			'other'          => __( 'Egyéb', 'bma-ajanlatkeres' ),
+		);
+	}
+
+	/**
 	 * Handle contact form submission.
 	 */
 	public function handle_contact_form(): void {
@@ -258,16 +262,7 @@ final class BMA_AJ_Plugin {
 		$message = sanitize_textarea_field( wp_unslash( $_POST['message'] ?? '' ) );
 		$privacy = ! empty( $_POST['privacy'] );
 
-		$topics = array(
-			'general'  => __( 'Általános érdeklődés', 'bma-ajanlatkeres' ),
-			'design'   => __( 'Tervezés', 'bma-ajanlatkeres' ),
-			'permit'   => __( 'Engedélyeztetés', 'bma-ajanlatkeres' ),
-			'docs'     => __( 'Műszaki dokumentáció', 'bma-ajanlatkeres' ),
-			'utility'  => __( 'Közmű csatlakozás koordináció', 'bma-ajanlatkeres' ),
-			'existing' => __( 'Meglévő ajánlatkérés vagy projekt', 'bma-ajanlatkeres' ),
-			'other'    => __( 'Egyéb', 'bma-ajanlatkeres' ),
-		);
-
+		$topics = self::contact_topics();
 		if ( ! $name || ! is_email( $email ) || ! $message || ! $privacy || ! isset( $topics[ $topic ] ) ) {
 			wp_safe_redirect( add_query_arg( 'contact', 'error', $redirect ) );
 			exit;

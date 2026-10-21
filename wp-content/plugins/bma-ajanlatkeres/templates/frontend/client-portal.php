@@ -165,6 +165,12 @@ if ( $detail_id ) {
 									'value' => (string) $request->client_note,
 								);
 							}
+							if ( 2 === (int) ( $request->flow_version ?? 1 ) ) {
+								// Items are listed above; show the rest of the v2 summary.
+								$skip  = __( 'Kiválasztott elemek', 'bma-ajanlatkeres' );
+								$rows  = array_merge( $rows, array_values( array_filter( BMA_AJ_Quote_Flow::summary_rows( $request ), static fn( $r ) => $r['label'] !== $skip ) ) );
+								$shared = array();
+							}
 							foreach ( $shared as $key => $val ) {
 								$display = BMA_AJ_Quote_Requests::format_field_value( $val );
 								if ( '' === trim( $display ) ) {

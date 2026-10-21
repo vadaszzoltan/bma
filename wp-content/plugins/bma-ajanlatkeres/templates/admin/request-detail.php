@@ -24,7 +24,7 @@ $current       = BMA_AJ_Statuses::get( (int) $request->status_id );
 		<div class="bma-admin-panel">
 			<h2><?php esc_html_e( 'Ügyféladatok', 'bma-ajanlatkeres' ); ?></h2>
 			<table class="form-table">
-				<?php foreach ( BMA_AJ_Quote_Requests::get_client_data_rows( $request ) as $row ) : ?>
+				<?php foreach ( BMA_AJ_Quote_Requests::get_client_data_rows( $request, 2 !== (int) ( $request->flow_version ?? 1 ) ) as $row ) : ?>
 					<tr>
 						<th><?php echo esc_html( $row['label'] ); ?></th>
 						<td><?php echo esc_html( $row['value'] ); ?></td>
@@ -56,6 +56,19 @@ $current       = BMA_AJ_Statuses::get( (int) $request->status_id );
 		</div>
 	</div>
 
+	<?php if ( 2 === (int) ( $request->flow_version ?? 1 ) ) : ?>
+		<div class="bma-admin-panel">
+			<h2><?php esc_html_e( 'Az ajánlatkérés összefoglalója', 'bma-ajanlatkeres' ); ?></h2>
+			<table class="form-table">
+				<?php foreach ( BMA_AJ_Quote_Flow::summary_rows( $request, true ) as $row ) : ?>
+					<tr>
+						<th><?php echo esc_html( $row['label'] ); ?></th>
+						<td><?php echo esc_html( $row['value'] ); ?></td>
+					</tr>
+				<?php endforeach; ?>
+			</table>
+		</div>
+	<?php else : ?>
 	<div class="bma-admin-panel">
 		<h2><?php esc_html_e( 'Kiválasztott szolgáltatások', 'bma-ajanlatkeres' ); ?></h2>
 		<?php foreach ( $services as $svc ) : ?>
@@ -79,6 +92,7 @@ $current       = BMA_AJ_Statuses::get( (int) $request->status_id );
 			</div>
 		<?php endforeach; ?>
 	</div>
+	<?php endif; ?>
 
 	<div class="bma-admin-grid">
 		<div class="bma-admin-panel">
