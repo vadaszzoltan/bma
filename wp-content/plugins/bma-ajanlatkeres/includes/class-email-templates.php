@@ -100,27 +100,37 @@ final class BMA_AJ_Email_Templates {
 	 */
 	public static function send( string $slug, int $request_id, array $extra = array() ): bool {
 		$template = self::get_by_slug( $slug );
-		if ( ! $template ) {
+		$request  = BMA_AJ_Quote_Requests::get( $request_id );
+		if ( ! $template || ! $request ) {
 			return false;
 		}
 
-		$data = self::build_replacements( $request_id, $extra, $slug );
+		// The office reads Hungarian; the client gets the language they used.
+		$is_admin = 'request_admin_notify' === $slug;
+		$lang     = $is_admin ? 'hu' : (string) ( $request->lang ?? 'hu' );
 
-		$subject = self::replace( $template->subject, $data );
-		$body    = self::replace( $template->body, $data );
+		return (bool) BMA_AJ_I18n::in_language(
+			$lang,
+			static function () use ( $template, $request, $request_id, $extra, $slug, $is_admin ) {
+				$subject = $template->subject;
+				$body    = $template->body;
+				$tr_body = BMA_AJ_I18n::overlay( 'email_templates', (string) $template->id, 'body' );
+				if ( '' !== $tr_body ) {
+					$subject = BMA_AJ_I18n::overlay( 'email_templates', (string) $template->id, 'subject' ) ?: $subject;
+					$body    = $tr_body;
+				}
 
-		$request = BMA_AJ_Quote_Requests::get( $request_id );
-		if ( ! $request ) {
-			return false;
-		}
+				$data = self::build_replacements( $request_id, $extra, $slug );
+				$to   = $is_admin ? get_option( 'bma_admin_email', get_option( 'admin_email' ) ) : $request->client_email;
 
-		$to = 'request_admin_notify' === $slug
-			? get_option( 'bma_admin_email', get_option( 'admin_email' ) )
-			: $request->client_email;
-
-		$headers = array( 'Content-Type: text/plain; charset=UTF-8' );
-
-		return (bool) wp_mail( $to, $subject, $body, $headers );
+				return wp_mail(
+					$to,
+					self::replace( $subject, $data ),
+					self::replace( $body, $data ),
+					array( 'Content-Type: text/plain; charset=UTF-8' )
+				);
+			}
+		);
 	}
 
 	/**
@@ -170,7 +180,7 @@ final class BMA_AJ_Email_Templates {
 			'{services}'          => $services_text,
 			'{summary}'           => $summary_text,
 			'{status}'            => $status->name ?? '',
-			'{portal_link}'       => home_url( '/ugyfelportal/?request=' . $request_id ),
+			'{portal_link}'       => add_query_arg( 'request', $request_id, BMA_AJ_I18n::page_url( 'ugyfelportal' ) ),
 			'{admin_link}'        => admin_url( 'admin.php?page=bma-requests&action=view&id=' . $request_id ),
 			'{quote_amount}'      => $quote ? number_format( (float) $quote->gross_amount, 0, ',', ' ' ) . ' ' . $quote->currency : '',
 			'{quote_valid_until}' => $quote && $quote->valid_until ? $quote->valid_until : '',

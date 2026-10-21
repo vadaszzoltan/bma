@@ -1,3 +1,4 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: bma-engineering\n"
@@ -29,10 +30,10 @@ msgid "1 tétel kiválasztva"
 msgstr "1 poziție selectată"
 
 msgid "A keresett oldal nem létezik, áthelyezték, vagy elírta a címet. Válasszon az alábbi lehetőségek közül."
-msgstr ""
+msgstr "Pagina căutată nu există, a fost mutată sau adresa este greșită. Alegeți una dintre opțiunile de mai jos."
 
 msgid "Adatvédelem"
-msgstr ""
+msgstr "Protecția datelor"
 
 msgid "Ajánlat"
 msgstr ""
@@ -41,91 +42,91 @@ msgid "Ajánlat, %d tétel"
 msgstr ""
 
 msgid "Ajánlatkérés"
-msgstr ""
+msgstr "Cerere de ofertă"
 
 msgid "Ajánlatkérés indítása"
-msgstr ""
+msgstr "Începeți cererea de ofertă"
 
 msgid "Az ajánlatkérés díjmentes"
 msgstr "Cererea de ofertă este gratuită"
 
 msgid "Az oldal nem található"
-msgstr ""
+msgstr "Pagina nu a fost găsită"
 
 msgid "BMA Engineering főoldal"
-msgstr ""
+msgstr "Pagina principală BMA Engineering"
 
 msgid "Beküldés"
 msgstr ""
 
 msgid "Belépés"
-msgstr ""
+msgstr "Autentificare"
 
 msgid "CUI: %s"
-msgstr ""
+msgstr "CUI: %s"
 
 msgid "Nyitvatartás: %s"
 msgstr "Program: %s"
 
 msgid "Cookie tájékoztató"
-msgstr ""
+msgstr "Politica cookie"
 
 msgid "Díjmentes, kötelezettség nélkül"
 msgstr "Gratuit, fără obligații"
 
 msgid "Fő navigáció"
-msgstr ""
+msgstr "Navigare principală"
 
 msgid "Főmenü"
-msgstr ""
+msgstr "Meniu principal"
 
 msgid "Főoldal"
-msgstr ""
+msgstr "Acasă"
 
 msgid "Hiba 404"
-msgstr ""
+msgstr "Eroare 404"
 
 msgid "Hozzáadás"
 msgstr "Adaugă"
 
 msgid "Kapcsolat"
-msgstr ""
+msgstr "Contact"
 
 msgid "Keresés"
-msgstr ""
+msgstr "Căutare"
 
 msgid "Keresés: %s"
-msgstr ""
+msgstr "Căutare: %s"
 
 msgid "Kijelentkezés"
-msgstr ""
+msgstr "Deconectare"
 
 msgid "Kérjen ajánlatot"
 msgstr "Cereți o ofertă"
 
 msgid "Lábléc"
-msgstr ""
+msgstr "Subsol"
 
 msgid "Lábléc menü"
-msgstr ""
+msgstr "Meniu subsol"
 
 msgid "Lábléc navigáció"
-msgstr ""
+msgstr "Navigare subsol"
 
 msgid "Menü bezárása"
 msgstr "Închide meniul"
 
 msgid "Menü megnyitása"
-msgstr ""
+msgstr "Deschide meniul"
 
 msgid "Mobil menü"
 msgstr "Meniu mobil"
 
 msgid "Navigáció"
-msgstr ""
+msgstr "Navigare"
 
 msgid "Nincs találat a keresésre. Próbáljon másik kifejezést, vagy böngésszen a szolgáltatások között."
-msgstr ""
+msgstr "Niciun rezultat. Încercați alt termen sau răsfoiți serviciile."
 
 msgid "Nyelv választása"
 msgstr "Alegerea limbii"
@@ -134,10 +135,10 @@ msgid "Referencia projekt"
 msgstr "Proiect de referință"
 
 msgid "Referenciák"
-msgstr ""
+msgstr "Referințe"
 
 msgid "Szolgáltatások"
-msgstr ""
+msgstr "Servicii"
 
 msgid "Szűrés típus és szolgáltatás szerint"
 msgstr "Filtrare după tip și serviciu"
@@ -149,13 +150,13 @@ msgid "Tovább az adatokhoz"
 msgstr "Continuă spre date"
 
 msgid "Ugrás a tartalomhoz"
-msgstr ""
+msgstr "Salt la conținut"
 
 msgid "Válassza ki a szükséges szolgáltatásokat, és néhány adat megadásával kérjen személyre szabott ajánlatot."
-msgstr ""
+msgstr "Alegeți serviciile necesare și, cu câteva date, cereți o ofertă personalizată."
 
 msgid "ÁSZF"
-msgstr ""
+msgstr "Termeni și condiții"
 
 msgid "Ügyfélportál"
-msgstr ""
+msgstr "Portal clienți"

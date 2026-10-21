@@ -783,6 +783,7 @@ final class BMA_AJ_Quote_Flow {
 				'client_type'         => $state['client_type'],
 				'design_phase'        => $state['phase'],
 				'addons'              => wp_json_encode( $addons ),
+				'lang'                => BMA_AJ_I18n::current_lang(),
 				'status_id'           => BMA_AJ_Statuses::get_default_id(),
 				'privacy_accepted'    => 1,
 			)
@@ -946,7 +947,7 @@ final class BMA_AJ_Quote_Flow {
 	private static function service_short( int $service_id, string $fallback ): string {
 		$post_id = $service_id;
 		if ( function_exists( 'pll_get_post' ) ) {
-			$post_id = (int) ( pll_get_post( $service_id ) ?: $service_id );
+			$post_id = (int) ( pll_get_post( $service_id, BMA_AJ_I18n::current_lang() ) ?: $service_id );
 		}
 		$short = (string) get_post_meta( $post_id, '_bma_short_title', true );
 		return '' !== $short ? $short : $fallback;

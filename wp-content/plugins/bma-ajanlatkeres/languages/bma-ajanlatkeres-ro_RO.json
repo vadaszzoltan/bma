@@ -5,11 +5,17 @@
   "%d díjbekérő vár rendezésre": [
     "%d proforme așteaptă plata"
   ],
+  "%d elem": [
+    "%d elemente"
+  ],
   "%d projekt": [
     "%d proiecte"
   ],
   "%d szolgáltatás kiválasztva": [
     "%d servicii selectate"
+  ],
+  "%d szolgáltatáselem kiválasztva": [
+    "%d elemente selectate"
   ],
   "%d tétel": [
     "%d poziții"
@@ -25,6 +31,9 @@
   ],
   "%s részfeladatai": [
     "Subactivitățile serviciului %s"
+  ],
+  "%s tervfázisa": [
+    "Faza de proiectare pentru %s"
   ],
   "+40 7XX XXX XXX": [
     "+40 7XX XXX XXX"
@@ -46,6 +55,9 @@
   ],
   "1 projekt": [
     "1 proiect"
+  ],
+  "1 szolgáltatáselem kiválasztva": [
+    "1 element selectat"
   ],
   "1 tétel": [
     "1 poziție"
@@ -164,8 +176,32 @@
   "A BMA Engineering műszaki tervezési, engedélyeztetési, dokumentációs és közmű-koordinációs szolgáltatásokat biztosít lakossági és üzleti projektekhez. Válassza ki a projektjéhez szükséges szolgáltatásokat, adja meg a rendelkezésre álló adatokat, és kérjen személyre szabott ajánlatot.": [
     "BMA Engineering oferă proiectare tehnică, autorizare, documentație și coordonare utilități pentru proiecte rezidențiale și de business. Selectați serviciile necesare, completați datele disponibile și solicitați o ofertă personalizată."
   ],
+  "A BMA Engineering épületgépészeti, tűzvédelmi, közműhálózati és bekötési tervezésben, valamint a kapcsolódó engedélyeztetésben támogatja ügyfeleit.": [
+    "BMA Engineering își sprijină clienții în proiectarea instalațiilor, a sistemelor de securitate la incendiu, a rețelelor de utilități și a branșamentelor, precum și în obținerea avizelor aferente."
+  ],
+  "A bekötésekhez nem kell tervfázist választania, lépjen tovább.": [
+    "Pentru branșamente nu trebuie să alegeți faza de proiectare, mergeți mai departe."
+  ],
+  "A bekötési tervek egyetlen fázisban készülnek.": [
+    "Proiectele de branșament se realizează într-o singură fază."
+  ],
+  "A beküldés nem sikerült. Kérjük, próbálja újra.": [
+    "Trimiterea nu a reușit. Vă rugăm să încercați din nou."
+  ],
+  "A beküldés után e-mailben visszaigazolást küldünk, és [X] munkanapon belül jelentkezünk.": [
+    "După trimitere primiți o confirmare pe e-mail și vă contactăm în [X] zile lucrătoare."
+  ],
   "A cookie kis adatfájl, amelyet a böngésző tárol. Segíti a weboldal működését, a beállítások megjegyzését és – hozzájárulás esetén – a látogatottsági statisztikát.": [
     "Un cookie este un fișier mic de date stocat de browser. Ajută la funcționarea site-ului web, la reținerea setărilor și – cu consimțământul utilizatorului – la statistici de trafic."
+  ],
+  "A dokumentum nem ehhez az ajánlatkéréshez tartozik.": [
+    "Documentul nu aparține acestei cereri de ofertă."
+  ],
+  "A dokumentum nem található.": [
+    "Documentul nu a fost găsit."
+  ],
+  "A dokumentum törlése sikertelen.": [
+    "Ștergerea documentului a eșuat."
   ],
   "A feladat": [
     "Sarcina"
@@ -176,11 +212,20 @@
   "A felhasználó felelőssége, hogy a megadott adatok tudomása szerint pontosak és teljesek legyenek.": [
     "Este responsabilitatea utilizatorului ca datele furnizate să fie, după cunoștința sa, corecte și complete."
   ],
+  "A feltöltési könyvtár nem írható. Kérjük, jelezze az üzemeltetőnek.": [
+    "Directorul de încărcare nu poate fi scris. Vă rugăm să anunțați administratorul."
+  ],
   "A feltöltött dokumentumokat kizárólag az adott ajánlatkérés vagy szolgáltatás kezelése céljából használjuk. Kérjük, csak a projekthez szükséges adatokat töltse fel.": [
     "Documentele încărcate vor fi utilizate exclusiv în scopul gestionării cererii de ofertă sau al serviciului solicitat. Vă rugăm să încărcați doar datele necesare pentru proiect."
   ],
   "A fizetéshez be kell jelentkeznie, és érvényes ajánlathoz kell rendelkeznie.": [
     "Pentru a efectua plata, trebuie să vă autentificați și să aveți o ofertă valabilă."
+  ],
+  "A fájl feltöltése sikertelen.": [
+    "Încărcarea fișierului a eșuat."
+  ],
+  "A fájl túl nagy (max. 20 MB).": [
+    "Fișierul este prea mare (max. 20 MB)."
   ],
   "A jelen feltételek a weboldal használatára, a kapcsolatfelvételre és az ajánlatkérésre vonatkoznak.": [
     "Prezentele condiții se aplică utilizării site-ului web, stabilirii contactului și solicitării de oferte."
@@ -191,11 +236,17 @@
   "A keresett oldal nem létezik, áthelyezték, vagy elírta a címet. Válasszon az alábbi lehetőségek közül.": [
     "Pagina căutată nu există, a fost mutată sau ați tastat greșit adresa. Vă rugăm să alegeți dintre următoarele opțiuni."
   ],
+  "A kivitelezési tervekhez jogszabály írja elő.": [
+    "Este obligatorie prin lege pentru proiectele de execuție."
+  ],
   "A kiválasztott elemeket még nem adta hozzá az ajánlatkéréshez": [
     "Elementele selectate nu au fost adăugate încă la cererea de ofertă."
   ],
   "A kiválasztott elemeket még nem adta hozzá az ajánlatkéréshez. A folytatás előtt kattintson a gombra.": [
     "Elementele selectate nu au fost adăugate încă la cererea de ofertă. Înainte de a continua, faceți clic pe buton."
+  ],
+  "A kiválasztott elemeket még nem adta hozzá az ajánlatkéréshez. Tovább lép?": [
+    "Nu ați adăugat încă elementele alese la cererea de ofertă. Continuați?"
   ],
   "A kiválasztott szolgáltatásokhoz szükséges adatokat egyszer, itt adhatja meg. Ismételt kitöltés nem szükséges.": [
     "Datele necesare pentru serviciile selectate pot fi introduse o singură dată aici. Nu este necesar să le completați din nou."
@@ -218,6 +269,9 @@
   "A kész terveket az ügyfélportálon adjuk át, a kapcsolódó dokumentumokkal együtt.": [
     "Predăm proiectele finalizate în portalul client, împreună cu documentele aferente."
   ],
+  "A lista a kiválasztott szolgáltatásokhoz igazodik. Ha valami nincs meg, jelölje „Nem”-mel: nem akadályozza az ajánlatkérést, a beszerzését felvesszük a kiegészítők közé.": [
+    "Lista se adaptează serviciilor alese. Dacă ceva lipsește, marcați „Nu”: nu blochează cererea, iar obținerea lui o adăugăm la serviciile suplimentare."
+  ],
   "A lista a referencia-adatbázisból töltődik; itt a jelenlegi oldalon szereplő projektek láthatók. Új projekt felvételekor automatikusan megjelenik a szűrőkben is.": [
     "Lista se încarcă din baza de date a referințelor; aici apar proiectele de pe site-ul actual. Un proiect nou apare automat și în filtre."
   ],
@@ -230,6 +284,12 @@
   "A megoldás (opcionális)": [
     "Soluția (opțional)"
   ],
+  "A mező kulcs kötelező.": [
+    "Cheia câmpului este obligatorie."
+  ],
+  "A név kötelező.": [
+    "Numele este obligatoriu."
+  ],
   "A pontos határidő a projekt méretétől és a szolgáltatói egyeztetésektől függ.": [
     "Termenul exact depinde de dimensiunea proiectului și de discuțiile cu furnizorii de utilități."
   ],
@@ -241,6 +301,18 @@
   ],
   "A projekt részletei az ügyféllel egyeztetett mértékben nyilvánosak.": [
     "Detaliile proiectului sunt publice în măsura convenită cu clientul."
+  ],
+  "A státusz használatban van, ezért nem törölhető.": [
+    "Statusul este folosit, de aceea nu poate fi șters."
+  ],
+  "A státusz mentése sikertelen.": [
+    "Salvarea statusului a eșuat."
+  ],
+  "A státusz nem található.": [
+    "Statusul nu a fost găsit."
+  ],
+  "A státusz neve kötelező.": [
+    "Numele statusului este obligatoriu."
   ],
   "A szekció akkor jelenik meg, ha legalább egy oszlop ki van töltve – csak a kitöltött oszlopok renderelődnek.": [
     "Secțiunea apare dacă cel puțin o coloană este completată – se afișează doar coloanele completate."
@@ -286,6 +358,15 @@
   ],
   "Adja meg a projekt adatait és a meglévő dokumentumokat.": [
     "Completați datele proiectului și încărcați documentele existente."
+  ],
+  "Adja meg a projekt adatait, válassza ki, milyen tervekre van szüksége, és kérjen személyre szabott ajánlatot. Amit nem tud csatolni, azt mi beszerezzük.": [
+    "Introduceți datele proiectului, alegeți de ce proiecte aveți nevoie și cereți o ofertă personalizată. Ce nu puteți atașa, obținem noi."
+  ],
+  "Adja meg a projekt alapadatait, válassza ki a szükséges terveket, és töltse fel, ami megvan. Az ajánlatkérés díjmentes és nem jár kötelezettséggel.": [
+    "Introduceți datele de bază ale proiectului, alegeți proiectele necesare și încărcați ce aveți. Cererea de ofertă este gratuită și fără obligații."
+  ],
+  "Adja meg a projekt alapadatait, válassza ki a szükséges terveket, és töltse fel, ami megvan. Ezek alapján pontos ajánlatot készítünk.": [
+    "Introduceți datele de bază ale proiectului, alegeți proiectele necesare și încărcați ce aveți. Pe baza acestora pregătim o ofertă exactă."
   ],
   "Adja meg a projekt közös adatait és a kapcsolattartási információkat, majd ellenőrizze a kiválasztást a beküldés előtt.": [
     "Completați datele generale ale proiectului și informațiile de contact, apoi verificați selecția înainte de trimitere."
@@ -341,8 +422,14 @@
   "Ajánlatkérés esetén": [
     "În cazul unei cereri de ofertă"
   ],
+  "Ajánlatkérés ezzel": [
+    "Cerere de ofertă"
+  ],
   "Ajánlatkérés indítása": [
     "Începeți cererea de ofertă"
+  ],
+  "Ajánlatkérés indítása ezzel a szolgáltatással": [
+    "Solicitați ofertă pentru acest serviciu"
   ],
   "Ajánlatkérés:": [
     "Cerere de ofertă:"
@@ -365,8 +452,17 @@
   "Aktív kérések": [
     "Cererile active"
   ],
+  "Ami segít pontos ajánlatot adni": [
+    "Ce ne ajută să facem o ofertă exactă"
+  ],
   "Amit csináltunk": [
     "Ce am făcut"
+  ],
+  "Amit nem tud csatolni, azt beszerezzük. A beszerzés költsége és ideje az ajánlatban külön tételként szerepel.": [
+    "Ce nu puteți atașa, obținem noi. Costul și durata obținerii apar în ofertă ca poziție separată."
+  ],
+  "Amit nem tud csatolni, például az urbanisztikai bizonylatot vagy a topográfiai felmérést, azt mi beszerezzük.": [
+    "Ce nu puteți atașa, de exemplu certificatul de urbanism sau ridicarea topografică, obținem noi."
   ],
   "Amit sokan kérdeznek": [
     "Întrebări frecvente"
@@ -379,6 +475,9 @@
   ],
   "Analitikai cookie-k csak hozzájárulás után. Részletek:": [
     "Cookie-urile analitice doar după consimțământ. Detalii:"
+  ],
+  "Automatikusan hozzáadva, mert jelezte, hogy ez még nincs meg.": [
+    "Adăugat automat, deoarece ați indicat că nu îl aveți încă."
   ],
   "Az IBAN az admin beállításokban adható meg.": [
     "IBAN-ul poate fi introdus în setările de administrare."
@@ -428,6 +527,15 @@
   "Az aktuális változat mindig ezen az oldalon érhető el. A szöveget publikálás előtt célszerű jogi/adatvédelmi szakértővel ellenőriztetni.": [
     "Versiunea actuală este întotdeauna disponibilă pe această pagină. Este recomandat ca textul să fie verificat de un expert juridic/protector de date înainte de publicare."
   ],
+  "Az alaprajzok nélkül nem tudunk érdemi ajánlatot adni. Ha nincs meg, írja meg a megjegyzésben, és keresünk.": [
+    "Fără planuri nu putem face o ofertă relevantă. Dacă nu le aveți, scrieți-ne în observații și vă contactăm."
+  ],
+  "Az alapértelmezett státusz nem törölhető.": [
+    "Statusul implicit nu poate fi șters."
+  ],
+  "Az automatikus szabály nem érvényes JSON.": [
+    "Regula automată nu este JSON valid."
+  ],
   "Az azonosítót e-mailben is elküldtük. Erre hivatkozva bármikor tud érdeklődni.": [
     "Am trimis identificatorul și pe e-mail. Îl puteți folosi oricând când ne contactați."
   ],
@@ -448,6 +556,9 @@
   ],
   "Az Ön ajánlatkérése": [
     "Cererea dumneavoastră de ofertă"
+  ],
+  "Az építési engedély megszerzéséhez szükséges dokumentáció. Ezt kell beadni a hatósághoz, mielőtt az építkezés elindul.": [
+    "Documentația necesară pentru obținerea autorizației de construire. Se depune la autoritate înainte de începerea lucrărilor."
   ],
   "Az érintett jogosult panaszt benyújtani az illetékes adatvédelmi felügyeleti hatósághoz.": [
     "Persoana vizată are dreptul să depună o plângere la autoritatea de supraveghere a protecției datelor competente."
@@ -503,6 +614,9 @@
   "Bejelentkezés szükséges": [
     "Autentificare necesară"
   ],
+  "Bekötések": [
+    "Branșamente și racorduri"
+  ],
   "Beküldve": [
     "Trimis"
   ],
@@ -518,11 +632,17 @@
   "Belépés": [
     "Autentificare"
   ],
+  "Beszerzendő": [
+    "De obținut"
+  ],
   "Bezárás": [
     "Închidere"
   ],
   "Biztonságos dokumentumkezelés": [
     "Gestionare sigură a documentelor"
+  ],
+  "Biztosan eltávolítja ezt a szolgáltatást?": [
+    "Sigur eliminați acest serviciu?"
   ],
   "Blokkok üres sorral elválasztva. Üres mezőnél a GYIK szekció nem jelenik meg.": [
     "Blocuri separate prin rând gol. Dacă acest câmp este gol, secțiunea de întrebări frecvente nu apare."
@@ -569,6 +689,12 @@
   "Cég neve": [
     "Numele companiei"
   ],
+  "Cég vagy vállalkozás": [
+    "Firmă sau întreprindere"
+  ],
+  "Cégnél és önkormányzatnál kötelező.": [
+    "Obligatoriu pentru firme și autorități publice."
+  ],
   "Cégnév": [
     "Numele firmei"
   ],
@@ -586,6 +712,9 @@
   ],
   "Dokumentumok rendezett kezelése": [
     "Gestionarea documentelor într-un mod ordonat"
+  ],
+  "Dokumentumok és beküldés": [
+    "Documente și trimitere"
   ],
   "Dokumentumtípus": [
     "Tip document"
@@ -614,6 +743,9 @@
   "Egy ajánlatban": [
     "Într-o singură ofertă"
   ],
+  "Egy ajánlatkérésben kérhet épületgépészeti, tűzvédelmi, közműhálózati és bekötési terveket, engedélyeztetéssel együtt.": [
+    "Într-o singură cerere puteți solicita proiecte de instalații, securitate la incendiu, rețele de utilități și branșamente, împreună cu obținerea avizelor."
+  ],
   "Egy ajánlatkérésben több szolgáltatás és részfeladat is összeállítható.": [
     "Într-o cerere de ofertă se pot combina mai multe servicii și sub-sarcini."
   ],
@@ -629,8 +761,14 @@
   "Egy sor = egy tétel": [
     "Un rând = o poziție"
   ],
+  "Egy építési projektben az épület gépészete, a bekötések és a szükséges engedélyek egymásra épülnek. Egy ajánlatkérésben mindet kérheti, és amit még nem tud csatolni, azt mi beszerezzük.": [
+    "Într-un proiect de construcție, instalațiile clădirii, branșamentele și avizele necesare depind unele de altele. Le puteți cere pe toate într-o singură cerere, iar ce nu puteți atașa încă, obținem noi."
+  ],
   "Egy építési vagy fejlesztési projekt során a tervezés, az engedélyeztetés, a közműcsatlakozások és a műszaki dokumentáció gyakran egymásra épül.": [
     "Într-un proiect de construcție sau dezvoltare, planificarea, obținerea autorizațiilor, racordurile la utilități și documentația tehnică se bazează adesea unul pe altul."
+  ],
+  "Egyszer válassza ki, ez minden elemre érvényes lesz. Ha egy elemhez másik fázis kell, a következő lépésben eltérhet tőle.": [
+    "Alegeți o singură dată, se aplică tuturor elementelor. Dacă un element are nevoie de altă fază, o puteți schimba la pasul următor."
   ],
   "Egyéb": [
     "Altele"
@@ -646,6 +784,9 @@
   ],
   "Ehhez az e-mail címhez már tartozik fiók. Kérjük, jelentkezzen be.": [
     "Există deja un cont asociat acestei adrese de e-mail. Vă rugăm să vă autentificați."
+  ],
+  "Ehhez az elemhez más tervfázis kell": [
+    "Acest element necesită altă fază"
   ],
   "Ehhez kapcsolódó szolgáltatások": [
     "Servicii asociate"
@@ -671,6 +812,9 @@
   "Ellenőrizze az összeállítást, adja meg a kapcsolattartási adatait, és küldje el a kérést.": [
     "Verificați compilația, introduceți datele de contact și trimiteți cererea."
   ],
+  "Ellenőrizze, és küldje el": [
+    "Verificați și trimiteți"
+  ],
   "Ellenőrzés": [
     "Verificare"
   ],
@@ -686,6 +830,9 @@
   "Eltávolítás": [
     "Eliminare"
   ],
+  "Eltérő tervfázis": [
+    "Fază de proiectare diferită"
+  ],
   "Elérhetőségeink": [
     "Datele noastre de contact"
   ],
@@ -698,6 +845,18 @@
   "Emlékezzen rám": [
     "Ține-mă minte"
   ],
+  "Engedélyes + kivitelezési terv": [
+    "Autorizare + execuție"
+  ],
+  "Engedélyes + kivitelezési terv · 4 tétel · 1 ajánlatkérés": [
+    "Autorizare + execuție · 4 poziții · 1 cerere de ofertă"
+  ],
+  "Engedélyes terv (DTAC)": [
+    "Proiect pentru autorizare (DTAC)"
+  ],
+  "Engedélyes vagy kivitelezési terv?": [
+    "Proiect pentru autorizare sau de execuție?"
+  ],
   "Engedélyeztetés": [
     "Autorizare"
   ],
@@ -707,17 +866,38 @@
   "Ez a bma_reference_category taxonómia (lista szűrő: ?tipus=…).": [
     "Aceasta este taxonomia bma_reference_category (filtru listă: ?tipus=…)."
   ],
+  "Ez a lépés nem kötelező.": [
+    "Acest pas este opțional."
+  ],
+  "Ez a mező kulcs már létezik.": [
+    "Această cheie de câmp există deja."
+  ],
+  "Ez a mező kötelező.": [
+    "Acest câmp este obligatoriu."
+  ],
   "Ez a tájékoztató bemutatja, hogy milyen személyes adatokat kezelünk a weboldal használata, kapcsolatfelvétel, ajánlatkérés és ügyfélfiók használata során, milyen célból kezeljük ezeket az adatokat, valamint milyen jogok illetik meg az érintetteket.": [
     "Această informare prezintă ce date personale colectăm atunci când utilizați site-ul web, luați legătura cu noi, solicitați o ofertă și utilizați contul de client, în ce scop prelucrăm aceste date și care sunt drepturile persoanelor vizate."
   ],
   "Ez a tájékoztató bemutatja, milyen sütiket (cookie-kat) és hasonló technológiákat használ a BMA Engineering weboldala.": [
     "Această informare prezintă ce cookie-uri și tehnologii similare utilizează site-ul web BMA Engineering."
   ],
+  "Ez alapján mutatjuk a projektjéhez illő tervtípusokat.": [
+    "Pe baza acestuia vă arătăm tipurile de proiect potrivite."
+  ],
   "Ez az ajánlatkérés már be lett küldve. Frissítse az oldalt.": [
     "Această cerere a fost deja trimisă. Reîmprospătați pagina."
   ],
   "Ezek a működéshez szükségesek, és a „Csak szükséges” választással is aktívak maradnak.": [
     "Acestea sunt necesare pentru funcționare și rămân active chiar și cu alegerea „Doar necesare”."
+  ],
+  "Ezek az adatok minden kiválasztott szolgáltatásra érvényesek.": [
+    "Aceste date sunt valabile pentru toate serviciile alese."
+  ],
+  "Ezeket is intézzük": [
+    "Ne ocupăm și de acestea"
+  ],
+  "Ezeket is intézzük Önnek": [
+    "Ne ocupăm și de acestea pentru dumneavoastră"
   ],
   "Ezt válassza, ha:": [
     "Alegeți aceasta dacă:"
@@ -737,8 +917,20 @@
   "Felmérés és ajánlat": [
     "Evaluare și ofertă"
   ],
+  "Feltölti, ami megvan. Ami hiányzik, azt jelzi, mi beszerezzük.": [
+    "Încărcați ce aveți. Ce lipsește, ne semnalați, iar noi obținem."
+  ],
   "Feltöltés": [
     "Încărcare"
+  ],
+  "Feltöltés folyamatban…": [
+    "Încărcare în curs…"
+  ],
+  "Feltöltés sikeres.": [
+    "Încărcare reușită."
+  ],
+  "Feltöltés sikertelen.": [
+    "Încărcarea a eșuat."
   ],
   "Felújítás": [
     "Renovare"
@@ -770,6 +962,9 @@
   "Fájl": [
     "Fișier"
   ],
+  "Fájl feltöltési hiba.": [
+    "Eroare la încărcarea fișierului."
+  ],
   "Fájl kiválasztása": [
     "Alegeți fișierul"
   ],
@@ -781,6 +976,9 @@
   ],
   "Főoldal": [
     "Acasă"
+  ],
+  "Fűtés": [
+    "Încălzire"
   ],
   "GYIK": [
     "Întrebări frecvente"
@@ -796,6 +994,15 @@
   ],
   "Ha a banki utalást választja, a kártyás fizetés a továbbiakban nem lesz elérhető ennél az ajánlatnál. Folytatja?": [
     "Dacă alegeți transferul bancar, plata cu cardul nu va mai fi disponibilă pentru această ofertă. Continuați?"
+  ],
+  "Ha az engedélyes terv már megvan, és csak a kivitelezéshez szükséges részletes terv kell: méretek, anyagok, részletrajzok.": [
+    "Dacă proiectul pentru autorizare există deja și vă trebuie doar proiectul detaliat pentru execuție: dimensiuni, materiale, detalii."
+  ],
+  "Ha beszerzést is kért (pl. urbanisztikai bizonylat), annak költségét és idejét az ajánlatban külön tételként látja.": [
+    "Dacă ați cerut și obținerea unor documente (de ex. certificatul de urbanism), costul și durata apar în ofertă ca poziție separată."
+  ],
+  "Ha beszerzést is kért, annak költségét és idejét az ajánlatban külön tételként látja.": [
+    "Dacă ați cerut și obținerea unor documente, costul și durata apar în ofertă ca poziție separată."
   ],
   "Ha egy kéréssel kapcsolatban kérdése van, vagy módosítaná a kiválasztott tételeket, keressen minket.": [
     "Dacă aveți întrebări despre o cerere sau doriți să modificați pozițiile selectate, contactați-ne."
@@ -860,6 +1067,9 @@
   "Hol talál minket?": [
     "Unde ne găsiți?"
   ],
+  "Hova küldjük az ajánlatot?": [
+    "Unde trimitem oferta?"
+  ],
   "Hozzon létre ügyfélfiókot, hogy egy helyen kövesse a kérés státuszát, az ajánlatot és a dokumentumokat.": [
     "Creați un cont de client pentru a urmări într-un singur loc statusul cererii, oferta și documentele."
   ],
@@ -898,6 +1108,12 @@
   ],
   "Ilyen projektet csináltunk – ilyen szolgáltatással, ilyen környezetben.": [
     "Am făcut un astfel de proiect – cu un astfel de serviciu, într-un astfel de mediu."
+  ],
+  "Indítsa el az ajánlatkérést, és a kiegészítőknél válassza a tanácsadást, vagy írjon nekünk.": [
+    "Începeți cererea de ofertă și alegeți consultanța la serviciile suplimentare, sau scrieți-ne."
+  ],
+  "Indítsa el az ajánlatkérést, és ott válassza ki, mire van szüksége.": [
+    "Începeți cererea de ofertă și alegeți acolo de ce aveți nevoie."
   ],
   "Ipari beruházás": [
     "Investiție industrială"
@@ -962,6 +1178,9 @@
   "Kapcsolattartói adatok": [
     "Date de contact"
   ],
+  "Kapcsolódó": [
+    "Legate"
+  ],
   "Kapcsolódó szolgáltatások": [
     "Servicii conexe"
   ],
@@ -986,14 +1205,35 @@
   "Kevesebb felesleges egyeztetés": [
     "Mai puține coordonări inutile"
   ],
+  "Ki a megrendelő?": [
+    "Cine este beneficiarul?"
+  ],
+  "Kiegészítő": [
+    "Serviciu suplimentar"
+  ],
+  "Kiegészítők": [
+    "Servicii suplimentare"
+  ],
   "Kiemelt referenciák": [
     "Referințe importante"
   ],
   "Kijelentkezés": [
     "Deconectare"
   ],
+  "Kijelölés": [
+    "Selectare"
+  ],
+  "Kivitelezési terv (PT + DDE)": [
+    "Proiect de execuție (PT + DDE)"
+  ],
   "Kiválasztja a részfeladatokat, megadja a projekt adatait, és feltölti a meglévő dokumentumokat.": [
     "Alegeți subactivitățile, completați datele proiectului și încărcați documentele existente."
+  ],
+  "Kiválasztja a szükséges rendszereket és a kiegészítőket.": [
+    "Alegeți sistemele necesare și serviciile suplimentare."
+  ],
+  "Kiválasztott elemek": [
+    "Elemente alese"
   ],
   "Kiválasztott szolgáltatások": [
     "Servicii selectate"
@@ -1028,17 +1268,29 @@
   "Képek": [
     "Imagini"
   ],
+  "Kér még valamit a tervek mellé?": [
+    "Mai doriți ceva pe lângă proiecte?"
+  ],
   "Kérjen ajánlatot": [
     "Cereți o ofertă"
   ],
   "Kérjen ajánlatot a projektjéhez": [
     "Solicitați o ofertă pentru proiectul dumneavoastră"
   ],
+  "Kérjen ajánlatot: %s": [
+    "Solicitați ofertă: %s"
+  ],
   "Kérjük, töltse ki a kötelező mezőket.": [
     "Vă rugăm să completați câmpurile obligatorii."
   ],
   "Kérjük, utalja az alábbi összeget a megadott bankszámlára. Az utalás közleményében tüntesse fel az ajánlat számát.": [
     "Vă rugăm să transferați suma de mai sus în contul bancar indicat. În referința plății, vă rugăm să menționați numărul ofertei."
+  ],
+  "Kérjük, válassza ki, milyen tervre van szüksége.": [
+    "Vă rugăm să alegeți ce tip de proiect vă trebuie."
+  ],
+  "Kérjük, válasszon legalább egy szolgáltatást.": [
+    "Vă rugăm să alegeți cel puțin un serviciu."
   ],
   "Kérés részletei, státusz, dokumentumok és ajánlat.": [
     "Detalii cerere, statut, documente și ofertă."
@@ -1079,6 +1331,12 @@
   "Közmű-koordináció: Áram-, gáz- és vízszolgáltatói egyeztetések\nTervezés: Csatlakozási tervek készítése": [
     "Coordonare utilități: Discuții cu furnizorii de energie, gaz și apă\nProiectare: Întocmirea proiectelor de branșament"
   ],
+  "Közműhálózatok tervezése": [
+    "Proiectare rețele de utilități"
+  ],
+  "Küldés…": [
+    "Se trimite…"
+  ],
   "Lakossági": [
     "Rezidențial"
   ],
@@ -1090,6 +1348,9 @@
   ],
   "Lakossági és üzleti<br>projektek": [
     "Proiecte rezidențiale<br>și de business"
+  ],
+  "Legalább egy szolgáltatást ki kell választani.": [
+    "Trebuie ales cel puțin un serviciu."
   ],
   "Legalább egy tételt válasszon ki a továbblépéshez.": [
     "Selectați cel puțin o poziție pentru a continua."
@@ -1109,11 +1370,17 @@
   "Lábléc navigáció": [
     "Navigație subsol"
   ],
+  "Magánszemély": [
+    "Persoană fizică"
+  ],
   "Maradok ezen az oldalon": [
     "Rămân pe această pagină"
   ],
   "Marketing": [
     "Marketing"
+  ],
+  "Megadja a projekt alapadatait, és hogy engedélyes vagy kivitelezési tervre van szüksége.": [
+    "Introduceți datele de bază ale proiectului și dacă vă trebuie proiect pentru autorizare sau de execuție."
   ],
   "Megjegyzés": [
     "Comentariu"
@@ -1124,17 +1391,29 @@
   "Megkaptuk a megkeresését. A megadott elérhetőségek egyikén felvesszük Önnel a kapcsolatot.": [
     "Am primit solicitarea dvs. Vom lua legătura cu dumneavoastră prin una dintre informațiile de contact furnizate."
   ],
+  "Megkaptuk az üzenetét – %s": [
+    "Am primit mesajul dumneavoastră – %s"
+  ],
   "Meglévő ajánlatkérés vagy projekt": [
     "Cerere de ofertă sau proiect existent"
   ],
   "Meglévő ajánlatkérése van?": [
     "Aveți o cerere de ofertă existentă?"
   ],
+  "Megrendelő": [
+    "Beneficiar"
+  ],
+  "Megvalósíthatósági fázis (SF / DALI)": [
+    "Fază de fezabilitate (SF / DALI)"
+  ],
   "Menü bezárása": [
     "Închide meniul"
   ],
   "Menü megnyitása": [
     "Deschide meniul"
+  ],
+  "Meséljen a projektről": [
+    "Spuneți-ne despre proiect"
   ],
   "Meta: _bma_duration – az „Amit csináltunk” blokk utolsó sora.": [
     "Meta: _bma_duration – ultimul rând din blocul „Ce am făcut”."
@@ -1157,8 +1436,17 @@
   "Mikor lehet erre szüksége?": [
     "Când ar putea avea nevoie de acest lucru?"
   ],
+  "Milyen tervre van szüksége?": [
+    "De ce proiect aveți nevoie?"
+  ],
   "Mind": [
     "Toate"
+  ],
+  "Minden blokk mellett ott a Szerkesztés gomb, amely a megfelelő lépésre visz.": [
+    "Lângă fiecare bloc găsiți butonul Modificare, care vă duce la pasul respectiv."
+  ],
+  "Minden elem kérhető engedélyes és kivitelezési tervként is.": [
+    "Fiecare element poate fi solicitat ca proiect pentru autorizare și ca proiect de execuție."
   ],
   "Minden kiválasztott tételre vonatkozik": [
     "Se aplică tuturor pozițiilor selectate"
@@ -1180,6 +1468,9 @@
   ],
   "Mit tartalmaz a(z) %s?": [
     "Ce include %s?"
+  ],
+  "Mit tervezzünk?": [
+    "Ce să proiectăm?"
   ],
   "Mit végeztünk el?": [
     "Ce am realizat?"
@@ -1205,11 +1496,17 @@
   "Már be van jelentkezve": [
     "Sunteți deja autentificat"
   ],
+  "Már hozzáadva az ajánlatkéréshez": [
+    "Deja adăugat la cererea de ofertă"
+  ],
   "Más szolgáltatásra is szüksége lehet? Tekintse meg a kapcsolódó területeket – a kiválasztás az adott szolgáltatás oldalán történik.": [
     "Aveți nevoie și de alte servicii? Consultați domeniile conexe – selecția se face pe pagina serviciului respectiv."
   ],
   "Még nem töltött fel dokumentumot.": [
     "Nu ați încărcat niciun document."
+  ],
+  "Még nem választott elemet.": [
+    "Nu ați ales încă niciun element."
   ],
   "Még nem választott tételt. Jelölje be bal oldalon, mire van szüksége – bármennyi tétel egy ajánlatkérésbe kerülhet.": [
     "Nu ați selectat încă nicio poziție. Bifați în stânga de ce aveți nevoie – oricâte poziții pot intra într-o singură cerere."
@@ -1253,14 +1550,32 @@
   "Nem biztos benne, melyik szolgáltatásra van szüksége?": [
     "Nu sunteți sigur de ce serviciu aveți nevoie?"
   ],
+  "Nem biztos benne? Válassza az „Engedélyes + kivitelezési terv” lehetőséget. Az ajánlatban külön soron látja a kettőt.": [
+    "Nu sunteți sigur? Alegeți „Autorizare + execuție”. În ofertă le vedeți pe rânduri separate."
+  ],
+  "Nem engedélyezett fájltípus.": [
+    "Tip de fișier nepermis."
+  ],
   "Nem felelünk külső oldalak tartalmáért. A folyamatos működés nem garantálható. A weboldali általános információ nem helyettesíti az egyedi műszaki felmérést.": [
     "Nu răspundem pentru conținutul site-urilor externe. Nu se poate garanta funcționarea continuă. Informațiile generale de pe site nu înlocuiesc evaluarea tehnică individuală."
+  ],
+  "Nem kell mindent előre beszereznie": [
+    "Nu trebuie să obțineți totul dinainte"
+  ],
+  "Nem sikerült létrehozni a mezőt.": [
+    "Câmpul nu a putut fi creat."
+  ],
+  "Nem sikerült létrehozni az elemet.": [
+    "Elementul nu a putut fi creat."
   ],
   "Nem szükséges minden műszaki részletet előre ismernie. Adja meg a rendelkezésére álló információkat és dokumentumokat, mi pedig ezek alapján felmérjük a projektet és elkészítjük az ajánlatot.": [
     "Nu este necesar să cunoască toate detaliile tehnice dinainte. Vă rugăm să furnizați informațiile și documentele de care dispuneți și, pe baza acestora, vom evalua proiectul și vom întocmi oferta."
   ],
   "Nem találja, amire szüksége van?": [
     "Nu găsiți ce vă trebuie?"
+  ],
+  "Nem tudja, mire van szüksége?": [
+    "Nu știți de ce aveți nevoie?"
   ],
   "Nettó összeg": [
     "Sumă netă"
@@ -1270,6 +1585,15 @@
   ],
   "Nincs ajánlat": [
     "Nu există ofertă"
+  ],
+  "Nincs fájl.": [
+    "Niciun fișier."
+  ],
+  "Nincs jogosultsága a letöltéshez.": [
+    "Nu aveți dreptul să descărcați."
+  ],
+  "Nincs jogosultsága a törléshez.": [
+    "Nu aveți dreptul să ștergeți."
   ],
   "Nincs jogosultsága.": [
     "Nu aveți drepturi."
@@ -1282,6 +1606,9 @@
   ],
   "Nincs megadott projektadat.": [
     "Nu au fost completate date despre proiect."
+  ],
+  "Nincs megadva": [
+    "Necompletat"
   ],
   "Nincs részletes elem kiválasztva – a szolgáltatás oldalán szerkesztheti.": [
     "Nu este selectat un element detaliat – îl puteți edita pe pagina serviciului."
@@ -1310,6 +1637,18 @@
   "Négy szolgáltatási terület, azon belül konkrét részfeladatokkal. Az ajánlatkérésbe bármennyi tétel bekerülhet.": [
     "Patru domenii de servicii, fiecare cu sarcini specifice. Oricâte elemente pot fi incluse în cererea de ofertă."
   ],
+  "Négy tervezési terület, 20 konkrét elemmel. Egy ajánlatkérésben bármennyi kombinálható, engedélyes és kivitelezési tervként is.": [
+    "Patru domenii de proiectare, cu 20 de elemente concrete. Într-o singură cerere se pot combina oricâte, ca proiect pentru autorizare și de execuție."
+  ],
+  "Négy tervezési terület, egy ajánlatkérésben kombinálhatók. Nézze meg, mit tartalmaznak, vagy indítsa el az ajánlatkérést, és ott válassza ki, mire van szüksége.": [
+    "Patru domenii de proiectare, care se pot combina într-o singură cerere. Vedeți ce conțin sau începeți cererea de ofertă și alegeți acolo de ce aveți nevoie."
+  ],
+  "Néhány kötelező adat hiányzik. A pirossal jelölt mezőket kérjük, töltse ki.": [
+    "Lipsesc câteva date obligatorii. Vă rugăm să completați câmpurile marcate cu roșu."
+  ],
+  "Néhány perc alatt végigmegyünk a projektjén. Amit nem tud, azt hagyja üresen vagy jelölje, hogy nincs meg: segítünk pótolni. Az ajánlatkérés díjmentes és nem jár kötelezettséggel.": [
+    "În câteva minute parcurgem împreună proiectul. Ce nu știți, lăsați necompletat sau marcați că nu aveți: vă ajutăm să completați. Cererea de ofertă este gratuită și fără obligații."
+  ],
   "Név": [
     "Nume"
   ],
@@ -1327,6 +1666,9 @@
   ],
   "Piszkozat": [
     "Schimbare"
+  ],
+  "Projekt": [
+    "Proiect"
   ],
   "Projekt adatai": [
     "Informații despre proiect"
@@ -1352,6 +1694,9 @@
   "Projekt típusa (kicker)": [
     "Tipul proiectului (kicker)"
   ],
+  "Projekt és tervfázis": [
+    "Proiect și fază de proiectare"
+  ],
   "Projektadatok": [
     "Date despre proiect"
   ],
@@ -1367,6 +1712,12 @@
   "Referencia": [
     "Referință"
   ],
+  "Referencia adatok": [
+    "Date referință"
+  ],
+  "Referencia kategóriák": [
+    "Categorii de referințe"
+  ],
   "Referencia projekt": [
     "Proiect de referință"
   ],
@@ -1381,6 +1732,9 @@
   ],
   "Részletek és kiválasztás →": [
     "Detalii și selectare →"
+  ],
+  "Részletek →": [
+    "Detalii →"
   ],
   "Rólunk": [
     "Despre noi"
@@ -1421,14 +1775,26 @@
   "Szeretnék ügyfélfiókot létrehozni az ajánlatkérések követéséhez.": [
     "Aș dori să creez un cont de client pentru a urmări cererile de ofertă."
   ],
+  "Szerkesztés": [
+    "Modificare"
+  ],
   "Szerződés teljesítése:": [
     "Executarea contractului:"
   ],
   "Szolgáltatás": [
     "Serviciu"
   ],
+  "Szolgáltatás beállítások": [
+    "Setări serviciu"
+  ],
+  "Szolgáltatás kategóriák": [
+    "Categorii de servicii"
+  ],
   "Szolgáltatás megtekintése": [
     "Vizualizare serviciu"
+  ],
+  "Szolgáltatás szerkesztése": [
+    "Editare serviciu"
   ],
   "Szolgáltatási területek": [
     "Domenii de servicii"
@@ -1478,6 +1844,9 @@
   "Teljes név": [
     "Nume complet"
   ],
+  "Teljes tervcsomag az engedélytől a kivitelezésig. Ez a leggyakoribb választás.": [
+    "Pachet complet de la autorizare până la execuție. Aceasta este alegerea cea mai frecventă."
+  ],
   "Terv": [
     "Plan"
   ],
@@ -1495,6 +1864,9 @@
   ],
   "Tervezés · Engedélyeztetés · Közmű-koordináció": [
     "Proiectare · Autorizare · Coordonare utilități"
+  ],
+  "Tervfázis": [
+    "Faza de proiectare"
   ],
   "Tervrajzok, dokumentumok": [
     "Planuri, documente"
@@ -1565,8 +1937,14 @@
   "Törlés": [
     "Ștergere"
   ],
+  "Tűzvédelmi rendszerek tervezése": [
+    "Proiectare sisteme de securitate la incendiu"
+  ],
   "Ugrás a tartalomhoz": [
     "Salt la conținut"
+  ],
+  "Urbanisztikai bizonylat beszerzése": [
+    "Obținerea certificatului de urbanism"
   ],
   "Utalási adatok": [
     "Detalii transfer bancar"
@@ -1613,6 +1991,9 @@
   "Válassza ki a projektjéhez szükséges szolgáltatásokat és azokon belül a konkrét részfeladatokat.": [
     "Selectați serviciile necesare pentru proiectul dumneavoastră și, în cadrul acestora, sarcinile specifice."
   ],
+  "Válassza ki a szükséges elemeket. Bármennyi kombinálható, több főcsoportból is.": [
+    "Alegeți elementele necesare. Oricâte se pot combina, și din mai multe grupe."
+  ],
   "Válassza ki a szükséges részfeladatokat, és néhány adat megadásával kérjen ajánlatot. Az ajánlatkérés díjmentes és nem jár kötelezettséggel.": [
     "Alegeți subactivitățile necesare și cereți o ofertă completând câteva date. Cererea este gratuită și fără obligații."
   ],
@@ -1626,7 +2007,7 @@
     "Selectați serviciile necesare și trimiteți datele de bază ale proiectului."
   ],
   "Válassza ki a szükséges szolgáltatásokat, és néhány adat megadásával kérjen személyre szabott ajánlatot.": [
-    "Selectați serviciile necesare și, oferind câteva date, solicitați o ofertă personalizată."
+    "Alegeți serviciile necesare și, cu câteva date, cereți o ofertă personalizată."
   ],
   "Válassza ki az Ön projektjéhez kapcsolódó szolgáltatási területet. Egy ajánlatkérésben több szolgáltatást és azokon belül több részfeladatot is megjelölhet.": [
     "Selectați domeniul de servicii legat de proiectul dvs. Într-o cerere de ofertă puteți indica mai multe servicii și, în cadrul acestora, mai multe sub-sarcini."
@@ -1643,6 +2024,9 @@
   "Válasszon témát…": [
     "Alegeți un subiect…"
   ],
+  "Válasszon…": [
+    "Alegeți…"
+  ],
   "Válasz [X] munkanapon belül": [
     "Răspuns în [X] zile lucrătoare"
   ],
@@ -1651,6 +2035,15 @@
   ],
   "Válogatás megvalósult tervezési, engedélyeztetési, közmű-koordinációs és dokumentációs munkáinkból. Szűrjön projekttípus vagy szolgáltatás szerint.": [
     "O selecție din lucrările noastre de proiectare, autorizare, coordonare utilități și documentație. Filtrați după tipul proiectului sau după serviciu."
+  ],
+  "Válogatás megvalósult épületgépészeti, tűzvédelmi és közműtervezési munkáinkból.": [
+    "O selecție din lucrările noastre realizate de instalații, securitate la incendiu și rețele de utilități."
+  ],
+  "Víz-csatorna": [
+    "Apă-canal"
+  ],
+  "Vízbekötés": [
+    "Branșament apă"
   ],
   "Vízbekötési terv": [
     "Plan de branșament apă"
@@ -1678,6 +2071,9 @@
   ],
   "ajánlatok és projektinformációk elérése ügyfélfiókon keresztül": [
     "acces la oferte și informații despre proiect prin contul de client"
+  ],
+  "automatikusan hozzáadva": [
+    "adăugat automat"
   ],
   "az ajánlat %d napig érvényes": [
     "oferta este valabilă %d zile"
@@ -1739,6 +2135,9 @@
   "számviteli és jogszabályi kötelezettségek.": [
     "obligații contabile și legale"
   ],
+  "tervfázis nélkül": [
+    "fără fază de proiectare"
+  ],
   "visszaélések megelőzése.": [
     "prevenirea abuzurilor"
   ],
@@ -1750,6 +2149,9 @@
   ],
   "Állítsa össze, mire van szüksége, és néhány adat megadásával kérjen személyre szabott ajánlatot.": [
     "Compuneți de ce aveți nevoie și cereți o ofertă personalizată completând câteva date."
+  ],
+  "Általános dokumentumok": [
+    "Documente generale"
   ],
   "Általános felhasználási feltételek": [
     "Condiții generale de utilizare"
@@ -1769,6 +2171,9 @@
   "Átfutás": [
     "Durată"
   ],
+  "Átirányítás…": [
+    "Redirecționare…"
+  ],
   "Átlátható folyamat": [
     "Proces transparent"
   ],
@@ -1784,6 +2189,15 @@
   "Építési engedély előkészítés": [
     "Pregătire autorizație de construcție"
   ],
+  "Épületgépészet": [
+    "Instalații"
+  ],
+  "Épületgépészet · Tűzvédelem · Közműhálózatok · Bekötések": [
+    "Instalații · Securitate la incendiu · Rețele de utilități · Branșamente"
+  ],
+  "Épületgépészeti tervezés": [
+    "Proiectare instalații în construcții"
+  ],
   "Érvényes": [
     "Valid"
   ],
@@ -1795,6 +2209,9 @@
   ],
   "Érvénytelen e-mail cím.": [
     "Adresă de e-mail invalidă."
+  ],
+  "Érvénytelen kérés.": [
+    "Cerere invalidă."
   ],
   "Év": [
     "An"
@@ -1810,6 +2227,12 @@
   ],
   "Írjon nekünk": [
     "Scrieți-ne"
+  ],
+  "Önkormányzat vagy közintézmény": [
+    "Primărie sau instituție publică"
+  ],
+  "Önkormányzati, közbeszerzéses beruházások előkészítő tanulmánya.": [
+    "Studiu pregătitor pentru investiții publice ale primăriilor, prin achiziție publică."
   ],
   "Összeg": [
     "Sumă"
@@ -1840,6 +2263,9 @@
   ],
   "Új ajánlatkérés": [
     "Cerere de ofertă nouă"
+  ],
+  "Új szolgáltatás": [
+    "Serviciu nou"
   ],
   "Új építés": [
     "Construcție nouă"

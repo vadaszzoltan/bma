@@ -467,7 +467,7 @@
 				var it = D.items[id];
 				var extra = '';
 				if (!it.hasPhase) extra = ' (' + S.noPhaseShort + ')';
-				else if (st.itemPhases[id] && st.itemPhases[id] !== st.phase) extra = ' – ' + D.phases[ph[id]];
+				else if (st.itemPhases[id] && st.itemPhases[id] !== st.phase) extra = ' (' + D.phases[ph[id]] + ')';
 				return it.name + extra;
 			});
 			return [D.services[g.sid].short, names.join(', ')];

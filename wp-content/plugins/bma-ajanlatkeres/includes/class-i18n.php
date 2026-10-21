@@ -15,6 +15,16 @@ final class BMA_AJ_I18n {
 	public static function init(): void {
 		add_action( 'init', array( self::class, 'register_polylang_strings' ), 20 );
 		add_action( 'pll_init', array( self::class, 'on_pll_init' ) );
+		// Newer Polylang versions drop unregistered types from its option on
+		// pll_init (CPTs register later, on init); these filters always apply.
+		add_filter(
+			'pll_get_post_types',
+			static fn( $types ) => array_merge( (array) $types, array( 'bma_service' => 'bma_service', 'bma_reference' => 'bma_reference' ) )
+		);
+		add_filter(
+			'pll_get_taxonomies',
+			static fn( $taxes ) => array_merge( (array) $taxes, array( 'bma_service_category' => 'bma_service_category', 'bma_reference_category' => 'bma_reference_category' ) )
+		);
 		add_filter( 'gettext', array( self::class, 'filter_gettext' ), 20, 3 );
 		add_filter( 'gettext_with_context', array( self::class, 'filter_gettext_ctx' ), 20, 4 );
 		add_filter( 'bma_service_item_name', array( self::class, 'translate_service_item_name' ), 10, 2 );
@@ -77,10 +87,67 @@ final class BMA_AJ_I18n {
 		pll_register_string( 'blogdescription', (string) get_option( 'blogdescription', '' ), 'BMA Options', false );
 	}
 
+	/** Language forced by in_language(), null when not forced. */
+	private static ?string $forced_lang = null;
+
+	/**
+	 * Run a callback in another site language (e.g. to e-mail a client in the
+	 * language they used, from an admin request). Reloads the text domains too.
+	 *
+	 * @param string   $lang hu|ro|en.
+	 * @param callable $fn   Callback.
+	 * @return mixed Callback result.
+	 */
+	public static function in_language( string $lang, callable $fn ) {
+		$previous = self::current_lang();
+		if ( $lang === $previous || ! in_array( $lang, array( 'hu', 'ro', 'en' ), true ) ) {
+			return $fn();
+		}
+		$forced            = self::$forced_lang;
+		self::$forced_lang = $lang;
+		self::load_domains( $lang );
+		try {
+			return $fn();
+		} finally {
+			self::$forced_lang = $forced;
+			self::load_domains( $previous );
+		}
+	}
+
+	/**
+	 * Load the site's text domains for a language. switch_to_locale() is not
+	 * used: it refuses locales without installed WordPress core files.
+	 *
+	 * @param string $lang hu|ro|en.
+	 */
+	private static function load_domains( string $lang ): void {
+		$locale  = array( 'ro' => 'ro_RO', 'en' => 'en_US' )[ $lang ] ?? '';
+		$domains = array(
+			'bma-ajanlatkeres' => array( WP_LANG_DIR . '/plugins', BMA_AJ_PLUGIN_DIR . 'languages' ),
+			'bma-engineering'  => array( WP_LANG_DIR . '/themes', get_stylesheet_directory() . '/languages' ),
+		);
+		foreach ( $domains as $domain => $dirs ) {
+			unload_textdomain( $domain, true );
+			if ( '' === $locale ) {
+				continue; // Hungarian is the source language.
+			}
+			foreach ( $dirs as $dir ) {
+				$file = $dir . '/' . $domain . '-' . $locale . '.mo';
+				if ( is_readable( $file ) ) {
+					load_textdomain( $domain, $file, $locale );
+					break;
+				}
+			}
+		}
+	}
+
 	/**
 	 * Current language slug (hu|ro|en).
 	 */
 	public static function current_lang(): string {
+		if ( null !== self::$forced_lang ) {
+			return self::$forced_lang;
+		}
 		if ( function_exists( 'pll_current_language' ) ) {
 			$lang = pll_current_language( 'slug' );
 			if ( is_string( $lang ) && $lang ) {

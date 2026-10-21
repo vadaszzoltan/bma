@@ -1,3 +1,4 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: bma-ajanlatkeres\n"
@@ -26,7 +27,7 @@ msgid "%d szolgáltatáselem"
 msgstr ""
 
 msgid "%d szolgáltatáselem kiválasztva"
-msgstr ""
+msgstr "%d elemente selectate"
 
 msgid "%d tétel"
 msgstr "%d poziții"
@@ -59,7 +60,7 @@ msgid "1 projekt"
 msgstr "1 proiect"
 
 msgid "1 szolgáltatáselem kiválasztva"
-msgstr ""
+msgstr "1 element selectat"
 
 msgid "1 tétel"
 msgstr "1 poziție"
@@ -179,13 +180,13 @@ msgid "A demo tartalom sikeresen betöltve. Frissítse a főoldalt a böngésző
 msgstr ""
 
 msgid "A dokumentum nem ehhez az ajánlatkéréshez tartozik."
-msgstr ""
+msgstr "Documentul nu aparține acestei cereri de ofertă."
 
 msgid "A dokumentum nem található."
-msgstr ""
+msgstr "Documentul nu a fost găsit."
 
 msgid "A dokumentum törlése sikertelen."
-msgstr ""
+msgstr "Ștergerea documentului a eșuat."
 
 msgid "A feladat"
 msgstr "Sarcina"
@@ -197,7 +198,7 @@ msgid "A felhasználó felelőssége, hogy a megadott adatok tudomása szerint p
 msgstr "Este responsabilitatea utilizatorului ca datele furnizate să fie, după cunoștința sa, corecte și complete."
 
 msgid "A feltöltési könyvtár nem írható. Kérjük, jelezze az üzemeltetőnek."
-msgstr ""
+msgstr "Directorul de încărcare nu poate fi scris. Vă rugăm să anunțați administratorul."
 
 msgid "A feltöltött dokumentumokat kizárólag az adott ajánlatkérés vagy szolgáltatás kezelése céljából használjuk. Kérjük, csak a projekthez szükséges adatokat töltse fel."
 msgstr "Documentele încărcate vor fi utilizate exclusiv în scopul gestionării cererii de ofertă sau al serviciului solicitat. Vă rugăm să încărcați doar datele necesare pentru proiect."
@@ -206,10 +207,10 @@ msgid "A fizetéshez be kell jelentkeznie, és érvényes ajánlathoz kell rende
 msgstr "Pentru a efectua plata, trebuie să vă autentificați și să aveți o ofertă valabilă."
 
 msgid "A fájl feltöltése sikertelen."
-msgstr ""
+msgstr "Încărcarea fișierului a eșuat."
 
 msgid "A fájl túl nagy (max. 20 MB)."
-msgstr ""
+msgstr "Fișierul este prea mare (max. 20 MB)."
 
 msgid "A jelen feltételek a weboldal használatára, a kapcsolatfelvételre és az ajánlatkérésre vonatkoznak."
 msgstr "Prezentele condiții se aplică utilizării site-ului web, stabilirii contactului și solicitării de oferte."
@@ -224,7 +225,7 @@ msgid "A kiválasztott elemeket még nem adta hozzá az ajánlatkéréshez. A fo
 msgstr "Elementele selectate nu au fost adăugate încă la cererea de ofertă. Înainte de a continua, faceți clic pe buton."
 
 msgid "A kiválasztott elemeket még nem adta hozzá az ajánlatkéréshez. Tovább lép?"
-msgstr ""
+msgstr "Nu ați adăugat încă elementele alese la cererea de ofertă. Continuați?"
 
 msgid "A kiválasztás bármikor módosítható a beküldésig. Az ajánlatkérés nem jár kötelezettséggel."
 msgstr "Selecția poate fi modificată oricând până la trimitere. Cererea de ofertă nu implică nicio obligație."
@@ -254,10 +255,10 @@ msgid "A megoldás (opcionális)"
 msgstr "Soluția (opțional)"
 
 msgid "A mező kulcs kötelező."
-msgstr ""
+msgstr "Cheia câmpului este obligatorie."
 
 msgid "A név kötelező."
-msgstr ""
+msgstr "Numele este obligatoriu."
 
 msgid "A pontos határidő a projekt méretétől és a szolgáltatói egyeztetésektől függ."
 msgstr "Termenul exact depinde de dimensiunea proiectului și de discuțiile cu furnizorii de utilități."
@@ -269,16 +270,16 @@ msgid "A projekt részletei az ügyféllel egyeztetett mértékben nyilvánosak.
 msgstr "Detaliile proiectului sunt publice în măsura convenită cu clientul."
 
 msgid "A státusz használatban van, ezért nem törölhető."
-msgstr ""
+msgstr "Statusul este folosit, de aceea nu poate fi șters."
 
 msgid "A státusz mentése sikertelen."
-msgstr ""
+msgstr "Salvarea statusului a eșuat."
 
 msgid "A státusz nem található."
-msgstr ""
+msgstr "Statusul nu a fost găsit."
 
 msgid "A státusz neve kötelező."
-msgstr ""
+msgstr "Numele statusului este obligatoriu."
 
 msgid "A szekció akkor jelenik meg, ha legalább egy oszlop ki van töltve – csak a kitöltött oszlopok renderelődnek."
 msgstr "Secțiunea apare dacă cel puțin o coloană este completată – se afișează doar coloanele completate."
@@ -491,7 +492,7 @@ msgid "Az aktuális változat mindig ezen az oldalon érhető el. A szöveget pu
 msgstr "Versiunea actuală este întotdeauna disponibilă pe această pagină. Este recomandat ca textul să fie verificat de un expert juridic/protector de date înainte de publicare."
 
 msgid "Az alapértelmezett státusz nem törölhető."
-msgstr ""
+msgstr "Statusul implicit nu poate fi șters."
 
 msgid "Az azonosítót e-mailben is elküldtük. Erre hivatkozva bármikor tud érdeklődni."
 msgstr "Am trimis identificatorul și pe e-mail. Îl puteți folosi oricând când ne contactați."
@@ -596,7 +597,7 @@ msgid "Biztonságos dokumentumkezelés"
 msgstr "Gestionare sigură a documentelor"
 
 msgid "Biztosan eltávolítja ezt a szolgáltatást?"
-msgstr ""
+msgstr "Sigur eliminați acest serviciu?"
 
 msgid "Biztosan törli ezt a dokumentumot?"
 msgstr ""
@@ -848,10 +849,10 @@ msgid "Ez a bma_reference_category taxonómia (lista szűrő: ?tipus=…)."
 msgstr "Aceasta este taxonomia bma_reference_category (filtru listă: ?tipus=…)."
 
 msgid "Ez a mező kulcs már létezik."
-msgstr ""
+msgstr "Această cheie de câmp există deja."
 
 msgid "Ez a mező kötelező."
-msgstr ""
+msgstr "Acest câmp este obligatoriu."
 
 msgid "Ez a mezőkönyvtár. A megjelenést a Szolgáltatáselemek szerkesztőjében állítja be. Azonos mezőkulcs több elemnél is csak egyszer jelenik meg az ajánlatkérésben."
 msgstr ""
@@ -896,13 +897,13 @@ msgid "Feltöltés ehhez a tételhez"
 msgstr ""
 
 msgid "Feltöltés folyamatban…"
-msgstr ""
+msgstr "Încărcare în curs…"
 
 msgid "Feltöltés sikeres."
-msgstr ""
+msgstr "Încărcare reușită."
 
 msgid "Feltöltés sikertelen."
-msgstr ""
+msgstr "Încărcarea a eșuat."
 
 msgid "Fizetve"
 msgstr "Plătit"
@@ -935,7 +936,7 @@ msgid "Folytathatja az ügyfélportálon."
 msgstr "Puteți continua pe portalul clienților."
 
 msgid "Fájl feltöltési hiba."
-msgstr ""
+msgstr "Eroare la încărcarea fișierului."
 
 msgid "Fókusz gyűrű"
 msgstr ""
@@ -1258,7 +1259,7 @@ msgid "Lakossági és üzleti<br>projektek"
 msgstr "Proiecte rezidențiale<br>și de business"
 
 msgid "Legalább egy szolgáltatást ki kell választani."
-msgstr ""
+msgstr "Trebuie ales cel puțin un serviciu."
 
 msgid "Legalább egy tételt válasszon ki a továbblépéshez."
 msgstr "Selectați cel puțin o poziție pentru a continua."
@@ -1306,7 +1307,7 @@ msgid "Megkaptuk a megkeresését. A megadott elérhetőségek egyikén felvessz
 msgstr "Am primit solicitarea dvs. Vom lua legătura cu dumneavoastră prin una dintre informațiile de contact furnizate."
 
 msgid "Megkaptuk az üzenetét – %s"
-msgstr ""
+msgstr "Am primit mesajul dumneavoastră – %s"
 
 msgid "Meglévő ajánlatkérés vagy projekt"
 msgstr "Cerere de ofertă sau proiect existent"
@@ -1414,7 +1415,7 @@ msgid "Már be van jelentkezve"
 msgstr "Sunteți deja autentificat"
 
 msgid "Már hozzáadva az ajánlatkéréshez"
-msgstr ""
+msgstr "Deja adăugat la cererea de ofertă"
 
 msgid "Még nem választott tételt. Jelölje be bal oldalon, mire van szüksége – bármennyi tétel egy ajánlatkérésbe kerülhet."
 msgstr "Nu ați selectat încă nicio poziție. Bifați în stânga de ce aveți nevoie – oricâte poziții pot intra într-o singură cerere."
@@ -1471,16 +1472,16 @@ msgid "Nem baj, ha nincs meg minden. Az ajánlatkéréshez elég annyi, amennyi 
 msgstr "Nu e nicio problemă dacă nu aveți totul. Pentru cerere este suficient ce aveți la dispoziție – restul completăm pe parcurs."
 
 msgid "Nem engedélyezett fájltípus."
-msgstr ""
+msgstr "Tip de fișier nepermis."
 
 msgid "Nem felelünk külső oldalak tartalmáért. A folyamatos működés nem garantálható. A weboldali általános információ nem helyettesíti az egyedi műszaki felmérést."
 msgstr "Nu răspundem pentru conținutul site-urilor externe. Nu se poate garanta funcționarea continuă. Informațiile generale de pe site nu înlocuiesc evaluarea tehnică individuală."
 
 msgid "Nem sikerült létrehozni a mezőt."
-msgstr ""
+msgstr "Câmpul nu a putut fi creat."
 
 msgid "Nem sikerült létrehozni az elemet."
-msgstr ""
+msgstr "Elementul nu a putut fi creat."
 
 msgid "Nem szükséges minden műszaki részletet előre ismernie. Adja meg a rendelkezésére álló információkat és dokumentumokat, mi pedig ezek alapján felmérjük a projektet és elkészítjük az ajánlatot."
 msgstr "Nu este necesar să cunoască toate detaliile tehnice dinainte. Vă rugăm să furnizați informațiile și documentele de care dispuneți și, pe baza acestora, vom evalua proiectul și vom întocmi oferta."
@@ -1498,13 +1499,13 @@ msgid "Nincs ajánlat"
 msgstr "Nu există ofertă"
 
 msgid "Nincs fájl."
-msgstr ""
+msgstr "Niciun fișier."
 
 msgid "Nincs jogosultsága a letöltéshez."
-msgstr ""
+msgstr "Nu aveți dreptul să descărcați."
 
 msgid "Nincs jogosultsága a törléshez."
-msgstr ""
+msgstr "Nu aveți dreptul să ștergeți."
 
 msgid "Nincs jogosultsága."
 msgstr "Nu aveți drepturi."
@@ -1597,10 +1598,10 @@ msgid "Referencia"
 msgstr "Referință"
 
 msgid "Referencia adatok"
-msgstr ""
+msgstr "Date referință"
 
 msgid "Referencia kategóriák"
-msgstr ""
+msgstr "Categorii de referințe"
 
 msgid "Referenciák"
 msgstr "Referințe"
@@ -1696,7 +1697,7 @@ msgid "Szennyvízbekötési terv"
 msgstr "Plan de racordare a apei uzate"
 
 msgid "Szerkesztés"
-msgstr ""
+msgstr "Modificare"
 
 msgid "Szerződés teljesítése:"
 msgstr "Executarea contractului:"
@@ -1705,13 +1706,13 @@ msgid "Szolgáltatás"
 msgstr "Serviciu"
 
 msgid "Szolgáltatás beállítások"
-msgstr ""
+msgstr "Setări serviciu"
 
 msgid "Szolgáltatás kategóriák"
-msgstr ""
+msgstr "Categorii de servicii"
 
 msgid "Szolgáltatás szerkesztése"
-msgstr ""
+msgstr "Editare serviciu"
 
 msgid "Szolgáltatáselemek"
 msgstr ""
@@ -1918,7 +1919,7 @@ msgid "Válasszon témát…"
 msgstr "Alegeți un subiect…"
 
 msgid "Válasszon…"
-msgstr ""
+msgstr "Alegeți…"
 
 msgid "Válasz [X] munkanapon belül"
 msgstr "Răspuns în [X] zile lucrătoare"
@@ -2032,7 +2033,7 @@ msgid "Állítsa össze, mire van szüksége, és néhány adat megadásával k�
 msgstr "Compuneți de ce aveți nevoie și cereți o ofertă personalizată completând câteva date."
 
 msgid "Általános dokumentumok"
-msgstr ""
+msgstr "Documente generale"
 
 msgid "Általános felhasználási feltételek"
 msgstr "Condiții generale de utilizare"
@@ -2050,7 +2051,7 @@ msgid "Átfutás"
 msgstr "Durată"
 
 msgid "Átirányítás…"
-msgstr ""
+msgstr "Redirecționare…"
 
 msgid "Átlátható folyamat"
 msgstr "Proces transparent"
@@ -2083,7 +2084,7 @@ msgid "Érvénytelen e-mail cím."
 msgstr "Adresă de e-mail invalidă."
 
 msgid "Érvénytelen kérés."
-msgstr ""
+msgstr "Cerere invalidă."
 
 msgid "Érvénytelen összeg."
 msgstr ""
@@ -2140,7 +2141,7 @@ msgid "Új státusz létrehozva."
 msgstr ""
 
 msgid "Új szolgáltatás"
-msgstr ""
+msgstr "Serviciu nou"
 
 msgid "Útvonaltervezés"
 msgstr "Planificare traseu"
@@ -2192,3 +2193,309 @@ msgstr ""
 
 msgid "← Vissza a portálra"
 msgstr "← Înapoi la portal"
+
+msgid "%d elem"
+msgstr "%d elemente"
+
+msgid "%s tervfázisa"
+msgstr "Faza de proiectare pentru %s"
+
+msgid "A BMA Engineering épületgépészeti, tűzvédelmi, közműhálózati és bekötési tervezésben, valamint a kapcsolódó engedélyeztetésben támogatja ügyfeleit."
+msgstr "BMA Engineering își sprijină clienții în proiectarea instalațiilor, a sistemelor de securitate la incendiu, a rețelelor de utilități și a branșamentelor, precum și în obținerea avizelor aferente."
+
+msgid "A bekötésekhez nem kell tervfázist választania, lépjen tovább."
+msgstr "Pentru branșamente nu trebuie să alegeți faza de proiectare, mergeți mai departe."
+
+msgid "A bekötési tervek egyetlen fázisban készülnek."
+msgstr "Proiectele de branșament se realizează într-o singură fază."
+
+msgid "A beküldés nem sikerült. Kérjük, próbálja újra."
+msgstr "Trimiterea nu a reușit. Vă rugăm să încercați din nou."
+
+msgid "A beküldés után e-mailben visszaigazolást küldünk, és [X] munkanapon belül jelentkezünk."
+msgstr "După trimitere primiți o confirmare pe e-mail și vă contactăm în [X] zile lucrătoare."
+
+msgid "A kivitelezési tervekhez jogszabály írja elő."
+msgstr "Este obligatorie prin lege pentru proiectele de execuție."
+
+msgid "A lista a kiválasztott szolgáltatásokhoz igazodik. Ha valami nincs meg, jelölje „Nem”-mel: nem akadályozza az ajánlatkérést, a beszerzését felvesszük a kiegészítők közé."
+msgstr "Lista se adaptează serviciilor alese. Dacă ceva lipsește, marcați „Nu”: nu blochează cererea, iar obținerea lui o adăugăm la serviciile suplimentare."
+
+msgid "Adja meg a projekt adatait, válassza ki, milyen tervekre van szüksége, és kérjen személyre szabott ajánlatot. Amit nem tud csatolni, azt mi beszerezzük."
+msgstr "Introduceți datele proiectului, alegeți de ce proiecte aveți nevoie și cereți o ofertă personalizată. Ce nu puteți atașa, obținem noi."
+
+msgid "Adja meg a projekt alapadatait, válassza ki a szükséges terveket, és töltse fel, ami megvan. Az ajánlatkérés díjmentes és nem jár kötelezettséggel."
+msgstr "Introduceți datele de bază ale proiectului, alegeți proiectele necesare și încărcați ce aveți. Cererea de ofertă este gratuită și fără obligații."
+
+msgid "Adja meg a projekt alapadatait, válassza ki a szükséges terveket, és töltse fel, ami megvan. Ezek alapján pontos ajánlatot készítünk."
+msgstr "Introduceți datele de bază ale proiectului, alegeți proiectele necesare și încărcați ce aveți. Pe baza acestora pregătim o ofertă exactă."
+
+msgid "Ajánlatkérés ezzel"
+msgstr "Cerere de ofertă"
+
+msgid "Ajánlatkérés indítása ezzel a szolgáltatással"
+msgstr "Solicitați ofertă pentru acest serviciu"
+
+msgid "Ami segít pontos ajánlatot adni"
+msgstr "Ce ne ajută să facem o ofertă exactă"
+
+msgid "Amit nem tud csatolni, azt beszerezzük. A beszerzés költsége és ideje az ajánlatban külön tételként szerepel."
+msgstr "Ce nu puteți atașa, obținem noi. Costul și durata obținerii apar în ofertă ca poziție separată."
+
+msgid "Amit nem tud csatolni, például az urbanisztikai bizonylatot vagy a topográfiai felmérést, azt mi beszerezzük."
+msgstr "Ce nu puteți atașa, de exemplu certificatul de urbanism sau ridicarea topografică, obținem noi."
+
+msgid "Automatikusan hozzáadva, mert jelezte, hogy ez még nincs meg."
+msgstr "Adăugat automat, deoarece ați indicat că nu îl aveți încă."
+
+msgid "Az alaprajzok nélkül nem tudunk érdemi ajánlatot adni. Ha nincs meg, írja meg a megjegyzésben, és keresünk."
+msgstr "Fără planuri nu putem face o ofertă relevantă. Dacă nu le aveți, scrieți-ne în observații și vă contactăm."
+
+msgid "Az automatikus szabály nem érvényes JSON."
+msgstr "Regula automată nu este JSON valid."
+
+msgid "Az építési engedély megszerzéséhez szükséges dokumentáció. Ezt kell beadni a hatósághoz, mielőtt az építkezés elindul."
+msgstr "Documentația necesară pentru obținerea autorizației de construire. Se depune la autoritate înainte de începerea lucrărilor."
+
+msgid "Bekötések"
+msgstr "Branșamente și racorduri"
+
+msgid "Beszerzendő"
+msgstr "De obținut"
+
+msgid "Cég vagy vállalkozás"
+msgstr "Firmă sau întreprindere"
+
+msgid "Cégnél és önkormányzatnál kötelező."
+msgstr "Obligatoriu pentru firme și autorități publice."
+
+msgid "Dokumentumok és beküldés"
+msgstr "Documente și trimitere"
+
+msgid "Egy ajánlatkérésben kérhet épületgépészeti, tűzvédelmi, közműhálózati és bekötési terveket, engedélyeztetéssel együtt."
+msgstr "Într-o singură cerere puteți solicita proiecte de instalații, securitate la incendiu, rețele de utilități și branșamente, împreună cu obținerea avizelor."
+
+msgid "Egy építési projektben az épület gépészete, a bekötések és a szükséges engedélyek egymásra épülnek. Egy ajánlatkérésben mindet kérheti, és amit még nem tud csatolni, azt mi beszerezzük."
+msgstr "Într-un proiect de construcție, instalațiile clădirii, branșamentele și avizele necesare depind unele de altele. Le puteți cere pe toate într-o singură cerere, iar ce nu puteți atașa încă, obținem noi."
+
+msgid "Egyszer válassza ki, ez minden elemre érvényes lesz. Ha egy elemhez másik fázis kell, a következő lépésben eltérhet tőle."
+msgstr "Alegeți o singură dată, se aplică tuturor elementelor. Dacă un element are nevoie de altă fază, o puteți schimba la pasul următor."
+
+msgid "Egyéb szolgáltatások"
+msgstr "Alte servicii"
+
+msgid "Ehhez az elemhez más tervfázis kell"
+msgstr "Acest element necesită altă fază"
+
+msgid "Ellenőrizze, és küldje el"
+msgstr "Verificați și trimiteți"
+
+msgid "Eltérő tervfázis"
+msgstr "Fază de proiectare diferită"
+
+msgid "Engedélyes + kivitelezési terv"
+msgstr "Autorizare + execuție"
+
+msgid "Engedélyes + kivitelezési terv · 4 tétel · 1 ajánlatkérés"
+msgstr "Autorizare + execuție · 4 poziții · 1 cerere de ofertă"
+
+msgid "Engedélyes terv (DTAC)"
+msgstr "Proiect pentru autorizare (DTAC)"
+
+msgid "Engedélyes vagy kivitelezési terv?"
+msgstr "Proiect pentru autorizare sau de execuție?"
+
+msgid "Ez a lépés nem kötelező."
+msgstr "Acest pas este opțional."
+
+msgid "Ez alapján mutatjuk a projektjéhez illő tervtípusokat."
+msgstr "Pe baza acestuia vă arătăm tipurile de proiect potrivite."
+
+msgid "Ezek az adatok minden kiválasztott szolgáltatásra érvényesek."
+msgstr "Aceste date sunt valabile pentru toate serviciile alese."
+
+msgid "Ezeket is intézzük"
+msgstr "Ne ocupăm și de acestea"
+
+msgid "Ezeket is intézzük Önnek"
+msgstr "Ne ocupăm și de acestea pentru dumneavoastră"
+
+msgid "Feltölti, ami megvan. Ami hiányzik, azt jelzi, mi beszerezzük."
+msgstr "Încărcați ce aveți. Ce lipsește, ne semnalați, iar noi obținem."
+
+msgid "Fűtés"
+msgstr "Încălzire"
+
+msgid "Ha az engedélyes terv már megvan, és csak a kivitelezéshez szükséges részletes terv kell: méretek, anyagok, részletrajzok."
+msgstr "Dacă proiectul pentru autorizare există deja și vă trebuie doar proiectul detaliat pentru execuție: dimensiuni, materiale, detalii."
+
+msgid "Ha beszerzést is kért (pl. urbanisztikai bizonylat), annak költségét és idejét az ajánlatban külön tételként látja."
+msgstr "Dacă ați cerut și obținerea unor documente (de ex. certificatul de urbanism), costul și durata apar în ofertă ca poziție separată."
+
+msgid "Ha beszerzést is kért, annak költségét és idejét az ajánlatban külön tételként látja."
+msgstr "Dacă ați cerut și obținerea unor documente, costul și durata apar în ofertă ca poziție separată."
+
+msgid "Hova küldjük az ajánlatot?"
+msgstr "Unde trimitem oferta?"
+
+msgid "Indítsa el az ajánlatkérést, és a kiegészítőknél válassza a tanácsadást, vagy írjon nekünk."
+msgstr "Începeți cererea de ofertă și alegeți consultanța la serviciile suplimentare, sau scrieți-ne."
+
+msgid "Indítsa el az ajánlatkérést, és ott válassza ki, mire van szüksége."
+msgstr "Începeți cererea de ofertă și alegeți acolo de ce aveți nevoie."
+
+msgid "Kapcsolódó"
+msgstr "Legate"
+
+msgid "Ki a megrendelő?"
+msgstr "Cine este beneficiarul?"
+
+msgid "Kiegészítő"
+msgstr "Serviciu suplimentar"
+
+msgid "Kiegészítők"
+msgstr "Servicii suplimentare"
+
+msgid "Kijelölés"
+msgstr "Selectare"
+
+msgid "Kivitelezési terv (PT + DDE)"
+msgstr "Proiect de execuție (PT + DDE)"
+
+msgid "Kiválasztja a szükséges rendszereket és a kiegészítőket."
+msgstr "Alegeți sistemele necesare și serviciile suplimentare."
+
+msgid "Kiválasztott elemek"
+msgstr "Elemente alese"
+
+msgid "Kér még valamit a tervek mellé?"
+msgstr "Mai doriți ceva pe lângă proiecte?"
+
+msgid "Kérjen ajánlatot: %s"
+msgstr "Solicitați ofertă: %s"
+
+msgid "Kérjük, válassza ki, milyen tervre van szüksége."
+msgstr "Vă rugăm să alegeți ce tip de proiect vă trebuie."
+
+msgid "Kérjük, válasszon legalább egy szolgáltatást."
+msgstr "Vă rugăm să alegeți cel puțin un serviciu."
+
+msgid "Közműhálózatok tervezése"
+msgstr "Proiectare rețele de utilități"
+
+msgid "Küldés…"
+msgstr "Se trimite…"
+
+msgid "Magánszemély"
+msgstr "Persoană fizică"
+
+msgid "Megadja a projekt alapadatait, és hogy engedélyes vagy kivitelezési tervre van szüksége."
+msgstr "Introduceți datele de bază ale proiectului și dacă vă trebuie proiect pentru autorizare sau de execuție."
+
+msgid "Megrendelő"
+msgstr "Beneficiar"
+
+msgid "Megvalósíthatósági fázis (SF / DALI)"
+msgstr "Fază de fezabilitate (SF / DALI)"
+
+msgid "Meséljen a projektről"
+msgstr "Spuneți-ne despre proiect"
+
+msgid "Milyen tervre van szüksége?"
+msgstr "De ce proiect aveți nevoie?"
+
+msgid "Minden blokk mellett ott a Szerkesztés gomb, amely a megfelelő lépésre visz."
+msgstr "Lângă fiecare bloc găsiți butonul Modificare, care vă duce la pasul respectiv."
+
+msgid "Minden elem kérhető engedélyes és kivitelezési tervként is."
+msgstr "Fiecare element poate fi solicitat ca proiect pentru autorizare și ca proiect de execuție."
+
+msgid "Mit tervezzünk?"
+msgstr "Ce să proiectăm?"
+
+msgid "Még nem választott elemet."
+msgstr "Nu ați ales încă niciun element."
+
+msgid "Navigáció"
+msgstr "Navigare"
+
+msgid "Nem biztos benne? Válassza az „Engedélyes + kivitelezési terv” lehetőséget. Az ajánlatban külön soron látja a kettőt."
+msgstr "Nu sunteți sigur? Alegeți „Autorizare + execuție”. În ofertă le vedeți pe rânduri separate."
+
+msgid "Nem kell mindent előre beszereznie"
+msgstr "Nu trebuie să obțineți totul dinainte"
+
+msgid "Nem tudja, mire van szüksége?"
+msgstr "Nu știți de ce aveți nevoie?"
+
+msgid "Nincs megadva"
+msgstr "Necompletat"
+
+msgid "Négy tervezési terület, 20 konkrét elemmel. Egy ajánlatkérésben bármennyi kombinálható, engedélyes és kivitelezési tervként is."
+msgstr "Patru domenii de proiectare, cu 20 de elemente concrete. Într-o singură cerere se pot combina oricâte, ca proiect pentru autorizare și de execuție."
+
+msgid "Négy tervezési terület, egy ajánlatkérésben kombinálhatók. Nézze meg, mit tartalmaznak, vagy indítsa el az ajánlatkérést, és ott válassza ki, mire van szüksége."
+msgstr "Patru domenii de proiectare, care se pot combina într-o singură cerere. Vedeți ce conțin sau începeți cererea de ofertă și alegeți acolo de ce aveți nevoie."
+
+msgid "Néhány kötelező adat hiányzik. A pirossal jelölt mezőket kérjük, töltse ki."
+msgstr "Lipsesc câteva date obligatorii. Vă rugăm să completați câmpurile marcate cu roșu."
+
+msgid "Néhány perc alatt végigmegyünk a projektjén. Amit nem tud, azt hagyja üresen vagy jelölje, hogy nincs meg: segítünk pótolni. Az ajánlatkérés díjmentes és nem jár kötelezettséggel."
+msgstr "În câteva minute parcurgem împreună proiectul. Ce nu știți, lăsați necompletat sau marcați că nu aveți: vă ajutăm să completați. Cererea de ofertă este gratuită și fără obligații."
+
+msgid "Projekt"
+msgstr "Proiect"
+
+msgid "Projekt és tervfázis"
+msgstr "Proiect și fază de proiectare"
+
+msgid "Részletek →"
+msgstr "Detalii →"
+
+msgid "Teljes tervcsomag az engedélytől a kivitelezésig. Ez a leggyakoribb választás."
+msgstr "Pachet complet de la autorizare până la execuție. Aceasta este alegerea cea mai frecventă."
+
+msgid "Tervfázis"
+msgstr "Faza de proiectare"
+
+msgid "Tűzvédelmi rendszerek tervezése"
+msgstr "Proiectare sisteme de securitate la incendiu"
+
+msgid "Urbanisztikai bizonylat beszerzése"
+msgstr "Obținerea certificatului de urbanism"
+
+msgid "Válassza ki a szükséges elemeket. Bármennyi kombinálható, több főcsoportból is."
+msgstr "Alegeți elementele necesare. Oricâte se pot combina, și din mai multe grupe."
+
+msgid "Válassza ki a szükséges szolgáltatásokat, és néhány adat megadásával kérjen személyre szabott ajánlatot."
+msgstr "Alegeți serviciile necesare și, cu câteva date, cereți o ofertă personalizată."
+
+msgid "Válogatás megvalósult épületgépészeti, tűzvédelmi és közműtervezési munkáinkból."
+msgstr "O selecție din lucrările noastre realizate de instalații, securitate la incendiu și rețele de utilități."
+
+msgid "Víz-csatorna"
+msgstr "Apă-canal"
+
+msgid "Vízbekötés"
+msgstr "Branșament apă"
+
+msgid "automatikusan hozzáadva"
+msgstr "adăugat automat"
+
+msgid "tervfázis nélkül"
+msgstr "fără fază de proiectare"
+
+msgid "Épületgépészet"
+msgstr "Instalații"
+
+msgid "Épületgépészet · Tűzvédelem · Közműhálózatok · Bekötések"
+msgstr "Instalații · Securitate la incendiu · Rețele de utilități · Branșamente"
+
+msgid "Épületgépészeti tervezés"
+msgstr "Proiectare instalații în construcții"
+
+msgid "Önkormányzat vagy közintézmény"
+msgstr "Primărie sau instituție publică"
+
+msgid "Önkormányzati, közbeszerzéses beruházások előkészítő tanulmánya."
+msgstr "Studiu pregătitor pentru investiții publice ale primăriilor, prin achiziție publică."

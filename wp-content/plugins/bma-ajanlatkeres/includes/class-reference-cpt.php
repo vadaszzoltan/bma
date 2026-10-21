@@ -188,7 +188,9 @@ final class BMA_AJ_Reference_CPT {
 	 * @return WP_Post[]
 	 */
 	public static function get_related_services( int $post_id ): array {
-		$ids = get_post_meta( $post_id, '_bma_related_services', true );
+		// Translations keep a copy made at translation time; the source post is kept current.
+		$source = class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::source_post_id( $post_id ) : $post_id;
+		$ids    = get_post_meta( $source ?: $post_id, '_bma_related_services', true );
 		if ( ! is_array( $ids ) || empty( $ids ) ) {
 			return array();
 		}
@@ -216,6 +218,8 @@ final class BMA_AJ_Reference_CPT {
 				'post_status'    => 'publish',
 				'orderby'        => 'post__in',
 				'lang'           => '', // include resolved IDs regardless of Polylang auto-filter.
+				'meta_key'       => '_bma_is_active', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+				'meta_value'     => '1', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value -- retired services drop out.
 			)
 		);
 		return $posts;

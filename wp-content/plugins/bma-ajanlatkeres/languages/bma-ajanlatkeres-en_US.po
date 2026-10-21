@@ -1,3 +1,4 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: bma-ajanlatkeres\n"
@@ -26,7 +27,7 @@ msgid "%d szolgáltatáselem"
 msgstr ""
 
 msgid "%d szolgáltatáselem kiválasztva"
-msgstr ""
+msgstr "%d items selected"
 
 msgid "%d tétel"
 msgstr "%d items"
@@ -59,7 +60,7 @@ msgid "1 projekt"
 msgstr "1 project"
 
 msgid "1 szolgáltatáselem kiválasztva"
-msgstr ""
+msgstr "1 item selected"
 
 msgid "1 tétel"
 msgstr "1 item"
@@ -179,13 +180,13 @@ msgid "A demo tartalom sikeresen betöltve. Frissítse a főoldalt a böngésző
 msgstr ""
 
 msgid "A dokumentum nem ehhez az ajánlatkéréshez tartozik."
-msgstr ""
+msgstr "The document does not belong to this quote request."
 
 msgid "A dokumentum nem található."
-msgstr ""
+msgstr "Document not found."
 
 msgid "A dokumentum törlése sikertelen."
-msgstr ""
+msgstr "Deleting the document failed."
 
 msgid "A feladat"
 msgstr "The task"
@@ -197,7 +198,7 @@ msgid "A felhasználó felelőssége, hogy a megadott adatok tudomása szerint p
 msgstr "It is the user's responsibility to ensure that the data provided is accurate and complete to the best of their knowledge."
 
 msgid "A feltöltési könyvtár nem írható. Kérjük, jelezze az üzemeltetőnek."
-msgstr ""
+msgstr "The upload folder is not writable. Please tell the site operator."
 
 msgid "A feltöltött dokumentumokat kizárólag az adott ajánlatkérés vagy szolgáltatás kezelése céljából használjuk. Kérjük, csak a projekthez szükséges adatokat töltse fel."
 msgstr "Uploaded documents are used solely for the purpose of managing the specific quote request or service. Please upload only the data necessary for the project."
@@ -206,10 +207,10 @@ msgid "A fizetéshez be kell jelentkeznie, és érvényes ajánlathoz kell rende
 msgstr "To make a payment, you must log in and have a valid quote."
 
 msgid "A fájl feltöltése sikertelen."
-msgstr ""
+msgstr "The file upload failed."
 
 msgid "A fájl túl nagy (max. 20 MB)."
-msgstr ""
+msgstr "The file is too large (max. 20 MB)."
 
 msgid "A jelen feltételek a weboldal használatára, a kapcsolatfelvételre és az ajánlatkérésre vonatkoznak."
 msgstr "These terms apply to the use of the website, making contact, and requesting quotes."
@@ -224,7 +225,7 @@ msgid "A kiválasztott elemeket még nem adta hozzá az ajánlatkéréshez. A fo
 msgstr "You have not yet added the selected items to the quote request. Click the button before continuing."
 
 msgid "A kiválasztott elemeket még nem adta hozzá az ajánlatkéréshez. Tovább lép?"
-msgstr ""
+msgstr "You have not added the selected items to the quote request yet. Continue?"
 
 msgid "A kiválasztás bármikor módosítható a beküldésig. Az ajánlatkérés nem jár kötelezettséggel."
 msgstr "You can change your selection any time before submitting. Requesting a quote is without obligation."
@@ -254,10 +255,10 @@ msgid "A megoldás (opcionális)"
 msgstr "The solution (optional)"
 
 msgid "A mező kulcs kötelező."
-msgstr ""
+msgstr "The field key is required."
 
 msgid "A név kötelező."
-msgstr ""
+msgstr "The name is required."
 
 msgid "A pontos határidő a projekt méretétől és a szolgáltatói egyeztetésektől függ."
 msgstr "The exact deadline depends on the size of the project and on the utility provider consultations."
@@ -269,16 +270,16 @@ msgid "A projekt részletei az ügyféllel egyeztetett mértékben nyilvánosak.
 msgstr "Project details are public to the extent agreed with the client."
 
 msgid "A státusz használatban van, ezért nem törölhető."
-msgstr ""
+msgstr "The status is in use and cannot be deleted."
 
 msgid "A státusz mentése sikertelen."
-msgstr ""
+msgstr "Saving the status failed."
 
 msgid "A státusz nem található."
-msgstr ""
+msgstr "Status not found."
 
 msgid "A státusz neve kötelező."
-msgstr ""
+msgstr "The status name is required."
 
 msgid "A szekció akkor jelenik meg, ha legalább egy oszlop ki van töltve – csak a kitöltött oszlopok renderelődnek."
 msgstr "The section appears if at least one column is filled in – only the filled columns are rendered."
@@ -491,7 +492,7 @@ msgid "Az aktuális változat mindig ezen az oldalon érhető el. A szöveget pu
 msgstr "The current version is always available on this page. It is advisable to have the text reviewed by a legal/data protection expert before publication."
 
 msgid "Az alapértelmezett státusz nem törölhető."
-msgstr ""
+msgstr "The default status cannot be deleted."
 
 msgid "Az azonosítót e-mailben is elküldtük. Erre hivatkozva bármikor tud érdeklődni."
 msgstr "We have also emailed the reference number. You can quote it any time you contact us."
@@ -596,7 +597,7 @@ msgid "Biztonságos dokumentumkezelés"
 msgstr "Secure document management"
 
 msgid "Biztosan eltávolítja ezt a szolgáltatást?"
-msgstr ""
+msgstr "Remove this service?"
 
 msgid "Biztosan törli ezt a dokumentumot?"
 msgstr ""
@@ -848,10 +849,10 @@ msgid "Ez a bma_reference_category taxonómia (lista szűrő: ?tipus=…)."
 msgstr "This is the bma_reference_category taxonomy (list filter: ?tipus=…)."
 
 msgid "Ez a mező kulcs már létezik."
-msgstr ""
+msgstr "This field key already exists."
 
 msgid "Ez a mező kötelező."
-msgstr ""
+msgstr "This field is required."
 
 msgid "Ez a mezőkönyvtár. A megjelenést a Szolgáltatáselemek szerkesztőjében állítja be. Azonos mezőkulcs több elemnél is csak egyszer jelenik meg az ajánlatkérésben."
 msgstr ""
@@ -896,13 +897,13 @@ msgid "Feltöltés ehhez a tételhez"
 msgstr ""
 
 msgid "Feltöltés folyamatban…"
-msgstr ""
+msgstr "Uploading…"
 
 msgid "Feltöltés sikeres."
-msgstr ""
+msgstr "Upload successful."
 
 msgid "Feltöltés sikertelen."
-msgstr ""
+msgstr "Upload failed."
 
 msgid "Fizetve"
 msgstr "Paid"
@@ -935,7 +936,7 @@ msgid "Folytathatja az ügyfélportálon."
 msgstr "You can continue on the client portal."
 
 msgid "Fájl feltöltési hiba."
-msgstr ""
+msgstr "File upload error."
 
 msgid "Fókusz gyűrű"
 msgstr ""
@@ -1258,7 +1259,7 @@ msgid "Lakossági és üzleti<br>projektek"
 msgstr "Residential and<br>business projects"
 
 msgid "Legalább egy szolgáltatást ki kell választani."
-msgstr ""
+msgstr "At least one service must be selected."
 
 msgid "Legalább egy tételt válasszon ki a továbblépéshez."
 msgstr "Select at least one item to continue."
@@ -1306,7 +1307,7 @@ msgid "Megkaptuk a megkeresését. A megadott elérhetőségek egyikén felvessz
 msgstr "We have received your inquiry. We will contact you through one of the provided contact details."
 
 msgid "Megkaptuk az üzenetét – %s"
-msgstr ""
+msgstr "We received your message – %s"
 
 msgid "Meglévő ajánlatkérés vagy projekt"
 msgstr "Existing quote request or project"
@@ -1414,7 +1415,7 @@ msgid "Már be van jelentkezve"
 msgstr "Already logged in"
 
 msgid "Már hozzáadva az ajánlatkéréshez"
-msgstr ""
+msgstr "Already added to the quote request"
 
 msgid "Még nem választott tételt. Jelölje be bal oldalon, mire van szüksége – bármennyi tétel egy ajánlatkérésbe kerülhet."
 msgstr "You have not selected any items yet. Tick what you need on the left – any number of items can go into one request."
@@ -1471,16 +1472,16 @@ msgid "Nem baj, ha nincs meg minden. Az ajánlatkéréshez elég annyi, amennyi 
 msgstr "It is fine if you do not have everything. Whatever you have is enough for the request – we will fill in the rest as we go."
 
 msgid "Nem engedélyezett fájltípus."
-msgstr ""
+msgstr "File type not allowed."
 
 msgid "Nem felelünk külső oldalak tartalmáért. A folyamatos működés nem garantálható. A weboldali általános információ nem helyettesíti az egyedi műszaki felmérést."
 msgstr "We are not responsible for the content of external sites. Continuous operation cannot be guaranteed. The general information on the website does not replace an individual technical survey."
 
 msgid "Nem sikerült létrehozni a mezőt."
-msgstr ""
+msgstr "The field could not be created."
 
 msgid "Nem sikerült létrehozni az elemet."
-msgstr ""
+msgstr "The item could not be created."
 
 msgid "Nem szükséges minden műszaki részletet előre ismernie. Adja meg a rendelkezésére álló információkat és dokumentumokat, mi pedig ezek alapján felmérjük a projektet és elkészítjük az ajánlatot."
 msgstr "It is not necessary to know every technical detail in advance. Provide the information and documents available to you, and based on these, we will assess the project and prepare the quote."
@@ -1498,13 +1499,13 @@ msgid "Nincs ajánlat"
 msgstr "No quote"
 
 msgid "Nincs fájl."
-msgstr ""
+msgstr "No file."
 
 msgid "Nincs jogosultsága a letöltéshez."
-msgstr ""
+msgstr "You are not allowed to download this."
 
 msgid "Nincs jogosultsága a törléshez."
-msgstr ""
+msgstr "You are not allowed to delete this."
 
 msgid "Nincs jogosultsága."
 msgstr "You do not have permission."
@@ -1597,10 +1598,10 @@ msgid "Referencia"
 msgstr "Reference"
 
 msgid "Referencia adatok"
-msgstr ""
+msgstr "Reference details"
 
 msgid "Referencia kategóriák"
-msgstr ""
+msgstr "Reference categories"
 
 msgid "Referenciák"
 msgstr "References"
@@ -1696,7 +1697,7 @@ msgid "Szennyvízbekötési terv"
 msgstr "Sewage connection plan"
 
 msgid "Szerkesztés"
-msgstr ""
+msgstr "Edit"
 
 msgid "Szerződés teljesítése:"
 msgstr "Contract fulfillment:"
@@ -1705,13 +1706,13 @@ msgid "Szolgáltatás"
 msgstr "Service"
 
 msgid "Szolgáltatás beállítások"
-msgstr ""
+msgstr "Service settings"
 
 msgid "Szolgáltatás kategóriák"
-msgstr ""
+msgstr "Service categories"
 
 msgid "Szolgáltatás szerkesztése"
-msgstr ""
+msgstr "Edit service"
 
 msgid "Szolgáltatáselemek"
 msgstr ""
@@ -1918,7 +1919,7 @@ msgid "Válasszon témát…"
 msgstr "Select a topic…"
 
 msgid "Válasszon…"
-msgstr ""
+msgstr "Choose…"
 
 msgid "Válasz [X] munkanapon belül"
 msgstr "Reply within [X] business days"
@@ -2032,7 +2033,7 @@ msgid "Állítsa össze, mire van szüksége, és néhány adat megadásával k�
 msgstr "Put together what you need and request a tailored quote by filling in a few details."
 
 msgid "Általános dokumentumok"
-msgstr ""
+msgstr "General documents"
 
 msgid "Általános felhasználási feltételek"
 msgstr "General terms of use"
@@ -2050,7 +2051,7 @@ msgid "Átfutás"
 msgstr "Turnaround"
 
 msgid "Átirányítás…"
-msgstr ""
+msgstr "Redirecting…"
 
 msgid "Átlátható folyamat"
 msgstr "Transparent process"
@@ -2083,7 +2084,7 @@ msgid "Érvénytelen e-mail cím."
 msgstr "Invalid email address."
 
 msgid "Érvénytelen kérés."
-msgstr ""
+msgstr "Invalid request."
 
 msgid "Érvénytelen összeg."
 msgstr ""
@@ -2140,7 +2141,7 @@ msgid "Új státusz létrehozva."
 msgstr ""
 
 msgid "Új szolgáltatás"
-msgstr ""
+msgstr "New service"
 
 msgid "Útvonaltervezés"
 msgstr "Route planning"
@@ -2192,3 +2193,309 @@ msgstr ""
 
 msgid "← Vissza a portálra"
 msgstr "← Back to the portal"
+
+msgid "%d elem"
+msgstr "%d items"
+
+msgid "%s tervfázisa"
+msgstr "Design phase for %s"
+
+msgid "A BMA Engineering épületgépészeti, tűzvédelmi, közműhálózati és bekötési tervezésben, valamint a kapcsolódó engedélyeztetésben támogatja ügyfeleit."
+msgstr "BMA Engineering supports its clients with building services, fire protection, utility network and connection design, and with the related permitting."
+
+msgid "A bekötésekhez nem kell tervfázist választania, lépjen tovább."
+msgstr "Connections need no design phase, just continue."
+
+msgid "A bekötési tervek egyetlen fázisban készülnek."
+msgstr "Connection designs are prepared in a single phase."
+
+msgid "A beküldés nem sikerült. Kérjük, próbálja újra."
+msgstr "Sending failed. Please try again."
+
+msgid "A beküldés után e-mailben visszaigazolást küldünk, és [X] munkanapon belül jelentkezünk."
+msgstr "After sending you get an e-mail confirmation, and we get back to you within [X] working days."
+
+msgid "A kivitelezési tervekhez jogszabály írja elő."
+msgstr "Required by law for construction designs."
+
+msgid "A lista a kiválasztott szolgáltatásokhoz igazodik. Ha valami nincs meg, jelölje „Nem”-mel: nem akadályozza az ajánlatkérést, a beszerzését felvesszük a kiegészítők közé."
+msgstr "The list follows the services you chose. If something is missing, mark it “No”: it does not block the request, and we add obtaining it to the add-ons."
+
+msgid "Adja meg a projekt adatait, válassza ki, milyen tervekre van szüksége, és kérjen személyre szabott ajánlatot. Amit nem tud csatolni, azt mi beszerezzük."
+msgstr "Enter your project details, choose which designs you need and request a tailored quote. Whatever you cannot attach, we obtain."
+
+msgid "Adja meg a projekt alapadatait, válassza ki a szükséges terveket, és töltse fel, ami megvan. Az ajánlatkérés díjmentes és nem jár kötelezettséggel."
+msgstr "Enter the basic project details, choose the designs you need and upload what you have. Requesting a quote is free and without obligation."
+
+msgid "Adja meg a projekt alapadatait, válassza ki a szükséges terveket, és töltse fel, ami megvan. Ezek alapján pontos ajánlatot készítünk."
+msgstr "Enter the basic project details, choose the designs you need and upload what you have. Based on this we prepare an accurate quote."
+
+msgid "Ajánlatkérés ezzel"
+msgstr "Request a quote"
+
+msgid "Ajánlatkérés indítása ezzel a szolgáltatással"
+msgstr "Request a quote for this service"
+
+msgid "Ami segít pontos ajánlatot adni"
+msgstr "What helps us give an accurate quote"
+
+msgid "Amit nem tud csatolni, azt beszerezzük. A beszerzés költsége és ideje az ajánlatban külön tételként szerepel."
+msgstr "Whatever you cannot attach, we obtain for you. Its cost and time appear as a separate line in the quote."
+
+msgid "Amit nem tud csatolni, például az urbanisztikai bizonylatot vagy a topográfiai felmérést, azt mi beszerezzük."
+msgstr "Whatever you cannot attach, such as the urban planning certificate or the topographic survey, we obtain."
+
+msgid "Automatikusan hozzáadva, mert jelezte, hogy ez még nincs meg."
+msgstr "Added automatically because you said you don't have it yet."
+
+msgid "Az alaprajzok nélkül nem tudunk érdemi ajánlatot adni. Ha nincs meg, írja meg a megjegyzésben, és keresünk."
+msgstr "Without floor plans we cannot give a meaningful quote. If you don't have them, say so in the note and we will contact you."
+
+msgid "Az automatikus szabály nem érvényes JSON."
+msgstr "The automatic rule is not valid JSON."
+
+msgid "Az építési engedély megszerzéséhez szükséges dokumentáció. Ezt kell beadni a hatósághoz, mielőtt az építkezés elindul."
+msgstr "The documentation needed to obtain the building permit. It is submitted to the authority before construction starts."
+
+msgid "Bekötések"
+msgstr "Utility connections"
+
+msgid "Beszerzendő"
+msgstr "To obtain"
+
+msgid "Cég vagy vállalkozás"
+msgstr "Company or business"
+
+msgid "Cégnél és önkormányzatnál kötelező."
+msgstr "Required for companies and public bodies."
+
+msgid "Dokumentumok és beküldés"
+msgstr "Documents and sending"
+
+msgid "Egy ajánlatkérésben kérhet épületgépészeti, tűzvédelmi, közműhálózati és bekötési terveket, engedélyeztetéssel együtt."
+msgstr "In one request you can ask for building services, fire protection, utility network and connection designs, together with permitting."
+
+msgid "Egy építési projektben az épület gépészete, a bekötések és a szükséges engedélyek egymásra épülnek. Egy ajánlatkérésben mindet kérheti, és amit még nem tud csatolni, azt mi beszerezzük."
+msgstr "In a building project the building services, the utility connections and the permits all depend on each other. You can request them all in one go, and we obtain whatever you cannot attach yet."
+
+msgid "Egyszer válassza ki, ez minden elemre érvényes lesz. Ha egy elemhez másik fázis kell, a következő lépésben eltérhet tőle."
+msgstr "Choose once and it applies to every item. If one item needs another phase, you can change it in the next step."
+
+msgid "Egyéb szolgáltatások"
+msgstr "Other services"
+
+msgid "Ehhez az elemhez más tervfázis kell"
+msgstr "This item needs a different phase"
+
+msgid "Ellenőrizze, és küldje el"
+msgstr "Check and send"
+
+msgid "Eltérő tervfázis"
+msgstr "Different design phase"
+
+msgid "Engedélyes + kivitelezési terv"
+msgstr "Permit + construction design"
+
+msgid "Engedélyes + kivitelezési terv · 4 tétel · 1 ajánlatkérés"
+msgstr "Permit + construction design · 4 items · 1 quote request"
+
+msgid "Engedélyes terv (DTAC)"
+msgstr "Permit design (DTAC)"
+
+msgid "Engedélyes vagy kivitelezési terv?"
+msgstr "Permit design or construction design?"
+
+msgid "Ez a lépés nem kötelező."
+msgstr "This step is optional."
+
+msgid "Ez alapján mutatjuk a projektjéhez illő tervtípusokat."
+msgstr "We use this to show the design types that fit your project."
+
+msgid "Ezek az adatok minden kiválasztott szolgáltatásra érvényesek."
+msgstr "These details apply to every service you choose."
+
+msgid "Ezeket is intézzük"
+msgstr "We also take care of these"
+
+msgid "Ezeket is intézzük Önnek"
+msgstr "We can also handle these for you"
+
+msgid "Feltölti, ami megvan. Ami hiányzik, azt jelzi, mi beszerezzük."
+msgstr "You upload what you have. Whatever is missing, you tell us and we obtain it."
+
+msgid "Fűtés"
+msgstr "Heating"
+
+msgid "Ha az engedélyes terv már megvan, és csak a kivitelezéshez szükséges részletes terv kell: méretek, anyagok, részletrajzok."
+msgstr "If you already have the permit design and only need the detailed design for construction: dimensions, materials, detail drawings."
+
+msgid "Ha beszerzést is kért (pl. urbanisztikai bizonylat), annak költségét és idejét az ajánlatban külön tételként látja."
+msgstr "If you also asked us to obtain documents (e.g. the urban planning certificate), their cost and time appear as a separate line in the quote."
+
+msgid "Ha beszerzést is kért, annak költségét és idejét az ajánlatban külön tételként látja."
+msgstr "If you also asked us to obtain documents, their cost and time appear as a separate line in the quote."
+
+msgid "Hova küldjük az ajánlatot?"
+msgstr "Where should we send the quote?"
+
+msgid "Indítsa el az ajánlatkérést, és a kiegészítőknél válassza a tanácsadást, vagy írjon nekünk."
+msgstr "Start the quote request and choose consulting among the add-ons, or write to us."
+
+msgid "Indítsa el az ajánlatkérést, és ott válassza ki, mire van szüksége."
+msgstr "Start the quote request and choose what you need there."
+
+msgid "Kapcsolódó"
+msgstr "Related"
+
+msgid "Ki a megrendelő?"
+msgstr "Who is the client?"
+
+msgid "Kiegészítő"
+msgstr "Add-on"
+
+msgid "Kiegészítők"
+msgstr "Add-ons"
+
+msgid "Kijelölés"
+msgstr "Select"
+
+msgid "Kivitelezési terv (PT + DDE)"
+msgstr "Construction design (PT + DDE)"
+
+msgid "Kiválasztja a szükséges rendszereket és a kiegészítőket."
+msgstr "You choose the systems you need and the add-ons."
+
+msgid "Kiválasztott elemek"
+msgstr "Selected items"
+
+msgid "Kér még valamit a tervek mellé?"
+msgstr "Anything else besides the designs?"
+
+msgid "Kérjen ajánlatot: %s"
+msgstr "Request a quote: %s"
+
+msgid "Kérjük, válassza ki, milyen tervre van szüksége."
+msgstr "Please choose which design you need."
+
+msgid "Kérjük, válasszon legalább egy szolgáltatást."
+msgstr "Please choose at least one service."
+
+msgid "Közműhálózatok tervezése"
+msgstr "Utility network design"
+
+msgid "Küldés…"
+msgstr "Sending…"
+
+msgid "Magánszemély"
+msgstr "Private person"
+
+msgid "Megadja a projekt alapadatait, és hogy engedélyes vagy kivitelezési tervre van szüksége."
+msgstr "You enter the basic project details and whether you need a permit or a construction design."
+
+msgid "Megrendelő"
+msgstr "Client"
+
+msgid "Megvalósíthatósági fázis (SF / DALI)"
+msgstr "Feasibility phase (SF / DALI)"
+
+msgid "Meséljen a projektről"
+msgstr "Tell us about the project"
+
+msgid "Milyen tervre van szüksége?"
+msgstr "Which design do you need?"
+
+msgid "Minden blokk mellett ott a Szerkesztés gomb, amely a megfelelő lépésre visz."
+msgstr "Each block has an Edit button that takes you to the matching step."
+
+msgid "Minden elem kérhető engedélyes és kivitelezési tervként is."
+msgstr "Every item can be requested as a permit design and as a construction design."
+
+msgid "Mit tervezzünk?"
+msgstr "What should we design?"
+
+msgid "Még nem választott elemet."
+msgstr "No items selected yet."
+
+msgid "Navigáció"
+msgstr "Navigation"
+
+msgid "Nem biztos benne? Válassza az „Engedélyes + kivitelezési terv” lehetőséget. Az ajánlatban külön soron látja a kettőt."
+msgstr "Not sure? Choose “Permit + construction design”. The quote shows the two on separate lines."
+
+msgid "Nem kell mindent előre beszereznie"
+msgstr "You don't have to obtain everything first"
+
+msgid "Nem tudja, mire van szüksége?"
+msgstr "Not sure what you need?"
+
+msgid "Nincs megadva"
+msgstr "Not provided"
+
+msgid "Négy tervezési terület, 20 konkrét elemmel. Egy ajánlatkérésben bármennyi kombinálható, engedélyes és kivitelezési tervként is."
+msgstr "Four design areas with 20 specific items. Any number can be combined in one request, as permit and as construction designs."
+
+msgid "Négy tervezési terület, egy ajánlatkérésben kombinálhatók. Nézze meg, mit tartalmaznak, vagy indítsa el az ajánlatkérést, és ott válassza ki, mire van szüksége."
+msgstr "Four design areas that can be combined in one request. See what they include, or start the quote request and choose what you need there."
+
+msgid "Néhány kötelező adat hiányzik. A pirossal jelölt mezőket kérjük, töltse ki."
+msgstr "Some required details are missing. Please fill in the fields marked in red."
+
+msgid "Néhány perc alatt végigmegyünk a projektjén. Amit nem tud, azt hagyja üresen vagy jelölje, hogy nincs meg: segítünk pótolni. Az ajánlatkérés díjmentes és nem jár kötelezettséggel."
+msgstr "In a few minutes we go through your project. Leave blank what you don't know, or mark that you don't have it: we will help fill the gaps. Requesting a quote is free and without obligation."
+
+msgid "Projekt"
+msgstr "Project"
+
+msgid "Projekt és tervfázis"
+msgstr "Project and design phase"
+
+msgid "Részletek →"
+msgstr "Details →"
+
+msgid "Teljes tervcsomag az engedélytől a kivitelezésig. Ez a leggyakoribb választás."
+msgstr "The full design package from permit to construction. This is the most common choice."
+
+msgid "Tervfázis"
+msgstr "Design phase"
+
+msgid "Tűzvédelmi rendszerek tervezése"
+msgstr "Fire protection systems design"
+
+msgid "Urbanisztikai bizonylat beszerzése"
+msgstr "Obtaining the urban planning certificate"
+
+msgid "Válassza ki a szükséges elemeket. Bármennyi kombinálható, több főcsoportból is."
+msgstr "Choose the items you need. Any number can be combined, also across groups."
+
+msgid "Válassza ki a szükséges szolgáltatásokat, és néhány adat megadásával kérjen személyre szabott ajánlatot."
+msgstr "Choose the services you need and request a tailored quote with just a few details."
+
+msgid "Válogatás megvalósult épületgépészeti, tűzvédelmi és közműtervezési munkáinkból."
+msgstr "A selection of our completed building services, fire protection and utility design work."
+
+msgid "Víz-csatorna"
+msgstr "Water and drainage"
+
+msgid "Vízbekötés"
+msgstr "Water connection"
+
+msgid "automatikusan hozzáadva"
+msgstr "added automatically"
+
+msgid "tervfázis nélkül"
+msgstr "no design phase"
+
+msgid "Épületgépészet"
+msgstr "Building services"
+
+msgid "Épületgépészet · Tűzvédelem · Közműhálózatok · Bekötések"
+msgstr "Building services · Fire protection · Utility networks · Connections"
+
+msgid "Épületgépészeti tervezés"
+msgstr "Building services design"
+
+msgid "Önkormányzat vagy közintézmény"
+msgstr "Municipality or public institution"
+
+msgid "Önkormányzati, közbeszerzéses beruházások előkészítő tanulmánya."
+msgstr "Preparatory study for municipal investments procured through public tender."

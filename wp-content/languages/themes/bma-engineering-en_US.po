@@ -1,3 +1,4 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: bma-engineering\n"
@@ -29,10 +30,10 @@ msgid "1 tétel kiválasztva"
 msgstr "1 item selected"
 
 msgid "A keresett oldal nem létezik, áthelyezték, vagy elírta a címet. Válasszon az alábbi lehetőségek közül."
-msgstr ""
+msgstr "The page does not exist, has moved, or the address is mistyped. Choose one of the options below."
 
 msgid "Adatvédelem"
-msgstr ""
+msgstr "Privacy"
 
 msgid "Ajánlat"
 msgstr ""
@@ -41,91 +42,91 @@ msgid "Ajánlat, %d tétel"
 msgstr ""
 
 msgid "Ajánlatkérés"
-msgstr ""
+msgstr "Request a quote"
 
 msgid "Ajánlatkérés indítása"
-msgstr ""
+msgstr "Start a quote request"
 
 msgid "Az ajánlatkérés díjmentes"
 msgstr "Requesting a quote is free"
 
 msgid "Az oldal nem található"
-msgstr ""
+msgstr "Page not found"
 
 msgid "BMA Engineering főoldal"
-msgstr ""
+msgstr "BMA Engineering home"
 
 msgid "Beküldés"
 msgstr ""
 
 msgid "Belépés"
-msgstr ""
+msgstr "Log in"
 
 msgid "CUI: %s"
-msgstr ""
+msgstr "Tax ID (CUI): %s"
 
 msgid "Nyitvatartás: %s"
 msgstr "Opening hours: %s"
 
 msgid "Cookie tájékoztató"
-msgstr ""
+msgstr "Cookie policy"
 
 msgid "Díjmentes, kötelezettség nélkül"
 msgstr "Free, no obligation"
 
 msgid "Fő navigáció"
-msgstr ""
+msgstr "Main navigation"
 
 msgid "Főmenü"
-msgstr ""
+msgstr "Main menu"
 
 msgid "Főoldal"
-msgstr ""
+msgstr "Home"
 
 msgid "Hiba 404"
-msgstr ""
+msgstr "Error 404"
 
 msgid "Hozzáadás"
 msgstr "Add"
 
 msgid "Kapcsolat"
-msgstr ""
+msgstr "Contact"
 
 msgid "Keresés"
-msgstr ""
+msgstr "Search"
 
 msgid "Keresés: %s"
-msgstr ""
+msgstr "Search: %s"
 
 msgid "Kijelentkezés"
-msgstr ""
+msgstr "Log out"
 
 msgid "Kérjen ajánlatot"
 msgstr "Request a quote"
 
 msgid "Lábléc"
-msgstr ""
+msgstr "Footer"
 
 msgid "Lábléc menü"
-msgstr ""
+msgstr "Footer menu"
 
 msgid "Lábléc navigáció"
-msgstr ""
+msgstr "Footer navigation"
 
 msgid "Menü bezárása"
 msgstr "Close menu"
 
 msgid "Menü megnyitása"
-msgstr ""
+msgstr "Open menu"
 
 msgid "Mobil menü"
 msgstr "Mobile menu"
 
 msgid "Navigáció"
-msgstr ""
+msgstr "Navigation"
 
 msgid "Nincs találat a keresésre. Próbáljon másik kifejezést, vagy böngésszen a szolgáltatások között."
-msgstr ""
+msgstr "No results. Try another term or browse the services."
 
 msgid "Nyelv választása"
 msgstr "Choose language"
@@ -134,10 +135,10 @@ msgid "Referencia projekt"
 msgstr "Reference project"
 
 msgid "Referenciák"
-msgstr ""
+msgstr "References"
 
 msgid "Szolgáltatások"
-msgstr ""
+msgstr "Services"
 
 msgid "Szűrés típus és szolgáltatás szerint"
 msgstr "Filter by type and service"
@@ -149,13 +150,13 @@ msgid "Tovább az adatokhoz"
 msgstr "Continue to details"
 
 msgid "Ugrás a tartalomhoz"
-msgstr ""
+msgstr "Skip to content"
 
 msgid "Válassza ki a szükséges szolgáltatásokat, és néhány adat megadásával kérjen személyre szabott ajánlatot."
-msgstr ""
+msgstr "Choose the services you need and request a tailored quote with just a few details."
 
 msgid "ÁSZF"
-msgstr ""
+msgstr "Terms"
 
 msgid "Ügyfélportál"
-msgstr ""
+msgstr "Client portal"

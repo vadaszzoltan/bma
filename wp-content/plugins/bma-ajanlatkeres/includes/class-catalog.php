@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 final class BMA_AJ_Catalog {
 
 	/** Bump to re-run sync() on existing sites. */
-	public const VERSION = '2.0.0';
+	public const VERSION = '2.1.0';
 
 	public const OPTION = 'bma_aj_catalog_version';
 
@@ -341,6 +341,7 @@ final class BMA_AJ_Catalog {
 		}
 
 		self::sync_fields( $item_ids );
+		BMA_AJ_Catalog_I18n::sync( $service_ids );
 		self::retire_legacy_services( $service_ids );
 		self::migrate_page_content();
 	}

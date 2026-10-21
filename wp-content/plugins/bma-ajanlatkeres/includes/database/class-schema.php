@@ -12,7 +12,7 @@ final class BMA_AJ_Schema {
 	/**
 	 * Bump when maybe_upgrade() gains a step; skips the column checks on every other request.
 	 */
-	public const DB_VERSION = '2';
+	public const DB_VERSION = '3';
 
 	/**
 	 * Create custom database tables.
@@ -112,6 +112,7 @@ final class BMA_AJ_Schema {
 				flow_version tinyint unsigned NOT NULL DEFAULT 1,
 				client_type varchar(30) NOT NULL DEFAULT '',
 				design_phase varchar(30) NOT NULL DEFAULT '',
+				lang varchar(5) NOT NULL DEFAULT 'hu',
 				addons longtext,
 				status_id bigint(20) unsigned NOT NULL,
 				admin_note text,
@@ -244,6 +245,7 @@ final class BMA_AJ_Schema {
 			'client_type'  => "varchar(30) NOT NULL DEFAULT ''",
 			'design_phase' => "varchar(30) NOT NULL DEFAULT ''",
 			'addons'       => 'longtext NULL',
+			'lang'         => "varchar(5) NOT NULL DEFAULT 'hu'",
 		);
 		foreach ( $req_additions as $col => $def ) {
 			if ( ! in_array( $col, $req_cols, true ) ) {
