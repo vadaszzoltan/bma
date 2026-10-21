@@ -64,11 +64,11 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line)}
   <p class="kicker">BMA Engineering · ajánlatkérő rendszer</p>
   <h1>Az ajánlatkérés átalakítása: mostani működés és változások</h1>
   <p class="lead">Mi van ma a főoldalon, a szolgáltatásoknál, a részletes nézetben és az ajánlatkérésben. Mit kérdeztünk, mit válaszolt az ügyfél, és ez mit változtat.</p>
-  <p class="meta">2026. október 21. · Forrás: a GitHubon lévő kód (<code>experiment/theme-redesign-v2</code>) és az ügyfél válaszának korábbi feldolgozása.</p>
+  <p class="meta">2026. október 21. · Forrás: a Mac helyi állapota (<code>mac-sync</code>, összefésülve a <code>claude/ajanlatkeres-v2</code> ágra) és az ügyfél válaszának korábbi feldolgozása.</p>
 </header>
 
 <div class="note">
-  <p><b>Két fenntartás.</b> A Macen lévő, még nem pusholt módosítások (fordítások, plugin) nincsenek benne. Ha a pluginban azóta változott valami, az eltérhet. Az ügyfél docx-ét nem látom újra, a válaszukat az előző elemzésből veszem. Ahol pontos elemnév kell, azt a docx-ből kell majd ellenőrizni.</p>
+  <p><b>Fenntartás.</b> Az ügyfél docx-ét nem látom újra, a válaszukat az előző elemzésből veszem. Ahol pontos elemnév kell, azt a docx-ből kell majd ellenőrizni. A mezők és elemek a seeder szerintiek. Ha az adminban azóta átírtátok őket, az élő oldal eltérhet.</p>
 </div>
 
 <nav class="toc" aria-label="Tartalom">
@@ -97,7 +97,7 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line)}
 </table></div>
 
 <h3>1.2 Főoldal</h3>
-<p>A főoldal blokkokból áll, ebben a sorrendben:</p>
+<p>A főoldal blokkokból áll. A szövegeik nyelvenként az adminból szerkeszthetők (Tartalom mezők), a lenti idézetek az alapértelmezett szövegek. A sorrend:</p>
 <ol>
   <li><b>Hero.</b> Felirat: „Tervezés · Engedélyeztetés · Közmű-koordináció”, cím: „Mérnöki tervezés átlátható folyamattal”. Az „Ajánlatkérés indítása” gomb a szolgáltatáslistára visz. A „Gyors indítás – mire van szüksége?” sorban 4 gomb van, a 4 szolgáltatás nevével, mindegyik a részletes oldalra visz.</li>
   <li><b>Értéksáv.</b> Három állítás: több szolgáltatás egy kérésben, dokumentumfeltöltés, követés az ügyfélportálon.</li>
@@ -106,38 +106,40 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line)}
   <li><b>Előnyök.</b> Négy pont. A „Kapcsolódó szolgáltatások egy helyen” név szerint felsorolja a tervezési, engedélyeztetési, közmű-koordinációs és dokumentációs feladatokat.</li>
   <li><b>Folyamat.</b> „Az ajánlatkérés menete” 4 lépésben: szolgáltatások kiválasztása → projekt adatai → beküldés → nyomon követés.</li>
   <li><b>Kiemelt referenciák.</b> Három referencia, alcím: „…tervezési, engedélyeztetési és közmű-koordinációs munkáinkból”.</li>
-  <li><b>Rólunk, záró ajánlatkérő blokk, kapcsolati adatok.</b> A Rólunk szöveg szintén a négy régi területet sorolja fel.</li>
+  <li><b>Rólunk.</b> Ez a szöveg szintén a négy régi területet sorolja fel. A záró ajánlatkérő blokk és a kapcsolati adatok kikerültek a főoldalról.</li>
 </ol>
 
 <h3>1.3 Szolgáltatások lista oldal</h3>
 <ul>
+  <li>Fejléc: cím és bevezető, mellette egy háromsoros oldaldoboz. A szövegek az adminból szerkeszthetők. Alatta már itt látszik a 4 lépéses folyamatsáv, az „01 Szolgáltatások” aktív.</li>
   <li>Mind a 4 szolgáltatás egymás alatt: cím, rövid leírás, „Részletek” gomb, alatta <b>az összes elem kijelölhető kártyaként</b>. Már a listán lehet pipálni.</li>
-  <li>Ha valami ki van jelölve, alul megjelenik egy rögzített sáv a kijelölések számával és nevével, és a „Tovább az ajánlatkéréshez” gombbal.</li>
-  <li>Két súgóblokk: „Több szolgáltatásra van szüksége?” és „Nem biztos benne, melyik szolgáltatásra van szüksége?”. Az utóbbi a kapcsolat oldalra visz.</li>
+  <li>Oldalt egy összesítő panel mutatja a kijelölt tételeket, a kosárra mutató linkkel.</li>
+  <li>Alul egy „Nem találja, amire szüksége van?” blokk, kapcsolat gombbal.</li>
 </ul>
 
 <h3>1.4 Szolgáltatás részletes nézete</h3>
 <ul>
-  <li>Kép, cím, és egy „Ha … van szüksége, ezt a szolgáltatást válassza” összefoglaló.</li>
-  <li>Leírás szöveg, utána „Mikor lehet erre szüksége?” lista.</li>
-  <li>„Hogyan működik?” doboz: jelölje ki a részfeladatokat, a projekt adatait a következő lépésben kérjük.</li>
-  <li><b>„Mit szeretne kérni?”</b>: az elemek kártyái, több is kijelölhető.</li>
-  <li>„Egyéb szolgáltatások”: két kapcsolódó szolgáltatás (pl. a Tervezésnél az Engedélyeztetés és a Közmű koordináció).</li>
-  <li>Alul rögzített sáv a „Kiválasztott szolgáltatások hozzáadása az ajánlatkéréshez” gombbal. Ha a látogató elnavigál anélkül, hogy hozzáadta volna a kijelölést, figyelmeztető ablak jelenik meg: hozzáadás / továbblépés nélküle / maradás.</li>
+  <li><b>Fejléc:</b> cím, rövid leírás, kapcsolat gomb, és egy „Röviden” doboz: lakossági és üzleti projektek, ajánlat [X] munkanapon belül, tipikus átfutás [X–Y]. Ezek még helykitöltők.</li>
+  <li><b>„Részfeladatok”:</b> az elemek kártyái „Ezt válassza, ha:” szöveggel, több is kijelölhető, bármelyik kombinálható más szolgáltatások elemeivel.</li>
+  <li><b>„Mire lesz szükség?”:</b> három oszlop: Kötelező / Ha rendelkezésre áll / Később is pótolható, „Nem baj, ha nincs meg minden” bevezetővel. Szolgáltatásonként az adminból tölthető.</li>
+  <li><b>„Hogyan zajlik?”:</b> 4 lépés: ajánlatkérés → felmérés és ajánlat → tervezés → átadás.</li>
+  <li><b>„Gyakori kérdések”:</b> kérdés-válasz párok szolgáltatásonként, az adminból.</li>
+  <li><b>Záró blokk:</b> „Ajánlatkérés indítása” (visszaugrik a részfeladatokhoz) és „Összes szolgáltatás”.</li>
+  <li>A kijelölésből oldalt összesítő lesz, a kosárba vivő linkkel. Kapcsolódó szolgáltatások blokk már nincs.</li>
 </ul>
 
 <h3>1.5 Az ajánlatkérés folyamata</h3>
 <ul class="flow">
-  <li><b>1</b>Szolgáltatások (lista vagy részletes oldal)</li>
-  <li><b>2</b>Kosár</li>
-  <li><b>3</b>Adatok</li>
-  <li><b>✓</b>Visszaigazolás</li>
+  <li><b>01</b>Szolgáltatások</li>
+  <li><b>02</b>Kosár</li>
+  <li><b>03</b>Adatok és beküldés</li>
+  <li><b>04</b>Visszaigazolás</li>
 </ul>
 <ol>
-  <li><b>Kijelölés.</b> A kijelölt elemek egy sütihez kötött kosárba kerülnek. Szolgáltatásonként egy tétel van, benne a kijelölt elemekkel.</li>
-  <li><b>Kosár.</b> Szolgáltatásonként egy kártya az elemekkel, eltávolítás és „Elemek szerkesztése” (vissza a részletes oldalra). Megjegyzés: „nem jár fizetési kötelezettséggel”.</li>
-  <li><b>Adatok.</b> A projektmezők a kijelölt elemekhez rendelt mezőkből állnak össze. Az ismétlődő mezők csak egyszer jelennek meg. Ez után jön a kapcsolattartó (név, e-mail, telefon, cégnév, adószám, számlázási cím, megjegyzés), egy opcionális „ügyfélfiók létrehozása” pipa és az adatvédelmi elfogadás.</li>
-  <li><b>Beküldés.</b> A kérés azonosítót kap, státusza „Beérkezett” lesz. Megy egy e-mail az ügyfélnek és egy az adminnak, a kosár kiürül, a feltöltött fájlok a kéréshez kerülnek.</li>
+  <li><b>Szolgáltatások.</b> A listán vagy a részletes oldalon kijelölt elemek egy sütihez kötött kosárba kerülnek. Szolgáltatásonként egy tétel van, benne a kijelölt elemekkel.</li>
+  <li><b>Kosár.</b> Itt adja meg a <b>tételenkénti adatokat</b>: minden kijelölt elemnél az ahhoz rendelt mezőket (fájl nélkül). Elemenként eltávolítható, és van „Kiválasztás módosítása” link. A beírt értékek piszkozatként megmaradnak a lépések között.</li>
+  <li><b>Adatok és beküldés.</b> „Projekt alapadatai” (a szolgáltatásokhoz rendelt közös mezők, minden tételre érvényesek), fájlfeltöltések, további megjegyzés, kapcsolattartó (név, e-mail, telefon, cégnév, adószám, számlázási cím), opcionális ügyfélfiók, adatvédelmi elfogadás.</li>
+  <li><b>Visszaigazolás.</b> A kérés azonosítót kap, státusza „Beérkezett” lesz. E-mail megy az ügyfélnek és az adminnak, a kosár kiürül. Az oldal megmutatja a következőket: most visszaigazolás, [X] munkanapon belül felmérés, ezután ajánlat.</li>
 </ol>
 
 <h4>Mezők szolgáltatásonként</h4>
@@ -150,7 +152,7 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line)}
     <tr><td>Közmű koordináció</td><td>helyszín*, helyrajzi szám, határidő, prioritás, helyszíni kapcsolattartó e-mail, megjegyzés</td><td>–</td></tr>
   </tbody>
 </table></div>
-<p class="meta">* kötelező. Összesen 16 mező. Feltételes megjelenítés (pl. „csak ha X-et választotta”) és mezőválaszból automatikus kijelölés nincs a rendszerben.</p>
+<p class="meta">* kötelező. Összesen 16 mező. A seeder minden mezőt elemhez rendel, ezért ezek a kosárban, tételenként jelennek meg. A „Projekt alapadatai” blokk csak azokat a mezőket mutatja, amelyeket az adminban a szolgáltatáshoz rendeltek. Feltételes megjelenítés (pl. „csak ha X-et választotta”) és mezőválaszból automatikus kijelölés nincs a rendszerben.</p>
 
 <h3>1.6 Beküldés után: ajánlat, elfogadás, fizetés</h3>
 <ul class="flow">
@@ -221,7 +223,7 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line)}
 <div class="change"><span class="tag t-chg">módosul</span><div><b>Folyamat blokk.</b> A 4 lépés („szolgáltatások → adatok → beküldés → követés”) helyett az új sorrend: projekt → tervfázis → szolgáltatások → kiegészítők → dokumentumok → beküldés → követés. A főoldalon elég ezt 4–5 lépésbe tömöríteni.</div></div>
 <div class="change"><span class="tag t-chg">módosul</span><div><b>Előnyök, referenciák alcíme, Rólunk.</b> Mindhárom a régi négy területet sorolja fel név szerint, ezeket át kell írni. Lehet új előny is, pl. „Nem kell mindent előre beszereznie: amit nem tud csatolni, azt mi beszerezzük”.</div></div>
 <div class="change"><span class="tag t-chg">módosul</span><div><b>Referenciák.</b> A 4 demo referencia a régi szolgáltatásokhoz van rendelve (pl. „Irodaház felújítás – műszaki dokumentáció”), át kell sorolni vagy cserélni.</div></div>
-<div class="change"><span class="tag t-keep">marad</span><div>Értéksáv, kapcsolati adatok, a blokkok sorrendje és a dizájn.</div></div>
+<div class="change"><span class="tag t-keep">marad</span><div>Értéksáv, a blokkok sorrendje és a dizájn. A szövegcsere nagy része kód nélkül, az adminból megoldható (Tartalom mezők, nyelvenként), kivéve a gyors indítás gombokat és a szolgáltatáskártyákat, amelyek a szolgáltatásokból jönnek.</div></div>
 
 <h3>3.3 Szolgáltatások lista oldal</h3>
 <div class="change"><span class="tag t-chg">módosul</span><div><b>Szerep.</b> Most ez a kijelölés fő helye. Mivel az új folyamatban a projekt és a tervfázis jön előbb, itt a pipálás nem működik jól: a tervfázist még nem tudjuk. Javaslat: a lista legyen <b>áttekintő oldal</b>, szolgáltatásonként „Részletek” és „Ajánlatkérés ezzel” gombbal. A kijelölés az ajánlatkérés 3. lépésébe kerül.</div></div>
@@ -229,21 +231,23 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line)}
 <div class="change"><span class="tag t-new">új</span><div><b>Kiegészítők szekció.</b> A 11 általános kiegészítő rövid listája, hogy látszódjon: urbanisztikai bizonylatot, felmérést, szolgáltatói adatokat is intéznek.</div></div>
 <div class="change"><span class="tag t-new">új</span><div><b>Tervfázis magyarázat.</b> Rövid blokk: mi az engedélyes terv (DTAC), a kivitelezési terv (PT + DDE), és mikor kell mindkettő.</div></div>
 <div class="change"><span class="tag t-chg">módosul</span><div><b>Súgóblokkok.</b> A „Több szolgáltatásra van szüksége?” és a „Nem biztos benne…” szövegében a régi területek szerepelnek, át kell írni.</div></div>
-<div class="change"><span class="tag t-gone">kiesik</span><div>A rögzített kijelölési sáv a lista oldalon, ha a kijelölés átkerül az ajánlatkérésbe.</div></div>
+<div class="change"><span class="tag t-chg">módosul</span><div><b>Folyamatsáv és összesítő panel.</b> A lista tetején lévő 4 lépéses sáv a 7 lépéseshez igazodik, vagy kikerül innen. Az oldalsó összesítő panel kiesik, ha a kijelölés átkerül az ajánlatkérésbe.</div></div>
+<div class="change"><span class="tag t-keep">marad</span><div>Az adminból szerkeszthető fejlécszövegek. Csak a tartalmukat kell átírni, mindhárom nyelven.</div></div>
 
 <h3>3.4 Szolgáltatás részletes nézete</h3>
 <div class="change"><span class="tag t-chg">módosul</span><div><b>Oldalak és URL-ek.</b> 4 új oldal: Épületgépészet, Tűzvédelmi rendszerek, Közműhálózatok, Bekötések. A régi 4 címet (<code>/szolgaltatasok/tervezes/</code>, <code>…/engedelyeztetes/</code>, <code>…/muszaki-dokumentacio/</code>, <code>…/kozmu-koordinacio/</code>) mindhárom nyelven át kell irányítani a legközelebbi új oldalra.</div></div>
-<div class="change"><span class="tag t-chg">módosul</span><div><b>Szövegek.</b> Új bevezető, „Mikor lehet erre szüksége?”, elemleírások, mindhárom nyelven (HU / RO / EN).</div></div>
-<div class="change"><span class="tag t-chg">módosul</span><div><b>„Mit szeretne kérni?”</b> Az elemkártyák maradhatnak, de mindegyiken jelezni kell, hogy engedélyes és/vagy kivitelezési tervként kérhető. A Bekötéseknél nincs tervfázis.</div></div>
-<div class="change"><span class="tag t-new">új</span><div><b>„Mire lesz szükségünk?”</b> blokk. A szolgáltatáshoz kért adatok és dokumentumok listája (pl. épületgépészetnél kötelező alaprajz, bekötésnél várható fogyasztás és szolgáltató neve), azzal a megjegyzéssel, hogy ami hiányzik, azt be tudják szerezni.</div></div>
+<div class="change"><span class="tag t-chg">módosul</span><div><b>Szövegek.</b> Új rövid leírás, elemleírások, „Ezt válassza, ha:” szövegek és GYIK, mindhárom nyelven (HU / RO / EN). A „Röviden” doboz helykitöltőit ([X] munkanap, [X–Y] átfutás) az ügyféltől kell megkérdezni.</div></div>
+<div class="change"><span class="tag t-chg">módosul</span><div><b>„Részfeladatok”.</b> Az elemkártyák maradhatnak, de mindegyiken jelezni kell, hogy engedélyes és/vagy kivitelezési tervként kérhető. A Bekötéseknél nincs tervfázis.</div></div>
+<div class="change"><span class="tag t-chg">módosul</span><div><b>„Mire lesz szükség?”</b> A blokk már megvan (Kötelező / Ha rendelkezésre áll / Később is pótolható), csak az ügyfél listájával kell feltölteni. Pl. épületgépészetnél a kötelező alaprajz, a „Később is pótolható” oszlopba pedig az urbanisztikai bizonylat, azzal, hogy ha nincs, beszerzik.</div></div>
+<div class="change"><span class="tag t-chg">módosul</span><div><b>„Hogyan zajlik?”</b> A 4 lépés közül a harmadik („Tervezés… szolgáltatói egyeztetésekkel”) igazodjon a tervfázishoz (engedélyes terv, aztán kivitelezési terv).</div></div>
 <div class="change"><span class="tag t-new">új</span><div><b>Kiegészítők</b> a szolgáltatáshoz: Engedélyeztetés, és a témába vágó általános kiegészítők.</div></div>
 <div class="change"><span class="tag t-new">új</span><div><b>Bekötéseknél figyelmeztetés</b> az urbanisztikai bizonylatról. Nem akadály, de jó tudni.</div></div>
-<div class="change"><span class="tag t-chg">módosul</span><div><b>Gomb és kosár.</b> A „Hozzáadás az ajánlatkéréshez” + kosár helyett „Ajánlatkérés indítása ezzel a szolgáltatással”, ami a többlépéses űrlapra visz, a szolgáltatás (és ha voltak, a kijelölt elemek) előre beállítva. A mentetlen kijelölés figyelmeztetés így feleslegessé válik.</div></div>
-<div class="change"><span class="tag t-chg">módosul</span><div><b>„Egyéb szolgáltatások”.</b> Új párosítások, pl. Épületgépészet ↔ Bekötések, Közműhálózatok ↔ Bekötések, Tűzvédelem ↔ Közműhálózatok (tűzivíz).</div></div>
+<div class="change"><span class="tag t-chg">módosul</span><div><b>Gomb és kosár.</b> Az oldalsó összesítő + kosár helyett „Ajánlatkérés indítása ezzel a szolgáltatással”. Ez a többlépéses űrlapra visz, a szolgáltatás (és ha voltak, a kijelölt elemek) előre beállítva.</div></div>
 
 <h3>3.5 Az ajánlatkérés folyamata</h3>
 <p>Most:</p>
-<ul class="flow"><li><b>1</b>Szolgáltatások</li><li><b>2</b>Kosár</li><li><b>3</b>Adatok + kapcsolattartó</li><li><b>✓</b>Beküldve</li></ul>
+<ul class="flow"><li><b>01</b>Szolgáltatások</li><li><b>02</b>Kosár + tételenkénti adatok</li><li><b>03</b>Projekt alapadatai, fájlok, kapcsolattartó</li><li><b>04</b>Visszaigazolás</li></ul>
+<p>Érdekesség: ma a tételenkénti adatok jönnek előbb, és a projekt közös adatai utána. Az ügyfél javaslata ezt is megfordítja.</p>
 <p>Utána, az ügyfél által javasolt sorrend alapján:</p>
 <ul class="flow"><li><b>1</b>Megrendelő és projekt</li><li><b>2</b>Tervfázis</li><li><b>3</b>Szolgáltatások</li><li><b>4</b>Kiegészítők</li><li><b>5</b>Dokumentumok</li><li><b>6</b>Kapcsolattartó</li><li><b>7</b>Összegzés és beküldés</li></ul>
 <div class="tbl"><table>
@@ -277,7 +281,7 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line)}
   <li><b>Tervfázis a kijelölt elemen:</b> ma egy kijelölt elem csak egy azonosító. Ezután mellette van a tervfázis is, és ezt a beküldött kérés, az admin, az e-mailek és a portál is mutatja.</li>
   <li><b>Kiegészítők:</b> új típusú tétel, amely csoporthoz vagy általánosan kapcsolódik.</li>
   <li><b>Automatikus kijelölés:</b> egy mezőválasz („Nem”) bejelöl egy kiegészítőt.</li>
-  <li><b>Lépésenként haladó űrlap</b> a kosár + egyoldalas űrlap helyett, lépések közti mentéssel, hogy visszalépéskor semmi ne vesszen el.</li>
+  <li><b>Lépésenként haladó űrlap</b> a kosár + adatok oldal helyett. A lépések közti piszkozatmentés már megvan, erre lehet építeni.</li>
 </ol>
 
 <h3>3.6 Beküldés után: ajánlat és rendelés</h3>
@@ -299,7 +303,6 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line)}
 </ol>
 <h3>Sorrend</h3>
 <ol>
-  <li>A Macen lévő kód felpusholása a GitHubra, hogy a friss változatból dolgozzunk.</li>
   <li>Visszakérdések elküldése. Amíg nincs válasz: az új szolgáltatásoldalak szövegei.</li>
   <li>Adatmodell: tervfázis, kiegészítők, feltételes mezők, automatikus kijelölés.</li>
   <li>A 7 lépéses ajánlatkérés, utána a főoldal, a lista és a részletes oldalak.</li>
