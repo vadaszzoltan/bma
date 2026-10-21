@@ -81,6 +81,90 @@ defined( 'ABSPATH' ) || exit;
 			<tr><th><?php esc_html_e( 'E-mail', 'bma-ajanlatkeres' ); ?></th><td><input type="email" name="bma_contact_email" value="<?php echo esc_attr( get_option( 'bma_contact_email' ) ); ?>" class="regular-text" placeholder="office@bmaeng.ro"></td></tr>
 			<tr><th><?php esc_html_e( 'Cím', 'bma-ajanlatkeres' ); ?></th><td><textarea name="bma_contact_address" rows="3" class="large-text" placeholder="Str. Raza Soarelui 11&#10;535600 Odorheiu Secuiesc"><?php echo esc_textarea( get_option( 'bma_contact_address' ) ); ?></textarea></td></tr>
 			<tr><th><?php esc_html_e( 'Nyitvatartás', 'bma-ajanlatkeres' ); ?></th><td><input type="text" name="bma_opening_hours" value="<?php echo esc_attr( get_option( 'bma_opening_hours', BMA_AJ_Company::defaults()['opening_hours'] ) ); ?>" class="regular-text" placeholder="Hétfő–Péntek, 08:00–17:00"></td></tr>
+			<tr><th><?php esc_html_e( 'Térkép – szélesség (lat)', 'bma-ajanlatkeres' ); ?></th><td><input type="text" name="bma_map_lat" value="<?php echo esc_attr( get_option( 'bma_map_lat', BMA_AJ_Company::defaults()['map_lat'] ) ); ?>" class="regular-text" placeholder="46.3047462"></td></tr>
+			<tr><th><?php esc_html_e( 'Térkép – hosszúság (lng)', 'bma-ajanlatkeres' ); ?></th><td><input type="text" name="bma_map_lng" value="<?php echo esc_attr( get_option( 'bma_map_lng', BMA_AJ_Company::defaults()['map_lng'] ) ); ?>" class="regular-text" placeholder="25.2950261"></td></tr>
+			<tr><th><?php esc_html_e( 'Térkép – zoom', 'bma-ajanlatkeres' ); ?></th><td><input type="number" min="1" max="20" name="bma_map_zoom" value="<?php echo esc_attr( get_option( 'bma_map_zoom', BMA_AJ_Company::defaults()['map_zoom'] ) ); ?>" class="small-text"></td></tr>
+		</table>
+
+		<?php
+		$footer_langs = array(
+			'hu' => 'Magyar',
+			'ro' => 'Română',
+			'en' => 'English',
+		);
+		$footer_fields = array(
+			'footer.nav_heading' => __( 'Navigáció cím', 'bma-ajanlatkeres' ),
+			'footer.cta_heading' => __( 'Ajánlatkérés cím', 'bma-ajanlatkeres' ),
+			'footer.cta_blurb'   => __( 'Ajánlatkérés szöveg', 'bma-ajanlatkeres' ),
+			'footer.cta_button'  => __( 'Gomb', 'bma-ajanlatkeres' ),
+		);
+		$footer_lang = isset( $_GET['bma_footer_lang'] ) ? sanitize_key( wp_unslash( $_GET['bma_footer_lang'] ) ) : 'hu'; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( ! isset( $footer_langs[ $footer_lang ] ) ) {
+			$footer_lang = 'hu';
+		}
+		$footer_stored = get_option( BMA_AJ_Content::FOOTER_OPTION, array() );
+		if ( ! is_array( $footer_stored ) ) {
+			$footer_stored = array();
+		}
+		?>
+		<h2><?php esc_html_e( 'Lábléc szövegek', 'bma-ajanlatkeres' ); ?></h2>
+		<p class="description"><?php esc_html_e( 'A láblécnek nincs saját oldala; a szövegek itt szerkeszthetők. A mezők a jelenlegi tartalommal vannak kitöltve.', 'bma-ajanlatkeres' ); ?></p>
+		<p>
+			<?php foreach ( $footer_langs as $code => $label ) : ?>
+				<?php if ( $code !== 'hu' ) : ?> · <?php endif; ?>
+				<?php if ( $footer_lang === $code ) : ?>
+					<strong><?php echo esc_html( $label ); ?></strong>
+				<?php else : ?>
+					<a href="<?php echo esc_url( add_query_arg( 'bma_footer_lang', $code ) ); ?>"><?php echo esc_html( $label ); ?></a>
+				<?php endif; ?>
+			<?php endforeach; ?>
+		</p>
+		<?php
+		foreach ( array( 'hu', 'ro', 'en' ) as $code ) {
+			if ( $code === $footer_lang || empty( $footer_stored[ $code ] ) || ! is_array( $footer_stored[ $code ] ) ) {
+				continue;
+			}
+			foreach ( $footer_stored[ $code ] as $fkey => $fval ) {
+				if ( ! is_string( $fval ) || $fval === '' ) {
+					continue;
+				}
+				printf(
+					'<input type="hidden" name="%s[%s][%s]" value="%s" />' . "\n",
+					esc_attr( BMA_AJ_Content::FOOTER_OPTION ),
+					esc_attr( $code ),
+					esc_attr( $fkey ),
+					esc_attr( $fval )
+				);
+			}
+		}
+		?>
+		<table class="form-table">
+			<?php foreach ( $footer_fields as $fkey => $flabel ) : ?>
+				<?php
+				$fval = '';
+				if ( ! empty( $footer_stored[ $footer_lang ][ $fkey ] ) && is_string( $footer_stored[ $footer_lang ][ $fkey ] ) ) {
+					$fval = $footer_stored[ $footer_lang ][ $fkey ];
+				} else {
+					$legacy = BMA_AJ_Content::legacy_stored();
+					if ( ! empty( $legacy[ $footer_lang ][ $fkey ] ) && is_string( $legacy[ $footer_lang ][ $fkey ] ) ) {
+						$fval = $legacy[ $footer_lang ][ $fkey ];
+					} else {
+						$fval = BMA_AJ_Content::default_for( $fkey, $footer_lang );
+					}
+				}
+				$is_blurb = ( 'footer.cta_blurb' === $fkey );
+				?>
+				<tr>
+					<th><?php echo esc_html( $flabel ); ?> <span class="description">(<?php echo esc_html( $footer_langs[ $footer_lang ] ); ?>)</span></th>
+					<td>
+						<?php if ( $is_blurb ) : ?>
+							<textarea class="large-text" rows="3" name="<?php echo esc_attr( BMA_AJ_Content::FOOTER_OPTION . '[' . $footer_lang . '][' . $fkey . ']' ); ?>"><?php echo esc_textarea( $fval ); ?></textarea>
+						<?php else : ?>
+							<input type="text" class="large-text" name="<?php echo esc_attr( BMA_AJ_Content::FOOTER_OPTION . '[' . $footer_lang . '][' . $fkey . ']' ); ?>" value="<?php echo esc_attr( $fval ); ?>">
+						<?php endif; ?>
+					</td>
+				</tr>
+			<?php endforeach; ?>
 		</table>
 
 		<h2><?php esc_html_e( 'Közösségi média', 'bma-ajanlatkeres' ); ?></h2>

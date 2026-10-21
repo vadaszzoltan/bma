@@ -38,7 +38,7 @@ csak azt tartalmazza, amit konkrét megfigyelésre alapoztam.
 | Megfigyelés | Változtatás |
 |---|---|
 | A négy statisztika-csempe (2 aktív / 1 új ajánlat / 0 terv / 1 fizetésre vár) semmire nem kattintható, és nem derül ki belőlük, mit kell tenni. | A lista fölé teendő-sáv került: melyik kérésnél kell most lépni, és mit. |
-| Ugyanezek a csempék statikus számok maradtak volna. | A csempék most szűrők: rákattintva a lista alattuk szűrődik, és ugyanazt a négy állapotot mutatják, mint a fülek. A „Fizetésre vár" csempe kikerült – fizetési folyamat egyelőre nincs a rendszerben. |
+| Ugyanezek a csempék statikus számok maradtak volna. | A csempék most szűrők: rákattintva a lista alattuk szűrődik, és ugyanazt a négy állapotot mutatják, mint a fülek. A negyedik csempe „Fizetésre vár" maradt (a rendszerben van Stripe-alapú fizetés), a „Lezárt" helyett. |
 | A táblázat a státuszt mutatja („Ajánlat elkészült"), de nem azt, hogy ez az ügyfélnek mit jelent. | A státusz alatt ott a következő lépés is. |
 | Nincs szűrés, minden kérés egy listában. | Fülek: Összes / Folyamatban / Ajánlat elérhető / Lezárt. |
 | A dokumentumok csak a kérés részletes nézetében érhetők el. | Külön „Dokumentumaim" panel a portál főoldalán. |
@@ -51,10 +51,36 @@ olyan oldal, ami elmondaná, mit tartalmaz egy szolgáltatás, mikor van rá sz�
 hozzá összekészíteni. Ez a lépés hiányzik a főoldal és az ajánlatkérés között. Az új sablon
 ezt tölti be, és mind a négy területre használható.
 
-## Mobil
+## Referenciák (lista)
 
-A mobil makett (390 px) minden érintőfelületet legalább 44 px magasra hoz, és alul ragadós
-„Ajánlatkérés indítása" sávot ad, hogy a fő cselekvés végig elérhető maradjon.
+| Megfigyelés | Változtatás |
+|---|---|
+| A jelenlegi lista szűrés nélküli felsorolás; aki csak lakossági vagy csak közmű-projektre kíváncsi, mindent végignéz. | Szűrés típus (lakossági / üzleti) és szolgáltatás szerint, élő darabszámmal és értelmes üres állapottal. |
+| A kártyák a főoldalon és a listaoldalon eltérően viselkednek. | Ugyanaz a `.ref` komponens mindkét helyen. |
+
+## Referencia projekt oldal
+
+| Megfigyelés | Változtatás |
+|---|---|
+| A projektoldalról nincs út a megrendelésig – a „Projekt megtekintése" zsákutca. | Jobb oldalon „Ehhez kapcsolódó szolgáltatások" panel, ahonnan egy kattintással ajánlatkérésbe kerülnek a tételek. |
+| Nem derül ki, mi volt a feladat és mi lett az eredmény. | A feladat / Amit csináltunk / Eredmény / Képek szerkezet, tételes „amit csináltunk" táblával. |
+
+## Reszponzív és mobil
+
+Nincs külön mobil verzió: minden oldal ugyanabból a markupból és CSS-ből renderelődik,
+media query-kkel. Három töréspont: 1100 (kis desktop), 900 (tablet), 640 (telefon).
+
+| Mit old meg | Hogyan |
+|---|---|
+| A főmenü nem fér ki kis kijelzőn. | 900 px alatt hamburger gomb lép a helyére. |
+| A portál táblázata mobilon olvashatatlanul összenyomódna. | 900 px alatt a sorok kártyákká alakulnak, teljes szélességű „Részletek" gombbal. |
+| A kosár-összegző mobilon a tartalom alá kerülne, és a „Tovább" eltűnne a görgetésben. | Ragadós alsó cselekvési sáv a kiválasztott tételek számával. |
+| Az apró kattintható elemek ujjal nem célozhatók. | Minden érintőfelület legalább 44 px, a fő gombok 48 px. |
+| A hosszú gombfeliratok kilógnának 390 px-en. | 640 px alatt a gombok tördelhetők, teljes szélességűek, egymás alatt. |
+| A szűrő fülek nem férnek ki egy sorba. | Vízszintesen görgethető fülsáv. |
+
+Mind a 21 nézetet lerendereltem 390, 768 és 1440 px szélességen: sehol nincs vízszintes
+túlcsordulás.
 
 
 ## Egységesítés (minden oldal)
@@ -68,3 +94,11 @@ A tervek egy közös elemkészletre épülnek, hogy az oldalak ne essenek szét:
   ugyanaz a komponens
 - azonos panel-, gomb-, jelölő- és összegző elemek
 - azonos térközök: tartalmi szekció 72 px, alkalmazás-nézet 40 px felül / 64 px alul
+
+
+## Nyelvválasztó (HU / RO / EN)
+
+| Megfigyelés | Változtatás |
+|---|---|
+| A háromnyelvű váltó formázatlan felsorolásként jelenik meg a fejléc fölött, a menüsávba lógva. | Kompakt hármas kapcsoló a felső sáv jobb szélén, az aktív nyelv sötétkék kitöltéssel; ugyanez megismételve a láblécben. |
+| Mobilon nem volt helye. | A felső sáv mobilon egyetlen sorrá egyszerűsödik: telefonszám balra, nyelvváltó jobbra, 44 px magas gombokkal; az e-mail és a nyitvatartás elrejtve. |

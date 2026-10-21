@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'BMA_THEME_VERSION', '1.13.0-redesign-exp' );
+define( 'BMA_THEME_VERSION', '1.14.0-redesign-exp' );
 define( 'BMA_THEME_DIR', get_stylesheet_directory() );
 define( 'BMA_THEME_URI', get_stylesheet_directory_uri() );
 
@@ -29,7 +29,7 @@ function bma_enqueue_styles(): void {
 		BMA_THEME_VERSION
 	);
 
-	// Experiment: redesign v2 overlay (easy rollback: remove this block + bma-v2.css).
+	// Design CSS from package (overwrite freely). WP chrome lives in bma-v2-integration.css.
 	$v2 = BMA_THEME_DIR . '/assets/css/bma-v2.css';
 	if ( file_exists( $v2 ) ) {
 		wp_enqueue_style(
@@ -40,6 +40,16 @@ function bma_enqueue_styles(): void {
 		);
 	}
 
+	$v2_integration = BMA_THEME_DIR . '/assets/css/bma-v2-integration.css';
+	if ( file_exists( $v2 ) && file_exists( $v2_integration ) ) {
+		wp_enqueue_style(
+			'bma-v2-integration',
+			BMA_THEME_URI . '/assets/css/bma-v2-integration.css',
+			array( 'bma-v2' ),
+			(string) filemtime( $v2_integration )
+		);
+	}
+
 	// Redesign fonts (Manrope / Source Sans 3) + Latin Extended for RO diacritics.
 	wp_enqueue_style(
 		'bma-v2-fonts',
@@ -47,8 +57,77 @@ function bma_enqueue_styles(): void {
 		array(),
 		null
 	);
+
+	$mobile_nav = BMA_THEME_DIR . '/assets/js/mobile-nav.js';
+	if ( file_exists( $mobile_nav ) ) {
+		wp_enqueue_script(
+			'bma-mobile-nav',
+			BMA_THEME_URI . '/assets/js/mobile-nav.js',
+			array(),
+			(string) filemtime( $mobile_nav ),
+			true
+		);
+		wp_localize_script(
+			'bma-mobile-nav',
+			'bmaMobileNav',
+			array(
+				'openLabel'  => __( 'Menü megnyitása', 'bma-engineering' ),
+				'closeLabel' => __( 'Menü bezárása', 'bma-engineering' ),
+			)
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'bma_enqueue_styles', 20 );
+
+/**
+ * Add hreflang x-default pointing at the default-language translation of the current URL.
+ */
+function bma_output_hreflang_x_default(): void {
+	if ( is_admin() || ! function_exists( 'pll_default_language' ) || ! function_exists( 'pll_get_post' ) ) {
+		return;
+	}
+
+	$default = pll_default_language( 'slug' );
+	if ( ! $default ) {
+		return;
+	}
+
+	$url = '';
+
+	if ( is_singular() ) {
+		$post_id = get_queried_object_id();
+		if ( ! $post_id ) {
+			return;
+		}
+		$tr_id = pll_get_post( $post_id, $default );
+		if ( ! $tr_id ) {
+			return;
+		}
+		$url = get_permalink( $tr_id );
+	} elseif ( is_home() || is_front_page() ) {
+		if ( function_exists( 'pll_home_url' ) ) {
+			$url = pll_home_url( $default );
+		}
+	} elseif ( is_category() || is_tag() || is_tax() ) {
+		$term = get_queried_object();
+		if ( $term && ! empty( $term->term_id ) && function_exists( 'pll_get_term' ) ) {
+			$tr = pll_get_term( (int) $term->term_id, $default );
+			if ( $tr ) {
+				$url = get_term_link( (int) $tr );
+			}
+		}
+	}
+
+	if ( ! $url || is_wp_error( $url ) ) {
+		return;
+	}
+
+	printf(
+		'<link rel="alternate" href="%s" hreflang="x-default" />' . "\n",
+		esc_url( $url )
+	);
+}
+add_action( 'wp_head', 'bma_output_hreflang_x_default', 2 );
 
 /**
  * Register navigation menus (used by BMA PHP header/footer).
@@ -85,6 +164,25 @@ function bma_theme_setup(): void {
 	load_theme_textdomain( 'bma-engineering', BMA_THEME_DIR . '/languages' );
 }
 add_action( 'after_setup_theme', 'bma_theme_setup' );
+
+/**
+ * Load theme textdomain for the current Polylang locale.
+ * after_setup_theme is too early (locale still default); unload+JIT can miss the .mo.
+ */
+function bma_load_textdomain_for_locale(): void {
+	$locale = determine_locale();
+	$mofile = BMA_THEME_DIR . '/languages/bma-engineering-' . $locale . '.mo';
+	if ( ! is_readable( $mofile ) ) {
+		$mofile = WP_LANG_DIR . '/themes/bma-engineering-' . $locale . '.mo';
+	}
+	if ( ! is_readable( $mofile ) ) {
+		return;
+	}
+	unload_textdomain( 'bma-engineering' );
+	load_textdomain( 'bma-engineering', $mofile );
+}
+add_action( 'init', 'bma_load_textdomain_for_locale', 20 );
+add_action( 'change_locale', 'bma_load_textdomain_for_locale' );
 
 /**
  * Classic editor for post content – keep Site Editor / patterns available for Ollie.
@@ -136,19 +234,70 @@ function bma_widgets_init(): void {
 add_action( 'widgets_init', 'bma_widgets_init' );
 
 /**
+ * Polylang-aware page permalink by HU slug.
+ *
+ * Finds the page via slug, then resolves the current-language translation
+ * with pll_get_post(). Falls back to the original page if no translation.
+ *
+ * @param string $slug Page slug (e.g. szolgaltatasok, referenciak, kapcsolat).
+ */
+function bma_page_url( string $slug ): string {
+	$slug = trim( $slug, '/' );
+	if ( '' === $slug ) {
+		return home_url( '/' );
+	}
+
+	// Prefer plugin page map when available (same logical keys as HU slugs).
+	if ( class_exists( 'BMA_AJ_I18n' ) ) {
+		$url = BMA_AJ_I18n::page_url( $slug );
+		if ( is_string( $url ) && '' !== $url && $url !== home_url( '/' ) ) {
+			return $url;
+		}
+	}
+
+	$page = get_page_by_path( $slug, OBJECT, 'page' );
+	if ( ! $page instanceof WP_Post ) {
+		return home_url( '/' );
+	}
+
+	return bma_post_url( (int) $page->ID );
+}
+
+/**
+ * Polylang-aware permalink for any post/CPT (bma_service, bma_reference, …).
+ *
+ * @param int $post_id Post ID in any language.
+ */
+function bma_post_url( int $post_id ): string {
+	if ( $post_id <= 0 ) {
+		return home_url( '/' );
+	}
+
+	$id = $post_id;
+	if ( function_exists( 'pll_get_post' ) ) {
+		$translated = pll_get_post( $id );
+		if ( $translated ) {
+			$id = (int) $translated;
+		}
+	}
+
+	$url = get_permalink( $id );
+	return $url ? $url : home_url( '/' );
+}
+
+/**
  * Fallback primary menu.
  */
 function bma_fallback_menu(): void {
 	echo '<ul class="bma-menu">';
 	$items = array(
-		'fooldal'         => __( 'Főoldal', 'bma-engineering' ),
-		'szolgaltatasok'  => __( 'Szolgáltatások', 'bma-engineering' ),
-		'referenciak'     => __( 'Referenciák', 'bma-engineering' ),
-		'kapcsolat'       => __( 'Kapcsolat', 'bma-engineering' ),
+		'fooldal'        => __( 'Főoldal', 'bma-engineering' ),
+		'szolgaltatasok' => __( 'Szolgáltatások', 'bma-engineering' ),
+		'referenciak'    => __( 'Referenciák', 'bma-engineering' ),
+		'kapcsolat'      => __( 'Kapcsolat', 'bma-engineering' ),
 	);
 	foreach ( $items as $key => $label ) {
-		$url = class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( $key ) : home_url( '/' );
-		printf( '<li><a href="%s">%s</a></li>', esc_url( $url ), esc_html( $label ) );
+		printf( '<li><a href="%s">%s</a></li>', esc_url( bma_page_url( $key ) ), esc_html( $label ) );
 	}
 	echo '</ul>';
 }
@@ -158,4 +307,263 @@ function bma_fallback_menu(): void {
  */
 function bma_footer_fallback_menu(): void {
 	bma_fallback_menu();
+}
+
+/**
+ * Sticky mobile CTA bar (homepage + services list + service detail + quote flow).
+ */
+function bma_render_mobilebar(): void {
+	$is_services = class_exists( 'BMA_AJ_I18n' )
+		? BMA_AJ_I18n::is_page( 'szolgaltatasok' )
+		: is_page( array( 'szolgaltatasok', 'servicii', 'services' ) );
+	$is_cart = class_exists( 'BMA_AJ_I18n' )
+		? BMA_AJ_I18n::is_page( 'ajanlatkosar' )
+		: is_page( array( 'ajanlatkosar', 'cos-oferta', 'quote-cart' ) );
+	$is_form = class_exists( 'BMA_AJ_I18n' )
+		? BMA_AJ_I18n::is_page( 'ajanlatkeres' )
+		: is_page( array( 'ajanlatkeres', 'cerere-oferta', 'quote-request' ) );
+
+	if ( is_front_page() ) {
+		$svc_url = bma_page_url( 'szolgaltatasok' );
+		?>
+		<div class="mobilebar" data-bma-mobilebar="home">
+			<span class="mobilebar-info">
+				<strong><?php esc_html_e( 'Kérjen ajánlatot', 'bma-engineering' ); ?></strong>
+				<span><?php esc_html_e( 'Díjmentes, kötelezettség nélkül', 'bma-engineering' ); ?></span>
+			</span>
+			<a href="<?php echo esc_url( $svc_url ); ?>" class="btn btn--primary btn--sm"><?php esc_html_e( 'Ajánlatkérés', 'bma-engineering' ); ?></a>
+		</div>
+		<?php
+		return;
+	}
+
+	if ( is_singular( 'bma_service' ) ) {
+		$service_id = (int) get_queried_object_id();
+		$title      = get_the_title( $service_id );
+		$items      = class_exists( 'BMA_AJ_Dynamic_Fields' )
+			? BMA_AJ_Dynamic_Fields::get_service_items( $service_id )
+			: array();
+		$count_label = sprintf(
+			/* translators: %d: number of selectable items */
+			__( '%d választható részfeladat', 'bma-engineering' ),
+			count( $items )
+		);
+		$list_url = bma_page_url( 'szolgaltatasok' );
+		?>
+		<div class="mobilebar" data-bma-mobilebar="service">
+			<span class="mobilebar-info">
+				<strong><?php echo esc_html( $title ); ?></strong>
+				<span data-bma-mobilebar-sub><?php echo esc_html( $count_label ); ?></span>
+			</span>
+			<a href="#bma-service-items" class="btn btn--primary btn--sm" data-bma-mobilebar-cta><?php esc_html_e( 'Hozzáadás', 'bma-engineering' ); ?></a>
+			<a href="<?php echo esc_url( $list_url ); ?>" class="visually-hidden" data-bma-nojs-service-list><?php esc_html_e( 'Szolgáltatások', 'bma-engineering' ); ?></a>
+		</div>
+		<?php
+		return;
+	}
+
+	if ( is_singular( 'bma_reference' ) ) {
+		$ref_id  = (int) get_queried_object_id();
+		$title   = get_the_title( $ref_id );
+		$related = class_exists( 'BMA_AJ_Reference_CPT' )
+			? BMA_AJ_Reference_CPT::get_related_services( $ref_id )
+			: array();
+		$sub = $related ? implode( ' · ', wp_list_pluck( $related, 'post_title' ) ) : __( 'Referencia projekt', 'bma-engineering' );
+		?>
+		<div class="mobilebar" data-bma-mobilebar="reference">
+			<span class="mobilebar-info">
+				<strong><?php echo esc_html( $title ); ?></strong>
+				<span><?php echo esc_html( $sub ); ?></span>
+			</span>
+			<a href="<?php echo esc_url( bma_page_url( 'szolgaltatasok' ) ); ?>" class="btn btn--primary btn--sm"><?php esc_html_e( 'Ajánlat', 'bma-engineering' ); ?></a>
+		</div>
+		<?php
+		return;
+	}
+
+	$is_refs = class_exists( 'BMA_AJ_I18n' )
+		? BMA_AJ_I18n::is_page( 'referenciak' )
+		: is_page( array( 'referenciak', 'referinte', 'references' ) );
+
+	if ( $is_refs ) {
+		?>
+		<div class="mobilebar" data-bma-mobilebar="references">
+			<span class="mobilebar-info">
+				<strong><?php esc_html_e( 'Referenciák', 'bma-engineering' ); ?></strong>
+				<span><?php esc_html_e( 'Szűrés típus és szolgáltatás szerint', 'bma-engineering' ); ?></span>
+			</span>
+			<a href="<?php echo esc_url( bma_page_url( 'szolgaltatasok' ) ); ?>" class="btn btn--primary btn--sm"><?php esc_html_e( 'Ajánlat', 'bma-engineering' ); ?></a>
+		</div>
+		<?php
+		return;
+	}
+
+	$count = class_exists( 'BMA_AJ_Cart' ) ? (int) BMA_AJ_Cart::item_count() : 0;
+	$count_label = ( 1 === $count )
+		? __( '1 tétel kiválasztva', 'bma-engineering' )
+		: sprintf(
+			/* translators: %d: selected item count */
+			__( '%d tétel kiválasztva', 'bma-engineering' ),
+			$count
+		);
+
+	if ( $is_cart ) {
+		$form_url = bma_page_url( 'ajanlatkeres' );
+		$svc_url  = bma_page_url( 'szolgaltatasok' );
+		$cta_url  = $count ? $form_url : $svc_url;
+		$cta_label = $count
+			? __( 'Tovább az adatokhoz', 'bma-engineering' )
+			: __( 'Szolgáltatások', 'bma-engineering' );
+		?>
+		<div class="mobilebar" data-bma-mobilebar="cart">
+			<span class="mobilebar-info">
+				<strong><?php echo esc_html( $count_label ); ?></strong>
+				<span><?php esc_html_e( '02 · Kosár', 'bma-engineering' ); ?></span>
+			</span>
+			<?php if ( $count ) : ?>
+				<button type="submit" form="bma-quote-cart-form" class="btn btn--primary btn--sm"><?php echo esc_html( $cta_label ); ?></button>
+			<?php else : ?>
+				<a href="<?php echo esc_url( $cta_url ); ?>" class="btn btn--primary btn--sm"><?php echo esc_html( $cta_label ); ?></a>
+			<?php endif; ?>
+		</div>
+		<?php
+		return;
+	}
+
+	if ( $is_form ) {
+		$submitted = isset( $_GET['submitted'] );
+		if ( $submitted ) {
+			return;
+		}
+		?>
+		<div class="mobilebar" data-bma-mobilebar="form">
+			<span class="mobilebar-info">
+				<strong><?php echo esc_html( $count_label ); ?></strong>
+				<span><?php esc_html_e( '03 · Adatok és beküldés', 'bma-engineering' ); ?></span>
+			</span>
+			<?php if ( $count ) : ?>
+				<button type="submit" form="bma-quote-submit-form" class="btn btn--primary btn--sm"><?php esc_html_e( 'Beküldés', 'bma-engineering' ); ?></button>
+			<?php else : ?>
+				<a href="<?php echo esc_url( bma_page_url( 'szolgaltatasok' ) ); ?>" class="btn btn--primary btn--sm"><?php esc_html_e( 'Szolgáltatások', 'bma-engineering' ); ?></a>
+			<?php endif; ?>
+		</div>
+		<?php
+		return;
+	}
+
+	if ( ! $is_services ) {
+		return;
+	}
+
+	$cart_url = bma_page_url( 'ajanlatkosar' );
+	?>
+	<div class="mobilebar" data-bma-mobilebar="services">
+		<span class="mobilebar-info">
+			<strong data-bma-mobilebar-count><?php echo esc_html( $count_label ); ?></strong>
+			<span><?php esc_html_e( 'Az ajánlatkérés díjmentes', 'bma-engineering' ); ?></span>
+		</span>
+		<a
+			href="<?php echo esc_url( $cart_url ); ?>"
+			class="btn btn--primary btn--sm<?php echo $count ? '' : ' is-disabled'; ?>"
+			data-bma-mobilebar-cta
+			<?php echo $count ? '' : ' aria-disabled="true" tabindex="-1"'; ?>
+		><?php esc_html_e( 'Tovább', 'bma-engineering' ); ?></a>
+	</div>
+	<?php
+}
+
+/**
+ * Body class when the sticky mobile bar is present.
+ *
+ * @param string[] $classes Body classes.
+ * @return string[]
+ */
+function bma_mobilebar_body_class( array $classes ): array {
+	$is_services = class_exists( 'BMA_AJ_I18n' )
+		? BMA_AJ_I18n::is_page( 'szolgaltatasok' )
+		: is_page( array( 'szolgaltatasok', 'servicii', 'services' ) );
+	$is_cart = class_exists( 'BMA_AJ_I18n' )
+		? BMA_AJ_I18n::is_page( 'ajanlatkosar' )
+		: is_page( array( 'ajanlatkosar', 'cos-oferta', 'quote-cart' ) );
+	$is_form = class_exists( 'BMA_AJ_I18n' )
+		? BMA_AJ_I18n::is_page( 'ajanlatkeres' )
+		: is_page( array( 'ajanlatkeres', 'cerere-oferta', 'quote-request' ) );
+	$is_refs = class_exists( 'BMA_AJ_I18n' )
+		? BMA_AJ_I18n::is_page( 'referenciak' )
+		: is_page( array( 'referenciak', 'referinte', 'references' ) );
+
+	if (
+		is_front_page()
+		|| $is_services
+		|| $is_refs
+		|| is_singular( 'bma_service' )
+		|| is_singular( 'bma_reference' )
+		|| $is_cart
+		|| ( $is_form && empty( $_GET['submitted'] ) )
+	) {
+		$classes[] = 'has-mobilebar';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'bma_mobilebar_body_class' );
+
+/**
+ * Render Polylang language switcher (.langswitch markup).
+ *
+ * @param string $extra_class Optional extra class (e.g. langswitch--light).
+ */
+function bma_render_langswitch( string $extra_class = '' ): void {
+	if ( ! function_exists( 'pll_the_languages' ) ) {
+		return;
+	}
+
+	$langs = pll_the_languages(
+		array(
+			'raw'                    => 1,
+			'force_home'             => 0,
+			'hide_if_empty'          => 0,
+			'hide_if_no_translation' => 0,
+			'hide_current'           => 0,
+		)
+	);
+
+	if ( empty( $langs ) || ! is_array( $langs ) ) {
+		return;
+	}
+
+	$classes = trim( 'bma-lang-switcher langswitch ' . $extra_class );
+	?>
+	<div class="<?php echo esc_attr( $classes ); ?>" role="group" aria-label="<?php esc_attr_e( 'Nyelv választása', 'bma-engineering' ); ?>">
+		<?php foreach ( $langs as $lang ) : ?>
+			<?php
+			$slug  = isset( $lang['slug'] ) ? (string) $lang['slug'] : '';
+			if ( '' === $slug ) {
+				continue;
+			}
+			$label = strtoupper( $slug );
+			$url   = isset( $lang['url'] ) ? (string) $lang['url'] : '';
+			$cur   = ! empty( $lang['current_lang'] );
+			$off   = ! empty( $lang['no_translation'] );
+			?>
+			<?php if ( $off && ! $cur ) : ?>
+				<span class="lang lang--off" lang="<?php echo esc_attr( $slug ); ?>"><?php echo esc_html( $label ); ?></span>
+			<?php elseif ( $cur ) : ?>
+				<a
+					href="<?php echo esc_url( $url ); ?>"
+					class="lang is-on"
+					lang="<?php echo esc_attr( $slug ); ?>"
+					hreflang="<?php echo esc_attr( $slug ); ?>"
+					aria-current="true"
+				><?php echo esc_html( $label ); ?></a>
+			<?php else : ?>
+				<a
+					href="<?php echo esc_url( $url ); ?>"
+					class="lang"
+					lang="<?php echo esc_attr( $slug ); ?>"
+					hreflang="<?php echo esc_attr( $slug ); ?>"
+				><?php echo esc_html( $label ); ?></a>
+			<?php endif; ?>
+		<?php endforeach; ?>
+	</div>
+	<?php
 }

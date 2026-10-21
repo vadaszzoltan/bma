@@ -51,6 +51,7 @@ final class BMA_AJ_Plugin {
 		BMA_AJ_Frontend::init();
 		BMA_AJ_Admin::init();
 		BMA_AJ_Appearance::init();
+		BMA_AJ_Content::init();
 		BMA_AJ_REST::init();
 		BMA_AJ_Analytics::init();
 		BMA_AJ_Cookie_Consent::init();
@@ -145,6 +146,12 @@ final class BMA_AJ_Plugin {
 			}
 		}
 
+		$cart_selection = BMA_AJ_Cart::get_selection_map();
+		// wp_localize_script JSON-encodes empty PHP arrays as [] – force an object for JS maps.
+		if ( empty( $cart_selection ) ) {
+			$cart_selection = new stdClass();
+		}
+
 		wp_localize_script(
 			'bma-aj-public',
 			'bmaAj',
@@ -155,21 +162,32 @@ final class BMA_AJ_Plugin {
 				'restNonce'       => wp_create_nonce( 'wp_rest' ),
 				'cartUrl'         => $cart_url,
 				'servicesUrl'     => $services_url,
-				'cartSelection'   => BMA_AJ_Cart::get_selection_map(),
-				'serviceSources'  => $service_sources,
+				'cartSelection'   => $cart_selection,
+				'summary'         => BMA_AJ_Cart::get_summary_items(),
+				'itemCount'       => (int) BMA_AJ_Cart::item_count(),
+				'serviceSources'  => $service_sources ?: new stdClass(),
 				'strings'         => array(
-					'confirmRemove'    => __( 'Biztosan eltávolítja ezt a szolgáltatást?', 'bma-ajanlatkeres' ),
-					'uploadError'      => __( 'A fájl feltöltése sikertelen.', 'bma-ajanlatkeres' ),
-					'uploadSuccess'    => __( 'Feltöltés sikeres.', 'bma-ajanlatkeres' ),
-					'uploading'        => __( 'Feltöltés folyamatban…', 'bma-ajanlatkeres' ),
-					'processing'       => __( 'Átirányítás…', 'bma-ajanlatkeres' ),
-					'required'         => __( 'Ez a mező kötelező.', 'bma-ajanlatkeres' ),
-					'oneItemSelected'  => __( '1 szolgáltatáselem kiválasztva', 'bma-ajanlatkeres' ),
-					'nItemsSelected'   => __( '%d szolgáltatáselem kiválasztva', 'bma-ajanlatkeres' ),
-					'continueQuote'    => __( 'Tovább az ajánlatkéréshez', 'bma-ajanlatkeres' ),
-					'addToQuote'       => __( 'Kiválasztott szolgáltatások hozzáadása az ajánlatkéréshez', 'bma-ajanlatkeres' ),
-					'alreadyAdded'     => __( 'Már hozzáadva az ajánlatkéréshez', 'bma-ajanlatkeres' ),
-					'unsavedConfirm'   => __( 'A kiválasztott elemeket még nem adta hozzá az ajánlatkéréshez. Tovább lép?', 'bma-ajanlatkeres' ),
+					'confirmRemove'         => __( 'Biztosan eltávolítja ezt a szolgáltatást?', 'bma-ajanlatkeres' ),
+					'uploadError'           => __( 'A fájl feltöltése sikertelen.', 'bma-ajanlatkeres' ),
+					'uploadSuccess'         => __( 'Feltöltés sikeres.', 'bma-ajanlatkeres' ),
+					'uploading'             => __( 'Feltöltés folyamatban…', 'bma-ajanlatkeres' ),
+					'processing'            => __( 'Átirányítás…', 'bma-ajanlatkeres' ),
+					'required'              => __( 'Ez a mező kötelező.', 'bma-ajanlatkeres' ),
+					'oneItemSelected'       => __( '1 szolgáltatáselem kiválasztva', 'bma-ajanlatkeres' ),
+					'nItemsSelected'        => __( '%d szolgáltatáselem kiválasztva', 'bma-ajanlatkeres' ),
+					'oneItemSelectedShort'  => __( '1 tétel kiválasztva', 'bma-ajanlatkeres' ),
+					'nItemsSelectedShort'   => __( '%d tétel kiválasztva', 'bma-ajanlatkeres' ),
+					'continueQuote'         => __( 'Tovább az ajánlatkéréshez', 'bma-ajanlatkeres' ),
+					'addToQuote'            => __( 'Kiválasztott szolgáltatások hozzáadása az ajánlatkéréshez', 'bma-ajanlatkeres' ),
+					'alreadyAdded'          => __( 'Már hozzáadva az ajánlatkéréshez', 'bma-ajanlatkeres' ),
+					'unsavedConfirm'        => __( 'A kiválasztott elemeket még nem adta hozzá az ajánlatkéréshez. Tovább lép?', 'bma-ajanlatkeres' ),
+					'removeItem'            => __( 'Tétel eltávolítása', 'bma-ajanlatkeres' ),
+					'cartAria'              => __( 'Ajánlat, %d tétel', 'bma-ajanlatkeres' ),
+					'addLabel'              => __( 'Hozzáadás', 'bma-ajanlatkeres' ),
+					'addedLabel'            => __( 'Hozzáadva', 'bma-ajanlatkeres' ),
+					'summaryEmpty'          => __( 'Még nem választott tételt. Jelölje be bal oldalon, mire van szüksége – bármennyi tétel egy ajánlatkérésbe kerülhet.', 'bma-ajanlatkeres' ),
+					'summaryEmptyNote'      => __( 'Legalább egy tételt válasszon ki a továbblépéshez.', 'bma-ajanlatkeres' ),
+					'summaryFilledNote'     => __( 'A kiválasztás bármikor módosítható a beküldésig. Az ajánlatkérés nem jár kötelezettséggel.', 'bma-ajanlatkeres' ),
 				),
 			)
 		);

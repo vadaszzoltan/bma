@@ -1,1373 +1,1883 @@
 {
-    "%d szolgáltatás kiválasztva": [
-        "%d services selected"
-    ],
-    "%s részfeladatai": [
-        "Sub-tasks for %s"
-    ],
-    "+40 7XX XXX XXX": [
-        "+40 7XX XXX XXX"
-    ],
-    "+40 …": [
-        "+40 …"
-    ],
-    "1. Az adatkezelő": [
-        "1. The data controller"
-    ],
-    "1. Mi az a cookie?": [
-        "1. What is a cookie?"
-    ],
-    "1. Szolgáltatások": [
-        "1. Services"
-    ],
-    "1. Szolgáltató": [
-        "1. Service provider"
-    ],
-    "10. Adatbiztonság": [
-        "10. Data security"
-    ],
-    "10–12. Külső linkek, elérhetőség, felelősség": [
-        "10–12. External links, availability, responsibility"
-    ],
-    "11. Cookie-k": [
-        "11. Cookies"
-    ],
-    "12. Módosítás": [
-        "12. Modification"
-    ],
-    "13. Adatvédelem": [
-        "13. Privacy"
-    ],
-    "14. Feltételek módosítása": [
-        "14. Modification of terms"
-    ],
-    "15. Kapcsolat": [
-        "15. Contact"
-    ],
-    "2. A weboldal célja": [
-        "2. Purpose of the website"
-    ],
-    "2. Cookie kategóriák ezen az oldalon": [
-        "2. Cookie categories on this site"
-    ],
-    "2. Kosár": [
-        "2. Cart"
-    ],
-    "2. Milyen adatokat kezelünk?": [
-        "2. What data do we process?"
-    ],
-    "3. Adatkezelés célja és jogalapja": [
-        "3. Purpose and legal basis of data processing"
-    ],
-    "3. Adatok": [
-        "3. Data"
-    ],
-    "3. Ajánlatkérés": [
-        "3. Quote request"
-    ],
-    "3. Térkép": [
-        "3. Map"
-    ],
-    "4 tétel · 1 ajánlatkérés": [
-        "4 items · 1 quote request"
-    ],
-    "4. Ajánlat": [
-        "4. Quote"
-    ],
-    "4. Feltöltött dokumentumok": [
-        "4. Uploaded documents"
-    ],
-    "4. Hozzájárulás kezelése": [
-        "4. Handling of consent"
-    ],
-    "5. Adattovábbítás": [
-        "5. Data transfer"
-    ],
-    "5. Kapcsolódó dokumentumok": [
-        "5. Related documents"
-    ],
-    "5. Árak": [
-        "5. Prices"
-    ],
-    "6. EGT-n kívüli adattovábbítás": [
-        "6. Data transfer outside the EEA"
-    ],
-    "6. Felhasználó által megadott információk": [
-        "6. Information provided by the user"
-    ],
-    "7. Dokumentumfeltöltés": [
-        "7. Document upload"
-    ],
-    "7. Megőrzési idő": [
-        "7. Retention period"
-    ],
-    "8. Érintetti jogok": [
-        "8. Data subject rights"
-    ],
-    "8. Ügyfélfiók": [
-        "8. Client account"
-    ],
-    "9. Panasz": [
-        "9. Complaint"
-    ],
-    "9. Szellemi tulajdon": [
-        "9. Intellectual property"
-    ],
-    "A %s fontosnak tartja a személyes adatok védelmét és az adatok átlátható kezelését.": [
-        "%s considers the protection of personal data and the transparent management of data important."
-    ],
-    "A BMA Engineering mérnöki tervezési, engedélyeztetési, közmű-koordinációs és műszaki dokumentációs feladatokban támogatja ügyfeleit.": [
-        "BMA Engineering supports its clients in engineering design, permitting, utility coordination, and technical documentation tasks."
-    ],
-    "A cookie kis adatfájl, amelyet a böngésző tárol. Segíti a weboldal működését, a beállítások megjegyzését és – hozzájárulás esetén – a látogatottsági statisztikát.": [
-        "A cookie is a small data file stored by the browser. It helps the website function, remembers settings, and – with consent – tracks visitor statistics."
-    ],
-    "A felhasználó felelős a hozzáférési adatok biztonságáért, és csak a saját adataihoz férhet hozzá.": [
-        "The user is responsible for the security of their access data and may only access their own data."
-    ],
-    "A felhasználó felelőssége, hogy a megadott adatok tudomása szerint pontosak és teljesek legyenek.": [
-        "It is the user's responsibility to ensure that the data provided is accurate and complete to the best of their knowledge."
-    ],
-    "A feltöltött dokumentumokat kizárólag az adott ajánlatkérés vagy szolgáltatás kezelése céljából használjuk. Kérjük, csak a projekthez szükséges adatokat töltse fel.": [
-        "Uploaded documents are used solely for the purpose of managing the specific quote request or service. Please upload only the data necessary for the project."
-    ],
-    "A fizetéshez be kell jelentkeznie, és érvényes ajánlathoz kell rendelkeznie.": [
-        "To make a payment, you must log in and have a valid quote."
-    ],
-    "A jelen feltételek a weboldal használatára, a kapcsolatfelvételre és az ajánlatkérésre vonatkoznak.": [
-        "These terms apply to the use of the website, making contact, and requesting quotes."
-    ],
-    "A kapcsolat oldalon OpenStreetMap csempéket jelenítünk meg (Leaflet). A térkép csak hozzájárulás után vagy a „Térkép betöltése” gombra kattintva töltődik be. Az „Útvonaltervezés” az OpenStreetMap irányító oldalára vezet (külső oldal).": [
-        "On the contact page, we display OpenStreetMap tiles (Leaflet). The map only loads after consent or by clicking the „Load Map” button. The „Route Planning” leads to the OpenStreetMap direction page (external site)."
-    ],
-    "A keresett oldal nem létezik, áthelyezték, vagy elírta a címet. Válasszon az alábbi lehetőségek közül.": [
-        "The requested page does not exist, has been moved, or you have mistyped the address. Please choose from the options below."
-    ],
-    "A kiválasztott elemeket még nem adta hozzá az ajánlatkéréshez": [
-        "You have not yet added the selected items to the quote request."
-    ],
-    "A kiválasztott elemeket még nem adta hozzá az ajánlatkéréshez. A folytatás előtt kattintson a gombra.": [
-        "You have not yet added the selected items to the quote request. Click the button before continuing."
-    ],
-    "A kiválasztott szolgáltatásokhoz szükséges adatokat egyszer, itt adhatja meg. Ismételt kitöltés nem szükséges.": [
-        "You can provide the data required for the selected services once, here. Repeated completion is not necessary."
-    ],
-    "A kosár üres": [
-        "The cart is empty"
-    ],
-    "A kosár üres. Válasszon szolgáltatást a folytatáshoz.": [
-        "The cart is empty. Please select a service to continue."
-    ],
-    "A kártyás fizetés jelenleg nem elérhető. Kérjük, válassza a banki utalást.": [
-        "Card payment is currently unavailable. Please choose bank transfer."
-    ],
-    "A lábléc feletti cookie sávon választhat: „Csak szükséges” vagy „Összes elfogadása”. A beállítás a böngészőben marad; törléséhez törölje az oldal adatait \/ localStorage-t, majd töltse újra az oldalt.": [
-        "In the cookie bar above the footer, you can choose: „Necessary only” or „Accept all”. The setting remains in the browser; to delete it, clear the page data \/ localStorage and then reload the page."
-    ],
-    "A megoldás": [
-        "The solution"
-    ],
-    "A projekt": [
-        "The project"
-    ],
-    "A szolgáltató a szolgáltatások, a weboldal vagy a jogszabályok változása esetén módosíthatja a feltételeket.": [
-        "The service provider may modify the terms in the event of changes to the services, the website, or the legislation."
-    ],
-    "A szükséges tervrajzok és műszaki dokumentumok az adott ajánlatkéréshez kapcsolódva tölthetők fel és kezelhetők.": [
-        "The necessary plans and technical documents can be uploaded and managed in connection with the given quote request."
-    ],
-    "A tervrajzok és dokumentumok az ajánlatkéréshez rendelve tölthetők fel.": [
-        "Plans and documents can be uploaded assigned to the quote request."
-    ],
-    "A térkép OpenStreetMap csempéket tölt be. A megjelenítéshez kattintson a „Térkép betöltése” gombra, vagy fogadja el a cookie beállításokban a funkcionális térképet.": [
-        "The map loads OpenStreetMap tiles. To display it, click the „Load Map” button or accept the functional map in the cookie settings."
-    ],
-    "A weboldali információk általános tájékoztatásnak minősülnek.": [
-        "The information on the website is considered general information."
-    ],
-    "A weboldali tartalom védelem alatt állhat. A projektben készült dokumentumokra az egyedi szerződés\/ajánlat vonatkozik.": [
-        "Website content may be protected. Documents prepared in the project are subject to the individual contract\/quote."
-    ],
-    "Adatkezelési tájékoztató": [
-        "Data management information"
-    ],
-    "Adatok megadása": [
-        "Providing data"
-    ],
-    "Adatvédelem": [
-        "Data protection"
-    ],
-    "Adatvédelmi tájékoztató": [
-        "Privacy notice"
-    ],
-    "Adja meg a felhasználónevet és a jelszót.": [
-        "Enter the username and password."
-    ],
-    "Adószám": [
-        "Tax number"
-    ],
-    "Ajánlat": [
-        "Quote"
-    ],
-    "Ajánlat elfogadása": [
-        "Acceptance of quote"
-    ],
-    "Ajánlat elérhető": [
-        "Quote available"
-    ],
-    "Ajánlat fizetése": [
-        "Payment of quote"
-    ],
-    "Ajánlat nem található.": [
-        "Quote not found."
-    ],
-    "Ajánlat részletei": [
-        "Quote details"
-    ],
-    "Ajánlat száma": [
-        "Quote number"
-    ],
-    "Ajánlat száma: %s": [
-        "Quote number: %s"
-    ],
-    "Ajánlat, %d tétel": [
-        "Quote, %d items"
-    ],
-    "Ajánlati PDF letöltése": [
-        "Download quote PDF"
-    ],
-    "Ajánlatkérés": [
-        "Request a quote"
-    ],
-    "Ajánlatkérés beküldve.": [
-        "Quote request submitted."
-    ],
-    "Ajánlatkérés beküldése": [
-        "Submit quote request"
-    ],
-    "Ajánlatkérés esetén": [
-        "In case of quote request"
-    ],
-    "Ajánlatkérés indítása": [
-        "Start quote request"
-    ],
-    "Ajánlatkérés:": [
-        "Quote request:"
-    ],
-    "Ajánlatkéréseim": [
-        "My quote requests"
-    ],
-    "Ajánlatkérési kosár": [
-        "Quote request cart"
-    ],
-    "Ajánlatkérési kosár azonosító (bma_cart_id) – a kiválasztott szolgáltatások megőrzéséhez": [
-        "Quote request cart identifier (bma_cart_id) – to save selected services"
-    ],
-    "Ajánlatkérési lépések": [
-        "Quote request steps"
-    ],
-    "Ajánlatot szeretne kérni?": [
-        "Do you want to request a quote?"
-    ],
-    "Aktív kérések": [
-        "Active requests"
-    ],
-    "Analitika": [
-        "Analytics"
-    ],
-    "Analitika:": [
-        "Analytics:"
-    ],
-    "Analitikai cookie-k csak hozzájárulás után. Részletek:": [
-        "Analytical cookies only after consent. Details:"
-    ],
-    "Az IBAN az admin beállításokban adható meg.": [
-        "The IBAN can be provided in the admin settings."
-    ],
-    "Az adatokat csak az adatkezelési célhoz szükséges ideig őrizzük meg.": [
-        "The data is only retained for as long as necessary for the purpose of data processing."
-    ],
-    "Az adatvédelmi hozzájárulás kötelező.": [
-        "Consent for data protection is mandatory."
-    ],
-    "Az ajánlat mentése sikertelen.": [
-        "Saving the quote was unsuccessful."
-    ],
-    "Az ajánlatkérés beküldése nem jelent automatikus szerződéskötést vagy megrendelést. A BMA Engineering további információkat kérhet.": [
-        "Submitting a quote request does not constitute an automatic contract or order. BMA Engineering may request further information."
-    ],
-    "Az ajánlatkérés menete": [
-        "How the quote request works"
-    ],
-    "Az ajánlatkérés véglegesítése nem jár fizetési kötelezettséggel. Az árat az adminisztrátor készíti el később.": [
-        "Finalizing the quote request does not create a payment obligation. The price will be prepared later by the administrator."
-    ],
-    "Az ajánlatkéréshez először válasszon szolgáltatást.": [
-        "First, select a service for the quote request."
-    ],
-    "Az ajánlatkérési folyamatban több szolgáltatást is kiválaszthat. A projekt alapadatait és dokumentumait egyszer kell megadnia, a rendszer pedig az összes kiválasztott szolgáltatáshoz kapcsolódó információkat egy ajánlatkérésben kezeli.": [
-        "In the quote request process, you can select multiple services. You only need to provide the basic project data and documents once, and the system manages the information related to all selected services in a single quote request."
-    ],
-    "Az ajánlatkérési kosár üres.": [
-        "The quote request cart is empty."
-    ],
-    "Az ajánlatkéréstől a dokumentumok átadásáig követhető, hol tart a folyamat, és milyen következő lépésekre van szükség.": [
-        "From the quote request to the transfer of documents, it can be tracked where the process is and what next steps are needed."
-    ],
-    "Az ajánlatkérőben kiválaszthatja a szükséges részfeladatokat és dokumentumokat is feltölthet.": [
-        "In the quote request, you can select the necessary sub-tasks and also upload documents."
-    ],
-    "Az aktuális változat mindig ezen az oldalon érhető el. A szöveget publikálás előtt célszerű jogi\/adatvédelmi szakértővel ellenőriztetni.": [
-        "The current version is always available on this page. It is advisable to have the text reviewed by a legal\/data protection expert before publication."
-    ],
-    "Az egyedi ajánlat vagy szerződés elsőbbséget élvez az általános weboldali feltételekkel szemben.": [
-        "The individual quote or contract takes precedence over the general website terms."
-    ],
-    "Az oldal nem található": [
-        "Page not found"
-    ],
-    "Az érintett jogosult panaszt benyújtani az illetékes adatvédelmi felügyeleti hatósághoz.": [
-        "The data subject is entitled to lodge a complaint with the competent data protection supervisory authority."
-    ],
-    "Az ügyfélportál eléréséhez bejelentkezés szükséges.": [
-        "Login is required to access the client portal."
-    ],
-    "Az ügyfélportálon látja a státuszt, az elkészült ajánlatot és a feltöltött dokumentumokat.": [
-        "On the client portal, you can see the status, the completed quote, and the uploaded documents."
-    ],
-    "Az ügyfélportálon végigkövethető a kérés státusza és a dokumentumok.": [
-        "The status of the request and the documents can be tracked throughout on the client portal."
-    ],
-    "Az üzenet küldése nem sikerült. Ellenőrizze a kötelező mezőket, és próbálja újra.": [
-        "Message sending failed. Please check the required fields and try again."
-    ],
-    "Azonosító": [
-        "Identifier"
-    ],
-    "Azonosító: %s": [
-        "Reference: %s"
-    ],
-    "BIC \/ SWIFT": [
-        "BIC \/ SWIFT"
-    ],
-    "BMA Engineering főoldal": [
-        "BMA Engineering homepage"
-    ],
-    "BMA Engineering – műszaki tervezés, engedélyeztetés és dokumentáció lakossági és üzleti projektekhez.": [
-        "BMA Engineering – technical design, authorization, and documentation for residential and business projects."
-    ],
-    "Bank neve": [
-        "Bank name"
-    ],
-    "Banki utalás": [
-        "Bank transfer"
-    ],
-    "Banki utalás adatai": [
-        "Bank transfer details"
-    ],
-    "Banki utalás folyamatban": [
-        "Bank transfer in progress"
-    ],
-    "Bejelentkezés": [
-        "Log in"
-    ],
-    "Bejelentkezés az ügyfélportálra": [
-        "Login to the client portal"
-    ],
-    "Bejelentkezés szükséges": [
-        "Login required"
-    ],
-    "Beküldés": [
-        "Submit"
-    ],
-    "Beküldött dokumentumaim": [
-        "My submitted documents"
-    ],
-    "Belépés": [
-        "Log in"
-    ],
-    "Bezárás": [
-        "Close"
-    ],
-    "Biztonságos dokumentumkezelés": [
-        "Secure document management"
-    ],
-    "Bruttó összeg": [
-        "Gross amount"
-    ],
-    "CUI": [
-        "CUI"
-    ],
-    "CUI \/ adószám": [
-        "CUI \/ tax number"
-    ],
-    "CUI: %s": [
-        "CUI: %s"
-    ],
-    "Cookie hozzájárulás": [
-        "Cookie consent"
-    ],
-    "Cookie tájékoztató": [
-        "Cookie information"
-    ],
-    "Cookie-hozzájárulás tárolása (böngésző localStorage: bma_cookie_consent)": [
-        "Store cookie consent (browser localStorage: bma_cookie_consent)"
-    ],
-    "Csak olyan dokumentum tölthető fel, amelynek továbbítására a felhasználó jogosult. Nem tölthető fel jogellenes, rosszindulatú, harmadik fél jogait sértő vagy indokolatlanul érzékeny tartalom.": [
-        "Only documents that the user is authorized to submit can be uploaded. Illegal, malicious, content infringing third-party rights, or unnecessarily sensitive content cannot be uploaded."
-    ],
-    "Csak szükséges": [
-        "Only necessary"
-    ],
-    "Cég": [
-        "Company"
-    ],
-    "Cég neve": [
-        "Company name"
-    ],
-    "Cégnév, ha cégként kér ajánlatot": [
-        "Company name if requesting a quote as a company"
-    ],
-    "Cím": [
-        "Address"
-    ],
-    "Dokumentumok rendezett kezelése": [
-        "Organized management of documents"
-    ],
-    "Dokumentumtípus": [
-        "Document type"
-    ],
-    "Dátum": [
-        "Date"
-    ],
-    "E-mail": [
-        "E-mail"
-    ],
-    "E-mail vagy felhasználónév": [
-        "Email or username"
-    ],
-    "Egy ajánlatban": [
-        "In a single quote"
-    ],
-    "Egy ajánlatkérésben több szolgáltatás és részfeladat is összeállítható.": [
-        "In a quote request, multiple services and subtasks can also be assembled."
-    ],
-    "Egy ajánlatkérésben több tervezési, engedélyeztetési, közmű-koordinációs és dokumentációs feladat is összeállítható.": [
-        "In a quote request, multiple design, approval, utility coordination, and documentation tasks can also be assembled."
-    ],
-    "Egy projekt ritkán csak egyetlen feladatból áll": [
-        "A project rarely consists of a single task"
-    ],
-    "Egy projekt során gyakran több tervezési, engedélyeztetési vagy dokumentációs feladat kapcsolódik egymáshoz.": [
-        "During a project, multiple design, approval, or documentation tasks are often related to each other."
-    ],
-    "Egy építési vagy fejlesztési projekt során a tervezés, az engedélyeztetés, a közműcsatlakozások és a műszaki dokumentáció gyakran egymásra épül.": [
-        "During a construction or development project, planning, permitting, utility connections, and technical documentation often build on each other."
-    ],
-    "Egyéb": [
-        "Other"
-    ],
-    "Egyéb fontos információ a projektről…": [
-        "Other important information about the project…"
-    ],
-    "Egyéb szolgáltatások": [
-        "Other services"
-    ],
-    "Ehhez az e-mail címhez már tartozik fiók. Kérjük, jelentkezzen be.": [
-        "An account already exists for this email address. Please log in."
-    ],
-    "Elemek szerkesztése": [
-        "Edit items"
-    ],
-    "Elfelejtett jelszó": [
-        "Forgotten password"
-    ],
-    "Elfogadva": [
-        "Accepted"
-    ],
-    "Elkészült tervek": [
-        "Completed plans"
-    ],
-    "Ellenőrizze a kiválasztott szolgáltatásokat. A projekt adatait a következő lépésben, egyszer kell megadnia.": [
-        "Check the selected services. Project information must be provided in the next step, only once."
-    ],
-    "Ellenőrizze az összeállítást, adja meg a kapcsolattartási adatait, és küldje el a kérést.": [
-        "Check the compilation, provide your contact details, and submit the request."
-    ],
-    "Elolvastam és elfogadom az <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">adatvédelmi tájékoztatóban<\/a> foglaltakat.": [
-        "I have read and accept the terms outlined in the <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">privacy policy<\/a>."
-    ],
-    "Elolvastam és elfogadom az <a href=\"%s\">adatvédelmi tájékoztatóban<\/a> foglaltakat.": [
-        "I have read and accept the terms outlined in the <a href=\"%s\">privacy policy<\/a>."
-    ],
-    "Eltávolítás": [
-        "Remove"
-    ],
-    "Elérhetőségeink": [
-        "Our contact information"
-    ],
-    "Előnyök": [
-        "Advantages"
-    ],
-    "Emlékezzen rám": [
-        "Remember me"
-    ],
-    "Engedélyeztetés": [
-        "Permitting"
-    ],
-    "Eredmény": [
-        "Result"
-    ],
-    "Ez a tájékoztató bemutatja, hogy milyen személyes adatokat kezelünk a weboldal használata, kapcsolatfelvétel, ajánlatkérés és ügyfélfiók használata során, milyen célból kezeljük ezeket az adatokat, valamint milyen jogok illetik meg az érintetteket.": [
-        "This information notice shows what personal data we process when using the website, contacting us, requesting a quote, and using a client account, for what purpose we process this data, and what rights the data subjects have."
-    ],
-    "Ez a tájékoztató bemutatja, milyen sütiket (cookie-kat) és hasonló technológiákat használ a BMA Engineering weboldala.": [
-        "This information notice shows what cookies and similar technologies the BMA Engineering website uses."
-    ],
-    "Ezek a működéshez szükségesek, és a „Csak szükséges” választással is aktívak maradnak.": [
-        "These are necessary for operation, and they remain active even with the „Necessary only” selection."
-    ],
-    "Ezt válassza, ha:": [
-        "Choose this if:"
-    ],
-    "Feltöltés": [
-        "Upload"
-    ],
-    "Fizetve": [
-        "Paid"
-    ],
-    "Fizetés": [
-        "Payment"
-    ],
-    "Fizetésre vár": [
-        "Pending payment"
-    ],
-    "Folyamat": [
-        "Process"
-    ],
-    "Folytathatja az ügyfélportálon.": [
-        "You can continue on the client portal."
-    ],
-    "Fájl": [
-        "File"
-    ],
-    "Fő navigáció": [
-        "Main navigation"
-    ],
-    "Főmenü": [
-        "Main menu"
-    ],
-    "Főoldal": [
-        "Home"
-    ],
-    "Google Analytics 4 és\/vagy Google Tag Manager – csak ha az admin beállította, és Ön elfogadja az analitikai cookie-kat": [
-        "Google Analytics 4 and\/or Google Tag Manager – only if the admin has set it up and you accept the analytics cookies"
-    ],
-    "Gyors indítás – mire van szüksége?": [
-        "Quick start – what do you need?"
-    ],
-    "Ha a banki utalást választja, a kártyás fizetés a továbbiakban nem lesz elérhető ennél az ajánlatnál. Folytatja?": [
-        "If you choose bank transfer, card payment will no longer be available for this quote. Do you want to continue?"
-    ],
-    "Ha korábban ügyfélfiókot hozott létre, bejelentkezés után megtekintheti saját ajánlatkéréseit, azok aktuális státuszát, valamint az Ön számára feltöltött ajánlatokat és dokumentumokat.": [
-        "If you have previously created a client account, after logging in you can view your own inquiries, their current status, as well as the quotes and documents uploaded for you."
-    ],
-    "Ha külső szolgáltató miatt ilyen történik, csak az alkalmazandó adatvédelmi szabályoknak megfelelő módon.": [
-        "If this happens due to an external service provider, only in accordance with the applicable data protection regulations."
-    ],
-    "Ha most továbblép, a jelenlegi kiválasztásai elveszhetnek.": [
-        "If you proceed now, your current selections may be lost."
-    ],
-    "Ha már van konkrét projektje, a kapcsolatfelvételi űrlap helyett érdemes az ajánlatkérési folyamatot használni.": [
-        "If you already have a specific project, it is advisable to use the quote request process instead of the contact form."
-    ],
-    "Ha még nem tudja pontosan, mire van szüksége, hívjon minket.": [
-        "If you do not yet know exactly what you need, call us."
-    ],
-    "Ha tájékoztató ár jelenik meg, az nem feltétlenül végleges ajánlat.": [
-        "If an indicative price appears, it is not necessarily a final quote."
-    ],
-    "Ha általános kérdése van, vagy még nem tudja pontosan, melyik szolgáltatásra van szüksége, küldjön üzenetet. Konkrét projektre az ajánlatkérést javasoljuk.": [
-        "If you have a general question or do not yet know exactly which service you need, send a message. For a specific project, we recommend the quote request."
-    ],
-    "Hasonló projektet tervez?": [
-        "Are you planning a similar project?"
-    ],
-    "Helyszín": [
-        "Location"
-    ],
-    "Hiba 404": [
-        "Error 404"
-    ],
-    "Hiba történt a mentés során.": [
-        "An error occurred during saving."
-    ],
-    "Hibás felhasználónév vagy jelszó. Kérjük, próbálja újra.": [
-        "Incorrect username or password. Please try again."
-    ],
-    "Hogyan működik?": [
-        "How does it work?"
-    ],
-    "Hol talál minket?": [
-        "Where to find us?"
-    ],
-    "Hozzáadva az ajánlatkéréshez": [
-        "Added to the quote request"
-    ],
-    "Hozzáadás és továbblépés": [
-        "Add and proceed"
-    ],
-    "Hozzáférés-védelem és mentések": [
-        "Access protection and backups"
-    ],
-    "Hozzájárulás nélkül ezek a scriptek nem indulnak el.": [
-        "These scripts will not run without consent."
-    ],
-    "IBAN": [
-        "IBAN"
-    ],
-    "IP-cím, böngésző és eszköz típusa, meglátogatott oldalak, technikai naplóadatok, cookie-hozzájárulási beállítások": [
-        "IP address, browser and device type, visited pages, technical log data, cookie consent settings"
-    ],
-    "Ilyen projektet csináltunk – ilyen szolgáltatással, ilyen környezetben.": [
-        "We did a project like this – with this kind of service, in this kind of environment."
-    ],
-    "Irányítószám, város, utca, házszám": [
-        "Postal code, city, street, house number"
-    ],
-    "Jelenleg nincs külön marketing cookie integráció. Az „Összes elfogadása” a jövőbeli marketing kategóriát is engedélyezi, ha később bekapcsolásra kerül.": [
-        "Currently, there is no separate marketing cookie integration. Accepting „All” also enables the future marketing category if it is activated later."
-    ],
-    "Jelentkezzen be ügyfélfiókjával az ajánlatkérések és dokumentumok megtekintéséhez.": [
-        "Log in with your client account to view quote requests and documents."
-    ],
-    "Jelszó": [
-        "Password"
-    ],
-    "Jelölje ki a szükséges részfeladatokat, majd adja hozzá őket az ajánlatkéréshez. A projekt részletes adatait egyszer, a következő lépésben kérjük be.": [
-        "Select the necessary subtasks, then add them to the quote request. The detailed project data will be requested once, in the next step."
-    ],
-    "Jogi információ": [
-        "Legal information"
-    ],
-    "Jogi kötelezettségek:": [
-        "Legal obligations:"
-    ],
-    "Jogosult lehet: tájékoztatás, hozzáférés, helyesbítés, törlés, korlátozás, tiltakozás, adathordozhatóság, hozzájárulás visszavonása.": [
-        "May be entitled to: information, access, correction, deletion, restriction, objection, data portability, withdrawal of consent."
-    ],
-    "Jogosultság alapú hozzáférés": [
-        "Access based on entitlement"
-    ],
-    "Kapcsolat": [
-        "Contact"
-    ],
-    "Kapcsolat:": [
-        "Contact:"
-    ],
-    "Kapcsolatfelvétel": [
-        "Getting in touch"
-    ],
-    "Kapcsolatfelvétel esetén": [
-        "In case of contact"
-    ],
-    "Kapcsolatfelvétel:": [
-        "Contact:"
-    ],
-    "Kapcsolatfelvételi űrlap": [
-        "Contact form"
-    ],
-    "Kapcsolattartói adatok": [
-        "Contact details"
-    ],
-    "Kapcsolódó szolgáltatások": [
-        "Related services"
-    ],
-    "Kapcsolódó szolgáltatások egy helyen": [
-        "Related services in one place"
-    ],
-    "Kategória": [
-        "Category"
-    ],
-    "Kedvezményezett": [
-        "Beneficiary"
-    ],
-    "Keresés": [
-        "Search"
-    ],
-    "Keresés: %s": [
-        "Search: %s"
-    ],
-    "Kevesebb felesleges egyeztetés": [
-        "Less unnecessary coordination"
-    ],
-    "Kiemelt referenciák": [
-        "Featured references"
-    ],
-    "Kijelentkezés": [
-        "Log out"
-    ],
-    "Kiválasztott szolgáltatások": [
-        "Selected services"
-    ],
-    "Kiválasztott szolgáltatások hozzáadása az ajánlatkéréshez": [
-        "Add selected services to the quote request"
-    ],
-    "Kiválasztva": [
-        "Selected"
-    ],
-    "Konkrét projektre kérne ajánlatot?": [
-        "Would you like a quote for a specific project?"
-    ],
-    "Kosár módosítása": [
-        "Edit cart"
-    ],
-    "Kártyás fizetés (Stripe)": [
-        "Card payment (Stripe)"
-    ],
-    "Kép nagyítása": [
-        "Enlarge image"
-    ],
-    "Kérjen ajánlatot a projektjéhez": [
-        "Request a quote for your project"
-    ],
-    "Kérjük, töltse ki a kötelező mezőket.": [
-        "Please fill in the required fields."
-    ],
-    "Kérjük, utalja az alábbi összeget a megadott bankszámlára. Az utalás közleményében tüntesse fel az ajánlat számát.": [
-        "Please transfer the following amount to the specified bank account. Indicate the quote number in the transfer reference."
-    ],
-    "Kérés részletei, státusz, dokumentumok és ajánlat.": [
-        "Request details, status, documents and quote."
-    ],
-    "Köszönjük ajánlatkérését!": [
-        "Thank you for your quote request!"
-    ],
-    "Köszönjük az üzenetét.": [
-        "Thank you for your message."
-    ],
-    "Köszönjük! A fizetés feldolgozása megtörtént.": [
-        "Thank you! The payment has been processed."
-    ],
-    "Kötelező": [
-        "Mandatory"
-    ],
-    "Kötelező fájl hiányzik: %s": [
-        "Required file missing: %s"
-    ],
-    "Következő lépés": [
-        "Next step"
-    ],
-    "Közlemény": [
-        "Notification"
-    ],
-    "Közmű csatlakozás koordináció": [
-        "Utility connection coordination"
-    ],
-    "Közmű-koordináció": [
-        "Utility coordination"
-    ],
-    "Lakossági és üzleti projektek": [
-        "Residential and business projects"
-    ],
-    "Lakossági és üzleti<br>projektek": [
-        "Residential and<br>business projects"
-    ],
-    "Lejárt": [
-        "Expired"
-    ],
-    "Lábléc": [
-        "Footer"
-    ],
-    "Lábléc menü": [
-        "Footer menu"
-    ],
-    "Lábléc navigáció": [
-        "Footer navigation"
-    ],
-    "Maradok ezen az oldalon": [
-        "I will stay on this page"
-    ],
-    "Marketing": [
-        "Marketing"
-    ],
-    "Megjegyzés": [
-        "Note"
-    ],
-    "Megjegyzés: a jogi szöveget publikálás előtt célszerű jogi szakértővel ellenőriztetni.": [
-        "Note: it is advisable to have the legal text checked by a legal expert before publication."
-    ],
-    "Megkaptuk a megkeresését. A megadott elérhetőségek egyikén felvesszük Önnel a kapcsolatot.": [
-        "We have received your inquiry. We will contact you through one of the provided contact details."
-    ],
-    "Meglévő ajánlatkérés vagy projekt": [
-        "Existing quote request or project"
-    ],
-    "Meglévő ajánlatkérése van?": [
-        "Do you have an existing quote request?"
-    ],
-    "Menü megnyitása": [
-        "Open menu"
-    ],
-    "Mi volt a feladat?": [
-        "What was the task?"
-    ],
-    "Miben tudunk segíteni?": [
-        "How can we help you?"
-    ],
-    "Mikor lehet erre szüksége?": [
-        "When might you need this?"
-    ],
-    "Mind": [
-        "All"
-    ],
-    "Mit szeretne kérni?": [
-        "What would you like to request?"
-    ],
-    "Mit végeztünk el?": [
-        "What have we completed?"
-    ],
-    "Munkamenet és biztonság (WordPress, bejelentkezés)": [
-        "Session and security (WordPress, login)"
-    ],
-    "Munkaterületek": [
-        "Workspaces"
-    ],
-    "Munkánk során arra törekszünk, hogy a projekt műszaki követelményei, a szükséges dokumentációk és a kapcsolódó egyeztetések egy átlátható és követhető folyamat részeként legyenek kezelhetők.": [
-        "In our work, we strive to ensure that the project's technical requirements, the necessary documentation, and related consultations can be managed as part of a transparent and traceable process."
-    ],
-    "Már az ajánlatkérés során megadhatók a projekt legfontosabb adatai, így az ajánlatkészítés célzottabban indulhat el.": [
-        "The most important project data can already be provided during the quote request, allowing the preparation of the quote to start in a more targeted manner."
-    ],
-    "Már be van jelentkezve": [
-        "Already logged in"
-    ],
-    "Más szolgáltatásra is szüksége lehet? Tekintse meg a kapcsolódó területeket – a kiválasztás az adott szolgáltatás oldalán történik.": [
-        "Do you need another service as well? Check out the related areas – selection is done on the page of the specific service."
-    ],
-    "Még nem töltött fel dokumentumot.": [
-        "You have not uploaded any document yet."
-    ],
-    "Még nincs ajánlatkérése.": [
-        "You do not have any requests for quotation yet."
-    ],
-    "Még nincs feltöltött terv ehhez a tételhez.": [
-        "No plan has been uploaded for this item yet."
-    ],
-    "Mérnöki tervezés <em>átlátható<\/em> folyamattal": [
-        "Engineering design with a <em>transparent<\/em> process"
-    ],
-    "Műszaki dokumentum": [
-        "Technical document"
-    ],
-    "Műszaki dokumentáció": [
-        "Technical documentation"
-    ],
-    "Művelet": [
-        "Operation"
-    ],
-    "Navigáció": [
-        "Navigation"
-    ],
-    "Nem biztos benne, melyik szolgáltatásra van szüksége?": [
-        "Not sure which service you need?"
-    ],
-    "Nem felelünk külső oldalak tartalmáért. A folyamatos működés nem garantálható. A weboldali általános információ nem helyettesíti az egyedi műszaki felmérést.": [
-        "We are not responsible for the content of external sites. Continuous operation cannot be guaranteed. The general information on the website does not replace an individual technical survey."
-    ],
-    "Nem szükséges minden műszaki részletet előre ismernie. Adja meg a rendelkezésére álló információkat és dokumentumokat, mi pedig ezek alapján felmérjük a projektet és elkészítjük az ajánlatot.": [
-        "It is not necessary to know every technical detail in advance. Provide the information and documents available to you, and based on these, we will assess the project and prepare the quote."
-    ],
-    "Nettó összeg": [
-        "Net amount"
-    ],
-    "Nincs a szűrésnek megfelelő referencia.": [
-        "No reference matches the filter."
-    ],
-    "Nincs ajánlat": [
-        "No quote"
-    ],
-    "Nincs jogosultsága.": [
-        "You do not have permission."
-    ],
-    "Nincs kiválasztott szolgáltatáselem.": [
-        "No service item selected."
-    ],
-    "Nincs részletes elem kiválasztva – a szolgáltatás oldalán szerkesztheti.": [
-        "No detailed item selected – you can edit it on the service page."
-    ],
-    "Nincs találat a keresésre. Próbáljon másik kifejezést, vagy böngésszen a szolgáltatások között.": [
-        "No results for the search. Try another term, or browse through the services."
-    ],
-    "Nyelvek": [
-        "Languages"
-    ],
-    "Nyelvválasztó": [
-        "Language selector"
-    ],
-    "Nyitvatartás": [
-        "Opening hours"
-    ],
-    "Nyitvatartás: %s": [
-        "Opening hours: %s"
-    ],
-    "Nyomon követés": [
-        "Tracking"
-    ],
-    "Négy szolgáltatási terület, azon belül konkrét részfeladatokkal. Az ajánlatkérésbe bármennyi tétel bekerülhet.": [
-        "Four service areas, within which there are specific tasks. Any number of items can be included in the quote request."
-    ],
-    "Név": [
-        "Name"
-    ],
-    "Odorheiu Secuiesc · Harghita": [
-        "Odorheiu Secuiesc · Harghita"
-    ],
-    "Piszkozat": [
-        "Draft"
-    ],
-    "Projekt adatai": [
-        "Project details"
-    ],
-    "Projekt adatok": [
-        "Project data"
-    ],
-    "Projekt megtekintése": [
-        "View project"
-    ],
-    "Projekt megtekintése →": [
-        "View project →"
-    ],
-    "Projekt típusa": [
-        "Project type"
-    ],
-    "Projektadatok": [
-        "Project data"
-    ],
-    "Projektek": [
-        "Projects"
-    ],
-    "Projektgaléria": [
-        "Project gallery"
-    ],
-    "Példa: új lakóépület – összeállított ajánlatkérés": [
-        "Example: new residential building – compiled quote request"
-    ],
-    "Referencia": [
-        "Reference"
-    ],
-    "Referenciák": [
-        "References"
-    ],
-    "Részletek": [
-        "Details"
-    ],
-    "Részletek és kiválasztás →": [
-        "Details and selection →"
-    ],
-    "Rólunk": [
-        "About us"
-    ],
-    "Röviden írja le a kérdését vagy a projektjét…": [
-        "Briefly describe your question or project…"
-    ],
-    "Sikeres": [
-        "Successful"
-    ],
-    "Sikeres beküldés": [
-        "Successful submission"
-    ],
-    "Sikeres fizetés": [
-        "Successful payment"
-    ],
-    "Sikeresen kijelentkezett.": [
-        "Successfully logged out."
-    ],
-    "Státusz": [
-        "Status"
-    ],
-    "Státuszelőzmények": [
-        "Status history"
-    ],
-    "Szennyvízbekötési terv": [
-        "Sewage connection plan"
-    ],
-    "Szeretnék ügyfélfiókot létrehozni az ajánlatkérések követéséhez.": [
-        "I would like to create a client account to track quote requests."
-    ],
-    "Szerződés teljesítése:": [
-        "Contract fulfillment:"
-    ],
-    "Szolgáltatás": [
-        "Service"
-    ],
-    "Szolgáltatás megtekintése": [
-        "View service"
-    ],
-    "Szolgáltatások": [
-        "Services"
-    ],
-    "Szolgáltatások kiválasztása": [
-        "Select services"
-    ],
-    "Számlázási cím": [
-        "Billing address"
-    ],
-    "Székhely": [
-        "Headquarters"
-    ],
-    "Szükség esetén hozzáférhetnek: tárhelyszolgáltató, e-mail-szolgáltató, weboldal-karbantartó, analitikai szolgáltatók (hozzájárulás esetén), könyvelési vagy jogi szolgáltatók, valamint a választott fizetési szolgáltató (pl. Stripe), ha online fizetést használ.": [
-        "If necessary, they may be accessed by: hosting provider, email provider, website maintenance, analytics providers (with consent), accounting or legal service providers, as well as the chosen payment service provider (e.g., Stripe) if online payment is used."
-    ],
-    "Szükséges": [
-        "Required"
-    ],
-    "Szűrés": [
-        "Filtering"
-    ],
-    "Technikai használat során": [
-        "During technical use"
-    ],
-    "Telefon": [
-        "Phone"
-    ],
-    "Teljes név": [
-        "Full name"
-    ],
-    "Terv": [
-        "Plan"
-    ],
-    "Tervek": [
-        "Plans"
-    ],
-    "Tervezés": [
-        "Design"
-    ],
-    "Tervezés · Engedélyeztetés · Közmű-koordináció": [
-        "Design · Permitting · Utility coordination"
-    ],
-    "Tovább": [
-        "Next"
-    ],
-    "Tovább az ajánlatkéréshez": [
-        "Proceed to quote request"
-    ],
-    "Tovább – adatok megadása": [
-        "Next – enter data"
-    ],
-    "További dokumentum feltöltése": [
-        "Upload additional document"
-    ],
-    "További szolgáltatás": [
-        "Additional service"
-    ],
-    "Továbblépés hozzáadás nélkül": [
-        "Proceed without adding"
-    ],
-    "Téma": [
-        "Subject"
-    ],
-    "Térkép betöltése": [
-        "Load map"
-    ],
-    "Tétel #%d": [
-        "Item #%d"
-    ],
-    "Több elemet is kiválaszthat. Csak azokat jelölje be, amelyekre a projektjéhez szüksége van.": [
-        "You can select multiple items. Only check those that you need for your project."
-    ],
-    "Több szolgáltatásra van szüksége?": [
-        "Do you need multiple services?"
-    ],
-    "Töltse ki a kiválasztott tételekhez tartozó adatokat, és töltse fel a meglévő tervrajzokat.": [
-        "Fill in the data for the selected items and upload the existing plans."
-    ],
-    "Törlés": [
-        "Delete"
-    ],
-    "Ugrás a tartalomhoz": [
-        "Skip to content"
-    ],
-    "Utalási adatok": [
-        "Bank transfer details"
-    ],
-    "Utolsó frissítés: 2026. augusztus": [
-        "Last updated: August 2026"
-    ],
-    "Van egy projektje, amelyhez tervezésre, engedélyeztetésre, műszaki dokumentációra vagy közmű-koordinációra van szüksége?": [
-        "Do you have a project that requires design, permitting, technical documentation, or utility coordination?"
-    ],
-    "Vegye fel velünk a kapcsolatot, vagy ha már tudja, milyen szolgáltatást keres, indítsa el az online ajánlatkérést.": [
-        "Contact us, or if you already know what service you are looking for, start the online quote request."
-    ],
-    "Vissza a főoldalra": [
-        "Back to homepage"
-    ],
-    "Vissza a portálra": [
-        "Back to portal"
-    ],
-    "Vissza az ajánlatkéréshez": [
-        "Back to quote request"
-    ],
-    "Vissza az ügyfélportálra": [
-        "Back to the client portal"
-    ],
-    "Visszaigazoló e-mailt küldtünk a megadott címre. Munkatársunk hamarosan feldolgozza kérését.": [
-        "We have sent a confirmation email to the provided address. Our colleague will process your request shortly."
-    ],
-    "Visszavonva": [
-        "Withdrawn"
-    ],
-    "Válassza ki a projektjéhez szükséges szolgáltatásokat és azokon belül a konkrét részfeladatokat.": [
-        "Select the services required for your project and the specific sub-tasks within them."
-    ],
-    "Válassza ki a szükséges szolgáltatásokat, adja meg a projekt alapadatait, és töltse fel a rendelkezésére álló dokumentumokat. Ezek alapján pontosabb ajánlatot tudunk készíteni.": [
-        "Select the necessary services, provide the basic data of the project, and upload the available documents. Based on this, we can prepare a more accurate quote."
-    ],
-    "Válassza ki a szükséges szolgáltatásokat, és küldje el a projekt alapadatait.": [
-        "Select the necessary services and submit the project's basic data."
-    ],
-    "Válassza ki a szükséges szolgáltatásokat, és néhány adat megadásával kérjen személyre szabott ajánlatot.": [
-        "Select the necessary services and request a tailored quote by providing some information."
-    ],
-    "Válassza ki az Ön projektjéhez kapcsolódó szolgáltatási területet. Egy ajánlatkérésben több szolgáltatást és azokon belül több részfeladatot is megjelölhet.": [
-        "Select the service area related to your project. In one quote request, you can indicate multiple services and several sub-tasks within them."
-    ],
-    "Válassza ki, mire van szüksége a projektjéhez, adja meg a rendelkezésére álló adatokat, és kérjen személyre szabott ajánlatot. A folyamat minden lépését egy helyen követheti.": [
-        "Select what you need for your project, provide the available information, and request a tailored quote. You can follow every step of the process in one place."
-    ],
-    "Válasszon fizetési módot": [
-        "Choose a payment method"
-    ],
-    "Válasszon témát…": [
-        "Select a topic…"
-    ],
-    "Válasz [X] munkanapon belül": [
-        "Reply within [X] business days"
-    ],
-    "Válogatás megvalósult tervezési, engedélyeztetési és közmű-koordinációs munkáinkból.": [
-        "Selection of our completed design, permitting, and utility coordination works."
-    ],
-    "Vízbekötési terv": [
-        "Water connection plan"
-    ],
-    "Vízmű egyeztetés": [
-        "Water utility consultation"
-    ],
-    "Weboldal": [
-        "Website"
-    ],
-    "Weboldal biztonsága:": [
-        "Website security:"
-    ],
-    "Weboldalunk sütiket használ a működéshez, statisztikához és marketing célokra. Részletek: Cookie tájékoztató.": [
-        "Our website uses cookies for operation, statistics, and marketing purposes. Details: Cookie information."
-    ],
-    "[MAGYAR \/ ROMÁN]": [
-        "[HUNGARIAN \/ ROMANIAN]"
-    ],
-    "[Projekt fotó]": [
-        "[Project photo]"
-    ],
-    "ajánlatok és projektinformációk elérése ügyfélfiókon keresztül": [
-        "Access to quotes and project information through a client account"
-    ],
-    "csak megfelelő hozzájárulás esetén (GA4 \/ GTM).": [
-        "Only with proper consent (GA4 \/ GTM)."
-    ],
-    "cég és szolgáltatások bemutatása": [
-        "Introduction of company and services"
-    ],
-    "egy ajánlatkérésben több szolgáltatást is összeállíthat.": [
-        "In a single quote request, multiple services can also be compiled."
-    ],
-    "feltöltheti a rendelkezésre álló terveket és dokumentumokat;": [
-        "You can upload the available plans and documents;"
-    ],
-    "fiókazonosító adatok, e-mail, ajánlatkérések, ajánlatok, státuszok, feltöltött és letöltött dokumentumok, technikai használati adatok": [
-        "account identification data, e-mail, quote requests, quotes, statuses, uploaded and downloaded documents, technical usage data"
-    ],
-    "igényfelmérés, ajánlatkészítés, szerződés előkészítése.": [
-        "needs assessment, preparation of quotes, preparation of contracts."
-    ],
-    "kapcsolatfelvétel és ajánlatkérés": [
-        "contact and quote request"
-    ],
-    "kiválaszthatja a szükséges szolgáltatásokat;": [
-        "you can select the required services;"
-    ],
-    "megadhatja a projekt alapadatait;": [
-        "you can provide the basic project data;"
-    ],
-    "megjelölheti a konkrét részfeladatokat;": [
-        "you can mark specific sub-tasks;"
-    ],
-    "megkeresések megválaszolása.": [
-        "responding to inquiries."
-    ],
-    "nev@ceg.ro": [
-        "name@company.ro"
-    ],
-    "név, e-mail, telefon, cégnév és adószám (ha megadja), számlázási\/projektadatok, kiválasztott szolgáltatások, feltöltött dokumentumok, kapcsolódó kommunikáció": [
-        "name, e-mail, phone, company name and tax number (if provided), billing\/project data, selected services, uploaded documents, related communication"
-    ],
-    "név, e-mail, telefonszám (ha megadja), téma, üzenet, beküldés időpontja": [
-        "name, e-mail, phone number (if provided), subject, message, submission time"
-    ],
-    "referenciák megjelenítése": [
-        "display references"
-    ],
-    "szolgáltatás, dokumentumkezelés, kapcsolattartás.": [
-        "service, document management, contact"
-    ],
-    "számviteli és jogszabályi kötelezettségek.": [
-        "accounting and legal obligations"
-    ],
-    "visszaélések megelőzése.": [
-        "prevention of abuses"
-    ],
-    "ÁFA": [
-        "VAT"
-    ],
-    "ÁSZF": [
-        "Terms and Conditions"
-    ],
-    "Általános felhasználási feltételek": [
-        "General terms of use"
-    ],
-    "Általános érdeklődés": [
-        "General inquiry"
-    ],
-    "Átlátható folyamat": [
-        "Transparent process"
-    ],
-    "Átláthatóbb műszaki ügyintézés": [
-        "More transparent technical administration"
-    ],
-    "Építési engedély előkészítés": [
-        "Preparation of building permit"
-    ],
-    "Érvényes": [
-        "Valid"
-    ],
-    "Érvényes: %s": [
-        "Valid until: %s"
-    ],
-    "Érvénytelen e-mail cím.": [
-        "Invalid email address."
-    ],
-    "Év": [
-        "Year"
-    ],
-    "Írja le röviden a projektet és a jelenlegi helyzetet. Segítünk meghatározni, milyen tervezési, engedélyeztetési vagy dokumentációs feladatokra lehet szükség.": [
-        "Briefly describe the project and the current situation. We will help determine what design, permitting, or documentation tasks may be needed."
-    ],
-    "Írjon nekünk": [
-        "Write to us"
-    ],
-    "Összeg": [
-        "Amount"
-    ],
-    "Összegzés": [
-        "Summary"
-    ],
-    "Összes elfogadása": [
-        "Accept all"
-    ],
-    "Összes referencia": [
-        "All references"
-    ],
-    "Összes szolgáltatás": [
-        "All services"
-    ],
-    "Összesítés": [
-        "Summation"
-    ],
-    "Új ajánlat": [
-        "New quote"
-    ],
-    "Új ajánlatkérés": [
-        "New quote request"
-    ],
-    "Útvonaltervezés": [
-        "Route planning"
-    ],
-    "Üdvözöljük, %s!": [
-        "Welcome, %s!"
-    ],
-    "Ügyfélfiók használata esetén": [
-        "When using a client account"
-    ],
-    "Ügyfélportál": [
-        "Client portal"
-    ],
-    "Ügyfélterület": [
-        "Client area"
-    ],
-    "Üzenet": [
-        "Message"
-    ],
-    "Üzenet küldése": [
-        "Send Message"
-    ],
-    "Mérnöki tervezés átlátható folyamattal": [
-        "Engineering design with a transparent process"
-    ],
-    "A BMA Engineering műszaki tervezési, engedélyeztetési, dokumentációs és közmű-koordinációs szolgáltatásokat biztosít lakossági és üzleti projektekhez. Válassza ki a projektjéhez szükséges szolgáltatásokat, adja meg a rendelkezésre álló adatokat, és kérjen személyre szabott ajánlatot.": [
-        "BMA Engineering provides engineering design, permitting, documentation and utility coordination for residential and business projects. Select the services you need, provide available details and request a tailored quote."
-    ],
-    "Fájl kiválasztása": [
-        "Choose file"
-    ],
-    "FIZETVE": [
-        "PAID"
-    ],
-    "ELKÉSZÜLT TERVEK": [
-        "FINISHED PLANS"
-    ],
-    "TERVEK": [
-        "PLANS"
-    ],
-    "BEKÜLDÖTT DOKUMENTUMAIM": [
-        "MY SUBMITTED DOCUMENTS"
-    ],
-    "Átadási dokumentum": [
-        "Handover document"
-    ],
-    "Ügyfél feltöltés": [
-        "Client upload"
-    ],
-    "Hétfő–Péntek, 08:00–17:00": [
-        "Monday–Friday, 08:00–17:00"
-    ],
-    "Hargita, Románia": [
-        "Harghita, Romania"
-    ],
-    "H–P, 08:00–17:00": [
-        "Mon–Fri, 08:00–17:00"
-    ],
-    "Odorheiu Secuiesc,<br>Hargita, Románia": [
-        "Odorheiu Secuiesc,<br>Harghita, Romania"
-    ],
-    "Bővítés": [
-        "Extension"
-    ],
-    "Felújítás": [
-        "Renovation"
-    ],
-    "Új építés": [
-        "New build"
-    ],
-    "Átalakítás": [
-        "Conversion"
-    ],
-    "Lakossági": [
-        "Residential"
-    ],
-    "Üzleti": [
-        "Business"
-    ],
-    "Ipari beruházás": [
-        "Industrial project"
-    ]
+  "%d ajánlat vár elfogadásra": [
+    "%d offers awaiting acceptance"
+  ],
+  "%d díjbekérő vár rendezésre": [
+    "%d proforma invoices awaiting payment"
+  ],
+  "%d projekt": [
+    "%d projects"
+  ],
+  "%d szolgáltatás kiválasztva": [
+    "%d services selected"
+  ],
+  "%d tétel": [
+    "%d items"
+  ],
+  "%d tétel kiválasztva": [
+    "%d items selected"
+  ],
+  "%d választható részfeladat": [
+    "%d selectable sub-tasks"
+  ],
+  "%s hozzáadása az ajánlathoz": [
+    "Add %s to your request"
+  ],
+  "%s részfeladatai": [
+    "Sub-tasks for %s"
+  ],
+  "+40 7XX XXX XXX": [
+    "+40 7XX XXX XXX"
+  ],
+  "+40 …": [
+    "+40 …"
+  ],
+  "02 · Kosár": [
+    "02 · Cart"
+  ],
+  "03 · Adatok és beküldés": [
+    "03 · Details and submission"
+  ],
+  "1 ajánlat vár elfogadásra": [
+    "1 offer awaiting acceptance"
+  ],
+  "1 díjbekérő vár rendezésre": [
+    "1 proforma invoice awaiting payment"
+  ],
+  "1 projekt": [
+    "1 project"
+  ],
+  "1 tétel": [
+    "1 item"
+  ],
+  "1 tétel kiválasztva": [
+    "1 item selected"
+  ],
+  "1. Az adatkezelő": [
+    "1. The data controller"
+  ],
+  "1. Mi az a cookie?": [
+    "1. What is a cookie?"
+  ],
+  "1. Szolgáltatások": [
+    "1. Services"
+  ],
+  "1. Szolgáltató": [
+    "1. Service provider"
+  ],
+  "10. Adatbiztonság": [
+    "10. Data security"
+  ],
+  "10–12. Külső linkek, elérhetőség, felelősség": [
+    "10–12. External links, availability, responsibility"
+  ],
+  "11. Cookie-k": [
+    "11. Cookies"
+  ],
+  "12. Módosítás": [
+    "12. Modification"
+  ],
+  "13. Adatvédelem": [
+    "13. Privacy"
+  ],
+  "14. Feltételek módosítása": [
+    "14. Modification of terms"
+  ],
+  "15. Kapcsolat": [
+    "15. Contact"
+  ],
+  "2. A weboldal célja": [
+    "2. Purpose of the website"
+  ],
+  "2. Cookie kategóriák ezen az oldalon": [
+    "2. Cookie categories on this site"
+  ],
+  "2. Kosár": [
+    "2. Cart"
+  ],
+  "2. Milyen adatokat kezelünk?": [
+    "2. What data do we process?"
+  ],
+  "3. Adatkezelés célja és jogalapja": [
+    "3. Purpose and legal basis of data processing"
+  ],
+  "3. Adatok": [
+    "3. Data"
+  ],
+  "3. Ajánlatkérés": [
+    "3. Quote request"
+  ],
+  "3. Térkép": [
+    "3. Map"
+  ],
+  "4 tétel · 1 ajánlatkérés": [
+    "4 items · 1 quote request"
+  ],
+  "4. Ajánlat": [
+    "4. Quote"
+  ],
+  "4. Feltöltött dokumentumok": [
+    "4. Uploaded documents"
+  ],
+  "4. Hozzájárulás kezelése": [
+    "4. Handling of consent"
+  ],
+  "5. Adattovábbítás": [
+    "5. Data transfer"
+  ],
+  "5. Kapcsolódó dokumentumok": [
+    "5. Related documents"
+  ],
+  "5. Árak": [
+    "5. Prices"
+  ],
+  "6. EGT-n kívüli adattovábbítás": [
+    "6. Data transfer outside the EEA"
+  ],
+  "6. Felhasználó által megadott információk": [
+    "6. Information provided by the user"
+  ],
+  "7. Dokumentumfeltöltés": [
+    "7. Document upload"
+  ],
+  "7. Megőrzési idő": [
+    "7. Retention period"
+  ],
+  "8. Érintetti jogok": [
+    "8. Data subject rights"
+  ],
+  "8. Ügyfélfiók": [
+    "8. Client account"
+  ],
+  "9. Panasz": [
+    "9. Complaint"
+  ],
+  "9. Szellemi tulajdon": [
+    "9. Intellectual property"
+  ],
+  "A %s fontosnak tartja a személyes adatok védelmét és az adatok átlátható kezelését.": [
+    "%s considers the protection of personal data and the transparent management of data important."
+  ],
+  "A BMA Engineering mérnöki tervezési, engedélyeztetési, közmű-koordinációs és műszaki dokumentációs feladatokban támogatja ügyfeleit.": [
+    "BMA Engineering supports its clients in engineering design, permitting, utility coordination, and technical documentation tasks."
+  ],
+  "A BMA Engineering műszaki tervezési, engedélyeztetési, dokumentációs és közmű-koordinációs szolgáltatásokat biztosít lakossági és üzleti projektekhez. Válassza ki a projektjéhez szükséges szolgáltatásokat, adja meg a rendelkezésre álló adatokat, és kérjen személyre szabott ajánlatot.": [
+    "BMA Engineering provides engineering design, permitting, documentation and utility coordination for residential and business projects. Select the services you need, provide available details and request a tailored quote."
+  ],
+  "A cookie kis adatfájl, amelyet a böngésző tárol. Segíti a weboldal működését, a beállítások megjegyzését és – hozzájárulás esetén – a látogatottsági statisztikát.": [
+    "A cookie is a small data file stored by the browser. It helps the website function, remembers settings, and – with consent – tracks visitor statistics."
+  ],
+  "A feladat": [
+    "The task"
+  ],
+  "A felhasználó felelős a hozzáférési adatok biztonságáért, és csak a saját adataihoz férhet hozzá.": [
+    "The user is responsible for the security of their access data and may only access their own data."
+  ],
+  "A felhasználó felelőssége, hogy a megadott adatok tudomása szerint pontosak és teljesek legyenek.": [
+    "It is the user's responsibility to ensure that the data provided is accurate and complete to the best of their knowledge."
+  ],
+  "A feltöltött dokumentumokat kizárólag az adott ajánlatkérés vagy szolgáltatás kezelése céljából használjuk. Kérjük, csak a projekthez szükséges adatokat töltse fel.": [
+    "Uploaded documents are used solely for the purpose of managing the specific quote request or service. Please upload only the data necessary for the project."
+  ],
+  "A fizetéshez be kell jelentkeznie, és érvényes ajánlathoz kell rendelkeznie.": [
+    "To make a payment, you must log in and have a valid quote."
+  ],
+  "A jelen feltételek a weboldal használatára, a kapcsolatfelvételre és az ajánlatkérésre vonatkoznak.": [
+    "These terms apply to the use of the website, making contact, and requesting quotes."
+  ],
+  "A kapcsolat oldalon OpenStreetMap csempéket jelenítünk meg (Leaflet). A térkép csak hozzájárulás után vagy a „Térkép betöltése” gombra kattintva töltődik be. Az „Útvonaltervezés” az OpenStreetMap irányító oldalára vezet (külső oldal).": [
+    "On the contact page, we display OpenStreetMap tiles (Leaflet). The map only loads after consent or by clicking the „Load Map” button. The „Route Planning” leads to the OpenStreetMap direction page (external site)."
+  ],
+  "A keresett oldal nem létezik, áthelyezték, vagy elírta a címet. Válasszon az alábbi lehetőségek közül.": [
+    "The requested page does not exist, has been moved, or you have mistyped the address. Please choose from the options below."
+  ],
+  "A kiválasztott elemeket még nem adta hozzá az ajánlatkéréshez": [
+    "You have not yet added the selected items to the quote request."
+  ],
+  "A kiválasztott elemeket még nem adta hozzá az ajánlatkéréshez. A folytatás előtt kattintson a gombra.": [
+    "You have not yet added the selected items to the quote request. Click the button before continuing."
+  ],
+  "A kiválasztott szolgáltatásokhoz szükséges adatokat egyszer, itt adhatja meg. Ismételt kitöltés nem szükséges.": [
+    "You can provide the data required for the selected services once, here. Repeated completion is not necessary."
+  ],
+  "A kiválasztás bármikor módosítható a beküldésig. Az ajánlatkérés nem jár kötelezettséggel.": [
+    "You can change your selection any time before submitting. Requesting a quote is without obligation."
+  ],
+  "A kosár üres": [
+    "The cart is empty"
+  ],
+  "A kosár üres. Az ajánlatkéréshez először válasszon szolgáltatást.": [
+    "Your cart is empty. To request a quote, please choose a service first."
+  ],
+  "A kosár üres. Válasszon szolgáltatást a folytatáshoz.": [
+    "The cart is empty. Please select a service to continue."
+  ],
+  "A kártyás fizetés jelenleg nem elérhető. Kérjük, válassza a banki utalást.": [
+    "Card payment is currently unavailable. Please choose bank transfer."
+  ],
+  "A kész terveket az ügyfélportálon adjuk át, a kapcsolódó dokumentumokkal együtt.": [
+    "We hand over the finished plans in the client portal, together with the related documents."
+  ],
+  "A lista a referencia-adatbázisból töltődik; itt a jelenlegi oldalon szereplő projektek láthatók. Új projekt felvételekor automatikusan megjelenik a szűrőkben is.": [
+    "The list is loaded from the reference database; the projects shown here are the ones on the current site. A new project automatically appears in the filters as well."
+  ],
+  "A lábléc feletti cookie sávon választhat: „Csak szükséges” vagy „Összes elfogadása”. A beállítás a böngészőben marad; törléséhez törölje az oldal adatait / localStorage-t, majd töltse újra az oldalt.": [
+    "In the cookie bar above the footer, you can choose: „Necessary only” or „Accept all”. The setting remains in the browser; to delete it, clear the page data / localStorage and then reload the page."
+  ],
+  "A megoldás": [
+    "The solution"
+  ],
+  "A megoldás (opcionális)": [
+    "The solution (optional)"
+  ],
+  "A pontos határidő a projekt méretétől és a szolgáltatói egyeztetésektől függ.": [
+    "The exact deadline depends on the size of the project and on the utility provider consultations."
+  ],
+  "A projekt": [
+    "The project"
+  ],
+  "A projekt (rövid lead)": [
+    "The project (short lead)"
+  ],
+  "A projekt részletei az ügyféllel egyeztetett mértékben nyilvánosak.": [
+    "Project details are public to the extent agreed with the client."
+  ],
+  "A szekció akkor jelenik meg, ha legalább egy oszlop ki van töltve – csak a kitöltött oszlopok renderelődnek.": [
+    "The section appears if at least one column is filled in – only the filled columns are rendered."
+  ],
+  "A szolgáltató a szolgáltatások, a weboldal vagy a jogszabályok változása esetén módosíthatja a feltételeket.": [
+    "The service provider may modify the terms in the event of changes to the services, the website, or the legislation."
+  ],
+  "A szükséges tervrajzok és műszaki dokumentumok az adott ajánlatkéréshez kapcsolódva tölthetők fel és kezelhetők.": [
+    "The necessary plans and technical documents can be uploaded and managed in connection with the given quote request."
+  ],
+  "A tervrajzok és dokumentumok az ajánlatkéréshez rendelve tölthetők fel.": [
+    "Plans and documents can be uploaded assigned to the quote request."
+  ],
+  "A térkép OpenStreetMap csempéket tölt be. A megjelenítéshez kattintson a „Térkép betöltése” gombra, vagy fogadja el a cookie beállításokban a funkcionális térképet.": [
+    "The map loads OpenStreetMap tiles. To display it, click the „Load Map” button or accept the functional map in the cookie settings."
+  ],
+  "A weboldali információk általános tájékoztatásnak minősülnek.": [
+    "The information on the website is considered general information."
+  ],
+  "A weboldali tartalom védelem alatt állhat. A projektben készült dokumentumokra az egyedi szerződés/ajánlat vonatkozik.": [
+    "Website content may be protected. Documents prepared in the project are subject to the individual contract/quote."
+  ],
+  "Adatkezelési tájékoztató": [
+    "Data management information"
+  ],
+  "Adatok megadása": [
+    "Providing data"
+  ],
+  "Adatok és beküldés": [
+    "Details and submission"
+  ],
+  "Adatvédelem": [
+    "Data protection"
+  ],
+  "Adatvédelmi tájékoztató": [
+    "Privacy notice"
+  ],
+  "Adja hozzá a(z) %s az ajánlatkéréséhez": [
+    "Add %s to your quote request"
+  ],
+  "Adja meg a felhasználónevet és a jelszót.": [
+    "Enter the username and password."
+  ],
+  "Adja meg a projekt adatait és a meglévő dokumentumokat.": [
+    "Enter the project details and upload the documents you already have."
+  ],
+  "Adja meg a projekt közös adatait és a kapcsolattartási információkat, majd ellenőrizze a kiválasztást a beküldés előtt.": [
+    "Enter the project's shared details and your contact information, then review your selection before submitting."
+  ],
+  "Adószám": [
+    "Tax number"
+  ],
+  "Ajánlat": [
+    "Quote"
+  ],
+  "Ajánlat [X] munkanapon belül": [
+    "Quote within [X] working days"
+  ],
+  "Ajánlat elfogadása": [
+    "Acceptance of quote"
+  ],
+  "Ajánlat elérhető": [
+    "Quote available"
+  ],
+  "Ajánlat fizetése": [
+    "Payment of quote"
+  ],
+  "Ajánlat megtekintése": [
+    "View quote"
+  ],
+  "Ajánlat nem található.": [
+    "Quote not found."
+  ],
+  "Ajánlat részletei": [
+    "Quote details"
+  ],
+  "Ajánlat száma": [
+    "Quote number"
+  ],
+  "Ajánlat száma: %s": [
+    "Quote number: %s"
+  ],
+  "Ajánlat, %d tétel": [
+    "Quote, %d items"
+  ],
+  "Ajánlati PDF letöltése": [
+    "Download quote PDF"
+  ],
+  "Ajánlatkérés": [
+    "Request a quote"
+  ],
+  "Ajánlatkérés beküldve.": [
+    "Quote request submitted."
+  ],
+  "Ajánlatkérés beküldése": [
+    "Submit quote request"
+  ],
+  "Ajánlatkérés esetén": [
+    "In case of quote request"
+  ],
+  "Ajánlatkérés indítása": [
+    "Start quote request"
+  ],
+  "Ajánlatkérés:": [
+    "Quote request:"
+  ],
+  "Ajánlatkéréseim": [
+    "My quote requests"
+  ],
+  "Ajánlatkérési kosár": [
+    "Quote request cart"
+  ],
+  "Ajánlatkérési kosár azonosító (bma_cart_id) – a kiválasztott szolgáltatások megőrzéséhez": [
+    "Quote request cart identifier (bma_cart_id) – to save selected services"
+  ],
+  "Ajánlatkérési lépések": [
+    "Quote request steps"
+  ],
+  "Ajánlatot szeretne kérni?": [
+    "Do you want to request a quote?"
+  ],
+  "Aktív kérések": [
+    "Active requests"
+  ],
+  "Amit csináltunk": [
+    "What we did"
+  ],
+  "Amit sokan kérdeznek": [
+    "Frequently asked"
+  ],
+  "Analitika": [
+    "Analytics"
+  ],
+  "Analitika:": [
+    "Analytics:"
+  ],
+  "Analitikai cookie-k csak hozzájárulás után. Részletek:": [
+    "Analytical cookies only after consent. Details:"
+  ],
+  "Az IBAN az admin beállításokban adható meg.": [
+    "The IBAN can be provided in the admin settings."
+  ],
+  "Az adatokat csak az adatkezelési célhoz szükséges ideig őrizzük meg.": [
+    "The data is only retained for as long as necessary for the purpose of data processing."
+  ],
+  "Az adatvédelmi hozzájárulás kötelező.": [
+    "Consent for data protection is mandatory."
+  ],
+  "Az ajánlat mentése sikertelen.": [
+    "Saving the quote was unsuccessful."
+  ],
+  "Az ajánlatkérés beküldése nem jelent automatikus szerződéskötést vagy megrendelést. A BMA Engineering további információkat kérhet.": [
+    "Submitting a quote request does not constitute an automatic contract or order. BMA Engineering may request further information."
+  ],
+  "Az ajánlatkérés beküldése után e-mailben visszaigazolást küldünk, és [X] munkanapon belül visszajelzünk.": [
+    "After you submit the request we send an email confirmation and get back to you within [X] working days."
+  ],
+  "Az ajánlatkérés díjmentes": [
+    "Requesting a quote is free"
+  ],
+  "Az ajánlatkérés díjmentes és nem jár kötelezettséggel.": [
+    "Requesting a quote is free and without obligation."
+  ],
+  "Az ajánlatkérés menete": [
+    "How the quote request works"
+  ],
+  "Az ajánlatkérés véglegesítése nem jár fizetési kötelezettséggel. Az árat az adminisztrátor készíti el később.": [
+    "Finalizing the quote request does not create a payment obligation. The price will be prepared later by the administrator."
+  ],
+  "Az ajánlatkéréshez először válasszon szolgáltatást.": [
+    "First, select a service for the quote request."
+  ],
+  "Az ajánlatkérési folyamatban több szolgáltatást is kiválaszthat. A projekt alapadatait és dokumentumait egyszer kell megadnia, a rendszer pedig az összes kiválasztott szolgáltatáshoz kapcsolódó információkat egy ajánlatkérésben kezeli.": [
+    "In the quote request process, you can select multiple services. You only need to provide the basic project data and documents once, and the system manages the information related to all selected services in a single quote request."
+  ],
+  "Az ajánlatkérési kosár üres.": [
+    "The quote request cart is empty."
+  ],
+  "Az ajánlatkéréstől a dokumentumok átadásáig követhető, hol tart a folyamat, és milyen következő lépésekre van szükség.": [
+    "From the quote request to the transfer of documents, it can be tracked where the process is and what next steps are needed."
+  ],
+  "Az ajánlatkérőben kiválaszthatja a szükséges részfeladatokat és dokumentumokat is feltölthet.": [
+    "In the quote request, you can select the necessary sub-tasks and also upload documents."
+  ],
+  "Az aktuális változat mindig ezen az oldalon érhető el. A szöveget publikálás előtt célszerű jogi/adatvédelmi szakértővel ellenőriztetni.": [
+    "The current version is always available on this page. It is advisable to have the text reviewed by a legal/data protection expert before publication."
+  ],
+  "Az azonosítót e-mailben is elküldtük. Erre hivatkozva bármikor tud érdeklődni.": [
+    "We have also emailed the reference number. You can quote it any time you contact us."
+  ],
+  "Az egyedi ajánlat vagy szerződés elsőbbséget élvez az általános weboldali feltételekkel szemben.": [
+    "The individual quote or contract takes precedence over the general website terms."
+  ],
+  "Az elfogadott ajánlat után elkészülnek a tervek, a szükséges szolgáltatói egyeztetésekkel.": [
+    "Once the quote is accepted, the plans are prepared, along with the necessary provider consultations."
+  ],
+  "Az elkészült ajánlat az ügyfélportálon és e-mailben is elérhető lesz.": [
+    "The finished quote will be available in the client portal and by email."
+  ],
+  "Az elkészült tervek itt jelennek meg, tételenként. Jelenleg még nincs feltöltött terv.": [
+    "Finished plans appear here, per item. There are no uploaded plans yet."
+  ],
+  "Az oldal nem található": [
+    "Page not found"
+  ],
+  "Az Ön ajánlatkérése": [
+    "Your quote request"
+  ],
+  "Az érintett jogosult panaszt benyújtani az illetékes adatvédelmi felügyeleti hatósághoz.": [
+    "The data subject is entitled to lodge a complaint with the competent data protection supervisory authority."
+  ],
+  "Az ügyfélportál eléréséhez bejelentkezés szükséges.": [
+    "Login is required to access the client portal."
+  ],
+  "Az ügyfélportálon látja a státuszt, az elkészült ajánlatot és a feltöltött dokumentumokat.": [
+    "On the client portal, you can see the status, the completed quote, and the uploaded documents."
+  ],
+  "Az ügyfélportálon végigkövethető a kérés státusza és a dokumentumok.": [
+    "The status of the request and the documents can be tracked throughout on the client portal."
+  ],
+  "Az üzenet küldése nem sikerült. Ellenőrizze a kötelező mezőket, és próbálja újra.": [
+    "Message sending failed. Please check the required fields and try again."
+  ],
+  "Azonosító": [
+    "Identifier"
+  ],
+  "Azonosító: %s": [
+    "Reference: %s"
+  ],
+  "BEKÜLDÖTT DOKUMENTUMAIM": [
+    "MY SUBMITTED DOCUMENTS"
+  ],
+  "BIC / SWIFT": [
+    "BIC / SWIFT"
+  ],
+  "BMA Engineering főoldal": [
+    "BMA Engineering homepage"
+  ],
+  "BMA Engineering – műszaki tervezés, engedélyeztetés és dokumentáció lakossági és üzleti projektekhez.": [
+    "BMA Engineering – technical design, authorization, and documentation for residential and business projects."
+  ],
+  "Bank neve": [
+    "Bank name"
+  ],
+  "Banki utalás": [
+    "Bank transfer"
+  ],
+  "Banki utalás adatai": [
+    "Bank transfer details"
+  ],
+  "Banki utalás folyamatban": [
+    "Bank transfer in progress"
+  ],
+  "Bejelentkezés": [
+    "Log in"
+  ],
+  "Bejelentkezés az ügyfélportálra": [
+    "Login to the client portal"
+  ],
+  "Bejelentkezés szükséges": [
+    "Login required"
+  ],
+  "Beküldve": [
+    "Submitted"
+  ],
+  "Beküldve: %s · Kérés részletei, státusz, dokumentumok és ajánlat.": [
+    "Submitted: %s · Request details, status, documents and quote."
+  ],
+  "Beküldés": [
+    "Submit"
+  ],
+  "Beküldött dokumentumaim": [
+    "My submitted documents"
+  ],
+  "Belépés": [
+    "Log in"
+  ],
+  "Bezárás": [
+    "Close"
+  ],
+  "Biztonságos dokumentumkezelés": [
+    "Secure document management"
+  ],
+  "Blokkok üres sorral elválasztva. Üres mezőnél a GYIK szekció nem jelenik meg.": [
+    "Blocks separated by an empty line. If this field is empty, the FAQ section is not shown."
+  ],
+  "Bruttó összeg": [
+    "Gross amount"
+  ],
+  "Bármi, ami segít pontosabb ajánlatot adni": [
+    "Anything that helps us give a more accurate quote"
+  ],
+  "Bővítés": [
+    "Extension"
+  ],
+  "CUI": [
+    "CUI"
+  ],
+  "CUI / adószám": [
+    "CUI / tax number"
+  ],
+  "CUI: %s": [
+    "CUI: %s"
+  ],
+  "Cookie hozzájárulás": [
+    "Cookie consent"
+  ],
+  "Cookie tájékoztató": [
+    "Cookie information"
+  ],
+  "Cookie-hozzájárulás tárolása (böngésző localStorage: bma_cookie_consent)": [
+    "Store cookie consent (browser localStorage: bma_cookie_consent)"
+  ],
+  "Csak olyan dokumentum tölthető fel, amelynek továbbítására a felhasználó jogosult. Nem tölthető fel jogellenes, rosszindulatú, harmadik fél jogait sértő vagy indokolatlanul érzékeny tartalom.": [
+    "Only documents that the user is authorized to submit can be uploaded. Illegal, malicious, content infringing third-party rights, or unnecessarily sensitive content cannot be uploaded."
+  ],
+  "Csak szükséges": [
+    "Only necessary"
+  ],
+  "Cég": [
+    "Company"
+  ],
+  "Cég (opcionális)": [
+    "Company (optional)"
+  ],
+  "Cég neve": [
+    "Company name"
+  ],
+  "Cégnév": [
+    "Company name"
+  ],
+  "Cégnév, ha cégként kér ajánlatot": [
+    "Company name if requesting a quote as a company"
+  ],
+  "Cím": [
+    "Address"
+  ],
+  "Dokumentumaim": [
+    "My documents"
+  ],
+  "Dokumentumok": [
+    "Documents"
+  ],
+  "Dokumentumok rendezett kezelése": [
+    "Organized management of documents"
+  ],
+  "Dokumentumtípus": [
+    "Document type"
+  ],
+  "Dátum": [
+    "Date"
+  ],
+  "Díjmentes, kötelezettség nélkül": [
+    "Free, no obligation"
+  ],
+  "E-mail": [
+    "E-mail"
+  ],
+  "E-mail vagy felhasználónév": [
+    "Email or username"
+  ],
+  "E-mailben elküldtük a kérés összefoglalóját és a feltöltött dokumentumok listáját.": [
+    "We have emailed you a summary of the request and the list of uploaded documents."
+  ],
+  "ELKÉSZÜLT TERVEK": [
+    "FINISHED PLANS"
+  ],
+  "Ebben a nézetben most nincs ajánlatkérés.": [
+    "There are no quote requests in this view."
+  ],
+  "Egy ajánlatban": [
+    "In a single quote"
+  ],
+  "Egy ajánlatkérésben több szolgáltatás és részfeladat is összeállítható.": [
+    "In a quote request, multiple services and subtasks can also be assembled."
+  ],
+  "Egy ajánlatkérésben több tervezési, engedélyeztetési, közmű-koordinációs és dokumentációs feladat is összeállítható.": [
+    "In a quote request, multiple design, approval, utility coordination, and documentation tasks can also be assembled."
+  ],
+  "Egy projekt ritkán csak egyetlen feladatból áll": [
+    "A project rarely consists of a single task"
+  ],
+  "Egy projekt során gyakran több tervezési, engedélyeztetési vagy dokumentációs feladat kapcsolódik egymáshoz.": [
+    "During a project, multiple design, approval, or documentation tasks are often related to each other."
+  ],
+  "Egy sor = egy tétel": [
+    "One line = one item"
+  ],
+  "Egy építési vagy fejlesztési projekt során a tervezés, az engedélyeztetés, a közműcsatlakozások és a műszaki dokumentáció gyakran egymásra épül.": [
+    "During a construction or development project, planning, permitting, utility connections, and technical documentation often build on each other."
+  ],
+  "Egyéb": [
+    "Other"
+  ],
+  "Egyéb fontos információ a projektről…": [
+    "Other important information about the project…"
+  ],
+  "Egyéb szolgáltatások": [
+    "Other services"
+  ],
+  "Ehhez a kéréshez nincs hozzáférése.": [
+    "You do not have access to this request."
+  ],
+  "Ehhez az e-mail címhez már tartozik fiók. Kérjük, jelentkezzen be.": [
+    "An account already exists for this email address. Please log in."
+  ],
+  "Ehhez kapcsolódó szolgáltatások": [
+    "Related services"
+  ],
+  "Elemek szerkesztése": [
+    "Edit items"
+  ],
+  "Elfelejtett jelszó": [
+    "Forgotten password"
+  ],
+  "Elfogadva": [
+    "Accepted"
+  ],
+  "Elkészült tervek": [
+    "Completed plans"
+  ],
+  "Ellenőrizze a kiválasztott szolgáltatásokat. A projekt adatait a következő lépésben, egyszer kell megadnia.": [
+    "Check the selected services. Project information must be provided in the next step, only once."
+  ],
+  "Ellenőrizze a kiválasztott tételeket, és adja meg a tételenkénti adatokat. A projekt közös adatait a következő lépésben kérjük.": [
+    "Review the selected items and fill in the details for each one. We ask for the project's shared details in the next step."
+  ],
+  "Ellenőrizze az összeállítást, adja meg a kapcsolattartási adatait, és küldje el a kérést.": [
+    "Check the compilation, provide your contact details, and submit the request."
+  ],
+  "Ellenőrzés": [
+    "Review"
+  ],
+  "Elolvastam és elfogadom az <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">adatkezelési tájékoztatót</a>.": [
+    "I have read and accept the <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">privacy policy</a>."
+  ],
+  "Elolvastam és elfogadom az <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">adatvédelmi tájékoztatóban</a> foglaltakat.": [
+    "I have read and accept the terms outlined in the <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">privacy policy</a>."
+  ],
+  "Elolvastam és elfogadom az <a href=\"%s\">adatvédelmi tájékoztatóban</a> foglaltakat.": [
+    "I have read and accept the terms outlined in the <a href=\"%s\">privacy policy</a>."
+  ],
+  "Eltávolítás": [
+    "Remove"
+  ],
+  "Elérhetőségeink": [
+    "Our contact information"
+  ],
+  "Előkészítés": [
+    "Preparation"
+  ],
+  "Előnyök": [
+    "Advantages"
+  ],
+  "Emlékezzen rám": [
+    "Remember me"
+  ],
+  "Engedélyeztetés": [
+    "Permitting"
+  ],
+  "Eredmény": [
+    "Result"
+  ],
+  "Ez a bma_reference_category taxonómia (lista szűrő: ?tipus=…).": [
+    "This is the bma_reference_category taxonomy (list filter: ?tipus=…)."
+  ],
+  "Ez a tájékoztató bemutatja, hogy milyen személyes adatokat kezelünk a weboldal használata, kapcsolatfelvétel, ajánlatkérés és ügyfélfiók használata során, milyen célból kezeljük ezeket az adatokat, valamint milyen jogok illetik meg az érintetteket.": [
+    "This information notice shows what personal data we process when using the website, contacting us, requesting a quote, and using a client account, for what purpose we process this data, and what rights the data subjects have."
+  ],
+  "Ez a tájékoztató bemutatja, milyen sütiket (cookie-kat) és hasonló technológiákat használ a BMA Engineering weboldala.": [
+    "This information notice shows what cookies and similar technologies the BMA Engineering website uses."
+  ],
+  "Ez az ajánlatkérés már be lett küldve. Frissítse az oldalt.": [
+    "This request has already been submitted. Please refresh the page."
+  ],
+  "Ezek a működéshez szükségesek, és a „Csak szükséges” választással is aktívak maradnak.": [
+    "These are necessary for operation, and they remain active even with the „Necessary only” selection."
+  ],
+  "Ezt válassza, ha:": [
+    "Choose this if:"
+  ],
+  "Ezután": [
+    "Next"
+  ],
+  "Ezzel a szűréssel nincs találat. Próbáljon másik típust vagy szolgáltatást, vagy állítsa vissza a szűrőt „Összes”-re.": [
+    "No results for this filter. Try another type or service, or reset the filter to “All”."
+  ],
+  "FIZETVE": [
+    "PAID"
+  ],
+  "Felmérés": [
+    "Assessment"
+  ],
+  "Felmérés és ajánlat": [
+    "Assessment and quote"
+  ],
+  "Feltöltés": [
+    "Upload"
+  ],
+  "Felújítás": [
+    "Renovation"
+  ],
+  "Fizetve": [
+    "Paid"
+  ],
+  "Fizetés": [
+    "Payment"
+  ],
+  "Fizetés indítása": [
+    "Start payment"
+  ],
+  "Fizetés megtekintése": [
+    "View payment"
+  ],
+  "Fizetésre vár": [
+    "Pending payment"
+  ],
+  "Folyamat": [
+    "Process"
+  ],
+  "Folyamatban": [
+    "In progress"
+  ],
+  "Folytathatja az ügyfélportálon.": [
+    "You can continue on the client portal."
+  ],
+  "Fájl": [
+    "File"
+  ],
+  "Fájl kiválasztása": [
+    "Choose file"
+  ],
+  "Fő navigáció": [
+    "Main navigation"
+  ],
+  "Főmenü": [
+    "Main menu"
+  ],
+  "Főoldal": [
+    "Home"
+  ],
+  "GYIK": [
+    "FAQ"
+  ],
+  "Google Analytics 4 és/vagy Google Tag Manager – csak ha az admin beállította, és Ön elfogadja az analitikai cookie-kat": [
+    "Google Analytics 4 and/or Google Tag Manager – only if the admin has set it up and you accept the analytics cookies"
+  ],
+  "Gyakori kérdések": [
+    "Frequently asked questions"
+  ],
+  "Gyors indítás – mire van szüksége?": [
+    "Quick start – what do you need?"
+  ],
+  "Ha a banki utalást választja, a kártyás fizetés a továbbiakban nem lesz elérhető ennél az ajánlatnál. Folytatja?": [
+    "If you choose bank transfer, card payment will no longer be available for this quote. Do you want to continue?"
+  ],
+  "Ha egy kéréssel kapcsolatban kérdése van, vagy módosítaná a kiválasztott tételeket, keressen minket.": [
+    "If you have a question about a request, or want to change the selected items, get in touch."
+  ],
+  "Ha korábban ügyfélfiókot hozott létre, bejelentkezés után megtekintheti saját ajánlatkéréseit, azok aktuális státuszát, valamint az Ön számára feltöltött ajánlatokat és dokumentumokat.": [
+    "If you have previously created a client account, after logging in you can view your own inquiries, their current status, as well as the quotes and documents uploaded for you."
+  ],
+  "Ha külső szolgáltató miatt ilyen történik, csak az alkalmazandó adatvédelmi szabályoknak megfelelő módon.": [
+    "If this happens due to an external service provider, only in accordance with the applicable data protection regulations."
+  ],
+  "Ha most továbblép, a jelenlegi kiválasztásai elveszhetnek.": [
+    "If you proceed now, your current selections may be lost."
+  ],
+  "Ha már van konkrét projektje, a kapcsolatfelvételi űrlap helyett érdemes az ajánlatkérési folyamatot használni.": [
+    "If you already have a specific project, it is advisable to use the quote request process instead of the contact form."
+  ],
+  "Ha még nem tudja pontosan, mire van szüksége, hívjon minket.": [
+    "If you do not yet know exactly what you need, call us."
+  ],
+  "Ha nem tudja pontosan, mire van szüksége, elég a projektet leírnia – segítünk összeállítani.": [
+    "If you are not sure exactly what you need, just describe the project – we will help you put it together."
+  ],
+  "Ha rendelkezésre áll": [
+    "If available"
+  ],
+  "Ha tájékoztató ár jelenik meg, az nem feltétlenül végleges ajánlat.": [
+    "If an indicative price appears, it is not necessarily a final quote."
+  ],
+  "Ha általános kérdése van, vagy még nem tudja pontosan, melyik szolgáltatásra van szüksége, küldjön üzenetet. Konkrét projektre az ajánlatkérést javasoljuk.": [
+    "If you have a general question or do not yet know exactly which service you need, send a message. For a specific project, we recommend the quote request."
+  ],
+  "Hargita, Románia": [
+    "Harghita, Romania"
+  ],
+  "Hasonló projektet tervez?": [
+    "Are you planning a similar project?"
+  ],
+  "Hasonló projektje van?": [
+    "Have a similar project?"
+  ],
+  "Helyszín": [
+    "Location"
+  ],
+  "Helyszín: %s": [
+    "Location: %s"
+  ],
+  "Hiba 404": [
+    "Error 404"
+  ],
+  "Hiba történt a mentés során.": [
+    "An error occurred during saving."
+  ],
+  "Hibás felhasználónév vagy jelszó. Kérjük, próbálja újra.": [
+    "Incorrect username or password. Please try again."
+  ],
+  "Hogyan működik?": [
+    "How does it work?"
+  ],
+  "Hogyan zajlik?": [
+    "How it works"
+  ],
+  "Hol talál minket?": [
+    "Where to find us?"
+  ],
+  "Hozzon létre ügyfélfiókot, hogy egy helyen kövesse a kérés státuszát, az ajánlatot és a dokumentumokat.": [
+    "Create a client account to follow the request status, the quote and the documents in one place."
+  ],
+  "Hozzáadva": [
+    "Added"
+  ],
+  "Hozzáadva az ajánlatkéréshez": [
+    "Added to the quote request"
+  ],
+  "Hozzáadás": [
+    "Add"
+  ],
+  "Hozzáadás és továbblépés": [
+    "Add and proceed"
+  ],
+  "Hozzáférés-védelem és mentések": [
+    "Access protection and backups"
+  ],
+  "Hozzájárulás nélkül ezek a scriptek nem indulnak el.": [
+    "These scripts will not run without consent."
+  ],
+  "Hétfő–Péntek, 08:00–17:00": [
+    "Monday–Friday, 08:00–17:00"
+  ],
+  "Húzza ide a fájlokat, vagy tallózzon": [
+    "Drag files here, or browse"
+  ],
+  "H–P, 08:00–17:00": [
+    "Mon–Fri, 08:00–17:00"
+  ],
+  "IBAN": [
+    "IBAN"
+  ],
+  "IP-cím, böngésző és eszköz típusa, meglátogatott oldalak, technikai naplóadatok, cookie-hozzájárulási beállítások": [
+    "IP address, browser and device type, visited pages, technical log data, cookie consent settings"
+  ],
+  "Ilyen projektet csináltunk – ilyen szolgáltatással, ilyen környezetben.": [
+    "We did a project like this – with this kind of service, in this kind of environment."
+  ],
+  "Ipari beruházás": [
+    "Industrial project"
+  ],
+  "Irányítószám, város, utca, házszám": [
+    "Postal code, city, street, house number"
+  ],
+  "Jelenleg nincs fájlmező hozzárendelve a kiválasztott tételekhez.": [
+    "There is currently no file field assigned to the selected items."
+  ],
+  "Jelenleg nincs külön marketing cookie integráció. Az „Összes elfogadása” a jövőbeli marketing kategóriát is engedélyezi, ha később bekapcsolásra kerül.": [
+    "Currently, there is no separate marketing cookie integration. Accepting „All” also enables the future marketing category if it is activated later."
+  ],
+  "Jelentkezzen be ügyfélfiókjával az ajánlatkérések és dokumentumok megtekintéséhez.": [
+    "Log in with your client account to view quote requests and documents."
+  ],
+  "Jelszó": [
+    "Password"
+  ],
+  "Jelölje be a szükséges tételeket – bármennyit.": [
+    "Tick the items you need – as many as you like."
+  ],
+  "Jelölje ki a szükséges részfeladatokat, majd adja hozzá őket az ajánlatkéréshez. A projekt részletes adatait egyszer, a következő lépésben kérjük be.": [
+    "Select the necessary subtasks, then add them to the quote request. The detailed project data will be requested once, in the next step."
+  ],
+  "Jogi információ": [
+    "Legal information"
+  ],
+  "Jogi kötelezettségek:": [
+    "Legal obligations:"
+  ],
+  "Jogosult lehet: tájékoztatás, hozzáférés, helyesbítés, törlés, korlátozás, tiltakozás, adathordozhatóság, hozzájárulás visszavonása.": [
+    "May be entitled to: information, access, correction, deletion, restriction, objection, data portability, withdrawal of consent."
+  ],
+  "Jogosultság alapú hozzáférés": [
+    "Access based on entitlement"
+  ],
+  "K: Kérdés?\nV: Válasz.\n\nK: Másik kérdés?\nV: Másik válasz.": [
+    "K: Question?\nV: Answer.\n\nK: Another question?\nV: Another answer."
+  ],
+  "Kapcsolat": [
+    "Contact"
+  ],
+  "Kapcsolat:": [
+    "Contact:"
+  ],
+  "Kapcsolatfelvétel": [
+    "Getting in touch"
+  ],
+  "Kapcsolatfelvétel esetén": [
+    "In case of contact"
+  ],
+  "Kapcsolatfelvétel:": [
+    "Contact:"
+  ],
+  "Kapcsolatfelvételi űrlap": [
+    "Contact form"
+  ],
+  "Kapcsolattartás": [
+    "Contact details"
+  ],
+  "Kapcsolattartói adatok": [
+    "Contact details"
+  ],
+  "Kapcsolódó szolgáltatások": [
+    "Related services"
+  ],
+  "Kapcsolódó szolgáltatások egy helyen": [
+    "Related services in one place"
+  ],
+  "Kategória": [
+    "Category"
+  ],
+  "Kategória (típus)": [
+    "Category (type)"
+  ],
+  "Kedvezményezett": [
+    "Beneficiary"
+  ],
+  "Keresés": [
+    "Search"
+  ],
+  "Keresés: %s": [
+    "Search: %s"
+  ],
+  "Kevesebb felesleges egyeztetés": [
+    "Less unnecessary coordination"
+  ],
+  "Kiemelt referenciák": [
+    "Featured references"
+  ],
+  "Kijelentkezés": [
+    "Log out"
+  ],
+  "Kiválasztja a részfeladatokat, megadja a projekt adatait, és feltölti a meglévő dokumentumokat.": [
+    "You choose the sub-tasks, enter the project details and upload the documents you have."
+  ],
+  "Kiválasztott szolgáltatások": [
+    "Selected services"
+  ],
+  "Kiválasztott szolgáltatások hozzáadása az ajánlatkéréshez": [
+    "Add selected services to the quote request"
+  ],
+  "Kiválasztott tételek": [
+    "Selected items"
+  ],
+  "Kiválasztva": [
+    "Selected"
+  ],
+  "Kiválasztás módosítása": [
+    "Change selection"
+  ],
+  "Konkrét projektre kérne ajánlatot?": [
+    "Would you like a quote for a specific project?"
+  ],
+  "Kosár": [
+    "Cart"
+  ],
+  "Kosár módosítása": [
+    "Edit cart"
+  ],
+  "Kártyás fizetés (Stripe)": [
+    "Card payment (Stripe)"
+  ],
+  "Kép nagyítása": [
+    "Enlarge image"
+  ],
+  "Képek": [
+    "Images"
+  ],
+  "Kérjen ajánlatot": [
+    "Request a quote"
+  ],
+  "Kérjen ajánlatot a projektjéhez": [
+    "Request a quote for your project"
+  ],
+  "Kérjük, töltse ki a kötelező mezőket.": [
+    "Please fill in the required fields."
+  ],
+  "Kérjük, utalja az alábbi összeget a megadott bankszámlára. Az utalás közleményében tüntesse fel az ajánlat számát.": [
+    "Please transfer the following amount to the specified bank account. Indicate the quote number in the transfer reference."
+  ],
+  "Kérés részletei, státusz, dokumentumok és ajánlat.": [
+    "Request details, status, documents and quote."
+  ],
+  "Később is pótolható": [
+    "Can be added later"
+  ],
+  "Köszönjük ajánlatkérését!": [
+    "Thank you for your quote request!"
+  ],
+  "Köszönjük az üzenetét.": [
+    "Thank you for your message."
+  ],
+  "Köszönjük! A fizetés feldolgozása megtörtént.": [
+    "Thank you! The payment has been processed."
+  ],
+  "Köszönjük, megkaptuk az ajánlatkérését": [
+    "Thank you, we have received your quote request"
+  ],
+  "Kötelező": [
+    "Mandatory"
+  ],
+  "Kötelező fájl hiányzik: %s": [
+    "Required file missing: %s"
+  ],
+  "Következő lépés": [
+    "Next step"
+  ],
+  "Közlemény": [
+    "Notification"
+  ],
+  "Közmű csatlakozás koordináció": [
+    "Utility connection coordination"
+  ],
+  "Közmű-koordináció": [
+    "Utility coordination"
+  ],
+  "Közmű-koordináció: Áram-, gáz- és vízszolgáltatói egyeztetések\nTervezés: Csatlakozási tervek készítése": [
+    "Utility coordination: Consultations with electricity, gas and water providers\nDesign: Preparing the connection plans"
+  ],
+  "Lakossági": [
+    "Residential"
+  ],
+  "Lakossági és üzleti projektek": [
+    "Residential and business projects"
+  ],
+  "Lakossági és üzleti projektekhez": [
+    "For residential and business projects"
+  ],
+  "Lakossági és üzleti<br>projektek": [
+    "Residential and<br>business projects"
+  ],
+  "Legalább egy tételt válasszon ki a továbblépéshez.": [
+    "Select at least one item to continue."
+  ],
+  "Lejárt": [
+    "Expired"
+  ],
+  "Letöltés": [
+    "Download"
+  ],
+  "Lábléc": [
+    "Footer"
+  ],
+  "Lábléc menü": [
+    "Footer menu"
+  ],
+  "Lábléc navigáció": [
+    "Footer navigation"
+  ],
+  "Maradok ezen az oldalon": [
+    "I will stay on this page"
+  ],
+  "Marketing": [
+    "Marketing"
+  ],
+  "Megjegyzés": [
+    "Note"
+  ],
+  "Megjegyzés: a jogi szöveget publikálás előtt célszerű jogi szakértővel ellenőriztetni.": [
+    "Note: it is advisable to have the legal text checked by a legal expert before publication."
+  ],
+  "Megkaptuk a megkeresését. A megadott elérhetőségek egyikén felvesszük Önnel a kapcsolatot.": [
+    "We have received your inquiry. We will contact you through one of the provided contact details."
+  ],
+  "Meglévő ajánlatkérés vagy projekt": [
+    "Existing quote request or project"
+  ],
+  "Meglévő ajánlatkérése van?": [
+    "Do you have an existing quote request?"
+  ],
+  "Menü bezárása": [
+    "Close menu"
+  ],
+  "Menü megnyitása": [
+    "Open menu"
+  ],
+  "Meta: _bma_duration – az „Amit csináltunk” blokk utolsó sora.": [
+    "Meta: _bma_duration – the last row of the “What we did” block."
+  ],
+  "Meta: _bma_result – üresen a szekció nem jelenik meg.": [
+    "Meta: _bma_result – if empty, the section is not shown."
+  ],
+  "Meta: _bma_task – üresen a szekció nem jelenik meg.": [
+    "Meta: _bma_task – if empty, the section is not shown."
+  ],
+  "Meta: _bma_work – soronként „Címke: szöveg”. Üresen a szekció kimarad.": [
+    "Meta: _bma_work – one “Label: text” per line. If empty, the section is omitted."
+  ],
+  "Mi volt a feladat?": [
+    "What was the task?"
+  ],
+  "Miben tudunk segíteni?": [
+    "How can we help you?"
+  ],
+  "Mikor lehet erre szüksége?": [
+    "When might you need this?"
+  ],
+  "Mind": [
+    "All"
+  ],
+  "Minden kiválasztott tételre vonatkozik": [
+    "Applies to every selected item"
+  ],
+  "Mire lesz szükség?": [
+    "What will you need?"
+  ],
+  "Mire lesz szükség? – Ha rendelkezésre áll": [
+    "What will you need? – If available"
+  ],
+  "Mire lesz szükség? – Később is pótolható": [
+    "What will you need? – Can be added later"
+  ],
+  "Mire lesz szükség? – Kötelező": [
+    "What will you need? – Required"
+  ],
+  "Mit szeretne kérni?": [
+    "What would you like to request?"
+  ],
+  "Mit tartalmaz a(z) %s?": [
+    "What does %s include?"
+  ],
+  "Mit végeztünk el?": [
+    "What have we completed?"
+  ],
+  "Mobil menü": [
+    "Mobile menu"
+  ],
+  "Most": [
+    "Now"
+  ],
+  "Munkamenet és biztonság (WordPress, bejelentkezés)": [
+    "Session and security (WordPress, login)"
+  ],
+  "Munkaterületek": [
+    "Workspaces"
+  ],
+  "Munkánk során arra törekszünk, hogy a projekt műszaki követelményei, a szükséges dokumentációk és a kapcsolódó egyeztetések egy átlátható és követhető folyamat részeként legyenek kezelhetők.": [
+    "In our work, we strive to ensure that the project's technical requirements, the necessary documentation, and related consultations can be managed as part of a transparent and traceable process."
+  ],
+  "Már az ajánlatkérés során megadhatók a projekt legfontosabb adatai, így az ajánlatkészítés célzottabban indulhat el.": [
+    "The most important project data can already be provided during the quote request, allowing the preparation of the quote to start in a more targeted manner."
+  ],
+  "Már be van jelentkezve": [
+    "Already logged in"
+  ],
+  "Más szolgáltatásra is szüksége lehet? Tekintse meg a kapcsolódó területeket – a kiválasztás az adott szolgáltatás oldalán történik.": [
+    "Do you need another service as well? Check out the related areas – selection is done on the page of the specific service."
+  ],
+  "Még nem töltött fel dokumentumot.": [
+    "You have not uploaded any document yet."
+  ],
+  "Még nem választott tételt. Jelölje be bal oldalon, mire van szüksége – bármennyi tétel egy ajánlatkérésbe kerülhet.": [
+    "You have not selected any items yet. Tick what you need on the left – any number of items can go into one request."
+  ],
+  "Még nincs ajánlatkérése.": [
+    "You do not have any requests for quotation yet."
+  ],
+  "Még nincs dokumentum ehhez a kéréshez.": [
+    "There are no documents for this request yet."
+  ],
+  "Még nincs feltöltött terv ehhez a tételhez.": [
+    "No plan has been uploaded for this item yet."
+  ],
+  "Még nincs feltöltött vagy kapott dokumentum.": [
+    "No uploaded or received documents yet."
+  ],
+  "Még nincs státuszváltozás.": [
+    "No status changes yet."
+  ],
+  "Mérnöki tervezés <em>átlátható</em> folyamattal": [
+    "Engineering design with a <em>transparent</em> process"
+  ],
+  "Mérnöki tervezés átlátható folyamattal": [
+    "Engineering design with a transparent process"
+  ],
+  "Műszaki dokumentum": [
+    "Technical document"
+  ],
+  "Műszaki dokumentáció": [
+    "Technical documentation"
+  ],
+  "Művelet": [
+    "Operation"
+  ],
+  "Navigáció": [
+    "Navigation"
+  ],
+  "Nem baj, ha nincs meg minden. Az ajánlatkéréshez elég annyi, amennyi rendelkezésére áll – a többit menet közben pótoljuk.": [
+    "It is fine if you do not have everything. Whatever you have is enough for the request – we will fill in the rest as we go."
+  ],
+  "Nem biztos benne, melyik szolgáltatásra van szüksége?": [
+    "Not sure which service you need?"
+  ],
+  "Nem felelünk külső oldalak tartalmáért. A folyamatos működés nem garantálható. A weboldali általános információ nem helyettesíti az egyedi műszaki felmérést.": [
+    "We are not responsible for the content of external sites. Continuous operation cannot be guaranteed. The general information on the website does not replace an individual technical survey."
+  ],
+  "Nem szükséges minden műszaki részletet előre ismernie. Adja meg a rendelkezésére álló információkat és dokumentumokat, mi pedig ezek alapján felmérjük a projektet és elkészítjük az ajánlatot.": [
+    "It is not necessary to know every technical detail in advance. Provide the information and documents available to you, and based on these, we will assess the project and prepare the quote."
+  ],
+  "Nem találja, amire szüksége van?": [
+    "Can't find what you need?"
+  ],
+  "Nettó összeg": [
+    "Net amount"
+  ],
+  "Nincs a szűrésnek megfelelő referencia.": [
+    "No reference matches the filter."
+  ],
+  "Nincs ajánlat": [
+    "No quote"
+  ],
+  "Nincs jogosultsága.": [
+    "You do not have permission."
+  ],
+  "Nincs kiválasztott szolgáltatáselem.": [
+    "No service item selected."
+  ],
+  "Nincs kiválasztott tétel.": [
+    "No items selected."
+  ],
+  "Nincs megadott projektadat.": [
+    "No project details provided."
+  ],
+  "Nincs részletes elem kiválasztva – a szolgáltatás oldalán szerkesztheti.": [
+    "No detailed item selected – you can edit it on the service page."
+  ],
+  "Nincs találat a keresésre. Próbáljon másik kifejezést, vagy böngésszen a szolgáltatások között.": [
+    "No results for the search. Try another term, or browse through the services."
+  ],
+  "Nyelv választása": [
+    "Choose language"
+  ],
+  "Nyelvek": [
+    "Languages"
+  ],
+  "Nyelvválasztó": [
+    "Language selector"
+  ],
+  "Nyitvatartás": [
+    "Opening hours"
+  ],
+  "Nyitvatartás: %s": [
+    "Opening hours: %s"
+  ],
+  "Nyomon követés": [
+    "Tracking"
+  ],
+  "Négy szolgáltatási terület, azon belül konkrét részfeladatokkal. Az ajánlatkérésbe bármennyi tétel bekerülhet.": [
+    "Four service areas, within which there are specific tasks. Any number of items can be included in the quote request."
+  ],
+  "Név": [
+    "Name"
+  ],
+  "Odorheiu Secuiesc · Harghita": [
+    "Odorheiu Secuiesc · Harghita"
+  ],
+  "Odorheiu Secuiesc,<br>Hargita, Románia": [
+    "Odorheiu Secuiesc,<br>Harghita, Romania"
+  ],
+  "PDF, DWG, JPG, DOCX · legfeljebb %d MB": [
+    "PDF, DWG, JPG, DOCX · max. %d MB"
+  ],
+  "PDF, DWG, JPG, DOCX · legfeljebb %d MB / fájl": [
+    "PDF, DWG, JPG, DOCX · max. %d MB per file"
+  ],
+  "Piszkozat": [
+    "Draft"
+  ],
+  "Projekt adatai": [
+    "Project details"
+  ],
+  "Projekt adatok": [
+    "Project data"
+  ],
+  "Projekt alapadatai": [
+    "Project details"
+  ],
+  "Projekt fotó": [
+    "Project photo"
+  ],
+  "Projekt megtekintése": [
+    "View project"
+  ],
+  "Projekt megtekintése →": [
+    "View project →"
+  ],
+  "Projekt típusa": [
+    "Project type"
+  ],
+  "Projekt típusa (kicker)": [
+    "Project type (kicker)"
+  ],
+  "Projektadatok": [
+    "Project data"
+  ],
+  "Projektek": [
+    "Projects"
+  ],
+  "Projektgaléria": [
+    "Project gallery"
+  ],
+  "Példa: új lakóépület – összeállított ajánlatkérés": [
+    "Example: new residential building – compiled quote request"
+  ],
+  "Referencia": [
+    "Reference"
+  ],
+  "Referencia projekt": [
+    "Reference project"
+  ],
+  "Referenciák": [
+    "References"
+  ],
+  "Részfeladatok": [
+    "Sub-tasks"
+  ],
+  "Részletek": [
+    "Details"
+  ],
+  "Részletek és kiválasztás →": [
+    "Details and selection →"
+  ],
+  "Rólunk": [
+    "About us"
+  ],
+  "Röviden": [
+    "In brief"
+  ],
+  "Röviden írja le a kérdését vagy a projektjét…": [
+    "Briefly describe your question or project…"
+  ],
+  "Segítségre van szüksége?": [
+    "Need help?"
+  ],
+  "Sikeres": [
+    "Successful"
+  ],
+  "Sikeres beküldés": [
+    "Successful submission"
+  ],
+  "Sikeres fizetés": [
+    "Successful payment"
+  ],
+  "Sikeresen kijelentkezett.": [
+    "Successfully logged out."
+  ],
+  "Státusz": [
+    "Status"
+  ],
+  "Státusz: %s": [
+    "Status: %s"
+  ],
+  "Státuszelőzmények": [
+    "Status history"
+  ],
+  "Szennyvízbekötési terv": [
+    "Sewage connection plan"
+  ],
+  "Szeretnék ügyfélfiókot létrehozni az ajánlatkérések követéséhez.": [
+    "I would like to create a client account to track quote requests."
+  ],
+  "Szerződés teljesítése:": [
+    "Contract fulfillment:"
+  ],
+  "Szolgáltatás": [
+    "Service"
+  ],
+  "Szolgáltatás megtekintése": [
+    "View service"
+  ],
+  "Szolgáltatási területek": [
+    "Service areas"
+  ],
+  "Szolgáltatások": [
+    "Services"
+  ],
+  "Szolgáltatások kiválasztása": [
+    "Select services"
+  ],
+  "Szolgáltatások: %s": [
+    "Services: %s"
+  ],
+  "Számlázási cím": [
+    "Billing address"
+  ],
+  "Székhely": [
+    "Headquarters"
+  ],
+  "Szükség esetén hozzáférhetnek: tárhelyszolgáltató, e-mail-szolgáltató, weboldal-karbantartó, analitikai szolgáltatók (hozzájárulás esetén), könyvelési vagy jogi szolgáltatók, valamint a választott fizetési szolgáltató (pl. Stripe), ha online fizetést használ.": [
+    "If necessary, they may be accessed by: hosting provider, email provider, website maintenance, analytics providers (with consent), accounting or legal service providers, as well as the chosen payment service provider (e.g., Stripe) if online payment is used."
+  ],
+  "Szükséges": [
+    "Required"
+  ],
+  "Szűrés": [
+    "Filtering"
+  ],
+  "Szűrés típus és szolgáltatás szerint": [
+    "Filter by type and service"
+  ],
+  "TERVEK": [
+    "PLANS"
+  ],
+  "Technikai használat során": [
+    "During technical use"
+  ],
+  "Teendő: ajánlat elfogadása": [
+    "To do: accept the quote"
+  ],
+  "Teendő: díjbekérő rendezése": [
+    "To do: pay the proforma invoice"
+  ],
+  "Telefon": [
+    "Phone"
+  ],
+  "Teljes név": [
+    "Full name"
+  ],
+  "Terv": [
+    "Plan"
+  ],
+  "Terv elérhető": [
+    "Plan available"
+  ],
+  "Tervek": [
+    "Plans"
+  ],
+  "Tervek készítése folyamatban": [
+    "Plans in preparation"
+  ],
+  "Tervezés": [
+    "Design"
+  ],
+  "Tervezés · Engedélyeztetés · Közmű-koordináció": [
+    "Design · Permitting · Utility coordination"
+  ],
+  "Tervrajzok, dokumentumok": [
+    "Drawings, documents"
+  ],
+  "Tipikus átfutás: [X–Y] hét": [
+    "Typical turnaround: [X–Y] weeks"
+  ],
+  "Tovább": [
+    "Continue"
+  ],
+  "Tovább az adatokhoz": [
+    "Continue to details"
+  ],
+  "Tovább az ajánlatkéréshez": [
+    "Proceed to quote request"
+  ],
+  "Tovább – adatok megadása": [
+    "Next – enter data"
+  ],
+  "További dokumentum feltöltése": [
+    "Upload additional document"
+  ],
+  "További megjegyzés": [
+    "Additional notes"
+  ],
+  "További projektek": [
+    "More projects"
+  ],
+  "További szolgáltatás": [
+    "Additional service"
+  ],
+  "Továbblépés hozzáadás nélkül": [
+    "Proceed without adding"
+  ],
+  "Téma": [
+    "Subject"
+  ],
+  "Térkép betöltése": [
+    "Load map"
+  ],
+  "Tétel": [
+    "Item"
+  ],
+  "Tétel #%d": [
+    "Item #%d"
+  ],
+  "Tétel eltávolítása": [
+    "Remove item"
+  ],
+  "Tételenkénti adatok": [
+    "Per-item details"
+  ],
+  "Típus": [
+    "Type"
+  ],
+  "Típus: %s": [
+    "Type: %s"
+  ],
+  "Több elemet is kiválaszthat. Csak azokat jelölje be, amelyekre a projektjéhez szüksége van.": [
+    "You can select multiple items. Only check those that you need for your project."
+  ],
+  "Több szolgáltatásra van szüksége?": [
+    "Do you need multiple services?"
+  ],
+  "Töltse ki a kiválasztott tételekhez tartozó adatokat, és töltse fel a meglévő tervrajzokat.": [
+    "Fill in the data for the selected items and upload the existing plans."
+  ],
+  "Törlés": [
+    "Delete"
+  ],
+  "Ugrás a tartalomhoz": [
+    "Skip to content"
+  ],
+  "Utalási adatok": [
+    "Bank transfer details"
+  ],
+  "Utolsó frissítés: 2026. augusztus": [
+    "Last updated: August 2026"
+  ],
+  "Van egy projektje, amelyhez tervezésre, engedélyeztetésre, műszaki dokumentációra vagy közmű-koordinációra van szüksége?": [
+    "Do you have a project that requires design, permitting, technical documentation, or utility coordination?"
+  ],
+  "Vegye fel velünk a kapcsolatot, vagy ha már tudja, milyen szolgáltatást keres, indítsa el az online ajánlatkérést.": [
+    "Contact us, or if you already know what service you are looking for, start the online quote request."
+  ],
+  "Vissza": [
+    "Back"
+  ],
+  "Vissza a főoldalra": [
+    "Back to homepage"
+  ],
+  "Vissza a portálra": [
+    "Back to portal"
+  ],
+  "Vissza a szolgáltatásokhoz": [
+    "Back to services"
+  ],
+  "Vissza az ajánlatkéréshez": [
+    "Back to quote request"
+  ],
+  "Vissza az ügyfélportálra": [
+    "Back to the client portal"
+  ],
+  "Visszaigazolás": [
+    "Confirmation"
+  ],
+  "Visszaigazoló e-mailt küldtünk a megadott címre. Munkatársunk hamarosan feldolgozza kérését.": [
+    "We have sent a confirmation email to the provided address. Our colleague will process your request shortly."
+  ],
+  "Visszajelzés [X] munkanapon belül, kötelezettség nélkül.": [
+    "Reply within [X] working days, no obligation."
+  ],
+  "Visszavonva": [
+    "Withdrawn"
+  ],
+  "Válassza ki a projektjéhez szükséges szolgáltatásokat és azokon belül a konkrét részfeladatokat.": [
+    "Select the services required for your project and the specific sub-tasks within them."
+  ],
+  "Válassza ki a szükséges részfeladatokat, és néhány adat megadásával kérjen ajánlatot. Az ajánlatkérés díjmentes és nem jár kötelezettséggel.": [
+    "Choose the sub-tasks you need and request a quote by filling in a few details. It is free and without obligation."
+  ],
+  "Válassza ki a szükséges szolgáltatásokat, adja meg a projekt alapadatait, és néhány napon belül személyre szabott ajánlatot küldünk.": [
+    "Choose the services you need, enter the project details, and we will send a tailored quote within a few days."
+  ],
+  "Válassza ki a szükséges szolgáltatásokat, adja meg a projekt alapadatait, és töltse fel a rendelkezésére álló dokumentumokat. Ezek alapján pontosabb ajánlatot tudunk készíteni.": [
+    "Select the necessary services, provide the basic data of the project, and upload the available documents. Based on this, we can prepare a more accurate quote."
+  ],
+  "Válassza ki a szükséges szolgáltatásokat, és küldje el a projekt alapadatait.": [
+    "Select the necessary services and submit the project's basic data."
+  ],
+  "Válassza ki a szükséges szolgáltatásokat, és néhány adat megadásával kérjen személyre szabott ajánlatot.": [
+    "Select the necessary services and request a tailored quote by providing some information."
+  ],
+  "Válassza ki az Ön projektjéhez kapcsolódó szolgáltatási területet. Egy ajánlatkérésben több szolgáltatást és azokon belül több részfeladatot is megjelölhet.": [
+    "Select the service area related to your project. In one quote request, you can indicate multiple services and several sub-tasks within them."
+  ],
+  "Válassza ki azokat a tételeket, amelyekre a projektjéhez szüksége van. Bármelyik kombinálható a többi szolgáltatási területtel.": [
+    "Choose the items your project needs. Any of them can be combined with the other service areas."
+  ],
+  "Válassza ki, mire van szüksége a projektjéhez, adja meg a rendelkezésére álló adatokat, és kérjen személyre szabott ajánlatot. A folyamat minden lépését egy helyen követheti.": [
+    "Select what you need for your project, provide the available information, and request a tailored quote. You can follow every step of the process in one place."
+  ],
+  "Válasszon fizetési módot": [
+    "Choose a payment method"
+  ],
+  "Válasszon témát…": [
+    "Select a topic…"
+  ],
+  "Válasz [X] munkanapon belül": [
+    "Reply within [X] business days"
+  ],
+  "Válogatás megvalósult tervezési, engedélyeztetési és közmű-koordinációs munkáinkból.": [
+    "Selection of our completed design, permitting, and utility coordination works."
+  ],
+  "Válogatás megvalósult tervezési, engedélyeztetési, közmű-koordinációs és dokumentációs munkáinkból. Szűrjön projekttípus vagy szolgáltatás szerint.": [
+    "A selection of our completed design, permitting, utility coordination and documentation work. Filter by project type or service."
+  ],
+  "Vízbekötési terv": [
+    "Water connection plan"
+  ],
+  "Vízmű egyeztetés": [
+    "Water utility consultation"
+  ],
+  "Weboldal": [
+    "Website"
+  ],
+  "Weboldal biztonsága:": [
+    "Website security:"
+  ],
+  "Weboldalunk sütiket használ a működéshez, statisztikához és marketing célokra. Részletek: Cookie tájékoztató.": [
+    "Our website uses cookies for operation, statistics, and marketing purposes. Details: Cookie information."
+  ],
+  "[MAGYAR / ROMÁN]": [
+    "[HUNGARIAN / ROMANIAN]"
+  ],
+  "[Projekt fotó]": [
+    "[Project photo]"
+  ],
+  "[X] munkanapon belül": [
+    "Within [X] working days"
+  ],
+  "ajánlatok és projektinformációk elérése ügyfélfiókon keresztül": [
+    "Access to quotes and project information through a client account"
+  ],
+  "az ajánlat %d napig érvényes": [
+    "the quote is valid for %d days"
+  ],
+  "csak megfelelő hozzájárulás esetén (GA4 / GTM).": [
+    "Only with proper consent (GA4 / GTM)."
+  ],
+  "cég és szolgáltatások bemutatása": [
+    "Introduction of company and services"
+  ],
+  "egy ajánlatkérésben több szolgáltatást is összeállíthat.": [
+    "In a single quote request, multiple services can also be compiled."
+  ],
+  "feltöltheti a rendelkezésre álló terveket és dokumentumokat;": [
+    "You can upload the available plans and documents;"
+  ],
+  "fiókazonosító adatok, e-mail, ajánlatkérések, ajánlatok, státuszok, feltöltött és letöltött dokumentumok, technikai használati adatok": [
+    "account identification data, e-mail, quote requests, quotes, statuses, uploaded and downloaded documents, technical usage data"
+  ],
+  "igényfelmérés, ajánlatkészítés, szerződés előkészítése.": [
+    "needs assessment, preparation of quotes, preparation of contracts."
+  ],
+  "kapcsolatfelvétel és ajánlatkérés": [
+    "contact and quote request"
+  ],
+  "kiválaszthatja a szükséges szolgáltatásokat;": [
+    "you can select the required services;"
+  ],
+  "megadhatja a projekt alapadatait;": [
+    "you can provide the basic project data;"
+  ],
+  "megjelölheti a konkrét részfeladatokat;": [
+    "you can mark specific sub-tasks;"
+  ],
+  "megkeresések megválaszolása.": [
+    "responding to inquiries."
+  ],
+  "nev@ceg.ro": [
+    "name@company.ro"
+  ],
+  "nev@example.com": [
+    "name@example.com"
+  ],
+  "név, e-mail, telefon, cégnév és adószám (ha megadja), számlázási/projektadatok, kiválasztott szolgáltatások, feltöltött dokumentumok, kapcsolódó kommunikáció": [
+    "name, e-mail, phone, company name and tax number (if provided), billing/project data, selected services, uploaded documents, related communication"
+  ],
+  "név, e-mail, telefonszám (ha megadja), téma, üzenet, beküldés időpontja": [
+    "name, e-mail, phone number (if provided), subject, message, submission time"
+  ],
+  "pl. 3 hónap": [
+    "e.g. 3 months"
+  ],
+  "referenciák megjelenítése": [
+    "display references"
+  ],
+  "szolgáltatás, dokumentumkezelés, kapcsolattartás.": [
+    "service, document management, contact"
+  ],
+  "számviteli és jogszabályi kötelezettségek.": [
+    "accounting and legal obligations"
+  ],
+  "visszaélések megelőzése.": [
+    "prevention of abuses"
+  ],
+  "ÁFA": [
+    "VAT"
+  ],
+  "ÁSZF": [
+    "Terms and Conditions"
+  ],
+  "Állítsa össze, mire van szüksége, és néhány adat megadásával kérjen személyre szabott ajánlatot.": [
+    "Put together what you need and request a tailored quote by filling in a few details."
+  ],
+  "Általános felhasználási feltételek": [
+    "General terms of use"
+  ],
+  "Általános érdeklődés": [
+    "General inquiry"
+  ],
+  "Átadás": [
+    "Handover"
+  ],
+  "Átadási dokumentum": [
+    "Handover document"
+  ],
+  "Átalakítás": [
+    "Conversion"
+  ],
+  "Átfutás": [
+    "Turnaround"
+  ],
+  "Átlátható folyamat": [
+    "Transparent process"
+  ],
+  "Átláthatóbb műszaki ügyintézés": [
+    "More transparent technical administration"
+  ],
+  "Átnézzük a megadott adatokat, és ha szükséges, egyeztetünk a hiányzó részletekről.": [
+    "We review the details you provided and, if needed, discuss anything missing."
+  ],
+  "Átnézzük az adatokat, szükség esetén egyeztetünk, majd elkészítjük az ajánlatot.": [
+    "We review the details, consult if needed, then prepare the quote."
+  ],
+  "Építési engedély előkészítés": [
+    "Preparation of building permit"
+  ],
+  "Érvényes": [
+    "Valid"
+  ],
+  "Érvényes: %s": [
+    "Valid until: %s"
+  ],
+  "Érvénytelen beküldés. Frissítse az oldalt, és próbálja újra.": [
+    "Invalid submission. Please refresh the page and try again."
+  ],
+  "Érvénytelen e-mail cím.": [
+    "Invalid email address."
+  ],
+  "Év": [
+    "Year"
+  ],
+  "Év: %s": [
+    "Year: %s"
+  ],
+  "Írja le röviden a projektet és a jelenlegi helyzetet. Segítünk meghatározni, milyen tervezési, engedélyeztetési vagy dokumentációs feladatokra lehet szükség.": [
+    "Briefly describe the project and the current situation. We will help determine what design, permitting, or documentation tasks may be needed."
+  ],
+  "Írja le röviden a projektet, és segítünk összeállítani a szükséges tételeket.": [
+    "Briefly describe the project and we will help you put together the items you need."
+  ],
+  "Írjon nekünk": [
+    "Write to us"
+  ],
+  "Összeg": [
+    "Amount"
+  ],
+  "Összegzés": [
+    "Summary"
+  ],
+  "Összes": [
+    "All"
+  ],
+  "Összes elfogadása": [
+    "Accept all"
+  ],
+  "Összes kérés": [
+    "All requests"
+  ],
+  "Összes referencia": [
+    "All references"
+  ],
+  "Összes szolgáltatás": [
+    "All services"
+  ],
+  "Összesítés": [
+    "Summation"
+  ],
+  "Új ajánlat": [
+    "New quote"
+  ],
+  "Új ajánlatkérés": [
+    "New quote request"
+  ],
+  "Új építés": [
+    "New build"
+  ],
+  "Útvonaltervezés": [
+    "Route planning"
+  ],
+  "Üdvözöljük, %1$s · %2$s": [
+    "Welcome, %1$s · %2$s"
+  ],
+  "Üdvözöljük, %s!": [
+    "Welcome, %s!"
+  ],
+  "Ügyfél feltöltés": [
+    "Client upload"
+  ],
+  "Ügyfélfiók használata esetén": [
+    "When using a client account"
+  ],
+  "Ügyfélportál": [
+    "Client portal"
+  ],
+  "Ügyfélportál megnyitása": [
+    "Open client portal"
+  ],
+  "Ügyfélterület": [
+    "Client area"
+  ],
+  "Üzenet": [
+    "Message"
+  ],
+  "Üzenet küldése": [
+    "Send Message"
+  ],
+  "Üzleti": [
+    "Business"
+  ],
+  "← Vissza a portálra": [
+    "← Back to the portal"
+  ]
 }

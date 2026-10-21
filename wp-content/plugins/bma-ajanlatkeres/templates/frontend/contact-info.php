@@ -20,7 +20,7 @@ $hours   = BMA_AJ_Company::get( 'opening_hours' );
 <section class="bma-section bma-contact-band" aria-labelledby="bma-contact-info-title">
 	<div class="bma-container bma-contact-band-inner">
 		<div class="bma-contact-band-copy">
-			<p class="bma-section-eyebrow bma-section-eyebrow--light"><?php esc_html_e( 'Kapcsolat', 'bma-ajanlatkeres' ); ?></p>
+			<p class="bma-section-eyebrow bma-section-eyebrow--light"><?php BMA_AJ_Content::e( 'home.contact.eyebrow' ); ?></p>
 			<h2 id="bma-contact-info-title"><?php echo esc_html( $company ?: 'BMA Engineering' ); ?></h2>
 			<?php if ( $addr ) : ?>
 				<p><?php echo nl2br( esc_html( $addr ) ); ?></p>
@@ -42,8 +42,8 @@ $hours   = BMA_AJ_Company::get( 'opening_hours' );
 			<?php endif; ?>
 		</div>
 		<div class="bma-contact-band-actions">
-			<a href="<?php echo esc_url( ( class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'szolgaltatasok' ) : home_url( '/szolgaltatasok/' ) ) ); ?>" class="bma-btn bma-btn-accent bma-btn-lg"><?php esc_html_e( 'Ajánlatkérés indítása', 'bma-ajanlatkeres' ); ?></a>
-			<a href="<?php echo esc_url( ( class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'kapcsolat' ) : home_url( '/kapcsolat/' ) ) ); ?>" class="bma-btn bma-btn-ghost"><?php esc_html_e( 'Kapcsolat', 'bma-ajanlatkeres' ); ?></a>
+			<a href="<?php echo esc_url( ( class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'szolgaltatasok' ) : home_url( '/szolgaltatasok/' ) ) ); ?>" class="bma-btn bma-btn-accent bma-btn-lg"><?php BMA_AJ_Content::e( 'home.contact.cta_primary' ); ?></a>
+			<a href="<?php echo esc_url( ( class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'kapcsolat' ) : home_url( '/kapcsolat/' ) ) ); ?>" class="bma-btn bma-btn-ghost"><?php BMA_AJ_Content::e( 'home.contact.cta_secondary' ); ?></a>
 		</div>
 	</div>
 </section>

@@ -1,15 +1,33 @@
-<!-- Fooldal szekcio-markup -->
-<!-- Forras: Claude Design vaszon, BMA Engineering - oldalfejlesztes -->
+<!--
+  Oldal:    /
+  Cel PHP:  plugins/bma-ajanlatkeres/templates/frontend/home-hero.php, home-services.php,
+       home-multi.php, home-benefits.php, home-process.php, home-references.php,
+       home-about.php, home-closing.php  (shortcode: [bma_home_*])
+  Komponensek: .hero .valuestrip .svc-card .multi .process .benefits .refs .about .closing .mobilebar
+  Jelolesek:   {{...}} = dinamikus ertek (lasd README 'Token-szotar')
+               [SZOGLETES ZAROJEL] = kitoltendo valos adat
+               <sc-if> / <sc-for> = felteteles blokk / ismetles (PHP if / foreach)
+  FIGYELEM: mielott barmely szoveget lecserelnel, olvasd el a SZOVEGVALTOZASOK.md-t.
+            Ugyanez a markup szolgal ki desktopot, tabletet es mobilt.
+-->
 
 <div class="topbar">
   <div class="topbar-inner">
     <span>+40 728 205 982</span>
     <span>office@bmaeng.ro</span>
     <span>Hétfő–Péntek, 08:00–17:00</span>
+    <div class="langswitch" role="group" aria-label="Nyelv választása">
+      <a href="#" class="lang is-on" lang="hu" hreflang="hu" aria-current="true">HU</a>
+      <a href="#" class="lang" lang="ro" hreflang="ro">RO</a>
+      <a href="#" class="lang" lang="en" hreflang="en">EN</a>
+    </div>
   </div>
 </div>
 <header class="siteheader">
   <div class="header-inner">
+    <button type="button" class="burger" aria-label="Menü megnyitása">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#0e2356" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+    </button>
     <div class="logo">[LOGÓ]</div>
     <nav class="nav">
       <a href="#">Főoldal</a>
@@ -148,9 +166,9 @@
       <div>
         <p class="eyebrow">Ajánlatkérés</p>
         <h2 class="h2">Egy projekt ritkán csak egyetlen feladatból áll</h2>
-        <p style="margin:18px 0 0;font-size:18px;line-height:1.6;color:#4a5a7d">Egy építési vagy fejlesztési projekt során a tervezés, az engedélyeztetés, a közműcsatlakozások és a műszaki dokumentáció gyakran egymásra épül.</p>
+        <p style="margin:18px 0 0;font-size:18px;line-height:1.6;color:#4a5a7d">Egy építési vagy fejlesztési projekt során a tervezés, az engedélyeztetés, a közműcsatlakozások és a műszaki dokumentáció gyakran egymásra épülnek.</p>
         <p style="margin:14px 0 0;font-size:18px;line-height:1.6;color:#4a5a7d">Nem szükséges minden műszaki részletet előre ismernie. Adja meg a rendelkezésére álló információkat és dokumentumokat, mi pedig ezek alapján felmérjük a projektet és elkészítjük az ajánlatot.</p>
-        <div style="display:flex;gap:14px;margin-top:28px;flex-wrap:wrap">
+        <div class="btnrow" style="display:flex;gap:14px;margin-top:28px;flex-wrap:wrap">
           <a href="#" class="btn btn--primary">Szolgáltatások kiválasztása</a>
           <a href="#" class="btn btn--outline">Kapcsolat</a>
         </div>
@@ -278,7 +296,7 @@
         <div style="margin-top:26px"><a href="#" class="btn btn--outline">Kapcsolat</a></div>
       </div>
       <div class="factbox">
-        <div class="factrow"><span>Székhely</span><strong>Odorheiu Secuiesc,<br>Hargita, Románia</strong></div>
+        <div class="factrow"><span>Székhely</span><strong>Odorheiu Secuiesc,<br>Harghita, Romania</strong></div>
         <div class="factrow"><span>CUI</span><strong>40593519</strong></div>
         <div class="factrow"><span>Munkaterületek</span><strong>Lakossági és üzleti<br>projektek</strong></div>
         <div class="factrow"><span>Nyelvek</span><strong>[MAGYAR / ROMÁN]</strong></div>
@@ -303,6 +321,11 @@
   </div>
 </section>
 
+<div class="mobilebar">
+  <span class="mobilebar-info"><strong>Kérjen ajánlatot</strong><span>Díjmentes, kötelezettség nélkül</span></span>
+  <a href="#" class="btn btn--primary btn--sm">Ajánlatkérés</a>
+</div>
+
 <footer class="footer">
   <div class="footer-inner">
     <div>
@@ -311,6 +334,13 @@
       <div class="small" style="line-height:1.6">Str. Raza Soarelui 11<br>535600 Odorheiu Secuiesc<br>Harghita, Romania</div>
       <div class="small" style="margin-top:12px">+40 728 205 982 · office@bmaeng.ro</div>
       <div class="small" style="margin-top:6px">CUI: 40593519</div>
+      <div style="margin-top:18px">
+        <div class="langswitch langswitch--light" role="group" aria-label="Nyelv választása">
+          <a href="#" class="lang is-on" lang="hu" hreflang="hu" aria-current="true">HU</a>
+          <a href="#" class="lang" lang="ro" hreflang="ro">RO</a>
+          <a href="#" class="lang" lang="en" hreflang="en">EN</a>
+        </div>
+      </div>
     </div>
     <div>
       <h4>Navigáció</h4>

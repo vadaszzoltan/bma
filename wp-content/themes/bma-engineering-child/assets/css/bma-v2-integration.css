@@ -1,0 +1,363 @@
+/* =====================================================================
+   Téma-specifikus illesztések a WP markuphoz.
+
+   Betöltés: bma-v2.css UTÁN (függőség: bma-v2).
+   A design CSS (bma-v2.css) csomagból jön – ide NE kerüljön design szabály.
+   ===================================================================== */
+
+/* ---- WP menü (wp_nav_menu → .bma-menu) ---- */
+.nav .bma-menu,
+.nav ul {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav .bma-menu a,
+.nav a {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--bma-primary);
+}
+.nav .bma-menu a:hover,
+.nav a:hover { color: var(--bma-accent); }
+
+/* ---- Logo (custom-logo / placeholder) ---- */
+.logo .bma-logo-block,
+.logo .bma-logo-placeholder-box {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--bma-font-heading);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  background: var(--bma-accent);
+  text-decoration: none;
+}
+.logo a:hover { color: #fff; }
+
+/* ---- Header actions / kosár CTA ---- */
+.header-actions .bma-header-login:not(.btn) {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  color: var(--bma-primary);
+}
+.cart-btn { color: #fff; }
+.cart-btn:hover { color: #fff; background: var(--bma-accent-dark); }
+.bma-site-header .bma-header-cta { background: var(--bma-accent); border: 0; }
+
+/* ---- Footer WP menü ---- */
+.footer .footer-links .bma-menu,
+.footer .bma-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer .bma-menu a { color: #d7deea; }
+.footer .bma-menu a:hover { color: #fff; }
+
+/* ---- Topbar contacts ---- */
+.bma-topbar-contacts { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+.bma-topbar-item { color: var(--bma-muted); text-decoration: none; }
+.bma-topbar-item:hover { color: var(--bma-primary); }
+
+/* ---- Hero fotóréteg + referencia thumbnail (adatvezérelt img) ---- */
+.hero-media { position: absolute; inset: 0; opacity: .18; pointer-events: none; overflow: hidden; }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; }
+.ref-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ---- A11y: clip-based visually-hidden (not display:none) ---- */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Label-based task cards (checkbox pattern) */
+label.task {
+  position: relative;
+  margin: 0;
+  font-weight: inherit;
+}
+label.task .visually-hidden:focus + .box {
+  outline: 2px solid var(--bma-accent);
+  outline-offset: 2px;
+}
+
+/* Step strip links */
+a.stepchip {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: none;
+  border: 0;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+}
+a.stepchip:hover { color: #fff; }
+
+/* Disabled CTA links */
+a.btn.is-disabled,
+a.btn.is-disabled:hover {
+  background: #cfd6e4;
+  border-color: #cfd6e4;
+  color: #fff;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Hide no-JS submit when selection JS is active */
+/* .btn { display:inline-flex } overrides the UA [hidden] rule – force hide. */
+[hidden] { display: none !important; }
+html.bma-js [data-bma-nojs-cta] { display: none !important; }
+
+/* Service detail: selected task card */
+.taskcard.is-sel {
+  border-color: var(--bma-accent);
+  background: var(--bma-tint);
+}
+.taskcard .bma-item-checkbox { position: absolute; }
+
+/* FAQ details/summary */
+.faq-item > summary.faq-q {
+  list-style: none;
+  cursor: pointer;
+}
+.faq-item > summary.faq-q::-webkit-details-marker { display: none; }
+.faq-item > summary.faq-q::after {
+  content: "+";
+  flex: none;
+  color: var(--bma-muted);
+  font-weight: 700;
+}
+.faq-item[open] > summary.faq-q::after {
+  content: "–";
+  color: var(--bma-accent);
+}
+
+.bma-site-main { padding: 0; }
+
+/* ---- Mobile nav panel (burger) ---- */
+.bma-mobile-nav {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 40;
+  background: rgba(14, 35, 86, 0.28);
+  min-height: calc(100vh - 100%);
+}
+.siteheader { position: relative; }
+.bma-mobile-nav-panel {
+  background: #fff;
+  border-top: 1px solid var(--bma-border);
+  box-shadow: 0 18px 40px rgba(14, 35, 86, 0.14);
+  padding: 18px 20px 28px;
+  max-height: min(78vh, 640px);
+  overflow: auto;
+}
+.bma-mobile-nav-menu .bma-menu,
+.bma-mobile-nav-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bma-mobile-nav-menu a {
+  display: block;
+  padding: 14px 4px;
+  border-bottom: 1px solid var(--bma-border);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: var(--bma-primary);
+  text-decoration: none;
+}
+.bma-mobile-nav-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+.bma-mobile-nav-link {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  color: var(--bma-primary);
+  text-decoration: none;
+}
+.bma-mobile-nav-lang { margin-top: 18px; }
+body.bma-nav-open { overflow: hidden; }
+body.bma-nav-open .bma-mobile-nav { display: block; }
+
+/* Legacy theme hamburger – redesign a .burger-t használja */
+.bma-nav-toggle { display: none !important; }
+
+/* Quote flow – dropzone file input + form errors */
+.drop { position: relative; cursor: pointer; }
+.drop.is-dragover { border-color: var(--bma-accent, #ee7643); background: #fff7f3; }
+.drop .bma-file-input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+.bma-form-errors {
+  background: #fdecea;
+  color: #8a1f11;
+  border: 1px solid #f5c6cb;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.bma-quote-cart .bma-form-field,
+.bma-quote-submit .bma-form-field { margin: 0; }
+.bma-quote-submit .bma-checkrow input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex: none;
+}
+
+/* Portal: filter tiles/tabs as links */
+a.stat {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  border: 1px solid var(--bma-border);
+  background: #fff;
+  cursor: pointer;
+}
+a.stat:hover { border-color: #b9c6de; }
+a.stat.is-on { border-color: var(--bma-accent); box-shadow: inset 0 -3px 0 var(--bma-accent); }
+a.tab {
+  text-decoration: none;
+  display: inline-block;
+  width: auto;
+}
+.tl { padding-left: 22px; }
+
+/* References */
+a.fchip { text-decoration: none; }
+.rd-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.gallery .bma-ref-gallery-item,
+.gallery button {
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+}
+.gallery img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 640px) {
+  .gallery { grid-template-columns: 1fr; }
+}
+
+/*
+ * Célzott pótlások a törölt max-width:960px blokk + legacy theme.css ütközés helyett.
+ * A design CSS 1100/900/640 töréspontjait használjuk; itt csak WP-specifikus rés.
+ */
+
+/* theme.css .bma-header-* szabályai ütköztek a redesign .header-inner sorával */
+.header-inner.bma-header-inner {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
+}
+.header-inner .logo.bma-logo,
+.header-inner .burger,
+.header-inner .nav.bma-main-nav,
+.header-inner .header-actions.bma-header-actions {
+  order: 0;
+}
+.header-inner .nav.bma-main-nav {
+  flex: 1 1 auto;
+  width: auto;
+  padding: 0;
+  min-width: 0;
+}
+.header-inner .nav .bma-menu,
+.header-inner .nav ul {
+  flex-wrap: nowrap;
+}
+.header-inner .header-actions.bma-header-actions {
+  width: auto;
+  margin-left: auto;
+  padding: 0;
+  border-top: 0;
+  flex-wrap: nowrap;
+  flex: 0 0 auto;
+}
+.header-inner .logo.bma-logo {
+  flex: 0 0 auto;
+}
+.header-inner .logo .bma-logo-block {
+  min-width: 0;
+  padding: 0;
+}
+
+@media (max-width: 1100px) {
+  .header-inner.bma-header-inner { gap: 18px; }
+  .header-inner .nav .bma-menu,
+  .header-inner .nav ul { gap: 14px; }
+}
+
+@media (max-width: 900px) {
+  /* WP topbar: telefon + nyelv; e-mail/órák/social a panelt zsúfolná */
+  .bma-topbar-contacts .bma-topbar-item:not(:first-child),
+  .bma-topbar-social { display: none; }
+
+  .header-inner.bma-header-inner {
+    gap: 14px;
+    height: 68px;
+    min-height: 68px;
+  }
+  .header-inner .header-actions.bma-header-actions {
+    margin-left: auto;
+  }
+}

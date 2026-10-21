@@ -1,17 +1,45 @@
 <?php
 /**
- * References list with filters.
+ * References list – markup/05-referenciak.html
  *
  * @package BMA_Ajanlatkeres
  */
 
 defined( 'ABSPATH' ) || exit;
 
-$filter_type    = isset( $_GET['ref_type'] ) ? sanitize_text_field( wp_unslash( $_GET['ref_type'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-$filter_service = isset( $_GET['ref_service'] ) ? absint( $_GET['ref_service'] ) : 0; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-$filter_year    = isset( $_GET['ref_year'] ) ? sanitize_text_field( wp_unslash( $_GET['ref_year'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+$filter_type = isset( $_GET['tipus'] ) ? sanitize_title( wp_unslash( $_GET['tipus'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+$filter_svc  = isset( $_GET['szolgaltatas'] ) ? absint( $_GET['szolgaltatas'] ) : 0; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+if ( $filter_svc && class_exists( 'BMA_AJ_I18n' ) ) {
+	$filter_svc = BMA_AJ_I18n::source_post_id( $filter_svc ) ?: $filter_svc;
+}
 
-$args = array(
+$list_url    = function_exists( 'bma_page_url' ) ? bma_page_url( 'referenciak' ) : home_url( '/referenciak/' );
+$home_url    = function_exists( 'bma_page_url' ) ? bma_page_url( 'fooldal' ) : home_url( '/' );
+$svc_url     = function_exists( 'bma_page_url' ) ? bma_page_url( 'szolgaltatasok' ) : home_url( '/szolgaltatasok/' );
+$contact_url = function_exists( 'bma_page_url' ) ? bma_page_url( 'kapcsolat' ) : home_url( '/kapcsolat/' );
+
+$filter_href = static function ( string $tipus, int $svc ) use ( $list_url ): string {
+	$args = array();
+	if ( '' !== $tipus ) {
+		$args['tipus'] = $tipus;
+	}
+	if ( $svc > 0 ) {
+		$args['szolgaltatas'] = $svc;
+	}
+	return $args ? add_query_arg( $args, $list_url ) : $list_url;
+};
+
+$type_terms = get_terms(
+	array(
+		'taxonomy'   => BMA_AJ_Reference_CPT::TAXONOMY,
+		'hide_empty' => true,
+	)
+);
+if ( is_wp_error( $type_terms ) ) {
+	$type_terms = array();
+}
+
+$query_args = array(
 	'post_type'      => BMA_AJ_Reference_CPT::POST_TYPE,
 	'posts_per_page' => -1,
 	'post_status'    => 'publish',
@@ -19,174 +47,214 @@ $args = array(
 	'order'          => 'DESC',
 );
 
-$meta_query = array();
 if ( $filter_type ) {
-	$meta_query[] = array(
-		'key'   => '_bma_project_type',
-		'value' => $filter_type,
+	$query_args['tax_query'] = array(
+		array(
+			'taxonomy' => BMA_AJ_Reference_CPT::TAXONOMY,
+			'field'    => 'slug',
+			'terms'    => $filter_type,
+		),
 	);
 }
-if ( $filter_year ) {
-	$meta_query[] = array(
-		'key'   => '_bma_year',
-		'value' => $filter_year,
+
+$type_filtered = get_posts( $query_args );
+
+// Service chips: related services appearing in the type-filtered set.
+$service_ids_in_set = array();
+foreach ( $type_filtered as $ref ) {
+	$related_ids = get_post_meta( (int) $ref->ID, '_bma_related_services', true );
+	if ( ! is_array( $related_ids ) ) {
+		continue;
+	}
+	foreach ( $related_ids as $sid ) {
+		$sid = absint( $sid );
+		if ( ! $sid ) {
+			continue;
+		}
+		if ( class_exists( 'BMA_AJ_I18n' ) ) {
+			$sid = BMA_AJ_I18n::source_post_id( $sid ) ?: $sid;
+		}
+		$service_ids_in_set[ $sid ] = true;
+	}
+}
+
+$service_chips = array();
+if ( $service_ids_in_set ) {
+	$chip_ids = array_keys( $service_ids_in_set );
+	$display_ids = $chip_ids;
+	if ( class_exists( 'BMA_AJ_I18n' ) && function_exists( 'pll_get_post' ) ) {
+		$lang = BMA_AJ_I18n::current_lang();
+		$mapped = array();
+		foreach ( $chip_ids as $sid ) {
+			$tr = pll_get_post( $sid, $lang );
+			$mapped[] = $tr ? (int) $tr : $sid;
+		}
+		$display_ids = array_values( array_unique( $mapped ) );
+	}
+	$service_chips = get_posts(
+		array(
+			'post_type'      => BMA_AJ_Service_CPT::POST_TYPE,
+			'post__in'       => $display_ids,
+			'posts_per_page' => -1,
+			'post_status'    => 'publish',
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'lang'           => '',
+		)
 	);
 }
-if ( $meta_query ) {
-	$args['meta_query'] = $meta_query;
-}
 
-$refs = get_posts( $args );
-
-if ( $filter_service ) {
+$refs = $type_filtered;
+if ( $filter_svc ) {
 	$refs = array_values(
 		array_filter(
 			$refs,
-			static function ( $ref ) use ( $filter_service ) {
-				$related = get_post_meta( $ref->ID, '_bma_related_services', true );
-				return is_array( $related ) && in_array( $filter_service, array_map( 'intval', $related ), true );
+			static function ( $ref ) use ( $filter_svc ) {
+				$related = get_post_meta( (int) $ref->ID, '_bma_related_services', true );
+				if ( ! is_array( $related ) ) {
+					return false;
+				}
+				$normalized = array();
+				foreach ( $related as $sid ) {
+					$sid = absint( $sid );
+					if ( ! $sid ) {
+						continue;
+					}
+					if ( class_exists( 'BMA_AJ_I18n' ) ) {
+						$sid = BMA_AJ_I18n::source_post_id( $sid ) ?: $sid;
+					}
+					$normalized[] = $sid;
+				}
+				return in_array( $filter_svc, $normalized, true );
 			}
 		)
 	);
 }
 
-$all_refs = get_posts(
-	array(
-		'post_type'      => BMA_AJ_Reference_CPT::POST_TYPE,
-		'posts_per_page' => -1,
-		'post_status'    => 'publish',
-		'fields'         => 'ids',
-	)
-);
-
-$types = array();
-$years = array();
-foreach ( $all_refs as $rid ) {
-	$t = (string) get_post_meta( $rid, '_bma_project_type', true );
-	$y = (string) get_post_meta( $rid, '_bma_year', true );
-	if ( $t && ! preg_match( '/^\[/', $t ) ) {
-		$types[ $t ] = true;
-	}
-	if ( $y && ! preg_match( '/^\[/', $y ) ) {
-		$years[ $y ] = true;
-	}
-}
-$types = array_keys( $types );
-sort( $types );
-$years = array_keys( $years );
-rsort( $years );
-
-$services = BMA_AJ_Service_CPT::get_active_services();
-$show_filters = count( $all_refs ) >= 3;
-$list_url     = ( class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'referenciak' ) : home_url( '/referenciak/' ) );
-$svc_url      = ( class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'szolgaltatasok' ) : home_url( '/szolgaltatasok/' ) );
+$count       = count( $refs );
+$count_label = ( 1 === $count )
+	? __( '1 projekt', 'bma-ajanlatkeres' )
+	: sprintf(
+		/* translators: %d: project count */
+		__( '%d projekt', 'bma-ajanlatkeres' ),
+		$count
+	);
 ?>
-<section class="bma-section bma-page-references" aria-labelledby="bma-refs-list-title">
-	<div class="bma-container">
-		<p class="bma-section-eyebrow"><?php esc_html_e( 'Projektek', 'bma-ajanlatkeres' ); ?></p>
-		<h1 id="bma-refs-list-title"><?php esc_html_e( 'Referenciák', 'bma-ajanlatkeres' ); ?></h1>
-		<p class="bma-section-intro">
-			<?php esc_html_e( 'Ilyen projektet csináltunk – ilyen szolgáltatással, ilyen környezetben.', 'bma-ajanlatkeres' ); ?>
+<section class="pagehead">
+	<div class="pagehead-inner">
+		<p class="crumb">
+			<a href="<?php echo esc_url( $home_url ); ?>"><?php esc_html_e( 'Főoldal', 'bma-ajanlatkeres' ); ?></a>
+			/ <?php esc_html_e( 'Referenciák', 'bma-ajanlatkeres' ); ?>
 		</p>
+		<p class="eyebrow eyebrow--light"><?php BMA_AJ_Content::e( 'refs.eyebrow' ); ?></p>
+		<h1><?php BMA_AJ_Content::e( 'refs.title' ); ?></h1>
+		<p class="pagehead-lead">
+			<?php BMA_AJ_Content::e( 'refs.lead' ); ?>
+		</p>
+	</div>
+</section>
 
-		<?php if ( $show_filters ) : ?>
-			<form class="bma-ref-filters" method="get" action="<?php echo esc_url( $list_url ); ?>">
-				<label>
-					<span><?php esc_html_e( 'Projekt típusa', 'bma-ajanlatkeres' ); ?></span>
-					<select name="ref_type">
-						<option value=""><?php esc_html_e( 'Mind', 'bma-ajanlatkeres' ); ?></option>
-						<?php foreach ( $types as $t ) : ?>
-							<option value="<?php echo esc_attr( $t ); ?>" <?php selected( $filter_type, $t ); ?>>
-								<?php echo esc_html( class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::translate_label( $t ) : $t ); ?>
-							</option>
-						<?php endforeach; ?>
-					</select>
-				</label>
-				<label>
-					<span><?php esc_html_e( 'Szolgáltatás', 'bma-ajanlatkeres' ); ?></span>
-					<select name="ref_service">
-						<option value=""><?php esc_html_e( 'Mind', 'bma-ajanlatkeres' ); ?></option>
-						<?php foreach ( $services as $svc ) : ?>
-							<?php
-							$svc_filter_id = class_exists( 'BMA_AJ_I18n' )
-								? ( BMA_AJ_I18n::source_post_id( (int) $svc->ID ) ?: (int) $svc->ID )
-								: (int) $svc->ID;
-							?>
-							<option value="<?php echo esc_attr( (string) $svc_filter_id ); ?>" <?php selected( $filter_service, $svc_filter_id ); ?>><?php echo esc_html( $svc->post_title ); ?></option>
-						<?php endforeach; ?>
-					</select>
-				</label>
-				<label>
-					<span><?php esc_html_e( 'Év', 'bma-ajanlatkeres' ); ?></span>
-					<select name="ref_year">
-						<option value=""><?php esc_html_e( 'Mind', 'bma-ajanlatkeres' ); ?></option>
-						<?php foreach ( $years as $y ) : ?>
-							<option value="<?php echo esc_attr( $y ); ?>" <?php selected( $filter_year, $y ); ?>><?php echo esc_html( $y ); ?></option>
-						<?php endforeach; ?>
-					</select>
-				</label>
-				<button type="submit" class="bma-btn bma-btn-outline"><?php esc_html_e( 'Szűrés', 'bma-ajanlatkeres' ); ?></button>
-				<?php if ( $filter_type || $filter_service || $filter_year ) : ?>
-					<a class="bma-btn" href="<?php echo esc_url( $list_url ); ?>"><?php esc_html_e( 'Törlés', 'bma-ajanlatkeres' ); ?></a>
-				<?php endif; ?>
-			</form>
-		<?php endif; ?>
-
-		<?php if ( empty( $refs ) ) : ?>
-			<p class="bma-section-intro"><?php esc_html_e( 'Nincs a szűrésnek megfelelő referencia.', 'bma-ajanlatkeres' ); ?></p>
-		<?php else : ?>
-			<div class="bma-ref-grid">
-				<?php foreach ( $refs as $ref ) : ?>
-					<?php
-					$meta     = BMA_AJ_Reference_CPT::get_all_meta( (int) $ref->ID );
-					$related  = BMA_AJ_Reference_CPT::get_related_services( (int) $ref->ID );
-					$location = $meta['location'];
-					if ( preg_match( '/^\[/', $location ) ) {
-						$location = '';
-					}
-					$year = $meta['year'];
-					if ( preg_match( '/^\[/', $year ) ) {
-						$year = '';
-					}
-					?>
-					<article class="bma-ref-tile">
-						<a class="bma-ref-tile-link" href="<?php echo esc_url( get_permalink( $ref ) ); ?>">
-							<div class="bma-ref-tile-media">
-								<?php BMA_AJ_Frontend::render_featured_or_placeholder( (int) $ref->ID, '[REFERENCIA GALÉRIA PLACEHOLDER]' ); ?>
-							</div>
-							<div class="bma-ref-tile-body">
-								<p class="bma-tile-eyebrow">
-									<?php
-									$bits = array_filter( array( $meta['project_type'], $meta['category'] ) );
-									echo esc_html( $bits ? implode( ' · ', $bits ) : __( 'Referencia', 'bma-ajanlatkeres' ) );
-									?>
-								</p>
-								<h2><?php echo esc_html( $ref->post_title ); ?></h2>
-								<?php if ( $location || $year ) : ?>
-									<p class="bma-ref-tile-meta">
-										<?php echo esc_html( implode( ' · ', array_filter( array( $location, $year ) ) ) ); ?>
-									</p>
-								<?php endif; ?>
-								<?php if ( $related ) : ?>
-									<p class="bma-ref-tile-services">
-										<?php echo esc_html( implode( ', ', wp_list_pluck( $related, 'post_title' ) ) ); ?>
-									</p>
-								<?php endif; ?>
-								<?php if ( $ref->post_excerpt ) : ?>
-									<p><?php echo esc_html( $ref->post_excerpt ); ?></p>
-								<?php endif; ?>
-								<span class="bma-ref-tile-cta"><?php esc_html_e( 'Projekt megtekintése', 'bma-ajanlatkeres' ); ?></span>
-							</div>
-						</a>
-					</article>
+<div class="appbody">
+	<div class="bma-container">
+		<div class="filterbar">
+			<div class="filtergroup">
+				<span><?php esc_html_e( 'Típus', 'bma-ajanlatkeres' ); ?></span>
+				<a
+					href="<?php echo esc_url( $filter_href( '', $filter_svc ) ); ?>"
+					class="fchip<?php echo '' === $filter_type ? ' is-on' : ''; ?>"
+					<?php echo '' === $filter_type ? ' aria-current="true"' : ''; ?>
+				><?php esc_html_e( 'Összes', 'bma-ajanlatkeres' ); ?></a>
+				<?php foreach ( $type_terms as $term ) : ?>
+					<a
+						href="<?php echo esc_url( $filter_href( $term->slug, $filter_svc ) ); ?>"
+						class="fchip<?php echo $filter_type === $term->slug ? ' is-on' : ''; ?>"
+						<?php echo $filter_type === $term->slug ? ' aria-current="true"' : ''; ?>
+					><?php echo esc_html( $term->name ); ?></a>
 				<?php endforeach; ?>
 			</div>
-		<?php endif; ?>
+			<div class="filtergroup">
+				<span><?php esc_html_e( 'Szolgáltatás', 'bma-ajanlatkeres' ); ?></span>
+				<a
+					href="<?php echo esc_url( $filter_href( $filter_type, 0 ) ); ?>"
+					class="fchip<?php echo ! $filter_svc ? ' is-on' : ''; ?>"
+					<?php echo ! $filter_svc ? ' aria-current="true"' : ''; ?>
+				><?php esc_html_e( 'Összes', 'bma-ajanlatkeres' ); ?></a>
+				<?php foreach ( $service_chips as $svc ) : ?>
+					<?php
+					$chip_id = (int) $svc->ID;
+					if ( class_exists( 'BMA_AJ_I18n' ) ) {
+						$chip_id = BMA_AJ_I18n::source_post_id( $chip_id ) ?: $chip_id;
+					}
+					?>
+					<a
+						href="<?php echo esc_url( $filter_href( $filter_type, $chip_id ) ); ?>"
+						class="fchip<?php echo $filter_svc === $chip_id ? ' is-on' : ''; ?>"
+						<?php echo $filter_svc === $chip_id ? ' aria-current="true"' : ''; ?>
+					><?php echo esc_html( $svc->post_title ); ?></a>
+				<?php endforeach; ?>
+			</div>
+			<span class="filtercount"><?php echo esc_html( $count_label ); ?></span>
+		</div>
 
-		<p class="bma-section-cta">
-			<a href="<?php echo esc_url( $svc_url ); ?>" class="bma-btn bma-btn-accent bma-btn-lg">
-				<?php esc_html_e( 'Ajánlatkérés indítása', 'bma-ajanlatkeres' ); ?>
-			</a>
+		<div class="refs refs--page">
+			<?php if ( empty( $refs ) ) : ?>
+				<div class="ref-empty">
+					<?php esc_html_e( 'Ezzel a szűréssel nincs találat. Próbáljon másik típust vagy szolgáltatást, vagy állítsa vissza a szűrőt „Összes”-re.', 'bma-ajanlatkeres' ); ?>
+				</div>
+			<?php else : ?>
+				<?php foreach ( $refs as $ref ) : ?>
+					<?php
+					$meta    = BMA_AJ_Reference_CPT::get_all_meta( (int) $ref->ID );
+					$related = BMA_AJ_Reference_CPT::get_related_services( (int) $ref->ID );
+					$kicker_bits = array_filter( array( $meta['project_type'], $meta['category'] ) );
+					$kicker      = $kicker_bits ? implode( ' · ', $kicker_bits ) : __( 'Referencia', 'bma-ajanlatkeres' );
+					$thumb       = get_the_post_thumbnail_url( $ref, 'large' );
+					$lead        = $ref->post_excerpt ?: wp_trim_words( (string) $meta['project_description'], 28 );
+					?>
+					<article class="ref">
+						<div class="ref-img"<?php echo $thumb ? ' style="background-image:url(' . esc_url( $thumb ) . ');background-size:cover;background-position:center"' : ''; ?>>
+							<?php if ( ! $thumb ) : ?>
+								<span><?php esc_html_e( 'Projekt fotó', 'bma-ajanlatkeres' ); ?></span>
+							<?php endif; ?>
+						</div>
+						<div class="ref-body">
+							<p class="eyebrow" style="margin:0"><?php echo esc_html( $kicker ); ?></p>
+							<h3><?php echo esc_html( $ref->post_title ); ?></h3>
+							<?php if ( $related ) : ?>
+								<div class="ref-tags">
+									<?php foreach ( $related as $svc ) : ?>
+										<span class="ref-tag"><?php echo esc_html( $svc->post_title ); ?></span>
+									<?php endforeach; ?>
+								</div>
+							<?php endif; ?>
+							<?php if ( $lead ) : ?>
+								<p class="small muted" style="margin:0"><?php echo esc_html( $lead ); ?></p>
+							<?php endif; ?>
+							<div class="ref-link">
+								<a href="<?php echo esc_url( get_permalink( $ref ) ); ?>"><?php esc_html_e( 'Projekt megtekintése →', 'bma-ajanlatkeres' ); ?></a>
+							</div>
+						</div>
+					</article>
+				<?php endforeach; ?>
+			<?php endif; ?>
+		</div>
+
+		<p class="datanote">
+			<?php esc_html_e( 'A lista a referencia-adatbázisból töltődik; itt a jelenlegi oldalon szereplő projektek láthatók. Új projekt felvételekor automatikusan megjelenik a szűrőkben is.', 'bma-ajanlatkeres' ); ?>
 		</p>
+	</div>
+</div>
+
+<section class="closing">
+	<div class="closing-inner">
+		<div>
+			<p class="eyebrow eyebrow--light"><?php BMA_AJ_Content::e( 'refs.closing_eyebrow' ); ?></p>
+			<h2 class="h2"><?php BMA_AJ_Content::e( 'refs.closing_title' ); ?></h2>
+			<p><?php esc_html_e( 'Válassza ki a szükséges szolgáltatásokat, adja meg a projekt alapadatait, és néhány napon belül személyre szabott ajánlatot küldünk.', 'bma-ajanlatkeres' ); ?></p>
+		</div>
+		<div class="closing-actions">
+			<a href="<?php echo esc_url( $svc_url ); ?>" class="btn btn--primary"><?php esc_html_e( 'Ajánlatkérés indítása', 'bma-ajanlatkeres' ); ?></a>
+			<a href="<?php echo esc_url( $contact_url ); ?>" class="btn btn--ghost-light"><?php esc_html_e( 'Kapcsolat', 'bma-ajanlatkeres' ); ?></a>
+		</div>
 	</div>
 </section>

@@ -1,15 +1,32 @@
-<!-- Ajanlatkero varazslo - 4 lepes -->
-<!-- Forras: Claude Design vaszon, BMA Engineering - oldalfejlesztes -->
+<!--
+  Oldal:    /ajanlatkosar/ + /ajanlatkeres/  (lasd a step: kommenteket lent)
+  Cel PHP:  plugins/bma-ajanlatkeres/templates/frontend/quote-cart.php es quote-form.php
+       (shortcode: [bma_quote_cart], [bma_quote_form])
+  Komponensek: .pagehead .steps .stepchip .panel .task .summary .form-grid .itemform .done-* .mobilebar
+  Jelolesek:   {{...}} = dinamikus ertek (lasd README 'Token-szotar')
+               [SZOGLETES ZAROJEL] = kitoltendo valos adat
+               <sc-if> / <sc-for> = felteteles blokk / ismetles (PHP if / foreach)
+  FIGYELEM: mielott barmely szoveget lecserelnel, olvasd el a SZOVEGVALTOZASOK.md-t.
+            Ugyanez a markup szolgal ki desktopot, tabletet es mobilt.
+-->
 
 <div class="topbar">
   <div class="topbar-inner">
     <span>+40 728 205 982</span>
     <span>office@bmaeng.ro</span>
     <span>Hétfő–Péntek, 08:00–17:00</span>
+    <div class="langswitch" role="group" aria-label="Nyelv választása">
+      <a href="#" class="lang is-on" lang="hu" hreflang="hu" aria-current="true">HU</a>
+      <a href="#" class="lang" lang="ro" hreflang="ro">RO</a>
+      <a href="#" class="lang" lang="en" hreflang="en">EN</a>
+    </div>
   </div>
 </div>
 <header class="siteheader">
   <div class="header-inner">
+    <button type="button" class="burger" aria-label="Menü megnyitása">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#0e2356" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+    </button>
     <div class="logo">[LOGÓ]</div>
     <nav class="nav">
       <a href="#">Főoldal</a>
@@ -42,6 +59,8 @@
 
 <div class="appbody">
 
+  <!-- step:01 – Szolgaltatasok kivalasztasa → NEM ide tartozik: ez a services-list.php-ben mar letezik.
+     Csak referenciakent van itt, hogy a lepessav es a kosar-panel egyezzen. -->
   <sc-if value="{{isStep1}}" hint-placeholder-val="{{true}}">
   <div class="wiz-grid">
     <div class="panel">
@@ -114,6 +133,7 @@
   </div>
   </sc-if>
 
+  <!-- step:02 – Projekt adatai → quote-form.php (vagy quote-cart.php utani elso lepes) -->
   <sc-if value="{{isStep2}}" hint-placeholder-val="{{false}}">
   <div class="wiz-grid">
     <div>
@@ -159,7 +179,7 @@
         </div>
       </div>
 
-      <div style="display:flex;gap:12px;margin-top:24px">
+      <div class="btnrow" style="display:flex;gap:12px;margin-top:24px">
         <button type="button" class="btn btn--outline" onClick="{{back}}">Vissza</button>
         <button type="button" class="btn btn--primary" onClick="{{next}}">Tovább az ellenőrzésre</button>
       </div>
@@ -175,6 +195,7 @@
   </div>
   </sc-if>
 
+  <!-- step:03 – Ellenorzes es bekuldes → quote-form.php, bekuldes elotti allapot -->
   <sc-if value="{{isStep3}}" hint-placeholder-val="{{false}}">
   <div class="wiz-grid">
     <div>
@@ -216,7 +237,7 @@
         </div>
       </div>
 
-      <div style="display:flex;gap:12px;margin-top:24px">
+      <div class="btnrow" style="display:flex;gap:12px;margin-top:24px">
         <button type="button" class="btn btn--outline" onClick="{{back}}">Vissza</button>
         <button type="button" class="btn btn--primary" onClick="{{next}}">Ajánlatkérés beküldése</button>
       </div>
@@ -230,6 +251,7 @@
   </div>
   </sc-if>
 
+  <!-- step:04 – Visszaigazolas → quote-form.php, bma_submit_quote_request utani allapot -->
   <sc-if value="{{isStep4}}" hint-placeholder-val="{{false}}">
   <div class="bma-container">
     <div class="done-wrap">
@@ -243,7 +265,7 @@
         <div class="nextstep"><b>[X] munkanapon belül</b><strong style="display:block;font-size:16px;margin-bottom:6px">Felmérés</strong><span class="small muted">Átnézzük a megadott adatokat, és ha szükséges, egyeztetünk a hiányzó részletekről.</span></div>
         <div class="nextstep"><b>Ezután</b><strong style="display:block;font-size:16px;margin-bottom:6px">Ajánlat</strong><span class="small muted">Az elkészült ajánlat az ügyfélportálon és e-mailben is elérhető lesz.</span></div>
       </div>
-      <div style="display:flex;gap:12px;justify-content:center;margin-top:34px">
+      <div class="btnrow" style="display:flex;gap:12px;justify-content:center;margin-top:34px">
         <a href="#" class="btn btn--primary">Ügyfélportál megnyitása</a>
         <button type="button" class="btn btn--outline" onClick="{{restart}}">Új ajánlatkérés</button>
       </div>
@@ -251,6 +273,11 @@
   </div>
   </sc-if>
 
+</div>
+
+<div class="mobilebar">
+  <span class="mobilebar-info"><strong>{{count}} tétel kiválasztva</strong><span>{{stepTitle}}</span></span>
+  <button type="button" class="btn btn--primary btn--sm {{nextCls}}" onClick="{{next}}">Tovább</button>
 </div>
 
 <footer class="footer">
@@ -261,6 +288,13 @@
       <div class="small" style="line-height:1.6">Str. Raza Soarelui 11<br>535600 Odorheiu Secuiesc<br>Harghita, Romania</div>
       <div class="small" style="margin-top:12px">+40 728 205 982 · office@bmaeng.ro</div>
       <div class="small" style="margin-top:6px">CUI: 40593519</div>
+      <div style="margin-top:18px">
+        <div class="langswitch langswitch--light" role="group" aria-label="Nyelv választása">
+          <a href="#" class="lang is-on" lang="hu" hreflang="hu" aria-current="true">HU</a>
+          <a href="#" class="lang" lang="ro" hreflang="ro">RO</a>
+          <a href="#" class="lang" lang="en" hreflang="en">EN</a>
+        </div>
+      </div>
     </div>
     <div>
       <h4>Navigáció</h4>

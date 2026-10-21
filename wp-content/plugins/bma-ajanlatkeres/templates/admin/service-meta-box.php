@@ -31,6 +31,28 @@ $when_needed     = $when_needed ?? get_post_meta( $post->ID, '_bma_when_needed',
 		<td><textarea id="bma_when_needed" name="bma_when_needed" rows="5" class="large-text" placeholder="<?php esc_attr_e( 'Egy sor = egy pont', 'bma-ajanlatkeres' ); ?>"><?php echo esc_textarea( $when_needed ); ?></textarea></td>
 	</tr>
 	<tr>
+		<th><label for="bma_needs_required"><?php esc_html_e( 'Mire lesz szükség? – Kötelező', 'bma-ajanlatkeres' ); ?></label></th>
+		<td>
+			<textarea id="bma_needs_required" name="bma_needs_required" rows="4" class="large-text" placeholder="<?php esc_attr_e( 'Egy sor = egy tétel', 'bma-ajanlatkeres' ); ?>"><?php echo esc_textarea( (string) ( $needs_required ?? '' ) ); ?></textarea>
+			<p class="description"><?php esc_html_e( 'A szekció akkor jelenik meg, ha legalább egy oszlop ki van töltve – csak a kitöltött oszlopok renderelődnek.', 'bma-ajanlatkeres' ); ?></p>
+		</td>
+	</tr>
+	<tr>
+		<th><label for="bma_needs_optional"><?php esc_html_e( 'Mire lesz szükség? – Ha rendelkezésre áll', 'bma-ajanlatkeres' ); ?></label></th>
+		<td><textarea id="bma_needs_optional" name="bma_needs_optional" rows="4" class="large-text" placeholder="<?php esc_attr_e( 'Egy sor = egy tétel', 'bma-ajanlatkeres' ); ?>"><?php echo esc_textarea( (string) ( $needs_optional ?? '' ) ); ?></textarea></td>
+	</tr>
+	<tr>
+		<th><label for="bma_needs_later"><?php esc_html_e( 'Mire lesz szükség? – Később is pótolható', 'bma-ajanlatkeres' ); ?></label></th>
+		<td><textarea id="bma_needs_later" name="bma_needs_later" rows="4" class="large-text" placeholder="<?php esc_attr_e( 'Egy sor = egy tétel', 'bma-ajanlatkeres' ); ?>"><?php echo esc_textarea( (string) ( $needs_later ?? '' ) ); ?></textarea></td>
+	</tr>
+	<tr>
+		<th><label for="bma_faq"><?php esc_html_e( 'GYIK', 'bma-ajanlatkeres' ); ?></label></th>
+		<td>
+			<textarea id="bma_faq" name="bma_faq" rows="10" class="large-text" placeholder="<?php esc_attr_e( "K: Kérdés?\nV: Válasz.\n\nK: Másik kérdés?\nV: Másik válasz.", 'bma-ajanlatkeres' ); ?>"><?php echo esc_textarea( (string) ( $faq ?? '' ) ); ?></textarea>
+			<p class="description"><?php esc_html_e( 'Blokkok üres sorral elválasztva. Üres mezőnél a GYIK szekció nem jelenik meg.', 'bma-ajanlatkeres' ); ?></p>
+		</td>
+	</tr>
+	<tr>
 		<th><label for="bma_use_placeholder"><?php esc_html_e( 'Placeholder kép', 'bma-ajanlatkeres' ); ?></label></th>
 		<td><input type="checkbox" id="bma_use_placeholder" name="bma_use_placeholder" value="1" <?php checked( $use_placeholder, '1' ); ?>> <?php esc_html_e( '[SZOLGÁLTATÁS KÉP PLACEHOLDER] megjelenítése', 'bma-ajanlatkeres' ); ?></td>
 	</tr>

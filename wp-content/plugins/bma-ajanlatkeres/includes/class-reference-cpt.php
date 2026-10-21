@@ -109,9 +109,11 @@ final class BMA_AJ_Reference_CPT {
 		$year = $meta['year'];
 		$project_description = $meta['project_description'];
 		$task = $meta['task'];
+		$work = $meta['work'];
 		$work_done = $meta['work_done'];
 		$solution = $meta['solution'];
 		$result = $meta['result'];
+		$duration = $meta['duration'];
 		$gallery = $meta['gallery'];
 		$related = $meta['related'];
 		$cta_title = $meta['cta_title'];
@@ -164,9 +166,14 @@ final class BMA_AJ_Reference_CPT {
 			'year'                => (string) get_post_meta( $post_id, '_bma_year', true ),
 			'project_description' => (string) get_post_meta( $post_id, '_bma_project_description', true ),
 			'task'                => (string) get_post_meta( $post_id, '_bma_task', true ),
+			'work'                => (string) (
+				get_post_meta( $post_id, '_bma_work', true )
+					?: get_post_meta( $post_id, '_bma_work_done', true )
+			),
 			'work_done'           => (string) get_post_meta( $post_id, '_bma_work_done', true ),
 			'solution'            => (string) get_post_meta( $post_id, '_bma_solution', true ),
 			'result'              => (string) get_post_meta( $post_id, '_bma_result', true ),
+			'duration'            => (string) get_post_meta( $post_id, '_bma_duration', true ),
 			'gallery'             => array_values( $gallery ),
 			'related'             => array_map( 'absint', $related ),
 			'cta_title'           => (string) get_post_meta( $post_id, '_bma_cta_title', true ),
@@ -235,9 +242,13 @@ final class BMA_AJ_Reference_CPT {
 		update_post_meta( $post_id, '_bma_year', sanitize_text_field( wp_unslash( $_POST['bma_year'] ?? '' ) ) );
 		update_post_meta( $post_id, '_bma_project_description', sanitize_textarea_field( wp_unslash( $_POST['bma_project_description'] ?? '' ) ) );
 		update_post_meta( $post_id, '_bma_task', sanitize_textarea_field( wp_unslash( $_POST['bma_task'] ?? '' ) ) );
-		update_post_meta( $post_id, '_bma_work_done', sanitize_textarea_field( wp_unslash( $_POST['bma_work_done'] ?? '' ) ) );
+		$work = sanitize_textarea_field( wp_unslash( $_POST['bma_work'] ?? '' ) );
+		update_post_meta( $post_id, '_bma_work', $work );
+		// Keep legacy key in sync for older templates / exports.
+		update_post_meta( $post_id, '_bma_work_done', $work );
 		update_post_meta( $post_id, '_bma_solution', sanitize_textarea_field( wp_unslash( $_POST['bma_solution'] ?? '' ) ) );
 		update_post_meta( $post_id, '_bma_result', sanitize_textarea_field( wp_unslash( $_POST['bma_result'] ?? '' ) ) );
+		update_post_meta( $post_id, '_bma_duration', sanitize_text_field( wp_unslash( $_POST['bma_duration'] ?? '' ) ) );
 		update_post_meta( $post_id, '_bma_cta_title', sanitize_text_field( wp_unslash( $_POST['bma_cta_title'] ?? '' ) ) );
 		update_post_meta( $post_id, '_bma_cta_text', sanitize_textarea_field( wp_unslash( $_POST['bma_cta_text'] ?? '' ) ) );
 
@@ -261,7 +272,7 @@ final class BMA_AJ_Reference_CPT {
 	}
 
 	/**
-	 * Split textarea into non-empty lines (for work_done lists).
+	 * Split textarea into non-empty lines (for work lists).
 	 *
 	 * @param string $text Raw text.
 	 * @return string[]
@@ -276,5 +287,83 @@ final class BMA_AJ_Reference_CPT {
 			}
 		}
 		return $out;
+	}
+
+	/**
+	 * Parse "Label: value" lines for .datarow rendering.
+	 *
+	 * @param string $text Raw work text.
+	 * @return array<int, array{label:string,value:string}>
+	 */
+	public static function labeled_lines( string $text ): array {
+		$rows = array();
+		foreach ( self::lines( $text ) as $line ) {
+			if ( preg_match( '/^([^:：]{1,80})\s*[:：]\s*(.+)$/u', $line, $m ) ) {
+				$rows[] = array(
+					'label' => trim( $m[1] ),
+					'value' => trim( $m[2] ),
+				);
+			} else {
+				$rows[] = array(
+					'label' => '',
+					'value' => $line,
+				);
+			}
+		}
+		return $rows;
+	}
+
+	/**
+	 * Related references (same category preferred), excluding current.
+	 *
+	 * @param int $post_id Current reference ID.
+	 * @param int $limit   Max posts.
+	 * @return WP_Post[]
+	 */
+	public static function get_related_projects( int $post_id, int $limit = 3 ): array {
+		$limit = max( 1, $limit );
+		$term_ids = wp_get_post_terms( $post_id, self::TAXONOMY, array( 'fields' => 'ids' ) );
+		if ( is_wp_error( $term_ids ) ) {
+			$term_ids = array();
+		}
+
+		$found = array();
+		if ( $term_ids ) {
+			$found = get_posts(
+				array(
+					'post_type'      => self::POST_TYPE,
+					'post_status'    => 'publish',
+					'posts_per_page' => $limit,
+					'post__not_in'   => array( $post_id ),
+					'orderby'        => 'date',
+					'order'          => 'DESC',
+					'tax_query'      => array(
+						array(
+							'taxonomy' => self::TAXONOMY,
+							'field'    => 'term_id',
+							'terms'    => array_map( 'intval', $term_ids ),
+						),
+					),
+				)
+			);
+		}
+
+		if ( count( $found ) >= $limit ) {
+			return $found;
+		}
+
+		$exclude = array_merge( array( $post_id ), wp_list_pluck( $found, 'ID' ) );
+		$extra   = get_posts(
+			array(
+				'post_type'      => self::POST_TYPE,
+				'post_status'    => 'publish',
+				'posts_per_page' => $limit - count( $found ),
+				'post__not_in'   => $exclude,
+				'orderby'        => 'date',
+				'order'          => 'DESC',
+			)
+		);
+
+		return array_values( array_merge( $found, $extra ) );
 	}
 }

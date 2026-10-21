@@ -1,0 +1,2178 @@
+# Copyright (C) BMA Engineering
+# This file is distributed under the same license as the package.
+msgid ""
+msgstr ""
+"Project-Id-Version: bma-ajanlatkeres\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-05 21:23+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: bma-ajanlatkeres\n"
+
+msgid "%d ajánlat vár elfogadásra"
+msgstr ""
+
+msgid "%d díjbekérő vár rendezésre"
+msgstr ""
+
+msgid "%d projekt"
+msgstr ""
+
+msgid "%d szolgáltatáselem"
+msgstr ""
+
+msgid "%d szolgáltatáselem kiválasztva"
+msgstr ""
+
+msgid "%d tétel"
+msgstr ""
+
+msgid "%d tétel kiválasztva"
+msgstr ""
+
+msgid "%d választható részfeladat"
+msgstr ""
+
+msgid "%s hozzáadása az ajánlathoz"
+msgstr ""
+
+msgid "%s részfeladatai"
+msgstr ""
+
+msgid "(környezeti változó)"
+msgstr ""
+
+msgid "+40 …"
+msgstr ""
+
+msgid "1 ajánlat vár elfogadásra"
+msgstr ""
+
+msgid "1 díjbekérő vár rendezésre"
+msgstr ""
+
+msgid "1 projekt"
+msgstr ""
+
+msgid "1 szolgáltatáselem kiválasztva"
+msgstr ""
+
+msgid "1 tétel"
+msgstr ""
+
+msgid "1 tétel kiválasztva"
+msgstr ""
+
+msgid "1. Az adatkezelő"
+msgstr ""
+
+msgid "1. Mi az a cookie?"
+msgstr ""
+
+msgid "1. Szolgáltató"
+msgstr ""
+
+msgid "10. Adatbiztonság"
+msgstr ""
+
+msgid "10–12. Külső linkek, elérhetőség, felelősség"
+msgstr ""
+
+msgid "11. Cookie-k"
+msgstr ""
+
+msgid "12. Módosítás"
+msgstr ""
+
+msgid "13. Adatvédelem"
+msgstr ""
+
+msgid "14. Feltételek módosítása"
+msgstr ""
+
+msgid "15. Kapcsolat"
+msgstr ""
+
+msgid "2. A weboldal célja"
+msgstr ""
+
+msgid "2. Cookie kategóriák ezen az oldalon"
+msgstr ""
+
+msgid "2. Milyen adatokat kezelünk?"
+msgstr ""
+
+msgid "3. Adatkezelés célja és jogalapja"
+msgstr ""
+
+msgid "3. Ajánlatkérés"
+msgstr ""
+
+msgid "3. Térkép"
+msgstr ""
+
+msgid "4 tétel · 1 ajánlatkérés"
+msgstr ""
+
+msgid "4. Ajánlat"
+msgstr ""
+
+msgid "4. Feltöltött dokumentumok"
+msgstr ""
+
+msgid "4. Hozzájárulás kezelése"
+msgstr ""
+
+msgid "5. Adattovábbítás"
+msgstr ""
+
+msgid "5. Kapcsolódó dokumentumok"
+msgstr ""
+
+msgid "5. Árak"
+msgstr ""
+
+msgid "6. EGT-n kívüli adattovábbítás"
+msgstr ""
+
+msgid "6. Felhasználó által megadott információk"
+msgstr ""
+
+msgid "7. Dokumentumfeltöltés"
+msgstr ""
+
+msgid "7. Megőrzési idő"
+msgstr ""
+
+msgid "8. Érintetti jogok"
+msgstr ""
+
+msgid "8. Ügyfélfiók"
+msgstr ""
+
+msgid "9. Panasz"
+msgstr ""
+
+msgid "9. Szellemi tulajdon"
+msgstr ""
+
+msgid "A %s fontosnak tartja a személyes adatok védelmét és az adatok átlátható kezelését."
+msgstr ""
+
+msgid "A BMA Engineering mérnöki tervezési, engedélyeztetési, közmű-koordinációs és műszaki dokumentációs feladatokban támogatja ügyfeleit."
+msgstr ""
+
+msgid "A Stripe kulcsok környezeti változóból töltődnek (.env / Docker). Az alábbi mezők csak tartalék."
+msgstr ""
+
+msgid "A Stripe nincs konfigurálva."
+msgstr ""
+
+msgid "A cookie kis adatfájl, amelyet a böngésző tárol. Segíti a weboldal működését, a beállítások megjegyzését és – hozzájárulás esetén – a látogatottsági statisztikát."
+msgstr ""
+
+msgid "A demo tartalom sikeresen betöltve. Frissítse a főoldalt a böngészőben."
+msgstr ""
+
+msgid "A dokumentum nem ehhez az ajánlatkéréshez tartozik."
+msgstr ""
+
+msgid "A dokumentum nem található."
+msgstr ""
+
+msgid "A dokumentum törlése sikertelen."
+msgstr ""
+
+msgid "A feladat"
+msgstr ""
+
+msgid "A felhasználó felelős a hozzáférési adatok biztonságáért, és csak a saját adataihoz férhet hozzá."
+msgstr ""
+
+msgid "A felhasználó felelőssége, hogy a megadott adatok tudomása szerint pontosak és teljesek legyenek."
+msgstr ""
+
+msgid "A feltöltési könyvtár nem írható. Kérjük, jelezze az üzemeltetőnek."
+msgstr ""
+
+msgid "A feltöltött dokumentumokat kizárólag az adott ajánlatkérés vagy szolgáltatás kezelése céljából használjuk. Kérjük, csak a projekthez szükséges adatokat töltse fel."
+msgstr ""
+
+msgid "A fizetéshez be kell jelentkeznie, és érvényes ajánlathoz kell rendelkeznie."
+msgstr ""
+
+msgid "A fájl feltöltése sikertelen."
+msgstr ""
+
+msgid "A fájl túl nagy (max. 20 MB)."
+msgstr ""
+
+msgid "A jelen feltételek a weboldal használatára, a kapcsolatfelvételre és az ajánlatkérésre vonatkoznak."
+msgstr ""
+
+msgid "A kapcsolat oldalon OpenStreetMap csempéket jelenítünk meg (Leaflet). A térkép csak hozzájárulás után vagy a „Térkép betöltése” gombra kattintva töltődik be. Az „Útvonaltervezés” az OpenStreetMap irányító oldalára vezet (külső oldal)."
+msgstr ""
+
+msgid "A kiválasztott elemeket még nem adta hozzá az ajánlatkéréshez"
+msgstr ""
+
+msgid "A kiválasztott elemeket még nem adta hozzá az ajánlatkéréshez. A folytatás előtt kattintson a gombra."
+msgstr ""
+
+msgid "A kiválasztott elemeket még nem adta hozzá az ajánlatkéréshez. Tovább lép?"
+msgstr ""
+
+msgid "A kiválasztás bármikor módosítható a beküldésig. Az ajánlatkérés nem jár kötelezettséggel."
+msgstr ""
+
+msgid "A kosár üres. Az ajánlatkéréshez először válasszon szolgáltatást."
+msgstr ""
+
+msgid "A kosár üres. Válasszon szolgáltatást a folytatáshoz."
+msgstr ""
+
+msgid "A kártyás fizetés jelenleg nem elérhető. Kérjük, válassza a banki utalást."
+msgstr ""
+
+msgid "A kész terveket a megrendelt szolgáltatáselemekhez külön töltse fel. Az ügyfélportálon is elemenként jelennek meg."
+msgstr ""
+
+msgid "A kész terveket az ügyfélportálon adjuk át, a kapcsolódó dokumentumokkal együtt."
+msgstr ""
+
+msgid "A lista a referencia-adatbázisból töltődik; itt a jelenlegi oldalon szereplő projektek láthatók. Új projekt felvételekor automatikusan megjelenik a szűrőkben is."
+msgstr ""
+
+msgid "A lábléc feletti cookie sávon választhat: „Csak szükséges” vagy „Összes elfogadása”. A beállítás a böngészőben marad; törléséhez törölje az oldal adatait / localStorage-t, majd töltse újra az oldalt."
+msgstr ""
+
+msgid "A megoldás (opcionális)"
+msgstr ""
+
+msgid "A mező kulcs kötelező."
+msgstr ""
+
+msgid "A név kötelező."
+msgstr ""
+
+msgid "A pontos határidő a projekt méretétől és a szolgáltatói egyeztetésektől függ."
+msgstr ""
+
+msgid "A projekt (rövid lead)"
+msgstr ""
+
+msgid "A projekt részletei az ügyféllel egyeztetett mértékben nyilvánosak."
+msgstr ""
+
+msgid "A státusz használatban van, ezért nem törölhető."
+msgstr ""
+
+msgid "A státusz mentése sikertelen."
+msgstr ""
+
+msgid "A státusz nem található."
+msgstr ""
+
+msgid "A státusz neve kötelező."
+msgstr ""
+
+msgid "A szekció akkor jelenik meg, ha legalább egy oszlop ki van töltve – csak a kitöltött oszlopok renderelődnek."
+msgstr ""
+
+msgid "A szolgáltató a szolgáltatások, a weboldal vagy a jogszabályok változása esetén módosíthatja a feltételeket."
+msgstr ""
+
+msgid "A szükséges tervrajzok és műszaki dokumentumok az adott ajánlatkéréshez kapcsolódva tölthetők fel és kezelhetők."
+msgstr ""
+
+msgid "A tervrajzok és dokumentumok az ajánlatkéréshez rendelve tölthetők fel."
+msgstr ""
+
+msgid "A térkép OpenStreetMap csempéket tölt be. A megjelenítéshez kattintson a „Térkép betöltése” gombra, vagy fogadja el a cookie beállításokban a funkcionális térképet."
+msgstr ""
+
+msgid "A weboldali információk általános tájékoztatásnak minősülnek."
+msgstr ""
+
+msgid "A weboldali tartalom védelem alatt állhat. A projektben készült dokumentumokra az egyedi szerződés/ajánlat vonatkozik."
+msgstr ""
+
+msgid "Adatkezelési tájékoztató"
+msgstr ""
+
+msgid "Adatok és beküldés"
+msgstr ""
+
+msgid "Adatvédelmi tájékoztató"
+msgstr ""
+
+msgid "Adja hozzá a(z) %s az ajánlatkéréséhez"
+msgstr ""
+
+msgid "Adja meg a felhasználónevet és a jelszót."
+msgstr ""
+
+msgid "Adja meg a projekt adatait és a meglévő dokumentumokat."
+msgstr ""
+
+msgid "Adja meg a projekt közös adatait és a kapcsolattartási információkat, majd ellenőrizze a kiválasztást a beküldés előtt."
+msgstr ""
+
+msgid "Admin label"
+msgstr ""
+
+msgid "Admin értesítési e-mail"
+msgstr ""
+
+msgid "Adminisztrátori megjegyzés"
+msgstr ""
+
+msgid "Adó"
+msgstr ""
+
+msgid "Adószám"
+msgstr ""
+
+msgid "Ajánlat"
+msgstr ""
+
+msgid "Ajánlat [X] munkanapon belül"
+msgstr ""
+
+msgid "Ajánlat elfogadása"
+msgstr ""
+
+msgid "Ajánlat elmentve és elküldve az ügyfélnek."
+msgstr ""
+
+msgid "Ajánlat elérhető"
+msgstr ""
+
+msgid "Ajánlat fizetése"
+msgstr ""
+
+msgid "Ajánlat megtekintése"
+msgstr ""
+
+msgid "Ajánlat mentése és küldése"
+msgstr ""
+
+msgid "Ajánlat nem található."
+msgstr ""
+
+msgid "Ajánlat részletei"
+msgstr ""
+
+msgid "Ajánlat száma"
+msgstr ""
+
+msgid "Ajánlat száma: %s"
+msgstr ""
+
+msgid "Ajánlat, %d tétel"
+msgstr ""
+
+msgid "Ajánlati PDF"
+msgstr ""
+
+msgid "Ajánlati PDF letöltése"
+msgstr ""
+
+msgid "Ajánlatkérés"
+msgstr ""
+
+msgid "Ajánlatkérés beküldve."
+msgstr ""
+
+msgid "Ajánlatkérés beküldése"
+msgstr ""
+
+msgid "Ajánlatkérés esetén"
+msgstr ""
+
+msgid "Ajánlatkérés indítása"
+msgstr ""
+
+msgid "Ajánlatkérés nem található."
+msgstr ""
+
+msgid "Ajánlatkérés:"
+msgstr ""
+
+msgid "Ajánlatkéréseim"
+msgstr ""
+
+msgid "Ajánlatkérések"
+msgstr ""
+
+msgid "Ajánlatkérési kosár"
+msgstr ""
+
+msgid "Ajánlatkérési kosár azonosító (bma_cart_id) – a kiválasztott szolgáltatások megőrzéséhez"
+msgstr ""
+
+msgid "Ajánlatkérési lépések"
+msgstr ""
+
+msgid "Ajánlatot szeretne kérni?"
+msgstr ""
+
+msgid "Aktív"
+msgstr ""
+
+msgid "Alapértelmezett"
+msgstr ""
+
+msgid "Alapértelmezett ajánlat pénznem"
+msgstr ""
+
+msgid "Amit csináltunk"
+msgstr ""
+
+msgid "Amit sokan kérdeznek"
+msgstr ""
+
+msgid "Analitika"
+msgstr ""
+
+msgid "Analitika:"
+msgstr ""
+
+msgid "Analitikai cookie-k csak hozzájárulás után. Részletek:"
+msgstr ""
+
+msgid "Automatikus adó (Stripe Tax)"
+msgstr ""
+
+msgid "Automatikusan kijelölve"
+msgstr ""
+
+msgid "Az IBAN az admin beállításokban adható meg."
+msgstr ""
+
+msgid "Az adatokat csak az adatkezelési célhoz szükséges ideig őrizzük meg."
+msgstr ""
+
+msgid "Az adatvédelmi hozzájárulás kötelező."
+msgstr ""
+
+msgid "Az ajánlat mentése sikertelen."
+msgstr ""
+
+msgid "Az ajánlatkérés beküldése nem jelent automatikus szerződéskötést vagy megrendelést. A BMA Engineering további információkat kérhet."
+msgstr ""
+
+msgid "Az ajánlatkérés beküldése után e-mailben visszaigazolást küldünk, és [X] munkanapon belül visszajelzünk."
+msgstr ""
+
+msgid "Az ajánlatkérés díjmentes és nem jár kötelezettséggel."
+msgstr ""
+
+msgid "Az ajánlatkérés menete"
+msgstr ""
+
+msgid "Az ajánlatkéréshez és az ügyfélportálon feltöltött fájlok."
+msgstr ""
+
+msgid "Az ajánlatkérési kosár üres."
+msgstr ""
+
+msgid "Az ajánlatkéréstől a dokumentumok átadásáig követhető, hol tart a folyamat, és milyen következő lépésekre van szükség."
+msgstr ""
+
+msgid "Az ajánlatkérőben kiválaszthatja a szükséges részfeladatokat és dokumentumokat is feltölthet."
+msgstr ""
+
+msgid "Az aktuális változat mindig ezen az oldalon érhető el. A szöveget publikálás előtt célszerű jogi/adatvédelmi szakértővel ellenőriztetni."
+msgstr ""
+
+msgid "Az alapértelmezett státusz nem törölhető."
+msgstr ""
+
+msgid "Az azonosítót e-mailben is elküldtük. Erre hivatkozva bármikor tud érdeklődni."
+msgstr ""
+
+msgid "Az egyedi ajánlat vagy szerződés elsőbbséget élvez az általános weboldali feltételekkel szemben."
+msgstr ""
+
+msgid "Az elfogadott ajánlat után elkészülnek a tervek, a szükséges szolgáltatói egyeztetésekkel."
+msgstr ""
+
+msgid "Az elkészült ajánlat az ügyfélportálon és e-mailben is elérhető lesz."
+msgstr ""
+
+msgid "Az elkészült tervek itt jelennek meg, tételenként. Jelenleg még nincs feltöltött terv."
+msgstr ""
+
+msgid "Az itt bejelölt mezők jelennek meg, ha az ügyfél ezt az elemet választja. Azonos mezőkulcs több elemnél is csak egyszer kerül kitöltésre."
+msgstr ""
+
+msgid "Az Ön ajánlatkérése"
+msgstr ""
+
+msgid "Az érintett jogosult panaszt benyújtani az illetékes adatvédelmi felügyeleti hatósághoz."
+msgstr ""
+
+msgid "Az ügyfélportál eléréséhez bejelentkezés szükséges."
+msgstr ""
+
+msgid "Az ügyfélportálon látja a státuszt, az elkészült ajánlatot és a feltöltött dokumentumokat."
+msgstr ""
+
+msgid "Az ügyfélportálon végigkövethető a kérés státusza és a dokumentumok."
+msgstr ""
+
+msgid "Az üzenet küldése nem sikerült. Ellenőrizze a kötelező mezőket, és próbálja újra."
+msgstr ""
+
+msgid "Azonosító"
+msgstr ""
+
+msgid "BIC / SWIFT"
+msgstr ""
+
+msgid "BMA Ajánlatkérés"
+msgstr ""
+
+msgid "BMA Engineering mérnöki tervezés"
+msgstr ""
+
+msgid "BMA Engineering – műszaki tervezés, engedélyeztetés és dokumentáció lakossági és üzleti projektekhez."
+msgstr ""
+
+msgid "BMA ajánlat %s"
+msgstr ""
+
+msgid "BMA beállítások"
+msgstr ""
+
+msgid "BMA Ügyfél"
+msgstr ""
+
+msgid "Bank neve"
+msgstr ""
+
+msgid "Banki befizetés rögzítése"
+msgstr ""
+
+msgid "Banki utalás"
+msgstr ""
+
+msgid "Banki utalás folyamatban"
+msgstr ""
+
+msgid "Bejelentkezés"
+msgstr ""
+
+msgid "Bejelentkezés az ügyfélportálra"
+msgstr ""
+
+msgid "Bejelentkezés szükséges"
+msgstr ""
+
+msgid "Beküldve"
+msgstr ""
+
+msgid "Beküldve: %s · Kérés részletei, státusz, dokumentumok és ajánlat."
+msgstr ""
+
+msgid "Beküldés"
+msgstr ""
+
+msgid "Betölti a teszteléshez szükséges szolgáltatásokat, dinamikus mezőket, referenciákat és oldaltartalmakat. A meglévő demo adatok felülírásra kerülnek."
+msgstr ""
+
+msgid "Bezárás"
+msgstr ""
+
+msgid "Beállítások"
+msgstr ""
+
+msgid "Biztonságos dokumentumkezelés"
+msgstr ""
+
+msgid "Biztosan eltávolítja ezt a szolgáltatást?"
+msgstr ""
+
+msgid "Biztosan törli ezt a dokumentumot?"
+msgstr ""
+
+msgid "Biztosan törli ezt a státuszt?"
+msgstr ""
+
+msgid "Biztosan törli?"
+msgstr ""
+
+msgid "Biztosan újratölti a demo tartalmat?"
+msgstr ""
+
+msgid "Blokkok üres sorral elválasztva. Üres mezőnél a GYIK szekció nem jelenik meg."
+msgstr ""
+
+msgid "Bruttó"
+msgstr ""
+
+msgid "Bruttó összeg"
+msgstr ""
+
+msgid "Bármi, ami segít pontosabb ajánlatot adni"
+msgstr ""
+
+msgid "CTA cím"
+msgstr ""
+
+msgid "CTA szöveg"
+msgstr ""
+
+msgid "CUI"
+msgstr ""
+
+msgid "Checkout után Stripe számla (Invoicing)"
+msgstr ""
+
+msgid "Cookie hozzájárulás"
+msgstr ""
+
+msgid "Cookie tájékoztató"
+msgstr ""
+
+msgid "Cookie-hozzájárulás tárolása (böngésző localStorage: bma_cookie_consent)"
+msgstr ""
+
+msgid "Csak olyan dokumentum tölthető fel, amelynek továbbítására a felhasználó jogosult. Nem tölthető fel jogellenes, rosszindulatú, harmadik fél jogait sértő vagy indokolatlanul érzékeny tartalom."
+msgstr ""
+
+msgid "Csak szükséges"
+msgstr ""
+
+msgid "Csak valós profil-URL-t adjon meg. Üres mező nem jelenik meg a frontenden."
+msgstr ""
+
+msgid "Cég"
+msgstr ""
+
+msgid "Cég (opcionális)"
+msgstr ""
+
+msgid "Cégnév"
+msgstr ""
+
+msgid "Cím"
+msgstr ""
+
+msgid "Címke"
+msgstr ""
+
+msgid "Címsor betűtípus"
+msgstr ""
+
+msgid "Demo tartalom"
+msgstr ""
+
+msgid "Demo tartalom betöltése"
+msgstr ""
+
+msgid "Dinamikus mezők"
+msgstr ""
+
+msgid "Dokumentum törölve."
+msgstr ""
+
+msgid "Dokumentumaim"
+msgstr ""
+
+msgid "Dokumentumok"
+msgstr ""
+
+msgid "Dokumentumok rendezett kezelése"
+msgstr ""
+
+msgid "Dokumentumtípus"
+msgstr ""
+
+msgid "Dátum"
+msgstr ""
+
+msgid "Dátumig"
+msgstr ""
+
+msgid "Dátumtól"
+msgstr ""
+
+msgid "E-mail"
+msgstr ""
+
+msgid "E-mail küldése"
+msgstr ""
+
+msgid "E-mail sablonok"
+msgstr ""
+
+msgid "E-mail vagy felhasználónév"
+msgstr ""
+
+msgid "E-mailben elküldtük a kérés összefoglalóját és a feltöltött dokumentumok listáját."
+msgstr ""
+
+msgid "Ebben a nézetben most nincs ajánlatkérés."
+msgstr ""
+
+msgid "Egy ajánlatban"
+msgstr ""
+
+msgid "Egy ajánlatkérésben több szolgáltatás és részfeladat is összeállítható."
+msgstr ""
+
+msgid "Egy ajánlatkérésben több tervezési, engedélyeztetési, közmű-koordinációs és dokumentációs feladat is összeállítható."
+msgstr ""
+
+msgid "Egy projekt ritkán csak egyetlen feladatból áll"
+msgstr ""
+
+msgid "Egy sor = egy pont"
+msgstr ""
+
+msgid "Egy sor = egy tétel"
+msgstr ""
+
+msgid "Egy szolgáltatáselem több szolgáltatáshoz is kapcsolható. A dinamikus mezőket az elemen állítsa be; ha ugyanaz a mező több elemnél is szerepel, az ügyfél csak egyszer tölti ki."
+msgstr ""
+
+msgid "Egy építési vagy fejlesztési projekt során a tervezés, az engedélyeztetés, a közműcsatlakozások és a műszaki dokumentáció gyakran egymásra épül."
+msgstr ""
+
+msgid "Egyedi azonosító. Ha két szolgáltatáselem ugyanazt a kulcsot használja, az ügyfél csak egyszer tölti ki."
+msgstr ""
+
+msgid "Egyéb"
+msgstr ""
+
+msgid "Ehhez a kéréshez nincs hozzáférése."
+msgstr ""
+
+msgid "Ehhez a kéréshez nincs kiválasztott szolgáltatáselem."
+msgstr ""
+
+msgid "Ehhez az e-mail címhez már tartozik fiók. Kérjük, jelentkezzen be."
+msgstr ""
+
+msgid "Ehhez kapcsolódó szolgáltatások"
+msgstr ""
+
+msgid "Elem"
+msgstr ""
+
+msgid "Elem frissítve."
+msgstr ""
+
+msgid "Elem hozzáadása"
+msgstr ""
+
+msgid "Elem létrehozva."
+msgstr ""
+
+msgid "Elem szerkesztése"
+msgstr ""
+
+msgid "Elem törölve."
+msgstr ""
+
+msgid "Elemek:"
+msgstr ""
+
+msgid "Elfelejtett jelszó"
+msgstr ""
+
+msgid "Elfogadva"
+msgstr ""
+
+msgid "Elkészült terv / dokumentum feltöltve."
+msgstr ""
+
+msgid "Elkészült tervek"
+msgstr ""
+
+msgid "Elkészült tervek és dokumentumok"
+msgstr ""
+
+msgid "Ellenőrizze a kiválasztott tételeket, és adja meg a tételenkénti adatokat. A projekt közös adatait a következő lépésben kérjük."
+msgstr ""
+
+msgid "Ellenőrizze az összeállítást, adja meg a kapcsolattartási adatait, és küldje el a kérést."
+msgstr ""
+
+msgid "Ellenőrzés"
+msgstr ""
+
+msgid "Elolvastam és elfogadom az <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">adatkezelési tájékoztatót</a>."
+msgstr ""
+
+msgid "Elolvastam és elfogadom az <a href=\"%s\">adatvédelmi tájékoztatóban</a> foglaltakat."
+msgstr ""
+
+msgid "Elsődleges"
+msgstr ""
+
+msgid "Elsődleges sötét"
+msgstr ""
+
+msgid "Elérhető változók: {request_number}, {client_name}, {client_email}, {client_phone}, {client_data}, {services}, {status}, {portal_link}, {quote_amount}, {quote_valid_until}"
+msgstr ""
+
+msgid "Elérhetőségeink"
+msgstr ""
+
+msgid "Előbb hozzon létre legalább egy szolgáltatást."
+msgstr ""
+
+msgid "Előkészítés"
+msgstr ""
+
+msgid "Előnyök"
+msgstr ""
+
+msgid "Emlékezzen rám"
+msgstr ""
+
+msgid "Engedélyeztetés"
+msgstr ""
+
+msgid "Eredmény"
+msgstr ""
+
+msgid "Ez a bma_reference_category taxonómia (lista szűrő: ?tipus=…)."
+msgstr ""
+
+msgid "Ez a mező kulcs már létezik."
+msgstr ""
+
+msgid "Ez a mező kötelező."
+msgstr ""
+
+msgid "Ez a mezőkönyvtár. A megjelenést a Szolgáltatáselemek szerkesztőjében állítja be. Azonos mezőkulcs több elemnél is csak egyszer jelenik meg az ajánlatkérésben."
+msgstr ""
+
+msgid "Ez a tájékoztató bemutatja, hogy milyen személyes adatokat kezelünk a weboldal használata, kapcsolatfelvétel, ajánlatkérés és ügyfélfiók használata során, milyen célból kezeljük ezeket az adatokat, valamint milyen jogok illetik meg az érintetteket."
+msgstr ""
+
+msgid "Ez a tájékoztató bemutatja, milyen sütiket (cookie-kat) és hasonló technológiákat használ a BMA Engineering weboldala."
+msgstr ""
+
+msgid "Ez az ajánlatkérés már be lett küldve. Frissítse az oldalt."
+msgstr ""
+
+msgid "Ezek a működéshez szükségesek, és a „Csak szükséges” választással is aktívak maradnak."
+msgstr ""
+
+msgid "Ezt válassza, ha:"
+msgstr ""
+
+msgid "Ezt válassza, ha…"
+msgstr ""
+
+msgid "Ezt válassza, ha… (összefoglaló)"
+msgstr ""
+
+msgid "Ezután"
+msgstr ""
+
+msgid "Ezzel a szűréssel nincs találat. Próbáljon másik típust vagy szolgáltatást, vagy állítsa vissza a szűrőt „Összes”-re."
+msgstr ""
+
+msgid "Felmérés"
+msgstr ""
+
+msgid "Felmérés és ajánlat"
+msgstr ""
+
+msgid "Feltöltés"
+msgstr ""
+
+msgid "Feltöltés ehhez a tételhez"
+msgstr ""
+
+msgid "Feltöltés folyamatban…"
+msgstr ""
+
+msgid "Feltöltés sikeres."
+msgstr ""
+
+msgid "Feltöltés sikertelen."
+msgstr ""
+
+msgid "Fizetve"
+msgstr ""
+
+msgid "Fizetve: %s"
+msgstr ""
+
+msgid "Fizetés"
+msgstr ""
+
+msgid "Fizetés indítása"
+msgstr ""
+
+msgid "Fizetés megtekintése"
+msgstr ""
+
+msgid "Fizetési állapot"
+msgstr ""
+
+msgid "Fizetésre vár"
+msgstr ""
+
+msgid "Folyamat"
+msgstr ""
+
+msgid "Folyamatban"
+msgstr ""
+
+msgid "Folytathatja az ügyfélportálon."
+msgstr ""
+
+msgid "Fájl feltöltési hiba."
+msgstr ""
+
+msgid "Fókusz gyűrű"
+msgstr ""
+
+msgid "Főoldal"
+msgstr ""
+
+msgid "GYIK"
+msgstr ""
+
+msgid "Galéria törlése"
+msgstr ""
+
+msgid "Google Analytics 4 és/vagy Google Tag Manager – csak ha az admin beállította, és Ön elfogadja az analitikai cookie-kat"
+msgstr ""
+
+msgid "Gyakori kérdések"
+msgstr ""
+
+msgid "Gyors indítás – mire van szüksége?"
+msgstr ""
+
+msgid "Ha a banki utalást választja, a kártyás fizetés a továbbiakban nem lesz elérhető ennél az ajánlatnál. Folytatja?"
+msgstr ""
+
+msgid "Ha egy kéréssel kapcsolatban kérdése van, vagy módosítaná a kiválasztott tételeket, keressen minket."
+msgstr ""
+
+msgid "Ha korábban ügyfélfiókot hozott létre, bejelentkezés után megtekintheti saját ajánlatkéréseit, azok aktuális státuszát, valamint az Ön számára feltöltött ajánlatokat és dokumentumokat."
+msgstr ""
+
+msgid "Ha külső szolgáltató miatt ilyen történik, csak az alkalmazandó adatvédelmi szabályoknak megfelelő módon."
+msgstr ""
+
+msgid "Ha most továbblép, a jelenlegi kiválasztásai elveszhetnek."
+msgstr ""
+
+msgid "Ha már van konkrét projektje, a kapcsolatfelvételi űrlap helyett érdemes az ajánlatkérési folyamatot használni."
+msgstr ""
+
+msgid "Ha még nem tudja pontosan, mire van szüksége, hívjon minket."
+msgstr ""
+
+msgid "Ha nem tudja pontosan, mire van szüksége, elég a projektet leírnia – segítünk összeállítani."
+msgstr ""
+
+msgid "Ha rendelkezésre áll"
+msgstr ""
+
+msgid "Ha tájékoztató ár jelenik meg, az nem feltétlenül végleges ajánlat."
+msgstr ""
+
+msgid "Ha általános kérdése van, vagy még nem tudja pontosan, melyik szolgáltatásra van szüksége, küldjön üzenetet. Konkrét projektre az ajánlatkérést javasoljuk."
+msgstr ""
+
+msgid "Ha üresen hagyja, a nettó + adó összegéből számolódik."
+msgstr ""
+
+msgid "Halvány szöveg"
+msgstr ""
+
+msgid "Hasonló projektet tervez?"
+msgstr ""
+
+msgid "Hasonló projektje van?"
+msgstr ""
+
+msgid "Használat"
+msgstr ""
+
+msgid "Helyszín"
+msgstr ""
+
+msgid "Helyszín: %s"
+msgstr ""
+
+msgid "Hiba / veszély"
+msgstr ""
+
+msgid "Hiba történt a mentés során."
+msgstr ""
+
+msgid "Hibás felhasználónév vagy jelszó. Kérjük, próbálja újra."
+msgstr ""
+
+msgid "Hogyan működik?"
+msgstr ""
+
+msgid "Hogyan zajlik?"
+msgstr ""
+
+msgid "Hol talál minket?"
+msgstr ""
+
+msgid "Hozzon létre ügyfélfiókot, hogy egy helyen kövesse a kérés státuszát, az ajánlatot és a dokumentumokat."
+msgstr ""
+
+msgid "Hozzáadva"
+msgstr ""
+
+msgid "Hozzáadva az ajánlatkéréshez"
+msgstr ""
+
+msgid "Hozzáadás"
+msgstr ""
+
+msgid "Hozzáadás és továbblépés"
+msgstr ""
+
+msgid "Hozzáférés-védelem és mentések"
+msgstr ""
+
+msgid "Hozzájárulás nélkül ezek a scriptek nem indulnak el."
+msgstr ""
+
+msgid "Hétfő–Péntek, 08:00–17:00"
+msgstr ""
+
+msgid "Húzza ide a fájlokat, vagy tallózzon"
+msgstr ""
+
+msgid "IBAN"
+msgstr ""
+
+msgid "IP-cím, böngésző és eszköz típusa, meglátogatott oldalak, technikai naplóadatok, cookie-hozzájárulási beállítások"
+msgstr ""
+
+msgid "Irányítószám, város, utca, házszám"
+msgstr ""
+
+msgid "Jelenleg nincs fájlmező hozzárendelve a kiválasztott tételekhez."
+msgstr ""
+
+msgid "Jelenleg nincs külön marketing cookie integráció. Az „Összes elfogadása” a jövőbeli marketing kategóriát is engedélyezi, ha később bekapcsolásra kerül."
+msgstr ""
+
+msgid "Jelentkezzen be ügyfélfiókjával az ajánlatkérések és dokumentumok megtekintéséhez."
+msgstr ""
+
+msgid "Jelszó"
+msgstr ""
+
+msgid "Jelölje be a szükséges tételeket – bármennyit."
+msgstr ""
+
+msgid "Jogi információ"
+msgstr ""
+
+msgid "Jogi kötelezettségek:"
+msgstr ""
+
+msgid "Jogosult lehet: tájékoztatás, hozzáférés, helyesbítés, törlés, korlátozás, tiltakozás, adathordozhatóság, hozzájárulás visszavonása."
+msgstr ""
+
+msgid "Jogosultság alapú hozzáférés"
+msgstr ""
+
+msgid "K: Kérdés?\nV: Válasz.\n\nK: Másik kérdés?\nV: Másik válasz."
+msgstr ""
+
+msgid "Kapcsolat"
+msgstr ""
+
+msgid "Kapcsolat:"
+msgstr ""
+
+msgid "Kapcsolatfelvétel esetén"
+msgstr ""
+
+msgid "Kapcsolatfelvétel:"
+msgstr ""
+
+msgid "Kapcsolatfelvételi űrlap"
+msgstr ""
+
+msgid "Kapcsolattartás"
+msgstr ""
+
+msgid "Kapcsolódó szolgáltatások"
+msgstr ""
+
+msgid "Kapcsolódó szolgáltatások egy helyen"
+msgstr ""
+
+msgid "Kategória (típus)"
+msgstr ""
+
+msgid "Kedvezményezett"
+msgstr ""
+
+msgid "Keresés"
+msgstr ""
+
+msgid "Keresés…"
+msgstr ""
+
+msgid "Keret"
+msgstr ""
+
+msgid "Kevesebb felesleges egyeztetés"
+msgstr ""
+
+msgid "Kiemelt referenciák"
+msgstr ""
+
+msgid "Kiemelés"
+msgstr ""
+
+msgid "Kijelentkezés"
+msgstr ""
+
+msgid "Kiválasztja a részfeladatokat, megadja a projekt adatait, és feltölti a meglévő dokumentumokat."
+msgstr ""
+
+msgid "Kiválasztott szolgáltatások"
+msgstr ""
+
+msgid "Kiválasztott szolgáltatások hozzáadása az ajánlatkéréshez"
+msgstr ""
+
+msgid "Kiválasztott tételek"
+msgstr ""
+
+msgid "Kiválasztás módosítása"
+msgstr ""
+
+msgid "Konkrét projektre kérne ajánlatot?"
+msgstr ""
+
+msgid "Kosár"
+msgstr ""
+
+msgid "Kártya / felület"
+msgstr ""
+
+msgid "Kártyás fizetés (Stripe)"
+msgstr ""
+
+msgid "Kártyás fizetéshez Stripe API kulcsok. Webhook URL:"
+msgstr ""
+
+msgid "Kép nagyítása"
+msgstr ""
+
+msgid "Képek"
+msgstr ""
+
+msgid "Képek kiválasztása"
+msgstr ""
+
+msgid "Kérjen ajánlatot a projektjéhez"
+msgstr ""
+
+msgid "Kérjük, töltse ki a kötelező mezőket."
+msgstr ""
+
+msgid "Kérjük, utalja az alábbi összeget a megadott bankszámlára. Az utalás közleményében tüntesse fel az ajánlat számát."
+msgstr ""
+
+msgid "Később is pótolható"
+msgstr ""
+
+msgid "Köszönjük az üzenetét."
+msgstr ""
+
+msgid "Köszönjük! A fizetés feldolgozása megtörtént."
+msgstr ""
+
+msgid "Köszönjük, megkaptuk az ajánlatkérését"
+msgstr ""
+
+msgid "Kötelező"
+msgstr ""
+
+msgid "Kötelező elem"
+msgstr ""
+
+msgid "Kötelező fájl hiányzik: %s"
+msgstr ""
+
+msgid "Következő lépés"
+msgstr ""
+
+msgid "Közlemény"
+msgstr ""
+
+msgid "Közmű csatlakozás koordináció"
+msgstr ""
+
+msgid "Közmű-koordináció"
+msgstr ""
+
+msgid "Közmű-koordináció: Áram-, gáz- és vízszolgáltatói egyeztetések\nTervezés: Csatlakozási tervek készítése"
+msgstr ""
+
+msgid "Közösségi média"
+msgstr ""
+
+msgid "Lakossági és üzleti projektek"
+msgstr ""
+
+msgid "Lakossági és üzleti projektekhez"
+msgstr ""
+
+msgid "Lakossági és üzleti<br>projektek"
+msgstr ""
+
+msgid "Legalább egy szolgáltatást ki kell választani."
+msgstr ""
+
+msgid "Legalább egy tételt válasszon ki a továbblépéshez."
+msgstr ""
+
+msgid "Lejárt"
+msgstr ""
+
+msgid "Letöltés"
+msgstr ""
+
+msgid "Leírás"
+msgstr ""
+
+msgid "Lábléc háttér"
+msgstr ""
+
+msgid "Lábléc szöveg"
+msgstr ""
+
+msgid "Maradok ezen az oldalon"
+msgstr ""
+
+msgid "Marketing"
+msgstr ""
+
+msgid "Megjegyzés"
+msgstr ""
+
+msgid "Megjegyzés: a jogi szöveget publikálás előtt célszerű jogi szakértővel ellenőriztetni."
+msgstr ""
+
+msgid "Megjegyzés…"
+msgstr ""
+
+msgid "Megjelenik ezeknél a szolgáltatásoknál"
+msgstr ""
+
+msgid "Megjelenés"
+msgstr ""
+
+msgid "Megjelenési sorrend"
+msgstr ""
+
+msgid "Megkaptuk a megkeresését. A megadott elérhetőségek egyikén felvesszük Önnel a kapcsolatot."
+msgstr ""
+
+msgid "Megkaptuk az üzenetét – %s"
+msgstr ""
+
+msgid "Meglévő ajánlatkérés vagy projekt"
+msgstr ""
+
+msgid "Meglévő ajánlatkérése van?"
+msgstr ""
+
+msgid "Meglévő elemek"
+msgstr ""
+
+msgid "Meglévő mezők"
+msgstr ""
+
+msgid "Megtekintés"
+msgstr ""
+
+msgid "Mentve."
+msgstr ""
+
+msgid "Mentés"
+msgstr ""
+
+msgid "Mentéskor automatikusan generálódik (Oferta-BMA-NR-YYYY-MM-DD)."
+msgstr ""
+
+msgid "Meta: _bma_duration – az „Amit csináltunk” blokk utolsó sora."
+msgstr ""
+
+msgid "Meta: _bma_result – üresen a szekció nem jelenik meg."
+msgstr ""
+
+msgid "Meta: _bma_task – üresen a szekció nem jelenik meg."
+msgstr ""
+
+msgid "Meta: _bma_work – soronként „Címke: szöveg”. Üresen a szekció kimarad."
+msgstr ""
+
+msgid "Mező frissítve."
+msgstr ""
+
+msgid "Mező kulcs"
+msgstr ""
+
+msgid "Mező létrehozva. Rendelje hozzá egy szolgáltatáselemhez a Szolgáltatáselemek menüben."
+msgstr ""
+
+msgid "Mező létrehozása"
+msgstr ""
+
+msgid "Mező szerkesztése"
+msgstr ""
+
+msgid "Mező törölve."
+msgstr ""
+
+msgid "Mezők"
+msgstr ""
+
+msgid "Miben tudunk segíteni?"
+msgstr ""
+
+msgid "Mikor lehet erre szüksége?"
+msgstr ""
+
+msgid "Minden kiválasztott tételre vonatkozik"
+msgstr ""
+
+msgid "Minden státusz"
+msgstr ""
+
+msgid "Minden szolgáltatás"
+msgstr ""
+
+msgid "Mire lesz szükség?"
+msgstr ""
+
+msgid "Mire lesz szükség? – Ha rendelkezésre áll"
+msgstr ""
+
+msgid "Mire lesz szükség? – Később is pótolható"
+msgstr ""
+
+msgid "Mire lesz szükség? – Kötelező"
+msgstr ""
+
+msgid "Mit tartalmaz a(z) %s?"
+msgstr ""
+
+msgid "Most"
+msgstr ""
+
+msgid "Munkamenet és biztonság (WordPress, bejelentkezés)"
+msgstr ""
+
+msgid "Munkaterületek"
+msgstr ""
+
+msgid "Munkánk során arra törekszünk, hogy a projekt műszaki követelményei, a szükséges dokumentációk és a kapcsolódó egyeztetések egy átlátható és követhető folyamat részeként legyenek kezelhetők."
+msgstr ""
+
+msgid "Már az ajánlatkérés során megadhatók a projekt legfontosabb adatai, így az ajánlatkészítés célzottabban indulhat el."
+msgstr ""
+
+msgid "Már be van jelentkezve"
+msgstr ""
+
+msgid "Már hozzáadva az ajánlatkéréshez"
+msgstr ""
+
+msgid "Még nem választott tételt. Jelölje be bal oldalon, mire van szüksége – bármennyi tétel egy ajánlatkérésbe kerülhet."
+msgstr ""
+
+msgid "Még nincs ajánlatkérése."
+msgstr ""
+
+msgid "Még nincs dokumentum ehhez a kéréshez."
+msgstr ""
+
+msgid "Még nincs elem ehhez a szolgáltatáshoz."
+msgstr ""
+
+msgid "Még nincs feltöltött fájl ehhez a tételhez."
+msgstr ""
+
+msgid "Még nincs feltöltött terv ehhez a tételhez."
+msgstr ""
+
+msgid "Még nincs feltöltött vagy kapott dokumentum."
+msgstr ""
+
+msgid "Még nincs mező a könyvtárban. Hozzon létre egyet alább, vagy a Dinamikus mezők menüben."
+msgstr ""
+
+msgid "Még nincs státuszváltozás."
+msgstr ""
+
+msgid "Még nincs ügyfél által feltöltött dokumentum."
+msgstr ""
+
+msgid "Mégse"
+msgstr ""
+
+msgid "Mérnöki tervezés <em>átlátható</em> folyamattal"
+msgstr ""
+
+msgid "Módszer: %s"
+msgstr ""
+
+msgid "Műszaki dokumentum"
+msgstr ""
+
+msgid "Műszaki dokumentáció"
+msgstr ""
+
+msgid "Művelet"
+msgstr ""
+
+msgid "Műveletek"
+msgstr ""
+
+msgid "Nem baj, ha nincs meg minden. Az ajánlatkéréshez elég annyi, amennyi rendelkezésére áll – a többit menet közben pótoljuk."
+msgstr ""
+
+msgid "Nem engedélyezett fájltípus."
+msgstr ""
+
+msgid "Nem felelünk külső oldalak tartalmáért. A folyamatos működés nem garantálható. A weboldali általános információ nem helyettesíti az egyedi műszaki felmérést."
+msgstr ""
+
+msgid "Nem sikerült létrehozni a mezőt."
+msgstr ""
+
+msgid "Nem sikerült létrehozni az elemet."
+msgstr ""
+
+msgid "Nem szükséges minden műszaki részletet előre ismernie. Adja meg a rendelkezésére álló információkat és dokumentumokat, mi pedig ezek alapján felmérjük a projektet és elkészítjük az ajánlatot."
+msgstr ""
+
+msgid "Nem találja, amire szüksége van?"
+msgstr ""
+
+msgid "Nettó"
+msgstr ""
+
+msgid "Nettó összeg"
+msgstr ""
+
+msgid "Nincs ajánlat"
+msgstr ""
+
+msgid "Nincs fájl."
+msgstr ""
+
+msgid "Nincs jogosultsága a letöltéshez."
+msgstr ""
+
+msgid "Nincs jogosultsága a törléshez."
+msgstr ""
+
+msgid "Nincs jogosultsága."
+msgstr ""
+
+msgid "Nincs kiválasztott szolgáltatáselem."
+msgstr ""
+
+msgid "Nincs kiválasztott tétel."
+msgstr ""
+
+msgid "Nincs megadott projektadat."
+msgstr ""
+
+msgid "Nincs találat."
+msgstr ""
+
+msgid "Nyelvek"
+msgstr ""
+
+msgid "Nyitvatartás"
+msgstr ""
+
+msgid "Nyitvatartás: %s"
+msgstr ""
+
+msgid "Nyomon követés"
+msgstr ""
+
+msgid "Négy szolgáltatási terület, azon belül konkrét részfeladatokkal. Az ajánlatkérésbe bármennyi tétel bekerülhet."
+msgstr ""
+
+msgid "Név"
+msgstr ""
+
+msgid "Odorheiu Secuiesc · Harghita"
+msgstr ""
+
+msgid "Odorheiu Secuiesc,<br>Hargita, Románia"
+msgstr ""
+
+msgid "Oldal háttér"
+msgstr ""
+
+msgid "Opciók (soronként)"
+msgstr ""
+
+msgid "PDF, DWG, JPG, DOCX · legfeljebb %d MB"
+msgstr ""
+
+msgid "PDF, DWG, JPG, DOCX · legfeljebb %d MB / fájl"
+msgstr ""
+
+msgid "Piszkozat"
+msgstr ""
+
+msgid "Placeholder kép"
+msgstr ""
+
+msgid "Projekt adatai"
+msgstr ""
+
+msgid "Projekt alapadatai"
+msgstr ""
+
+msgid "Projekt fotó"
+msgstr ""
+
+msgid "Projekt megtekintése →"
+msgstr ""
+
+msgid "Projekt típusa (kicker)"
+msgstr ""
+
+msgid "Projektek"
+msgstr ""
+
+msgid "Projektgaléria"
+msgstr ""
+
+msgid "Publishable key"
+msgstr ""
+
+msgid "Példa: új lakóépület – összeállított ajánlatkérés"
+msgstr ""
+
+msgid "Pénznem"
+msgstr ""
+
+msgid "Referencia"
+msgstr ""
+
+msgid "Referencia adatok"
+msgstr ""
+
+msgid "Referencia kategóriák"
+msgstr ""
+
+msgid "Referenciák"
+msgstr ""
+
+msgid "Részfeladatok"
+msgstr ""
+
+msgid "Részletek"
+msgstr ""
+
+msgid "Részletek és kiválasztás →"
+msgstr ""
+
+msgid "Rólunk"
+msgstr ""
+
+msgid "Rögzíti a banki befizetést?"
+msgstr ""
+
+msgid "Rövid leírás"
+msgstr ""
+
+msgid "Röviden"
+msgstr ""
+
+msgid "Röviden írja le a kérdését vagy a projektjét…"
+msgstr ""
+
+msgid "SMTP"
+msgstr ""
+
+msgid "Sablon slug"
+msgstr ""
+
+msgid "Saroklekerekítés (px)"
+msgstr ""
+
+msgid "Secret key"
+msgstr ""
+
+msgid "Segítségre van szüksége?"
+msgstr ""
+
+msgid "Siker"
+msgstr ""
+
+msgid "Sikeres"
+msgstr ""
+
+msgid "Sikeres fizetés"
+msgstr ""
+
+msgid "Sikeresen kijelentkezett."
+msgstr ""
+
+msgid "Sorrend"
+msgstr ""
+
+msgid "Stripe Tax automatikus ÁFA számítás (előbb engedélyezze a Stripe Dashboardon)"
+msgstr ""
+
+msgid "Stripe fizetés"
+msgstr ""
+
+msgid "Stripe hiba."
+msgstr ""
+
+msgid "Stripe számla létrehozása"
+msgstr ""
+
+msgid "Státusz"
+msgstr ""
+
+msgid "Státusz létrehozása"
+msgstr ""
+
+msgid "Státusz módosítása"
+msgstr ""
+
+msgid "Státusz törölve."
+msgstr ""
+
+msgid "Státusz: %s"
+msgstr ""
+
+msgid "Státuszelőzmények"
+msgstr ""
+
+msgid "Státuszok"
+msgstr ""
+
+msgid "Szennyvízbekötési terv"
+msgstr ""
+
+msgid "Szerkesztés"
+msgstr ""
+
+msgid "Szerződés teljesítése:"
+msgstr ""
+
+msgid "Szolgáltatás"
+msgstr ""
+
+msgid "Szolgáltatás beállítások"
+msgstr ""
+
+msgid "Szolgáltatás kategóriák"
+msgstr ""
+
+msgid "Szolgáltatás szerkesztése"
+msgstr ""
+
+msgid "Szolgáltatáselemek"
+msgstr ""
+
+msgid "Szolgáltatáselemek kezelése"
+msgstr ""
+
+msgid "Szolgáltatási területek"
+msgstr ""
+
+msgid "Szolgáltatások"
+msgstr ""
+
+msgid "Szolgáltatások kiválasztása"
+msgstr ""
+
+msgid "Szolgáltatások: %s"
+msgstr ""
+
+msgid "Számlázási cím"
+msgstr ""
+
+msgid "Székhely"
+msgstr ""
+
+msgid "Szín"
+msgstr ""
+
+msgid "Színpaletta és betűtípusok – azonnal érvényesülnek a frontenden. A CSS design tokeneken keresztül hat a témára és a bővítményre."
+msgstr ""
+
+msgid "Szöveg"
+msgstr ""
+
+msgid "Szükség esetén hozzáférhetnek: tárhelyszolgáltató, e-mail-szolgáltató, weboldal-karbantartó, analitikai szolgáltatók (hozzájárulás esetén), könyvelési vagy jogi szolgáltatók, valamint a választott fizetési szolgáltató (pl. Stripe), ha online fizetést használ."
+msgstr ""
+
+msgid "Szükséges"
+msgstr ""
+
+msgid "Szűrés"
+msgstr ""
+
+msgid "Találatok: %d"
+msgstr ""
+
+msgid "Technikai használat során"
+msgstr ""
+
+msgid "Teendő: ajánlat elfogadása"
+msgstr ""
+
+msgid "Teendő: díjbekérő rendezése"
+msgstr ""
+
+msgid "Telefon"
+msgstr ""
+
+msgid "Teljes név"
+msgstr ""
+
+msgid "Terv"
+msgstr ""
+
+msgid "Terv elérhető"
+msgstr ""
+
+msgid "Tervek készítése folyamatban"
+msgstr ""
+
+msgid "Tervezés"
+msgstr ""
+
+msgid "Tervezés · Engedélyeztetés · Közmű-koordináció"
+msgstr ""
+
+msgid "Tervrajzok, dokumentumok"
+msgstr ""
+
+msgid "Tipikus átfutás: [X–Y] hét"
+msgstr ""
+
+msgid "Tovább"
+msgstr ""
+
+msgid "Tovább az adatokhoz"
+msgstr ""
+
+msgid "Tovább az ajánlatkéréshez"
+msgstr ""
+
+msgid "További dokumentum feltöltése"
+msgstr ""
+
+msgid "További megjegyzés"
+msgstr ""
+
+msgid "További projektek"
+msgstr ""
+
+msgid "Továbblépés hozzáadás nélkül"
+msgstr ""
+
+msgid "Tárgy"
+msgstr ""
+
+msgid "Téma"
+msgstr ""
+
+msgid "Térkép betöltése"
+msgstr ""
+
+msgid "Tétel"
+msgstr ""
+
+msgid "Tétel #%d"
+msgstr ""
+
+msgid "Tétel eltávolítása"
+msgstr ""
+
+msgid "Tételenkénti adatok"
+msgstr ""
+
+msgid "Típus"
+msgstr ""
+
+msgid "Típus: %s"
+msgstr ""
+
+msgid "Töltse ki a kiválasztott tételekhez tartozó adatokat, és töltse fel a meglévő tervrajzokat."
+msgstr ""
+
+msgid "Törlés"
+msgstr ""
+
+msgid "Törzs"
+msgstr ""
+
+msgid "Törzsszöveg betűtípus"
+msgstr ""
+
+msgid "Túl sok sikertelen bejelentkezési kísérlet. Próbálja újra 15 perc múlva."
+msgstr ""
+
+msgid "Utalási adatok"
+msgstr ""
+
+msgid "Utolsó frissítés: 2026. augusztus"
+msgstr ""
+
+msgid "Van egy projektje, amelyhez tervezésre, engedélyeztetésre, műszaki dokumentációra vagy közmű-koordinációra van szüksége?"
+msgstr ""
+
+msgid "Vegye fel velünk a kapcsolatot, vagy ha már tudja, milyen szolgáltatást keres, indítsa el az online ajánlatkérést."
+msgstr ""
+
+msgid "Vissza"
+msgstr ""
+
+msgid "Vissza a szolgáltatásokhoz"
+msgstr ""
+
+msgid "Vissza az ajánlatkéréshez"
+msgstr ""
+
+msgid "Vissza az ügyfélportálra"
+msgstr ""
+
+msgid "Visszaigazolás"
+msgstr ""
+
+msgid "Visszajelzés [X] munkanapon belül, kötelezettség nélkül."
+msgstr ""
+
+msgid "Visszavonva"
+msgstr ""
+
+msgid "Válassza ki a projektjéhez szükséges szolgáltatásokat és azokon belül a konkrét részfeladatokat."
+msgstr ""
+
+msgid "Válassza ki a szükséges részfeladatokat, és néhány adat megadásával kérjen ajánlatot. Az ajánlatkérés díjmentes és nem jár kötelezettséggel."
+msgstr ""
+
+msgid "Válassza ki a szükséges szolgáltatásokat, adja meg a projekt alapadatait, és néhány napon belül személyre szabott ajánlatot küldünk."
+msgstr ""
+
+msgid "Válassza ki a szükséges szolgáltatásokat, adja meg a projekt alapadatait, és töltse fel a rendelkezésére álló dokumentumokat. Ezek alapján pontosabb ajánlatot tudunk készíteni."
+msgstr ""
+
+msgid "Válassza ki az Ön projektjéhez kapcsolódó szolgáltatási területet. Egy ajánlatkérésben több szolgáltatást és azokon belül több részfeladatot is megjelölhet."
+msgstr ""
+
+msgid "Válassza ki azokat a tételeket, amelyekre a projektjéhez szüksége van. Bármelyik kombinálható a többi szolgáltatási területtel."
+msgstr ""
+
+msgid "Válassza ki, mire van szüksége a projektjéhez, adja meg a rendelkezésére álló adatokat, és kérjen személyre szabott ajánlatot. A folyamat minden lépését egy helyen követheti."
+msgstr ""
+
+msgid "Válasszon fizetési módot"
+msgstr ""
+
+msgid "Válasszon témát…"
+msgstr ""
+
+msgid "Válasszon…"
+msgstr ""
+
+msgid "Válasz [X] munkanapon belül"
+msgstr ""
+
+msgid "Válogatás megvalósult tervezési, engedélyeztetési és közmű-koordinációs munkáinkból."
+msgstr ""
+
+msgid "Válogatás megvalósult tervezési, engedélyeztetési, közmű-koordinációs és dokumentációs munkáinkból. Szűrjön projekttípus vagy szolgáltatás szerint."
+msgstr ""
+
+msgid "Vízbekötési terv"
+msgstr ""
+
+msgid "Vízmű egyeztetés"
+msgstr ""
+
+msgid "Webhook secret"
+msgstr ""
+
+msgid "Weboldal"
+msgstr ""
+
+msgid "Weboldal biztonsága:"
+msgstr ""
+
+msgid "Weboldalunk sütiket használ a működéshez, statisztikához és marketing célokra. Részletek: Cookie tájékoztató."
+msgstr ""
+
+msgid "[MAGYAR / ROMÁN]"
+msgstr ""
+
+msgid "[Projekt fotó]"
+msgstr ""
+
+msgid "[SZOLGÁLTATÁS KÉP PLACEHOLDER] megjelenítése"
+msgstr ""
+
+msgid "[X] munkanapon belül"
+msgstr ""
+
+msgid "ajánlatok és projektinformációk elérése ügyfélfiókon keresztül"
+msgstr ""
+
+msgid "az ajánlat %d napig érvényes"
+msgstr ""
+
+msgid "csak megfelelő hozzájárulás esetén (GA4 / GTM)."
+msgstr ""
+
+msgid "cég és szolgáltatások bemutatása"
+msgstr ""
+
+msgid "egy ajánlatkérésben több szolgáltatást is összeállíthat."
+msgstr ""
+
+msgid "feltöltheti a rendelkezésre álló terveket és dokumentumokat;"
+msgstr ""
+
+msgid "fiókazonosító adatok, e-mail, ajánlatkérések, ajánlatok, státuszok, feltöltött és letöltött dokumentumok, technikai használati adatok"
+msgstr ""
+
+msgid "igényfelmérés, ajánlatkészítés, szerződés előkészítése."
+msgstr ""
+
+msgid "kapcsolatfelvétel és ajánlatkérés"
+msgstr ""
+
+msgid "kiválaszthatja a szükséges szolgáltatásokat;"
+msgstr ""
+
+msgid "megadhatja a projekt alapadatait;"
+msgstr ""
+
+msgid "megjelölheti a konkrét részfeladatokat;"
+msgstr ""
+
+msgid "megkeresések megválaszolása."
+msgstr ""
+
+msgid "nev@ceg.ro"
+msgstr ""
+
+msgid "nev@example.com"
+msgstr ""
+
+msgid "név, e-mail, telefon, cégnév és adószám (ha megadja), számlázási/projektadatok, kiválasztott szolgáltatások, feltöltött dokumentumok, kapcsolódó kommunikáció"
+msgstr ""
+
+msgid "név, e-mail, telefonszám (ha megadja), téma, üzenet, beküldés időpontja"
+msgstr ""
+
+msgid "pl. 3 hónap"
+msgstr ""
+
+msgid "referenciák megjelenítése"
+msgstr ""
+
+msgid "szolgáltatás, dokumentumkezelés, kapcsolattartás."
+msgstr ""
+
+msgid "számviteli és jogszabályi kötelezettségek."
+msgstr ""
+
+msgid "visszaélések megelőzése."
+msgstr ""
+
+msgid "ÁFA"
+msgstr ""
+
+msgid "Állítsa össze, mire van szüksége, és néhány adat megadásával kérjen személyre szabott ajánlatot."
+msgstr ""
+
+msgid "Általános dokumentumok"
+msgstr ""
+
+msgid "Általános felhasználási feltételek"
+msgstr ""
+
+msgid "Általános érdeklődés"
+msgstr ""
+
+msgid "Átadás"
+msgstr ""
+
+msgid "Átadási dokumentum"
+msgstr ""
+
+msgid "Átfutás"
+msgstr ""
+
+msgid "Átirányítás…"
+msgstr ""
+
+msgid "Átlátható folyamat"
+msgstr ""
+
+msgid "Átláthatóbb műszaki ügyintézés"
+msgstr ""
+
+msgid "Átnézzük a megadott adatokat, és ha szükséges, egyeztetünk a hiányzó részletekről."
+msgstr ""
+
+msgid "Átnézzük az adatokat, szükség esetén egyeztetünk, majd elkészítjük az ajánlatot."
+msgstr ""
+
+msgid "Építési engedély előkészítés"
+msgstr ""
+
+msgid "Érvényes"
+msgstr ""
+
+msgid "Érvényes: %s"
+msgstr ""
+
+msgid "Érvényesség"
+msgstr ""
+
+msgid "Érvénytelen beküldés. Frissítse az oldalt, és próbálja újra."
+msgstr ""
+
+msgid "Érvénytelen e-mail cím."
+msgstr ""
+
+msgid "Érvénytelen kérés."
+msgstr ""
+
+msgid "Érvénytelen összeg."
+msgstr ""
+
+msgid "Év"
+msgstr ""
+
+msgid "Év: %s"
+msgstr ""
+
+msgid "Írja le röviden a projektet, és segítünk összeállítani a szükséges tételeket."
+msgstr ""
+
+msgid "Írjon nekünk"
+msgstr ""
+
+msgid "Összeg"
+msgstr ""
+
+msgid "Összegzés"
+msgstr ""
+
+msgid "Összes"
+msgstr ""
+
+msgid "Összes elfogadása"
+msgstr ""
+
+msgid "Összes kérés"
+msgstr ""
+
+msgid "Összes referencia"
+msgstr ""
+
+msgid "Összes szolgáltatás"
+msgstr ""
+
+msgid "Új ajánlatkérés"
+msgstr ""
+
+msgid "Új dinamikus mező létrehozása ehhez az elemhez"
+msgstr ""
+
+msgid "Új elem"
+msgstr ""
+
+msgid "Új mező"
+msgstr ""
+
+msgid "Új státusz"
+msgstr ""
+
+msgid "Új státusz létrehozva."
+msgstr ""
+
+msgid "Új szolgáltatás"
+msgstr ""
+
+msgid "Útvonaltervezés"
+msgstr ""
+
+msgid "Üdvözöljük, %1$s · %2$s"
+msgstr ""
+
+msgid "Ügyfél"
+msgstr ""
+
+msgid "Ügyfél dokumentumai"
+msgstr ""
+
+msgid "Ügyfél feltöltés"
+msgstr ""
+
+msgid "Ügyfél label"
+msgstr ""
+
+msgid "Ügyfél látható"
+msgstr ""
+
+msgid "Ügyféladatok"
+msgstr ""
+
+msgid "Ügyfélfiók használata esetén"
+msgstr ""
+
+msgid "Ügyféloldali információ"
+msgstr ""
+
+msgid "Ügyfélportál"
+msgstr ""
+
+msgid "Ügyfélportál megnyitása"
+msgstr ""
+
+msgid "Ügyfélterület"
+msgstr ""
+
+msgid "Üzenet"
+msgstr ""
+
+msgid "Üzenet küldése"
+msgstr ""
+
+msgid "— Válasszon —"
+msgstr ""
+
+msgid "← Vissza a portálra"
+msgstr ""
+

@@ -38,13 +38,47 @@
 
 	// Add service(s) to cart handled by selection.js on service pages.
 
-	// Remove from cart
-	$('.bma-remove-cart').on('click', function () {
+	// Remove from cart (service group or single item line).
+	$(document).on('click', '.bma-remove-cart', function (e) {
+		e.preventDefault();
 		if (!confirm(bmaAj.strings.confirmRemove)) return;
-		var key = $(this).data('cart-key');
-		postAjax('bma_remove_from_cart', { cart_key: key }).done(function () {
+		var $btn = $(this);
+		var itemId = $btn.data('item-id');
+		var key = $btn.data('cart-key');
+		var payload = {};
+		if (itemId) {
+			payload.item_id = itemId;
+		} else if (key) {
+			payload.cart_key = key;
+		} else {
+			return;
+		}
+		postAjax('bma_remove_from_cart', payload).done(function () {
 			location.reload();
 		});
+	});
+
+	// Drop zone: click / drag to file input
+	$(document).on('click', '[data-bma-drop]', function (e) {
+		if ($(e.target).is('input[type="file"]')) return;
+		var $input = $(this).find('input[type="file"]').first();
+		if ($input.length) $input.trigger('click');
+	});
+	$(document).on('dragover dragenter', '[data-bma-drop]', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		$(this).addClass('is-dragover');
+	});
+	$(document).on('dragleave drop', '[data-bma-drop]', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		$(this).removeClass('is-dragover');
+		if (e.type === 'drop' && e.originalEvent.dataTransfer && e.originalEvent.dataTransfer.files.length) {
+			var input = $(this).find('input[type="file"]').get(0);
+			if (input) {
+				input.files = e.originalEvent.dataTransfer.files;
+			}
+		}
 	});
 
 	// Submit quote request with unified fields (multipart)
@@ -53,6 +87,11 @@
 		var $form = $(this);
 		var $errors = $('#bma-form-errors');
 		$errors.prop('hidden', true).empty();
+
+		if (!$form.find('[name="privacy"]').is(':checked')) {
+			$errors.prop('hidden', false).text(bmaAj.strings.required || 'Az adatvédelmi hozzájárulás kötelező.');
+			return;
+		}
 
 		var formData = new FormData(this);
 		formData.set('privacy', $form.find('[name="privacy"]').is(':checked') ? 1 : 0);

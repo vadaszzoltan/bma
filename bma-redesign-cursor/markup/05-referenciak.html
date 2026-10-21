@@ -1,0 +1,152 @@
+<!--
+  Oldal:    /referenciak/
+  Cel PHP:  plugins/bma-ajanlatkeres/templates/frontend/references-list.php  (shortcode: [bma_references_list])
+  Komponensek: .pagehead .filterbar .fchip .refs .ref .ref-empty .closing .mobilebar
+  Jelolesek:   {{...}} = dinamikus ertek (lasd README 'Token-szotar')
+               [SZOGLETES ZAROJEL] = kitoltendo valos adat
+               <sc-if> / <sc-for> = felteteles blokk / ismetles (PHP if / foreach)
+  FIGYELEM: mielott barmely szoveget lecserelnel, olvasd el a SZOVEGVALTOZASOK.md-t.
+            Ugyanez a markup szolgal ki desktopot, tabletet es mobilt.
+-->
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>+40 728 205 982</span>
+    <span>office@bmaeng.ro</span>
+    <span>Hétfő–Péntek, 08:00–17:00</span>
+    <div class="langswitch" role="group" aria-label="Nyelv választása">
+      <a href="#" class="lang is-on" lang="hu" hreflang="hu" aria-current="true">HU</a>
+      <a href="#" class="lang" lang="ro" hreflang="ro">RO</a>
+      <a href="#" class="lang" lang="en" hreflang="en">EN</a>
+    </div>
+  </div>
+</div>
+<header class="siteheader">
+  <div class="header-inner">
+    <button type="button" class="burger" aria-label="Menü megnyitása">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#0e2356" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+    </button>
+    <div class="logo">[LOGÓ]</div>
+    <nav class="nav">
+      <a href="#">Főoldal</a>
+      <a href="#">Szolgáltatások</a>
+      <a href="#">Referenciák</a>
+      <a href="#">Kapcsolat</a>
+    </nav>
+    <div class="header-actions">
+      <span class="cart-btn">Ajánlat <span class="cart-count">0</span></span>
+      <a href="#" style="font-size:14px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#0e2356">Ügyfélportál</a>
+      <a href="#" class="btn btn--outline btn--sm" style="letter-spacing:.6px;text-transform:uppercase;font-size:13px;font-weight:700">Belépés</a>
+    </div>
+  </div>
+</header>
+
+<section class="pagehead">
+  <div class="pagehead-inner">
+    <p class="crumb"><a href="#">Főoldal</a> / Referenciák</p>
+    <p class="eyebrow eyebrow--light">Projektek</p>
+    <h1>Referenciák</h1>
+    <p class="pagehead-lead">Válogatás megvalósult tervezési, engedélyeztetési, közmű-koordinációs és dokumentációs munkáinkból. Szűrjön projekttípus vagy szolgáltatás szerint.</p>
+  </div>
+</section>
+
+<div class="appbody">
+  <div class="bma-container">
+    <div class="filterbar">
+      <div class="filtergroup">
+        <span>Típus</span>
+        <sc-for list="{{types}}" as="f" hint-placeholder-count="4">
+          <button type="button" class="fchip {{f.cls}}" onClick="{{f.pick}}">{{f.label}}</button>
+        </sc-for>
+      </div>
+      <div class="filtergroup">
+        <span>Szolgáltatás</span>
+        <sc-for list="{{svcs}}" as="f" hint-placeholder-count="5">
+          <button type="button" class="fchip {{f.cls}}" onClick="{{f.pick}}">{{f.label}}</button>
+        </sc-for>
+      </div>
+      <span class="filtercount">{{countLabel}}</span>
+    </div>
+
+    <div class="refs refs--page">
+      <sc-for list="{{items}}" as="r" hint-placeholder-count="4">
+        <div class="ref">
+          <div class="ref-img"><span>[Projekt fotó]</span></div>
+          <div class="ref-body">
+            <p class="eyebrow" style="margin:0">{{r.kicker}}</p>
+            <h3>{{r.title}}</h3>
+            <div class="ref-tags">
+              <sc-for list="{{r.tags}}" as="t" hint-placeholder-count="2">
+                <span class="ref-tag">{{t.name}}</span>
+              </sc-for>
+            </div>
+            <p class="small muted" style="margin:0">{{r.lead}}</p>
+            <div class="ref-link"><a href="#">Projekt megtekintése →</a></div>
+          </div>
+        </div>
+      </sc-for>
+      <sc-if value="{{isEmpty}}" hint-placeholder-val="{{false}}">
+        <div class="ref-empty">Ezzel a szűréssel nincs találat. Próbáljon másik típust vagy szolgáltatást, vagy állítsa vissza a szűrőt „Összes”-re.</div>
+      </sc-if>
+    </div>
+
+    <p class="datanote">A lista a referencia-adatbázisból töltődik; itt a jelenlegi oldalon szereplő projektek láthatók. Új projekt felvételekor automatikusan megjelenik a szűrőkben is.</p>
+  </div>
+</div>
+
+<section class="closing">
+  <div class="closing-inner">
+    <div>
+      <p class="eyebrow eyebrow--light">Következő lépés</p>
+      <h2 class="h2">Hasonló projektje van?</h2>
+      <p>Válassza ki a szükséges szolgáltatásokat, adja meg a projekt alapadatait, és néhány napon belül személyre szabott ajánlatot küldünk.</p>
+    </div>
+    <div class="closing-actions">
+      <a href="#" class="btn btn--primary">Ajánlatkérés indítása</a>
+      <a href="#" class="btn btn--ghost-light">Kapcsolat</a>
+    </div>
+  </div>
+</section>
+
+<div class="mobilebar">
+  <span class="mobilebar-info"><strong>{{countLabel}}</strong><span>Szűrés típus és szolgáltatás szerint</span></span>
+  <a href="#" class="btn btn--primary btn--sm">Ajánlat</a>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="logo" style="background:transparent;border:1px dashed rgba(255,255,255,.45);color:#fff;width:112px;height:44px;margin-bottom:18px">[LOGÓ]</div>
+      <div style="font-weight:700;color:#fff;margin-bottom:10px">BMA ENGINEERING S.R.L.</div>
+      <div class="small" style="line-height:1.6">Str. Raza Soarelui 11<br>535600 Odorheiu Secuiesc<br>Harghita, Romania</div>
+      <div class="small" style="margin-top:12px">+40 728 205 982 · office@bmaeng.ro</div>
+      <div class="small" style="margin-top:6px">CUI: 40593519</div>
+      <div style="margin-top:18px">
+        <div class="langswitch langswitch--light" role="group" aria-label="Nyelv választása">
+          <a href="#" class="lang is-on" lang="hu" hreflang="hu" aria-current="true">HU</a>
+          <a href="#" class="lang" lang="ro" hreflang="ro">RO</a>
+          <a href="#" class="lang" lang="en" hreflang="en">EN</a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h4>Navigáció</h4>
+      <div class="footer-links">
+        <a href="#">Főoldal</a>
+        <a href="#">Szolgáltatások</a>
+        <a href="#">Referenciák</a>
+        <a href="#">Kapcsolat</a>
+        <a href="#">Ügyfélportál</a>
+      </div>
+    </div>
+    <div>
+      <h4>Ajánlatkérés</h4>
+      <p class="small" style="margin:0 0 16px;line-height:1.6">Válassza ki a szükséges szolgáltatásokat, és néhány adat megadásával kérjen személyre szabott ajánlatot.</p>
+      <a href="#" class="btn btn--primary btn--sm">Ajánlatkérés indítása</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 BMA ENGINEERING S.R.L.</span>
+    <span>Adatvédelem · Cookie tájékoztató · ÁSZF</span>
+  </div>
+</footer>
