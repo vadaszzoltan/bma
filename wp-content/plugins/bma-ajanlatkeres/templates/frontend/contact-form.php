@@ -42,24 +42,24 @@ $privacy_url = ( class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'adatved
 ?>
 <section class="bma-section bma-page-contact" aria-labelledby="bma-contact-page-title">
 	<div class="bma-container">
-		<p class="bma-section-eyebrow"><?php esc_html_e( 'Kapcsolat', 'bma-ajanlatkeres' ); ?></p>
-		<h1 id="bma-contact-page-title"><?php esc_html_e( 'Kapcsolat', 'bma-ajanlatkeres' ); ?></h1>
+		<p class="bma-section-eyebrow"><?php BMA_AJ_Content::e( 'contact.eyebrow' ); ?></p>
+		<h1 id="bma-contact-page-title"><?php BMA_AJ_Content::e( 'contact.title' ); ?></h1>
 		<p class="bma-section-intro">
-			<?php esc_html_e( 'Van egy projektje, amelyhez tervezésre, engedélyeztetésre, műszaki dokumentációra vagy közmű-koordinációra van szüksége?', 'bma-ajanlatkeres' ); ?>
+			<?php BMA_AJ_Content::e( 'contact.intro_1' ); ?>
 		</p>
 		<p class="bma-section-intro">
-			<?php esc_html_e( 'Vegye fel velünk a kapcsolatot, vagy ha már tudja, milyen szolgáltatást keres, indítsa el az online ajánlatkérést.', 'bma-ajanlatkeres' ); ?>
+			<?php BMA_AJ_Content::e( 'contact.intro_2' ); ?>
 		</p>
 		<p class="bma-section-cta bma-section-cta--left">
 			<a class="bma-btn bma-btn-accent" href="<?php echo esc_url( ( class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'szolgaltatasok' ) : home_url( '/szolgaltatasok/' ) ) ); ?>">
-				<?php esc_html_e( 'Ajánlatkérés indítása', 'bma-ajanlatkeres' ); ?>
+				<?php BMA_AJ_Content::e( 'contact.cta_quote' ); ?>
 			</a>
 		</p>
 
 		<div class="bma-contact-layout">
 			<div class="bma-contact-layout-info">
 				<section class="bma-contact-details" aria-labelledby="bma-contact-details-title">
-					<p class="bma-section-eyebrow"><?php esc_html_e( 'Elérhetőségeink', 'bma-ajanlatkeres' ); ?></p>
+					<p class="bma-section-eyebrow"><?php BMA_AJ_Content::e( 'contact.details_eyebrow' ); ?></p>
 					<h2 id="bma-contact-details-title"><?php echo esc_html( $company ); ?></h2>
 					<ul class="bma-contact-details-list">
 						<?php if ( $addr ) : ?>
@@ -103,10 +103,10 @@ $privacy_url = ( class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'adatved
 				<?php endif; ?>
 
 				<?php if ( 'sent' !== $status ) : ?>
-					<p class="bma-section-eyebrow"><?php esc_html_e( 'Írjon nekünk', 'bma-ajanlatkeres' ); ?></p>
-					<h2><?php esc_html_e( 'Kapcsolatfelvételi űrlap', 'bma-ajanlatkeres' ); ?></h2>
+					<p class="bma-section-eyebrow"><?php BMA_AJ_Content::e( 'contact.form_eyebrow' ); ?></p>
+					<h2><?php BMA_AJ_Content::e( 'contact.form_title' ); ?></h2>
 					<p class="bma-form-hint">
-						<?php esc_html_e( 'Ha általános kérdése van, vagy még nem tudja pontosan, melyik szolgáltatásra van szüksége, küldjön üzenetet. Konkrét projektre az ajánlatkérést javasoljuk.', 'bma-ajanlatkeres' ); ?>
+						<?php BMA_AJ_Content::e( 'contact.form_hint' ); ?>
 					</p>
 
 					<form class="bma-form bma-contact-form" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" novalidate>
@@ -179,28 +179,28 @@ $privacy_url = ( class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'adatved
 
 		<div class="bma-contact-cta-grid">
 			<section class="bma-contact-cta-block" aria-labelledby="bma-contact-quote-title">
-				<h2 id="bma-contact-quote-title"><?php esc_html_e( 'Ajánlatot szeretne kérni?', 'bma-ajanlatkeres' ); ?></h2>
-				<p><?php esc_html_e( 'Ha már van konkrét projektje, a kapcsolatfelvételi űrlap helyett érdemes az ajánlatkérési folyamatot használni.', 'bma-ajanlatkeres' ); ?></p>
+				<h2 id="bma-contact-quote-title"><?php BMA_AJ_Content::e( 'contact.quote_title' ); ?></h2>
+				<p><?php BMA_AJ_Content::e( 'contact.quote_body' ); ?></p>
 				<ul class="bma-contact-cta-list">
-					<li><?php esc_html_e( 'kiválaszthatja a szükséges szolgáltatásokat;', 'bma-ajanlatkeres' ); ?></li>
-					<li><?php esc_html_e( 'megjelölheti a konkrét részfeladatokat;', 'bma-ajanlatkeres' ); ?></li>
-					<li><?php esc_html_e( 'megadhatja a projekt alapadatait;', 'bma-ajanlatkeres' ); ?></li>
-					<li><?php esc_html_e( 'feltöltheti a rendelkezésre álló terveket és dokumentumokat;', 'bma-ajanlatkeres' ); ?></li>
-					<li><?php esc_html_e( 'egy ajánlatkérésben több szolgáltatást is összeállíthat.', 'bma-ajanlatkeres' ); ?></li>
+					<li><?php BMA_AJ_Content::e( 'contact.quote_li_1' ); ?></li>
+					<li><?php BMA_AJ_Content::e( 'contact.quote_li_2' ); ?></li>
+					<li><?php BMA_AJ_Content::e( 'contact.quote_li_3' ); ?></li>
+					<li><?php BMA_AJ_Content::e( 'contact.quote_li_4' ); ?></li>
+					<li><?php BMA_AJ_Content::e( 'contact.quote_li_5' ); ?></li>
 				</ul>
 				<p>
 					<a class="bma-btn bma-btn-accent" href="<?php echo esc_url( ( class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'szolgaltatasok' ) : home_url( '/szolgaltatasok/' ) ) ); ?>">
-						<?php esc_html_e( 'Ajánlatkérés indítása', 'bma-ajanlatkeres' ); ?>
+						<?php BMA_AJ_Content::e( 'contact.cta_quote' ); ?>
 					</a>
 				</p>
 			</section>
 
 			<section class="bma-contact-cta-block" aria-labelledby="bma-contact-portal-title">
-				<h2 id="bma-contact-portal-title"><?php esc_html_e( 'Meglévő ajánlatkérése van?', 'bma-ajanlatkeres' ); ?></h2>
-				<p><?php esc_html_e( 'Ha korábban ügyfélfiókot hozott létre, bejelentkezés után megtekintheti saját ajánlatkéréseit, azok aktuális státuszát, valamint az Ön számára feltöltött ajánlatokat és dokumentumokat.', 'bma-ajanlatkeres' ); ?></p>
+				<h2 id="bma-contact-portal-title"><?php BMA_AJ_Content::e( 'contact.portal_title' ); ?></h2>
+				<p><?php BMA_AJ_Content::e( 'contact.portal_body' ); ?></p>
 				<p>
 					<a class="bma-btn bma-btn-outline" href="<?php echo esc_url( ( class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'ugyfelportal' ) : home_url( '/ugyfelportal/' ) ) ); ?>">
-						<?php esc_html_e( 'Bejelentkezés az ügyfélportálra', 'bma-ajanlatkeres' ); ?>
+						<?php BMA_AJ_Content::e( 'contact.portal_cta' ); ?>
 					</a>
 				</p>
 			</section>
@@ -213,8 +213,8 @@ $privacy_url = ( class_exists( 'BMA_AJ_I18n' ) ? BMA_AJ_I18n::page_url( 'adatved
 			data-zoom="<?php echo esc_attr( $zoom ); ?>"
 			data-label="<?php echo esc_attr( $company ); ?>"
 			data-address="<?php echo esc_attr( $addr_one_line ); ?>">
-			<p class="bma-section-eyebrow"><?php esc_html_e( 'Helyszín', 'bma-ajanlatkeres' ); ?></p>
-			<h2 id="bma-contact-map-title"><?php esc_html_e( 'Hol talál minket?', 'bma-ajanlatkeres' ); ?></h2>
+			<p class="bma-section-eyebrow"><?php BMA_AJ_Content::e( 'contact.map_eyebrow' ); ?></p>
+			<h2 id="bma-contact-map-title"><?php BMA_AJ_Content::e( 'contact.map_title' ); ?></h2>
 			<p class="bma-contact-map-address">
 				<strong><?php echo esc_html( $company ); ?></strong><br>
 				<?php echo esc_html( $addr_one_line ); ?>

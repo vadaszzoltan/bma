@@ -24,6 +24,9 @@
 	document.documentElement.classList.add('bma-js');
 	root.querySelectorAll('[data-bma-nojs-cta]').forEach(function (el) {
 		el.hidden = true;
+		if (el.parentNode) {
+			el.parentNode.removeChild(el);
+		}
 	});
 
 	function sourceId(sid) {
@@ -200,6 +203,17 @@
 		}
 	}
 
+	function summaryFromDom() {
+		return selectedCards().map(function (item) {
+			return {
+				item_id: item.id,
+				name: item.name || '',
+				service_id: item.serviceId || '',
+				service_name: item.serviceName || ''
+			};
+		});
+	}
+
 	function renderSummary(payload) {
 		if (!summary) return;
 		var body = summary.querySelector('[data-bma-summary-body]');
@@ -207,7 +221,13 @@
 		var noteEl = summary.querySelector('[data-bma-summary-note]');
 		var cta = summary.querySelector('[data-bma-summary-cta]');
 		var lines = (payload && payload.summary) || [];
-		var count = typeof (payload && payload.itemCount) === 'number' ? payload.itemCount : lines.length;
+		var rawCount = payload && payload.itemCount;
+		var count = (typeof rawCount === 'number')
+			? rawCount
+			: (rawCount != null && rawCount !== '' ? Number(rawCount) : lines.length);
+		if (!isFinite(count)) {
+			count = lines.length;
+		}
 
 		summary.setAttribute('data-count', String(count));
 		if (countEl) countEl.textContent = String(count);
@@ -431,10 +451,24 @@
 		}
 		writeDraft(collectFromDom());
 
+		// Optimistic UI: reflect DOM selection immediately (don't wait for AJAX).
+		if (mode === 'list' || summary) {
+			var optimistic = summaryFromDom();
+			renderSummary({
+				itemCount: optimistic.length,
+				summary: optimistic,
+				cartUrl: bmaAj.cartUrl
+			});
+			updateHeaderCount(optimistic.length);
+			updateMobilebar(optimistic.length);
+		}
+
 		// List + detail: persist immediately.
 		if (syncing) return;
 		syncing = true;
-		saveToCart().always(function () {
+		saveToCart().fail(function () {
+			alert(strings.uploadError || 'Hiba történt.');
+		}).always(function () {
 			syncing = false;
 		});
 	});
@@ -469,6 +503,34 @@
 
 	$(document).on('click', '[data-bma-summary-cta].is-disabled, [data-bma-mobilebar-cta].is-disabled', function (e) {
 		e.preventDefault();
+	});
+
+	$(document).on('click', '[data-bma-summary-cta]:not(.is-disabled), [data-bma-mobilebar-cta]:not(.is-disabled)', function (e) {
+		if (mode !== 'list') {
+			return;
+		}
+		// Persist before navigation if optimistic UI is ahead of the server cart.
+		if (!isDirty() && !syncing) {
+			return;
+		}
+		e.preventDefault();
+		var href = this.getAttribute('href') || bmaAj.cartUrl || '/';
+		var attempt = function () {
+			if (syncing) {
+				setTimeout(attempt, 50);
+				return;
+			}
+			if (!isDirty()) {
+				go(href);
+				return;
+			}
+			saveToCart().done(function () {
+				go(href);
+			}).fail(function () {
+				alert(strings.uploadError || 'Hiba történt.');
+			});
+		};
+		attempt();
 	});
 
 	$(document).on('click', '[data-bma-selection-cta]', function (e) {

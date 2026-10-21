@@ -98,7 +98,7 @@ final class BMA_AJ_Seeder {
 			'aszf'               => '[bma_terms]',
 			'kapcsolat'          => '[bma_contact_form]',
 			'belepes'            => '[bma_login]',
-			'fooldal'            => "[bma_home_hero]\n[bma_home_services]\n[bma_home_multi]\n[bma_home_benefits]\n[bma_home_process]\n[bma_home_references]\n[bma_home_about]\n[bma_home_closing]\n[bma_contact_info]",
+			'fooldal'            => "[bma_home_hero]\n[bma_home_services]\n[bma_home_multi]\n[bma_home_benefits]\n[bma_home_process]\n[bma_home_references]\n[bma_home_about]",
 		);
 
 		foreach ( $page_content as $slug => $content ) {
@@ -773,7 +773,7 @@ final class BMA_AJ_Seeder {
 	 */
 	private static function seed_page_content(): void {
 		$page_content = array(
-			'fooldal'             => "[bma_home_hero]\n[bma_home_services]\n[bma_home_multi]\n[bma_home_benefits]\n[bma_home_process]\n[bma_home_references]\n[bma_home_about]\n[bma_home_closing]\n[bma_contact_info]",
+			'fooldal'             => "[bma_home_hero]\n[bma_home_services]\n[bma_home_multi]\n[bma_home_benefits]\n[bma_home_process]\n[bma_home_references]\n[bma_home_about]",
 			'szolgaltatasok'      => '[bma_services_list]',
 			'referenciak'         => '[bma_references_list]',
 			'kapcsolat'           => '[bma_contact_form]',

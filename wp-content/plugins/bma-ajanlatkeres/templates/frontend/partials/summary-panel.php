@@ -71,13 +71,15 @@ $empty_copy  = $empty_copy ?? __( 'Még nem választott tételt. Jelölje be bal
 			<?php echo $is_empty ? ' aria-disabled="true" tabindex="-1"' : ''; ?>
 		><?php echo esc_html( $cta_label ); ?></a>
 		<?php if ( $show_nojs ) : ?>
-			<button
-				type="submit"
-				class="btn btn--primary"
-				style="width:100%;justify-content:center;margin-top:10px"
-				data-bma-nojs-cta
-				<?php disabled( $is_empty ); ?>
-			><?php echo esc_html( $cta_label ); ?></button>
+			<?php // Only for no-JS browsers – never shown alongside the link (avoids duplicate CTAs). ?>
+			<noscript>
+				<button
+					type="submit"
+					class="btn btn--primary"
+					style="width:100%;justify-content:center;margin-top:10px"
+					<?php disabled( $is_empty ); ?>
+				><?php echo esc_html( $cta_label ); ?></button>
+			</noscript>
 		<?php endif; ?>
 		<p class="sum-note" data-bma-summary-note><?php echo esc_html( $is_empty ? $empty_note : $filled_note ); ?></p>
 	</div>

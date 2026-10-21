@@ -21,13 +21,13 @@ $card_icons = array(
 	<div class="bma-container">
 		<div class="sec-head">
 			<div>
-				<p class="eyebrow"><?php esc_html_e( 'Szolgáltatások', 'bma-ajanlatkeres' ); ?></p>
-				<h2 class="h2" id="bma-services-title"><?php esc_html_e( 'Miben tudunk segíteni?', 'bma-ajanlatkeres' ); ?></h2>
+				<p class="eyebrow"><?php BMA_AJ_Content::e( 'home.services.eyebrow' ); ?></p>
+				<h2 class="h2" id="bma-services-title"><?php BMA_AJ_Content::e( 'home.services.title' ); ?></h2>
 				<p class="lead" style="margin-top:14px">
-					<?php esc_html_e( 'Négy szolgáltatási terület, azon belül konkrét részfeladatokkal. Az ajánlatkérésbe bármennyi tétel bekerülhet.', 'bma-ajanlatkeres' ); ?>
+					<?php BMA_AJ_Content::e( 'home.services.lead' ); ?>
 				</p>
 			</div>
-			<a href="<?php echo esc_url( $svc_url ); ?>" class="btn btn--outline btn--sm"><?php esc_html_e( 'Összes szolgáltatás', 'bma-ajanlatkeres' ); ?></a>
+			<a href="<?php echo esc_url( $svc_url ); ?>" class="btn btn--outline btn--sm"><?php BMA_AJ_Content::e( 'home.services.cta' ); ?></a>
 		</div>
 		<div class="svc-grid">
 			<?php foreach ( array_slice( $services, 0, 4 ) as $i => $service ) : ?>

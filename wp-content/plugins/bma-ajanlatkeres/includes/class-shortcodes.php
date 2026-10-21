@@ -160,12 +160,10 @@ final class BMA_AJ_Shortcodes {
 	}
 
 	/**
-	 * Home closing CTA.
+	 * Home closing CTA (removed from homepage — kept as empty shortcode for legacy content).
 	 */
 	public static function home_closing(): string {
-		ob_start();
-		include BMA_AJ_PLUGIN_DIR . 'templates/frontend/home-closing.php';
-		return ob_get_clean();
+		return '';
 	}
 
 	/**
@@ -200,12 +198,10 @@ final class BMA_AJ_Shortcodes {
 	}
 
 	/**
-	 * Contact info block.
+	 * Contact info block (removed from homepage — kept as empty shortcode for legacy content).
 	 */
 	public static function contact_info(): string {
-		ob_start();
-		include BMA_AJ_PLUGIN_DIR . 'templates/frontend/contact-info.php';
-		return ob_get_clean();
+		return '';
 	}
 
 	/**

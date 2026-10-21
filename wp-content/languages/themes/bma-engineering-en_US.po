@@ -64,6 +64,9 @@ msgstr ""
 msgid "CUI: %s"
 msgstr ""
 
+msgid "Nyitvatartás: %s"
+msgstr "Opening hours: %s"
+
 msgid "Cookie tájékoztató"
 msgstr ""
 

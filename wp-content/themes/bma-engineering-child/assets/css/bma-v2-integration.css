@@ -127,6 +127,8 @@ a.btn.is-disabled:hover {
 }
 
 /* Hide no-JS submit when selection JS is active */
+/* .btn { display:inline-flex } overrides the UA [hidden] rule – force hide. */
+[hidden] { display: none !important; }
 html.bma-js [data-bma-nojs-cta] { display: none !important; }
 
 /* Service detail: selected task card */

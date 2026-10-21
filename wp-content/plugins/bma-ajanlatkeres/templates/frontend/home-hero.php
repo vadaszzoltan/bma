@@ -49,18 +49,18 @@ $chip_icons = array(
 		</g>
 	</svg>
 	<div class="hero-inner">
-		<p class="hero-eyebrow"><?php esc_html_e( 'Tervezés · Engedélyeztetés · Közmű-koordináció', 'bma-ajanlatkeres' ); ?></p>
-		<h1 id="bma-hero-title"><?php echo wp_kses_post( __( 'Mérnöki tervezés <em>átlátható</em> folyamattal', 'bma-ajanlatkeres' ) ); ?></h1>
+		<p class="hero-eyebrow"><?php BMA_AJ_Content::e( 'home.hero.eyebrow' ); ?></p>
+		<h1 id="bma-hero-title"><?php BMA_AJ_Content::e( 'home.hero.title' ); ?></h1>
 		<p class="hero-lead">
-			<?php esc_html_e( 'Válassza ki, mire van szüksége a projektjéhez, adja meg a rendelkezésére álló adatokat, és kérjen személyre szabott ajánlatot. A folyamat minden lépését egy helyen követheti.', 'bma-ajanlatkeres' ); ?>
+			<?php BMA_AJ_Content::e( 'home.hero.lead' ); ?>
 		</p>
 		<div class="hero-cta">
-			<a href="<?php echo esc_url( $svc_url ); ?>" class="btn btn--primary"><?php esc_html_e( 'Ajánlatkérés indítása', 'bma-ajanlatkeres' ); ?></a>
-			<a href="<?php echo esc_url( $ref_url ); ?>" class="btn btn--ghost-light"><?php esc_html_e( 'Referenciák', 'bma-ajanlatkeres' ); ?></a>
+			<a href="<?php echo esc_url( $svc_url ); ?>" class="btn btn--primary"><?php BMA_AJ_Content::e( 'home.hero.cta_primary' ); ?></a>
+			<a href="<?php echo esc_url( $ref_url ); ?>" class="btn btn--ghost-light"><?php BMA_AJ_Content::e( 'home.hero.cta_secondary' ); ?></a>
 		</div>
 		<?php if ( $services ) : ?>
 			<div class="hero-quick">
-				<p class="hero-quick-label"><?php esc_html_e( 'Gyors indítás – mire van szüksége?', 'bma-ajanlatkeres' ); ?></p>
+				<p class="hero-quick-label"><?php BMA_AJ_Content::e( 'home.hero.quick_label' ); ?></p>
 				<div class="quick-chips">
 					<?php foreach ( array_slice( $services, 0, 4 ) as $i => $service ) : ?>
 						<a class="quick-chip" href="<?php echo esc_url( function_exists( 'bma_post_url' ) ? bma_post_url( (int) $service->ID ) : get_permalink( $service ) ); ?>">
@@ -77,15 +77,15 @@ $chip_icons = array(
 		<div class="hero-facts">
 			<span class="hero-fact">
 				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
-				<?php esc_html_e( 'Odorheiu Secuiesc · Harghita', 'bma-ajanlatkeres' ); ?>
+				<?php BMA_AJ_Content::e( 'home.hero.fact_1' ); ?>
 			</span>
 			<span class="hero-fact">
 				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V7l8-4 8 4v13z"></path><path d="M9 20v-6h6v6"></path></svg>
-				<?php esc_html_e( 'Lakossági és üzleti projektek', 'bma-ajanlatkeres' ); ?>
+				<?php BMA_AJ_Content::e( 'home.hero.fact_2' ); ?>
 			</span>
 			<span class="hero-fact">
 				<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7v5l3 2"></path></svg>
-				<?php esc_html_e( 'Válasz [X] munkanapon belül', 'bma-ajanlatkeres' ); ?>
+				<?php BMA_AJ_Content::e( 'home.hero.fact_3' ); ?>
 			</span>
 		</div>
 	</div>
@@ -95,15 +95,15 @@ $chip_icons = array(
 	<div class="valuestrip-inner">
 		<div class="valuestrip-item">
 			<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h9"></path></svg>
-			<span><?php esc_html_e( 'Egy ajánlatkérésben több szolgáltatás és részfeladat is összeállítható.', 'bma-ajanlatkeres' ); ?></span>
+			<span><?php BMA_AJ_Content::e( 'home.hero.value_1' ); ?></span>
 		</div>
 		<div class="valuestrip-item">
 			<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"></path><path d="M15 3v4h4"></path></svg>
-			<span><?php esc_html_e( 'A tervrajzok és dokumentumok az ajánlatkéréshez rendelve tölthetők fel.', 'bma-ajanlatkeres' ); ?></span>
+			<span><?php BMA_AJ_Content::e( 'home.hero.value_2' ); ?></span>
 		</div>
 		<div class="valuestrip-item">
 			<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M9 12.5l2 2 4-4.5"></path></svg>
-			<span><?php esc_html_e( 'Az ügyfélportálon végigkövethető a kérés státusza és a dokumentumok.', 'bma-ajanlatkeres' ); ?></span>
+			<span><?php BMA_AJ_Content::e( 'home.hero.value_3' ); ?></span>
 		</div>
 	</div>
 </div>

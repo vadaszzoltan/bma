@@ -20,13 +20,13 @@ $ref_url = function_exists( 'bma_page_url' ) ? bma_page_url( 'referenciak' ) : h
 	<div class="bma-container">
 		<div class="sec-head">
 			<div>
-				<p class="eyebrow"><?php esc_html_e( 'Projektek', 'bma-ajanlatkeres' ); ?></p>
-				<h2 class="h2" id="bma-refs-title"><?php esc_html_e( 'Kiemelt referenciák', 'bma-ajanlatkeres' ); ?></h2>
+				<p class="eyebrow"><?php BMA_AJ_Content::e( 'home.refs.eyebrow' ); ?></p>
+				<h2 class="h2" id="bma-refs-title"><?php BMA_AJ_Content::e( 'home.refs.title' ); ?></h2>
 				<p class="lead" style="margin-top:14px">
-					<?php esc_html_e( 'Válogatás megvalósult tervezési, engedélyeztetési és közmű-koordinációs munkáinkból.', 'bma-ajanlatkeres' ); ?>
+					<?php BMA_AJ_Content::e( 'home.refs.lead' ); ?>
 				</p>
 			</div>
-			<a href="<?php echo esc_url( $ref_url ); ?>" class="btn btn--outline btn--sm"><?php esc_html_e( 'Összes referencia', 'bma-ajanlatkeres' ); ?></a>
+			<a href="<?php echo esc_url( $ref_url ); ?>" class="btn btn--outline btn--sm"><?php BMA_AJ_Content::e( 'home.refs.cta' ); ?></a>
 		</div>
 		<div class="refs">
 			<?php foreach ( $refs as $ref ) : ?>

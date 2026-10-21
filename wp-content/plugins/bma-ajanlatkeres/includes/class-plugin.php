@@ -51,6 +51,7 @@ final class BMA_AJ_Plugin {
 		BMA_AJ_Frontend::init();
 		BMA_AJ_Admin::init();
 		BMA_AJ_Appearance::init();
+		BMA_AJ_Content::init();
 		BMA_AJ_REST::init();
 		BMA_AJ_Analytics::init();
 		BMA_AJ_Cookie_Consent::init();
@@ -145,6 +146,12 @@ final class BMA_AJ_Plugin {
 			}
 		}
 
+		$cart_selection = BMA_AJ_Cart::get_selection_map();
+		// wp_localize_script JSON-encodes empty PHP arrays as [] – force an object for JS maps.
+		if ( empty( $cart_selection ) ) {
+			$cart_selection = new stdClass();
+		}
+
 		wp_localize_script(
 			'bma-aj-public',
 			'bmaAj',
@@ -155,10 +162,10 @@ final class BMA_AJ_Plugin {
 				'restNonce'       => wp_create_nonce( 'wp_rest' ),
 				'cartUrl'         => $cart_url,
 				'servicesUrl'     => $services_url,
-				'cartSelection'   => BMA_AJ_Cart::get_selection_map(),
+				'cartSelection'   => $cart_selection,
 				'summary'         => BMA_AJ_Cart::get_summary_items(),
-				'itemCount'       => BMA_AJ_Cart::item_count(),
-				'serviceSources'  => $service_sources,
+				'itemCount'       => (int) BMA_AJ_Cart::item_count(),
+				'serviceSources'  => $service_sources ?: new stdClass(),
 				'strings'         => array(
 					'confirmRemove'         => __( 'Biztosan eltávolítja ezt a szolgáltatást?', 'bma-ajanlatkeres' ),
 					'uploadError'           => __( 'A fájl feltöltése sikertelen.', 'bma-ajanlatkeres' ),

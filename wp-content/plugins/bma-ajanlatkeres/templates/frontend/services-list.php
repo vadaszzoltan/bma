@@ -31,30 +31,30 @@ $card_icons = array(
 				<a href="<?php echo esc_url( $home_url ); ?>"><?php esc_html_e( 'Főoldal', 'bma-ajanlatkeres' ); ?></a>
 				/ <?php esc_html_e( 'Szolgáltatások', 'bma-ajanlatkeres' ); ?>
 			</p>
-			<p class="eyebrow eyebrow--light"><?php esc_html_e( 'Ajánlatkérés', 'bma-ajanlatkeres' ); ?></p>
-			<h1><?php esc_html_e( 'Szolgáltatások', 'bma-ajanlatkeres' ); ?></h1>
+			<p class="eyebrow eyebrow--light"><?php BMA_AJ_Content::e( 'services.eyebrow' ); ?></p>
+			<h1><?php BMA_AJ_Content::e( 'services.title' ); ?></h1>
 			<p class="pagehead-lead">
-				<?php esc_html_e( 'Válassza ki az Ön projektjéhez kapcsolódó szolgáltatási területet. Egy ajánlatkérésben több szolgáltatást és azokon belül több részfeladatot is megjelölhet.', 'bma-ajanlatkeres' ); ?>
+				<?php BMA_AJ_Content::e( 'services.lead' ); ?>
 			</p>
 		</div>
 		<div class="sidecard">
-			<h3><?php esc_html_e( 'Hogyan működik?', 'bma-ajanlatkeres' ); ?></h3>
+			<h3><?php BMA_AJ_Content::e( 'services.side_title' ); ?></h3>
 			<ul>
 				<li>
 					<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"></path></svg>
-					<span><?php esc_html_e( 'Jelölje be a szükséges tételeket – bármennyit.', 'bma-ajanlatkeres' ); ?></span>
+					<span><?php BMA_AJ_Content::e( 'services.side_1' ); ?></span>
 				</li>
 				<li>
 					<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"></path></svg>
-					<span><?php esc_html_e( 'Adja meg a projekt adatait és a meglévő dokumentumokat.', 'bma-ajanlatkeres' ); ?></span>
+					<span><?php BMA_AJ_Content::e( 'services.side_2' ); ?></span>
 				</li>
 				<li>
 					<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"></path></svg>
-					<span><?php esc_html_e( 'Visszajelzés [X] munkanapon belül, kötelezettség nélkül.', 'bma-ajanlatkeres' ); ?></span>
+					<span><?php BMA_AJ_Content::e( 'services.side_3' ); ?></span>
 				</li>
 			</ul>
 			<span class="tiny" style="color:#8fa2c4;display:block">
-				<?php esc_html_e( 'Ha nem tudja pontosan, mire van szüksége, elég a projektet leírnia – segítünk összeállítani.', 'bma-ajanlatkeres' ); ?>
+				<?php BMA_AJ_Content::e( 'services.side_note' ); ?>
 			</span>
 		</div>
 	</div>

@@ -146,10 +146,10 @@ $count_label = ( 1 === $count )
 			<a href="<?php echo esc_url( $home_url ); ?>"><?php esc_html_e( 'Főoldal', 'bma-ajanlatkeres' ); ?></a>
 			/ <?php esc_html_e( 'Referenciák', 'bma-ajanlatkeres' ); ?>
 		</p>
-		<p class="eyebrow eyebrow--light"><?php esc_html_e( 'Projektek', 'bma-ajanlatkeres' ); ?></p>
-		<h1><?php esc_html_e( 'Referenciák', 'bma-ajanlatkeres' ); ?></h1>
+		<p class="eyebrow eyebrow--light"><?php BMA_AJ_Content::e( 'refs.eyebrow' ); ?></p>
+		<h1><?php BMA_AJ_Content::e( 'refs.title' ); ?></h1>
 		<p class="pagehead-lead">
-			<?php esc_html_e( 'Válogatás megvalósult tervezési, engedélyeztetési, közmű-koordinációs és dokumentációs munkáinkból. Szűrjön projekttípus vagy szolgáltatás szerint.', 'bma-ajanlatkeres' ); ?>
+			<?php BMA_AJ_Content::e( 'refs.lead' ); ?>
 		</p>
 	</div>
 </section>
@@ -248,8 +248,8 @@ $count_label = ( 1 === $count )
 <section class="closing">
 	<div class="closing-inner">
 		<div>
-			<p class="eyebrow eyebrow--light"><?php esc_html_e( 'Következő lépés', 'bma-ajanlatkeres' ); ?></p>
-			<h2 class="h2"><?php esc_html_e( 'Hasonló projektje van?', 'bma-ajanlatkeres' ); ?></h2>
+			<p class="eyebrow eyebrow--light"><?php BMA_AJ_Content::e( 'refs.closing_eyebrow' ); ?></p>
+			<h2 class="h2"><?php BMA_AJ_Content::e( 'refs.closing_title' ); ?></h2>
 			<p><?php esc_html_e( 'Válassza ki a szükséges szolgáltatásokat, adja meg a projekt alapadatait, és néhány napon belül személyre szabott ajánlatot küldünk.', 'bma-ajanlatkeres' ); ?></p>
 		</div>
 		<div class="closing-actions">
