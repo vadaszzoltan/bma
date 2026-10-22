@@ -127,7 +127,8 @@ final class BMA_AJ_I18n {
 			'bma-engineering'  => array( WP_LANG_DIR . '/themes', get_stylesheet_directory() . '/languages' ),
 		);
 		foreach ( $domains as $domain => $dirs ) {
-			unload_textdomain( $domain, true );
+			// Not reloadable: just-in-time loading would bring back the request's locale.
+			unload_textdomain( $domain );
 			if ( '' === $locale ) {
 				continue; // Hungarian is the source language.
 			}

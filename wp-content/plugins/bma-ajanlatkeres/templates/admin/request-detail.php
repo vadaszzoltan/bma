@@ -60,7 +60,11 @@ $current       = BMA_AJ_Statuses::get( (int) $request->status_id );
 		<div class="bma-admin-panel">
 			<h2><?php esc_html_e( 'Az ajánlatkérés összefoglalója', 'bma-ajanlatkeres' ); ?></h2>
 			<table class="form-table">
-				<?php foreach ( BMA_AJ_Quote_Flow::summary_rows( $request, true ) as $row ) : ?>
+				<?php
+				// Same language as the office e-mail, whatever the admin user's locale.
+				$summary_rows = BMA_AJ_I18n::in_language( 'hu', static fn() => BMA_AJ_Quote_Flow::summary_rows( $request, true ) );
+				foreach ( $summary_rows as $row ) :
+					?>
 					<tr>
 						<th><?php echo esc_html( $row['label'] ); ?></th>
 						<td><?php echo esc_html( $row['value'] ); ?></td>
