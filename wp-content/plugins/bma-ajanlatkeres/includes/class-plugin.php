@@ -48,6 +48,7 @@ final class BMA_AJ_Plugin {
 		BMA_AJ_Payments::init();
 		BMA_AJ_Security::init();
 		BMA_AJ_SMTP::init();
+		BMA_AJ_Email_Layout::init();
 		BMA_AJ_Shortcodes::init();
 		BMA_AJ_Frontend::init();
 		BMA_AJ_Admin::init();

@@ -120,6 +120,9 @@ final class BMA_AJ_Email_Templates {
 					$body    = $tr_body;
 				}
 
+				// Early templates kept a placeholder where the company contact belongs.
+				$body = str_replace( '[KAPCSOLATI ADAT]', "{company_phone}\n{company_email}", $body );
+
 				$data = self::build_replacements( $request_id, $extra, $slug );
 				$to   = $is_admin ? get_option( 'bma_admin_email', get_option( 'admin_email' ) ) : $request->client_email;
 
