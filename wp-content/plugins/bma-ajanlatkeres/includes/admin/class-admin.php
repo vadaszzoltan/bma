@@ -73,6 +73,7 @@ final class BMA_AJ_Admin {
 		register_setting( 'bma_settings', 'bma_contact_address' );
 		register_setting( 'bma_settings', 'bma_opening_hours' );
 		register_setting( 'bma_settings', 'bma_response_days', array( 'sanitize_callback' => 'absint' ) );
+		register_setting( 'bma_settings', 'bma_lead_time_weeks', array( 'sanitize_callback' => 'sanitize_text_field' ) );
 		register_setting( 'bma_settings', 'bma_map_lat' );
 		register_setting( 'bma_settings', 'bma_map_lng' );
 		register_setting( 'bma_settings', 'bma_map_zoom' );

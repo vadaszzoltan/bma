@@ -69,7 +69,7 @@ while ( have_posts() ) :
 						<li><?php echo $check_svg; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><span><?php echo esc_html( $items_label ); ?></span></li>
 						<li><?php echo $check_svg; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><span><?php esc_html_e( 'Lakossági és üzleti projektekhez', 'bma-ajanlatkeres' ); ?></span></li>
 						<li><?php echo $check_svg; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><span><?php echo esc_html( BMA_AJ_Company::fill_response_days( __( 'Ajánlat [X] munkanapon belül', 'bma-ajanlatkeres' ) ) ); ?></span></li>
-						<li><?php echo $check_svg; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><span><?php esc_html_e( 'Tipikus átfutás: [X–Y] hét', 'bma-ajanlatkeres' ); ?></span></li>
+						<li><?php echo $check_svg; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><span><?php echo esc_html( BMA_AJ_Company::fill_lead_time( __( 'Tipikus átfutás: [X–Y] hét', 'bma-ajanlatkeres' ) ) ); ?></span></li>
 					</ul>
 					<span class="tiny" style="color:#8fa2c4;display:block">
 						<?php esc_html_e( 'A pontos határidő a projekt méretétől és a szolgáltatói egyeztetésektől függ.', 'bma-ajanlatkeres' ); ?>

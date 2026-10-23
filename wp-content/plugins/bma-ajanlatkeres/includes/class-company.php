@@ -124,8 +124,25 @@ final class BMA_AJ_Company {
 	 * Committed reply time for quote requests, in working days ('' when not set).
 	 */
 	public static function response_days(): string {
-		$days = absint( get_option( 'bma_response_days', 0 ) );
+		$days = absint( get_option( 'bma_response_days', 5 ) );
 		return $days > 0 ? (string) $days : '';
+	}
+
+	/**
+	 * Typical lead time in weeks, e.g. "3–4" ('' when not set).
+	 */
+	public static function lead_time_weeks(): string {
+		return trim( (string) get_option( 'bma_lead_time_weeks', '3–4' ) );
+	}
+
+	/**
+	 * Replace the [X–Y] week-range placeholder with the configured lead time.
+	 *
+	 * @param string $text Text that may contain [X–Y].
+	 */
+	public static function fill_lead_time( string $text ): string {
+		$weeks = self::lead_time_weeks();
+		return '' === $weeks ? $text : str_replace( '[X–Y]', $weeks, $text );
 	}
 
 	/**
