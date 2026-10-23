@@ -119,4 +119,22 @@ final class BMA_AJ_Company {
 		$phone = $phone ?: self::get( 'contact_phone' );
 		return 'tel:' . preg_replace( '/[^\d+]/', '', $phone );
 	}
+
+	/**
+	 * Committed reply time for quote requests, in working days ('' when not set).
+	 */
+	public static function response_days(): string {
+		$days = absint( get_option( 'bma_response_days', 0 ) );
+		return $days > 0 ? (string) $days : '';
+	}
+
+	/**
+	 * Replace the [X] working-day placeholder with the configured reply time.
+	 *
+	 * @param string $text Text that may contain [X].
+	 */
+	public static function fill_response_days( string $text ): string {
+		$days = self::response_days();
+		return '' === $days ? $text : str_replace( '[X]', $days, $text );
+	}
 }

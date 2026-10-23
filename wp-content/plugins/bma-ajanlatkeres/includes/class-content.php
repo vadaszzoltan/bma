@@ -1304,7 +1304,7 @@ final class BMA_AJ_Content {
 			$value = $fallback !== '' ? $fallback : self::default_for( $key, $lang );
 		}
 
-		return $value;
+		return BMA_AJ_Company::fill_response_days( $value );
 	}
 
 	/**

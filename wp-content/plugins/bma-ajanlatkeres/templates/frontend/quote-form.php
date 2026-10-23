@@ -54,7 +54,7 @@ if ( $confirm_number ) :
 						<span class="small muted"><?php esc_html_e( 'E-mailben elküldtük a kérés összefoglalóját és a feltöltött dokumentumok listáját.', 'bma-ajanlatkeres' ); ?></span>
 					</div>
 					<div class="nextstep">
-						<b><?php esc_html_e( '[X] munkanapon belül', 'bma-ajanlatkeres' ); ?></b>
+						<b><?php echo esc_html( BMA_AJ_Company::fill_response_days( __( '[X] munkanapon belül', 'bma-ajanlatkeres' ) ) ); ?></b>
 						<strong style="display:block;font-size:16px;margin-bottom:6px"><?php esc_html_e( 'Felmérés', 'bma-ajanlatkeres' ); ?></strong>
 						<span class="small muted"><?php esc_html_e( 'Átnézzük a megadott adatokat, és ha szükséges, egyeztetünk a hiányzó részletekről.', 'bma-ajanlatkeres' ); ?></span>
 						<span class="small muted" style="display:block;margin-top:8px"><?php esc_html_e( 'Ha beszerzést is kért (pl. urbanisztikai bizonylat), annak költségét és idejét az ajánlatban külön tételként látja.', 'bma-ajanlatkeres' ); ?></span>

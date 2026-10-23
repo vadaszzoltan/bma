@@ -444,7 +444,7 @@ $render = static function ( object $field, string $wrap_class = '' ): void {
 				<div class="panel-body">
 					<div id="bma-wiz-review" class="wiz-review" aria-live="polite"></div>
 					<button type="submit" class="btn btn--primary wiz-submit"><?php esc_html_e( 'Ajánlatkérés beküldése', 'bma-ajanlatkeres' ); ?></button>
-					<p class="small muted"><?php esc_html_e( 'A beküldés után e-mailben visszaigazolást küldünk, és [X] munkanapon belül jelentkezünk.', 'bma-ajanlatkeres' ); ?></p>
+					<p class="small muted"><?php echo esc_html( BMA_AJ_Company::fill_response_days( __( 'A beküldés után e-mailben visszaigazolást küldünk, és [X] munkanapon belül jelentkezünk.', 'bma-ajanlatkeres' ) ) ); ?></p>
 				</div>
 			</fieldset>
 
