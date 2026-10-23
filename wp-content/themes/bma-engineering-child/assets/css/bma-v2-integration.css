@@ -386,3 +386,8 @@ a.fchip { text-decoration: none; }
 @media (max-width: 640px) {
   .bma-logo-img { height: 42px; }
 }
+
+/* Ajánlatkérés: kiegészítő mezők ne tapadjanak a választókártyákhoz */
+.wiz-addon-fields:has(> .bma-form-field:not([hidden])) {
+  margin-top: 28px;
+}

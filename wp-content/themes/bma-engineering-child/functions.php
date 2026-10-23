@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'BMA_THEME_VERSION', '1.15.0-redesign-exp' );
+define( 'BMA_THEME_VERSION', '1.15.1-redesign-exp' );
 define( 'BMA_THEME_DIR', get_stylesheet_directory() );
 define( 'BMA_THEME_URI', get_stylesheet_directory_uri() );
 
