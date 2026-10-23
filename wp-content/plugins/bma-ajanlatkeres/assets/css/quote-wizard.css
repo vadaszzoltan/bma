@@ -5,6 +5,18 @@
 .steps.steps--7 .stepchip span { font-size: 14px; }
 .steps.steps--7 .stepchip:disabled { cursor: default; }
 
+/* Lépéssáv: számkör + állapotok (kész / aktív / hátralévő) */
+.steps.steps--7 { gap: 6px; margin-top: 34px; }
+.steps.steps--7 .stepchip { display: flex; align-items: center; gap: 12px; padding: 14px 12px 16px; border-top: 4px solid rgba(255,255,255,.22); color: #8fa2c4; transition: background-color .15s, border-color .15s; }
+.steps.steps--7 .stepchip b { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; margin: 0; border: 2px solid rgba(255,255,255,.35); border-radius: 50%; font-size: 12px; letter-spacing: .5px; color: #c3cee2; }
+.steps.steps--7 .stepchip span { font-size: 14px; font-weight: 600; line-height: 1.25; }
+.steps.steps--7 .stepchip.is-done { border-top-color: var(--bma-accent); color: #dbe3f2; }
+.steps.steps--7 .stepchip.is-done b { border-color: var(--bma-accent); color: var(--bma-accent); }
+.steps.steps--7 .stepchip.is-done:not(:disabled):hover { background: rgba(255,255,255,.06); }
+.steps.steps--7 .stepchip.is-now { border-top-color: var(--bma-accent); background: rgba(255,255,255,.1); color: #fff; }
+.steps.steps--7 .stepchip.is-now b { border-color: var(--bma-accent); background: var(--bma-accent); color: #fff; }
+.steps.steps--7 .stepchip.is-now span { font-weight: 800; }
+
 .bma-wiz .wiz-step { margin: 0 0 24px; padding: 0; min-width: 0; }
 .bma-wiz.is-js .wiz-step { display: none; }
 .bma-wiz.is-js .wiz-step.is-current { display: block; }

@@ -15,7 +15,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'BMA_AJ_VERSION', '2.1.0' );
+define( 'BMA_AJ_VERSION', '2.1.1' );
 define( 'BMA_AJ_PLUGIN_FILE', __FILE__ );
 define( 'BMA_AJ_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BMA_AJ_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
