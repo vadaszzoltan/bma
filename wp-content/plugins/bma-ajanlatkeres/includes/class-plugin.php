@@ -58,6 +58,7 @@ final class BMA_AJ_Plugin {
 		BMA_AJ_Analytics::init();
 		BMA_AJ_Cookie_Consent::init();
 		BMA_AJ_I18n::init();
+		BMA_AJ_Slug_I18n::init();
 
 		add_action( 'admin_post_bma_contact_submit', array( $this, 'handle_contact_form' ) );
 		add_action( 'admin_post_nopriv_bma_contact_submit', array( $this, 'handle_contact_form' ) );

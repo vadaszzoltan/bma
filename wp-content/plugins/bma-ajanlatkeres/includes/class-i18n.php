@@ -32,6 +32,25 @@ final class BMA_AJ_I18n {
 		add_filter( 'bma_service_item_choose_if', array( self::class, 'translate_service_item_field' ), 10, 3 );
 		add_filter( 'bma_status_name', array( self::class, 'translate_status_name' ), 10, 2 );
 		add_filter( 'bma_field_client_label', array( self::class, 'translate_field_label' ), 10, 2 );
+		add_filter( 'pll_rel_hreflang_attributes', array( self::class, 'filter_hreflang' ) );
+	}
+
+	/**
+	 * The service area is Romania: mark HU/RO alternates with the RO region.
+	 *
+	 * @param array<string, string> $hreflangs Language code => URL.
+	 * @return array<string, string>
+	 */
+	public static function filter_hreflang( $hreflangs ): array {
+		$map = array(
+			'hu' => 'hu-RO',
+			'ro' => 'ro-RO',
+		);
+		$out = array();
+		foreach ( (array) $hreflangs as $code => $url ) {
+			$out[ $map[ $code ] ?? $code ] = $url;
+		}
+		return $out;
 	}
 
 	/**

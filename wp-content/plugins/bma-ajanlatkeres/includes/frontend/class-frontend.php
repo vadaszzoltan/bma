@@ -23,6 +23,12 @@ final class BMA_AJ_Frontend {
 	 * @param string $template Template path.
 	 */
 	public static function template_include( string $template ): string {
+		if ( is_singular( array( BMA_AJ_Service_CPT::POST_TYPE, BMA_AJ_Reference_CPT::POST_TYPE ) ) ) {
+			// The parent block theme's resolved single template already queued its
+			// own <title>; our PHP templates get it from title-tag support instead.
+			remove_action( 'wp_head', '_block_template_render_title_tag', 1 );
+		}
+
 		if ( is_singular( BMA_AJ_Service_CPT::POST_TYPE ) ) {
 			$custom = BMA_AJ_PLUGIN_DIR . 'templates/single-bma_service.php';
 			if ( file_exists( $custom ) ) {
