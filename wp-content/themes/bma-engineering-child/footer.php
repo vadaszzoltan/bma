@@ -14,7 +14,8 @@
 	?>
 	<div class="footer-inner bma-footer-inner">
 		<div class="bma-footer-col">
-			<div class="logo bma-footer-logo-slot" aria-hidden="true" style="background:transparent;border:1px dashed rgba(255,255,255,.45);color:#fff;width:112px;height:44px;margin-bottom:18px">[LOGÓ]</div>
+			<?php $bma_logo_lang = ( class_exists( 'BMA_AJ_I18n' ) && 'ro' === BMA_AJ_I18n::current_lang() ) ? 'ro' : 'en'; ?>
+			<img src="<?php echo esc_url( bma_brand_asset_url( "bma-logo-full-{$bma_logo_lang}-negative.svg" ) ); ?>" class="bma-footer-logo" width="252" height="75" alt="BMA Engineering" loading="lazy">
 			<?php if ( $company ) : ?>
 				<div style="font-weight:700;color:#fff;margin-bottom:10px"><?php echo esc_html( $company ); ?></div>
 			<?php endif; ?>

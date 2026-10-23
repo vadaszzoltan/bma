@@ -59,7 +59,7 @@ if ( class_exists( 'BMA_AJ_I18n' ) ) {
 		</button>
 		<div class="logo bma-logo">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="bma-logo-block" aria-label="<?php esc_attr_e( 'BMA Engineering főoldal', 'bma-engineering' ); ?>">
-				<span class="bma-logo-placeholder-box" aria-hidden="true">[LOGÓ]</span>
+				<img src="<?php echo esc_url( bma_brand_asset_url( 'bma-logo.svg' ) ); ?>" class="bma-logo-img" width="168" height="50" alt="BMA Engineering">
 			</a>
 		</div>
 

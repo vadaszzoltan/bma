@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'BMA_THEME_VERSION', '1.14.0-redesign-exp' );
+define( 'BMA_THEME_VERSION', '1.15.0-redesign-exp' );
 define( 'BMA_THEME_DIR', get_stylesheet_directory() );
 define( 'BMA_THEME_URI', get_stylesheet_directory_uri() );
 
@@ -217,6 +217,30 @@ function bma_robots_meta(): void {
 	}
 }
 add_action( 'wp_head', 'bma_robots_meta', 1 );
+
+/**
+ * URL of a brand asset in assets/img/brand/.
+ */
+function bma_brand_asset_url( string $file ): string {
+	return BMA_THEME_URI . '/assets/img/brand/' . $file;
+}
+
+/**
+ * Favicon / app icons from the brand package, unless a Site Icon is set in the Customizer.
+ */
+function bma_output_brand_icons(): void {
+	if ( has_site_icon() ) {
+		return;
+	}
+	printf( '<link rel="icon" href="%s" sizes="any">' . "\n", esc_url( bma_brand_asset_url( 'favicon.ico' ) ) );
+	foreach ( array( 16, 32, 48 ) as $size ) {
+		printf( '<link rel="icon" type="image/png" sizes="%1$dx%1$d" href="%2$s">' . "\n", (int) $size, esc_url( bma_brand_asset_url( "favicon-{$size}.png" ) ) );
+	}
+	printf( '<link rel="apple-touch-icon" href="%s">' . "\n", esc_url( bma_brand_asset_url( 'apple-touch-icon-180.png' ) ) );
+}
+add_action( 'wp_head', 'bma_output_brand_icons', 5 );
+add_action( 'admin_head', 'bma_output_brand_icons', 5 );
+add_action( 'login_head', 'bma_output_brand_icons', 5 );
 
 /**
  * Register widget areas.

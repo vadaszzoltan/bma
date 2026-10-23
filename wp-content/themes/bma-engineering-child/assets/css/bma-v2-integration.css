@@ -361,3 +361,28 @@ a.fchip { text-decoration: none; }
     margin-left: auto;
   }
 }
+
+/* ---- Brand logo (arculati kézikönyv: védőtávolság, min. 120px / 220px) ---- */
+.header-inner .logo.bma-logo {
+  width: auto;
+  height: auto;
+  background: transparent;
+}
+.header-inner .logo .bma-logo-block {
+  background: transparent;
+}
+.bma-logo-img {
+  display: block;
+  width: auto;
+  height: 50px;
+}
+.bma-footer-logo {
+  display: block;
+  width: 252px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 18px;
+}
+@media (max-width: 640px) {
+  .bma-logo-img { height: 42px; }
+}

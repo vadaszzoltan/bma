@@ -113,7 +113,7 @@ final class BMA_AJ_Email_Layout {
 			<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;">
 				<tr>
 					<td style="background:<?php echo esc_attr( $c['primary'] ); ?>;border-radius:8px 8px 0 0;padding:22px 32px;border-bottom:4px solid <?php echo esc_attr( $c['accent'] ); ?>;">
-						<a href="<?php echo esc_url( $home ); ?>" style="font-family:<?php echo esc_attr( $font ); ?>;font-size:20px;font-weight:700;letter-spacing:2px;color:#FFFFFF;text-decoration:none;">BMA <span style="color:<?php echo esc_attr( $c['accent'] ); ?>;">ENGINEERING</span></a>
+						<a href="<?php echo esc_url( $home ); ?>" style="font-family:<?php echo esc_attr( $font ); ?>;font-size:20px;font-weight:700;letter-spacing:2px;color:#FFFFFF;text-decoration:none;"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/brand/bma-logo-email.png' ); ?>" width="180" height="54" alt="BMA Engineering" style="display:block;border:0;outline:none;width:180px;height:auto;color:#FFFFFF;"></a>
 					</td>
 				</tr>
 				<tr>
