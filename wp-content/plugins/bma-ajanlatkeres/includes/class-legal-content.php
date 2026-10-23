@@ -25,7 +25,7 @@ final class BMA_AJ_Legal_Content {
 		<article class="bma-legal-doc">
 			<p class="bma-section-eyebrow"><?php esc_html_e( 'Jogi információ', 'bma-ajanlatkeres' ); ?></p>
 			<h1><?php esc_html_e( 'Adatvédelmi tájékoztató', 'bma-ajanlatkeres' ); ?></h1>
-			<p class="bma-legal-updated"><?php esc_html_e( 'Utolsó frissítés: 2026. augusztus', 'bma-ajanlatkeres' ); ?></p>
+			<p class="bma-legal-updated"><?php esc_html_e( 'Utolsó frissítés: 2026. október', 'bma-ajanlatkeres' ); ?></p>
 			<p><?php echo esc_html( sprintf( /* translators: %s company */ __( 'A %s fontosnak tartja a személyes adatok védelmét és az adatok átlátható kezelését.', 'bma-ajanlatkeres' ), $company ) ); ?></p>
 			<p><?php esc_html_e( 'Ez a tájékoztató bemutatja, hogy milyen személyes adatokat kezelünk a weboldal használata, kapcsolatfelvétel, ajánlatkérés és ügyfélfiók használata során, milyen célból kezeljük ezeket az adatokat, valamint milyen jogok illetik meg az érintetteket.', 'bma-ajanlatkeres' ); ?></p>
 
@@ -43,6 +43,8 @@ final class BMA_AJ_Legal_Content {
 			<ul><li><?php esc_html_e( 'név, e-mail, telefon, cégnév és adószám (ha megadja), számlázási/projektadatok, kiválasztott szolgáltatások, feltöltött dokumentumok, kapcsolódó kommunikáció', 'bma-ajanlatkeres' ); ?></li></ul>
 			<h3><?php esc_html_e( 'Ügyfélfiók használata esetén', 'bma-ajanlatkeres' ); ?></h3>
 			<ul><li><?php esc_html_e( 'fiókazonosító adatok, e-mail, ajánlatkérések, ajánlatok, státuszok, feltöltött és letöltött dokumentumok, technikai használati adatok', 'bma-ajanlatkeres' ); ?></li></ul>
+			<h3><?php esc_html_e( 'AI chat asszisztens használata esetén', 'bma-ajanlatkeres' ); ?></h3>
+			<ul><li><?php esc_html_e( 'a chatbe írt kérdések és a kapott válaszok, a beszélgetés azonosítója és időpontja, az oldal, amelyen a chatet használta, valamint az IP-cím (visszaélések és túlterhelés megelőzésére)', 'bma-ajanlatkeres' ); ?></li></ul>
 			<h3><?php esc_html_e( 'Technikai használat során', 'bma-ajanlatkeres' ); ?></h3>
 			<ul><li><?php esc_html_e( 'IP-cím, böngésző és eszköz típusa, meglátogatott oldalak, technikai naplóadatok, cookie-hozzájárulási beállítások', 'bma-ajanlatkeres' ); ?></li></ul>
 
@@ -53,17 +55,26 @@ final class BMA_AJ_Legal_Content {
 				<li><strong><?php esc_html_e( 'Szerződés teljesítése:', 'bma-ajanlatkeres' ); ?></strong> <?php esc_html_e( 'szolgáltatás, dokumentumkezelés, kapcsolattartás.', 'bma-ajanlatkeres' ); ?></li>
 				<li><strong><?php esc_html_e( 'Jogi kötelezettségek:', 'bma-ajanlatkeres' ); ?></strong> <?php esc_html_e( 'számviteli és jogszabályi kötelezettségek.', 'bma-ajanlatkeres' ); ?></li>
 				<li><strong><?php esc_html_e( 'Weboldal biztonsága:', 'bma-ajanlatkeres' ); ?></strong> <?php esc_html_e( 'visszaélések megelőzése.', 'bma-ajanlatkeres' ); ?></li>
+				<li><strong><?php esc_html_e( 'AI chat asszisztens:', 'bma-ajanlatkeres' ); ?></strong> <?php esc_html_e( 'kérdések megválaszolása a weboldal tartalma alapján, a szolgáltatás minőségének ellenőrzése (jogos érdek; a chat használata önkéntes).', 'bma-ajanlatkeres' ); ?></li>
 				<li><strong><?php esc_html_e( 'Analitika:', 'bma-ajanlatkeres' ); ?></strong> <?php esc_html_e( 'csak megfelelő hozzájárulás esetén (GA4 / GTM).', 'bma-ajanlatkeres' ); ?></li>
 			</ul>
 
 			<h2><?php esc_html_e( '4. Feltöltött dokumentumok', 'bma-ajanlatkeres' ); ?></h2>
 			<p><?php esc_html_e( 'A feltöltött dokumentumokat kizárólag az adott ajánlatkérés vagy szolgáltatás kezelése céljából használjuk. Kérjük, csak a projekthez szükséges adatokat töltse fel.', 'bma-ajanlatkeres' ); ?></p>
 
+			<h2><?php esc_html_e( '4/A. AI chat asszisztens', 'bma-ajanlatkeres' ); ?></h2>
+			<p><?php esc_html_e( 'A weboldalon elérhető chat asszisztens válaszait mesterséges intelligencia állítja elő a weboldal tartalma alapján. A válaszok tájékoztató jellegűek: ajánlat, ár vagy szerződés a chaten keresztül nem jön létre, ehhez az ajánlatkérő űrlapot vagy a megadott elérhetőségeket kell használni.', 'bma-ajanlatkeres' ); ?></p>
+			<p><?php esc_html_e( 'Kérjük, a chatbe ne írjon érzékeny személyes adatot (például egészségügyi adatot, személyi számot vagy bankkártyaadatot). A beszélgetéseket a szolgáltatás minőségének ellenőrzéséhez és fejlesztéséhez őrizzük meg, legfeljebb az ehhez szükséges ideig; törlésüket a fenti e-mail-címen kérheti.', 'bma-ajanlatkeres' ); ?></p>
+
 			<h2><?php esc_html_e( '5. Adattovábbítás', 'bma-ajanlatkeres' ); ?></h2>
 			<p><?php esc_html_e( 'Szükség esetén hozzáférhetnek: tárhelyszolgáltató, e-mail-szolgáltató, weboldal-karbantartó, analitikai szolgáltatók (hozzájárulás esetén), könyvelési vagy jogi szolgáltatók, valamint a választott fizetési szolgáltató (pl. Stripe), ha online fizetést használ.', 'bma-ajanlatkeres' ); ?></p>
 
+			<p><?php esc_html_e( 'A chat asszisztens üzeneteit a válasz előállításához a Google (Gemini API) mesterségesintelligencia-szolgáltatás dolgozza fel adatfeldolgozóként.', 'bma-ajanlatkeres' ); ?></p>
+
 			<h2><?php esc_html_e( '6. EGT-n kívüli adattovábbítás', 'bma-ajanlatkeres' ); ?></h2>
 			<p><?php esc_html_e( 'Ha külső szolgáltató miatt ilyen történik, csak az alkalmazandó adatvédelmi szabályoknak megfelelő módon.', 'bma-ajanlatkeres' ); ?></p>
+
+			<p><?php esc_html_e( 'A Google a chat üzeneteit az EGT-n kívül (például az Egyesült Államokban) is feldolgozhatja; ez az EU–USA adatvédelmi keretrendszer, illetve az Európai Bizottság által elfogadott általános szerződési feltételek alapján történik.', 'bma-ajanlatkeres' ); ?></p>
 
 			<h2><?php esc_html_e( '7. Megőrzési idő', 'bma-ajanlatkeres' ); ?></h2>
 			<p><?php esc_html_e( 'Az adatokat csak az adatkezelési célhoz szükséges ideig őrizzük meg.', 'bma-ajanlatkeres' ); ?></p>

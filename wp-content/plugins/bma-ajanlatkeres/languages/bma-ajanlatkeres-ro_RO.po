@@ -2499,3 +2499,43 @@ msgstr "Primărie sau instituție publică"
 
 msgid "Önkormányzati, közbeszerzéses beruházások előkészítő tanulmánya."
 msgstr "Studiu pregătitor pentru investiții publice ale primăriilor, prin achiziție publică."
+
+#: includes/class-legal-content.php
+msgid "Utolsó frissítés: 2026. október"
+msgstr "Ultima actualizare: octombrie 2026"
+
+#: includes/class-legal-content.php
+msgid "AI chat asszisztens használata esetén"
+msgstr "La utilizarea asistentului de chat AI"
+
+#: includes/class-legal-content.php
+msgid "a chatbe írt kérdések és a kapott válaszok, a beszélgetés azonosítója és időpontja, az oldal, amelyen a chatet használta, valamint az IP-cím (visszaélések és túlterhelés megelőzésére)"
+msgstr "întrebările scrise în chat și răspunsurile primite, identificatorul și momentul conversației, pagina pe care ați folosit chatul, precum și adresa IP (pentru prevenirea abuzurilor și a supraîncărcării)"
+
+#: includes/class-legal-content.php
+msgid "AI chat asszisztens:"
+msgstr "Asistent de chat AI:"
+
+#: includes/class-legal-content.php
+msgid "kérdések megválaszolása a weboldal tartalma alapján, a szolgáltatás minőségének ellenőrzése (jogos érdek; a chat használata önkéntes)."
+msgstr "răspunsul la întrebări pe baza conținutului site-ului, verificarea calității serviciului (interes legitim; utilizarea chatului este voluntară)."
+
+#: includes/class-legal-content.php
+msgid "4/A. AI chat asszisztens"
+msgstr "4/A. Asistent de chat AI"
+
+#: includes/class-legal-content.php
+msgid "A weboldalon elérhető chat asszisztens válaszait mesterséges intelligencia állítja elő a weboldal tartalma alapján. A válaszok tájékoztató jellegűek: ajánlat, ár vagy szerződés a chaten keresztül nem jön létre, ehhez az ajánlatkérő űrlapot vagy a megadott elérhetőségeket kell használni."
+msgstr "Răspunsurile asistentului de chat de pe site sunt generate de inteligența artificială pe baza conținutului site-ului. Răspunsurile au caracter informativ: prin chat nu se încheie ofertă, preț sau contract; pentru acestea folosiți formularul de cerere de ofertă sau datele de contact indicate."
+
+#: includes/class-legal-content.php
+msgid "Kérjük, a chatbe ne írjon érzékeny személyes adatot (például egészségügyi adatot, személyi számot vagy bankkártyaadatot). A beszélgetéseket a szolgáltatás minőségének ellenőrzéséhez és fejlesztéséhez őrizzük meg, legfeljebb az ehhez szükséges ideig; törlésüket a fenti e-mail-címen kérheti."
+msgstr "Vă rugăm să nu scrieți în chat date personale sensibile (de exemplu date medicale, CNP sau date de card bancar). Păstrăm conversațiile pentru verificarea și îmbunătățirea calității serviciului, cel mult cât este necesar în acest scop; ștergerea lor o puteți solicita la adresa de e-mail de mai sus."
+
+#: includes/class-legal-content.php
+msgid "A chat asszisztens üzeneteit a válasz előállításához a Google (Gemini API) mesterségesintelligencia-szolgáltatás dolgozza fel adatfeldolgozóként."
+msgstr "Mesajele trimise asistentului de chat sunt prelucrate, pentru generarea răspunsului, de serviciul de inteligență artificială Google (Gemini API), în calitate de persoană împuternicită."
+
+#: includes/class-legal-content.php
+msgid "A Google a chat üzeneteit az EGT-n kívül (például az Egyesült Államokban) is feldolgozhatja; ez az EU–USA adatvédelmi keretrendszer, illetve az Európai Bizottság által elfogadott általános szerződési feltételek alapján történik."
+msgstr "Google poate prelucra mesajele din chat și în afara SEE (de exemplu în Statele Unite); aceasta are loc în baza Cadrului UE–SUA privind protecția datelor, respectiv a clauzelor contractuale standard adoptate de Comisia Europeană."
