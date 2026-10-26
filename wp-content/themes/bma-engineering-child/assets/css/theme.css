@@ -346,6 +346,13 @@
 	gap: 0.55rem;
 }
 
+.bma-footer-col .bma-footer-social .bma-social-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-top: 14px;
+}
+
 .bma-footer-bottom {
 	max-width: var(--bma-container, 1200px);
 	margin: 2rem auto 0;

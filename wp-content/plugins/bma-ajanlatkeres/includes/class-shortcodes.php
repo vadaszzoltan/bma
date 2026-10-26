@@ -183,14 +183,22 @@ final class BMA_AJ_Shortcodes {
 			return '';
 		}
 
+		$labels = array(
+			'facebook'  => 'Facebook',
+			'linkedin'  => 'LinkedIn',
+			'instagram' => 'Instagram',
+			'x'         => 'X',
+			'youtube'   => 'YouTube',
+		);
+
 		ob_start();
 		echo '<ul class="bma-social-links" role="list">';
 		foreach ( $links as $platform => $url ) {
 			printf(
 				'<li><a href="%s" target="_blank" rel="noopener noreferrer" aria-label="%s">%s</a></li>',
 				esc_url( $url ),
-				esc_attr( ucfirst( $platform ) ),
-				esc_html( ucfirst( $platform ) )
+				esc_attr( $labels[ $platform ] ),
+				esc_html( $labels[ $platform ] )
 			);
 		}
 		echo '</ul>';

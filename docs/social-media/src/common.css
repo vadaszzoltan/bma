@@ -1,0 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap');
+html,body{margin:0;padding:0;overflow:hidden}
+body{background:#0F3B57;font-family:Manrope,sans-serif;color:#fff;position:relative}
+.net{position:absolute;inset:0}

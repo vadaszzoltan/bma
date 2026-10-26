@@ -49,6 +49,9 @@
 			<?php if ( $cui ) : ?>
 				<div class="small" style="margin-top:6px"><?php printf( esc_html__( 'CUI: %s', 'bma-engineering' ), esc_html( $cui ) ); ?></div>
 			<?php endif; ?>
+			<?php if ( shortcode_exists( 'bma_social_links' ) ) : ?>
+				<div class="bma-footer-social small"><?php echo do_shortcode( '[bma_social_links]' ); ?></div>
+			<?php endif; ?>
 		</div>
 		<div class="bma-footer-col">
 			<h4 class="bma-footer-heading"><?php echo class_exists( 'BMA_AJ_Content' ) ? esc_html( BMA_AJ_Content::get( 'footer.nav_heading' ) ) : esc_html__( 'Navigáció', 'bma-engineering' ); ?></h4>
