@@ -14,7 +14,8 @@ final class BMA_AJ_Cookie_Consent {
 	 */
 	public static function init(): void {
 		add_action( 'wp_footer', array( self::class, 'render_banner' ), 5 );
-		add_action( 'wp_enqueue_scripts', array( self::class, 'enqueue' ) );
+		// After BMA_AJ_Plugin::enqueue_public_assets (priority 10) registers bma-aj-public.
+		add_action( 'wp_enqueue_scripts', array( self::class, 'enqueue' ), 20 );
 	}
 
 	/**
