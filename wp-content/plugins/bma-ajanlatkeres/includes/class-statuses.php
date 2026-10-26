@@ -210,8 +210,9 @@ final class BMA_AJ_Statuses {
 	 * Delete status if unused (and not default).
 	 *
 	 * @param int $id Status ID.
+	 * @return true|WP_Error
 	 */
-	public static function delete( int $id ): true|WP_Error {
+	public static function delete( int $id ): bool|WP_Error {
 		global $wpdb;
 		$table = $wpdb->prefix . 'bma_statuses';
 		$row   = self::get( $id );
