@@ -86,11 +86,13 @@ if ( $detail_id ) {
 
 	<div class="appbody">
 		<div class="bma-container">
+			<?php if ( is_user_logged_in() ) : ?>
 			<div style="margin-bottom:18px">
 				<a href="<?php echo esc_url( $portal_url ); ?>" class="small" style="font-weight:700;color:var(--bma-primary)">
 					<?php esc_html_e( '← Vissza a portálra', 'bma-ajanlatkeres' ); ?>
 				</a>
 			</div>
+			<?php endif; ?>
 
 			<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:24px;flex-wrap:wrap">
 				<div>
