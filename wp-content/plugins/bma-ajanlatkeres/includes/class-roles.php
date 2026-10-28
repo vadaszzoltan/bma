@@ -236,6 +236,10 @@ final class BMA_AJ_Roles {
 			return true;
 		}
 
+		if ( null === $user_id && BMA_AJ_Guest_Access::has_access( $request_id ) ) {
+			return true;
+		}
+
 		$user_id = $user_id ?? get_current_user_id();
 		if ( ! $user_id ) {
 			return false;

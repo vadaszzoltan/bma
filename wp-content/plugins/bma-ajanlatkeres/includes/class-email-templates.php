@@ -183,7 +183,7 @@ final class BMA_AJ_Email_Templates {
 			'{services}'          => $services_text,
 			'{summary}'           => $summary_text,
 			'{status}'            => $status->name ?? '',
-			'{portal_link}'       => add_query_arg( 'request', $request_id, BMA_AJ_I18n::page_url( 'ugyfelportal' ) ),
+			'{portal_link}'       => BMA_AJ_Guest_Access::portal_url( $request_id ),
 			'{admin_link}'        => admin_url( 'admin.php?page=bma-requests&action=view&id=' . $request_id ),
 			'{quote_amount}'      => $quote ? number_format( (float) $quote->gross_amount, 0, ',', ' ' ) . ' ' . $quote->currency : '',
 			'{quote_valid_until}' => $quote && $quote->valid_until ? $quote->valid_until : '',

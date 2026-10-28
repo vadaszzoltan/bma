@@ -76,7 +76,8 @@ final class BMA_AJ_Shortcodes {
 	 * Client portal shortcode.
 	 */
 	public static function client_portal(): string {
-		if ( ! is_user_logged_in() ) {
+		$guest_request = absint( $_GET['request'] ?? 0 ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( ! is_user_logged_in() && ! BMA_AJ_Guest_Access::has_access( $guest_request ) ) {
 			ob_start();
 			include BMA_AJ_PLUGIN_DIR . 'templates/frontend/login-prompt.php';
 			return ob_get_clean();

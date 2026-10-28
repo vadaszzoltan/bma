@@ -14,7 +14,9 @@ final class BMA_AJ_Payments {
 	 */
 	public static function init(): void {
 		add_action( 'wp_ajax_bma_accept_quote', array( self::class, 'ajax_accept_quote' ) );
+		add_action( 'wp_ajax_nopriv_bma_accept_quote', array( self::class, 'ajax_accept_quote' ) );
 		add_action( 'wp_ajax_bma_create_stripe_session', array( self::class, 'ajax_create_stripe_session' ) );
+		add_action( 'wp_ajax_nopriv_bma_create_stripe_session', array( self::class, 'ajax_create_stripe_session' ) );
 		add_action( 'init', array( self::class, 'handle_stripe_return' ) );
 		add_action( 'rest_api_init', array( self::class, 'register_webhook' ) );
 	}

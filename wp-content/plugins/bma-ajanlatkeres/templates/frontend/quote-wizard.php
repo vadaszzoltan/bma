@@ -405,7 +405,7 @@ $render = static function ( object $field, string $wrap_class = '' ): void {
 
 					<?php if ( ! is_user_logged_in() ) : ?>
 						<label class="bma-checkrow">
-							<input type="checkbox" name="create_account" value="1">
+							<input type="checkbox" name="create_account" value="1" checked>
 							<span class="small"><?php esc_html_e( 'Hozzon létre ügyfélfiókot, hogy egy helyen kövesse a kérés státuszát, az ajánlatot és a dokumentumokat.', 'bma-ajanlatkeres' ); ?></span>
 						</label>
 					<?php endif; ?>

@@ -6,7 +6,7 @@ $quote_id   = absint( $_GET['quote'] ?? 0 );
 $method     = sanitize_text_field( wp_unslash( $_GET['method'] ?? '' ) );
 $paid       = isset( $_GET['paid'] );
 
-if ( ! is_user_logged_in() || ! $request_id || ! $quote_id || ! BMA_AJ_Roles::can_access_request( $request_id ) ) {
+if ( ! $request_id || ! $quote_id || ! BMA_AJ_Roles::can_access_request( $request_id ) ) {
 	?>
 	<section class="bma-section">
 		<div class="bma-container bma-container-narrow">

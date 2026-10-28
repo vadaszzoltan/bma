@@ -16,6 +16,7 @@ final class BMA_AJ_Documents {
 		add_action( 'init', array( self::class, 'register_download_endpoint' ) );
 		add_action( 'template_redirect', array( self::class, 'handle_download' ) );
 		add_action( 'wp_ajax_bma_upload_document', array( self::class, 'ajax_upload' ) );
+		add_action( 'wp_ajax_nopriv_bma_upload_document', array( self::class, 'ajax_upload' ) );
 	}
 
 	/**

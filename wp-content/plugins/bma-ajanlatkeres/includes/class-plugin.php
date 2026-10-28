@@ -46,6 +46,7 @@ final class BMA_AJ_Plugin {
 		BMA_AJ_Quote_Flow::init();
 		BMA_AJ_Quotes::init();
 		BMA_AJ_Payments::init();
+		BMA_AJ_Guest_Access::init();
 		BMA_AJ_Security::init();
 		BMA_AJ_SMTP::init();
 		BMA_AJ_Email_Layout::init();
